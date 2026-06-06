@@ -1,0 +1,152 @@
+{
+  "taskId": "T10",
+  "title": "Scene And Energy Selection Pages",
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "summary": "Implemented UI-02 scene selection, UI-03 energy selection, and UI-04 incomplete selection disabled/validation behavior for the WeChat mini-program. Functional simulated tests pass, but no raster screenshot capture or pixel diff was run, so this task does not claim pure PASS.",
+  "requirements": [
+    "REQ-002",
+    "REQ-003",
+    "REQ-004",
+    "REQ-006",
+    "REQ-007",
+    "REQ-017"
+  ],
+  "ui": [
+    "UI-02",
+    "UI-03",
+    "UI-04"
+  ],
+  "api": [
+    "API-001",
+    "API-010"
+  ],
+  "changedFiles": [
+    "apps/wechat-mini/package.json",
+    "apps/wechat-mini/src/pages/create/scene-page.mjs",
+    "apps/wechat-mini/src/pages/create/energy-page.mjs",
+    "apps/wechat-mini/src/pages/create/scene.js",
+    "apps/wechat-mini/src/pages/create/scene.wxml",
+    "apps/wechat-mini/src/pages/create/scene.wxss",
+    "apps/wechat-mini/src/pages/create/scene.json",
+    "apps/wechat-mini/src/pages/create/energy.js",
+    "apps/wechat-mini/src/pages/create/energy.wxml",
+    "apps/wechat-mini/src/pages/create/energy.wxss",
+    "apps/wechat-mini/src/pages/create/energy.json",
+    "apps/wechat-mini/src/pages/create/incomplete.js",
+    "apps/wechat-mini/src/pages/create/incomplete.wxml",
+    "apps/wechat-mini/src/pages/create/incomplete.wxss",
+    "apps/wechat-mini/src/pages/create/incomplete.json",
+    "apps/wechat-mini/tests/t10-scene-energy-pages.test.mjs",
+    "docs/auto-execute/traces/T10/scene-energy-clicks.json",
+    "docs/auto-execute/screenshots/T10/UI-02-scene.html",
+    "docs/auto-execute/screenshots/T10/UI-02-scene-render-summary.json",
+    "docs/auto-execute/screenshots/T10/UI-03-energy.html",
+    "docs/auto-execute/screenshots/T10/UI-03-energy-render-summary.json",
+    "docs/auto-execute/screenshots/T10/UI-04-incomplete.html",
+    "docs/auto-execute/screenshots/T10/UI-04-incomplete-render-summary.json",
+    "docs/auto-execute/logs/T10/scene-energy-pages-test.log",
+    "docs/auto-execute/logs/T10/scene-energy-pages-test-command.log",
+    "docs/auto-execute/logs/T10/wechat-mini-test.log",
+    "docs/auto-execute/logs/T10/wechat-route-verify.log",
+    "docs/auto-execute/logs/T10/typecheck.log",
+    "docs/auto-execute/logs/T10/lint.log",
+    "docs/auto-execute/logs/T10/diff-check.log",
+    "docs/auto-execute/logs/T10/diff-check-final.log",
+    "docs/auto-execute/results/T10.json",
+    "docs/auto-execute/latest/T10-HANDOFF.md"
+  ],
+  "commandsRun": [
+    {
+      "command": "pnpm --filter @auracue/wechat-mini test:t10",
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "evidence": null,
+      "note": "PowerShell blocked the pnpm.ps1 shim by execution policy; reran with pnpm.cmd."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t10",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "evidence": "docs/auto-execute/logs/T10/scene-energy-pages-test-command.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "evidence": "docs/auto-execute/logs/T10/wechat-mini-test.log"
+    },
+    {
+      "command": "pnpm.cmd dev:weapp",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T10/wechat-route-verify.log"
+    },
+    {
+      "command": "pnpm.cmd typecheck",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T10/typecheck.log"
+    },
+    {
+      "command": "pnpm.cmd lint",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T10/lint.log"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T10/diff-check-final.log"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/traces/T10/scene-energy-clicks.json",
+    "docs/auto-execute/screenshots/T10/UI-02-scene.html",
+    "docs/auto-execute/screenshots/T10/UI-02-scene-render-summary.json",
+    "docs/auto-execute/screenshots/T10/UI-03-energy.html",
+    "docs/auto-execute/screenshots/T10/UI-03-energy-render-summary.json",
+    "docs/auto-execute/screenshots/T10/UI-04-incomplete.html",
+    "docs/auto-execute/screenshots/T10/UI-04-incomplete-render-summary.json",
+    "docs/auto-execute/logs/T10/scene-energy-pages-test-command.log",
+    "docs/auto-execute/logs/T10/wechat-mini-test.log",
+    "docs/auto-execute/logs/T10/wechat-route-verify.log",
+    "docs/auto-execute/logs/T10/typecheck.log",
+    "docs/auto-execute/logs/T10/lint.log",
+    "docs/auto-execute/logs/T10/diff-check-final.log"
+  ],
+  "acceptance": {
+    "sceneOptionsExact": true,
+    "sceneOptions": [
+      "Date",
+      "Work / Meeting",
+      "Party / Social",
+      "Just need luck"
+    ],
+    "energyOptionsExact": true,
+    "energyOptions": [
+      "Confidence",
+      "Luck",
+      "Love",
+      "Calm",
+      "Charm",
+      "Focus"
+    ],
+    "incompleteSelectionBlocksGeneration": true,
+    "incompleteSelectionApi001Calls": 0,
+    "completeSelectionCallsApi001": true,
+    "completeSelectionNavigatesToLoading": true,
+    "analyticsFixtureEventsRecorded": true,
+    "simulatedPageTests": true,
+    "localOnly": true
+  },
+  "blockers": [],
+  "limitations": [
+    "No actual mini-program raster screenshots or pixel-diff metrics were generated in T10. Structural HTML captures and render summaries were produced instead, so visual acceptance remains manual review."
+  ],
+  "nextSteps": [
+    "T22/T23 should capture and diff UI-02, UI-03, and UI-04 against docs/UI/小程序 references before any pure product PASS claim.",
+    "T19/T24 can reuse docs/auto-execute/traces/T10/scene-energy-clicks.json for page simulated and owner-flow coverage."
+  ],
+  "forbiddenActionsAvoided": {
+    "realWeChatPay": true,
+    "realCloudWrites": true,
+    "productionDb": true,
+    "productionAi": true,
+    "productionAnalytics": true,
+    "secrets": true
+  }
+}

@@ -1,0 +1,9 @@
+.incomplete-redirect {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fdf8f3;
+  color: #ec3c77;
+  font-size: 17px;
+}

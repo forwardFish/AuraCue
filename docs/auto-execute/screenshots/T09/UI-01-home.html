@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AuraCue UI-01 Home</title>
+  <style>
+    :root {
+      --bg: #FCF9F6;
+      --ink: #1A2A47;
+      --accent: #C58482;
+      --gold: #D4AF37;
+      --border: #F1E1D1;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: Inter, Arial, sans-serif; }
+    .device { width: 941px; height: 1672px; margin: 0 auto; display: flex; flex-direction: column; overflow: hidden; background: var(--bg); }
+    .status { height: 96px; display: flex; align-items: flex-end; justify-content: space-between; padding: 0 76px 18px; font-size: 28px; font-weight: 700; }
+    .status-icons { display: flex; gap: 12px; align-items: center; font-size: 30px; }
+    .header { display: flex; align-items: center; justify-content: space-between; padding: 28px 60px 0; }
+    .brand, .hero h1, .card h2, .cta { font-family: Georgia, "Times New Roman", serif; }
+    .brand { font-size: 58px; font-weight: 500; letter-spacing: -1px; }
+    .round { width: 98px; height: 98px; border-radius: 999px; border: 2px solid #fff1e6; background: white; display: grid; place-items: center; color: var(--gold); box-shadow: 0 8px 24px rgba(0,0,0,.05); font-size: 30px; }
+    main { padding: 42px 60px 0; flex: 1; }
+    .hero { text-align: center; margin-bottom: 34px; position: relative; }
+    .hero::before { content: "✦"; color: var(--gold); font-size: 28px; position: absolute; top: -48px; left: 50%; transform: translateX(-50%); }
+    .hero h1 { font-size: 60px; line-height: 1.16; margin: 0 0 22px; font-weight: 500; letter-spacing: -.5px; }
+    .hero em { color: var(--accent); font-style: italic; }
+    .hero p { color: #697385; font-size: 26px; line-height: 1.45; margin: 0; }
+    .card { position: relative; background: white; border: 2px solid var(--border); border-radius: 72px; padding: 58px 60px 36px; margin-bottom: 48px; box-shadow: 0 22px 50px -22px rgba(197,132,130,.20); text-align: center; }
+    .card::before, .card::after { content: "✦"; position: absolute; color: var(--gold); opacity: .72; font-size: 22px; top: 38px; }
+    .card::before { left: 38px; }
+    .card::after { right: 38px; }
+    .eyebrow { color: var(--gold); font-size: 22px; text-transform: uppercase; letter-spacing: 4px; margin: 0 0 12px; font-weight: 700; }
+    .card h2 { margin: 0 0 34px; font-size: 46px; font-weight: 500; }
+    .arch { width: 482px; height: 360px; margin: 0 auto 36px; border: 2px solid var(--border); border-radius: 242px 242px 0 0; background: linear-gradient(180deg,#fff8ef 0%,#fff1f4 82%,#fff8fb 100%); display: flex; align-items: end; justify-content: center; overflow: hidden; position: relative; }
+    .arch::before { content: "☾"; position: absolute; top: 48px; color: rgba(212,175,55,.36); font-size: 46px; }
+    .arch::after { content: ""; position: absolute; bottom: 0; width: 100%; height: 112px; background: linear-gradient(180deg,rgba(246,201,210,.12),rgba(246,201,210,.46)); }
+    .flower { width: 92px; height: 160px; border-radius: 56px 56px 18px 18px; background: radial-gradient(circle at 50% 12%, #fff0f4 0 23%, #f7bcc8 24% 45%, #d9aa57 46% 50%, #9fae76 51%); margin-bottom: 86px; box-shadow: 0 0 70px rgba(246,201,210,.85); position: relative; z-index: 1; }
+    .flower::before, .flower::after { content:""; position:absolute; width: 88px; height: 22px; border-radius: 50%; background:#c9b68b; bottom: 76px; opacity:.55; }
+    .flower::before { transform: rotate(-35deg); left: -62px; }
+    .flower::after { transform: rotate(35deg); right: -62px; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--border); padding-top: 32px; gap: 0; }
+    .stat { border-right: 2px solid var(--border); min-height: 104px; padding: 0 18px; }
+    .stat:last-child { border-right: 0; }
+    .stat strong { display: block; color: var(--gold); text-transform: uppercase; font-size: 16px; margin: 10px 0 8px; }
+    .stat span { display: block; font-size: 22px; font-weight: 500; line-height: 1.18; }
+    .swatch { width: 46px; height: 46px; border-radius: 50%; background: #f6c9d2; margin: 0 auto 8px; }
+    .shortcuts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 32px; margin-bottom: 58px; }
+    .shortcut { height: 110px; border: 2px solid var(--border); background: white; border-radius: 30px; color: var(--ink); display: flex; align-items: center; gap: 22px; padding: 0 42px; font-size: 30px; font-weight: 500; box-shadow: 0 8px 22px rgba(0,0,0,.03); }
+    .line-icon { color: var(--accent); width: 32px; font-size: 22px; }
+    .cta { width: 100%; min-height: 132px; border: 0; border-radius: 36px; color: white; font-size: 40px; line-height: 1.15; background: linear-gradient(90deg,#DB8A86,#C56E69); box-shadow: 0 24px 40px rgba(197,110,105,.20); display: flex; align-items: center; justify-content: space-around; padding: 0 70px; }
+    .cta::before, .cta::after { content: "✦"; opacity: .82; font-size: 32px; }
+    .trust { text-align: center; color: #9CA3AF; font-size: 22px; margin-top: 30px; }
+    footer { height: 226px; border-top: 2px solid var(--border); background: rgba(255,255,255,.82); display: flex; align-items: center; justify-content: center; gap: 520px; font-size: 22px; color: var(--accent); }
+    footer .muted { color: #9CA3AF; }
+  </style>
+</head>
+<body>
+  <div class="device">
+    <div class="status"><strong>9:41</strong><span class="status-icons">▮ ◆ ☰</span></div>
+    <header class="header"><div class="round">spark</div><div class="brand">AuraCue</div><div class="round">gift</div></header>
+    <main>
+      <section class="hero">
+        <h1>Before you step out,<br>draw today's <em>tiny advantage.</em></h1>
+        <p>Pick your scene. Get one color,<br>one outfit energy, one social move.</p>
+      </section>
+      <section class="card">
+        <p class="eyebrow">Today's Aura</p>
+        <h2>Golden Bloom</h2>
+        <div class="arch"><div class="flower"></div></div>
+        <div class="stats">
+          <div class="stat"><div class="swatch"></div><strong>Lucky Color</strong><span>Blush Pink</span></div>
+          <div class="stat"><strong>Outfit Energy</strong><span>Soft Power</span></div>
+          <div class="stat"><strong>Social Move</strong><span>Listen first,<br>connect deeper.</span></div>
+        </div>
+      </section>
+      <section class="shortcuts"><button class="shortcut" data-scene="date"><span class="line-icon">heart</span>Date</button><button class="shortcut" data-scene="work"><span class="line-icon">briefcase</span>Work</button><button class="shortcut" data-scene="party"><span class="line-icon">map</span>Party</button><button class="shortcut" data-scene="luck"><span class="line-icon">sparkle</span>Just need luck</button></section>
+      <button class="cta">Start My 30-Second Card</button>
+      <div class="trust">Private. Personal. Just for you.</div>
+    </main>
+    <footer><strong>Home</strong><span class="muted">Profile</span></footer>
+  </div>
+</body>
+</html>

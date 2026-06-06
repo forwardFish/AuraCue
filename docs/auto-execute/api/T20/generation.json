@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "coveredCases": [
+    "API-001-C01",
+    "API-001-C02",
+    "API-001-C03",
+    "API-002-C01",
+    "API-002-C02"
+  ],
+  "evidence": [
+    "docs/auto-execute/api/T20/API-001-success.json",
+    "docs/auto-execute/api/T20/API-001-validation.json",
+    "docs/auto-execute/api/T20/API-001-fallback.json",
+    "docs/auto-execute/api/T20/API-002-success.json",
+    "docs/auto-execute/api/T20/API-002-404.json"
+  ]
+}

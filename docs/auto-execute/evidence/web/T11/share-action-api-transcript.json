@@ -1,0 +1,54 @@
+[
+  {
+    "action": "load share page",
+    "calls": [
+      "GET /api/v1/aura-cards/:cardId",
+      "POST /api/v1/aura-cards/:cardId/render when shareImageUrl is missing"
+    ],
+    "evidence": "components/share-save-flow.tsx"
+  },
+  {
+    "action": "copy link",
+    "calls": [
+      "POST /api/v1/aura-cards/:cardId/share"
+    ],
+    "payload": {
+      "channel": "copy",
+      "source": "share_preview"
+    }
+  },
+  {
+    "action": "save image",
+    "calls": [
+      "POST /api/v1/aura-cards/:cardId/share"
+    ],
+    "payload": {
+      "channel": "download",
+      "source": "share_preview"
+    }
+  },
+  {
+    "action": "native share",
+    "calls": [
+      "POST /api/v1/aura-cards/:cardId/share"
+    ],
+    "payload": {
+      "channel": "web_share",
+      "source": "share_preview"
+    },
+    "fallback": {
+      "channel": "copy",
+      "reason": "navigator.share unavailable"
+    }
+  },
+  {
+    "action": "save to collection",
+    "calls": [
+      "POST /api/v1/aura-cards/:cardId/save"
+    ],
+    "payload": {
+      "source": "share"
+    },
+    "navigation": "/saved/:cardId"
+  }
+]

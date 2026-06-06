@@ -1,0 +1,114 @@
+{
+  "taskId": "T20",
+  "taskName": "All API And DB Readback Tests",
+  "status": "PASS",
+  "generatedAt": "2026-05-26T00:00:00.000Z",
+  "scope": "API-000 through API-010 local/mock API and DB readback tests only.",
+  "summary": {
+    "apiCasesCovered": 32,
+    "requiredMatrixCasesCovered": 20,
+    "dbReadbacksCovered": 20,
+    "missingRequiredCases": [],
+    "productionSideEffectsDetected": false
+  },
+  "changedFiles": [
+    "apps/api/package.json",
+    "apps/api/tests/all-api-db-readback.test.mjs",
+    "docs/auto-execute/api/T20/all-api-summary.json",
+    "docs/auto-execute/api/T20/API-000-health.json",
+    "docs/auto-execute/api/T20/API-001-success.json",
+    "docs/auto-execute/api/T20/API-001-validation.json",
+    "docs/auto-execute/api/T20/API-001-fallback.json",
+    "docs/auto-execute/api/T20/API-002-success.json",
+    "docs/auto-execute/api/T20/API-002-404.json",
+    "docs/auto-execute/api/T20/API-003-free.json",
+    "docs/auto-execute/api/T20/API-003-locked.json",
+    "docs/auto-execute/api/T20/API-003-full.json",
+    "docs/auto-execute/api/T20/API-003-404.json",
+    "docs/auto-execute/api/T20/API-004-success.json",
+    "docs/auto-execute/api/T20/API-004-idempotent.json",
+    "docs/auto-execute/api/T20/API-004-payment-required.json",
+    "docs/auto-execute/api/T20/API-005-create.json",
+    "docs/auto-execute/api/T20/API-005-complete.json",
+    "docs/auto-execute/api/T20/API-005-complete-failed.json",
+    "docs/auto-execute/api/T20/API-005-validation.json",
+    "docs/auto-execute/api/T20/API-005-404.json",
+    "docs/auto-execute/api/T20/API-006-progress.json",
+    "docs/auto-execute/api/T20/API-006-duplicate.json",
+    "docs/auto-execute/api/T20/API-007-save.json",
+    "docs/auto-execute/api/T20/API-007-validation.json",
+    "docs/auto-execute/api/T20/API-007-404.json",
+    "docs/auto-execute/api/T20/API-008-share.json",
+    "docs/auto-execute/api/T20/API-008-validation.json",
+    "docs/auto-execute/api/T20/API-008-404.json",
+    "docs/auto-execute/api/T20/API-009-render.json",
+    "docs/auto-execute/api/T20/API-009-validation.json",
+    "docs/auto-execute/api/T20/API-009-404.json",
+    "docs/auto-execute/api/T20/API-010-analytics.json",
+    "docs/auto-execute/api/T20/API-010-validation.json",
+    "docs/auto-execute/api/T20/API-010-secret-like-property.json",
+    "docs/auto-execute/api/T20/generation.json",
+    "docs/auto-execute/api/T20/cards.json",
+    "docs/auto-execute/api/T20/card-contract.json",
+    "docs/auto-execute/api/T20/unlock.json",
+    "docs/auto-execute/api/T20/unlock-payment-invite.json",
+    "docs/auto-execute/api/T20/share-save-analytics.json",
+    "docs/auto-execute/db/T20/db-readbacks.json",
+    "docs/auto-execute/logs/T20/api-db-tests.log",
+    "docs/auto-execute/logs/T20/api-package-test.log",
+    "docs/auto-execute/logs/T20/root-test.log",
+    "docs/auto-execute/logs/T20/lint.log",
+    "docs/auto-execute/logs/T20/typecheck.log",
+    "docs/auto-execute/logs/T20/diff-check.log",
+    "docs/auto-execute/logs/T20/local-only.json",
+    "docs/auto-execute/results/T20.json",
+    "docs/auto-execute/latest/T20-HANDOFF.md"
+  ],
+  "commandsRun": [
+    {
+      "command": "pnpm.cmd --filter @auracue/api test:t20 *> docs\\auto-execute\\logs\\T20\\api-db-tests.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T20/api-db-tests.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/api test *> docs\\auto-execute\\logs\\T20\\api-package-test.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T20/api-package-test.log"
+    },
+    {
+      "command": "pnpm.cmd test *> docs\\auto-execute\\logs\\T20\\root-test.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T20/root-test.log"
+    },
+    {
+      "command": "pnpm.cmd lint *> docs\\auto-execute\\logs\\T20\\lint.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T20/lint.log"
+    },
+    {
+      "command": "pnpm.cmd typecheck *> docs\\auto-execute\\logs\\T20\\typecheck.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T20/typecheck.log"
+    },
+    {
+      "command": "git diff --check *> docs\\auto-execute\\logs\\T20\\diff-check.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T20/diff-check.log"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/api/T20/all-api-summary.json",
+    "docs/auto-execute/db/T20/db-readbacks.json",
+    "docs/auto-execute/logs/T20/local-only.json",
+    "docs/auto-execute/logs/T20/api-db-tests.log"
+  ],
+  "blockers": [],
+  "limitations": [
+    "T20 is backend/API/DB evidence only. It does not produce visual screenshot or pixel-diff evidence.",
+    "The package-wide api test script remains the existing regression suite; the T20 all-API readback suite is available as the focused test:t20 script."
+  ],
+  "nextStepNotes": [
+    "T21 can use docs/auto-execute/api/T20/all-api-summary.json and docs/auto-execute/db/T20/db-readbacks.json as API/DB baseline evidence for frontend-backend contract tests.",
+    "Do not start T21 from this worker."
+  ]
+}

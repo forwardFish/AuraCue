@@ -1,0 +1,30 @@
+<view class="saved-success-page">
+  <view class="glow glow-gold"></view>
+  <view class="glow glow-pink"></view>
+  <view class="saved-header">
+    <button class="close-button" bindtap="onViewSavedCardTap">x</button>
+    <text class="brand">AuraCue</text>
+    <view class="header-space"></view>
+  </view>
+  <view class="success-ring">
+    <view class="checkmark">check</view>
+  </view>
+  <text class="page-title">Saved to your Aura Cards</text>
+  <text class="subtitle">Your lucky aura is ready whenever you step out.</text>
+  <view class="saved-card">
+    <view class="card-frame">
+      <text class="aura-name">Rose Aura</text>
+      <text class="aura-theme">Love - Confidence - Radiance</text>
+      <text class="sr-only">Soft Confidence</text>
+    </view>
+  </view>
+  <view class="status-list">
+    <view class="status-row"><text>Saved to Photos</text><text class="status-check">check</text></view>
+    <view class="status-row"><text>Saved to Aura Cards</text><text class="status-check">check</text></view>
+  </view>
+  <view class="actions">
+    <button class="primary-action" bindtap="onShareNowTap">Share Now</button>
+    <button class="secondary-action" bindtap="onBackHomeTap">Back Home</button>
+    <button class="link-action" bindtap="onViewSavedCardTap">View Saved Card</button>
+  </view>
+</view>

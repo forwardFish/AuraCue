@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "uiId": "UI-12",
+  "controls": [
+    "Try Again",
+    "Change Context"
+  ],
+  "retryRoute": "/create/draw",
+  "contextRoute": "/create/context"
+}

@@ -1,0 +1,11 @@
+<view class="page">
+  <view class="brand">AuraCue</view>
+  <view class="title">{{generating ? 'Drawing your Lucky Aura Card...' : 'Choose the card that calls you.'}}</view>
+  <view class="copy">Take one breath. Let today's aura find you.</view>
+  <view class="cards">
+    <button data-card="I" bindtap="selectCard" class="card {{selectedCard === 'I' ? 'selected' : ''}}">Card I</button>
+    <button data-card="II" bindtap="selectCard" class="card {{selectedCard === 'II' ? 'selected' : ''}}">Card II</button>
+    <button data-card="III" bindtap="selectCard" class="card {{selectedCard === 'III' ? 'selected' : ''}}">Card III</button>
+  </view>
+  <button class="primary" bindtap="revealAura">Reveal My Aura</button>
+</view>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AuraCue UI-05 Generation Ritual</title>
+  <style>
+    body { margin: 0; background: #fdf9f3; color: #111827; font-family: Inter, system-ui, sans-serif; }
+    .phone { width: 390px; min-height: 844px; margin: 0 auto; padding: 44px 24px 18px; box-sizing: border-box; background: radial-gradient(circle at 50% 48%, #fff5ed 0%, #fdf9f3 100%); overflow: hidden; position: relative; }
+    .phone::before { content: ""; position: absolute; inset: 80px -140px auto; height: 540px; background: radial-gradient(circle, rgba(235,178,126,.2) 0%, rgba(253,249,243,0) 70%); }
+    header { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .icon { width: 40px; height: 40px; border: 0; border-radius: 999px; background: white; color: #c5a070; box-shadow: 0 5px 16px rgba(0,0,0,.05); }
+    .brand, h1 { font-family: Georgia, serif; color: #1a2340; }
+    .brand { font-size: 30px; font-weight: 700; }
+    main { position: relative; z-index: 1; text-align: center; }
+    .spark { color: #c5a070; opacity: .68; margin: 6px 0; }
+    h1 { margin: 0; font-size: 32px; line-height: 1.12; font-weight: 400; }
+    h1 strong { font-weight: 700; color: #c5a070; font-style: italic; }
+    .subtitle { color: #71717a; font-size: 14px; line-height: 21px; margin: 12px 0 34px; }
+    .ritual { position: relative; display: grid; place-items: center; min-height: 360px; }
+    .orbit { position: absolute; width: 314px; height: 174px; border: 1px dashed rgba(197,160,112,.42); border-radius: 50%; transform: rotate(-15deg); }
+    .orbit.second { width: 260px; height: 244px; transform: rotate(12deg); opacity: .72; }
+    .card { position: relative; width: 184px; height: 280px; border-radius: 22px; border: 6px solid rgba(197,160,112,.26); background: linear-gradient(145deg,#1a2340,#8757a6 42%,#f0b66e); box-shadow: 0 28px 54px rgba(26,35,64,.22); display: grid; place-items: center; color: white; font-family: Georgia, serif; font-size: 22px; }
+    .card::after { content: ""; position: absolute; inset: 22px; border: 1px solid rgba(255,255,255,.46); border-radius: 16px; }
+    .glow { width: 290px; height: 70px; margin: -24px auto 18px; background: radial-gradient(ellipse at center, rgba(255,235,180,.62), rgba(255,255,255,0) 70%); filter: blur(10px); }
+    .progress { background: rgba(255,255,255,.5); border: 1px solid rgba(255,255,255,.68); border-radius: 26px; padding: 20px 16px; display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; box-shadow: 0 8px 22px rgba(0,0,0,.04); }
+    .step { color: #71717a; font-size: 10px; line-height: 1.2; }
+    .step-dot { width: 38px; height: 38px; margin: 0 auto 8px; border-radius: 999px; background: white; border: 2px solid #f2eadf; display: grid; place-items: center; color: rgba(26,35,64,.6); font-weight: 700; }
+    .step.active { color: #c5a070; }
+    .step.active .step-dot { border-color: #c5a070; color: #c5a070; }
+    .footnote { color: #71717a; font-size: 12px; line-height: 19px; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <header><button class="icon">‹</button><div class="brand">AuraCue</div><button class="icon">gift</button></header>
+    <section>
+      <div class="spark">✦</div>
+      <h1>Drawing your<br><strong>Lucky Aura Card...</strong></h1>
+      <p class="subtitle">Matching your scene, energy, and today's vibe.</p>
+      <div class="ritual"><div class="orbit"></div><div class="orbit second"></div><div class="card">Aura Card Back</div></div>
+      <div class="glow"></div>
+      <section class="progress"><div class="step active">
+      <div class="step-dot">1</div>
+      <span>Reading your<br>mood</span>
+    </div><div class="step ">
+      <div class="step-dot">2</div>
+      <span>Aligning your<br>energy</span>
+    </div><div class="step ">
+      <div class="step-dot">3</div>
+      <span>Revealing your<br>cues</span>
+    </div></section>
+      <p class="footnote">This takes a few seconds.<br>Good things are unfolding.</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "scenarioId": "SCN-006",
+  "stepId": "01",
+  "status": "PASS",
+  "personaGoal": "Open unlock options",
+  "action": "Click Unlock Full Card",
+  "uiId": "UI-07",
+  "route": {
+    "uiId": "UI-07",
+    "route": "/unlock/:id",
+    "path": "/unlock/card-004",
+    "pagePath": "pages/unlock/index",
+    "state": "unlock-choice",
+    "ownerScenario": "SCN-006",
+    "title": "Unlock"
+  },
+  "apiIds": [
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-010"
+  ],
+  "clickEvidence": {
+    "controlId": "unlock-full-card",
+    "expectedRoute": "/unlock/:id",
+    "route": {
+      "uiId": "UI-07",
+      "route": "/unlock/:id",
+      "path": "/unlock/card-004",
+      "pagePath": "pages/unlock/index",
+      "state": "unlock-choice",
+      "ownerScenario": "SCN-006",
+      "title": "Unlock"
+    },
+    "analyticsResponse": {
+      "accepted": true,
+      "analyticsEventId": "analytics-028"
+    }
+  }
+}

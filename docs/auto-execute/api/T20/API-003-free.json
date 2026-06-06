@@ -1,0 +1,39 @@
+{
+  "apiId": "API-003",
+  "caseId": "C01",
+  "caseKey": "API-003-C01",
+  "caseType": "free result success",
+  "method": "GET",
+  "path": "/api/cards/:cardId?view=free",
+  "expectedStatus": 200,
+  "actualStatus": 200,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-003-free.json",
+  "response": {
+    "cardId": "card-locked-001",
+    "view": "free",
+    "locked": true,
+    "auraName": "Soft Glow Aura",
+    "luckyColor": "rose quartz",
+    "oneLineReminder": "A small confident choice can make the next moment feel easier.",
+    "previewImage": {
+      "variant": "low-res-watermarked",
+      "localPath": "local://cards/card-locked-001/preview-watermarked.png",
+      "watermark": "AuraCue Preview",
+      "blurred": true
+    },
+    "lockedPreview": {
+      "fullContentAvailable": false,
+      "unlockRequired": true,
+      "hiddenFields": [
+        "outfit",
+        "beauty",
+        "social",
+        "ritual",
+        "avoid",
+        "caption",
+        "theme"
+      ]
+    }
+  }
+}

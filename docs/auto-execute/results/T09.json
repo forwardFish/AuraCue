@@ -1,0 +1,110 @@
+{
+  "taskId": "T09",
+  "taskName": "Home Page One-To-One",
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "completedAt": "2026-05-26T14:00:11.4457050+08:00",
+  "scope": {
+    "requirements": ["REQ-002", "REQ-003", "REQ-004", "REQ-017"],
+    "uiCoverage": ["UI-01"],
+    "apiCoverage": ["API-010"],
+    "ownerScenario": ["SCN-001"],
+    "localOnly": true,
+    "visualClaim": "UI-01 native page, deterministic HTML render, and structural PNG target were produced. No browser/mini-program screenshot capture or pixel diff was available in this task boundary, so pure visual PASS is not claimed."
+  },
+  "changedFiles": [
+    "apps/wechat-mini/package.json",
+    "apps/wechat-mini/src/pages/home/home-page.mjs",
+    "apps/wechat-mini/src/pages/home/index.tsx",
+    "apps/wechat-mini/src/pages/home/index.js",
+    "apps/wechat-mini/src/pages/home/index.json",
+    "apps/wechat-mini/src/pages/home/index.wxml",
+    "apps/wechat-mini/src/pages/home/index.wxss",
+    "apps/wechat-mini/tests/t09-home-page.test.mjs",
+    "docs/auto-execute/traces/T09/home-clicks.json",
+    "docs/auto-execute/screenshots/T09/UI-01-home.html",
+    "docs/auto-execute/screenshots/T09/UI-01-home.png",
+    "docs/auto-execute/screenshots/T09/UI-01-home-render-summary.json",
+    "docs/auto-execute/logs/T09/home-page-test.log",
+    "docs/auto-execute/logs/T09/home-page-test-command.log",
+    "docs/auto-execute/logs/T09/wechat-mini-test.log",
+    "docs/auto-execute/logs/T09/root-test.log",
+    "docs/auto-execute/logs/T09/typecheck.log",
+    "docs/auto-execute/logs/T09/lint.log",
+    "docs/auto-execute/logs/T09/diff-check.log",
+    "docs/auto-execute/results/T09.json",
+    "docs/auto-execute/latest/T09-HANDOFF.md"
+  ],
+  "commandsRun": [
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t09",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T09/home-page-test-command.log"
+    },
+    {
+      "command": "PowerShell System.Drawing structural PNG render",
+      "status": "PASS_WITH_LIMITATION",
+      "evidence": "docs/auto-execute/screenshots/T09/UI-01-home-render-summary.json",
+      "note": "Generated from the T09 view model; not browser capture or pixel diff evidence."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T09/wechat-mini-test.log"
+    },
+    {
+      "command": "pnpm.cmd test",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T09/root-test.log"
+    },
+    {
+      "command": "pnpm.cmd typecheck",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T09/typecheck.log"
+    },
+    {
+      "command": "pnpm.cmd lint",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T09/lint.log"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T09/diff-check.log"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/traces/T09/home-clicks.json",
+    "docs/auto-execute/screenshots/T09/UI-01-home.html",
+    "docs/auto-execute/screenshots/T09/UI-01-home.png",
+    "docs/auto-execute/screenshots/T09/UI-01-home-render-summary.json",
+    "docs/auto-execute/logs/T09/home-page-test-command.log",
+    "docs/auto-execute/logs/T09/wechat-mini-test.log",
+    "docs/auto-execute/logs/T09/root-test.log",
+    "docs/auto-execute/logs/T09/typecheck.log",
+    "docs/auto-execute/logs/T09/lint.log",
+    "docs/auto-execute/logs/T09/diff-check.log"
+  ],
+  "acceptance": {
+    "homePageReproducesUi01StructureCopyAndControls": "PASS",
+    "dateWorkPartyLuckShortcutsRouteAndSetState": "PASS",
+    "mainCtaRoutesToSceneSelection": "PASS",
+    "pageViewHomeAnalyticsEmitted": "PASS",
+    "clickGenerateStartAnalyticsEmittedForAllControls": "PASS",
+    "simulatedPageTestExists": "PASS",
+    "actualScreenshotTargetExists": "PASS_WITH_LIMITATION",
+    "pixelDiffEvidence": "MANUAL_REVIEW_REQUIRED",
+    "productionPaymentCloudAiAnalyticsOrDbUsed": false
+  },
+  "blockers": [
+    {
+      "status": "MANUAL_REVIEW_REQUIRED",
+      "item": "Pixel-level one-to-one verification for UI-01",
+      "reason": "No Playwright/browser mini-program capture or pixel diff tooling was available in this T09 boundary. A deterministic structural PNG and HTML render were produced instead."
+    }
+  ],
+  "nextSteps": [
+    "T22 should capture the rendered mini-program home page and compare it against docs/UI/小程序/01-进入_首页生成入口.png.",
+    "T19 should include UI-01 in the all-page simulated test suite using the T09 click assertions as the seed.",
+    "T10 can proceed with scene and energy pages; do not start it inside the T09 worker boundary."
+  ]
+}

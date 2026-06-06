@@ -1,0 +1,147 @@
+{
+  "taskId": "T01",
+  "taskName": "Scaffold Mini-Program Backend Shared Workspace",
+  "status": "PASS",
+  "productPassClaim": false,
+  "timestamp": "2026-05-26T12:42:14.1308408+08:00",
+  "scope": {
+    "executedOnlyTask": "T01",
+    "startedNextTask": false,
+    "usedRealPayment": false,
+    "usedProductionCloud": false,
+    "usedProductionDb": false,
+    "usedProductionAi": false,
+    "usedProductionAnalytics": false,
+    "usedSecrets": false
+  },
+  "acceptance": {
+    "workspaceInstallsLocally": "PASS",
+    "documentedCommandsExposed": "PASS",
+    "miniProgramP0RoutePlaceholders": "PASS",
+    "localApiHealthEndpoint": "PASS",
+    "sharedPackageSkeletons": "PASS",
+    "localRepositoryShell": "PASS",
+    "basicSmokeCommand": "PASS"
+  },
+  "changedFiles": [
+    "package.json",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    "tsconfig.base.json",
+    "apps/wechat-mini/README.md",
+    "apps/wechat-mini/package.json",
+    "apps/wechat-mini/src/app.config.ts",
+    "apps/wechat-mini/src/app.tsx",
+    "apps/wechat-mini/src/routes/p0-routes.ts",
+    "apps/wechat-mini/tests/route-manifest.test.mjs",
+    "apps/api/package.json",
+    "apps/api/src/local-repository.mjs",
+    "apps/api/src/server.mjs",
+    "apps/api/tests/health.test.mjs",
+    "packages/shared-types/package.json",
+    "packages/shared-types/src/index.ts",
+    "packages/ui-tokens/package.json",
+    "packages/ui-tokens/src/index.ts",
+    "packages/analytics-events/package.json",
+    "packages/analytics-events/src/index.ts",
+    "packages/card-renderer/package.json",
+    "packages/card-renderer/src/index.ts",
+    "packages/prompt-core/package.json",
+    "packages/prompt-core/src/index.ts",
+    "scripts/verify-wechat-routes.mjs",
+    "scripts/write-health-evidence.mjs",
+    "scripts/lint-local-only.mjs",
+    "scripts/typecheck-placeholders.mjs",
+    "scripts/t01-smoke.mjs",
+    "docs/auto-execute/api/T01/health.json",
+    "docs/auto-execute/logs/T01/install.log",
+    "docs/auto-execute/logs/T01/route-manifest.log",
+    "docs/auto-execute/logs/T01/wechat-mini-dev.log",
+    "docs/auto-execute/logs/T01/api-health-write.log",
+    "docs/auto-execute/logs/T01/api-test.log",
+    "docs/auto-execute/logs/T01/lint.log",
+    "docs/auto-execute/logs/T01/typecheck.log",
+    "docs/auto-execute/logs/T01/smoke.log",
+    "docs/auto-execute/results/T01.json",
+    "docs/auto-execute/latest/T01-HANDOFF.md"
+  ],
+  "evidence": [
+    {
+      "type": "install",
+      "path": "docs/auto-execute/logs/T01/install.log",
+      "status": "PASS"
+    },
+    {
+      "type": "route_manifest_test",
+      "path": "docs/auto-execute/logs/T01/route-manifest.log",
+      "status": "PASS"
+    },
+    {
+      "type": "mini_program_route_command",
+      "path": "docs/auto-execute/logs/T01/wechat-mini-dev.log",
+      "status": "PASS"
+    },
+    {
+      "type": "api_health",
+      "path": "docs/auto-execute/api/T01/health.json",
+      "status": "PASS"
+    },
+    {
+      "type": "api_health_write_log",
+      "path": "docs/auto-execute/logs/T01/api-health-write.log",
+      "status": "PASS"
+    },
+    {
+      "type": "api_test",
+      "path": "docs/auto-execute/logs/T01/api-test.log",
+      "status": "PASS"
+    },
+    {
+      "type": "local_only_lint",
+      "path": "docs/auto-execute/logs/T01/lint.log",
+      "status": "PASS"
+    },
+    {
+      "type": "placeholder_typecheck",
+      "path": "docs/auto-execute/logs/T01/typecheck.log",
+      "status": "PASS"
+    },
+    {
+      "type": "smoke",
+      "path": "docs/auto-execute/logs/T01/smoke.log",
+      "status": "PASS"
+    },
+    {
+      "type": "diff_check",
+      "command": "git diff --check",
+      "status": "PASS"
+    }
+  ],
+  "commandsRun": [
+    "Get-Content required AGENTS.md, auto-execute skill, task document, standards, and matrices",
+    "Read T00 result and T00 handoff",
+    "rg --files -g package.json -g pnpm-workspace.yaml -g tsconfig*.json -g vite.config.* -g vitest.config.*",
+    "node --version",
+    "pnpm.cmd --version",
+    "pnpm.cmd install --reporter append-only",
+    "node apps/wechat-mini/tests/route-manifest.test.mjs",
+    "pnpm.cmd smoke",
+    "pnpm.cmd --filter @auracue/wechat-mini dev:weapp",
+    "pnpm.cmd --filter @auracue/api health:write",
+    "pnpm.cmd --filter @auracue/api test",
+    "pnpm.cmd lint",
+    "pnpm.cmd typecheck",
+    "git diff --check"
+  ],
+  "blockers": [],
+  "limitations": [
+    "T01 is scaffold only; no final product PASS is claimed.",
+    "No visual screenshot or pixel-diff evidence is expected for T01 because it creates placeholders, not final UI pages.",
+    "The root package omits a strict packageManager version pin because the installed pnpm wrapper attempted a sandbox-blocked self-install when the exact version was pinned. The workspace remains pnpm-based through pnpm-workspace.yaml and was installed with pnpm v10.14.0."
+  ],
+  "nextSteps": [
+    "T02 should extract UI tokens and asset inventory from the PNG and Stitch references.",
+    "T03 should replace the repository placeholder with deterministic local JSON fixtures and readback helpers.",
+    "Later UI tasks must implement the placeholder routes one-to-one against docs/UI/灏忕▼搴廯 and add simulated page tests."
+  ]
+}

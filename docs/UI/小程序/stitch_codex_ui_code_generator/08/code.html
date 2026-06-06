@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura Activated - AuraCue</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            'aura-navy': '#171545',
+            'aura-gold': '#D4AF37',
+            'aura-gold-light': '#F2DB8D',
+            'aura-pink': '#F9E4E8',
+            'aura-text-gray': '#5E5E73',
+            'aura-bg-light': '#FDF9F7',
+          },
+          boxShadow: {
+            'glass': '0 8px 32px rgba(234, 218, 221, 0.4)',
+            'nav': '0 -10px 40px rgba(250, 230, 235, 0.6)',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-styles">
+    body {
+      background-color: #FFFBF9;
+      background-image: 
+        radial-gradient(circle at 80% 80%, rgba(255, 225, 235, 0.7) 0%, transparent 50%),
+        radial-gradient(circle at 20% 40%, rgba(255, 240, 245, 0.8) 0%, transparent 40%),
+        radial-gradient(circle at 50% -10%, rgba(245, 235, 255, 0.6) 0%, transparent 60%),
+        radial-gradient(circle at 10% 90%, rgba(255, 245, 235, 0.6) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+    
+    .glass-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 250, 245, 0.4) 100%);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+    }
+    
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+    
+    .glass-btn {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    
+    .bg-floral-left {
+      position: absolute;
+      left: -40px;
+      top: 15%;
+      width: 200px;
+      height: auto;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+      transform: rotate(-15deg);
+    }
+    
+    .bg-floral-right {
+      position: absolute;
+      right: -30px;
+      top: 25%;
+      width: 180px;
+      height: auto;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+      transform: rotate(10deg);
+    }
+
+    .mist-overlay {
+      position: absolute;
+      bottom: 0;
+      right: -20%;
+      width: 140%;
+      height: 60%;
+      background: radial-gradient(ellipse at 80% 80%, rgba(255, 215, 225, 0.4) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .shimmer {
+      animation: shimmer 3s infinite ease-in-out alternate;
+    }
+
+    @keyframes shimmer {
+      0% { opacity: 0.6; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body class="font-sans text-aura-navy min-h-screen w-full max-w-[430px] mx-auto relative overflow-x-hidden flex flex-col items-center selection:bg-aura-pink selection:text-aura-navy">
+<!-- Mist Overlay for soft cloud effect -->
+<div class="mist-overlay"></div>
+<!-- Background Decorative Botanical Art -->
+<svg class="bg-floral-left" fill="none" viewbox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+<path d="M50 300C50 300 20 200 80 150C140 100 120 20 120 20" stroke="#C2A88A" stroke-linecap="round" stroke-width="0.5"></path>
+<path d="M75 165C75 165 40 140 50 100C60 60 100 80 100 80" stroke="#C2A88A" stroke-linecap="round" stroke-width="0.5"></path>
+<path d="M85 145C85 145 130 160 160 130C190 100 170 60 170 60" stroke="#C2A88A" stroke-linecap="round" stroke-width="0.5"></path>
+<!-- Leaves -->
+<path d="M80 150C60 140 50 120 70 110C90 100 100 120 80 150Z" stroke="#C2A88A" stroke-width="0.5"></path>
+<path d="M120 80C100 70 90 50 110 40C130 30 140 50 120 80Z" stroke="#C2A88A" stroke-width="0.5"></path>
+<path d="M160 130C150 110 160 90 180 95C200 100 190 120 160 130Z" stroke="#C2A88A" stroke-width="0.5"></path>
+<path d="M100 220C80 210 70 190 90 180C110 170 120 190 100 220Z" stroke="#C2A88A" stroke-width="0.5"></path>
+</svg>
+<svg class="bg-floral-right" fill="none" viewbox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+<path d="M150 300C150 300 180 200 120 150C60 100 80 20 80 20" stroke="#C2A88A" stroke-linecap="round" stroke-width="0.5"></path>
+<path d="M125 165C125 165 160 140 150 100C140 60 100 80 100 80" stroke="#C2A88A" stroke-linecap="round" stroke-width="0.5"></path>
+<path d="M115 145C115 145 70 160 40 130C10 100 30 60 30 60" stroke="#C2A88A" stroke-linecap="round" stroke-width="0.5"></path>
+<!-- Leaves -->
+<path d="M120 150C140 140 150 120 130 110C110 100 100 120 120 150Z" stroke="#C2A88A" stroke-width="0.5"></path>
+<path d="M80 80C100 70 110 50 90 40C70 30 60 50 80 80Z" stroke="#C2A88A" stroke-width="0.5"></path>
+<path d="M40 130C50 110 40 90 20 95C0 100 10 120 40 130Z" stroke="#C2A88A" stroke-width="0.5"></path>
+</svg>
+<!-- Tiny background sparkles scattered globally -->
+<svg class="absolute top-[15%] left-[10%] w-2 h-2 text-white opacity-80 z-0 shimmer" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path></svg>
+<svg class="absolute top-[25%] right-[15%] w-1.5 h-1.5 text-white opacity-60 z-0" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path></svg>
+<svg class="absolute top-[45%] left-[5%] w-1 h-1 text-white opacity-90 z-0" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path></svg>
+<svg class="absolute top-[65%] right-[8%] w-2 h-2 text-white opacity-70 z-0 shimmer" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path></svg>
+<svg class="absolute bottom-[20%] left-[12%] w-1.5 h-1.5 text-white opacity-60 z-0" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path></svg>
+<!-- BEGIN: MainHeader -->
+<header class="w-full px-6 pt-12 pb-2 flex justify-between items-center relative z-10">
+<!-- Status Bar Area (Simulated) -->
+<div class="absolute top-0 left-0 w-full h-12 flex justify-between items-center px-6 text-[15px] font-semibold text-black">
+<span>9:41</span>
+<div class="flex items-center gap-1.5">
+<svg fill="none" height="11" viewbox="0 0 17 11" width="17" xmlns="http://www.w3.org/2000/svg"><path d="M16 3H1C0.447715 3 0 3.44772 0 4V7C0 7.55228 0.447715 8 1 8H16C16.5523 8 17 7.55228 17 7V4C17 3.44772 16.5523 3 16 3Z" fill="black"></path><path d="M16 0.5H5C4.44772 0.5 4 0.947715 4 1.5V2H17V1.5C17 0.947715 16.5523 0.5 16 0.5Z" fill="black"></path><path d="M16 9H5C4.44772 9 4 9.44772 4 10V10.5H17V10C17 9.44772 16.5523 9 16 9Z" fill="black"></path></svg>
+<svg fill="none" height="11" viewbox="0 0 15 11" width="15" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 0C3.35786 0 0 3.35786 0 7.5C0 7.77614 0.223858 8 0.5 8H14.5C14.7761 8 15 7.77614 15 7.5C15 3.35786 11.6421 0 7.5 0Z" fill="black"></path></svg>
+<svg fill="none" height="12" viewbox="0 0 25 12" width="25" xmlns="http://www.w3.org/2000/svg"><rect height="11" rx="3.5" stroke="black" width="21" x="0.5" y="0.5"></rect><rect fill="black" height="8" rx="2" width="18" x="2" y="2"></rect><path d="M23 4V8C23.5523 8 24 7.55228 24 7V5C24 4.44772 23.5523 4 23 4Z" fill="black"></path></svg>
+</div>
+</div>
+<!-- Profile Avatar -->
+<div class="relative w-12 h-12">
+<div class="w-full h-full rounded-full overflow-hidden shadow-sm p-[2px] bg-white border border-[#F2E5E0]">
+<img alt="User Avatar" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2gtTnK8Myxih7JNDpOkx2JhpymDfNJrrildvkSWheOMIWsd6etTwpx1w7Hk1ppefNhTQWavUIMmeuoNhtlVEx9CjodsxxQ-anLh3TlB4mhYk0Edt-SlyYCB11C0ZPCeQsk2EBSNaw9wdbr8abvy8xm_N7Jzg89j_3oLi76mDPa4vuo9mMRIzOv5dzzaZOuoTZ-sXD7KJzVi2kkD3DJulfg2-5slpAz2QlodxPznCklj_gU8eXVO3eS6_nBh4yZc0TLxtlQyF3uag"/>
+</div>
+<!-- Status Dot -->
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-[#8A58D8] border-[2px] border-white rounded-full shadow-sm"></div>
+</div>
+<!-- Logo & Wordmark -->
+<div class="flex flex-col items-center ml-2">
+<svg class="mb-1.5" fill="none" height="28" viewbox="0 0 40 28" width="40">
+<path d="M20 25 C20 25 12 20 9 13 C6 6 20 2 20 2 C20 2 34 6 31 13 C28 20 20 25 20 25 Z" stroke="#171545" stroke-width="1.2"></path>
+<path d="M20 25 C20 25 6 22 3 15 C0 8 12 5 20 10 C28 5 40 8 37 15 C34 22 20 25 20 25 Z" stroke="#171545" stroke-width="1.2"></path>
+<circle cx="20" cy="20" fill="#171545" r="1.5"></circle>
+</svg>
+<h1 class="font-serif text-[15px] tracking-[0.2em] text-[#171545] uppercase">AuraCue</h1>
+</div>
+<!-- Gift Action -->
+<button class="w-12 h-12 rounded-[16px] bg-white/40 backdrop-blur-md border border-[#E8D4D6] shadow-sm flex items-center justify-center">
+<svg fill="none" height="22" stroke="#171545" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" viewbox="0 0 24 24" width="22">
+<polyline points="20 12 20 22 4 22 4 12"></polyline>
+<rect height="5" rx="1" width="20" x="2" y="7"></rect>
+<line x1="12" x2="12" y1="22" y2="7"></line>
+<path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+<path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+</svg>
+</button>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: Hero Section -->
+<main class="w-full flex-1 flex flex-col items-center px-6 relative z-10 pb-32">
+<!-- Hero Symbol (Starburst) -->
+<div class="relative w-72 h-72 my-2 flex items-center justify-center">
+<!-- Glow -->
+<div class="absolute inset-0 bg-[#FFD700]/15 blur-[50px] rounded-full scale-75"></div>
+<!-- Faint Outer Circle Halo -->
+<svg class="absolute inset-0 w-full h-full text-[#D4AF37]/20" fill="none" viewbox="0 0 200 200">
+<circle cx="100" cy="100" r="75" stroke="currentColor" stroke-dasharray="2 4" stroke-width="0.5"></circle>
+</svg>
+<!-- Center Star -->
+<svg class="relative z-10 drop-shadow-xl scale-110" fill="none" height="220" viewbox="0 0 200 200" width="220" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="goldGrad1" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#FFF8D6"></stop>
+<stop offset="50%" stop-color="#E5C158"></stop>
+<stop offset="100%" stop-color="#C29A2E"></stop>
+</lineargradient>
+<lineargradient id="goldGrad2" x1="100%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#FFF8D6"></stop>
+<stop offset="50%" stop-color="#E5C158"></stop>
+<stop offset="100%" stop-color="#B38A20"></stop>
+</lineargradient>
+</defs>
+<!-- Base Gold Layer -->
+<path d="M100 5 L112 88 L195 100 L112 112 L100 195 L88 112 L5 100 L88 88 Z" fill="url(#goldGrad1)"></path>
+<!-- Highlight Layer to give 3D bevel effect -->
+<path d="M100 5 L112 88 L100 100 Z" fill="#FFFBE6" opacity="0.8"></path>
+<path d="M195 100 L112 112 L100 100 Z" fill="#FFFBE6" opacity="0.8"></path>
+<path d="M100 195 L88 112 L100 100 Z" fill="#D4AF37" opacity="0.4"></path>
+<path d="M5 100 L88 88 L100 100 Z" fill="#D4AF37" opacity="0.4"></path>
+<!-- 4 Diagonal Short points -->
+<path d="M100 35 L108 92 L165 100 L108 108 L100 165 L92 108 L35 100 L92 92 Z" fill="url(#goldGrad2)" opacity="0.9"></path>
+<!-- Inner brilliant glow -->
+<circle cx="100" cy="100" fill="#FFFFFF" filter="blur(6px)" r="18"></circle>
+<circle cx="100" cy="100" fill="#FFFFFF" r="6"></circle>
+</svg>
+<!-- Precise Floating Sparkles matching reference -->
+<!-- Top Left -->
+<svg class="absolute top-[25%] left-[25%] w-3 h-3 text-[#D4AF37]" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path></svg>
+<!-- Top Right -->
+<svg class="absolute top-[20%] right-[30%] w-2 h-2 text-[#D4AF37]/80" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path></svg>
+<!-- Bottom Left -->
+<svg class="absolute bottom-[30%] left-[28%] w-3 h-3 text-[#D4AF37]" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path></svg>
+<!-- Bottom Right -->
+<svg class="absolute bottom-[25%] right-[25%] w-2 h-2 text-[#D4AF37]/90" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path></svg>
+</div>
+<!-- Heading -->
+<div class="text-center mb-6 relative w-full flex flex-col items-center">
+<div class="relative inline-block">
+<h2 class="font-serif text-[42px] tracking-tight text-[#171545] mb-2 leading-[1.1]">
+          Aura Activated
+        </h2>
+<!-- Pink Sparkles Top Right of Text -->
+<svg class="absolute -right-8 top-0 w-[22px] h-[22px] text-[#D8708C]" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path></svg>
+<svg class="absolute -right-5 top-5 w-3 h-3 text-[#D8708C]/60" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path></svg>
+</div>
+<p class="text-[#4A4A5C] text-[16px] font-medium tracking-wide">Golden Bloom is active for today.</p>
+</div>
+<!-- Main Info Card -->
+<div class="glass-card w-full rounded-[24px] p-6 mb-6 flex flex-col items-center relative shadow-glass">
+<!-- Decorative border corner diamonds -->
+<svg class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-3 h-3 text-[#C8A048] bg-[#FFFBF9] rounded-full" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L15 9L24 12L15 15L12 24L9 15L0 12L9 9L12 0Z"></path></svg>
+<svg class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-3 h-3 text-[#C8A048] bg-[#FFFBF9] rounded-full" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L15 9L24 12L15 15L12 24L9 15L0 12L9 9L12 0Z"></path></svg>
+<!-- Subtitle -->
+<div class="flex items-center justify-center w-full mb-1">
+<div class="h-[1px] w-10 bg-gradient-to-r from-transparent to-[#D4AF37]/50"></div>
+<span class="text-[#B8860B] font-semibold tracking-[0.18em] text-[12px] uppercase mx-3">TODAY'S AURA</span>
+<div class="h-[1px] w-10 bg-gradient-to-l from-transparent to-[#D4AF37]/50"></div>
+</div>
+<!-- Center tiny diamond divider -->
+<svg class="w-2.5 h-2.5 text-[#C8A048] mb-3" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L15.5 8.5L24 12L15.5 15.5L12 24L8.5 15.5L0 12L8.5 8.5L12 0Z"></path></svg>
+<!-- Title -->
+<h3 class="font-serif text-[36px] text-[#171545] mb-8">Golden Bloom</h3>
+<!-- Rows -->
+<div class="w-full flex flex-col gap-5 px-3">
+<!-- Lucky Color -->
+<div class="flex items-center gap-5">
+<div class="w-[46px] h-[46px] rounded-full bg-[#FCEDF0]/70 flex items-center justify-center border border-white/80 shadow-sm">
+<svg fill="none" height="20" stroke="#C8A048" stroke-width="1.5" viewbox="0 0 24 24" width="20">
+<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+<circle cx="12" cy="14" fill="#C8A048" r="1.5"></circle>
+</svg>
+</div>
+<span class="text-[18px] text-[#171545]">Lucky Color: Blush Pink</span>
+</div>
+<!-- Divider with diamond -->
+<div class="flex items-center justify-center my-0.5 relative w-full">
+<div class="absolute w-[90%] h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent"></div>
+<svg class="w-2.5 h-2.5 text-[#C8A048] relative bg-[#FFFBF9]/90 rounded-full" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L15.5 8.5L24 12L15.5 15.5L12 24L8.5 15.5L0 12L8.5 8.5L12 0Z"></path></svg>
+</div>
+<!-- Lucky Anchor -->
+<div class="flex items-center gap-5">
+<div class="w-[46px] h-[46px] rounded-full bg-[#FCEDF0]/70 flex items-center justify-center border border-white/80 shadow-sm">
+<svg fill="none" height="22" stroke="#C8A048" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" viewbox="0 0 24 24" width="22">
+<path d="M5 4c0 4 3.5 8 7 8s7-4 7-8"></path>
+<path d="M12 12l-2.5 4h5l-2.5-4z" fill="#C8A048" stroke-width="1"></path>
+<circle cx="5" cy="4" fill="#C8A048" r="1"></circle>
+<circle cx="19" cy="4" fill="#C8A048" r="1"></circle>
+</svg>
+</div>
+<span class="text-[18px] text-[#171545]">Lucky Anchor: Jewelry</span>
+</div>
+</div>
+<!-- Bottom divider -->
+<div class="flex items-center justify-center mt-6 mb-5 w-full relative">
+<div class="absolute w-[80%] h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent"></div>
+<svg class="w-2.5 h-2.5 text-[#C8A048] relative bg-[#FFFBF9]/90 rounded-full" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L15.5 8.5L24 12L15.5 15.5L12 24L8.5 15.5L0 12L8.5 8.5L12 0Z"></path></svg>
+</div>
+<p class="text-[15px] text-[#5E5E73] text-center">Notice where your soft power shows up.</p>
+</div>
+<!-- Action Buttons -->
+<div class="flex w-full gap-4 mb-4">
+<button class="flex-1 rounded-[28px] h-[60px] bg-white/30 backdrop-blur-md flex items-center justify-center gap-2 border border-[#D4AF37]/50 shadow-sm active:scale-95 transition-transform">
+<svg fill="none" height="20" stroke="#B8860B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="8 12 11 15 16 9"></polyline>
+</svg>
+<span class="font-serif text-[18px] text-[#171545]">Done</span>
+</button>
+<button class="flex-1 rounded-[28px] h-[60px] bg-white/30 backdrop-blur-md flex items-center justify-center gap-2 border border-[#D4AF37]/50 shadow-sm active:scale-95 transition-transform">
+<svg fill="none" height="20" stroke="#B8860B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20">
+<path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+<polyline points="16 6 12 2 8 6"></polyline>
+<line x1="12" x2="12" y1="2" y2="15"></line>
+</svg>
+<span class="font-serif text-[18px] text-[#171545]">Share Story</span>
+</button>
+</div>
+<p class="text-[14px] text-[#7A7A90] text-center mb-8">Private. Personal. Just for you.</p>
+</main>
+<!-- END: Hero Section -->
+<!-- BEGIN: Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full glass-nav rounded-t-[36px] h-[95px] flex items-start justify-center pt-5 px-8 shadow-nav z-50">
+<div class="w-full max-w-[340px] flex justify-between items-center relative">
+<!-- Home Tab (Active) -->
+<a class="flex flex-col items-center gap-1.5 min-w-[70px]" href="#">
+<div class="w-[56px] h-[38px] rounded-[20px] bg-[#F2E5EC] flex items-center justify-center shadow-inner">
+<svg fill="none" height="22" stroke="#171545" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="22">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+</div>
+<span class="text-[12px] font-medium text-[#C28C59]">Home</span>
+</a>
+<!-- Center Divider Star -->
+<div class="w-px h-10 bg-gradient-to-b from-transparent via-[#D4AF37]/30 to-transparent relative flex items-center justify-center mx-4">
+<svg class="w-3.5 h-3.5 text-[#C8A048] absolute" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path></svg>
+</div>
+<!-- Profile Tab -->
+<a class="flex flex-col items-center gap-1.5 min-w-[70px] opacity-60" href="#">
+<div class="w-[56px] h-[38px] flex items-center justify-center">
+<svg fill="none" height="24" stroke="#171545" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" viewbox="0 0 24 24" width="24">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+<circle cx="12" cy="7" r="4"></circle>
+</svg>
+</div>
+<span class="text-[12px] font-medium text-[#171545]">Profile</span>
+</a>
+</div>
+</nav>
+<!-- END: Bottom Navigation -->
+</body></html>

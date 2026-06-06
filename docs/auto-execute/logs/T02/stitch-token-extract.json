@@ -1,0 +1,484 @@
+[
+  {
+    "stitchId": "01",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\01\\code.html",
+    "colors": [
+      "#FCF9F6",
+      "#1A2A47",
+      "#C58482",
+      "#D4AF37",
+      "#F1E1D1",
+      "#DB8A86",
+      "#C56E69"
+    ],
+    "fonts": [],
+    "gradients": [
+      "linear-gradient(to right, #DB8A86, #C56E69)"
+    ],
+    "shadows": [
+      "0 10px 30px -10px rgba(197, 132, 130, 0.15)"
+    ]
+  },
+  {
+    "stitchId": "02",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\02\\code.html",
+    "colors": [
+      "#FFF9F3",
+      "#F8F1E9",
+      "#C8A375",
+      "#A68154",
+      "#E2BF94",
+      "#1A2B48",
+      "#D4AF37",
+      "#FEECEC",
+      "#F5D5D5",
+      "#F2F4F7",
+      "#FDE8E8",
+      "#F5F5F5",
+      "#E9F3F9",
+      "#FEF7EB"
+    ],
+    "fonts": [
+      "'Inter', sans-serif",
+      "'Playfair Display', serif"
+    ],
+    "gradients": [
+      "radial-gradient(circle at top, #FFF9F3 0%, #F8F1E9 100%)",
+      "linear-gradient(to right, #C8A375, #A68154)"
+    ],
+    "shadows": []
+  },
+  {
+    "stitchId": "03",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\03\\code.html",
+    "colors": [
+      "#1A2B44",
+      "#D4AF37",
+      "#FAF8F5",
+      "#C5A059",
+      "#FFFDFB",
+      "#F5F1EB",
+      "#E5C284",
+      "#D4A773",
+      "#A67C4B",
+      "#B68C5E",
+      "#E8A3B2",
+      "#F3A7B4",
+      "#7E8BA4"
+    ],
+    "fonts": [],
+    "gradients": [
+      "radial-gradient(circle at 50% 20%, #FFFDFB 0%, #F5F1EB 100%)",
+      "linear-gradient(180deg, #D4A773 0%, #A67C4B 100%)"
+    ],
+    "shadows": [
+      "0 0 15px rgba(229, 194, 132, 0.4)",
+      "0 4px 12px rgba(0, 0, 0, 0.03)"
+    ]
+  },
+  {
+    "stitchId": "03a",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\03a\\code.html",
+    "colors": [
+      "#FDF8F3",
+      "#1E293B",
+      "#F3E5F5"
+    ],
+    "fonts": [
+      "'Inter', sans-serif",
+      "'Playfair Display', serif"
+    ],
+    "gradients": [
+      "linear-gradient(180deg, #FDF8F3 0%, #FDF8F3 70%, #F3E5F5 100%)",
+      "linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0))"
+    ],
+    "shadows": [
+      "0 0 20px rgba(251, 113, 133, 0.4)"
+    ]
+  },
+  {
+    "stitchId": "04",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\04\\code.html",
+    "colors": [
+      "#1A2340",
+      "#C5A070",
+      "#FDF9F3",
+      "#111827",
+      "#71717A",
+      "#FFF5ED"
+    ],
+    "fonts": [],
+    "gradients": [
+      "radial-gradient(circle at 50% 50%, #FFF5ED 0%, #FDF9F3 100%)",
+      "radial-gradient(circle, rgba(235, 178, 126, 0.2) 0%, rgba(253, 249, 243, 0) 70%)",
+      "radial-gradient(ellipse at center, rgba(255, 235, 180, 0.6) 0%, rgba(255, 255, 255, 0) 70%)"
+    ],
+    "shadows": []
+  },
+  {
+    "stitchId": "05",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\05\\code.html",
+    "colors": [
+      "#FDF9F6",
+      "#1F2937",
+      "#121A3B",
+      "#D47B78",
+      "#2D3A5F",
+      "#D4A39B",
+      "#D6A875",
+      "#B78A5B",
+      "#E5B5B3",
+      "#E5E7EB",
+      "#F6F2EC",
+      "#A08875",
+      "#A07044",
+      "#F8EAEB"
+    ],
+    "fonts": [
+      "'Inter', sans-serif",
+      "'Playfair Display', serif"
+    ],
+    "gradients": [
+      "linear-gradient(135deg, #2D3A5F 0%, #D4A39B 100%)",
+      "linear-gradient(90deg, #D6A875 0%, #B78A5B 100%)"
+    ],
+    "shadows": [
+      "0 8px 32px rgba(0, 0, 0, 0.05)",
+      "0 16px 40px rgba(0, 0, 0, 0.1)"
+    ]
+  },
+  {
+    "stitchId": "06",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\06\\code.html",
+    "colors": [
+      "#101B37",
+      "#C59A6D",
+      "#FCF8F5",
+      "#EFA5A5",
+      "#6B7280",
+      "#B47F54",
+      "#E2B98E",
+      "#FDFAF6",
+      "#F5F1EB",
+      "#A68A61",
+      "#D7B798"
+    ],
+    "fonts": [],
+    "gradients": [
+      "radial-gradient(var(--tw-gradient-stops))",
+      "linear-gradient(to right, #B47F54, #E2B98E)"
+    ],
+    "shadows": []
+  },
+  {
+    "stitchId": "07a_3",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\07a_3\\code.html",
+    "colors": [
+      "#FFF6F0",
+      "#FFF0E8",
+      "#FF7B9B",
+      "#FF4D79",
+      "#FF6B8B",
+      "#FF8E9C",
+      "#1C2938"
+    ],
+    "fonts": [
+      "'Plus Jakarta Sans', sans-serif",
+      "'Playfair Display', serif"
+    ],
+    "gradients": [
+      "linear-gradient(180deg, #FFF6F0 0%, #FFF0E8 100%)",
+      "linear-gradient(90deg, #FF7B9B 0%, #FF4D79 100%)",
+      "linear-gradient(180deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.40) 100%)",
+      "linear-gradient(90deg, #FF6B8B 0%, #FF8E9C 100%)"
+    ],
+    "shadows": [
+      "0px 8px 16px -4px rgba(255, 77, 121, 0.40), inset 0px -2px 4px rgba(0, 0, 0, 0.10), inset 0px 2px 4px rgba(255, 255, 255, 0.30)",
+      "0px 4px 8px -2px rgba(255, 77, 121, 0.10)"
+    ]
+  },
+  {
+    "stitchId": "07b",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\07b\\code.html",
+    "colors": [
+      "#1C2939",
+      "#F472B6",
+      "#FDF2F8",
+      "#E11D48",
+      "#FFF8F6",
+      "#FBBF24",
+      "#FB7185"
+    ],
+    "fonts": [],
+    "gradients": [
+      "linear-gradient(to right, #F472B6, #FB7185)",
+      "linear-gradient(to bottom, #FFF8F6 0%, #FFF8F6 40%, #FFF8F6 100%)",
+      "radial-gradient(circle at 15% 15%, rgba(253, 224, 235, 0.8) 0%, transparent 40%), radial-gradient(circle at 85% 25%, rgba(253, 224, 235, 0.8) 0%, transparent 40%), radial-gradient(circle at 50% 5%, rgba(254, 240, 138, 0.2) 0%, transparent 30%)"
+    ],
+    "shadows": []
+  },
+  {
+    "stitchId": "07c",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\07c\\code.html",
+    "colors": [
+      "#FFF5F4",
+      "#FFEBEE",
+      "#A88BEB",
+      "#F8CEEC",
+      "#FF758C",
+      "#FF7EB3",
+      "#1A2352",
+      "#FFB347"
+    ],
+    "fonts": [
+      "'Poppins', sans-serif",
+      "'Playfair Display', serif"
+    ],
+    "gradients": [
+      "linear-gradient(180deg, #FFF5F4 0%, #FFEBEE 100%)",
+      "radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%)",
+      "linear-gradient(135deg, #A88BEB 0%, #F8CEEC 100%)",
+      "linear-gradient(90deg, #FF758C 0%, #FF7EB3 100%)"
+    ],
+    "shadows": [
+      "0 10px 25px rgba(233, 114, 151, 0.2)",
+      "0 8px 20px rgba(255, 117, 140, 0.4)"
+    ]
+  },
+  {
+    "stitchId": "08a",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\08a\\code.html",
+    "colors": [
+      "#FFE5E5",
+      "#FFF0F5",
+      "#F5E6FF",
+      "#8B7BD9",
+      "#1C274C",
+      "#FFEFE5",
+      "#FF7A9B",
+      "#6B7280",
+      "#FF6B95",
+      "#FF85A1",
+      "#FF4D79"
+    ],
+    "fonts": [
+      "'Inter', sans-serif",
+      "'Playfair Display', serif"
+    ],
+    "gradients": [
+      "radial-gradient(circle at 50% 30%, #FFE5E5 0%, #FFF0F5 50%, #F5E6FF 100%)"
+    ],
+    "shadows": [
+      "0 10px 25px -5px rgba(255, 105, 180, 0.2), 0 8px 10px -6px rgba(255, 105, 180, 0.1)",
+      "0 0 20px rgba(255, 105, 180, 0.6), inset 0 2px 5px rgba(255, 255, 255, 0.5)"
+    ]
+  },
+  {
+    "stitchId": "08b",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\08b\\code.html",
+    "colors": [
+      "#FDF7F0",
+      "#FFF0F0",
+      "#FF9A9E",
+      "#FECFEF",
+      "#FF758C",
+      "#FF7EB3",
+      "#1E293B",
+      "#64748B",
+      "#FF8E9E",
+      "#9381FF",
+      "#FFC9A9",
+      "#FCE3C0",
+      "#FFE5EC",
+      "#FFD1DC",
+      "#FFF0F5",
+      "#FFB6C1",
+      "#FF6B81"
+    ],
+    "fonts": [
+      "var(--font-serif)",
+      "var(--font-sans)"
+    ],
+    "gradients": [
+      "linear-gradient(180deg, #FDF7F0 0%, #FFF0F0 100%)",
+      "linear-gradient(90deg, #FF9A9E 0%, #FECFEF 99%, #FECFEF 100%)",
+      "linear-gradient(90deg, #FF758C 0%, #FF7EB3 100%)"
+    ],
+    "shadows": [
+      "0px 4px 14px rgba(255, 117, 140, 0.4)",
+      "0px 4px 10px rgba(0, 0, 0, 0.03)"
+    ]
+  },
+  {
+    "stitchId": "08c",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\08c\\code.html",
+    "colors": [
+      "#FFF0EE",
+      "#FFE6ED",
+      "#FFD6E3",
+      "#E5C384",
+      "#FF6B9E",
+      "#FF4583",
+      "#1C2945",
+      "#D4AF37",
+      "#2D3748",
+      "#FFD275",
+      "#E6A840",
+      "#A898D8",
+      "#FF9EB5",
+      "#FFB58A"
+    ],
+    "fonts": [
+      "'Plus Jakarta Sans', sans-serif",
+      "'Playfair Display', serif"
+    ],
+    "gradients": [
+      "linear-gradient(180deg, #FFF0EE 0%, #FFE6ED 50%, #FFD6E3 100%)",
+      "linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%)",
+      "linear-gradient(90deg, #FF6B9E 0%, #FF4583 100%)"
+    ],
+    "shadows": [
+      "0 0 40px 10px rgba(255, 223, 137, 0.3)",
+      "0 10px 30px -5px rgba(0, 0, 0, 0.1)",
+      "0 4px 15px rgba(255, 69, 131, 0.3)"
+    ]
+  },
+  {
+    "stitchId": "09",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\09\\code.html",
+    "colors": [
+      "#FDFBF7",
+      "#333",
+      "#D4AF37",
+      "#AA7C11",
+      "#D5A973",
+      "#A67B45",
+      "#1A2342",
+      "#8C7C6D",
+      "#F0E6D2",
+      "#2A375E",
+      "#121933",
+      "#F8F5EE",
+      "#EAE3D5",
+      "#FCEAE8",
+      "#E5B5B5",
+      "#C27C7E",
+      "#FAF5ED",
+      "#A86F5C",
+      "#FAF5F3",
+      "#F0E6DF"
+    ],
+    "fonts": [
+      "'Inter', sans-serif",
+      "'Playfair Display', serif"
+    ],
+    "gradients": [
+      "linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%)",
+      "linear-gradient(180deg, #D5A973 0%, #A67B45 100%)",
+      "radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"
+    ],
+    "shadows": [
+      "0 10px 30px rgba(0, 0, 0, 0.15)",
+      "0 4px 20px rgba(0, 0, 0, 0.05)"
+    ]
+  },
+  {
+    "stitchId": "10a_story",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\10a_story\\code.html",
+    "colors": [
+      "#D4AF37",
+      "#2A1A4A",
+      "#5D4B8A",
+      "#F48FB1",
+      "#FFF0F5",
+      "#FDF0F3",
+      "#F8D0E3",
+      "#F5B0C9",
+      "#F9E596",
+      "#FFFDF8",
+      "#FF9A9E",
+      "#A18CD1",
+      "#FBC2EB"
+    ],
+    "fonts": [],
+    "gradients": [
+      "linear-gradient(180deg, rgba(93, 75, 138, 0.9) 0%, rgba(206, 147, 216, 0.9) 100%)",
+      "linear-gradient(180deg, #FDF0F3 0%, #F8D0E3 40%, #F5B0C9 100%)",
+      "linear-gradient(90deg, #D4AF37 0%, #F9E596 50%, #D4AF37 100%)",
+      "linear-gradient(90deg, #2A1A4A 0%, #5D4B8A 100%)"
+    ],
+    "shadows": [
+      "0 10px 30px rgba(0,0,0,0.15), 0 0 20px rgba(212, 175, 55, 0.2)"
+    ]
+  },
+  {
+    "stitchId": "10b",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\10b\\code.html",
+    "colors": [
+      "#FDF9F1",
+      "#2C3E50",
+      "#07C160",
+      "#FF2442"
+    ],
+    "fonts": [
+      "'Poppins', sans-serif",
+      "'Playfair Display', serif"
+    ],
+    "gradients": [],
+    "shadows": [
+      "0 0 20px rgba(0,0,0,0.1)"
+    ]
+  },
+  {
+    "stitchId": "10c",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\10c\\code.html",
+    "colors": [
+      "#FDF9F2",
+      "#C8A97E",
+      "#E8D4B4",
+      "#8E6E41",
+      "#FFA09E",
+      "#FFC4C2",
+      "#4A3B2C",
+      "#7A6B5C",
+      "#FFB5B3",
+      "#FF8F8D"
+    ],
+    "fonts": [],
+    "gradients": [
+      "linear-gradient(135deg, #FFB5B3 0%, #FF8F8D 100%)",
+      "radial-gradient(circle, rgba(255,223,179,0.4) 0%, rgba(253,249,242,0) 70%)",
+      "radial-gradient(circle, rgba(255,160,158,0.2) 0%, rgba(253,249,242,0) 70%)"
+    ],
+    "shadows": []
+  },
+  {
+    "stitchId": "11",
+    "codeHtml": "docs\\UI\\小程序\\stitch_codex_ui_code_generator\\11\\code.html",
+    "colors": [
+      "#E5B76C",
+      "#1B264F",
+      "#FFDCE3",
+      "#FF5C8D",
+      "#FF7B9E",
+      "#6B7280",
+      "#FDECF0",
+      "#FFF4E3",
+      "#F5D3DE",
+      "#FF6B9A",
+      "#FF4D85",
+      "#FF849D"
+    ],
+    "fonts": [
+      "'Inter', sans-serif",
+      "'Playfair Display', serif"
+    ],
+    "gradients": [
+      "linear-gradient(180deg, #FDECF0 0%, #FFF4E3 40%, #FDECF0 70%, #F5D3DE 100%)",
+      "linear-gradient(90deg, #FF6B9A 0%, #FF4D85 100%)",
+      "radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-white to-transparent opacity-80 blur-md rounded-full",
+      "radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-pink-50 via-white to-transparent opacity-90 blur-md rounded-full"
+    ],
+    "shadows": []
+  }
+]

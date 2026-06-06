@@ -1,0 +1,112 @@
+{
+  "taskId": "T04",
+  "taskName": "Generation Job And Structured Card API",
+  "status": "PASS",
+  "verdict": "PASS",
+  "completedAt": "2026-05-26T13:08:47+08:00",
+  "scope": {
+    "allowedFilesHonored": true,
+    "implementedFiles": [
+      "apps/api/src/server.mjs",
+      "apps/api/src/local-repository.mjs",
+      "apps/api/tests/generation-api.test.mjs",
+      "apps/api/package.json",
+      "packages/prompt-core/src/local-generator.mjs",
+      "packages/prompt-core/src/index.ts",
+      "packages/prompt-core/package.json",
+      "packages/shared-types/src/index.ts"
+    ],
+    "evidenceFiles": [
+      "docs/auto-execute/api/T04/generation-api.json",
+      "docs/auto-execute/db/T04/generation-readback.json",
+      "docs/auto-execute/logs/T04/generation-api-test.log",
+      "docs/auto-execute/logs/T04/api-package-test.log",
+      "docs/auto-execute/logs/T04/lint.log",
+      "docs/auto-execute/logs/T04/typecheck.log",
+      "docs/auto-execute/logs/T04/diff-check.log",
+      "docs/auto-execute/logs/T04/root-test.log"
+    ]
+  },
+  "requirementsCovered": [
+    "REQ-008",
+    "REQ-013",
+    "REQ-016"
+  ],
+  "apiCoverage": [
+    "API-001 C01 success",
+    "API-001 C02 validation failure",
+    "API-001 C03 forced local fallback/failure",
+    "API-002 C01 success",
+    "API-002 C01 pending",
+    "API-002 C01 failure",
+    "API-002 C02 not found"
+  ],
+  "dbCoverage": [
+    "generation_jobs success readback",
+    "generation_jobs pending readback",
+    "generation_jobs failed readback",
+    "aura_cards structured card readback"
+  ],
+  "structuredCardFields": [
+    "title",
+    "auraName",
+    "tarotSymbol",
+    "message",
+    "luckyColor",
+    "colors",
+    "outfit",
+    "beauty",
+    "social",
+    "ritual",
+    "avoid",
+    "caption",
+    "theme"
+  ],
+  "localOnlySafety": {
+    "aiProvider": "deterministic-local-only",
+    "realAiCallsAllowed": false,
+    "copySafety": "PASS"
+  },
+  "commands": [
+    {
+      "command": "pnpm.cmd --filter @auracue/api test:generation *> docs\\auto-execute\\logs\\T04\\generation-api-test.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T04/generation-api-test.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/api test *> docs\\auto-execute\\logs\\T04\\api-package-test.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T04/api-package-test.log"
+    },
+    {
+      "command": "pnpm.cmd lint *> docs\\auto-execute\\logs\\T04\\lint.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T04/lint.log"
+    },
+    {
+      "command": "pnpm.cmd typecheck *> docs\\auto-execute\\logs\\T04\\typecheck.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T04/typecheck.log"
+    },
+    {
+      "command": "git diff --check *> docs\\auto-execute\\logs\\T04\\diff-check.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T04/diff-check.log"
+    },
+    {
+      "command": "pnpm.cmd test *> docs\\auto-execute\\logs\\T04\\root-test.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T04/root-test.log"
+    }
+  ],
+  "blockers": [],
+  "limitations": [
+    "T04 is backend/API/shared generation scope only and does not implement mini-program pages or visual screenshot/diff evidence.",
+    "The forced failure path is local/mock only and intentionally avoids real AI provider calls."
+  ],
+  "nextSteps": [
+    "T05 can use card IDs returned by API-001/API-002 and repository readAuraCard/readEntitlementForCard for free/full card result APIs.",
+    "T11 can use the API-001 forced failure evidence as the later UI-18 generation failure fixture.",
+    "T20 should rerun API-001/API-002 cases and independent DB readbacks as part of the full API/DB gate."
+  ]
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura Selection Screen</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts for Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="custom-typography">
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, .serif-font {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
+<style data-purpose="background-gradient">
+    .bg-main {
+      background: radial-gradient(circle at top, #FFF9F3 0%, #F8F1E9 100%);
+    }
+    .btn-gradient {
+      background: linear-gradient(to right, #C8A375, #A68154);
+    }
+    .card-selected {
+      border: 2px solid #E2BF94;
+      background-color: #FFF9F3;
+    }
+  </style>
+</head>
+<body class="bg-main text-[#1A2B48] min-h-screen flex flex-col items-center overflow-x-hidden">
+<!-- BEGIN: MainContainer -->
+<main class="w-full max-w-md min-h-screen flex flex-col px-6 py-8 relative">
+<!-- BEGIN: HeaderSection -->
+<header class="w-full flex items-center justify-between mb-8" data-purpose="top-navigation">
+<!-- Back Button -->
+<button class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center border border-gray-100">
+<svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Progress Indicator -->
+<div class="flex items-center gap-1 text-[#D4AF37] font-medium text-sm">
+<span>✦</span>
+<span>Step 1 of 2</span>
+<span>✦</span>
+</div>
+<!-- Spacer for centering -->
+<div class="w-10"></div>
+</header>
+<!-- END: HeaderSection -->
+<!-- BEGIN: TitleBlock -->
+<section class="text-center mb-8 relative" data-purpose="intro-text">
+<h1 class="text-4xl font-bold text-[#1A2B48] mb-4">
+        Where are you<br/>going today?
+      </h1>
+<p class="text-gray-500 text-sm px-4 leading-relaxed">
+        Choose the scene that fits your plans<br/>
+        so we can tune your aura just right. 💖
+      </p>
+<!-- Decorative Sparkle Icons -->
+<div class="absolute -right-2 top-8 text-[#E2BF94] opacity-60">
+<svg fill="currentColor" height="24" viewbox="0 0 24 24" width="24">
+<path d="M12 0l2 8 8 2-8 2-2 8-2-8-8-2 8-2 2-8z"></path>
+</svg>
+</div>
+<div class="absolute -right-6 top-16 text-[#E2BF94] opacity-40">
+<svg fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
+<path d="M12 0l2 8 8 2-8 2-2 8-2-8-8-2 8-2 2-8z"></path>
+</svg>
+</div>
+</section>
+<!-- END: TitleBlock -->
+<!-- BEGIN: SceneGrid -->
+<section class="grid grid-cols-2 gap-4 flex-grow mb-24" data-purpose="scene-selection-grid">
+<!-- Card: Date (Selected) -->
+<div class="card-selected rounded-[32px] p-4 flex flex-col items-center text-center relative shadow-sm">
+<div class="absolute top-2 right-2 w-5 h-5 bg-[#C8A375] rounded-full flex items-center justify-center border-2 border-white">
+<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+</div>
+<div class="w-full h-32 bg-[#FEECEC] rounded-t-[40px] rounded-b-[12px] mb-3 overflow-hidden flex items-center justify-center border border-[#F5D5D5]">
+<!-- Illustration Placeholder - Replace with actual asset if available -->
+<div class="relative">
+<span class="text-5xl">🌹</span>
+<div class="absolute -top-2 -right-2 text-[#E2BF94] opacity-50">✦</div>
+</div>
+</div>
+<h3 class="serif-font font-bold text-[#1A2B48] text-lg mb-1">Date</h3>
+<p class="text-[11px] leading-tight text-gray-500">Romantic, magnetic &amp; heart-open.</p>
+</div>
+<!-- Card: Work / Meeting -->
+<div class="bg-white rounded-[32px] p-4 flex flex-col items-center text-center border border-white shadow-sm">
+<div class="w-full h-32 bg-[#F2F4F7] rounded-t-[40px] rounded-b-[12px] mb-3 overflow-hidden flex items-center justify-center border border-gray-100">
+<div class="relative">
+<span class="text-5xl">💻</span>
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 text-[#D4AF37]">✦</div>
+</div>
+</div>
+<h3 class="serif-font font-bold text-[#1A2B48] text-lg mb-1">Work / Meeting</h3>
+<p class="text-[11px] leading-tight text-gray-500">Confident, focused &amp; respected.</p>
+</div>
+<!-- Card: Party / Social -->
+<div class="bg-white rounded-[32px] p-4 flex flex-col items-center text-center border border-white shadow-sm">
+<div class="w-full h-32 bg-[#FDE8E8] rounded-t-[40px] rounded-b-[12px] mb-3 overflow-hidden flex items-center justify-center border border-gray-100">
+<span class="text-5xl">🥂</span>
+</div>
+<h3 class="serif-font font-bold text-[#1A2B48] text-lg mb-1">Party / Social</h3>
+<p class="text-[11px] leading-tight text-gray-500">Radiant, fun &amp; unforgettable.</p>
+</div>
+<!-- Card: Interview -->
+<div class="bg-white rounded-[32px] p-4 flex flex-col items-center text-center border border-white shadow-sm">
+<div class="w-full h-32 bg-[#F5F5F5] rounded-t-[40px] rounded-b-[12px] mb-3 overflow-hidden flex items-center justify-center border border-gray-100">
+<span class="text-5xl">📋</span>
+</div>
+<h3 class="serif-font font-bold text-[#1A2B48] text-lg mb-1">Interview</h3>
+<p class="text-[11px] leading-tight text-gray-500">Poised, prepared &amp; impressive.</p>
+</div>
+<!-- Card: Travel -->
+<div class="bg-white rounded-[32px] p-4 flex flex-col items-center text-center border border-white shadow-sm">
+<div class="w-full h-32 bg-[#E9F3F9] rounded-t-[40px] rounded-b-[12px] mb-3 overflow-hidden flex items-center justify-center border border-gray-100">
+<span class="text-5xl">🧳</span>
+</div>
+<h3 class="serif-font font-bold text-[#1A2B48] text-lg mb-1">Travel</h3>
+<p class="text-[11px] leading-tight text-gray-500">Protected, aligned &amp; adventure-ready.</p>
+</div>
+<!-- Card: Just Need Luck -->
+<div class="bg-white rounded-[32px] p-4 flex flex-col items-center text-center border border-white shadow-sm">
+<div class="w-full h-32 bg-[#FEF7EB] rounded-t-[40px] rounded-b-[12px] mb-3 overflow-hidden flex items-center justify-center border border-gray-100">
+<span class="text-5xl">🍀</span>
+</div>
+<h3 class="serif-font font-bold text-[#1A2B48] text-lg mb-1">Just Need Luck</h3>
+<p class="text-[11px] leading-tight text-gray-500">Lucky, aligned &amp; open to magic.</p>
+</div>
+</section>
+<!-- END: SceneGrid -->
+<!-- BEGIN: StickyFooter -->
+<footer class="fixed bottom-0 left-0 w-full p-6 bg-gradient-to-t from-[#F8F1E9] via-[#F8F1E9] to-transparent" data-purpose="action-button-container">
+<div class="max-w-md mx-auto">
+<button class="w-full py-5 rounded-full btn-gradient text-white font-medium text-xl shadow-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+<span class="text-2xl">✦</span>
+<span>Continue</span>
+</button>
+</div>
+</footer>
+<!-- END: StickyFooter -->
+</main>
+<!-- END: MainContainer -->
+</body></html>

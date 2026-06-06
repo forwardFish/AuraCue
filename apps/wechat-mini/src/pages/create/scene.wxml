@@ -1,0 +1,45 @@
+<view class="scene-page">
+  <view class="status-bar">
+    <text class="status-time">9:41</text>
+    <text class="status-icons">signal wifi battery</text>
+  </view>
+
+  <view class="scene-header">
+    <button class="back-button" bindtap="onBackTap">‹</button>
+    <text class="step-copy">✦ Step 1 of 2 ✦</text>
+    <view class="header-spacer"></view>
+  </view>
+
+  <view class="scene-hero">
+    <text class="scene-title">Where are you</text>
+    <text class="scene-title">going today?</text>
+    <text class="scene-copy">Choose the scene that fits your plans</text>
+    <text class="scene-copy">so we can tune your aura just right. 💖</text>
+  </view>
+
+  <scroll-view class="scene-scroll" scroll-y="true">
+    <view class="scene-grid">
+      <button
+        wx:for="{{sceneOptions}}"
+        wx:key="id"
+        class="scene-card {{selectedScene === item.id ? 'scene-card-selected' : ''}}"
+        data-scene="{{item.id}}"
+        bindtap="onSceneTap"
+      >
+        <text class="selection-check" wx:if="{{selectedScene === item.id}}">✓</text>
+        <view class="scene-art scene-art-{{item.id}}">
+          <text class="scene-art-icon">{{item.icon}}</text>
+        </view>
+        <text class="scene-label">{{item.label}}</text>
+        <text class="scene-description">{{item.description}}</text>
+      </button>
+    </view>
+  </scroll-view>
+
+  <view class="sticky-action">
+    <button class="continue-button {{!canContinue ? 'continue-disabled' : ''}}" bindtap="onContinueTap" disabled="{{!canContinue}}">
+      <text class="button-spark">✦</text>
+      <text>Continue</text>
+    </button>
+  </view>
+</view>

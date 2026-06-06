@@ -1,0 +1,84 @@
+{
+  "uiId": "UI-04",
+  "route": "/create/energy",
+  "sourceReference": "docs/UI/小程序/03A-选择_场景与能量未完成状态.png",
+  "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/03a/code.html",
+  "statusBar": {
+    "time": "9:41"
+  },
+  "header": {
+    "brand": "AuraCue"
+  },
+  "sceneOptions": [
+    {
+      "id": "date",
+      "label": "Date",
+      "icon": "heart",
+      "selected": false
+    },
+    {
+      "id": "work",
+      "label": "Work / Meeting",
+      "shortLabel": "Work",
+      "subLabel": null,
+      "icon": "briefcase",
+      "selected": true
+    },
+    {
+      "id": "party",
+      "label": "Party / Social",
+      "shortLabel": "Party",
+      "subLabel": null,
+      "icon": "party",
+      "selected": false
+    },
+    {
+      "id": "luck",
+      "label": "Just need luck",
+      "shortLabel": "Just me",
+      "subLabel": "Just need luck",
+      "icon": "person",
+      "selected": false
+    }
+  ],
+  "energyOptions": [
+    {
+      "id": "confidence",
+      "label": "Confidence",
+      "selected": false
+    },
+    {
+      "id": "calm",
+      "label": "Calm",
+      "selected": false
+    },
+    {
+      "id": "love",
+      "label": "Love",
+      "selected": false
+    },
+    {
+      "id": "focus",
+      "label": "Focus",
+      "selected": false
+    },
+    {
+      "id": "luck",
+      "label": "Luck",
+      "selected": false
+    },
+    {
+      "id": "charm",
+      "label": "Charm",
+      "selected": false
+    }
+  ],
+  "complete": false,
+  "validationMessage": "Choose one energy to continue.",
+  "primaryCta": {
+    "id": "generate-card",
+    "label": "Generate My Lucky Aura Card",
+    "incompleteLabel": "Generate My Aura Card",
+    "route": "/create/loading"
+  }
+}

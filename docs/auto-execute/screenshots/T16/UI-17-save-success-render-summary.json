@@ -1,0 +1,58 @@
+{
+  "uiId": "UI-17",
+  "route": "/saved/:id",
+  "sourceReference": "docs/UI/小程序/10C-保存_保存成功反馈.png",
+  "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/10c/code.html",
+  "requirementIds": [
+    "REQ-011",
+    "REQ-014",
+    "REQ-017"
+  ],
+  "apiIds": [
+    "API-007",
+    "API-010"
+  ],
+  "ownerScenario": "SCN-014",
+  "cardId": "card-unlocked-001",
+  "title": "Saved to your Aura Cards",
+  "subtitle": "Your lucky aura is ready whenever you step out.",
+  "auraName": "Soft Confidence",
+  "theme": "Romantic Clarity",
+  "savedAt": "2026-05-26T00:05:00.000Z",
+  "statusRows": [
+    {
+      "id": "photos",
+      "label": "Saved to Photos",
+      "status": "saved"
+    },
+    {
+      "id": "aura-cards",
+      "label": "Saved to Aura Cards",
+      "status": "saved"
+    }
+  ],
+  "actions": {
+    "shareNow": {
+      "controlId": "share-now",
+      "label": "Share Now",
+      "route": "/share/:id",
+      "apiId": "API-008"
+    },
+    "backHome": {
+      "controlId": "back-home",
+      "label": "Back Home",
+      "route": "/",
+      "apiId": "API-010"
+    },
+    "viewSavedCard": {
+      "controlId": "view-saved-card",
+      "label": "View Saved Card",
+      "route": "/result/:id/full"
+    }
+  },
+  "localOnly": {
+    "storage": "local save fixture only",
+    "analytics": "local fixture collector",
+    "db": "mock save readback deferred to T20"
+  }
+}

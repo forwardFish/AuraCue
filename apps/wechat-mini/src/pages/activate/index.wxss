@@ -1,0 +1,69 @@
+.page {
+  min-height: 100vh;
+  padding: 72rpx 40rpx 40rpx;
+  background: #fff8f5;
+  color: #151642;
+  text-align: center;
+}
+.brand {
+  font-size: 36rpx;
+  letter-spacing: 8rpx;
+}
+.title {
+  margin-top: 60rpx;
+  font-size: 56rpx;
+  font-family: serif;
+}
+.copy, .trust {
+  color: #70758d;
+}
+.colors, .anchors {
+  display: grid;
+  gap: 20rpx;
+  margin-top: 40rpx;
+}
+.colors {
+  grid-template-columns: repeat(3, 1fr);
+}
+.color, .anchors button {
+  border-radius: 28rpx;
+  background: rgba(255, 255, 255, 0.84);
+  color: #151642;
+}
+.blush {
+  border-top: 12rpx solid #eaa2a9;
+}
+.navy {
+  border-top: 12rpx solid #162a55;
+}
+.gold {
+  border-top: 12rpx solid #d6a45c;
+}
+.anchors {
+  grid-template-columns: repeat(2, 1fr);
+}
+.seal {
+  margin-top: 56rpx;
+  width: 360rpx;
+  height: 360rpx;
+  border-radius: 999rpx;
+  background: radial-gradient(circle, #fff, #ffe9f4);
+  color: #151642;
+}
+.seal.disabled {
+  opacity: 0.42;
+}
+.cancel {
+  margin-top: 24rpx;
+  border: 2rpx solid #d6a45c;
+  border-radius: 48rpx;
+  background: transparent;
+  color: #151642;
+}
+.progress {
+  margin-top: 20rpx;
+  color: #70758d;
+}
+.trust {
+  margin-top: 32rpx;
+}

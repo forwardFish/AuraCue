@@ -1,0 +1,62 @@
+<view class="free-preview-page">
+  <view class="top-fade"></view>
+  <view class="top-bar">
+    <button class="round-button" bindtap="onBackTap">back</button>
+    <text class="page-title">Your Lucky Aura Card</text>
+    <button class="round-button" bindtap="onShareTap">share</button>
+  </view>
+
+  <view class="context">
+    <view class="context-line">
+      <text>Work / Meeting</text>
+      <text class="dot">.</text>
+      <text class="accent">Confidence</text>
+    </view>
+    <text class="context-copy">Here's the energy aligned just for you.</text>
+  </view>
+
+  <scroll-view class="content-scroll" scroll-y="true">
+    <view class="aura-card">
+      <view class="preview-art">
+        <text class="preview-label">low-res preview</text>
+        <text class="watermark">AuraCue Preview</text>
+      </view>
+      <view class="aura-details">
+        <view class="kicker">TODAY'S AURA</view>
+        <text class="aura-name">{{freeFields.auraName}}</text>
+        <text class="reminder">{{freeFields.oneLineReminder}}</text>
+        <view class="info-card">
+          <view class="color-row">
+            <view class="swatch"></view>
+            <view>
+              <text class="label">Lucky Color</text>
+              <text class="color-name">{{freeFields.luckyColor}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="locked-panel" aria-label="Locked full guidance">
+      <block wx:for="{{lockedRows}}" wx:key="id">
+        <view class="locked-row" data-locked-field="{{item.id}}">
+          <view class="locked-icon">lock</view>
+          <view class="locked-copy">
+            <text class="locked-title">{{item.title}}</text>
+            <text class="locked-teaser">{{item.teaser}}</text>
+          </view>
+          <view class="lock-badge">lock</view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <view class="bottom-actions">
+    <button class="primary-action" bindtap="onUnlockTap">Unlock Full Card</button>
+    <button class="secondary-action" bindtap="onInviteTap">
+      <text>Invite 3 friends to unlock</text>
+      <text class="progress-pill">0 / 3</text>
+    </button>
+    <text class="privacy-copy">Unlock to reveal your full personalized guidance.</text>
+  </view>
+</view>

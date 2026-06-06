@@ -1,0 +1,99 @@
+{
+  "taskId": "T17",
+  "taskName": "Share Card Renderer",
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "summary": "Implemented deterministic local 9:16 share-card renderer for API-009 and UI-15 integration. Renderer returns stable metadata, local path, SVG data URL, hash, dimensions, and required structured card text fields without cloud storage or paid image APIs.",
+  "requirementIds": ["REQ-014", "REQ-002"],
+  "uiIds": ["UI-15"],
+  "apiIds": ["API-009"],
+  "changedFiles": [
+    "packages/card-renderer/src/local-renderer.mjs",
+    "packages/card-renderer/src/index.ts",
+    "packages/card-renderer/package.json",
+    "packages/card-renderer/tests/t17-share-card-renderer.test.mjs",
+    "apps/api/package.json",
+    "apps/api/tests/share-card-renderer-api.test.mjs",
+    "apps/wechat-mini/src/api/api-client.mjs",
+    "apps/wechat-mini/src/pages/share/share-save-page.mjs",
+    "apps/wechat-mini/src/pages/share/story.wxml",
+    "apps/wechat-mini/src/pages/share/story.js",
+    "apps/wechat-mini/src/pages/share/story.wxss",
+    "apps/wechat-mini/package.json",
+    "apps/wechat-mini/tests/t17-share-card-renderer-integration.test.mjs",
+    "docs/auto-execute/results/T17.json",
+    "docs/auto-execute/latest/T17-HANDOFF.md"
+  ],
+  "commandsRun": [
+    {
+      "command": "node packages/card-renderer/tests/t17-share-card-renderer.test.mjs",
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/T17/renderer-test.log"
+    },
+    {
+      "command": "node apps/api/tests/share-card-renderer-api.test.mjs",
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/T17/api-test.log"
+    },
+    {
+      "command": "node apps/wechat-mini/tests/t17-share-card-renderer-integration.test.mjs",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "log": "docs/auto-execute/logs/T17/ui-test.log"
+    },
+    {
+      "command": "node scripts/typecheck-placeholders.mjs",
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/T17/typecheck.log"
+    },
+    {
+      "command": "node scripts/lint-local-only.mjs",
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/T17/lint.log"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/T17/diff-check.log"
+    },
+    {
+      "command": "node apps/api/tests/save-share-render-analytics-api.test.mjs",
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/T17/regression-t07-api.log"
+    },
+    {
+      "command": "node apps/wechat-mini/tests/t16-share-save-pages.test.mjs",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "log": "docs/auto-execute/logs/T17/regression-t16-share-ui.log"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/screenshots/T17/share-card-render.json",
+    "docs/auto-execute/screenshots/T17/share-card.svg",
+    "docs/auto-execute/api/T17/render-api.json",
+    "docs/auto-execute/screenshots/T17/UI-15-share-renderer.html",
+    "docs/auto-execute/screenshots/T17/UI-15-share-renderer-summary.json",
+    "docs/auto-execute/traces/T17/ui15-share-renderer.json",
+    "docs/auto-execute/logs/T17/renderer-test.log",
+    "docs/auto-execute/logs/T17/api-test.log",
+    "docs/auto-execute/logs/T17/ui-test.log",
+    "docs/auto-execute/logs/T17/typecheck.log",
+    "docs/auto-execute/logs/T17/lint.log",
+    "docs/auto-execute/logs/T17/diff-check.log",
+    "docs/auto-execute/logs/T17/regression-t07-api.log",
+    "docs/auto-execute/logs/T17/regression-t16-share-ui.log"
+  ],
+  "blockers": [],
+  "limitations": [
+    "No raster screenshot or pixel-diff evidence was produced in T17. Visual one-to-one verification remains deferred to T22/T23, so the truthful status is PASS_NEEDS_MANUAL_UI_REVIEW rather than pure PASS."
+  ],
+  "localOnly": {
+    "cloudRenderingServiceUsed": false,
+    "productionObjectStorageUsed": false,
+    "paidImageApiUsed": false,
+    "realPaymentUsed": false,
+    "realCloudWritesUsed": false
+  },
+  "nextSteps": [
+    "T18 can continue analytics and safety-copy guard work.",
+    "T22/T23 must capture raster screenshots and run visual comparison for UI-15 before any pixel-perfect claim."
+  ]
+}

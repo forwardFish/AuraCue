@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AuraCue UI-18 Network Error</title>
+  <style>
+    body { margin: 0; background: #111; font-family: Inter, system-ui, sans-serif; color: #1b264f; }
+    .phone { position: relative; width: 390px; min-height: 844px; margin: 0 auto; padding: 46px 28px 34px; box-sizing: border-box; overflow: hidden; background: linear-gradient(180deg,#fdecf0 0%,#fff4e3 40%,#fdecf0 70%,#f5d3de 100%); }
+    header { position: relative; display: flex; align-items: center; justify-content: center; min-height: 42px; }
+    .close { position: absolute; left: 0; width: 40px; height: 40px; border-radius: 999px; border: 1px solid rgba(255,255,255,.55); background: rgba(255,255,255,.42); color: #333; font-size: 24px; }
+    .brand { font-family: Georgia, serif; color: #e5b76c; font-size: 26px; font-weight: 700; }
+    .hero { position: relative; display: grid; place-items: center; min-height: 338px; margin-top: 36px; }
+    .glow { position: absolute; width: 280px; height: 280px; border-radius: 50%; background: rgba(255,220,227,.42); filter: blur(28px); }
+    .card { position: relative; width: 160px; height: 226px; border-radius: 18px; transform: rotate(-4deg); background: rgba(255,255,255,.9); border: 1px solid rgba(255,220,227,.68); box-shadow: 0 20px 40px rgba(255,180,195,.4); display: grid; place-items: center; color: #ffdce3; font-size: 54px; }
+    .card::after { content: ""; position: absolute; inset: 8px; border: 1px solid rgba(255,220,227,.72); border-radius: 13px; }
+    .cloud { position: absolute; bottom: 32px; width: 248px; height: 90px; border-radius: 90px 90px 34px 34px; background: rgba(255,255,255,.88); filter: drop-shadow(0 10px 20px rgba(255,180,195,.18)); }
+    .badge { position: absolute; right: 32px; bottom: 52px; width: 64px; height: 48px; border-radius: 28px; background: #ff849d; border: 2px solid white; color: white; display: grid; place-items: center; font-size: 30px; font-weight: 700; }
+    .copy { position: relative; z-index: 1; text-align: center; margin: 22px 0 84px; }
+    h1 { font-family: Georgia, serif; font-size: 28px; line-height: 1.2; margin: 0 0 14px; font-weight: 700; }
+    p { color: #6b7280; font-size: 15px; margin: 0; font-weight: 600; }
+    .actions { position: relative; z-index: 1; display: grid; gap: 16px; }
+    button { height: 60px; border-radius: 999px; font-size: 17px; }
+    .retry { border: 0; color: white; font-weight: 700; background: linear-gradient(90deg,#ff6b9a 0%,#ff4d85 100%); box-shadow: 0 8px 24px -6px rgba(255,92,141,.4); }
+    .change { border: 1px solid #ffdce3; color: #1b264f; background: rgba(255,255,255,.42); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <header><button class="close">x</button><div class="brand">✦ AuraCue ✦</div></header>
+    <section class="hero"><div class="glow"></div><div class="card">☾</div><div class="cloud"></div><div class="badge">!</div></section>
+    <section class="copy"><h1>Your aura slipped away<br>for a second.</h1><p>Let's reconnect and try again.</p></section>
+    <section class="actions"><button class="retry">Try Again</button><button class="change">Change Scene</button></section>
+  </main>
+</body>
+</html>

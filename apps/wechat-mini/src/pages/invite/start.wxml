@@ -1,0 +1,28 @@
+<view class="invite-start-page">
+  <button class="back-button" bindtap="onBackTap">back</button>
+  <view class="title-block">
+    <text class="title">Invite 3 friends to unlock your full Aura Card</text>
+  </view>
+  <view class="avatar-stage">
+    <view class="avatar empty">+</view>
+    <view class="avatar joined">1</view>
+    <view class="avatar empty">+</view>
+  </view>
+  <view class="progress-block">
+    <text>{{progress}} of {{required}} friends joined</text>
+    <view class="progress-track"><view class="progress-fill"></view></view>
+  </view>
+  <view class="reward-card">
+    <block wx:for="{{rewardRows}}" wx:key="*this">
+      <view class="reward-row">
+        <view class="reward-icon"></view>
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="bottom-actions">
+    <button class="primary-action" bindtap="onInviteFriendsTap">Invite Friends</button>
+    <button class="secondary-action" bindtap="onPaidUnlockTap">Unlock for <text>$1.99</text></button>
+    <text class="privacy-copy">Secure and private. Friends won't see your reading.</text>
+  </view>
+</view>

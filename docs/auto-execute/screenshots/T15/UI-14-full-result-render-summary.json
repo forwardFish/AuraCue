@@ -1,0 +1,110 @@
+{
+  "uiId": "UI-14",
+  "route": "/result/:id/full",
+  "sourceReference": "docs/UI/小程序/09-结果_完整气场卡与分享入口.png",
+  "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/09/code.html",
+  "requirementIds": [
+    "REQ-008",
+    "REQ-010",
+    "REQ-017"
+  ],
+  "apiIds": [
+    "API-003",
+    "API-007",
+    "API-008",
+    "API-010"
+  ],
+  "ownerScenario": "SCN-012",
+  "cardId": "card-unlocked-001",
+  "title": "Full Lucky Aura Card",
+  "auraName": "Golden Comet Aura",
+  "tarot": {
+    "symbol": "The Star",
+    "keywords": [
+      "Authority",
+      "Structure",
+      "Leadership"
+    ]
+  },
+  "message": "Your best signal today is warm certainty.",
+  "caption": "Tonight I am choosing the brighter signal.",
+  "theme": "golden-night",
+  "shareImagePath": "local://share-images/card-unlocked-001-story.png",
+  "guidanceRows": [
+    {
+      "id": "colors",
+      "label": "Lucky Colors",
+      "title": "Navy, Rose, Gold",
+      "detail": "Wear one grounded tone with a warm luminous accent.",
+      "value": {
+        "primary": "#f4c76b",
+        "accent": "#8d5bff",
+        "background": "#160f24"
+      }
+    },
+    {
+      "id": "outfit",
+      "label": "Outfit Energy",
+      "title": "Tailored & Confident",
+      "detail": "A clean light layer with one luminous accessory."
+    },
+    {
+      "id": "beauty",
+      "label": "Beauty Cue",
+      "title": "Defined & Polished",
+      "detail": "Soft highlight and a confident lip tint."
+    },
+    {
+      "id": "social",
+      "label": "Social Move",
+      "title": "Lead with Clarity",
+      "detail": "Open with a sincere compliment."
+    },
+    {
+      "id": "ritual",
+      "label": "Tiny Ritual",
+      "title": "3 Deep Anchor Breaths",
+      "detail": "Take three slow breaths before entering the room."
+    },
+    {
+      "id": "avoid",
+      "label": "Avoid Today",
+      "title": "Keep It Gentle",
+      "detail": "Do not rush into a promise before you feel ready."
+    }
+  ],
+  "actions": {
+    "saveCard": {
+      "controlId": "save-card",
+      "label": "Save Card",
+      "route": "/saved/:id",
+      "apiId": "API-007"
+    },
+    "shareStory": {
+      "controlId": "share-story",
+      "label": "Share Story",
+      "route": "/share/:id",
+      "apiId": "API-008"
+    },
+    "moreSharingOptions": {
+      "controlId": "more-sharing-options",
+      "label": "More Sharing Options",
+      "route": "/share/:id/channels",
+      "apiId": "API-008"
+    },
+    "viewTrend": {
+      "controlId": "view-7-day-trend",
+      "label": "View 7-Day Trend",
+      "disabled": true,
+      "status": "P1_COMING_SOON",
+      "route": null
+    }
+  },
+  "localOnly": {
+    "payment": "entitlement supplied by local mock unlock fixture",
+    "ai": "fixture-api-client-no-provider-call",
+    "analytics": "local-fixture-client",
+    "storage": "local-evidence-files-only",
+    "db": "mock repository/readback deferred to T20"
+  }
+}

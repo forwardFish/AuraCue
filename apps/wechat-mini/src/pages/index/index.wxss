@@ -1,0 +1,43 @@
+.page {
+  min-height: 100vh;
+  padding: 96rpx 48rpx 40rpx;
+  background: #fff7f5;
+  color: #151642;
+  text-align: center;
+}
+.brand {
+  font-size: 40rpx;
+  letter-spacing: 8rpx;
+}
+.hero-title {
+  margin-top: 80rpx;
+  font-size: 64rpx;
+  font-family: serif;
+}
+.hero-copy {
+  margin: 28rpx auto 48rpx;
+  color: #6f7287;
+}
+.mood-list {
+  display: grid;
+  gap: 24rpx;
+}
+.mood {
+  border-radius: 32rpx;
+  background: rgba(255, 255, 255, 0.78);
+  color: #151642;
+}
+.selected {
+  background: linear-gradient(90deg, #8b54d9, #ff8c99);
+  color: white;
+}
+.primary {
+  margin-top: 44rpx;
+  border-radius: 48rpx;
+  background: linear-gradient(90deg, #8b54d9, #ff9b7a);
+  color: white;
+}
+.trust {
+  margin-top: 28rpx;
+  color: #778096;
+}

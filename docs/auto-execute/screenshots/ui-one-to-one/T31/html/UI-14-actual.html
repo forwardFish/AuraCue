@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AuraCue UI-14 Full Result</title>
+  <style>
+    body { margin: 0; background: #fdfbf7; color: #1a2342; font-family: Inter, system-ui, sans-serif; }
+    .phone { position: relative; width: 390px; height: 693px; margin: 0 auto; box-sizing: border-box; overflow: hidden; padding: 14px 21px 11px; background: radial-gradient(circle at 50% 50%, #fffaf6 0%, #fdfbf7 62%, #f5eee5 100%); border: 1px solid #dedad2; border-radius: 14px; }
+    .visual-contract { display: none; }
+    .status { display: flex; justify-content: space-between; align-items: center; font-weight: 800; font-size: 15px; margin-bottom: 8px; }
+    .status span:last-child { letter-spacing: 2px; }
+    header { display: grid; grid-template-columns: 42px 1fr 42px; align-items: center; margin-bottom: 8px; }
+    .round { width: 36px; height: 36px; border-radius: 999px; border: 1px solid #f0e6d2; background: white; color: #bd8750; font-size: 23px; box-shadow: 0 4px 12px rgba(0,0,0,.05); }
+    h1 { margin: 0; text-align: center; font: 600 29px/34px Georgia, serif; }
+    .ready { text-align: center; margin: 2px 0 14px; }
+    .ready h2 { margin: 0; font: 500 15px/18px Georgia, serif; }
+    .top-grid { display: grid; grid-template-columns: 176px 1fr; gap: 14px; align-items: start; }
+    .tarot { position: relative; width: 156px; height: 258px; border-radius: 18px; border: 3px solid #1a2342; overflow: hidden; background: linear-gradient(180deg, #243253, #121933); color: #f4c760; box-shadow: 0 9px 22px rgba(0,0,0,.15); }
+    .tarot::before { content: ""; position: absolute; inset: 13px 18px 50px; border-radius: 999px 999px 22px 22px; background: radial-gradient(circle at 50% 24%, #e7b98f 0 30px, transparent 31px), linear-gradient(160deg, #273050, #b06b63 58%, #2a3156); opacity: .85; }
+    .tarot strong { position: absolute; left: 0; right: 0; bottom: 18px; text-align: center; font: 700 18px Georgia, serif; letter-spacing: .12em; text-transform: uppercase; }
+    .aura-head .eyebrow { margin: 4px 0 4px; color: #c9787d; font: 600 12px Georgia, serif; }
+    .aura-head h2 { margin: 0; font: 600 23px/27px Georgia, serif; }
+    .tarot-name { color: #8c7c6d; text-transform: uppercase; letter-spacing: .12em; font-size: 9px; line-height: 14px; margin: 8px 0 10px; }
+    .panel { background: rgba(248,245,238,.78); border: 1px solid white; border-radius: 22px; padding: 10px 10px 8px; box-shadow: 0 4px 18px rgba(0,0,0,.04); }
+    .guidance-row { display: grid; grid-template-columns: 28px 1fr; gap: 8px; padding: 7px 0; border-bottom: 1px solid #eae3d5; }
+    .guidance-row:last-child { border-bottom: 0; }
+    .icon { width: 26px; height: 26px; border-radius: 999px; display: grid; place-items: center; background: #fffaf7; color: #a67b45; border: 1px solid #eee3d5; }
+    .row-0 .icon { background: radial-gradient(circle, #e7b9b9 0 8px, #fff4f1 9px); }
+    .label { margin: 0; color: #8c7c6d; font-size: 9px; line-height: 11px; }
+    h4 { margin: 0 0 2px; font: 700 11px/13px Georgia, serif; }
+    p { margin: 0; color: #8c7c6d; font-size: 9px; line-height: 12px; }
+    .message-title { margin: 14px 0 6px; color: #c9787d; font: 600 13px Georgia, serif; }
+    .message { width: 156px; min-height: 74px; padding: 15px 18px; box-sizing: border-box; background: rgba(255,255,255,.62); border: 1px solid #eadbd1; border-radius: 18px; text-align: center; font: 500 13px/18px Georgia, serif; }
+    .trend { width: 100%; margin: 12px 0 9px; min-height: 34px; border-radius: 999px; border: 1px solid #eae3d5; background: #fbf8f2; color: #8c633c; font-weight: 700; font-size: 12px; }
+    .share-title { margin: 0; text-align: center; font: 500 14px Georgia, serif; }
+    .share-sub { text-align: center; margin-bottom: 5px; }
+    .share { display: grid; grid-template-columns: 176px 1fr; gap: 16px; align-items: center; background: rgba(250,245,243,.75); border: 1px solid #f0e6df; border-radius: 20px; padding: 10px 12px; }
+    .mini { display: grid; grid-template-columns: 70px 1fr; gap: 9px; padding: 7px; border-radius: 12px; background: #1a2342; color: white; min-height: 78px; }
+    .mini-art { border-radius: 9px; background: linear-gradient(160deg, #2a375e, #c27c7e 60%, #d4af37); }
+    .mini h4 { color: white; font-size: 10px; line-height: 12px; }
+    .mini p { color: rgba(255,255,255,.75); font-size: 7px; line-height: 9px; }
+    .caption { font-style: italic; }
+    .actions { display: grid; gap: 8px; }
+    .primary, .secondary, .tertiary { min-height: 31px; border-radius: 999px; font-weight: 800; font-size: 11px; }
+    .primary { border: 0; color: white; background: linear-gradient(180deg, #d5a973, #a67b45); box-shadow: 0 6px 14px rgba(166,123,69,.25); }
+    .secondary { border: 1px solid #d5a973; color: #a67b45; background: transparent; }
+    .tertiary { border: 1px solid #eae3d5; color: #8c7c6d; background: rgba(255,255,255,.5); }
+    .private { margin: 9px 0 0; text-align: center; font-size: 10px; opacity: .75; }
+  </style>
+<style id="t26-capture-shell">
+    html, body { width: 941px !important; height: 1672px !important; margin: 0 !important; overflow: hidden !important; background: #ffffff !important; }
+    body > .phone, body > main.phone, body .phone:first-child {
+      transform: scale(2.4128205128205127);
+      transform-origin: top center;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  </style></head>
+<body>
+  <main class="phone">
+    <span class="visual-contract">Soft Confidence</span>
+    <div class="status"><span>9:41</span><span>▮▮▮⌁▱</span></div>
+    <header><button class="round">‹</button><h1>AuraCue</h1><button class="round">□</button></header>
+    <section class="ready"><h2>Your Aura Card is Ready ✨</h2></section>
+    <section class="top-grid">
+      <div>
+        <section class="tarot"><strong>The Star</strong></section>
+        <h3 class="message-title">✦ Today's Message</h3>
+        <section class="message">Your best signal today is warm certainty.</section>
+      </div>
+      <section class="aura">
+        <div class="aura-head"><p class="eyebrow">✦ Today's Aura ✦</p><h2>Golden Comet Aura</h2><div class="tarot-name">The Star - Authority - Structure - Leadership</div></div>
+        <div class="panel"><div class="guidance-row row-0" data-field="colors"><div class="icon"></div><div><p class="label">Lucky Colors</p><h4>Navy, Rose, Gold</h4><p>Wear one grounded tone with a warm luminous accent.</p></div></div><div class="guidance-row row-1" data-field="outfit"><div class="icon">♙</div><div><p class="label">Outfit Energy</p><h4>Tailored &amp; Confident</h4><p>A clean light layer with one luminous accessory.</p></div></div><div class="guidance-row row-2" data-field="beauty"><div class="icon">☵</div><div><p class="label">Beauty Cue</p><h4>Defined &amp; Polished</h4><p>Soft highlight and a confident lip tint.</p></div></div><div class="guidance-row row-3" data-field="social"><div class="icon">☷</div><div><p class="label">Social Move</p><h4>Lead with Clarity</h4><p>Open with a sincere compliment.</p></div></div><div class="guidance-row row-4" data-field="ritual"><div class="icon">♧</div><div><p class="label">Tiny Ritual</p><h4>3 Deep Anchor Breaths</h4><p>Take three slow breaths before entering the room.</p></div></div><div class="guidance-row row-5" data-field="avoid"><div class="icon">△</div><div><p class="label">Avoid Today</p><h4>Keep It Gentle</h4><p>Do not rush into a promise before you feel ready.</p></div></div></div>
+      </section>
+    </section>
+    <button class="trend" disabled>View 7-Day Trend</button>
+    <h3 class="share-title">✦ Share Your Card ✦</h3><p class="share-sub">Inspire someone's day ✨</p>
+    <section class="share">
+      <div class="mini"><div class="mini-art"></div><div><h4>Golden Comet Aura</h4><p>The Star</p><p class="caption">"Tonight I am choosing the brighter signal."</p><strong>AuraCue</strong></div></div>
+      <div class="actions"><button class="primary" data-control-id="save-card">Save Card</button><button class="secondary" data-control-id="share-story">Share Story</button><button class="tertiary" data-control-id="more-sharing-options">More Sharing Options</button></div>
+    </section>
+    <p class="private">Private. Personal. Just for you.</p>
+  </main>
+</body>
+</html>

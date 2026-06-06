@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "taskId": "T14",
+  "checkedFiles": [
+    "apps/wechat-mini/src/pages/unlock/pay.js",
+    "apps/wechat-mini/src/pages/unlock/pay-failed.js",
+    "apps/wechat-mini/src/pages/unlock/success.js",
+    "apps/wechat-mini/src/pages/unlock/payment-state-page.mjs"
+  ],
+  "forbiddenPaymentNeedlesAbsent": [
+    "wx.requestPayment(",
+    "live payment SDK",
+    "live payment URL",
+    "secret key"
+  ],
+  "paymentMode": "local/mock API client only",
+  "realPaymentUsed": false,
+  "productionUrlUsed": false,
+  "secretUsed": false
+}

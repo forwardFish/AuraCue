@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AuraCue - Unlock Your Aura Card</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="custom-fonts-and-animations">
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    .bg-gradient-radial {
+      background: radial-gradient(circle at 50% 30%, #FFE5E5 0%, #FFF0F5 50%, #F5E6FF 100%);
+    }
+    .card-shadow {
+      box-shadow: 0 10px 25px -5px rgba(255, 105, 180, 0.2), 0 8px 10px -6px rgba(255, 105, 180, 0.1);
+    }
+    .button-glow {
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.6), inset 0 2px 5px rgba(255, 255, 255, 0.5);
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(-15deg); }
+      50% { transform: translateY(-10px) rotate(-15deg); }
+      100% { transform: translateY(0px) rotate(-15deg); }
+    }
+    @keyframes float-center {
+      0% { transform: translateY(0px) scale(1.1) z-index: 10; }
+      50% { transform: translateY(-15px) scale(1.1) z-index: 10; }
+      100% { transform: translateY(0px) scale(1.1) z-index: 10; }
+    }
+    @keyframes float-right {
+      0% { transform: translateY(0px) rotate(15deg); }
+      50% { transform: translateY(-10px) rotate(15deg); }
+      100% { transform: translateY(0px) rotate(15deg); }
+    }
+    
+    .floating-card-left { animation: float 6s ease-in-out infinite; }
+    .floating-card-center { animation: float-center 6s ease-in-out infinite; animation-delay: 1s; }
+    .floating-card-right { animation: float-right 6s ease-in-out infinite; animation-delay: 2s; }
+  </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+<!-- BEGIN: MobileDeviceContainer -->
+<main class="w-full max-w-[400px] h-[850px] bg-gradient-radial rounded-[40px] shadow-2xl relative overflow-hidden flex flex-col items-center pt-12 pb-8 px-6 ring-8 ring-black">
+<!-- Status Bar Area (Mock) -->
+<div class="absolute top-0 w-full flex justify-between px-6 pt-4 text-black font-semibold text-sm">
+<span>9:41</span>
+<div class="flex space-x-1 items-center">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path></svg>
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" fill-rule="evenodd"></path></svg>
+<div class="w-6 h-3 border border-black rounded-sm p-[1px]"><div class="w-full h-full bg-black rounded-sm"></div></div>
+</div>
+</div>
+<!-- Dynamic Island (Mock) -->
+<div class="absolute top-2 left-1/2 -translate-x-1/2 w-32 h-8 bg-black rounded-full z-50"></div>
+<!-- BEGIN: Header -->
+<header class="w-full flex justify-between items-center mb-6 mt-4 relative z-20">
+<button class="p-2 -ml-2 text-gray-600 hover:text-black">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<div class="text-[#8b7bd9] font-serif text-xl font-bold flex items-center tracking-wide">
+        AuraCue<span class="text-orange-300 ml-1">✦</span>
+</div>
+<div class="w-10"></div> <!-- Spacer -->
+</header>
+<!-- END: Header -->
+<!-- BEGIN: MainContent -->
+<div class="flex-1 w-full flex flex-col items-center relative z-20 overflow-y-auto no-scrollbar pb-10">
+<!-- Title -->
+<h1 class="font-serif text-3xl text-center text-[#1c274c] font-bold leading-tight mb-8">
+        Unlock your<br/>full Aura Card <span class="text-orange-300">✦</span>
+</h1>
+<!-- Tarot Cards Illustration -->
+<div class="relative w-full h-48 flex justify-center items-center mb-8">
+<!-- Left Card -->
+<div class="absolute w-24 h-36 bg-[#FFEFE5] rounded-xl border border-orange-200 card-shadow floating-card-left origin-bottom flex items-center justify-center -translate-x-12 rotate-[-15deg]">
+<svg class="w-10 h-10 text-orange-300" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+<!-- Right Card -->
+<div class="absolute w-24 h-36 bg-[#F5E6FF] rounded-xl border border-purple-200 card-shadow floating-card-right origin-bottom flex items-center justify-center translate-x-12 rotate-[15deg]">
+<svg class="w-10 h-10 text-purple-300" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+<!-- Center Card -->
+<div class="absolute w-28 h-40 bg-white rounded-xl border-2 border-orange-200 card-shadow floating-card-center z-10 flex items-center justify-center scale-110">
+<svg class="w-16 h-16 text-orange-300" fill="none" stroke="currentColor" stroke-width="1" viewbox="0 0 24 24"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="#FFEFE5"></path></svg>
+</div>
+<!-- Clouds Bottom -->
+<div class="absolute -bottom-4 w-full flex justify-center opacity-70">
+<svg fill="white" height="40" viewbox="0 0 200 40" width="200" xmlns="http://www.w3.org/2000/svg">
+<path d="M40 40C40 17.9086 57.9086 0 80 0C97.1086 0 111.706 10.7412 117.5 25.5C119.5 25.2 121.5 25 123.5 25C138.688 25 151 37.3122 151 52.5C151 67.6878 138.688 80 123.5 80H80C57.9086 80 40 62.0914 40 40Z" fill="white"></path>
+</svg>
+</div>
+</div>
+<!-- Feature Checklist -->
+<div class="w-full bg-white/70 backdrop-blur-md rounded-2xl p-5 shadow-sm border border-white/50 mb-8 space-y-4 text-[#1c274c] text-[15px] font-medium">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-6 h-6 rounded-full bg-[#ff7a9b] text-white flex items-center justify-center shadow-sm">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+</div>
+<span>Full reading &amp; insights</span>
+</div>
+<span class="text-pink-400 opacity-70 text-lg">📖</span>
+</div>
+<div class="h-px bg-gray-100/80 w-full"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-6 h-6 rounded-full bg-[#ff7a9b] text-white flex items-center justify-center shadow-sm">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+</div>
+<span>Outfit energy details</span>
+</div>
+<span class="text-purple-400 opacity-70 text-lg">👗</span>
+</div>
+<div class="h-px bg-gray-100/80 w-full"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-6 h-6 rounded-full bg-[#ff7a9b] text-white flex items-center justify-center shadow-sm">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+</div>
+<span>Social action plan</span>
+</div>
+<span class="text-pink-400 opacity-70 text-lg">💬</span>
+</div>
+<div class="h-px bg-gray-100/80 w-full"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-6 h-6 rounded-full bg-[#ff7a9b] text-white flex items-center justify-center shadow-sm">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+</div>
+<span>Lucky ritual</span>
+</div>
+<span class="text-green-400 opacity-70 text-lg">🍀</span>
+</div>
+<div class="h-px bg-gray-100/80 w-full"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-6 h-6 rounded-full bg-[#ff7a9b] text-white flex items-center justify-center shadow-sm">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+</div>
+<span>Save &amp; share high-quality card</span>
+</div>
+<span class="text-purple-500 opacity-70 text-lg">📤</span>
+</div>
+</div>
+<!-- Pricing -->
+<div class="text-center mb-6 relative">
+<span class="absolute -left-6 top-1 text-orange-300 text-xl">✦</span>
+<h2 class="font-serif text-5xl font-bold text-[#1c274c] tracking-tight">$1.99</h2>
+<span class="absolute -right-6 top-6 text-orange-300 text-lg">✦</span>
+<p class="text-[#6b7280] text-sm mt-1">One-time unlock</p>
+</div>
+<!-- Primary Action Button -->
+<button class="w-full bg-gradient-to-r from-[#ff6b95] to-[#ff85a1] text-white font-semibold text-lg py-4 rounded-full button-glow flex items-center justify-center relative mb-6 transition-transform active:scale-95">
+<span>Confirm Unlock $1.99</span>
+<div class="absolute right-2 bg-white/30 p-2 rounded-full backdrop-blur-sm">
+<svg class="w-5 h-5 text-white" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" fill-rule="evenodd"></path></svg>
+</div>
+</button>
+<!-- Security Badge -->
+<div class="flex items-center justify-center space-x-2 text-gray-400 text-xs mb-6 w-full">
+<div class="h-px bg-gray-300 flex-1"></div>
+<div class="flex items-center space-x-1 px-2">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Secure &amp; private payment</span>
+</div>
+<div class="h-px bg-gray-300 flex-1"></div>
+</div>
+<!-- Secondary Action Button -->
+<button class="w-full bg-white/50 border border-[#ff6b95]/20 text-[#ff4d79] font-medium py-3.5 rounded-full flex items-center justify-center space-x-2 mb-4 hover:bg-white/80 transition-colors">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path></svg>
+<span>Invite 3 Friends Instead</span>
+</button>
+<!-- Footer Guarantee -->
+<div class="flex items-center justify-center space-x-1 text-gray-400 text-xs pb-4">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" fill-rule="evenodd"></path></svg>
+<span>Cancel anytime. Your data is safe with us.</span>
+</div>
+</div>
+<!-- END: MainContent -->
+<!-- Home Indicator (Mock) -->
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-black rounded-full z-50"></div>
+</main>
+<!-- END: MobileDeviceContainer -->
+</body></html>

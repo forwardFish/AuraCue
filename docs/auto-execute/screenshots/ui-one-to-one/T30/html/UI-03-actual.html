@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AuraCue UI-03 Energy Selection</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fbf8f4; color: #10213d; font-family: Inter, Arial, sans-serif; }
+    .device { width: 941px; height: 1672px; margin: 0 auto; padding: 58px 58px 0; background: radial-gradient(circle at 50% 20%, #fffdfb 0%, #f5f1eb 100%); overflow: hidden; border-radius: 42px; }
+    .status { display: flex; justify-content: space-between; font-size: 28px; font-weight: 700; margin-bottom: 22px; }
+    .status-icons { width:164px; height:34px; display:block; position:relative; font-size:0; }
+    .status-icons::before { content:""; position:absolute; left:0; top:2px; width:94px; height:30px; background:
+      linear-gradient(#050505,#050505) 0 19px/8px 10px no-repeat,
+      linear-gradient(#050505,#050505) 14px 14px/8px 15px no-repeat,
+      linear-gradient(#050505,#050505) 28px 8px/8px 21px no-repeat,
+      linear-gradient(#050505,#050505) 42px 2px/8px 27px no-repeat,
+      radial-gradient(ellipse at 50% 100%, transparent 0 8px, #050505 9px 13px, transparent 14px) 58px 0/36px 25px no-repeat,
+      radial-gradient(ellipse at 50% 100%, transparent 0 3px, #050505 4px 7px, transparent 8px) 68px 13px/16px 12px no-repeat; }
+    .status-icons::after { content:""; position:absolute; right:0; top:3px; width:53px; height:25px; border:4px solid #050505; border-radius:6px; box-shadow:7px 8px 0 -5px #050505, inset 0 0 0 3px #fff, inset 5px 0 0 3px #050505; }
+    .top { position: relative; text-align: center; margin-bottom: 4px; }
+    .back { position: absolute; left: 0; top: 0; width: 86px; height: 86px; border-radius: 999px; border: 0; background: white; color: #a68154; font-size: 44px; box-shadow: 0 8px 20px rgba(166,129,84,.08); }
+    .brand, h1, .cta { font-family: Georgia, serif; }
+    .brand { display: block; font-size: 66px; line-height: 82px; font-weight: 700; }
+    .rule { margin: 10px auto 14px; width: 238px; color: #c5a059; border-top: 2px solid rgba(197,160,89,.28); text-align: center; font-size: 26px; }
+    .step { display: inline-block; padding: 16px 34px; border: 2px solid rgba(197,160,89,.22); border-radius: 999px; color: #a67c4b; background: rgba(255,255,255,.55); font-size: 24px; }
+    h1 { font-size: 62px; line-height: 1.12; text-align: center; margin: 18px 0 18px; }
+    .copy { text-align: center; color: #6b7280; line-height: 1.45; margin: 0 0 38px; font-size: 26px; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; margin-bottom: 42px; }
+    .energy-card { position: relative; min-height: 178px; border: 2px solid transparent; border-radius: 38px; background: rgba(255,255,255,.72); display: flex; align-items: center; gap: 26px; padding: 26px; text-align: left; color: #10213d; box-shadow: 0 8px 20px rgba(0,0,0,.035); }
+    .energy-card::after { border: 0; }
+    .energy-card.selected { border-color: #e5c284; box-shadow: 0 0 16px rgba(229,194,132,.36); background: white; }
+    .energy-icon { width: 86px; height: 86px; border-radius: 999px; background: #fff5ec; color: #c5a059; display: grid; place-items: center; flex: 0 0 86px; font-size: 0; position: relative; }
+    .energy-icon.luck, .energy-icon.love { background: #fdeff3; color: #e08ba3; }
+    .energy-icon.calm, .energy-icon.focus { background: #f0f3f8; color: #7e8ba4; }
+    .energy-icon::before, .energy-icon::after { content: ""; position: absolute; }
+    .energy-icon.confidence::before, .energy-icon.charm::before { width: 46px; height: 46px; background: currentColor; clip-path: polygon(50% 0,60% 39%,100% 50%,60% 61%,50% 100%,40% 61%,0 50%,40% 39%); }
+    .energy-icon.luck::before { width: 48px; height: 48px; background: radial-gradient(circle at 35% 35%, currentColor 0 25%, transparent 26%), radial-gradient(circle at 65% 35%, currentColor 0 25%, transparent 26%), radial-gradient(circle at 35% 65%, currentColor 0 25%, transparent 26%), radial-gradient(circle at 65% 65%, currentColor 0 25%, transparent 26%); }
+    .energy-icon.love::before { width: 44px; height: 40px; background: currentColor; clip-path: path("M22 39 C8 27 0 20 0 10 C0 4 4 0 10 0 C15 0 19 3 22 7 C25 3 29 0 34 0 C40 0 44 4 44 10 C44 20 36 27 22 39 Z"); }
+    .energy-icon.calm::before { width: 46px; height: 46px; border-radius: 50%; background: currentColor; }
+    .energy-icon.calm::after { width: 44px; height: 44px; border-radius: 50%; background: #f0f3f8; left: 35px; top: 12px; }
+    .energy-icon.focus::before { width: 54px; height: 34px; border: 5px solid currentColor; border-radius: 55% 55% 55% 55% / 75% 75% 75% 75%; transform: rotate(-2deg); }
+    .energy-icon.focus::after { width: 18px; height: 18px; border-radius: 50%; background: currentColor; left: 34px; top: 34px; }
+    strong { display: block; font-family: Georgia, serif; font-size: 34px; line-height: 1.1; margin-bottom: 10px; }
+    small { display: block; color: #6b7280; font-size: 19px; line-height: 1.35; }
+    i { position: absolute; top: 20px; right: 20px; width: 38px; height: 38px; border-radius: 999px; background: #b68c5e; color: white; font-style: normal; font-size: 0; text-align: center; line-height: 38px; }
+    i::before { content: ""; position: absolute; left: 10px; top: 10px; width: 17px; height: 10px; border-left: 4px solid currentColor; border-bottom: 4px solid currentColor; transform: rotate(-45deg); border-radius: 1px; }
+    .energy-card:not(.selected) i { display: none; }
+    .prompt { border: 2px solid rgba(244,194,205,.55); border-radius: 38px; background: linear-gradient(135deg, rgba(255,241,242,.45), rgba(255,255,255,.84)); padding: 34px 38px; margin-bottom: 40px; }
+    .prompt strong { font-size: 30px; }
+    .line { margin-top: 24px; border-bottom: 2px solid #e8d6d1; color: #6b7280; font-size: 22px; padding-bottom: 22px; }
+    .cta { width: 100%; min-height: 112px; border: 0; border-radius: 999px; color: white; font-size: 40px; background: linear-gradient(180deg,#d4a773 0%,#a67c4b 100%); box-shadow: 0 14px 30px rgba(166,124,75,.22); }
+    .trust { display: block; color: #747b87; text-align: center; font-size: 22px; margin-top: 26px; }
+  </style>
+<style id="t26-capture-shell">
+    html, body { width: 941px !important; height: 1672px !important; margin: 0 !important; overflow: hidden !important; background: #ffffff !important; }
+    body > .phone, body > main.phone, body .phone:first-child {
+      transform: scale(2.4128205128205127);
+      transform-origin: top center;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  </style></head>
+<body>
+  <main class="device">
+    <div class="status"><span>9:41</span><span class="status-icons">signal wifi battery</span></div>
+    <header class="top"><button class="back" aria-label="Back">‹</button><span class="brand">AuraCue</span><div class="rule">✦</div><span class="step">Step 2 of 2</span></header>
+    <h1>What energy do you<br>need today?</h1>
+    <p class="copy">Choose the energy you want to invite in.<br>Your card will be aligned to support it. ✨</p>
+    <section class="grid"><button class="energy-card selected" data-energy="confidence">
+      <span class="energy-icon confidence" aria-label="spark"></span>
+      <span><strong>Confidence</strong><small>Stand tall. Believe in you.</small></span>
+      <i>check</i>
+    </button><button class="energy-card" data-energy="luck">
+      <span class="energy-icon luck" aria-label="clover"></span>
+      <span><strong>Luck</strong><small>Open doors. Attract opportunity.</small></span>
+      <i></i>
+    </button><button class="energy-card" data-energy="love">
+      <span class="energy-icon love" aria-label="heart"></span>
+      <span><strong>Love</strong><small>Open your heart. Invite meaningful love.</small></span>
+      <i></i>
+    </button><button class="energy-card" data-energy="calm">
+      <span class="energy-icon calm" aria-label="moon"></span>
+      <span><strong>Calm</strong><small>Find peace. Let go of what weighs you down.</small></span>
+      <i></i>
+    </button><button class="energy-card" data-energy="charm">
+      <span class="energy-icon charm" aria-label="star"></span>
+      <span><strong>Charm</strong><small>Magnetic energy. Naturally draw people in.</small></span>
+      <i></i>
+    </button><button class="energy-card" data-energy="focus">
+      <span class="energy-icon focus" aria-label="eye"></span>
+      <span><strong>Focus</strong><small>Clear your mind. Stay aligned and on track.</small></span>
+      <i></i>
+    </button></section>
+    <section class="prompt"><strong>✦ How do you feel today?</strong><div class="line">Share anything that's on your heart... (optional)</div></section>
+    <button class="cta">✦ Generate My Lucky Aura Card</button>
+    <span class="trust">Private. Personal. Just for you.</span>
+  </main>
+</body>
+</html>

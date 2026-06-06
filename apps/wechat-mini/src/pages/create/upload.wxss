@@ -1,0 +1,41 @@
+.page {
+  min-height: 100vh;
+  padding: 88rpx 48rpx 40rpx;
+  background: #fff8f5;
+  color: #151642;
+  text-align: center;
+}
+.brand {
+  font-size: 36rpx;
+  letter-spacing: 8rpx;
+}
+.title {
+  margin-top: 88rpx;
+  font-size: 56rpx;
+  font-family: serif;
+}
+.copy {
+  margin: 24rpx auto 56rpx;
+  color: #70758d;
+}
+.upload {
+  height: 560rpx;
+  border-radius: 36rpx;
+  background: rgba(255, 255, 255, 0.8);
+  color: #d95d82;
+}
+.primary {
+  margin-top: 36rpx;
+  border-radius: 48rpx;
+  background: linear-gradient(90deg, #8b54d9, #ff9b7a);
+  color: white;
+}
+.skip {
+  margin-top: 20rpx;
+  background: transparent;
+  color: #d95d82;
+}
+.trust {
+  margin-top: 28rpx;
+  color: #778096;
+}

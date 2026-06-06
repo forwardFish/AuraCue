@@ -1,0 +1,5 @@
+﻿读取 AGENTS.md，并执行 docs/auto-execute/auracue-web-tasks/T00-omx-auto-execute-orchestrator.md。
+本 fresh codex exec 只做 T00 队列编排、续跑检查、失败路由和 durable bookkeeping；不要实现产品代码；不要在本 worker 内嵌套启动 T01-T16 workers，因为外层 orchestrator 会按用户要求为每个 task 单独 fresh codex exec 串行启动。
+必须读取 docs/auto-execute/auracue-web-auto-execute-master-plan.md、docs/auto-execute/auracue-web-codex-exec-prompts-split.md、docs/auto-execute/auracue-web-final-acceptance-gate.md 和 task 文件清单。
+检查当前 T01-T04 result/HANDOFF/log 是否合格，识别 T05 为下一未完成任务；写入 docs/auto-execute/results/web/T00.json、docs/auto-execute/latest/web/T00-HANDOFF.md，并在 docs/auto-execute/logs/web/T00-command-log.md 记录 probe 命令和结论。
+Result JSON 必须包含 verdict、covered IDs、commands、evidence、blockers、next repair、rerun/resume 状态。若 T01-T04 合格且 T05-T16 pending，T00 verdict 可为 PASS_FOR_ORCHESTRATION/READY_TO_CONTINUE，但不要声称最终产品 PASS。

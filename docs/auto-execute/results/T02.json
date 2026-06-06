@@ -1,0 +1,101 @@
+{
+  "taskId": "T02",
+  "taskName": "Extract UI Tokens And Asset Inventory",
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "productPassClaim": false,
+  "timestamp": "2026-05-26T12:51:09.7319352+08:00",
+  "scope": {
+    "executedOnlyTask": "T02",
+    "startedNextTask": false,
+    "usedRealPayment": false,
+    "usedProductionCloud": false,
+    "usedProductionDb": false,
+    "usedProductionAi": false,
+    "usedProductionAnalytics": false,
+    "usedSecrets": false,
+    "sourceScreenshotsModified": false
+  },
+  "acceptance": {
+    "tokensIncludeColorTypographySpacingRadiusShadowBorderZDepth": "PASS",
+    "tokensIncludeCardProportionsBackgroundsAndCtaStyles": "PASS",
+    "eachUiIdMapsToAssetsIconsAndMotifs": "PASS",
+    "laterPagesCanImportSharedTokens": "PASS",
+    "tokenPackageImportTest": "PASS",
+    "sourceScreenshotsUnmodified": "PASS",
+    "pixelOrScreenshotDiffEvidence": "MANUAL_REVIEW_REQUIRED"
+  },
+  "changedFiles": [
+    "packages/ui-tokens/package.json",
+    "packages/ui-tokens/src/index.ts",
+    "packages/ui-tokens/tests/ui-tokens.import.test.mjs",
+    "docs/auto-execute/intake/T02-ui-token-report.md",
+    "docs/auto-execute/logs/T02/source-png-inventory.json",
+    "docs/auto-execute/logs/T02/stitch-token-extract.json",
+    "docs/auto-execute/logs/T02/token-build.log",
+    "docs/auto-execute/logs/T02/typecheck.log",
+    "docs/auto-execute/logs/T02/lint.log",
+    "docs/auto-execute/logs/T02/diff-check.log",
+    "docs/auto-execute/results/T02.json",
+    "docs/auto-execute/latest/T02-HANDOFF.md"
+  ],
+  "evidence": [
+    {
+      "type": "source_png_inventory",
+      "path": "docs/auto-execute/logs/T02/source-png-inventory.json",
+      "status": "PASS"
+    },
+    {
+      "type": "stitch_token_extract",
+      "path": "docs/auto-execute/logs/T02/stitch-token-extract.json",
+      "status": "PASS"
+    },
+    {
+      "type": "token_report",
+      "path": "docs/auto-execute/intake/T02-ui-token-report.md",
+      "status": "PASS"
+    },
+    {
+      "type": "token_import_test",
+      "path": "docs/auto-execute/logs/T02/token-build.log",
+      "status": "PASS"
+    },
+    {
+      "type": "typecheck",
+      "path": "docs/auto-execute/logs/T02/typecheck.log",
+      "status": "PASS"
+    },
+    {
+      "type": "local_only_lint",
+      "path": "docs/auto-execute/logs/T02/lint.log",
+      "status": "PASS"
+    },
+    {
+      "type": "diff_check",
+      "path": "docs/auto-execute/logs/T02/diff-check.log",
+      "status": "PASS"
+    }
+  ],
+  "commandsRun": [
+    "Get-Content required AGENTS.md, auto-execute skill, task document, standards, and matrices",
+    "Get-ChildItem -Recurse -File docs\\UI",
+    "Get-ChildItem -Recurse -File packages,apps",
+    "Read T01 result and T01 handoff",
+    "Parsed Stitch code.html files for colors, fonts, gradients, and shadows",
+    "Inspected P0 PNG dimensions with System.Drawing",
+    "pnpm.cmd --filter @auracue/ui-tokens test",
+    "pnpm.cmd typecheck",
+    "pnpm.cmd lint",
+    "git diff --check"
+  ],
+  "blockers": [],
+  "limitations": [
+    "T02 does not implement page-specific UI and does not claim final product PASS.",
+    "T02 did not capture actual mini-program screenshots or run pixel diffs; visual acceptance remains for T22/T23, so this task uses PASS_NEEDS_MANUAL_UI_REVIEW rather than pure PASS.",
+    "The token extraction relies on Stitch code plus PNG dimension/source inventory; human review should still compare final rendered pages against the PNGs."
+  ],
+  "nextSteps": [
+    "T03 should continue with local DB repository and seed fixtures only.",
+    "T08-T18 should import @auracue/ui-tokens and avoid ad hoc duplicated style constants.",
+    "T22/T23 must capture actual screenshots and diff them against docs/UI/小程序 before any pixel-perfect claim."
+  ]
+}

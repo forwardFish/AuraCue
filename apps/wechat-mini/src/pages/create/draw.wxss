@@ -1,0 +1,42 @@
+.page {
+  min-height: 100vh;
+  padding: 88rpx 40rpx 40rpx;
+  background: #fff8f7;
+  color: #151642;
+  text-align: center;
+}
+.brand {
+  font-size: 36rpx;
+  letter-spacing: 8rpx;
+}
+.title {
+  margin-top: 80rpx;
+  font-size: 54rpx;
+  font-family: serif;
+}
+.copy {
+  margin: 24rpx auto 48rpx;
+  color: #70758d;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20rpx;
+  align-items: end;
+}
+.card {
+  min-height: 380rpx;
+  border-radius: 28rpx;
+  background: linear-gradient(180deg, #fff4f8, #f5ddff);
+  color: #151642;
+}
+.selected {
+  min-height: 480rpx;
+  border: 2rpx solid #d6a45c;
+}
+.primary {
+  margin-top: 60rpx;
+  border-radius: 48rpx;
+  background: linear-gradient(90deg, #8b54d9, #ff9b7a);
+  color: white;
+}

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AuraCue - Upload Outfit</title>
+<!-- Tailwind CSS v3 via CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#171545",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#0a0304",
+                    "on-secondary-fixed": "#3c0700",
+                    "on-tertiary-fixed": "#24191a",
+                    "secondary-fixed": "#ffdad2",
+                    "tertiary-fixed": "#f2dedf",
+                    "inverse-surface": "#2c2b5b",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#d5c2c3",
+                    "primary": "#613dde",
+                    "on-primary-fixed-variant": "#491ac6",
+                    "inverse-on-surface": "#f2efff",
+                    "surface-bright": "#fcf8ff",
+                    "background": "#fcf8ff",
+                    "on-secondary-container": "#783220",
+                    "surface-container-low": "#f6f2ff",
+                    "surface-variant": "#e2dfff",
+                    "primary-container": "#7a5af8",
+                    "tertiary-container": "#837374",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "outline": "#797586",
+                    "surface-container-highest": "#e2dfff",
+                    "inverse-primary": "#cabeff",
+                    "primary-fixed": "#e6deff",
+                    "on-primary-fixed": "#1d0061",
+                    "surface-tint": "#613ede",
+                    "on-secondary-fixed-variant": "#773120",
+                    "surface-container-high": "#e9e5ff",
+                    "secondary": "#954835",
+                    "on-primary-container": "#ffffff",
+                    "surface": "#fcf8ff",
+                    "tertiary": "#695b5c",
+                    "primary-fixed-dim": "#cabeff",
+                    "on-background": "#171545",
+                    "on-tertiary-fixed-variant": "#514344",
+                    "surface-container": "#efebff",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#484555",
+                    "secondary-fixed-dim": "#ffb4a2",
+                    "secondary-container": "#fe9c84",
+                    "outline-variant": "#cac4d7",
+                    "surface-dim": "#d9d6ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px",
+                    "2xl": "1rem",
+                    "3xl": "1.5rem",
+                    "4xl": "2rem"
+            },
+            "spacing": {
+                    "container-padding": "24px",
+                    "stack-md": "16px",
+                    "gutter": "16px",
+                    "stack-sm": "8px",
+                    "stack-lg": "32px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg": [
+                            "Playfair Display"
+                    ],
+                    "label-sm": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body-md": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "title-md": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "title-md": [
+                            "18px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "34px",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Base styles and Ethereal Glassmorphism utilities */
+        body {
+            background-color: #fff9f9; /* Base warm off-white */
+            background-image: 
+                radial-gradient(circle at 0% 40%, rgba(255, 230, 235, 0.6) 0%, transparent 50%),
+                radial-gradient(circle at 100% 20%, rgba(255, 240, 230, 0.4) 0%, transparent 60%),
+                radial-gradient(circle at 100% 100%, rgba(255, 220, 230, 0.3) 0%, transparent 70%);
+            background-attachment: fixed;
+            color: theme('colors.on-surface');
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .sparkle-icon {
+            fill: #f472b6;
+            opacity: 0.8;
+        }
+
+        .gradient-text {
+            color: #171545;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation -->
+<header class="flex justify-between items-center px-container-padding py-stack-md w-full bg-transparent z-10 relative">
+<!-- Back Button -->
+<button aria-label="Go back" class="w-12 h-12 rounded-full bg-white/50 backdrop-blur-md flex items-center justify-center text-secondary hover:bg-white/80 transition-colors shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-white/60">
+<span class="material-symbols-outlined text-[#d97757]" style="font-size: 24px; font-weight: 300;">chevron_left</span>
+</button>
+<!-- Brand Identity -->
+<div class="flex flex-col items-center justify-center absolute left-1/2 -translate-x-1/2">
+<!-- Lotus Logo SVG -->
+<svg class="mb-1 text-[#171545]" fill="none" height="24" viewbox="0 0 32 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 2.5C16 2.5 13.5 6 13.5 10.5C13.5 15 16 19 16 19C16 19 18.5 15 18.5 10.5C18.5 6 16 2.5 16 2.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M16 19C16 19 11 18 8.5 13.5C6 9 8 5 8 5C8 5 11 7 13.5 10.5C16 14 16 19 16 19Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M16 19C16 19 21 18 23.5 13.5C26 9 24 5 24 5C24 5 21 7 18.5 10.5C16 14 16 19 16 19Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M8 15C8 15 4 16 2 13C0 10 3 8 3 8C3 8 5 11 8 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M24 15C24 15 28 16 30 13C32 10 29 8 29 8C29 8 27 11 24 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<span class="font-headline-lg-mobile text-[14px] leading-tight tracking-[0.2em] uppercase font-medium text-[#171545]">AuraCue</span>
+</div>
+<!-- Empty placeholder to balance flex space -->
+<div class="w-12 h-12"></div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col px-container-padding pb-stack-lg z-10 relative max-w-md mx-auto w-full">
+<!-- Header Text Section -->
+<div class="text-center mt-stack-md mb-stack-lg relative">
+<!-- Decorative Sparkle Top Right -->
+<svg class="absolute -right-2 top-0 w-6 h-6 sparkle-icon" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 0L13.5 8.5L22 10L13.5 11.5L12 20L10.5 11.5L2 10L10.5 8.5L12 0Z" fill="currentColor"></path>
+</svg>
+<svg class="absolute right-4 top-6 w-4 h-4 sparkle-icon opacity-60" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 0L13.5 8.5L22 10L13.5 11.5L12 20L10.5 11.5L2 10L10.5 8.5L12 0Z" fill="currentColor"></path>
+</svg>
+<h1 class="font-display-lg text-[36px] text-[#171545] mb-3 gradient-text font-semibold">
+                Upload today's outfit?
+            </h1>
+<p class="font-body-md text-[#4a5568] max-w-[280px] mx-auto leading-[1.6] text-[15px]">
+                Optional — add a look for a more personalized card, or let AuraCue read your mood only.
+            </p>
+</div>
+<!-- Central Upload Card -->
+<div class="bg-white/40 backdrop-blur-xl rounded-[32px] p-[6px] mb-8 shadow-[0_8px_32px_rgba(255,200,210,0.15)] border border-white/60 relative group">
+<!-- Inner Dashed Area -->
+<div class="border-[1.5px] border-dashed border-[#f4c2c2] rounded-[28px] overflow-hidden relative flex flex-col items-center bg-white/30 pb-6 transition-colors group-hover:bg-white/40">
+<!-- Image Container -->
+<div class="w-full relative mb-2">
+<img alt="Ethereal dress illustration" class="w-full h-auto object-cover opacity-95 mix-blend-multiply rounded-t-[28px]" data-alt="A striking digital installation art piece featuring a glowing, generative representation of a silk dress on a hanger, suspended in a vast, minimalist gallery space. The room is illuminated by high-key, soft pink and peach lighting that creates a bright, modern ethereal light-mode aesthetic. The artwork relies on a sophisticated palette of soft pastels and pristine whites, punctuated by subtle shimmering highlights. The mood is serene yet technologically advanced, evoking a sense of magical realism and premium elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVMp-yFs4Y8xb6wUqegmzu90K-r67J-F-ax0x6IioVwS3OWxCEbJJg9V67M09H8smNwDuTJNz3840X1WEN9BSlRKOEVcbWE6Gk8qDSxUljp3S3FgVvG331cetsvx4dHmwOZ7m_mpLKA6b1_kELFdGI-ihNZvzKnImT7v8DmXGUCqWR8x6I_xbU5t8_SP-13HM9y0SlOa92OT9b5g5BZ9TQqvy_NnG5LoScI1ZrrxZzyD9Ywkf0pP5ErwZHffgTwVDgtZDzhQIhT3Y"/>
+<!-- Overlay Gradient to blend image into background -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#fdfbfb] via-transparent to-transparent"></div>
+<!-- Camera Button Overlay -->
+<button class="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-[0_4px_24px_rgba(244,114,182,0.4)] hover:scale-105 transition-transform duration-300 z-10 border border-white/80 relative overflow-hidden ring-4 ring-white/50">
+<!-- Soft colored glow behind button -->
+<div class="absolute inset-0 rounded-full bg-gradient-to-br from-white to-[#fdf2f8] opacity-80"></div>
+<span class="material-symbols-outlined text-[#f472b6] z-10 relative" style="font-size: 32px; font-variation-settings: 'FILL' 0, 'wght' 300;">photo_camera</span>
+<!-- Tiny sparkle on button -->
+<svg class="absolute top-4 right-4 w-3 h-3 text-[#fbd38d] opacity-90 z-10" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 0L13.5 8.5L22 10L13.5 11.5L12 20L10.5 11.5L2 10L10.5 8.5L12 0Z"></path>
+</svg>
+</button>
+</div>
+<!-- Card Text -->
+<h2 class="font-headline-lg-mobile text-[22px] font-semibold text-[#171545] mb-1">
+                    Add a photo of your outfit
+                </h2>
+<p class="font-body-md text-[#4a5568] text-center normal-case text-[15px] leading-relaxed">
+                    Good lighting works best.<br/>We'll keep it private.
+                </p>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full bg-gradient-to-r from-[#8b5cf6] via-[#d946ef] to-[#fb923c] text-white font-title-md py-[18px] rounded-[32px] shadow-[0_8px_24px_rgba(139,92,246,0.3)] flex items-center justify-center gap-2 hover:opacity-95 hover:scale-[0.99] transition-all duration-200 mb-8 relative overflow-hidden group">
+<!-- Sparkle Left -->
+<svg class="w-5 h-5 text-white/90 group-hover:scale-110 transition-transform" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 0L13.5 8.5L22 10L13.5 11.5L12 20L10.5 11.5L2 10L10.5 8.5L12 0Z"></path>
+</svg>
+<span class="font-normal text-[18px] tracking-wide">Upload Outfit</span>
+<!-- Sparkle Right -->
+<svg class="w-5 h-5 text-white/90 group-hover:scale-110 transition-transform" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 0L13.5 8.5L22 10L13.5 11.5L12 20L10.5 11.5L2 10L10.5 8.5L12 0Z"></path>
+</svg>
+<!-- Button Shimmer Effect -->
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+</button>
+<!-- Secondary Action (Skip) -->
+<div class="flex flex-col items-center justify-center mt-2 mb-6">
+<!-- Decorative line above skip -->
+<div class="flex items-center justify-center w-full mb-5 opacity-40 px-12">
+<div class="h-[1px] bg-gradient-to-r from-transparent via-[#f472b6] to-transparent flex-1"></div>
+<svg class="w-3 h-3 text-[#f472b6] mx-2" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 0L13.5 8.5L22 10L13.5 11.5L12 20L10.5 11.5L2 10L10.5 8.5L12 0Z"></path>
+</svg>
+<div class="h-[1px] bg-gradient-to-r from-transparent via-[#f472b6] to-transparent flex-1"></div>
+</div>
+<button class="font-body-md text-[#e11d48] hover:text-[#be123c] transition-colors bg-transparent border-none p-2 text-[15px]">
+                Skip for Today
+            </button>
+</div>
+<!-- Spacer to push footer down -->
+<div class="flex-grow min-h-[16px]"></div>
+<!-- Privacy Footer -->
+<div class="flex items-center justify-center gap-1.5 opacity-60 mt-auto pb-6">
+<span class="material-symbols-outlined text-[16px] text-[#4a5568]">verified_user</span>
+<span class="font-body-md text-sm text-[#4a5568] normal-case">Private. Personal. Just for you.</span>
+<svg class="w-3 h-3 text-[#f472b6]" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 0L13.5 8.5L22 10L13.5 11.5L12 20L10.5 11.5L2 10L10.5 8.5L12 0Z"></path>
+</svg>
+</div>
+</main>
+<style>
+        @keyframes shimmer {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+</body></html>

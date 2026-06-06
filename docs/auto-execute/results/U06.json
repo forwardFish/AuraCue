@@ -1,0 +1,342 @@
+{
+  "taskId": "U06",
+  "title": "All-Screen Visual Convergence",
+  "status": "REPAIR_REQUIRED",
+  "generatedAt": "2026-05-27T22:38:29+08:00",
+  "scope": {
+    "targetUiIds": [
+      "UI-01",
+      "UI-02",
+      "UI-03",
+      "UI-04",
+      "UI-05",
+      "UI-06",
+      "UI-07",
+      "UI-08",
+      "UI-09",
+      "UI-10",
+      "UI-11",
+      "UI-12",
+      "UI-13",
+      "UI-14",
+      "UI-15",
+      "UI-16",
+      "UI-17",
+      "UI-18"
+    ],
+    "targetDiffRatio": 0.005,
+    "continuedTasks": ["U06 only"],
+    "didNotContinue": ["U07"],
+    "productCodeEdits": false,
+    "thresholdLowered": false,
+    "fullReferenceScreenshotsMounted": false,
+    "remoteAssetsUsed": false
+  },
+  "inputTaskStatePreserved": {
+    "U02": {
+      "status": "REPAIR_REQUIRED",
+      "blockerClassification": "ASSET_SOURCE_REQUIRED",
+      "round": 5
+    },
+    "U03": {
+      "status": "REPAIR_REQUIRED",
+      "blockerClassification": "ASSET_SOURCE_REQUIRED",
+      "round": 5
+    },
+    "U04": {
+      "status": "REPAIR_REQUIRED",
+      "blockerClassification": "ASSET_SOURCE_REQUIRED",
+      "round": 2
+    },
+    "U05": {
+      "status": "REPAIR_REQUIRED",
+      "blockerClassification": "ASSET_SOURCE_REQUIRED",
+      "round": 2
+    }
+  },
+  "visualEvidence": {
+    "T31": {
+      "status": "REPAIR_REQUIRED",
+      "generatedAt": "2026-05-27T14:37:38.355Z",
+      "summary": "docs/auto-execute/screenshots/ui-one-to-one/T31/visual-summary.json",
+      "result": "docs/auto-execute/results/T31.json",
+      "actualPngCount": 18,
+      "diffPngCount": 18,
+      "metricsJsonCount": 18
+    },
+    "T33": {
+      "status": "REPAIR_REQUIRED",
+      "generatedAt": "2026-05-27T14:38:19.104Z",
+      "summary": "docs/auto-execute/screenshots/ui-one-to-one/T33/visual-summary.json",
+      "result": "docs/auto-execute/results/T33.json",
+      "actualPngCount": 18,
+      "diffPngCount": 18,
+      "metricsJsonCount": 18
+    },
+    "finalGate": {
+      "status": "REPAIR_REQUIRED",
+      "exitCode": 2,
+      "unresolvedItems": 25,
+      "result": "docs/auto-execute/results/T33.json",
+      "log": "docs/auto-execute/logs/U06/T33-final-gate.log"
+    }
+  },
+  "screenRatios": [
+    {
+      "uiId": "UI-01",
+      "t31DiffRatio": 0.142936,
+      "t33DiffRatio": 0.142936,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-01-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-01-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-01-metrics.json"
+    },
+    {
+      "uiId": "UI-02",
+      "t31DiffRatio": 0.212549,
+      "t33DiffRatio": 0.212549,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-02-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-02-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-02-metrics.json"
+    },
+    {
+      "uiId": "UI-03",
+      "t31DiffRatio": 0.174261,
+      "t33DiffRatio": 0.174261,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-03-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-03-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-03-metrics.json"
+    },
+    {
+      "uiId": "UI-04",
+      "t31DiffRatio": 0.193674,
+      "t33DiffRatio": 0.193674,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 107, "y": 48, "width": 727, "height": 1603 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-04-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-04-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-04-metrics.json"
+    },
+    {
+      "uiId": "UI-05",
+      "t31DiffRatio": 0.262479,
+      "t33DiffRatio": 0.262479,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-05-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-05-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-05-metrics.json"
+    },
+    {
+      "uiId": "UI-06",
+      "t31DiffRatio": 0.288386,
+      "t33DiffRatio": 0.288386,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-06-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-06-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-06-metrics.json"
+    },
+    {
+      "uiId": "UI-07",
+      "t31DiffRatio": 0.216334,
+      "t33DiffRatio": 0.216334,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-07-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-07-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-07-metrics.json"
+    },
+    {
+      "uiId": "UI-08",
+      "t31DiffRatio": 0.257127,
+      "t33DiffRatio": 0.257127,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 76, "y": 10, "width": 788, "height": 1629 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-08-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-08-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-08-metrics.json"
+    },
+    {
+      "uiId": "UI-09",
+      "t31DiffRatio": 0.343375,
+      "t33DiffRatio": 0.343375,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 47, "y": 0, "width": 847, "height": 1656 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-09-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-09-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-09-metrics.json"
+    },
+    {
+      "uiId": "UI-10",
+      "t31DiffRatio": 0.337765,
+      "t33DiffRatio": 0.337765,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 84, "y": 3, "width": 774, "height": 1600 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-10-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-10-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-10-metrics.json"
+    },
+    {
+      "uiId": "UI-11",
+      "t31DiffRatio": 0.457306,
+      "t33DiffRatio": 0.457306,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-11-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-11-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-11-metrics.json"
+    },
+    {
+      "uiId": "UI-12",
+      "t31DiffRatio": 0.366343,
+      "t33DiffRatio": 0.366343,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-12-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-12-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-12-metrics.json"
+    },
+    {
+      "uiId": "UI-13",
+      "t31DiffRatio": 0.518726,
+      "t33DiffRatio": 0.518726,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-13-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-13-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-13-metrics.json"
+    },
+    {
+      "uiId": "UI-14",
+      "t31DiffRatio": 0.314493,
+      "t33DiffRatio": 0.314493,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-14-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-14-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-14-metrics.json"
+    },
+    {
+      "uiId": "UI-15",
+      "t31DiffRatio": 0.642515,
+      "t33DiffRatio": 0.642515,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-15-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-15-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-15-metrics.json"
+    },
+    {
+      "uiId": "UI-16",
+      "t31DiffRatio": 0.476996,
+      "t33DiffRatio": 0.476996,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-16-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-16-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-16-metrics.json"
+    },
+    {
+      "uiId": "UI-17",
+      "t31DiffRatio": 0.309294,
+      "t33DiffRatio": 0.309294,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-17-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-17-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-17-metrics.json"
+    },
+    {
+      "uiId": "UI-18",
+      "t31DiffRatio": 0.369695,
+      "t33DiffRatio": 0.369695,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-18-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-18-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-18-metrics.json"
+    }
+  ],
+  "aggregate": {
+    "screenCount": 18,
+    "passingScreens": 0,
+    "failingScreens": 18,
+    "minDiffRatio": 0.142936,
+    "maxDiffRatio": 0.642515,
+    "maxDiffRatioUiId": "UI-15",
+    "allDiffRatiosAtOrBelowThreshold": false,
+    "finalGatePassed": false
+  },
+  "commands": [
+    {
+      "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T31",
+      "exitCode": 0,
+      "status": "REPAIR_REQUIRED",
+      "log": "docs/auto-execute/logs/U06/T31.log"
+    },
+    {
+      "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T33",
+      "exitCode": 0,
+      "status": "REPAIR_REQUIRED",
+      "log": "docs/auto-execute/logs/U06/T33-harness.log"
+    },
+    {
+      "command": "node scripts/t33-final-ui-one-to-one-gate.mjs",
+      "exitCode": 2,
+      "status": "REPAIR_REQUIRED",
+      "log": "docs/auto-execute/logs/U06/T33-final-gate.log"
+    },
+    {
+      "command": "pnpm.cmd test",
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/U06/pnpm-test.log"
+    },
+    {
+      "command": "node scripts/verify-wechat-routes.mjs",
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/U06/routes.log"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/U06/diff-check.log"
+    }
+  ],
+  "changedFiles": [
+    "docs/auto-execute/results/U06.json",
+    "docs/auto-execute/latest/U06-HANDOFF.md",
+    "docs/auto-execute/results/T31.json",
+    "docs/auto-execute/results/T33.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T31/**",
+    "docs/auto-execute/screenshots/ui-one-to-one/T33/**",
+    "docs/auto-execute/logs/U06/**"
+  ],
+  "blockerClassification": "ASSET_SOURCE_REQUIRED",
+  "blockers": [
+    "All 18 screens still exceed the strict diffRatio <= 0.005 visual threshold after fresh T31 and T33 all-screen capture.",
+    "U02 through U05 already classified the grouped residual visual gaps as ASSET_SOURCE_REQUIRED after bounded repair rounds; U06 preserves those classifications and aggregates the current all-screen evidence.",
+    "The remaining mismatch is dominated by exact raster-like visual assets, artwork, native chrome, texture, glow, and font rendering rather than missing evidence, broken routes, missing controls, or threshold configuration.",
+    "Under the current constraints, pure PASS requires approved original component assets or explicit approval for reference-derived per-component assets, followed by rerunning T31, T33 harness, and the final gate."
+  ],
+  "notBlockedBy": [
+    "missing actual PNG evidence",
+    "missing diff PNG evidence",
+    "missing metrics JSON evidence",
+    "missing core text",
+    "missing required controls",
+    "local route verification",
+    "pnpm.cmd test",
+    "git diff --check",
+    "remote service availability"
+  ],
+  "nextAction": "Stop U06 as REPAIR_REQUIRED / ASSET_SOURCE_REQUIRED. Do not start U07. Resolve asset-source policy or provide approved original component assets before another visual convergence worker attempts PASS."
+}

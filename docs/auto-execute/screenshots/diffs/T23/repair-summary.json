@@ -1,0 +1,138 @@
+{
+  "taskId": "T23",
+  "status": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+  "sourceTaskId": "T22",
+  "sourceOfTruth": "final-prd-v1.0",
+  "legacyP0Status": "DEMOTED",
+  "uiRange": "UI-01..UI-12",
+  "command": "node scripts/t23-visual-repair-loop.mjs",
+  "screenCount": 12,
+  "unexpectedLegacyTargetCount": 0,
+  "finalP0TargetCount": 12,
+  "canClaimPixelPerfect": false,
+  "finalVisualConclusion": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+  "summaryNote": "T23 confirmed the visual repair target set is final P0 UI-01..UI-12; runtime raster/diff evidence remains to be generated.",
+  "screens": [
+    {
+      "uiId": "UI-01",
+      "route": "/",
+      "pagePath": "pages/index/index",
+      "sourceReference": "docs/UI/小程序/P0-01-Mood-首页选择今日状态.png",
+      "metrics": "docs/auto-execute/screenshots/diffs/T23/UI-01-metrics.json",
+      "repairDecision": "scope_confirmed_waiting_for_runtime_evidence",
+      "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+      "canClaimPixelPerfect": false
+    },
+    {
+      "uiId": "UI-02",
+      "route": "/create/context",
+      "pagePath": "pages/create/context",
+      "sourceReference": "docs/UI/小程序/P0-02-Context-可选今日上下文.png",
+      "metrics": "docs/auto-execute/screenshots/diffs/T23/UI-02-metrics.json",
+      "repairDecision": "scope_confirmed_waiting_for_runtime_evidence",
+      "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+      "canClaimPixelPerfect": false
+    },
+    {
+      "uiId": "UI-03",
+      "route": "/create/upload",
+      "pagePath": "pages/create/upload",
+      "sourceReference": "docs/UI/小程序/P0-03-Outfit-可选穿搭上传.png",
+      "metrics": "docs/auto-execute/screenshots/diffs/T23/UI-03-metrics.json",
+      "repairDecision": "scope_confirmed_waiting_for_runtime_evidence",
+      "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+      "canClaimPixelPerfect": false
+    },
+    {
+      "uiId": "UI-04",
+      "route": "/create/draw",
+      "pagePath": "pages/create/draw",
+      "sourceReference": "docs/UI/小程序/P0-04-Draw-三卡选择.png",
+      "metrics": "docs/auto-execute/screenshots/diffs/T23/UI-04-metrics.json",
+      "repairDecision": "scope_confirmed_waiting_for_runtime_evidence",
+      "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+      "canClaimPixelPerfect": false
+    },
+    {
+      "uiId": "UI-05",
+      "route": "/create/draw",
+      "pagePath": "pages/create/draw",
+      "sourceReference": "docs/UI/小程序/P0-05-Reveal-生成中抽卡仪式.png",
+      "metrics": "docs/auto-execute/screenshots/diffs/T23/UI-05-metrics.json",
+      "repairDecision": "scope_confirmed_waiting_for_runtime_evidence",
+      "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+      "canClaimPixelPerfect": false
+    },
+    {
+      "uiId": "UI-06",
+      "route": "/result/:id",
+      "pagePath": "pages/result/index",
+      "sourceReference": "docs/UI/小程序/P0-06-Result-完整气场卡结果.png",
+      "metrics": "docs/auto-execute/screenshots/diffs/T23/UI-06-metrics.json",
+      "repairDecision": "scope_confirmed_waiting_for_runtime_evidence",
+      "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+      "canClaimPixelPerfect": false
+    },
+    {
+      "uiId": "UI-07",
+      "route": "/activate/:id",
+      "pagePath": "pages/activate/index",
+      "sourceReference": "docs/UI/小程序/P0-07-Activate-选择锚点并长按封存.png",
+      "metrics": "docs/auto-execute/screenshots/diffs/T23/UI-07-metrics.json",
+      "repairDecision": "scope_confirmed_waiting_for_runtime_evidence",
+      "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+      "canClaimPixelPerfect": false
+    },
+    {
+      "uiId": "UI-08",
+      "route": "/activated/:id",
+      "pagePath": "pages/activated/index",
+      "sourceReference": "docs/UI/小程序/P0-08-Activated-气场已激活成功.png",
+      "metrics": "docs/auto-execute/screenshots/diffs/T23/UI-08-metrics.json",
+      "repairDecision": "scope_confirmed_waiting_for_runtime_evidence",
+      "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+      "canClaimPixelPerfect": false
+    },
+    {
+      "uiId": "UI-09",
+      "route": "/share/:id",
+      "pagePath": "pages/share/index",
+      "sourceReference": "docs/UI/小程序/P0-09-Share-Story卡预览与保存.png",
+      "metrics": "docs/auto-execute/screenshots/diffs/T23/UI-09-metrics.json",
+      "repairDecision": "scope_confirmed_waiting_for_runtime_evidence",
+      "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+      "canClaimPixelPerfect": false
+    },
+    {
+      "uiId": "UI-10",
+      "route": "/share/:id/channels",
+      "pagePath": "pages/share/index",
+      "sourceReference": "docs/UI/小程序/P0-09A-Share-渠道选择状态.png",
+      "metrics": "docs/auto-execute/screenshots/diffs/T23/UI-10-metrics.json",
+      "repairDecision": "scope_confirmed_waiting_for_runtime_evidence",
+      "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+      "canClaimPixelPerfect": false
+    },
+    {
+      "uiId": "UI-11",
+      "route": "/saved/:id",
+      "pagePath": "pages/saved/index",
+      "sourceReference": "docs/UI/小程序/P0-10-Saved-保存成功反馈.png",
+      "metrics": "docs/auto-execute/screenshots/diffs/T23/UI-11-metrics.json",
+      "repairDecision": "scope_confirmed_waiting_for_runtime_evidence",
+      "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+      "canClaimPixelPerfect": false
+    },
+    {
+      "uiId": "UI-12",
+      "route": "/error/network",
+      "pagePath": "pages/error/network",
+      "sourceReference": "docs/UI/小程序/P0-11-Error-生成失败重试.png",
+      "metrics": "docs/auto-execute/screenshots/diffs/T23/UI-12-metrics.json",
+      "repairDecision": "scope_confirmed_waiting_for_runtime_evidence",
+      "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+      "canClaimPixelPerfect": false
+    }
+  ],
+  "blockers": []
+}

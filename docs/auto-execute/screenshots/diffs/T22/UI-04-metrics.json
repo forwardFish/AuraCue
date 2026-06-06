@@ -1,0 +1,19 @@
+{
+  "taskId": "T22",
+  "uiId": "UI-04",
+  "title": "Draw Card Selection",
+  "route": "/create/draw",
+  "pagePath": "pages/create/draw",
+  "state": "draw-card-selection",
+  "sourceReference": "docs/UI/小程序/P0-04-Draw-三卡选择.png",
+  "referencePresent": true,
+  "actualScreenshotPresent": false,
+  "diffImagePresent": false,
+  "metricsPresent": false,
+  "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+  "requiredEvidence": {
+    "actualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-04.png",
+    "diffImage": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-04.png",
+    "pixelMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-04.json"
+  }
+}

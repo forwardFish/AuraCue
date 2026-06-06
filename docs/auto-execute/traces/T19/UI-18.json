@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-18",
+  "route": "/error/network",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "Try Again",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T11/generation-error.json"
+    },
+    {
+      "label": "Change Scene",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T11/generation-error.json"
+    }
+  ],
+  "analytics": [
+    {
+      "eventName": "page_view_generation_error",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T11/generation-error.json"
+    },
+    {
+      "eventName": "click_generation_retry",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T11/generation-error.json"
+    },
+    {
+      "eventName": "click_generation_change_scene",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T11/generation-error.json"
+    }
+  ],
+  "upstreamTrace": "docs/auto-execute/traces/T11/generation-error.json"
+}

@@ -1,0 +1,119 @@
+{
+  "taskId": "T06",
+  "taskName": "Mock Unlock Payment Invite APIs",
+  "status": "PASS",
+  "verdict": "PASS",
+  "completedAt": "2026-05-26T13:45:00+08:00",
+  "scope": {
+    "allowedFilesHonored": true,
+    "implementedFiles": [
+      "apps/api/src/server.mjs",
+      "apps/api/package.json",
+      "apps/api/tests/unlock-payment-invite-api.test.mjs",
+      "packages/shared-types/src/index.ts"
+    ],
+    "evidenceFiles": [
+      "docs/auto-execute/api/T06/unlock-payment-invite.json",
+      "docs/auto-execute/db/T06/unlock-readback.json",
+      "docs/auto-execute/logs/T06/payment-local-only.json",
+      "docs/auto-execute/logs/T06/unlock-payment-invite-api-test.log",
+      "docs/auto-execute/logs/T06/api-package-test.log",
+      "docs/auto-execute/logs/T06/lint.log",
+      "docs/auto-execute/logs/T06/typecheck.log",
+      "docs/auto-execute/logs/T06/root-test.log",
+      "docs/auto-execute/logs/T06/diff-check.log",
+      "docs/auto-execute/logs/T06/diff-check-final.log"
+    ]
+  },
+  "requirementsCovered": [
+    "REQ-010",
+    "REQ-012",
+    "REQ-016"
+  ],
+  "apiCoverage": [
+    "API-004 C01 mock unlock success",
+    "API-004 C02 duplicate/idempotent unlock",
+    "API-004 payment-required conflict",
+    "API-004 restore-purchase fixture",
+    "API-005 C01 create mock order",
+    "API-005 validation failure",
+    "API-005 not found",
+    "API-005 C02 failed payment",
+    "API-005 C02 retry payment success",
+    "API-006 C01 invite progress to 3/3",
+    "API-006 C02 duplicate invite",
+    "API-006 validation failure",
+    "API-006 not found"
+  ],
+  "dbCoverage": [
+    "payment_orders pending, failed, and paid readback",
+    "user_entitlements payment readback",
+    "user_entitlements invite readback",
+    "user_entitlements restore readback",
+    "share_events invite progress readback",
+    "duplicate invite friend readback remains one row",
+    "duplicate unlock entitlement readback remains one row"
+  ],
+  "securityAndSafety": {
+    "paymentMode": "mock-only",
+    "realWeChatPayCallsAllowed": false,
+    "realPaymentCallbackAllowed": false,
+    "productionPaymentKeysUsed": false,
+    "networkPaymentProviderCalls": [],
+    "realCloudWritesAllowed": false,
+    "productionDbAllowed": false
+  },
+  "commands": [
+    {
+      "command": "pnpm.cmd --filter @auracue/api test:unlock *> docs\\auto-execute\\logs\\T06\\unlock-payment-invite-api-test.log",
+      "status": "PASS_AFTER_RETRY",
+      "evidence": "docs/auto-execute/logs/T06/unlock-payment-invite-api-test.log",
+      "note": "Initial attempt failed before test execution because docs/auto-execute/logs/T06 did not exist; directory was created and the same command passed."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/api test *> docs\\auto-execute\\logs\\T06\\api-package-test.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T06/api-package-test.log"
+    },
+    {
+      "command": "pnpm.cmd lint *> docs\\auto-execute\\logs\\T06\\lint.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T06/lint.log"
+    },
+    {
+      "command": "pnpm.cmd typecheck *> docs\\auto-execute\\logs\\T06\\typecheck.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T06/typecheck.log"
+    },
+    {
+      "command": "pnpm.cmd test *> docs\\auto-execute\\logs\\T06\\root-test.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T06/root-test.log"
+    },
+    {
+      "command": "git diff --check *> docs\\auto-execute\\logs\\T06\\diff-check.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T06/diff-check.log"
+    },
+    {
+      "command": "Get-Content -Raw -LiteralPath 'docs\\auto-execute\\results\\T06.json' | ConvertFrom-Json | Select-Object -ExpandProperty status",
+      "status": "PASS",
+      "evidence": "stdout: PASS"
+    },
+    {
+      "command": "git diff --check *> docs\\auto-execute\\logs\\T06\\diff-check-final.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T06/diff-check-final.log"
+    }
+  ],
+  "blockers": [],
+  "limitations": [
+    "T06 is backend/API/shared-types scope only and does not implement mini-program pages or visual screenshot/diff evidence.",
+    "Payment, invite, restore purchase, entitlement, and DB behavior are deterministic local/mock only; no real WeChat Pay, callback, cloud write, production DB, production analytics, AI, or secrets were used."
+  ],
+  "nextSteps": [
+    "T07 can add save/share/share-image/analytics APIs against the existing repository boundaries.",
+    "T13 and T14 can consume API-004/API-005/API-006 for unlock, invite progress, payment failed/retry/restore, and success states.",
+    "T20 should rerun API-004/API-005/API-006 and DB readback as part of the full API/DB gate."
+  ]
+}

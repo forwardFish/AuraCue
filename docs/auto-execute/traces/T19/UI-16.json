@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-16",
+  "route": "/share/:id/channels",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "WeChat",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    },
+    {
+      "label": "Moments",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    },
+    {
+      "label": "Xiaohongshu",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    },
+    {
+      "label": "Instagram Story",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    },
+    {
+      "label": "Save Image",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    },
+    {
+      "label": "Cancel",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    }
+  ],
+  "analytics": [
+    {
+      "eventName": "page_view_share_channels",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    },
+    {
+      "eventName": "share_card",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    },
+    {
+      "eventName": "click_cancel_share_channels",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    }
+  ],
+  "upstreamTrace": "docs/auto-execute/traces/T16/share-save.json"
+}

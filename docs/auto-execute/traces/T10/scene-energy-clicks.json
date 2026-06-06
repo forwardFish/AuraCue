@@ -1,0 +1,340 @@
+{
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "taskId": "T10",
+  "requirementIds": [
+    "REQ-002",
+    "REQ-003",
+    "REQ-004",
+    "REQ-006",
+    "REQ-007",
+    "REQ-017"
+  ],
+  "uiIds": [
+    "UI-02",
+    "UI-03",
+    "UI-04"
+  ],
+  "routes": [
+    "/create/scene",
+    "/create/energy",
+    "/create/loading"
+  ],
+  "sourceReferences": {
+    "UI-02": "docs/UI/小程序/02-选择_出门场景.png",
+    "UI-03": "docs/UI/小程序/03-选择_今日能量.png",
+    "UI-04": "docs/UI/小程序/03A-选择_场景与能量未完成状态.png"
+  },
+  "stitchReferences": {
+    "UI-02": "docs/UI/小程序/stitch_codex_ui_code_generator/02/code.html",
+    "UI-03": "docs/UI/小程序/stitch_codex_ui_code_generator/03/code.html",
+    "UI-04": "docs/UI/小程序/stitch_codex_ui_code_generator/03a/code.html"
+  },
+  "renderAssertions": {
+    "sceneOptions": [
+      "Date",
+      "Work / Meeting",
+      "Party / Social",
+      "Just need luck"
+    ],
+    "energyOptions": [
+      "Confidence",
+      "Luck",
+      "Love",
+      "Calm",
+      "Charm",
+      "Focus"
+    ],
+    "incompleteValidation": "Choose one energy to continue.",
+    "nativePageFiles": [
+      "apps/wechat-mini/src/pages/create/scene.wxml",
+      "apps/wechat-mini/src/pages/create/scene.wxss",
+      "apps/wechat-mini/src/pages/create/scene.js",
+      "apps/wechat-mini/src/pages/create/energy.wxml",
+      "apps/wechat-mini/src/pages/create/energy.wxss",
+      "apps/wechat-mini/src/pages/create/energy.js"
+    ]
+  },
+  "clicks": {
+    "sceneOptions": [
+      {
+        "controlId": "scene-date",
+        "label": "Date",
+        "selectedScene": "date",
+        "analyticsAccepted": true
+      },
+      {
+        "controlId": "scene-work",
+        "label": "Work / Meeting",
+        "selectedScene": "work",
+        "analyticsAccepted": true
+      },
+      {
+        "controlId": "scene-party",
+        "label": "Party / Social",
+        "selectedScene": "party",
+        "analyticsAccepted": true
+      },
+      {
+        "controlId": "scene-luck",
+        "label": "Just need luck",
+        "selectedScene": "luck",
+        "analyticsAccepted": true
+      }
+    ],
+    "sceneContinue": {
+      "controlId": "continue-scene",
+      "selectedScene": "luck",
+      "expectedRoute": "/create/energy",
+      "actualRoute": "/create/energy",
+      "analyticsAccepted": true
+    },
+    "incompleteGenerate": {
+      "controlId": "generate-card",
+      "blocked": true,
+      "validationMessage": "Choose one energy to continue.",
+      "apiCalled": false,
+      "apiTraceLengthAfterBlockedClick": 0
+    },
+    "energyOptions": [
+      {
+        "controlId": "energy-confidence",
+        "label": "Confidence",
+        "selectedEnergy": "confidence",
+        "analyticsAccepted": true
+      },
+      {
+        "controlId": "energy-luck",
+        "label": "Luck",
+        "selectedEnergy": "luck",
+        "analyticsAccepted": true
+      },
+      {
+        "controlId": "energy-love",
+        "label": "Love",
+        "selectedEnergy": "love",
+        "analyticsAccepted": true
+      },
+      {
+        "controlId": "energy-calm",
+        "label": "Calm",
+        "selectedEnergy": "calm",
+        "analyticsAccepted": true
+      },
+      {
+        "controlId": "energy-charm",
+        "label": "Charm",
+        "selectedEnergy": "charm",
+        "analyticsAccepted": true
+      },
+      {
+        "controlId": "energy-focus",
+        "label": "Focus",
+        "selectedEnergy": "focus",
+        "analyticsAccepted": true
+      }
+    ],
+    "generateComplete": {
+      "controlId": "generate-card",
+      "expectedRoute": "/create/loading",
+      "actualRoute": "/create/loading",
+      "apiCalled": true,
+      "job": {
+        "jobId": "job-success-001",
+        "status": "success",
+        "cardId": "card-locked-001"
+      },
+      "analyticsAccepted": true
+    }
+  },
+  "apiMockTrace": [
+    {
+      "method": "createGenerationJob",
+      "request": {
+        "scene": "date",
+        "energy": "confidence",
+        "locale": "en-US",
+        "source": "UI-03"
+      }
+    }
+  ],
+  "analyticsReadback": [
+    {
+      "eventName": "page_view_scene_selection",
+      "page": "/create/scene",
+      "properties": {
+        "uiId": "UI-02",
+        "requirementId": "REQ-006"
+      },
+      "analyticsEventId": "analytics-page_view_scene_selection"
+    },
+    {
+      "eventName": "select_scene",
+      "page": "/create/scene",
+      "properties": {
+        "uiId": "UI-02",
+        "controlId": "scene-date",
+        "scene": "date",
+        "label": "Date",
+        "requirementId": "REQ-006"
+      },
+      "analyticsEventId": "analytics-select_scene"
+    },
+    {
+      "eventName": "select_scene",
+      "page": "/create/scene",
+      "properties": {
+        "uiId": "UI-02",
+        "controlId": "scene-work",
+        "scene": "work",
+        "label": "Work / Meeting",
+        "requirementId": "REQ-006"
+      },
+      "analyticsEventId": "analytics-select_scene"
+    },
+    {
+      "eventName": "select_scene",
+      "page": "/create/scene",
+      "properties": {
+        "uiId": "UI-02",
+        "controlId": "scene-party",
+        "scene": "party",
+        "label": "Party / Social",
+        "requirementId": "REQ-006"
+      },
+      "analyticsEventId": "analytics-select_scene"
+    },
+    {
+      "eventName": "select_scene",
+      "page": "/create/scene",
+      "properties": {
+        "uiId": "UI-02",
+        "controlId": "scene-luck",
+        "scene": "luck",
+        "label": "Just need luck",
+        "requirementId": "REQ-006"
+      },
+      "analyticsEventId": "analytics-select_scene"
+    },
+    {
+      "eventName": "click_scene_continue",
+      "page": "/create/scene",
+      "properties": {
+        "uiId": "UI-02",
+        "controlId": "continue-scene",
+        "scene": "luck",
+        "requirementId": "REQ-006"
+      },
+      "analyticsEventId": "analytics-click_scene_continue"
+    },
+    {
+      "eventName": "page_view_energy_selection",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-03",
+        "requirementId": "REQ-007"
+      },
+      "analyticsEventId": "analytics-page_view_energy_selection"
+    },
+    {
+      "eventName": "select_energy",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-03",
+        "controlId": "energy-confidence",
+        "energy": "confidence",
+        "label": "Confidence",
+        "requirementId": "REQ-007"
+      },
+      "analyticsEventId": "analytics-select_energy"
+    },
+    {
+      "eventName": "select_energy",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-03",
+        "controlId": "energy-luck",
+        "energy": "luck",
+        "label": "Luck",
+        "requirementId": "REQ-007"
+      },
+      "analyticsEventId": "analytics-select_energy"
+    },
+    {
+      "eventName": "select_energy",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-03",
+        "controlId": "energy-love",
+        "energy": "love",
+        "label": "Love",
+        "requirementId": "REQ-007"
+      },
+      "analyticsEventId": "analytics-select_energy"
+    },
+    {
+      "eventName": "select_energy",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-03",
+        "controlId": "energy-calm",
+        "energy": "calm",
+        "label": "Calm",
+        "requirementId": "REQ-007"
+      },
+      "analyticsEventId": "analytics-select_energy"
+    },
+    {
+      "eventName": "select_energy",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-03",
+        "controlId": "energy-charm",
+        "energy": "charm",
+        "label": "Charm",
+        "requirementId": "REQ-007"
+      },
+      "analyticsEventId": "analytics-select_energy"
+    },
+    {
+      "eventName": "select_energy",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-03",
+        "controlId": "energy-focus",
+        "energy": "focus",
+        "label": "Focus",
+        "requirementId": "REQ-007"
+      },
+      "analyticsEventId": "analytics-select_energy"
+    },
+    {
+      "eventName": "click_generate_card",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-03",
+        "controlId": "generate-card",
+        "scene": "date",
+        "energy": "confidence",
+        "jobId": "job-success-001",
+        "requirementId": "REQ-006,REQ-007"
+      },
+      "analyticsEventId": "analytics-click_generate_card"
+    }
+  ],
+  "localOnly": {
+    "payment": "not-used",
+    "ai": "fixture-api-client-no-provider-call",
+    "analytics": "local-fixture-client",
+    "storage": "local-evidence-files-only",
+    "db": "no-production-write"
+  },
+  "visualEvidence": {
+    "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+    "reason": "T10 generated deterministic HTML structural captures; no automated raster screenshot or pixel-diff tooling was run in this task boundary.",
+    "captures": [
+      "docs/auto-execute/screenshots/T10/UI-02-scene.html",
+      "docs/auto-execute/screenshots/T10/UI-03-energy.html",
+      "docs/auto-execute/screenshots/T10/UI-04-incomplete.html"
+    ]
+  }
+}

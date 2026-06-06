@@ -1,0 +1,759 @@
+{
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "taskId": "T16",
+  "requirementIds": [
+    "REQ-002",
+    "REQ-003",
+    "REQ-004",
+    "REQ-011",
+    "REQ-014",
+    "REQ-017"
+  ],
+  "uiIds": [
+    "UI-15",
+    "UI-16",
+    "UI-17"
+  ],
+  "routes": [
+    "/share/:id",
+    "/share/:id/channels",
+    "/saved/:id",
+    "/share/card-unlocked-001",
+    "/share/card-unlocked-001/channels",
+    "/saved/card-unlocked-001"
+  ],
+  "sourceReferences": {
+    "UI-15": "docs/UI/小程序/10A-分享_Story卡预览与保存.png",
+    "UI-16": "docs/UI/小程序/10B-分享_渠道选择.png",
+    "UI-17": "docs/UI/小程序/10C-保存_保存成功反馈.png"
+  },
+  "stitchReferences": {
+    "UI-15": "docs/UI/小程序/stitch_codex_ui_code_generator/10a_story/code.html",
+    "UI-16": "docs/UI/小程序/stitch_codex_ui_code_generator/10b/code.html",
+    "UI-17": "docs/UI/小程序/stitch_codex_ui_code_generator/10c/code.html"
+  },
+  "renderAssertions": {
+    "nativePageFiles": [
+      "apps/wechat-mini/src/pages/share/story.wxml",
+      "apps/wechat-mini/src/pages/share/story.wxss",
+      "apps/wechat-mini/src/pages/share/story.js",
+      "apps/wechat-mini/src/pages/share/channels.wxml",
+      "apps/wechat-mini/src/pages/share/channels.wxss",
+      "apps/wechat-mini/src/pages/share/channels.js",
+      "apps/wechat-mini/src/pages/saved/success.wxml",
+      "apps/wechat-mini/src/pages/saved/success.wxss",
+      "apps/wechat-mini/src/pages/saved/success.js",
+      "apps/wechat-mini/src/pages/share/share-save-page.mjs"
+    ],
+    "storyPreview": {
+      "cardAspectRatio": "9:16",
+      "shareImage": {
+        "cardId": "card-unlocked-001",
+        "templateId": "template-story-001",
+        "format": "story-9x16",
+        "localPath": "local://share-images/card-unlocked-001-template-story-001.png",
+        "width": 1080,
+        "height": 1920,
+        "aspectRatio": "9:16",
+        "renderer": "deterministic-local-renderer",
+        "deterministicKey": "card-unlocked-001|template-story-001|Full Lucky Aura Card|Golden Comet Aura|Champagne Gold|golden-night|Tonight I am choosing the brighter signal.",
+        "artifactKind": "svg-data-url",
+        "dataUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iQXVyYUN1ZSBHb2xkZW4gQ29tZXQgQXVyYSBzaGFyZSBjYXJkIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYXVyYWN1ZS1iZy1jYXJkLXVubG9ja2VkLTAwMSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMmExYTRhIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNDIlIiBzdG9wLWNvbG9yPSIjOGQ1YmZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNzIlIiBzdG9wLWNvbG9yPSIjZjQ4ZmIxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Q0YWYzNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwODAiIGhlaWdodD0iMTkyMCIgZmlsbD0idXJsKCNhdXJhY3VlLWJnLWNhcmQtdW5sb2NrZWQtMDAxKSIvPgogIDxyZWN0IHg9IjQyIiB5PSI0MiIgd2lkdGg9Ijk5NiIgaGVpZ2h0PSIxODM2IiByeD0iNjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q0YWYzNyIgc3Ryb2tlLXdpZHRoPSI0IiBvcGFjaXR5PSIwLjcyIi8+CiAgPHRleHQgeD0iNTQwIiB5PSIxNzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNkNGFmMzciIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSI0MiIgbGV0dGVyLXNwYWNpbmc9IjEwIj5BVVJBQ1VFPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMjkyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iODIiIGZvbnQtd2VpZ2h0PSI3MDAiPkZ1bGwgTHVja3kgQXVyYSBDYXJkPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMzgyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmN2RjIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQyIj5UaGUgU3RhcjwvdGV4dD4KICA8cmVjdCB4PSI5NiIgeT0iMTA4MCIgd2lkdGg9Ijg4OCIgaGVpZ2h0PSI2OTYiIHJ4PSI1NCIgZmlsbD0iI2ZmZmRmOCIgb3BhY2l0eT0iMC45MiIvPgogIDx0ZXh0IHg9IjU0MCIgeT0iMTE5OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzJhMWE0YSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjY4IiBmb250LXdlaWdodD0iNzAwIj5Hb2xkZW4gQ29tZXQgQXVyYTwvdGV4dD4KICA8dGV4dCB4PSI1NDAiIHk9IjEyNzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM3YTZiNWMiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiPmdvbGRlbi1uaWdodDwvdGV4dD4KICA8dGV4dCB4PSIxODAiIHk9IjEzODIiIGZpbGw9IiM3YTZiNWMiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiPkx1Y2t5IENvbG9yPC90ZXh0PgogIDx0ZXh0IHg9IjkwMCIgeT0iMTM4MiIgdGV4dC1hbmNob3I9ImVuZCIgZmlsbD0iIzJhMWE0YSIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9IjcwMCI+Q2hhbXBhZ25lIEdvbGQ8L3RleHQ+CiAgPHRleHQgeD0iMTgwIiB5PSIxNDgwIiBmaWxsPSIjN2E2YjVjIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIj5PdXRmaXQgRW5lcmd5PC90ZXh0PgogIDx0ZXh0IHg9IjkwMCIgeT0iMTQ4MCIgdGV4dC1hbmNob3I9ImVuZCIgZmlsbD0iIzJhMWE0YSIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9IjcwMCI+QSBjbGVhbiBsaWdodCBsYXllciB3aXRoIG9uZSBsdW1pbm91cyBhY2Nlc3NvcnkuPC90ZXh0PgogIDx0ZXh0IHg9IjE4MCIgeT0iMTU3OCIgZmlsbD0iIzdhNmI1YyIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCI+U29jaWFsIEFjdGlvbjwvdGV4dD4KICA8dGV4dCB4PSI5MDAiIHk9IjE1NzgiIHRleHQtYW5jaG9yPSJlbmQiIGZpbGw9IiMyYTFhNGEiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSI3MDAiPk9wZW4gd2l0aCBhIHNpbmNlcmUgY29tcGxpbWVudC48L3RleHQ+CiAgPHRleHQgeD0iMTgwIiB5PSIxNjc2IiBmaWxsPSIjN2E2YjVjIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIj5UaW55IFJpdHVhbDwvdGV4dD4KICA8dGV4dCB4PSI5MDAiIHk9IjE2NzYiIHRleHQtYW5jaG9yPSJlbmQiIGZpbGw9IiMyYTFhNGEiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSI3MDAiPlRha2UgdGhyZWUgc2xvdyBicmVhdGhzIGJlZm9yZSBlbnRlcmluZyB0aGUgcm9vbS48L3RleHQ+CiAgPHRleHQgeD0iNTQwIiB5PSIxNzQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtc3R5bGU9Iml0YWxpYyI+VG9uaWdodCBJIGFtIGNob29zaW5nIHRoZSBicmlnaHRlciBzaWduYWwuPC90ZXh0Pgo8L3N2Zz4=",
+        "dataUrlSha256": "e49f553836567ab5b64ac3b0f387c4e4097ee01dfcf0c5709f1b0b41537709d1",
+        "textFields": {
+          "title": "Full Lucky Aura Card",
+          "auraName": "Golden Comet Aura",
+          "tarotSymbol": "The Star",
+          "message": "Your best signal today is warm certainty.",
+          "luckyColor": "Champagne Gold",
+          "outfit": "A clean light layer with one luminous accessory.",
+          "beauty": "Soft highlight and a confident lip tint.",
+          "social": "Open with a sincere compliment.",
+          "ritual": "Take three slow breaths before entering the room.",
+          "avoid": "Do not rush into a promise before you feel ready.",
+          "caption": "Tonight I am choosing the brighter signal.",
+          "theme": "golden-night"
+        },
+        "layers": [
+          {
+            "type": "background",
+            "color": "#160f24"
+          },
+          {
+            "type": "title",
+            "text": "Full Lucky Aura Card"
+          },
+          {
+            "type": "auraName",
+            "text": "Golden Comet Aura"
+          },
+          {
+            "type": "tarotSymbol",
+            "text": "The Star"
+          },
+          {
+            "type": "luckyColor",
+            "text": "Champagne Gold"
+          },
+          {
+            "type": "outfit",
+            "text": "A clean light layer with one luminous accessory."
+          },
+          {
+            "type": "social",
+            "text": "Open with a sincere compliment."
+          },
+          {
+            "type": "ritual",
+            "text": "Take three slow breaths before entering the room."
+          },
+          {
+            "type": "caption",
+            "text": "Tonight I am choosing the brighter signal."
+          }
+        ]
+      },
+      "actions": [
+        "close",
+        "save",
+        "share",
+        "copy"
+      ]
+    },
+    "channelChooser": {
+      "channelCount": 6,
+      "channels": [
+        "wechat",
+        "moments",
+        "story",
+        "story",
+        "save_image",
+        "copy_link"
+      ]
+    },
+    "saveSuccess": {
+      "statusRows": [
+        {
+          "id": "photos",
+          "label": "Saved to Photos",
+          "status": "saved"
+        },
+        {
+          "id": "aura-cards",
+          "label": "Saved to Aura Cards",
+          "status": "saved"
+        }
+      ],
+      "actions": [
+        "shareNow",
+        "backHome",
+        "viewSavedCard"
+      ]
+    }
+  },
+  "clicks": {
+    "saveStoryCard": {
+      "controlId": "save-story-card",
+      "actualRoute": "/saved/card-unlocked-001",
+      "apiId": "API-007",
+      "saved": true
+    },
+    "shareStoryCard": {
+      "controlId": "share-story-card",
+      "actualRoute": "/share/card-unlocked-001/channels",
+      "apiId": "API-008",
+      "channel": "story"
+    },
+    "copyStoryLink": {
+      "controlId": "copy-story-link",
+      "apiId": "API-008",
+      "channel": "copy_link",
+      "toast": "Link copied"
+    },
+    "channelOptions": [
+      {
+        "controlId": "share-channel-wechat",
+        "apiId": "API-008",
+        "channel": "wechat",
+        "mockedExternalAction": true
+      },
+      {
+        "controlId": "share-channel-moments",
+        "apiId": "API-008",
+        "channel": "moments",
+        "mockedExternalAction": true
+      },
+      {
+        "controlId": "share-channel-xiaohongshu",
+        "apiId": "API-008",
+        "channel": "story",
+        "mockedExternalAction": true
+      },
+      {
+        "controlId": "share-channel-instagram-story",
+        "apiId": "API-008",
+        "channel": "story",
+        "mockedExternalAction": true
+      },
+      {
+        "controlId": "share-channel-save-image",
+        "apiId": "API-008",
+        "channel": "save_image",
+        "mockedExternalAction": true
+      },
+      {
+        "controlId": "share-channel-copy-link",
+        "apiId": "API-008",
+        "channel": "copy_link",
+        "mockedExternalAction": true
+      }
+    ],
+    "cancelChannels": {
+      "controlId": "cancel-share-channel",
+      "actualRoute": "/share/card-unlocked-001"
+    },
+    "saveSuccessShareNow": {
+      "controlId": "share-now",
+      "actualRoute": "/share/card-unlocked-001",
+      "apiId": "API-008",
+      "channel": "story"
+    },
+    "saveSuccessBackHome": {
+      "controlId": "back-home",
+      "actualRoute": "/"
+    }
+  },
+  "apiMockTrace": [
+    {
+      "apiId": "API-003",
+      "method": "getCard",
+      "cardId": "card-unlocked-001",
+      "view": "full"
+    },
+    {
+      "apiId": "API-009",
+      "method": "renderShareImage",
+      "cardId": "card-unlocked-001",
+      "request": {
+        "templateId": "template-story-001",
+        "format": "story-9x16"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "page_view_share_story",
+        "page": "/share/:id",
+        "properties": {
+          "uiId": "UI-15",
+          "apiId": "API-009",
+          "cardId": "card-unlocked-001",
+          "requirementId": "REQ-014"
+        }
+      }
+    },
+    {
+      "apiId": "API-007",
+      "method": "saveCard",
+      "cardId": "card-unlocked-001",
+      "request": {
+        "source": "share_story_preview"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "save_card",
+        "page": "/share/:id",
+        "properties": {
+          "uiId": "UI-15",
+          "apiId": "API-007",
+          "cardId": "card-unlocked-001",
+          "requirementId": "REQ-011"
+        }
+      }
+    },
+    {
+      "apiId": "API-008",
+      "method": "recordShareEvent",
+      "request": {
+        "cardId": "card-unlocked-001",
+        "channel": "story",
+        "source": "share_story_preview"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "share_card",
+        "page": "/share/:id",
+        "properties": {
+          "uiId": "UI-15",
+          "apiId": "API-008",
+          "cardId": "card-unlocked-001",
+          "requirementId": "REQ-014"
+        }
+      }
+    },
+    {
+      "apiId": "API-008",
+      "method": "recordShareEvent",
+      "request": {
+        "cardId": "card-unlocked-001",
+        "channel": "copy_link",
+        "source": "share_story_preview"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "copy_share_link",
+        "page": "/share/:id",
+        "properties": {
+          "uiId": "UI-15",
+          "apiId": "API-008",
+          "cardId": "card-unlocked-001",
+          "requirementId": "REQ-014"
+        }
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "page_view_share_channels",
+        "page": "/share/:id/channels",
+        "properties": {
+          "uiId": "UI-16",
+          "apiId": "API-008",
+          "cardId": "card-unlocked-001",
+          "requirementId": "REQ-014"
+        }
+      }
+    },
+    {
+      "apiId": "API-008",
+      "method": "recordShareEvent",
+      "request": {
+        "cardId": "card-unlocked-001",
+        "channel": "wechat",
+        "source": "share_channel_chooser:wechat"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "share_card",
+        "page": "/share/:id/channels",
+        "properties": {
+          "uiId": "UI-16",
+          "apiId": "API-008",
+          "cardId": "card-unlocked-001",
+          "channel": "wechat",
+          "requirementId": "REQ-014"
+        }
+      }
+    },
+    {
+      "apiId": "API-008",
+      "method": "recordShareEvent",
+      "request": {
+        "cardId": "card-unlocked-001",
+        "channel": "moments",
+        "source": "share_channel_chooser:moments"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "share_card",
+        "page": "/share/:id/channels",
+        "properties": {
+          "uiId": "UI-16",
+          "apiId": "API-008",
+          "cardId": "card-unlocked-001",
+          "channel": "moments",
+          "requirementId": "REQ-014"
+        }
+      }
+    },
+    {
+      "apiId": "API-008",
+      "method": "recordShareEvent",
+      "request": {
+        "cardId": "card-unlocked-001",
+        "channel": "story",
+        "source": "share_channel_chooser:xiaohongshu"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "share_card",
+        "page": "/share/:id/channels",
+        "properties": {
+          "uiId": "UI-16",
+          "apiId": "API-008",
+          "cardId": "card-unlocked-001",
+          "channel": "story",
+          "requirementId": "REQ-014"
+        }
+      }
+    },
+    {
+      "apiId": "API-008",
+      "method": "recordShareEvent",
+      "request": {
+        "cardId": "card-unlocked-001",
+        "channel": "story",
+        "source": "share_channel_chooser:instagram-story"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "share_card",
+        "page": "/share/:id/channels",
+        "properties": {
+          "uiId": "UI-16",
+          "apiId": "API-008",
+          "cardId": "card-unlocked-001",
+          "channel": "story",
+          "requirementId": "REQ-014"
+        }
+      }
+    },
+    {
+      "apiId": "API-008",
+      "method": "recordShareEvent",
+      "request": {
+        "cardId": "card-unlocked-001",
+        "channel": "save_image",
+        "source": "share_channel_chooser:save-image"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "share_card",
+        "page": "/share/:id/channels",
+        "properties": {
+          "uiId": "UI-16",
+          "apiId": "API-008",
+          "cardId": "card-unlocked-001",
+          "channel": "save_image",
+          "requirementId": "REQ-014"
+        }
+      }
+    },
+    {
+      "apiId": "API-008",
+      "method": "recordShareEvent",
+      "request": {
+        "cardId": "card-unlocked-001",
+        "channel": "copy_link",
+        "source": "share_channel_chooser:copy-link"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "share_card",
+        "page": "/share/:id/channels",
+        "properties": {
+          "uiId": "UI-16",
+          "apiId": "API-008",
+          "cardId": "card-unlocked-001",
+          "channel": "copy_link",
+          "requirementId": "REQ-014"
+        }
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "click_cancel_share_channels",
+        "page": "/share/:id/channels",
+        "properties": {
+          "uiId": "UI-16",
+          "cardId": "card-unlocked-001",
+          "requirementId": "REQ-014"
+        }
+      }
+    },
+    {
+      "apiId": "API-007",
+      "method": "saveCard",
+      "cardId": "card-unlocked-001",
+      "request": {
+        "source": "save_success"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "page_view_save_success",
+        "page": "/saved/:id",
+        "properties": {
+          "uiId": "UI-17",
+          "apiId": "API-007",
+          "cardId": "card-unlocked-001",
+          "requirementId": "REQ-011"
+        }
+      }
+    },
+    {
+      "apiId": "API-008",
+      "method": "recordShareEvent",
+      "request": {
+        "cardId": "card-unlocked-001",
+        "channel": "story",
+        "source": "save_success"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "share_card",
+        "page": "/saved/:id",
+        "properties": {
+          "uiId": "UI-17",
+          "apiId": "API-008",
+          "cardId": "card-unlocked-001",
+          "requirementId": "REQ-011"
+        }
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "return_next_day",
+        "page": "/saved/:id",
+        "properties": {
+          "uiId": "UI-17",
+          "cardId": "card-unlocked-001",
+          "requirementId": "REQ-011"
+        }
+      }
+    }
+  ],
+  "analyticsReadback": [
+    {
+      "eventName": "page_view_share_story",
+      "page": "/share/:id",
+      "properties": {
+        "uiId": "UI-15",
+        "apiId": "API-009",
+        "cardId": "card-unlocked-001",
+        "requirementId": "REQ-014"
+      },
+      "analyticsEventId": "analytics-page_view_share_story"
+    },
+    {
+      "eventName": "save_card",
+      "page": "/share/:id",
+      "properties": {
+        "uiId": "UI-15",
+        "apiId": "API-007",
+        "cardId": "card-unlocked-001",
+        "requirementId": "REQ-011"
+      },
+      "analyticsEventId": "analytics-save_card"
+    },
+    {
+      "eventName": "share_card",
+      "page": "/share/:id",
+      "properties": {
+        "uiId": "UI-15",
+        "apiId": "API-008",
+        "cardId": "card-unlocked-001",
+        "requirementId": "REQ-014"
+      },
+      "analyticsEventId": "analytics-share_card"
+    },
+    {
+      "eventName": "copy_share_link",
+      "page": "/share/:id",
+      "properties": {
+        "uiId": "UI-15",
+        "apiId": "API-008",
+        "cardId": "card-unlocked-001",
+        "requirementId": "REQ-014"
+      },
+      "analyticsEventId": "analytics-copy_share_link"
+    },
+    {
+      "eventName": "page_view_share_channels",
+      "page": "/share/:id/channels",
+      "properties": {
+        "uiId": "UI-16",
+        "apiId": "API-008",
+        "cardId": "card-unlocked-001",
+        "requirementId": "REQ-014"
+      },
+      "analyticsEventId": "analytics-page_view_share_channels"
+    },
+    {
+      "eventName": "share_card",
+      "page": "/share/:id/channels",
+      "properties": {
+        "uiId": "UI-16",
+        "apiId": "API-008",
+        "cardId": "card-unlocked-001",
+        "channel": "wechat",
+        "requirementId": "REQ-014"
+      },
+      "analyticsEventId": "analytics-share_card"
+    },
+    {
+      "eventName": "share_card",
+      "page": "/share/:id/channels",
+      "properties": {
+        "uiId": "UI-16",
+        "apiId": "API-008",
+        "cardId": "card-unlocked-001",
+        "channel": "moments",
+        "requirementId": "REQ-014"
+      },
+      "analyticsEventId": "analytics-share_card"
+    },
+    {
+      "eventName": "share_card",
+      "page": "/share/:id/channels",
+      "properties": {
+        "uiId": "UI-16",
+        "apiId": "API-008",
+        "cardId": "card-unlocked-001",
+        "channel": "story",
+        "requirementId": "REQ-014"
+      },
+      "analyticsEventId": "analytics-share_card"
+    },
+    {
+      "eventName": "share_card",
+      "page": "/share/:id/channels",
+      "properties": {
+        "uiId": "UI-16",
+        "apiId": "API-008",
+        "cardId": "card-unlocked-001",
+        "channel": "story",
+        "requirementId": "REQ-014"
+      },
+      "analyticsEventId": "analytics-share_card"
+    },
+    {
+      "eventName": "share_card",
+      "page": "/share/:id/channels",
+      "properties": {
+        "uiId": "UI-16",
+        "apiId": "API-008",
+        "cardId": "card-unlocked-001",
+        "channel": "save_image",
+        "requirementId": "REQ-014"
+      },
+      "analyticsEventId": "analytics-share_card"
+    },
+    {
+      "eventName": "share_card",
+      "page": "/share/:id/channels",
+      "properties": {
+        "uiId": "UI-16",
+        "apiId": "API-008",
+        "cardId": "card-unlocked-001",
+        "channel": "copy_link",
+        "requirementId": "REQ-014"
+      },
+      "analyticsEventId": "analytics-share_card"
+    },
+    {
+      "eventName": "click_cancel_share_channels",
+      "page": "/share/:id/channels",
+      "properties": {
+        "uiId": "UI-16",
+        "cardId": "card-unlocked-001",
+        "requirementId": "REQ-014"
+      },
+      "analyticsEventId": "analytics-click_cancel_share_channels"
+    },
+    {
+      "eventName": "page_view_save_success",
+      "page": "/saved/:id",
+      "properties": {
+        "uiId": "UI-17",
+        "apiId": "API-007",
+        "cardId": "card-unlocked-001",
+        "requirementId": "REQ-011"
+      },
+      "analyticsEventId": "analytics-page_view_save_success"
+    },
+    {
+      "eventName": "share_card",
+      "page": "/saved/:id",
+      "properties": {
+        "uiId": "UI-17",
+        "apiId": "API-008",
+        "cardId": "card-unlocked-001",
+        "requirementId": "REQ-011"
+      },
+      "analyticsEventId": "analytics-share_card"
+    },
+    {
+      "eventName": "return_next_day",
+      "page": "/saved/:id",
+      "properties": {
+        "uiId": "UI-17",
+        "cardId": "card-unlocked-001",
+        "requirementId": "REQ-011"
+      },
+      "analyticsEventId": "analytics-return_next_day"
+    }
+  ],
+  "localOnly": {
+    "status": "PASS",
+    "taskId": "T16",
+    "checkedFiles": [
+      "apps/wechat-mini/src/pages/share/story.js",
+      "apps/wechat-mini/src/pages/share/channels.js",
+      "apps/wechat-mini/src/pages/saved/success.js",
+      "apps/wechat-mini/src/pages/share/share-save-page.mjs"
+    ],
+    "forbiddenNeedlesAbsent": [
+      "wx.requestPayment(",
+      "wx.cloud",
+      "production",
+      "secret"
+    ],
+    "externalPlatformShareUsed": false,
+    "localMockShareOnly": true,
+    "productionUrlUsed": false,
+    "secretUsed": false
+  },
+  "visualEvidence": {
+    "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+    "reason": "T16 generated deterministic HTML structural captures and render summaries for UI-15..UI-17; automated raster screenshots and pixel-diff evidence are deferred to T22/T23.",
+    "captures": [
+      "docs/auto-execute/screenshots/T16/UI-15-share-story.html",
+      "docs/auto-execute/screenshots/T16/UI-16-share-channels.html",
+      "docs/auto-execute/screenshots/T16/UI-17-save-success.html"
+    ],
+    "missingRasterScreenshots": [
+      "docs/auto-execute/screenshots/T16/UI-15-share-story.png",
+      "docs/auto-execute/screenshots/T16/UI-16-share-channels.png",
+      "docs/auto-execute/screenshots/T16/UI-17-save-success.png"
+    ]
+  }
+}

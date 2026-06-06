@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "taskId": "T18",
+  "requirementId": "REQ-018",
+  "checkedStaticFiles": [
+    "apps/wechat-mini/src/pages/home/home-page.mjs",
+    "apps/wechat-mini/src/pages/create/scene-page.mjs",
+    "apps/wechat-mini/src/pages/create/energy-page.mjs",
+    "apps/wechat-mini/src/pages/create/loading-page.mjs",
+    "apps/wechat-mini/src/pages/result/free-preview-page.mjs",
+    "apps/wechat-mini/src/pages/result/full-page.mjs",
+    "apps/wechat-mini/src/pages/unlock/unlock-invite-page.mjs",
+    "apps/wechat-mini/src/pages/unlock/payment-state-page.mjs",
+    "apps/wechat-mini/src/pages/share/share-save-page.mjs",
+    "apps/wechat-mini/src/pages/error/network-page.mjs",
+    "apps/wechat-mini/src/fixtures/shell-fixtures.mjs",
+    "packages/prompt-core/src/local-generator.mjs"
+  ],
+  "staticTextCount": 12,
+  "generatedCardCases": 24,
+  "categories": [
+    "guaranteed_destiny_change",
+    "negative_judgment",
+    "appearance_anxiety",
+    "therapy_medical_claim",
+    "mandatory_selfie"
+  ],
+  "violations": [],
+  "unsafeFixtureAssertions": [
+    "guaranteed_destiny_change",
+    "negative_judgment",
+    "appearance_anxiety",
+    "therapy_medical_claim",
+    "mandatory_selfie"
+  ],
+  "localOnly": {
+    "productionAiUsed": false,
+    "generatedFromDeterministicFixtures": true
+  }
+}

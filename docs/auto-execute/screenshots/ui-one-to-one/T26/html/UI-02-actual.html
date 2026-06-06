@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AuraCue UI-02 Scene Selection</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fbf6f0; color: #10213d; font-family: Inter, Arial, sans-serif; }
+    .device { width: 941px; height: 1672px; margin: 0 auto; padding: 62px 58px 0; background: radial-gradient(circle at top, #fffaf5 0%, #f8f1e9 100%); overflow: hidden; position: relative; }
+    .status { display: flex; justify-content: space-between; font-size: 28px; font-weight: 700; margin-bottom: 58px; }
+    .top { display: grid; grid-template-columns: 96px 1fr 96px; align-items: center; margin-bottom: 60px; }
+    .back { width: 82px; height: 82px; border-radius: 999px; border: 0; background: white; color: #9aa1ad; font-size: 46px; box-shadow: 0 8px 20px rgba(166,129,84,.08); }
+    .step { text-align: center; color: #d4af37; font-size: 26px; font-weight: 700; }
+    h1 { font-family: Georgia, serif; font-size: 72px; line-height: 1.08; text-align: center; margin: 0 0 28px; font-weight: 700; }
+    .copy { color: #6b7280; text-align: center; line-height: 1.45; margin: 0 0 64px; font-size: 26px; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-bottom: 190px; }
+    .scene-card { position: relative; min-height: 310px; border: 2px solid #fff; border-radius: 62px; background: rgba(255,255,255,.88); padding: 28px; color: #10213d; box-shadow: 0 8px 24px rgba(0,0,0,.04); text-align: center; }
+    .scene-card::after { border: 0; }
+    .scene-card.selected { border: 4px solid #e2b879; background: #fff8f3; }
+    .scene-check { position: absolute; top: 18px; right: 18px; width: 42px; height: 42px; border-radius: 999px; background: #c4945c; color: white; font-size: 12px; line-height: 42px; }
+    .scene-card:not(.selected) .scene-check { display: none; }
+    .scene-art { width: 300px; height: 150px; margin: 0 auto 22px; border-radius: 76px 76px 22px 22px; border: 2px solid #f1e2d7; background: #feecec; display: grid; place-items: center; color: #c4945c; font-size: 20px; }
+    .scene-art.work { background: #f2f4f7; }
+    .scene-art.party { background: #fde8e8; }
+    .scene-art.luck { background: #fef7eb; }
+    strong { display: block; font-family: Georgia, serif; font-size: 34px; line-height: 1.1; margin-bottom: 10px; }
+    small { display: block; color: #5f6673; font-size: 20px; line-height: 1.35; }
+    .cta { width: calc(100% - 116px); min-height: 112px; border: 0; border-radius: 999px; color: white; font-family: Georgia, serif; font-size: 40px; background: linear-gradient(90deg,#d9ad75 0%,#a67c4b 100%); box-shadow: 0 14px 30px rgba(166,124,75,.22); position: absolute; left: 58px; bottom: 54px; }
+  </style>
+<style id="t26-capture-shell">
+    html, body { width: 941px !important; height: 1672px !important; margin: 0 !important; overflow: hidden !important; background: #ffffff !important; }
+    body > .phone, body > main.phone, body .phone:first-child {
+      transform: scale(2.4128205128205127);
+      transform-origin: top center;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  </style></head>
+<body>
+  <main class="device">
+    <div class="status"><span>9:41</span><span>signal wifi battery</span></div>
+    <header class="top"><button class="back">‹</button><div class="step">✦ Step 1 of 2 ✦</div><div></div></header>
+    <h1>Where are you<br>going today?</h1>
+    <p class="copy">Choose the scene that fits your plans<br>so we can tune your aura just right. 💖</p>
+    <section class="grid"><button class="scene-card selected" data-scene="date">
+      <span class="scene-check">check</span>
+      <span class="scene-art date">heart</span>
+      <strong>Date</strong>
+      <small>Romantic, magnetic & heart-open.</small>
+    </button><button class="scene-card" data-scene="work">
+      <span class="scene-check"></span>
+      <span class="scene-art work">briefcase</span>
+      <strong>Work / Meeting</strong>
+      <small>Confident, focused & respected.</small>
+    </button><button class="scene-card" data-scene="party">
+      <span class="scene-check"></span>
+      <span class="scene-art party">party</span>
+      <strong>Party / Social</strong>
+      <small>Radiant, fun & unforgettable.</small>
+    </button><button class="scene-card" data-scene="luck">
+      <span class="scene-check"></span>
+      <span class="scene-art luck">clover</span>
+      <strong>Just need luck</strong>
+      <small>Lucky, aligned & open to magic.</small>
+    </button></section>
+    <button class="cta">✦ Continue</button>
+  </main>
+</body>
+</html>

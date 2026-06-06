@@ -1,0 +1,58 @@
+{
+  "scenarioId": "SCN-008",
+  "stepId": "01",
+  "status": "PASS",
+  "personaGoal": "Friend accepts invite",
+  "action": "Open friend landing and click Generate My Lucky Aura Card",
+  "uiId": "UI-10",
+  "route": {
+    "uiId": "UI-02",
+    "route": "/create/scene",
+    "path": "/create/scene",
+    "pagePath": "pages/create/scene",
+    "state": "scene-selection",
+    "ownerScenario": "SCN-002",
+    "title": "Choose Scene"
+  },
+  "apiIds": [
+    "API-006",
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-013"
+  ],
+  "clickEvidence": {
+    "friendLanding": {
+      "apiId": "API-006",
+      "inviteResponse": {
+        "cardId": "card-locked-001",
+        "inviteCode": "INVITE-LOCAL-001",
+        "progress": 2,
+        "required": 3,
+        "completed": false,
+        "entitlement": null
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-039"
+      }
+    },
+    "friendGenerate": {
+      "controlId": "generate-my-lucky-aura-card",
+      "expectedRoute": "/create/scene",
+      "route": {
+        "uiId": "UI-02",
+        "route": "/create/scene",
+        "path": "/create/scene",
+        "pagePath": "pages/create/scene",
+        "state": "scene-selection",
+        "ownerScenario": "SCN-002",
+        "title": "Choose Scene"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-040"
+      }
+    }
+  }
+}

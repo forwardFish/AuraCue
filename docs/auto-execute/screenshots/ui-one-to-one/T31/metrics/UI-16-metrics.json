@@ -1,0 +1,49 @@
+{
+  "taskId": "T31",
+  "uiId": "UI-16",
+  "viewport": {
+    "width": 941,
+    "height": 1672
+  },
+  "threshold": 0.005,
+  "captureMode": "local DOM render from current page view-model HTML renderers under apps/wechat-mini/src/pages/**",
+  "referencePath": "docs/UI/小程序/10B-分享_渠道选择.png",
+  "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T31/actual/UI-16-actual.png",
+  "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T31/diff/UI-16-diff.png",
+  "htmlPath": "docs/auto-execute/screenshots/ui-one-to-one/T31/html/UI-16-actual.html",
+  "referenceDimensions": {
+    "width": 941,
+    "height": 1672
+  },
+  "actualDimensions": {
+    "width": 941,
+    "height": 1672
+  },
+  "sizeMatches": true,
+  "diffRatio": 0.476996,
+  "mismatchedPixels": 750482,
+  "comparedPixels": 1573352,
+  "totalPixels": 1573352,
+  "maxChannelDelta": 255,
+  "remainingBoundingBox": {
+    "x": 0,
+    "y": 0,
+    "width": 941,
+    "height": 1672
+  },
+  "remainingRegions": [
+    {
+      "type": "mismatched-pixels-bounding-box",
+      "x": 0,
+      "y": 0,
+      "width": 941,
+      "height": 1672
+    }
+  ],
+  "thresholdStatus": "FAIL",
+  "missingCoreText": [],
+  "missingRequiredControls": [],
+  "fullScreenReferenceMounted": false,
+  "remoteVisualDependency": false,
+  "finalScreenVerdict": "REPAIR_REQUIRED"
+}

@@ -1,0 +1,96 @@
+{
+  "taskId": "T00",
+  "taskName": "Intake, Source Inventory, And Harness Decision",
+  "status": "PASS",
+  "productPassClaim": false,
+  "timestamp": "2026-05-26T00:00:00+08:00",
+  "scope": {
+    "executedOnlyTask": "T00",
+    "implementedProductCode": false,
+    "startedNextTask": false,
+    "startedDevServer": false,
+    "usedRealPayment": false,
+    "usedProductionCloud": false,
+    "usedProductionDb": false,
+    "usedProductionAi": false,
+    "usedProductionAnalytics": false,
+    "usedSecrets": false
+  },
+  "changedFiles": [
+    "docs/auto-execute/intake/T00-source-inventory.md",
+    "docs/auto-execute/intake/T00-harness-decision.md",
+    "docs/auto-execute/logs/T00/T00-command-log.md",
+    "docs/auto-execute/results/T00.json",
+    "docs/auto-execute/latest/T00-HANDOFF.md"
+  ],
+  "evidence": [
+    {
+      "type": "source_inventory",
+      "path": "docs/auto-execute/intake/T00-source-inventory.md",
+      "status": "PASS"
+    },
+    {
+      "type": "harness_decision",
+      "path": "docs/auto-execute/intake/T00-harness-decision.md",
+      "status": "PASS"
+    },
+    {
+      "type": "command_log",
+      "path": "docs/auto-execute/logs/T00/T00-command-log.md",
+      "status": "PASS"
+    }
+  ],
+  "sourceInventory": {
+    "prd": {
+      "path": "docs/AuraCue_MVP_需求分析与产品架构文档_v0.2_最新版.md",
+      "status": "FOUND"
+    },
+    "p0UiReferences": {
+      "root": "docs/UI/小程序",
+      "pngCount": 18,
+      "expectedViewport": "941x1672",
+      "allExpectedViewport": true,
+      "status": "FOUND"
+    },
+    "stitchReferences": {
+      "root": "docs/UI/小程序/stitch_codex_ui_code_generator",
+      "codeHtmlCount": 18,
+      "status": "FOUND"
+    },
+    "p1Exclusions": {
+      "readme": "docs/UI/小程序/P1/README.md",
+      "pngCount": 4,
+      "status": "OUT_OF_SCOPE_WITH_REASON"
+    },
+    "existingProductScaffold": {
+      "foundPackageOrAppConfig": false,
+      "status": "T01_MUST_SCAFFOLD"
+    }
+  },
+  "harnessDecision": {
+    "miniProgramFramework": "Taro + React + TypeScript",
+    "packageManager": "pnpm workspace",
+    "localApiStrategy": "apps/api local mock backend",
+    "localDbStrategy": "deterministic JSON-backed repository first, with migration-compatible DB boundary",
+    "paymentStrategy": "local/mock only",
+    "aiStrategy": "deterministic local generation only until explicitly changed",
+    "analyticsStrategy": "local collector/mock only",
+    "storageStrategy": "local/test artifacts only"
+  },
+  "commandsRun": [
+    "Get-Content required AGENTS.md, auto-execute skill, standards, matrices, PRD, P1 README, and task docs",
+    "Get-ChildItem source and task directories",
+    "System.Drawing image dimension inventory for docs/UI/小程序/*.png",
+    "rg --files scaffold check"
+  ],
+  "blockers": [],
+  "limitations": [
+    "T00 is intake only; no product code, mini-program page, API, DB, simulated page test, screenshot, or visual diff evidence was produced.",
+    "Pure product PASS remains forbidden until later tasks provide P0 UI, page-click, API, DB, visual, owner, local-only, secret, and report-integrity evidence."
+  ],
+  "nextSteps": [
+    "T01 must scaffold the mini-program/backend/shared workspace.",
+    "T01 must make install/build/dev/test/health commands executable or document exact environment blockers.",
+    "T01 must keep all payment, AI, analytics, storage, and DB behavior local/mock."
+  ]
+}

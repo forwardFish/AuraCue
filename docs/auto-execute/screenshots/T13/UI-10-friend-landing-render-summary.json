@@ -1,0 +1,33 @@
+{
+  "uiId": "UI-10",
+  "route": "/invite/landing/:code",
+  "sourceReference": "docs/UI/小程序/07C-邀请解锁_好友承接页.png",
+  "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/07c/code.html",
+  "requirementIds": [
+    "REQ-010",
+    "REQ-012",
+    "REQ-017"
+  ],
+  "apiIds": [
+    "API-006",
+    "API-010"
+  ],
+  "inviteCode": "INVITE-LOCAL-001",
+  "title": "Mia sent you today's aura spark",
+  "cardTitle": "Today's Lucky Aura",
+  "friendCopy": "Join AuraCue to get your own lucky aura card.",
+  "actions": {
+    "generate": {
+      "controlId": "generate-my-lucky-aura-card",
+      "label": "Generate My Lucky Aura Card",
+      "route": "/create/scene"
+    }
+  },
+  "localOnly": {
+    "payment": "local-mock-route-only",
+    "invitePlatform": "fixture-api-client-no-platform-share-api",
+    "analytics": "local-fixture-client",
+    "storage": "local-evidence-files-only",
+    "db": "no-production-write"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "scenarioId": "SCN-005",
+  "stepId": "01",
+  "status": "PASS",
+  "personaGoal": "Review free preview",
+  "action": "View locked free preview",
+  "uiId": "UI-06",
+  "route": {
+    "uiId": "UI-06",
+    "route": "/result/:id",
+    "path": "/result/card-004",
+    "pagePath": "pages/result/free-preview",
+    "state": "locked-free-preview",
+    "ownerScenario": "SCN-005",
+    "title": "Free Preview"
+  },
+  "apiIds": [
+    "API-003",
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-009"
+  ],
+  "visibleState": {
+    "uiId": "UI-06",
+    "route": "/result/:id",
+    "sourceReference": "docs/UI/小程序/05-结果_免费预览待解锁.png",
+    "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/05/code.html",
+    "viewport": {
+      "sourceWidth": 941,
+      "sourceHeight": 1672,
+      "miniProgramWidth": 390
+    },
+    "apiId": "API-003",
+    "requirementId": "REQ-009",
+    "cardId": "card-004",
+    "scene": "Work / Meeting",
+    "energy": "Confidence",
+    "title": "Your Lucky Aura Card",
+    "subtitle": "Here's the energy aligned just for you.",
+    "freeFields": {
+      "auraName": "Rose Lantern Aura",
+      "luckyColor": "rose quartz",
+      "oneLineReminder": "A small confident choice can make the next moment feel easier.",
+      "previewImage": {
+        "variant": "low-res-watermarked",
+        "localPath": "local://cards/card-004/preview-watermarked.png",
+        "watermark": "AuraCue Preview",
+        "blurred": true
+      }
+    },
+    "lockedPreview": {
+      "unlockRequired": true,
+      "fullContentAvailable": false,
+      "hiddenFields": [
+        "outfit",
+        "beauty",
+        "social",
+        "ritual",
+        "avoid",
+        "caption",
+        "theme"
+      ],
+      "rows": [
+        {
+          "id": "outfit",
+          "title": "Outfit Energy",
+          "teaser": "Best styles and fabrics for today",
+          "locked": true,
+          "blurred": true
+        },
+        {
+          "id": "beauty",
+          "title": "Beauty Cue",
+          "teaser": "Hair, makeup and scent aligned for you",
+          "locked": true,
+          "blurred": true
+        },
+        {
+          "id": "social",
+          "title": "Social Move",
+          "teaser": "How to show up and connect",
+          "locked": true,
+          "blurred": true
+        },
+        {
+          "id": "ritual",
+          "title": "Tiny Ritual",
+          "teaser": "A 1-minute practice to shift your energy",
+          "locked": true,
+          "blurred": true
+        },
+        {
+          "id": "avoid",
+          "title": "Avoid Today",
+          "teaser": "What to avoid for smooth flow",
+          "locked": true,
+          "blurred": true
+        }
+      ]
+    },
+    "actions": {
+      "unlock": {
+        "controlId": "unlock-full-card",
+        "label": "Unlock Full Card",
+        "route": "/unlock/:id"
+      },
+      "invite": {
+        "controlId": "invite-three-friends",
+        "label": "Invite 3 friends to unlock",
+        "route": "/invite/:id",
+        "progressLabel": "0 / 3"
+      }
+    },
+    "privacyCopy": "Unlock to reveal your full personalized guidance.",
+    "localOnly": {
+      "payment": "not-used-on-preview",
+      "ai": "fixture-api-client-no-provider-call",
+      "analytics": "local-fixture-client",
+      "storage": "local-evidence-files-only",
+      "db": "no-production-write"
+    }
+  }
+}

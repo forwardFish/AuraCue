@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AuraCue - Choose Scene and Energy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style data-purpose="custom-fonts">
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FDF8F3;
+      color: #1E293B;
+    }
+    .font-serif-title {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
+<style data-purpose="layout-styles">
+    /* Custom background with cloud effect at bottom */
+    .bg-main {
+      background: linear-gradient(180deg, #FDF8F3 0%, #FDF8F3 70%, #F3E5F5 100%);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Cloud background effect */
+    .clouds-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: url('https://placehold.co/600x200/fbcfe8/ffffff?text=+') bottom center no-repeat;
+      background-size: cover;
+      opacity: 0.6;
+      pointer-events: none;
+      mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+    }
+
+    /* Glow effect for active scene */
+    .active-glow {
+      box-shadow: 0 0 20px rgba(251, 113, 133, 0.4);
+    }
+
+    /* Custom scrollbar hiding for scene selection */
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-main antialiased selection:bg-rose-100">
+<!-- BEGIN: AppContainer -->
+<div class="max-w-md mx-auto min-h-screen flex flex-col px-6 pt-12 pb-10 relative z-10">
+<!-- BEGIN: MainHeader -->
+<header class="flex items-center justify-between mb-8" data-purpose="navigation">
+<button aria-label="Go back" class="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-rose-50 text-slate-600 shadow-sm">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.75 19.5L8.25 12l7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<div class="flex items-center gap-2">
+<span class="text-rose-300">✦</span>
+<h1 class="text-2xl font-serif-title font-semibold text-slate-800">AuraCue</h1>
+<span class="text-rose-300">✦</span>
+</div>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- END: MainHeader -->
+<main class="flex-grow flex flex-col gap-10">
+<!-- BEGIN: SceneSelection -->
+<section data-purpose="scene-selection">
+<h2 class="text-xl font-serif-title text-center text-slate-800 mb-8">Choose your scene</h2>
+<div class="flex justify-between items-start gap-2 overflow-x-auto hide-scrollbar pb-2">
+<!-- Date Scene -->
+<div class="flex flex-col items-center gap-3 min-w-[70px]">
+<div class="w-16 h-16 rounded-2xl bg-white border border-rose-100 flex items-center justify-center text-rose-300">
+<svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"></path>
+</svg>
+</div>
+<span class="text-sm font-medium text-slate-700">Date</span>
+</div>
+<!-- Work Scene (Active) -->
+<div class="flex flex-col items-center gap-3 min-w-[70px]">
+<div class="relative">
+<!-- Decorative Sparkles for Active State -->
+<span class="absolute -top-2 -right-2 text-yellow-400 text-xs">✦</span>
+<span class="absolute top-1 -right-4 text-yellow-300 text-[8px]">✦</span>
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-rose-400 to-rose-500 active-glow flex items-center justify-center text-white">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.25 14.15v4.25c0 .621-.504 1.125-1.125 1.125H4.875c-.621 0-1.125-.504-1.125-1.125v-4.25m16.5 0a2.25 2.25 0 00-1.883-2.212c-.497-.078-1-.121-1.508-.125A11.657 11.657 0 0112 11.75c-1.905 0-3.72-.455-5.317-1.262a2.25 2.25 0 00-1.883 2.212m16.5 0V11.25c0-1.242-1.008-2.25-2.25-2.25H4.875c-1.242 0-2.25 1.008-2.25 2.25v2.9m16.5 0H2.25m16.5 0h.008v.008h-.008v-.008zm-16.5 0h.008v.008h-.008v-.008z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+<span class="text-sm font-medium text-slate-800">Work</span>
+</div>
+<!-- Party Scene -->
+<div class="flex flex-col items-center gap-3 min-w-[70px]">
+<div class="w-16 h-16 rounded-2xl bg-white border border-rose-100 flex items-center justify-center text-rose-300">
+<svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.964 2.815a.75.75 0 01.068 1.053l-9 10.5a.75.75 0 01-1.144-.972l9-10.5a.75.75 0 011.076-.081zm3.437 4.797a.75.75 0 011.06 0l.001.001a7.5 7.5 0 010 10.606l-.001.001a.75.75 0 11-1.06-1.061l.001-.001a6 6 0 000-8.485L16.4 8.673a.75.75 0 010-1.061z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-sm font-medium text-slate-700">Party</span>
+</div>
+<!-- Just Me Scene -->
+<div class="flex flex-col items-center gap-3 min-w-[70px]">
+<div class="w-16 h-16 rounded-2xl bg-white border border-rose-100 flex items-center justify-center text-rose-300">
+<svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<div class="text-center leading-tight">
+<span class="text-sm font-medium text-slate-700 block">Just me</span>
+<span class="text-[10px] text-slate-400">Just need luck</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SceneSelection -->
+<!-- Divider -->
+<div class="relative py-2 flex items-center" data-purpose="decorative-divider">
+<div class="flex-grow border-t border-rose-100 opacity-50"></div>
+<span class="mx-4 text-yellow-400 text-sm">✦</span>
+<div class="flex-grow border-t border-rose-100 opacity-50"></div>
+</div>
+<!-- BEGIN: EnergySelection -->
+<section data-purpose="energy-selection">
+<h2 class="text-xl font-serif-title text-center text-slate-800 mb-8">Choose your energy</h2>
+<div class="grid grid-cols-3 gap-4">
+<!-- Energy Chips -->
+<button class="py-3 px-1 border border-rose-100 bg-white/50 rounded-full text-slate-700 text-sm font-medium hover:bg-white transition-colors">Confidence</button>
+<button class="py-3 px-1 border border-rose-100 bg-white/50 rounded-full text-slate-700 text-sm font-medium hover:bg-white transition-colors">Calm</button>
+<button class="py-3 px-1 border border-rose-100 bg-white/50 rounded-full text-slate-700 text-sm font-medium hover:bg-white transition-colors">Love</button>
+<button class="py-3 px-1 border border-rose-100 bg-white/50 rounded-full text-slate-700 text-sm font-medium hover:bg-white transition-colors">Focus</button>
+<button class="py-3 px-1 border border-rose-100 bg-white/50 rounded-full text-slate-700 text-sm font-medium hover:bg-white transition-colors">Luck</button>
+<button class="py-3 px-1 border border-rose-100 bg-white/50 rounded-full text-slate-700 text-sm font-medium hover:bg-white transition-colors">Charm</button>
+</div>
+</section>
+<!-- END: EnergySelection -->
+</main>
+<!-- BEGIN: ActionFooter -->
+<footer class="mt-12 space-y-4" data-purpose="form-actions">
+<!-- Error Message -->
+<div class="bg-rose-50 border border-rose-100 rounded-2xl py-4 px-6 flex items-center justify-center gap-3 animate-pulse shadow-sm">
+<span class="text-rose-400 text-lg">✦</span>
+<p class="text-rose-500 font-medium text-sm">Choose one energy to continue.</p>
+</div>
+<!-- Generate Button (Disabled State) -->
+<button class="w-full bg-slate-200 text-slate-400 py-5 rounded-3xl flex items-center justify-center gap-3 cursor-not-allowed transition-all shadow-inner" disabled="">
+<span class="text-lg opacity-50">✦</span>
+<span class="font-semibold text-lg">Generate My Aura Card</span>
+</button>
+</footer>
+<!-- END: ActionFooter -->
+<!-- Decorative Cloud Background -->
+<div class="clouds-footer"></div>
+</div>
+<!-- END: AppContainer -->
+</body></html>

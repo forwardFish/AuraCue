@@ -1,0 +1,155 @@
+{
+  "taskId": "U07",
+  "title": "Final Regression And Gate",
+  "status": "REPAIR_REQUIRED",
+  "generatedAt": "2026-05-27T23:00:33+08:00",
+  "scope": {
+    "targetUiIds": [
+      "UI-01",
+      "UI-02",
+      "UI-03",
+      "UI-04",
+      "UI-05",
+      "UI-06",
+      "UI-07",
+      "UI-08",
+      "UI-09",
+      "UI-10",
+      "UI-11",
+      "UI-12",
+      "UI-13",
+      "UI-14",
+      "UI-15",
+      "UI-16",
+      "UI-17",
+      "UI-18"
+    ],
+    "targetDiffRatio": 0.005,
+    "productCodeEdits": false,
+    "thresholdLowered": false,
+    "fullReferenceScreenshotsMounted": false,
+    "remoteAssetsUsed": false,
+    "purePassPromoted": false
+  },
+  "inputs": {
+    "uTaskResultsPresent": {
+      "U01": true,
+      "U02": true,
+      "U03": true,
+      "U04": true,
+      "U05": true,
+      "U06": true
+    },
+    "tTaskResults": {
+      "T30": "REPAIR_REQUIRED",
+      "T31": "REPAIR_REQUIRED",
+      "T32": "PASS",
+      "T33": "REPAIR_REQUIRED"
+    }
+  },
+  "visualGate": {
+    "status": "REPAIR_REQUIRED",
+    "summary": "docs/auto-execute/screenshots/ui-one-to-one/T33/visual-summary.json",
+    "result": "docs/auto-execute/results/T33.json",
+    "actualPngCount": 18,
+    "diffPngCount": 18,
+    "metricsJsonCount": 18,
+    "passingScreens": 0,
+    "failingScreens": 18,
+    "minDiffRatio": 0.142936,
+    "maxDiffRatio": 0.642515,
+    "maxDiffRatioUiId": "UI-15",
+    "threshold": 0.005,
+    "unresolvedItems": 25
+  },
+  "screenRatios": {
+    "UI-01": 0.142936,
+    "UI-02": 0.212549,
+    "UI-03": 0.174261,
+    "UI-04": 0.193674,
+    "UI-05": 0.262479,
+    "UI-06": 0.288386,
+    "UI-07": 0.216334,
+    "UI-08": 0.257127,
+    "UI-09": 0.343375,
+    "UI-10": 0.337765,
+    "UI-11": 0.457306,
+    "UI-12": 0.366343,
+    "UI-13": 0.518726,
+    "UI-14": 0.314493,
+    "UI-15": 0.642515,
+    "UI-16": 0.476996,
+    "UI-17": 0.309294,
+    "UI-18": 0.369695
+  },
+  "commands": [
+    {
+      "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T30",
+      "exitCode": 0,
+      "status": "REPAIR_REQUIRED",
+      "evidence": "docs/auto-execute/screenshots/ui-one-to-one/T30/visual-summary.json"
+    },
+    {
+      "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T31",
+      "exitCode": 0,
+      "status": "REPAIR_REQUIRED",
+      "evidence": "docs/auto-execute/screenshots/ui-one-to-one/T31/visual-summary.json"
+    },
+    {
+      "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T33",
+      "exitCode": 0,
+      "status": "REPAIR_REQUIRED",
+      "evidence": "docs/auto-execute/screenshots/ui-one-to-one/T33/visual-summary.json"
+    },
+    {
+      "command": "node scripts/t33-final-ui-one-to-one-gate.mjs",
+      "exitCode": 1,
+      "status": "REPAIR_REQUIRED",
+      "evidence": "docs/auto-execute/results/T33.json"
+    },
+    {
+      "command": "pnpm.cmd test",
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "pnpm.cmd lint",
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "pnpm.cmd typecheck",
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "node scripts/verify-wechat-routes.mjs",
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "status": "PASS"
+    }
+  ],
+  "changedFiles": [
+    "docs/auto-execute/results/U07.json",
+    "docs/auto-execute/latest/U07-HANDOFF.md",
+    "docs/auto-execute/latest/machine-summary.json",
+    "docs/auto-execute/logs/U07/summary.md",
+    "docs/auto-execute/results/T30.json",
+    "docs/auto-execute/results/T31.json",
+    "docs/auto-execute/results/T33.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T30/**",
+    "docs/auto-execute/screenshots/ui-one-to-one/T31/**",
+    "docs/auto-execute/screenshots/ui-one-to-one/T33/**"
+  ],
+  "blockerClassification": "VISUAL_REPAIR_REQUIRED",
+  "blockers": [
+    "The final fail-closed gate still reports REPAIR_REQUIRED because T26 through T31 are not PASS and all 18 screens exceed diffRatio <= 0.005.",
+    "The current failure is visual pixel fidelity, not missing actual/diff/metrics evidence, route coverage, test execution, lint, typecheck, or git whitespace.",
+    "Pure PASS remains forbidden until UI-01 through UI-18 all satisfy the strict pixel threshold with fresh T31/T33 evidence and the T33 final gate exits cleanly."
+  ],
+  "nextAction": "Continue visual implementation repair from UI-01 through UI-18, prioritizing screens with the highest diff ratios, then rerun T31, T33 harness, T33 final gate, and regression commands."
+}

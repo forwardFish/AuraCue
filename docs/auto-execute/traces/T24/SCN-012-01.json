@@ -1,0 +1,221 @@
+{
+  "scenarioId": "SCN-012",
+  "stepId": "01",
+  "status": "PASS",
+  "personaGoal": "Read full result",
+  "action": "Click Save Card, Share Story, More Sharing Options, View 7-Day Trend",
+  "uiId": "UI-14",
+  "visibleState": {
+    "uiId": "UI-14",
+    "route": "/result/:id/full",
+    "sourceReference": "docs/UI/小程序/09-结果_完整气场卡与分享入口.png",
+    "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/09/code.html",
+    "requirementIds": [
+      "REQ-008",
+      "REQ-010",
+      "REQ-017"
+    ],
+    "apiIds": [
+      "API-003",
+      "API-007",
+      "API-008",
+      "API-010"
+    ],
+    "ownerScenario": "SCN-012",
+    "cardId": "card-004",
+    "title": "Tonight's Lucky Aura Card",
+    "auraName": "Rose Lantern Aura",
+    "tarot": {
+      "symbol": "The Star",
+      "keywords": [
+        "Authority",
+        "Structure",
+        "Leadership"
+      ]
+    },
+    "message": "A small confident choice can make the next moment feel easier.",
+    "caption": "Today I am carrying rose lantern aura.",
+    "theme": "date-confidence-local",
+    "shareImagePath": null,
+    "guidanceRows": [
+      {
+        "id": "colors",
+        "label": "Lucky Colors",
+        "title": "Navy, Rose, Gold",
+        "detail": "Wear one grounded tone with a warm luminous accent.",
+        "value": {
+          "primary": "rose quartz",
+          "accent": "champagne gold",
+          "background": "warm moonlight"
+        }
+      },
+      {
+        "id": "outfit",
+        "label": "Outfit Energy",
+        "title": "Tailored & Confident",
+        "detail": "Wear one clean line with a soft highlight near the face."
+      },
+      {
+        "id": "beauty",
+        "label": "Beauty Cue",
+        "title": "Defined & Polished",
+        "detail": "Keep the glow fresh and the finish light."
+      },
+      {
+        "id": "social",
+        "label": "Social Move",
+        "title": "Lead with Clarity",
+        "detail": "Open with a warm compliment and one clear question."
+      },
+      {
+        "id": "ritual",
+        "label": "Tiny Ritual",
+        "title": "3 Deep Anchor Breaths",
+        "detail": "Take three slow breaths before stepping out."
+      },
+      {
+        "id": "avoid",
+        "label": "Avoid Today",
+        "title": "Keep It Gentle",
+        "detail": "Avoid over-planning the first ten minutes."
+      }
+    ],
+    "actions": {
+      "saveCard": {
+        "controlId": "save-card",
+        "label": "Save Card",
+        "route": "/saved/:id",
+        "apiId": "API-007"
+      },
+      "shareStory": {
+        "controlId": "share-story",
+        "label": "Share Story",
+        "route": "/share/:id",
+        "apiId": "API-008"
+      },
+      "moreSharingOptions": {
+        "controlId": "more-sharing-options",
+        "label": "More Sharing Options",
+        "route": "/share/:id/channels",
+        "apiId": "API-008"
+      },
+      "viewTrend": {
+        "controlId": "view-7-day-trend",
+        "label": "View 7-Day Trend",
+        "disabled": true,
+        "status": "P1_COMING_SOON",
+        "route": null
+      }
+    },
+    "localOnly": {
+      "payment": "entitlement supplied by local mock unlock fixture",
+      "ai": "fixture-api-client-no-provider-call",
+      "analytics": "local-fixture-client",
+      "storage": "local-evidence-files-only",
+      "db": "mock repository/readback deferred to T20"
+    }
+  },
+  "route": {
+    "uiId": "UI-16",
+    "route": "/share/:id/channels",
+    "path": "/share/card-004/channels",
+    "pagePath": "pages/share/channels",
+    "state": "channel-chooser",
+    "ownerScenario": "SCN-013",
+    "title": "Share Channels"
+  },
+  "apiIds": [
+    "API-003",
+    "API-007",
+    "API-008",
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-017"
+  ],
+  "clickEvidence": {
+    "saveFull": {
+      "controlId": "save-card",
+      "expectedRoute": "/saved/:id",
+      "apiId": "API-007",
+      "saved": {
+        "saved": true,
+        "cardId": "card-004",
+        "savedAt": "2026-05-26T00:00:00.000Z",
+        "source": "full_result"
+      },
+      "route": {
+        "uiId": "UI-17",
+        "route": "/saved/:id",
+        "path": "/saved/card-004",
+        "pagePath": "pages/saved/success",
+        "state": "save-success",
+        "ownerScenario": "SCN-014",
+        "title": "Saved"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-054"
+      }
+    },
+    "shareFull": {
+      "controlId": "share-story",
+      "expectedRoute": "/share/:id",
+      "apiId": "API-008",
+      "share": {
+        "shareEventId": "share-010",
+        "cardId": "card-004",
+        "channel": "story",
+        "source": "full_result"
+      },
+      "route": {
+        "uiId": "UI-15",
+        "route": "/share/:id",
+        "path": "/share/card-004",
+        "pagePath": "pages/share/story",
+        "state": "story-preview",
+        "ownerScenario": "SCN-013",
+        "title": "Share Story"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-055"
+      }
+    },
+    "moreSharing": {
+      "controlId": "more-sharing-options",
+      "expectedRoute": "/share/:id/channels",
+      "apiId": "API-008",
+      "share": {
+        "shareEventId": "share-011",
+        "cardId": "card-004",
+        "channel": "story",
+        "source": "full_result_more_options"
+      },
+      "route": {
+        "uiId": "UI-16",
+        "route": "/share/:id/channels",
+        "path": "/share/card-004/channels",
+        "pagePath": "pages/share/channels",
+        "state": "channel-chooser",
+        "ownerScenario": "SCN-013",
+        "title": "Share Channels"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-056"
+      }
+    },
+    "trend": {
+      "controlId": "view-7-day-trend",
+      "disabled": true,
+      "p1Status": "P1_COMING_SOON",
+      "toast": "7-Day Trend is coming in a later AuraCue release.",
+      "route": null,
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-057"
+      }
+    }
+  }
+}

@@ -1,0 +1,247 @@
+page {
+  background: #fbf8f4;
+  color: #10213d;
+}
+
+.energy-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 20%, #fffdfb 0%, #f5f1eb 100%);
+  color: #10213d;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px 8px;
+}
+
+.status-time {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.status-icons {
+  font-size: 10px;
+}
+
+.energy-scroll {
+  min-height: calc(100vh - 42px);
+  padding: 0 24px 22px;
+  box-sizing: border-box;
+}
+
+.energy-header {
+  position: relative;
+  text-align: center;
+  padding-top: 6px;
+  margin-bottom: 24px;
+}
+
+.back-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #a68154;
+  font-size: 32px;
+  line-height: 44px;
+  box-shadow: 0 8px 20px rgba(166, 129, 84, 0.08);
+}
+
+.back-button::after,
+.energy-card::after,
+.generate-button::after {
+  border: 0;
+}
+
+.brand,
+.energy-title,
+.generate-button {
+  font-family: Georgia, serif;
+}
+
+.brand {
+  display: block;
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 700;
+}
+
+.brand-rule {
+  width: 120px;
+  margin: 8px auto 16px;
+  color: #c5a059;
+  border-top: 1px solid rgba(197, 160, 89, 0.28);
+}
+
+.step-pill {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid rgba(197, 160, 89, 0.22);
+  border-radius: 999px;
+  color: #a67c4b;
+  background: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+}
+
+.energy-title {
+  display: block;
+  font-size: 31px;
+  line-height: 35px;
+  margin-top: 16px;
+}
+
+.energy-copy {
+  display: block;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 3px;
+}
+
+.energy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.energy-card {
+  position: relative;
+  min-height: 94px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.64);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  text-align: left;
+  color: #10213d;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.035);
+}
+
+.energy-card-selected {
+  border-color: #e5c284;
+  box-shadow: 0 0 16px rgba(229, 194, 132, 0.36);
+  background: #ffffff;
+}
+
+.energy-check {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #b68c5e;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.energy-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: #fff5ec;
+  color: #c5a059;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 48px;
+  font-size: 10px;
+}
+
+.energy-icon-luck,
+.energy-icon-love {
+  background: #fdeff3;
+  color: #e08ba3;
+}
+
+.energy-icon-calm,
+.energy-icon-focus {
+  background: #f0f3f8;
+  color: #7e8ba4;
+}
+
+.energy-copy-block {
+  flex: 1;
+}
+
+.energy-label {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.energy-description {
+  display: block;
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.feeling-card {
+  border: 1px solid rgba(244, 194, 205, 0.55);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 241, 242, 0.45), rgba(255, 255, 255, 0.84));
+  padding: 18px 20px;
+  margin-bottom: 22px;
+}
+
+.feeling-title {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.feeling-input {
+  margin-top: 14px;
+  border-bottom: 1px solid #e8d6d1;
+  color: #6b7280;
+  font-size: 12px;
+  padding-bottom: 12px;
+}
+
+.generate-button {
+  width: 100%;
+  min-height: 58px;
+  border: 0;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 23px;
+  background: linear-gradient(180deg, #d4a773 0%, #a67c4b 100%);
+  box-shadow: 0 14px 30px rgba(166, 124, 75, 0.22);
+}
+
+.generate-disabled {
+  color: #88898d;
+  background: #e7e1dd;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.button-spark {
+  margin-right: 10px;
+}
+
+.trust-copy {
+  display: block;
+  color: #747b87;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  margin-top: 14px;
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AuraCue Full Reading</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#1A1C4B',
+              purple: '#3F2C6D',
+              pink: '#FF9EAB',
+              rose: '#D27B7B',
+              peach: '#F4B0A0',
+              bg: '#FFF8F6',
+              card: '#FFFFFF',
+              border: '#F6E4E4',
+              text: '#4A4A4A',
+              textLight: '#8A8A8A'
+            }
+          },
+          boxShadow: {
+            'soft': '0 4px 20px -2px rgba(230, 200, 200, 0.3)',
+            'glow': '0 0 15px rgba(255, 158, 171, 0.4)',
+          },
+          backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            'hero-bg': 'linear-gradient(135deg, rgba(255,240,245,0.9) 0%, rgba(255,228,225,0.8) 100%)',
+            'btn-primary': 'linear-gradient(90deg, #8B5CF6 0%, #F43F5E 100%)',
+            'message-bar': 'linear-gradient(90deg, #F3E8FF 0%, #FFE4E6 100%)'
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-utilities">
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    .sparkle {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="%23FF9EAB"/></svg>');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+    }
+    
+    .sphere {
+      border-radius: 50%;
+      box-shadow: inset -5px -5px 10px rgba(0,0,0,0.2), 
+                  inset 5px 5px 10px rgba(255,255,255,0.8),
+                  0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    /* For custom scrollbar hiding */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#F5F5F7] flex items-center justify-center min-h-screen text-brand-text font-sans antialiased selection:bg-brand-pink selection:text-white">
+<!-- BEGIN: Mobile Device Frame -->
+<main class="relative w-full max-w-[430px] h-[932px] bg-brand-bg rounded-[50px] shadow-2xl overflow-hidden border-[8px] border-black box-content flex flex-col">
+<!-- Status Bar Area -->
+<div class="h-12 w-full px-6 flex items-center justify-between z-50">
+<div class="text-[15px] font-semibold tracking-tight text-black relative top-1">9:41</div>
+<div class="flex items-center gap-1.5 relative top-1">
+<svg fill="none" height="12" viewBox="0 0 18 12" width="18" xmlns="http://www.w3.org/2000/svg">
+<rect fill="black" height="4" rx="1" width="3" y="8"></rect>
+<rect fill="black" height="7" rx="1" width="3" x="4" y="5"></rect>
+<rect fill="black" height="10" rx="1" width="3" x="8" y="2"></rect>
+<rect fill="black" height="12" rx="1" width="3" x="12" y="0"></rect>
+</svg>
+<svg fill="none" height="12" viewBox="0 0 16 12" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 2C4.68629 2 2 4.68629 2 8C2 8.55228 1.55228 9 1 9C0.447715 9 0 8.55228 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 8.55228 15.5523 9 15 9C14.4477 9 14 8.55228 14 8C14 4.68629 11.3137 2 8 2Z" fill="black"></path>
+<circle cx="8" cy="8" fill="black" r="3"></circle>
+</svg>
+<div class="w-[26px] h-3 border border-black rounded-[4px] p-[1px] relative">
+<div class="bg-black w-[18px] h-full rounded-[2px]"></div>
+<div class="absolute right-[-2px] top-1 w-[1.5px] h-[4px] bg-black rounded-r-[1px]"></div>
+</div>
+</div>
+</div>
+<!-- Dynamic Island Placeholder -->
+<div class="absolute top-3 left-1/2 -translate-x-1/2 w-[120px] h-[32px] bg-black rounded-[20px] z-50"></div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto no-scrollbar relative pb-24">
+<!-- Background Glow Effects -->
+<div class="absolute top-0 left-0 w-full h-[400px] bg-gradient-radial from-[#FFF0F5] to-transparent opacity-80 pointer-events-none"></div>
+<!-- BEGIN: Header -->
+<header class="px-6 pt-4 pb-2 flex items-center justify-between relative z-10">
+<button class="w-10 h-10 rounded-full bg-[#FFF0F2] flex items-center justify-center text-[#D27B7B] shadow-sm border border-[#FBE3E3]">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+<div class="flex flex-col items-center">
+<svg fill="none" height="20" viewBox="0 0 32 24" width="28" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 2C16 2 12 8 6 8C0 8 2 16 2 16C2 16 8 14 12 18C16 22 16 22 16 22C16 22 16 22 20 18C24 14 30 16 30 16C30 16 32 8 26 8C20 8 16 2 16 2Z" stroke="#1A1C4B" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M16 2C16 2 14 6 14 10C14 14 16 16 16 16C16 16 18 14 18 10C18 6 16 2 16 2Z" stroke="#1A1C4B" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<h1 class="text-brand-navy font-serif tracking-[0.2em] text-[10px] mt-1 uppercase font-semibold">AuraCue</h1>
+</div>
+<button class="w-10 h-10 rounded-full bg-[#FFF0F2] flex items-center justify-center text-[#D27B7B] shadow-sm border border-[#FBE3E3]">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" x2="12" y1="2" y2="15"></line></svg>
+</button>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: Title Section -->
+<section class="text-center mt-6 mb-8 relative">
+<div class="sparkle left-12 top-0 scale-75"></div>
+<div class="sparkle right-12 top-4 scale-50"></div>
+<h2 class="text-[34px] font-serif text-brand-navy font-semibold relative inline-block">
+          Your Full Reading
+          <div class="sparkle -right-6 -top-2 scale-50"></div>
+</h2>
+<p class="text-[#7A7A9D] text-[14px] mt-2 font-medium flex items-center justify-center gap-1">
+          Here's the energy aligned just for you. <span class="text-lg">💖</span>
+</p>
+</section>
+<!-- END: Title Section -->
+<div class="px-5 space-y-4">
+<!-- BEGIN: Hero Card -->
+<div class="relative w-full h-[280px] rounded-[24px] overflow-hidden shadow-soft border border-[#FFE4E4]" style="background: linear-gradient(135deg, rgb(255, 240, 245) 0%, rgb(255, 228, 225) 100%);"><!-- Text Content Container (Left Side) -->
+<div class="relative z-10 p-6 h-full flex flex-col justify-between w-full">
+  <div>
+    <h3 class="font-serif text-[32px] leading-[1.1] text-[#2C2B5B] mb-2 font-semibold">
+      Quiet Power<br>Bloom
+    </h3>
+    <p class="text-[#484555] text-[14px] leading-snug mb-4 font-medium opacity-80">
+      Steady confidence.<br>
+      Soft presence.
+    </p>
+    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/40 border border-white/60 w-max mb-4">
+      <span class="text-[#773120] text-[10px] font-semibold tracking-wide">Work / Meeting • Confidence</span>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-2">
+    <div class="w-5 h-5 flex items-center justify-center text-[#FF9EAB]">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-full h-full">
+        <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"></path>
+      </svg>
+    </div>
+    <span class="text-[#484555] text-[12px] font-medium">Lucky Color: <span class="text-[#D27B7B]">Blush Pink</span></span>
+  </div>
+</div>
+
+<!-- Illustration Container (Right Side) -->
+<div class="absolute right-0 top-0 bottom-0 w-[60%] h-full pointer-events-none z-0 overflow-hidden">
+  <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuARNog2JckFkNAUJXi3PPRyQjazo2Yez77zQ7WQ_d6lxnqKbpkhcTW-EtmeV4i-3QKf0fOGBt57SfRpx4EnFE0kuzSKWotHLP6FNKYPko3sRjMffLTpWE9v-F2Ax3QRanXFP1u5CC_Luq2POsC5x3oOrR4QmbFCb7JYKOZp9lBpMMPuOpKLrjooh8cMANVrD-PJwkeXMdeS6SDrJsE1txBaW604tGaylf8Vgn2OPVn82V7FS3kGLuu3vf284NtPaNH9WZutUURQQaM" alt="Quiet Power Bloom Illustration" class="w-full h-full object-cover object-right">
+</div></div>
+<!-- END: Hero Card -->
+<!-- BEGIN: 2x2 Grid -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Aura Reading Card -->
+<div class="bg-brand-card/80 backdrop-blur-md rounded-[20px] p-4 shadow-sm border border-brand-border relative flex flex-col">
+  <div class="flex items-center gap-2 mb-2">
+    <div class="w-7 h-7 rounded-full bg-[#FFF0F2] flex items-center justify-center text-[#FF9EAB]">
+      <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M12 2v20M17 5l-10 14M22 12H2M19 17L5 7"></path></svg>
+    </div>
+    <h4 class="font-serif text-[14px] text-brand-navy font-semibold">Aura Reading</h4>
+  </div>
+  <p class="text-[11px] text-[#5A5A7A] leading-relaxed">
+    Your energy is grounded and magnetic. You lead with calm certainty.
+  </p>
+  <div class="mt-auto pt-2 flex justify-end">
+    <svg fill="none" height="16" stroke="#FF9EAB" stroke-width="1.5" viewBox="0 0 24 24" width="16"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"></path></svg>
+  </div>
+</div>
+
+<!-- Outfit Color Board Card -->
+<div class="bg-brand-card/80 backdrop-blur-md rounded-[20px] p-4 shadow-sm border border-brand-border flex flex-col">
+  <div class="flex items-center gap-2 mb-3">
+    <div class="w-7 h-7 rounded-full bg-[#FFF0F2] flex items-center justify-center text-[#FF9EAB]">
+      <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg>
+    </div>
+    <h4 class="font-serif text-[14px] text-brand-navy font-semibold">Color Board</h4>
+  </div>
+  <div class="flex justify-between mb-2">
+    <div class="w-6 h-6 sphere bg-[#FADCE1]"></div>
+    <div class="w-6 h-6 sphere bg-[#2A3B5C]"></div>
+    <div class="w-6 h-6 sphere bg-[#D27B7B]"></div>
+    <div class="w-6 h-6 sphere bg-[#DDA15E]"></div>
+  </div>
+  <p class="text-[10px] text-[#5A5A7A] leading-tight mt-auto">
+    These tones reflect your aura and natural energy.
+  </p>
+</div>
+
+<!-- Mini Ritual Card -->
+<div class="bg-brand-card/80 backdrop-blur-md rounded-[20px] p-4 shadow-sm border border-brand-border flex flex-col">
+  <div class="flex items-center gap-2 mb-2">
+    <div class="w-7 h-7 rounded-full bg-[#FFF0F2] flex items-center justify-center text-[#D27B7B]">
+      <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M12 2L15 8L21 9L16 14L18 20L12 17L6 20L8 14L3 9L9 8L12 2Z"></path></svg>
+    </div>
+    <h4 class="font-serif text-[14px] text-brand-navy font-semibold">Mini Ritual</h4>
+  </div>
+  <div class="flex flex-col">
+    <div class="text-[9px] font-bold text-[#D27B7B] uppercase mb-1">1 MINUTE</div>
+    <p class="text-[11px] font-semibold text-brand-navy mb-0.5">3 Anchor Breaths</p>
+    <p class="text-[10px] text-[#7A7A9D] leading-tight">Inhale strength, exhale doubt.</p>
+  </div>
+</div>
+
+<!-- Beauty Cue Card -->
+<div class="bg-brand-card/80 backdrop-blur-md rounded-[20px] p-4 shadow-sm border border-brand-border flex flex-col">
+  <div class="flex items-center gap-2 mb-2">
+    <div class="w-7 h-7 rounded-full bg-[#FFF0F2] flex items-center justify-center text-[#FF9EAB]">
+      <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M20 7h-9m9 4h-9m9 4h-9M4 7h2m-2 4h2m-2 4h2"></path></svg>
+    </div>
+    <h4 class="font-serif text-[14px] text-brand-navy font-semibold">Beauty Cue</h4>
+  </div>
+  <div class="flex flex-col">
+    <p class="text-[11px] font-semibold text-brand-navy mb-0.5">Defined &amp; Polished</p>
+    <p class="text-[10px] text-[#7A7A9D] leading-tight">Sharp brows, soft matte lips, glowing skin.</p>
+  </div>
+</div>
+</div>
+<!-- END: 2x2 Grid -->
+<!-- BEGIN: Message Bar -->
+<div class="w-full bg-message-bar rounded-[16px] py-3 px-4 flex items-center justify-center gap-3 relative overflow-hidden mt-2 border border-white/60 shadow-sm">
+<div class="absolute right-4 top-1/2 -translate-y-1/2 sparkle scale-50"></div>
+<svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 22C12 22 16 18 16 12C16 6 12 2 12 2C12 2 8 6 8 12C8 18 12 22 12 22Z" fill="#F4B0A0" opacity="0.5"></path>
+<path d="M12 20C12 20 18 16 18 10C18 4 12 2 12 2C12 2 6 4 6 10C6 16 12 20 12 20Z" fill="#FF9EAB" opacity="0.8"></path>
+<path d="M12 18C12 18 20 14 20 8C20 2 12 2 12 2C12 2 4 2 4 8C4 14 12 18 12 18Z" fill="#D27B7B" opacity="0.9"></path>
+</svg>
+<span class="text-[#6B5E85] text-[13px] font-medium">You lead best when you trust yourself first.</span>
+</div>
+<!-- END: Message Bar -->
+</div>
+</div>
+<!-- BEGIN: Bottom Action Area -->
+<div class="absolute bottom-0 left-0 w-full bg-brand-bg/90 backdrop-blur-md pt-4 pb-8 px-5 border-t border-brand-border flex gap-3 z-50">
+<!-- Save Card Button -->
+<button class="flex-1 h-14 rounded-full bg-btn-primary flex items-center justify-center gap-2 text-white shadow-lg shadow-purple-500/20 transition-transform active:scale-95">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
+<span class="font-serif text-[16px] tracking-wide">Save Card</span>
+</button>
+<!-- Share Story Button -->
+<button class="flex-1 h-14 rounded-full bg-white border-[1.5px] border-[#E8C4C4] flex items-center justify-center gap-2 text-[#C08585] shadow-sm transition-transform active:scale-95">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" x2="12" y1="2" y2="15"></line></svg>
+<span class="font-serif text-[16px] tracking-wide">Share Story</span>
+</button>
+</div>
+<!-- END: Bottom Action Area -->
+<!-- iOS Home Indicator -->
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-[134px] h-[5px] bg-black rounded-full z-[60]"></div>
+</main>
+<!-- END: Mobile Device Frame -->
+
+
+</body></html>

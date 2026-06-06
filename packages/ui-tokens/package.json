@@ -1,0 +1,13 @@
+{
+  "name": "@auracue/ui-tokens",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tests/ui-tokens.import.test.mjs",
+    "test": "node tests/ui-tokens.import.test.mjs"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

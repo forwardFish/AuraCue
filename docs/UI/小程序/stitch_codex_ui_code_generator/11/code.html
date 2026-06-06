@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AuraCue - Error Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style data-purpose="custom-fonts">
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+    
+    .font-serif-title {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .font-serif-body {
+      font-family: 'Lora', serif;
+    }
+  </style>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'aura-navy': '#151b40',
+            'aura-gold': '#c5a365',
+            'aura-gold-light': '#e8d4a2',
+            'aura-text-sub': '#5a5465',
+            'aura-pink-glow': '#ffd1d9',
+            'aura-purple-glow': '#d8c5e6',
+          },
+          backgroundImage: {
+            'aura-bg': 'radial-gradient(circle at 50% 30%, #fff7f8 0%, #fae6e9 50%, #f4eee7 100%)',
+            'btn-primary-gradient': 'linear-gradient(135deg, #c7aef2 0%, #e8b1d9 50%, #f5beaf 100%)',
+          },
+          boxShadow: {
+            'btn-glow': '0 4px 15px rgba(232, 177, 217, 0.4)',
+            'card-glow': '0 0 40px rgba(255, 209, 217, 0.6)',
+            'badge-glow': '0 4px 12px rgba(245, 137, 154, 0.3)',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-styles">
+    body {
+      background-color: #f8f3ef; /* Fallback */
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.03"/></svg>'), radial-gradient(circle at 50% 30%, #fff7f8 0%, #fae6e9 50%, #f4eee7 100%);
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    
+    .gold-text-gradient {
+      background: linear-gradient(to right, #b48c41, #dfc27d, #b48c41);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col items-center justify-center relative overflow-hidden text-aura-navy rounded-3xl" style="max-width: 430px; margin: 0 auto; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
+<!-- Background decorative clouds (simulated with gradients/blur) -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl z-0">
+<div class="absolute top-[40%] left-1/2 -translate-x-1/2 w-[120%] h-[60%] bg-gradient-to-b from-transparent via-aura-pink-glow/30 to-aura-pink-glow/10 blur-3xl rounded-full"></div>
+<div class="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-[#f4eee7] to-transparent z-10"></div>
+</div>
+<div class="relative z-10 w-full h-full flex flex-col px-6 pt-12 pb-10 min-h-screen rounded-3xl">
+<!-- BEGIN: Header -->
+<header class="flex items-center justify-between w-full mb-10 relative">
+<!-- Close Button -->
+<button class="w-10 h-10 rounded-full border border-aura-gold-light flex items-center justify-center bg-white/30 backdrop-blur-sm z-20">
+<svg class="h-5 w-5 text-aura-navy font-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Logo -->
+<div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center top-1/2 -translate-y-1/2">
+<svg class="mb-1" fill="none" height="20" viewBox="0 0 24 20" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 0C12 0 15 4 15 8C15 11.5 12 14 12 14C12 14 9 11.5 9 8C9 4 12 0 12 0Z" fill="none" stroke="#c5a365" stroke-width="1"></path>
+<path d="M12 14C12 14 18 13 21 9C23 6 24 6 24 6C24 6 21 11 17 15C14 18 12 20 12 20C12 20 10 18 7 15C3 11 0 6 0 6C0 6 1 6 3 9C6 13 12 14 12 14Z" fill="none" stroke="#c5a365" stroke-width="1"></path>
+<path d="M7 15C7 15 4 18 2 18C0 18 0 18 0 18C0 18 3 20 7 19C10 18.5 12 20 12 20C12 20 14 18.5 17 19C21 20 24 18 24 18C24 18 24 18 22 18C20 18 17 15 17 15" fill="none" stroke="#c5a365" stroke-width="1"></path>
+</svg>
+<span class="font-serif-title text-[15px] tracking-[0.2em] uppercase text-aura-gold gold-text-gradient">AuraCue</span>
+</div>
+<!-- Invisible spacer to balance flex -->
+<div class="w-10 h-10"></div>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: Main Content -->
+<main class="flex-1 flex flex-col items-center w-full">
+<!-- Hero Illustration Area -->
+<div class="relative w-full aspect-[4/5] max-h-[420px] flex items-center justify-center mb-6 mt-4">
+  <!-- Outer Cloud Layers and Sparkles -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute bottom-[-10%] left-[-10%] w-[120%] h-[60%] bg-no-repeat bg-contain opacity-90" style="background-image: radial-gradient(circle, rgba(255,209,217,0.4) 0%, transparent 70%); filter: blur(20px);"></div>
+    <!-- Golden Sparkles -->
+    <div class="absolute top-[10%] left-[20%] text-aura-gold/60 text-lg">✧</div>
+    <div class="absolute top-[40%] left-[10%] text-aura-gold/40 text-sm">✧</div>
+    <div class="absolute top-[15%] right-[20%] text-aura-gold/50 text-md">✧</div>
+    <div class="absolute bottom-[30%] right-[10%] text-aura-gold/70 text-lg">✧</div>
+  </div>
+
+  <!-- The Central Card Container -->
+  <div class="relative z-10 w-[60%] aspect-[1/1.8] rotate-[-2deg]">
+    <!-- Card Base with Gold Stroke -->
+    <div class="absolute inset-0 rounded-[24px] border border-aura-gold-light/40 bg-white/40 backdrop-blur-md overflow-hidden shadow-2xl">
+      <!-- Card Interior: Ethereal clouds and Moon -->
+      <div class="absolute inset-0 bg-cover bg-center opacity-80" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnzc1T14kqtxb6cR67QhcGYb-Di2AfKjjwB5A19tJP04nGrAG7nqUaj6MpiEkrYkm6yqxPbJBPylpAcNPP8do5UMf55mkCqMBQheXIs8KYsSVO8yho_beTQunzHYHc3jwzyz4pkiKYZWBAaXM0yklyX9sOI_Zkclz24ERZPHK3KBSETNfK_Y5nuWjI0QujYvGObbXKICxouqgMFgo9CbKOOZlesBI4lyrfgBQ1gINIY2GZsDnUBW5DhUzJqAUKVdKPkWtdM2se_wM'); background-position: center 20%; transform: scale(2.2); filter: blur(1px);"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-aura-pink-glow/40 to-transparent"></div>
+      <!-- Internal Decorative Elements (SVG recreation of card details) -->
+      <div class="absolute inset-2 rounded-[18px] border border-aura-gold-light/20 flex flex-col items-center justify-center">
+         <div class="w-12 h-12 rounded-full bg-white/20 blur-xl"></div>
+      </div>
+    </div>
+    
+    <!-- Warning Badge -->
+    <div class="absolute -top-6 -right-6 w-16 h-16 rounded-full bg-gradient-to-br from-red-300/80 via-pink-400/80 to-red-400/80 flex items-center justify-center shadow-lg backdrop-blur-sm border border-white/40 z-20">
+      <div class="text-white flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Foreground Voluminous Clouds -->
+  <div class="absolute bottom-[-15%] left-1/2 -translate-x-1/2 w-[140%] h-[50%] z-20 pointer-events-none">
+    <div class="absolute inset-0 bg-no-repeat bg-contain bg-center opacity-95" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnzc1T14kqtxb6cR67QhcGYb-Di2AfKjjwB5A19tJP04nGrAG7nqUaj6MpiEkrYkm6yqxPbJBPylpAcNPP8do5UMf55mkCqMBQheXIs8KYsSVO8yho_beTQunzHYHc3jwzyz4pkiKYZWBAaXM0yklyX9sOI_Zkclz24ERZPHK3KBSETNfK_Y5nuWjI0QujYvGObbXKICxouqgMFgo9CbKOOZlesBI4lyrfgBQ1gINIY2GZsDnUBW5DhUzJqAUKVdKPkWtdM2se_wM'); background-position: center bottom; clip-path: inset(65% 0 0 0); transform: scale(1.1);"></div>
+  </div>
+</div>
+<!-- Text Content -->
+<div class="text-center z-20 flex flex-col items-center mt-[-30px]">
+<h1 class="font-serif-title text-[34px] leading-[1.15] text-aura-navy mb-5 relative">
+          Your aura slipped<br>away for a second.
+          <span class="absolute -right-7 bottom-1 text-aura-gold text-2xl">✨</span>
+</h1>
+<!-- Divider -->
+<div class="flex items-center justify-center w-48 mb-5 opacity-60">
+<div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-aura-gold to-aura-gold"></div>
+<div class="px-2">
+<svg fill="#c5a365" height="10" viewBox="0 0 24 24" width="10" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path>
+</svg>
+</div>
+<div class="h-[1px] flex-1 bg-gradient-to-l from-transparent via-aura-gold to-aura-gold"></div>
+</div>
+<p class="font-serif-body text-[17px] text-aura-text-sub mb-8">
+          Let's reconnect and try again.
+        </p>
+</div>
+</main>
+<!-- END: Main Content -->
+<!-- BEGIN: Footer Actions -->
+<footer class="w-full flex flex-col gap-4 z-20 pb-4">
+<!-- Try Again Button -->
+<button class="relative w-full h-[60px] rounded-full bg-btn-primary-gradient shadow-btn-glow flex items-center justify-center overflow-hidden group">
+<!-- Button border glow/gradient -->
+<div class="absolute inset-0 rounded-full border border-white/40 mix-blend-overlay"></div>
+<div class="absolute inset-0 rounded-full border border-[#f5beaf]/50"></div>
+<!-- Button Text -->
+<span class="relative z-10 font-serif-title text-[20px] font-medium text-aura-navy">Try Again</span>
+<!-- Button Sparkles -->
+<svg class="absolute left-6 top-3 w-3 h-3 text-white opacity-70" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0l2 9 9 2-9 2-2 9-2-9-9-2 9-2 2-9z"></path></svg>
+<svg class="absolute right-8 bottom-3 w-2 h-2 text-white opacity-80" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0l2 9 9 2-9 2-2 9-2-9-9-2 9-2 2-9z"></path></svg>
+</button>
+<!-- Change Scene Button -->
+<button class="w-full h-[60px] rounded-full border border-aura-gold-light/70 bg-white/10 backdrop-blur-md flex items-center justify-center gap-2 mt-1">
+<svg class="opacity-80" fill="none" height="16" viewBox="0 0 24 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 0C12 0 15 4 15 8C15 11.5 12 14 12 14C12 14 9 11.5 9 8C9 4 12 0 12 0Z" fill="none" stroke="#c5a365" stroke-width="1.5"></path>
+<path d="M12 14C12 14 18 13 21 9C23 6 24 6 24 6C24 6 21 11 17 15C14 18 12 20 12 20C12 20 10 18 7 15C3 11 0 6 0 6C0 6 1 6 3 9C6 13 12 14 12 14Z" fill="none" stroke="#c5a365" stroke-width="1.5"></path>
+<path d="M7 15C7 15 4 18 2 18C0 18 0 18 0 18C0 18 3 20 7 19C10 18.5 12 20 12 20C12 20 14 18.5 17 19C21 20 24 18 24 18C24 18 24 18 22 18C20 18 17 15 17 15" fill="none" stroke="#c5a365" stroke-width="1.5"></path>
+</svg>
+<span class="font-serif-title text-[18px] font-medium text-aura-navy">Change Scene</span>
+</button>
+</footer>
+<!-- END: Footer Actions -->
+</div>
+
+
+</body></html>

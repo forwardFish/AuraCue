@@ -1,0 +1,139 @@
+﻿[
+    {
+        "name":  "T28",
+        "command":  "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T28",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/U03/T28.log",
+        "outputTail":  [
+                           "{",
+                           "  \"status\": \"REPAIR_REQUIRED\",",
+                           "  \"actualPngCount\": 18,",
+                           "  \"diffPngCount\": 18,",
+                           "  \"metricsJsonCount\": 18,",
+                           "  \"visualSummary\": \"docs/auto-execute/screenshots/ui-one-to-one/T28/visual-summary.json\",",
+                           "  \"blockers\": []",
+                           "}"
+                       ]
+    },
+    {
+        "name":  "T31",
+        "command":  "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T31",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/U03/T31.log",
+        "outputTail":  [
+                           "{",
+                           "  \"status\": \"REPAIR_REQUIRED\",",
+                           "  \"actualPngCount\": 18,",
+                           "  \"diffPngCount\": 18,",
+                           "  \"metricsJsonCount\": 18,",
+                           "  \"visualSummary\": \"docs/auto-execute/screenshots/ui-one-to-one/T31/visual-summary.json\",",
+                           "  \"blockers\": []",
+                           "}"
+                       ]
+    },
+    {
+        "name":  "T33Final",
+        "command":  "node scripts/t33-final-ui-one-to-one-gate.mjs",
+        "exitCode":  2,
+        "log":  "docs/auto-execute/logs/U03/T33-final-refresh.log",
+        "outputTail":  [
+                           "{",
+                           "  \"status\": \"REPAIR_REQUIRED\",",
+                           "  \"unresolvedItems\": 25",
+                           "}"
+                       ]
+    },
+    {
+        "name":  "PnpmTest",
+        "command":  "pnpm.cmd test",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/U03/pnpm-test.log",
+        "outputTail":  [
+                           "  \"checkedFiles\": [",
+                           "    \"apps/wechat-mini/src/app.config.ts\",",
+                           "    \"apps/wechat-mini/src/routes/p0-routes.ts\",",
+                           "    \"packages/shared-types/src/index.ts\",",
+                           "    \"packages/ui-tokens/src/index.ts\",",
+                           "    \"packages/analytics-events/src/index.ts\",",
+                           "    \"packages/card-renderer/src/index.ts\",",
+                           "    \"packages/prompt-core/src/index.ts\"",
+                           "  ]",
+                           "}",
+                           "{",
+                           "  \"status\": \"PASS\",",
+                           "  \"checks\": [",
+                           "    \"routes\",",
+                           "    \"local-only\",",
+                           "    \"placeholder-typecheck\",",
+                           "    \"api-health\"",
+                           "  ],",
+                           "  \"healthEvidence\": \"docs/auto-execute/api/T01/health.json\"",
+                           "}"
+                       ]
+    },
+    {
+        "name":  "Routes",
+        "command":  "node scripts/verify-wechat-routes.mjs",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/U03/routes.log",
+        "outputTail":  [
+                           "    \"/\",",
+                           "    \"/create/scene\",",
+                           "    \"/create/energy\",",
+                           "    \"/create/energy\",",
+                           "    \"/create/loading\",",
+                           "    \"/result/:id\",",
+                           "    \"/unlock/:id\",",
+                           "    \"/invite/:id\",",
+                           "    \"/invite/:id/progress\",",
+                           "    \"/invite/landing/:code\",",
+                           "    \"/unlock/:id/pay\",",
+                           "    \"/unlock/:id/pay-failed\",",
+                           "    \"/unlock/:id/success\",",
+                           "    \"/result/:id/full\",",
+                           "    \"/share/:id\",",
+                           "    \"/share/:id/channels\",",
+                           "    \"/saved/:id\",",
+                           "    \"/error/network\"",
+                           "  ]",
+                           "}"
+                       ]
+    },
+    {
+        "name":  "DiffCheck",
+        "command":  "git diff --check",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/U03/diff-check.log",
+        "outputTail":  {
+
+                       }
+    },
+    {
+        "name":  "T33Visual",
+        "command":  "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T33",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/U03/T33-visual.log",
+        "outputTail":  [
+                           "{",
+                           "  \"status\": \"REPAIR_REQUIRED\",",
+                           "  \"actualPngCount\": 18,",
+                           "  \"diffPngCount\": 18,",
+                           "  \"metricsJsonCount\": 18,",
+                           "  \"visualSummary\": \"docs/auto-execute/screenshots/ui-one-to-one/T33/visual-summary.json\",",
+                           "  \"blockers\": []",
+                           "}"
+                       ]
+    },
+    {
+        "name":  "T33FinalRefresh",
+        "command":  "node scripts/t33-final-ui-one-to-one-gate.mjs",
+        "exitCode":  2,
+        "log":  "docs/auto-execute/logs/U03/T33-final-refresh.log",
+        "outputTail":  [
+                           "{",
+                           "  \"status\": \"REPAIR_REQUIRED\",",
+                           "  \"unresolvedItems\": 25",
+                           "}"
+                       ]
+    }
+]

@@ -1,0 +1,44 @@
+{
+  "uiId": "UI-18",
+  "route": "/error/network",
+  "sourceReference": "docs/UI/小程序/11-异常_生成失败网络异常.png",
+  "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/11/code.html",
+  "viewport": {
+    "sourceWidth": 941,
+    "sourceHeight": 1672,
+    "miniProgramWidth": 390
+  },
+  "header": {
+    "brand": "AuraCue"
+  },
+  "error": {
+    "titleLines": [
+      "Your aura slipped away",
+      "for a second."
+    ],
+    "body": "Let's reconnect and try again.",
+    "safeCopy": true,
+    "code": "LOCAL_GENERATION_FAILURE"
+  },
+  "actions": {
+    "retry": {
+      "id": "try-again",
+      "label": "Try Again",
+      "route": "/create/loading"
+    },
+    "changeScene": {
+      "id": "change-scene",
+      "label": "Change Scene",
+      "route": "/create/scene"
+    }
+  },
+  "jobId": "job-failed-001",
+  "apiIds": [
+    "API-001",
+    "API-002"
+  ],
+  "recoveryRoutes": {
+    "retry": "/create/loading",
+    "changeScene": "/create/scene"
+  }
+}

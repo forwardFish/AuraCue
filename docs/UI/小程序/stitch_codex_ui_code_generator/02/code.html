@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>AURACUE - Context Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#514344",
+                        "surface-container": "#efebff",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#fe9c84",
+                        "on-primary": "#ffffff",
+                        "on-background": "#171545",
+                        "surface-container-highest": "#e2dfff",
+                        "on-surface-variant": "#484555",
+                        "primary-container": "#7a5af8",
+                        "inverse-on-surface": "#f2efff",
+                        "tertiary": "#695b5c",
+                        "surface-container-low": "#f6f2ff",
+                        "on-tertiary-container": "#0a0304",
+                        "outline-variant": "#cac4d7",
+                        "on-primary-fixed-variant": "#491ac6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fcf8ff",
+                        "surface-tint": "#613ede",
+                        "on-secondary-fixed": "#3c0700",
+                        "primary": "#613dde",
+                        "on-primary-container": "#ffffff",
+                        "on-surface": "#171545",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "secondary": "#954835",
+                        "inverse-primary": "#cabeff",
+                        "on-tertiary-fixed": "#24191a",
+                        "primary-fixed": "#e6deff",
+                        "inverse-surface": "#2c2b5b",
+                        "surface-dim": "#d9d6ff",
+                        "secondary-fixed": "#ffdad2",
+                        "outline": "#797586",
+                        "surface-bright": "#fcf8ff",
+                        "background": "#fcf8ff",
+                        "secondary-fixed-dim": "#ffb4a2",
+                        "surface-container-high": "#e9e5ff",
+                        "primary-fixed-dim": "#cabeff",
+                        "on-secondary-fixed-variant": "#773120",
+                        "tertiary-container": "#837374",
+                        "tertiary-fixed-dim": "#d5c2c3",
+                        "on-primary-fixed": "#1d0061",
+                        "on-secondary-container": "#783220",
+                        "surface-variant": "#e2dfff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#f2dedf",
+                        "on-error": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter": "16px",
+                        "stack-lg": "32px",
+                        "unit": "8px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "container-padding": "24px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Playfair Display", "serif"],
+                        "display-lg": ["Playfair Display", "serif"],
+                        "title-md": ["Plus Jakarta Sans", "sans-serif"],
+                        "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+                        "headline-lg-mobile": ["Playfair Display", "serif"],
+                        "body-md": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    },
+                    backgroundImage: {
+                        'mesh-gradient': 'radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%)',
+                        'soft-mesh': 'radial-gradient(at 20% 0%, rgba(254, 156, 132, 0.15) 0px, transparent 50%), radial-gradient(at 80% 100%, rgba(97, 61, 222, 0.1) 0px, transparent 50%), radial-gradient(at 0% 100%, rgba(254, 156, 132, 0.1) 0px, transparent 50%)',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fcf8ff; /* surface */
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+        
+        .aura-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(97,61,222,0.15) 0%, rgba(252,248,255,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(40px);
+        }
+
+        .primary-gradient-bg {
+            background: linear-gradient(135deg, #613dde 0%, #fe9c84 100%);
+        }
+
+        .selected-glow {
+            box-shadow: 0 0 20px rgba(97, 61, 222, 0.15), inset 0 0 10px rgba(254, 156, 132, 0.1);
+        }
+        
+        .sparkle {
+            animation: twinkle 3s infinite ease-in-out alternate;
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 0.3; transform: scale(0.8); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex justify-center items-center min-h-screen bg-surface font-body-md text-on-background antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Container (390x844) -->
+<main class="relative w-full max-w-[390px] h-[844px] bg-surface overflow-hidden shadow-2xl flex flex-col items-center">
+<!-- Ambient Background -->
+<div class="absolute inset-0 bg-soft-mesh z-0 pointer-events-none"></div>
+<div class="aura-glow top-[-10%] left-[-20%]"></div>
+<div class="aura-glow bottom-[-10%] right-[-20%]" style="background: radial-gradient(circle, rgba(254,156,132,0.15) 0%, rgba(252,248,255,0) 70%);"></div>
+<!-- Header -->
+<header class="relative z-10 flex items-center justify-between w-full px-container-padding py-4 mt-safe-top">
+<button aria-label="Go back" class="flex items-center justify-center w-10 h-10 rounded-full glass-panel text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">arrow_back</span>
+</button>
+<div class="text-on-background font-headline-lg-mobile text-xl tracking-widest uppercase">
+                AURACUE
+            </div>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content -->
+<div class="relative z-10 flex-1 w-full px-container-padding flex flex-col justify-start pt-stack-sm pb-container-padding overflow-y-auto hide-scrollbar">
+<!-- Titles -->
+<div class="text-center mb-stack-lg">
+<h1 class="font-headline-lg text-on-background mb-stack-sm leading-tight">
+                    Any context<br/>for today?
+                </h1>
+<p class="text-on-surface-variant text-sm px-4">
+                    Optional — add a scene if you want us to tune your card a little more. <span class="sparkle inline-block">💖</span>
+</p>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-2 gap-gutter mb-auto">
+<!-- Card 1: Date -->
+<button class="glass-panel rounded-3xl p-4 flex flex-col items-center justify-center gap-3 aspect-square relative group hover:bg-surface-container-low transition-colors">
+<div class="w-20 h-20 rounded-full bg-surface-container flex items-center justify-center mb-1 relative overflow-hidden">
+<img alt="A soft, ethereal 3D render of a glowing pink glass heart floating in a misty lavender room, high-end luxury beauty aesthetic, gentle studio lighting, smooth gradients, dreamy and romantic mood." class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="A soft, ethereal 3D render of a glowing pink glass heart floating in a misty lavender room, high-end luxury beauty aesthetic, gentle studio lighting, smooth gradients, dreamy and romantic mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqIfNrYSbecxNw-1VaHNvMcNZzG8Addjs2JB7C4SYM_Ur5gpxYHiozI6vJx38c0lKmh3spkR_6uhJc9HsSsXGkP_H0ImBo9xRyLEp4G9a-yMl75uOBTs0_we37FAlqxHWLyxs2P6pDaW415TRtxDD2hUQcKhtRToE5uIrBzJqfrh1lCakzuyRH3dmH33VZ6M9t8L2GK_lTDnXItbv-UNQxdHgb0R4eb3OXhSKmLoEFxhhfoARCxXGOUrzKsB3N9hTler2-x5SKLC4"/>
+</div>
+<span class="font-title-md text-sm text-on-background">Date</span>
+</button>
+<!-- Card 2: Work (SELECTED) -->
+<button class="glass-panel rounded-3xl p-4 flex flex-col items-center justify-center gap-3 aspect-square relative group border-2 border-primary-container selected-glow bg-surface-container-lowest">
+<!-- Checkmark -->
+<div class="absolute top-3 right-3 w-6 h-6 rounded-full bg-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-white text-[14px]" style="font-variation-settings: 'wght' 600;">check</span>
+</div>
+<div class="w-20 h-20 rounded-full bg-surface-container flex items-center justify-center mb-1 relative overflow-hidden">
+<img alt="A chic, minimalist 3D render of a sleek designer leather handbag in soft ivory, placed on a frosted glass podium against a pale peach background. High-key lighting, premium feminine aesthetic, elegant shadows." class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="A chic, minimalist 3D render of a sleek designer leather handbag in soft ivory, placed on a frosted glass podium against a pale peach background. High-key lighting, premium feminine aesthetic, elegant shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0z39UgoPacHdzZ291Z4vUPszKdz9DUfz08Z_Jmp_fKNQ4nOHHCWEN0oXTU4fP2HVBISn2tkGw3f4uTL9R_5w8g5jZ41TxsjrGoDDeyo99QCRrHLEX1NvVUufCwlHOUUHoHm2eHOFR2ufYgLG34w689G5ink5_Jv96PsxgdZIEXhbaf9UsoncWaVqq0_VaIrqoWc2gXWbC6lujOopKnVx5qZLI_-QfUZEu0F_SoisN3foHvprzTsd9hDYJw8LhX9eczZZl9fQysxw"/>
+</div>
+<span class="font-title-md text-sm text-primary font-bold">Work</span>
+</button>
+<!-- Card 3: Party -->
+<button class="glass-panel rounded-3xl p-4 flex flex-col items-center justify-center gap-3 aspect-square relative group hover:bg-surface-container-low transition-colors">
+<div class="w-20 h-20 rounded-full bg-surface-container flex items-center justify-center mb-1 relative overflow-hidden">
+<img alt="A magical, luminous 3D abstract representation of a celebration, featuring floating iridescent confetti and sparkling champagne bubbles in a soft glowing violet atmosphere. Luxury ethereal mood, bright highlights." class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="A magical, luminous 3D abstract representation of a celebration, featuring floating iridescent confetti and sparkling champagne bubbles in a soft glowing violet atmosphere. Luxury ethereal mood, bright highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpFK8BxJC4TPkBbFssp8qoDuMBi-dGFDll6FB_JmP5hbwVpFCT7-8_TXfeYXpQXAxLXtMndI8yolOfxCBrlm8J875AHT9XBhJdt6YwCKi7bkW2i7-667tu0Bg-jZWEdsn0xbD6Rs7Fvu6t1oVYs8lGlzJmEysYzsSgtNYL3QdLI4bAy8HZe_1gmqpoBr5vHsvK-WH3YvRhOOukiRtgRXH5StmBSnPhUecM3gAVCGri6y5TWMDgQYJh6AhJMqEjqwEFeqTFg-1D8tQ"/>
+</div>
+<span class="font-title-md text-sm text-on-background">Party</span>
+</button>
+<!-- Card 4: Interview -->
+<button class="glass-panel rounded-3xl p-4 flex flex-col items-center justify-center gap-3 aspect-square relative group hover:bg-surface-container-low transition-colors">
+<div class="w-20 h-20 rounded-full bg-surface-container flex items-center justify-center mb-1 relative overflow-hidden">
+<img alt="A refined, modern 3D illustration of a sleek translucent clipboard with a silver clip, resting on a clean marble surface bathed in warm morning light. Professional yet soft, premium glassmorphism style." class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="A refined, modern 3D illustration of a sleek translucent clipboard with a silver clip, resting on a clean marble surface bathed in warm morning light. Professional yet soft, premium glassmorphism style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8v4-xMcasdy3ZpAN0g5oCMyYsBLNtB5KZA52FNReng9OQQRPXuxSoexH18Apl7b-jFDR6HriZR4FRc2NdkPe9hfIVNMyrGVTs6YVc0wWVuKMb7RmLjOsAp15kD_7em0LPfzGsZxTgMgG7bVYDelo20JlP9mUCjxnZ6HNUe9uV7Y31Z8BFBhms0iCEYxcQcBx53TWAeXop14kfTh-y03O-K06CuPMSsHB39MbhsATwelF7pgg6ZNxNcWhePW3lXQn9guMMd1QbWbA"/>
+</div>
+<span class="font-title-md text-sm text-on-background">Interview</span>
+</button>
+<!-- Card 5: Travel -->
+<button class="glass-panel rounded-3xl p-4 flex flex-col items-center justify-center gap-3 aspect-square relative group hover:bg-surface-container-low transition-colors">
+<div class="w-20 h-20 rounded-full bg-surface-container flex items-center justify-center mb-1 relative overflow-hidden">
+<img alt="A dreamy, stylized 3D render of a vintage travel trunk in pastel coral, sitting on a fluffy white cloud against a gradient sunset sky. Soft textures, whimsical and elegant luxury travel vibe." class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="A dreamy, stylized 3D render of a vintage travel trunk in pastel coral, sitting on a fluffy white cloud against a gradient sunset sky. Soft textures, whimsical and elegant luxury travel vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgyGpqoM8HWswdKD038cZVMHdJ8ludbz7PKbcJ6NYttBX5-QZXVqtXG8oPPpFQvSMpBnU7kQSyILoPddX5J3zQJxU06Fa-aPn7t44InGDe1CYknRuULZDvU1jk1tDYfWx1h8TiJOLDjeJboyjJ1ffXkJ4pl0JCbpQ3wMcFXowcUCuvG3J4av6MjU0YpeCg2VVnfnDJGtO_nFe5nHj6Q4-lMsCCIu46lfc1P6I7l_IOBubVvjnBHSgpVXsIPrYcpSqFgHUIDreA1OQ"/>
+</div>
+<span class="font-title-md text-sm text-on-background">Travel</span>
+</button>
+<!-- Card 6: Just for luck -->
+<button class="glass-panel rounded-3xl p-4 flex flex-col items-center justify-center gap-3 aspect-square relative group hover:bg-surface-container-low transition-colors">
+<div class="w-20 h-20 rounded-full bg-surface-container flex items-center justify-center mb-1 relative overflow-hidden">
+<img alt="A delicate, macro 3D render of a blooming lotus flower made of frosted glass, glowing softly from within in a dark atmospheric ethereal setting. Mystical, calming, premium wellness aesthetic." class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="A delicate, macro 3D render of a blooming lotus flower made of frosted glass, glowing softly from within in a dark atmospheric ethereal setting. Mystical, calming, premium wellness aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO3Hep24HPL6kcrnIYly5rBYv6Y8h-6SR5mY1Ri-VU-9xpI5VDNIx5nJPvL-rPj1-Ttilro4URrpYClK4uccQbgx3a6UGJMWnRo0yAX1g-uyAKIkbvayCEu6LXZmkdRp4kDa3hdPjI9w98WWoXOZz4ntRJKcYKa2Vh_-ViGnQfP_AOAE47gGWUs8OoFgxiC4cb6PcAVj8BJ8E1emtiV7Mld9HuouU8ZBMgGxGlX-ojGL20pMnbnqaKq8dZyJ5YWvd2AshC8bEQjB8"/>
+</div>
+<span class="font-title-md text-sm text-on-background">Just for luck</span>
+</button>
+</div>
+<!-- Footer Actions -->
+<div class="mt-stack-lg flex flex-col items-center w-full gap-4 pb-4">
+<button class="text-outline hover:text-on-background text-sm font-medium transition-colors underline decoration-1 underline-offset-4">
+                    Skip
+                </button>
+<button class="w-full h-14 rounded-full primary-gradient-bg text-on-primary font-title-md shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transform transition-transform hover:scale-[1.02] active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px] sparkle" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                    Continue
+                    <span class="material-symbols-outlined text-[18px] sparkle" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</button>
+<p class="text-outline text-xs mt-2 opacity-70">
+                    Optional and private. You can skip this.
+                </p>
+</div>
+</div>
+</main>
+</body></html>

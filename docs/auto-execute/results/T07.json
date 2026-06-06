@@ -1,0 +1,87 @@
+{
+  "taskId": "T07",
+  "taskName": "Save Share Renderer Analytics APIs",
+  "status": "PASS",
+  "completedAt": "2026-05-26T00:00:00.000Z",
+  "scope": {
+    "implementedApis": ["API-007", "API-008", "API-009", "API-010"],
+    "requirements": ["REQ-011", "REQ-014", "REQ-016", "REQ-017"],
+    "uiSupport": ["UI-15", "UI-16", "UI-17"],
+    "localOnly": true
+  },
+  "changedFiles": [
+    "apps/api/src/server.mjs",
+    "apps/api/src/local-repository.mjs",
+    "apps/api/tests/save-share-render-analytics-api.test.mjs",
+    "packages/card-renderer/src/index.ts",
+    "packages/card-renderer/src/local-renderer.mjs",
+    "packages/analytics-events/src/index.ts",
+    "packages/analytics-events/src/local-validator.mjs",
+    "packages/shared-types/src/index.ts",
+    "docs/auto-execute/api/T07/save-share-render-analytics.json",
+    "docs/auto-execute/db/T07/readback.json",
+    "docs/auto-execute/screenshots/T07/share-render-local.json",
+    "docs/auto-execute/logs/T07/local-only.json",
+    "docs/auto-execute/logs/T07/save-share-render-analytics-api-test.log",
+    "docs/auto-execute/logs/T07/api-package-test.log",
+    "docs/auto-execute/logs/T07/root-test.log",
+    "docs/auto-execute/logs/T07/typecheck.log",
+    "docs/auto-execute/logs/T07/lint.log",
+    "docs/auto-execute/logs/T07/diff-check.log",
+    "docs/auto-execute/results/T07.json",
+    "docs/auto-execute/latest/T07-HANDOFF.md"
+  ],
+  "commandsRun": [
+    {
+      "command": "pnpm.cmd --filter @auracue/api test:t07",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T07/save-share-render-analytics-api-test.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/api test",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T07/api-package-test.log",
+      "note": "Log includes a pnpm filter warning from the sandbox path, then executes the @auracue/api test suite successfully."
+    },
+    {
+      "command": "pnpm.cmd test",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T07/root-test.log"
+    },
+    {
+      "command": "pnpm.cmd typecheck",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T07/typecheck.log"
+    },
+    {
+      "command": "pnpm.cmd lint",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T07/lint.log"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T07/diff-check.log"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/api/T07/save-share-render-analytics.json",
+    "docs/auto-execute/db/T07/readback.json",
+    "docs/auto-execute/screenshots/T07/share-render-local.json",
+    "docs/auto-execute/logs/T07/local-only.json"
+  ],
+  "acceptance": {
+    "saveMarksCardSavedAndIdempotent": "PASS",
+    "shareEventRecordsChannelAndSource": "PASS",
+    "shareRendererCreatesDeterministicLocalMetadata": "PASS",
+    "analyticsCollectorValidatesNamesAndSafeProperties": "PASS",
+    "dbReadbacksPresent": "PASS",
+    "productionAnalyticsStorageOrSocialSdkTouched": false
+  },
+  "blockers": [],
+  "nextSteps": [
+    "T16/T17 can bind UI-15, UI-16, and UI-17 to API-007, API-008, and API-009.",
+    "T18 can extend analytics copy/safety coverage using API-010 and the local validator.",
+    "T20 should rerun all API/DB readback rows for API-007 through API-010."
+  ]
+}

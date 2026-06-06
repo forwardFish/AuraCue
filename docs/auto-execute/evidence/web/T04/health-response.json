@@ -1,0 +1,24 @@
+{
+  "endpoint": "GET /api/v1/health",
+  "status": "STATIC_CONTRACT_PASS",
+  "envelope": {
+    "ok": true,
+    "requestId": "generated-per-request",
+    "data": {
+      "status": "ready",
+      "foundation": "api-v1-route-handler",
+      "apiBase": "/api/v1",
+      "localOnly": {
+        "liveServiceWritesAllowed": false,
+        "secretsReturned": false
+      }
+    }
+  },
+  "reusableFoundation": [
+    "server/api/envelope.ts",
+    "server/api/redaction.ts",
+    "server/api/local-guard.ts",
+    "server/config/env.ts",
+    "app/api/v1/health/route.ts"
+  ]
+}

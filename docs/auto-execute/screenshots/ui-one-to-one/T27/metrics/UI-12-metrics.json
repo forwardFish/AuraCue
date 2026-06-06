@@ -1,0 +1,49 @@
+{
+  "taskId": "T27",
+  "uiId": "UI-12",
+  "viewport": {
+    "width": 941,
+    "height": 1672
+  },
+  "threshold": 0.005,
+  "captureMode": "local DOM render from current page view-model HTML renderers under apps/wechat-mini/src/pages/**",
+  "referencePath": "docs/UI/小程序/08B-支付解锁_失败与恢复购买.png",
+  "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T27/actual/UI-12-actual.png",
+  "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T27/diff/UI-12-diff.png",
+  "htmlPath": "docs/auto-execute/screenshots/ui-one-to-one/T27/html/UI-12-actual.html",
+  "referenceDimensions": {
+    "width": 941,
+    "height": 1672
+  },
+  "actualDimensions": {
+    "width": 941,
+    "height": 1672
+  },
+  "sizeMatches": true,
+  "diffRatio": 0.614982,
+  "mismatchedPixels": 967583,
+  "comparedPixels": 1573352,
+  "totalPixels": 1573352,
+  "maxChannelDelta": 255,
+  "remainingBoundingBox": {
+    "x": 0,
+    "y": 0,
+    "width": 941,
+    "height": 1672
+  },
+  "remainingRegions": [
+    {
+      "type": "mismatched-pixels-bounding-box",
+      "x": 0,
+      "y": 0,
+      "width": 941,
+      "height": 1672
+    }
+  ],
+  "thresholdStatus": "FAIL",
+  "missingCoreText": [],
+  "missingRequiredControls": [],
+  "fullScreenReferenceMounted": false,
+  "remoteVisualDependency": false,
+  "finalScreenVerdict": "REPAIR_REQUIRED"
+}

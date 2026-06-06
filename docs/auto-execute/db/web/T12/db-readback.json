@@ -1,0 +1,385 @@
+{
+  "generatedAt": "2026-06-05T10:11:53.525Z",
+  "verdict": "PASS",
+  "p0Models": [
+    "AnonymousUser",
+    "OutfitUpload",
+    "DrawSession",
+    "GenerationJob",
+    "AuraCard",
+    "AuraActivation",
+    "SavedCard",
+    "ShareEvent",
+    "AnalyticsEvent",
+    "CardTemplate"
+  ],
+  "modelEvidence": {
+    "AnonymousUser": [
+      {
+        "task": "T03",
+        "count": 1,
+        "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+      },
+      {
+        "task": "T05",
+        "count": 1,
+        "source": "docs/auto-execute/evidence/web/T05/db-readback.json"
+      }
+    ],
+    "OutfitUpload": [
+      {
+        "task": "T03",
+        "count": 1,
+        "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+      },
+      {
+        "task": "T05",
+        "count": 3,
+        "source": "docs/auto-execute/evidence/web/T05/db-readback.json"
+      }
+    ],
+    "DrawSession": [
+      {
+        "task": "T03",
+        "count": 1,
+        "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+      },
+      {
+        "task": "T05",
+        "count": 2,
+        "source": "docs/auto-execute/evidence/web/T05/db-readback.json"
+      }
+    ],
+    "GenerationJob": [
+      {
+        "task": "T03",
+        "count": 1,
+        "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+      },
+      {
+        "task": "T05",
+        "count": 1,
+        "source": "docs/auto-execute/evidence/web/T05/db-readback.json"
+      },
+      {
+        "task": "T06",
+        "count": 2,
+        "source": "docs/auto-execute/evidence/web/T06/db-readback.json"
+      }
+    ],
+    "AuraCard": [
+      {
+        "task": "T03",
+        "count": 1,
+        "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+      },
+      {
+        "task": "T05",
+        "count": 1,
+        "source": "docs/auto-execute/evidence/web/T05/db-readback.json"
+      },
+      {
+        "task": "T06",
+        "count": 2,
+        "source": "docs/auto-execute/evidence/web/T06/db-readback.json"
+      },
+      {
+        "task": "T07",
+        "count": 1,
+        "source": "docs/auto-execute/evidence/web/T07/db-readback.json"
+      }
+    ],
+    "AuraActivation": [
+      {
+        "task": "T03",
+        "count": 1,
+        "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+      },
+      {
+        "task": "T07",
+        "count": 1,
+        "source": "docs/auto-execute/evidence/web/T07/db-readback.json"
+      }
+    ],
+    "SavedCard": [
+      {
+        "task": "T03",
+        "count": 1,
+        "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+      },
+      {
+        "task": "T07",
+        "count": 1,
+        "source": "docs/auto-execute/evidence/web/T07/db-readback.json"
+      }
+    ],
+    "ShareEvent": [
+      {
+        "task": "T03",
+        "count": 1,
+        "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+      },
+      {
+        "task": "T07",
+        "count": 1,
+        "source": "docs/auto-execute/evidence/web/T07/db-readback.json"
+      }
+    ],
+    "AnalyticsEvent": [
+      {
+        "task": "T03",
+        "count": 3,
+        "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+      },
+      {
+        "task": "T07",
+        "count": 1,
+        "source": "docs/auto-execute/evidence/web/T07/db-readback.json"
+      }
+    ],
+    "CardTemplate": [
+      {
+        "task": "T03",
+        "count": 3,
+        "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+      }
+    ]
+  },
+  "mutationReadback": {
+    "API-001": [
+      {
+        "model": "AnonymousUser",
+        "evidence": [
+          {
+            "task": "T03",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+          },
+          {
+            "task": "T05",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T05/db-readback.json"
+          }
+        ]
+      }
+    ],
+    "API-003": [
+      {
+        "model": "OutfitUpload",
+        "evidence": [
+          {
+            "task": "T03",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+          },
+          {
+            "task": "T05",
+            "count": 3,
+            "source": "docs/auto-execute/evidence/web/T05/db-readback.json"
+          }
+        ]
+      }
+    ],
+    "API-004": [
+      {
+        "model": "DrawSession",
+        "evidence": [
+          {
+            "task": "T03",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+          },
+          {
+            "task": "T05",
+            "count": 2,
+            "source": "docs/auto-execute/evidence/web/T05/db-readback.json"
+          }
+        ]
+      }
+    ],
+    "API-005": [
+      {
+        "model": "GenerationJob",
+        "evidence": [
+          {
+            "task": "T03",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+          },
+          {
+            "task": "T05",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T05/db-readback.json"
+          },
+          {
+            "task": "T06",
+            "count": 2,
+            "source": "docs/auto-execute/evidence/web/T06/db-readback.json"
+          }
+        ]
+      },
+      {
+        "model": "AuraCard",
+        "evidence": [
+          {
+            "task": "T03",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+          },
+          {
+            "task": "T05",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T05/db-readback.json"
+          },
+          {
+            "task": "T06",
+            "count": 2,
+            "source": "docs/auto-execute/evidence/web/T06/db-readback.json"
+          },
+          {
+            "task": "T07",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T07/db-readback.json"
+          }
+        ]
+      }
+    ],
+    "API-008": [
+      {
+        "model": "AuraCard",
+        "evidence": [
+          {
+            "task": "T03",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+          },
+          {
+            "task": "T05",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T05/db-readback.json"
+          },
+          {
+            "task": "T06",
+            "count": 2,
+            "source": "docs/auto-execute/evidence/web/T06/db-readback.json"
+          },
+          {
+            "task": "T07",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T07/db-readback.json"
+          }
+        ]
+      }
+    ],
+    "API-009": [
+      {
+        "model": "AuraActivation",
+        "evidence": [
+          {
+            "task": "T03",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+          },
+          {
+            "task": "T07",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T07/db-readback.json"
+          }
+        ]
+      }
+    ],
+    "API-010": [
+      {
+        "model": "AuraActivation",
+        "evidence": [
+          {
+            "task": "T03",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+          },
+          {
+            "task": "T07",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T07/db-readback.json"
+          }
+        ]
+      },
+      {
+        "model": "AuraCard",
+        "evidence": [
+          {
+            "task": "T03",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+          },
+          {
+            "task": "T05",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T05/db-readback.json"
+          },
+          {
+            "task": "T06",
+            "count": 2,
+            "source": "docs/auto-execute/evidence/web/T06/db-readback.json"
+          },
+          {
+            "task": "T07",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T07/db-readback.json"
+          }
+        ]
+      }
+    ],
+    "API-011": [
+      {
+        "model": "SavedCard",
+        "evidence": [
+          {
+            "task": "T03",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+          },
+          {
+            "task": "T07",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T07/db-readback.json"
+          }
+        ]
+      }
+    ],
+    "API-012": [
+      {
+        "model": "ShareEvent",
+        "evidence": [
+          {
+            "task": "T03",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+          },
+          {
+            "task": "T07",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T07/db-readback.json"
+          }
+        ]
+      }
+    ],
+    "API-013": [
+      {
+        "model": "AnalyticsEvent",
+        "evidence": [
+          {
+            "task": "T03",
+            "count": 3,
+            "source": "docs/auto-execute/evidence/web/T03/db-readback.json"
+          },
+          {
+            "task": "T07",
+            "count": 1,
+            "source": "docs/auto-execute/evidence/web/T07/db-readback.json"
+          }
+        ]
+      }
+    ]
+  }
+}

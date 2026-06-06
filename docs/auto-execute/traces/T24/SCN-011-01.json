@@ -1,0 +1,112 @@
+{
+  "scenarioId": "SCN-011",
+  "stepId": "01",
+  "status": "PASS",
+  "personaGoal": "Complete mock payment",
+  "action": "Confirm payment success, click View Full Card",
+  "uiId": "UI-13",
+  "route": {
+    "uiId": "UI-14",
+    "route": "/result/:id/full",
+    "path": "/result/card-004/full",
+    "pagePath": "pages/result/full",
+    "state": "full-result",
+    "ownerScenario": "SCN-012",
+    "title": "Full Result"
+  },
+  "apiIds": [
+    "API-004",
+    "API-005",
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-016"
+  ],
+  "clickEvidence": {
+    "paymentSuccess": {
+      "controlId": "confirm-unlock-199",
+      "order": {
+        "orderId": "order-005",
+        "cardId": "card-004",
+        "amount": 1.99,
+        "currency": "USD",
+        "status": "pending",
+        "entitlement": null
+      },
+      "completed": {
+        "orderId": "order-005",
+        "cardId": "card-004",
+        "amount": 1.99,
+        "currency": "USD",
+        "status": "paid",
+        "entitlement": {
+          "entitled": true,
+          "entitlementId": "entitlement-002",
+          "cardId": "card-004",
+          "method": "payment",
+          "orderId": "order-004"
+        }
+      },
+      "entitlement": {
+        "entitled": true,
+        "entitlementId": "entitlement-002",
+        "cardId": "card-004",
+        "method": "payment",
+        "orderId": "order-004"
+      },
+      "route": {
+        "uiId": "UI-13",
+        "route": "/unlock/:id/success",
+        "path": "/unlock/card-004/success",
+        "pagePath": "pages/unlock/success",
+        "state": "mock-payment-success",
+        "ownerScenario": "SCN-011",
+        "title": "Unlock Success"
+      },
+      "analytics": [
+        {
+          "accepted": true,
+          "analyticsEventId": "analytics-049"
+        },
+        {
+          "accepted": true,
+          "analyticsEventId": "analytics-050"
+        }
+      ]
+    },
+    "viewFullFromSuccess": {
+      "controlId": "view-full-card",
+      "expectedRoute": "/result/:id/full",
+      "route": {
+        "uiId": "UI-14",
+        "route": "/result/:id/full",
+        "path": "/result/card-004/full",
+        "pagePath": "pages/result/full",
+        "state": "full-result",
+        "ownerScenario": "SCN-012",
+        "title": "Full Result"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-051"
+      }
+    },
+    "shareAfterPayment": {
+      "controlId": "share-story",
+      "expectedRoute": "/share/:id",
+      "route": {
+        "uiId": "UI-15",
+        "route": "/share/:id",
+        "path": "/share/card-004",
+        "pagePath": "pages/share/story",
+        "state": "story-preview",
+        "ownerScenario": "SCN-013",
+        "title": "Share Story"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-052"
+      }
+    }
+  }
+}

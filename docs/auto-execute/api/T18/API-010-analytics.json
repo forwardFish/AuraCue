@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "requiredEventsAccepted": [
+    "page_view_home",
+    "click_generate_start",
+    "select_scene",
+    "select_energy",
+    "generation_started",
+    "generation_success",
+    "generation_failed",
+    "view_result_free",
+    "click_unlock",
+    "checkout_started",
+    "checkout_success",
+    "save_card",
+    "share_card",
+    "copy_share_link",
+    "invite_started",
+    "invite_completed",
+    "return_next_day"
+  ],
+  "invalidEventRejected": {
+    "error": {
+      "code": "VALIDATION_ERROR",
+      "message": "Analytics event input is invalid.",
+      "details": {
+        "eventName": "Expected one of: page_view_home, click_generate_start, select_scene, select_energy, generation_started, generation_success, generation_failed, view_result_free, click_unlock, checkout_started, checkout_success, save_card, share_card, copy_share_link, invite_started, invite_completed, return_next_day, page_view_scene_selection, page_view_energy_selection, blocked_continue_scene, click_scene_continue, blocked_generate_incomplete_selection, click_generate_card, page_view_generation_loading, poll_generation_job, page_view_generation_error, click_generation_retry, click_generation_change_scene, page_view_free_preview, click_invite_unlock_entry, click_preview_share_locked, page_view_unlock_choice, click_paid_unlock_entry, click_invite_instead, page_view_invite_start, click_invite_friends, click_invite_paid_unlock, page_view_invite_progress, click_copy_invite_link, click_invite_again, click_invite_how_it_works, page_view_invite_landing, click_friend_generate_card, page_view_mock_payment_confirm, mock_payment_started, mock_payment_completed, page_view_mock_payment_failed, click_restore_purchase, click_payment_invite_instead, click_payment_contact_support, page_view_mock_payment_success, click_view_full_card_after_payment, click_share_story_after_payment, page_view_full_result, click_save_card, click_share_story, click_more_sharing_options, click_view_7_day_trend_disabled, page_view_share, page_view_share_story, page_view_share_channels, share_started, share_channel_selected, share_image_rendered, click_close_share_preview, click_save_story_card, click_share_story_card, click_copy_story_link, click_share_channel, click_cancel_share_channels, card_saved, page_view_save_success, save_success_viewed, click_save_success_share_now, click_save_success_back_home, click_view_saved_card"
+      }
+    }
+  },
+  "secretPropertyRejected": {
+    "error": {
+      "code": "VALIDATION_ERROR",
+      "message": "Analytics event input is invalid.",
+      "details": {
+        "properties.client_secret": "Secret-like analytics properties are not allowed."
+      }
+    }
+  }
+}

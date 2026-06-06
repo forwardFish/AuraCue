@@ -1,0 +1,31 @@
+{
+  "scenarioId": "SCN-001",
+  "stepId": "01",
+  "status": "PASS",
+  "personaGoal": "Understand product fast",
+  "action": "Open mini-program home",
+  "uiId": "UI-01",
+  "route": {
+    "uiId": "UI-01",
+    "route": "/",
+    "path": "/",
+    "pagePath": "pages/home/index",
+    "state": "home",
+    "ownerScenario": "SCN-001",
+    "title": "Home"
+  },
+  "apiIds": [
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-001",
+    "DB-002"
+  ],
+  "analyticsEvents": [
+    "page_view_home"
+  ],
+  "visibleState": {
+    "brand": "AuraCue",
+    "primaryCta": "Start My 30-Second Card"
+  }
+}

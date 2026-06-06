@@ -1,0 +1,122 @@
+{
+  "mode": "deterministic-json-repository",
+  "liveServiceWritesAllowed": false,
+  "entities": {
+    "users": [
+      "id",
+      "anonymousId",
+      "createdAt"
+    ],
+    "aura_cards": [
+      "id",
+      "userId",
+      "jobId",
+      "scene",
+      "energy",
+      "content",
+      "isUnlocked",
+      "savedAt",
+      "shareImagePath",
+      "createdAt"
+    ],
+    "generation_jobs": [
+      "id",
+      "userId",
+      "scene",
+      "energy",
+      "status",
+      "cardId",
+      "errorCode",
+      "createdAt",
+      "completedAt"
+    ],
+    "card_templates": [
+      "id",
+      "name",
+      "format",
+      "version"
+    ],
+    "share_events": [
+      "id",
+      "userId",
+      "cardId",
+      "channel",
+      "source",
+      "inviteCode",
+      "friendId",
+      "createdAt"
+    ],
+    "analytics_events": [
+      "id",
+      "userId",
+      "eventName",
+      "page",
+      "properties",
+      "createdAt"
+    ],
+    "payment_orders": [
+      "id",
+      "userId",
+      "cardId",
+      "amount",
+      "currency",
+      "status",
+      "createdAt",
+      "completedAt"
+    ],
+    "user_entitlements": [
+      "id",
+      "userId",
+      "cardId",
+      "method",
+      "orderId",
+      "createdAt"
+    ]
+  },
+  "methodCoverage": {
+    "API-001": [
+      "createGenerationJob",
+      "readGenerationJob"
+    ],
+    "API-002": [
+      "readGenerationJob",
+      "completeGenerationJob"
+    ],
+    "API-003": [
+      "readAuraCard",
+      "readEntitlementForCard"
+    ],
+    "API-004": [
+      "unlockCard",
+      "readEntitlementForCard"
+    ],
+    "API-005": [
+      "createMockPaymentOrder",
+      "completeMockPaymentOrder",
+      "readPaymentOrder"
+    ],
+    "API-006": [
+      "recordInviteEvent",
+      "readInviteProgress",
+      "readEntitlementForCard"
+    ],
+    "API-007": [
+      "saveCard",
+      "readAuraCard"
+    ],
+    "API-008": [
+      "recordShareEvent",
+      "readShareEvent"
+    ],
+    "API-009": [
+      "renderShareImage",
+      "readRenderedShareImage",
+      "readCardTemplate",
+      "readAuraCard"
+    ],
+    "API-010": [
+      "recordAnalyticsEvent",
+      "readAnalyticsEvents"
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "uiId": "UI-03",
+  "route": "/create/energy",
+  "sourceReference": "docs/UI/小程序/03-选择_今日能量.png",
+  "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/03/code.html",
+  "incompleteSourceReference": "docs/UI/小程序/03A-选择_场景与能量未完成状态.png",
+  "incompleteStitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/03a/code.html",
+  "viewport": {
+    "sourceWidth": 941,
+    "sourceHeight": 1672,
+    "miniProgramWidth": 390
+  },
+  "statusBar": {
+    "time": "9:41"
+  },
+  "header": {
+    "brand": "AuraCue",
+    "step": "Step 2 of 2"
+  },
+  "hero": {
+    "titleLines": [
+      "What energy do you",
+      "need today?"
+    ],
+    "subtitleLines": [
+      "Choose the energy you want to invite in.",
+      "Your card will be aligned to support it."
+    ]
+  },
+  "options": [
+    {
+      "id": "confidence",
+      "label": "Confidence",
+      "icon": "spark",
+      "description": "Stand tall. Believe in you.",
+      "selected": true
+    },
+    {
+      "id": "luck",
+      "label": "Luck",
+      "icon": "clover",
+      "description": "Open doors. Attract opportunity.",
+      "selected": false
+    },
+    {
+      "id": "love",
+      "label": "Love",
+      "icon": "heart",
+      "description": "Open your heart. Invite meaningful love.",
+      "selected": false
+    },
+    {
+      "id": "calm",
+      "label": "Calm",
+      "icon": "moon",
+      "description": "Find peace. Let go of what weighs you down.",
+      "selected": false
+    },
+    {
+      "id": "charm",
+      "label": "Charm",
+      "icon": "star",
+      "description": "Magnetic energy. Naturally draw people in.",
+      "selected": false
+    },
+    {
+      "id": "focus",
+      "label": "Focus",
+      "icon": "eye",
+      "description": "Clear your mind. Stay aligned and on track.",
+      "selected": false
+    }
+  ],
+  "optionalPrompt": {
+    "label": "How do you feel today?",
+    "placeholder": "Share anything that's on your heart... (optional)"
+  },
+  "primaryCta": {
+    "id": "generate-card",
+    "label": "Generate My Lucky Aura Card",
+    "incompleteLabel": "Generate My Aura Card",
+    "route": "/create/loading"
+  },
+  "validation": {
+    "missingScene": "Choose one scene to continue.",
+    "missingEnergy": "Choose one energy to continue.",
+    "missingBoth": "Choose one scene and one energy to continue."
+  },
+  "trustCopy": "Private. Personal. Just for you.",
+  "selectedScene": "date",
+  "selectedEnergy": "confidence",
+  "complete": true,
+  "validationMessage": null
+}

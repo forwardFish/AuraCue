@@ -1,0 +1,26 @@
+{
+  "apiId": "API-005",
+  "caseId": "C02",
+  "caseKey": "API-005-C02",
+  "caseType": "payment success/failure",
+  "method": "POST",
+  "path": "/api/payment-orders/mock/:orderId/complete",
+  "expectedStatus": 200,
+  "actualStatus": 200,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-005-complete.json",
+  "response": {
+    "orderId": "order-003",
+    "cardId": "card-006",
+    "amount": 1.99,
+    "currency": "USD",
+    "status": "paid",
+    "entitlement": {
+      "entitled": true,
+      "entitlementId": "entitlement-003",
+      "cardId": "card-006",
+      "method": "payment",
+      "orderId": "order-003"
+    }
+  }
+}

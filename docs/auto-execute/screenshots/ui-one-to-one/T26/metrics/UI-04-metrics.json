@@ -1,0 +1,34 @@
+{
+  "taskId": "T26",
+  "uiId": "UI-04",
+  "viewport": {
+    "width": 941,
+    "height": 1672
+  },
+  "threshold": 0.005,
+  "captureMode": "local DOM render from current page view-model HTML renderers under apps/wechat-mini/src/pages/**",
+  "referencePath": "docs/UI/小程序/03A-选择_场景与能量未完成状态.png",
+  "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-04-actual.png",
+  "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-04-diff.png",
+  "htmlPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/html/UI-04-actual.html",
+  "referenceDimensions": {
+    "width": 941,
+    "height": 1672
+  },
+  "actualDimensions": {
+    "width": 941,
+    "height": 1672
+  },
+  "sizeMatches": true,
+  "diffRatio": 0.30664,
+  "mismatchedPixels": 482452,
+  "comparedPixels": 1573352,
+  "totalPixels": 1573352,
+  "maxChannelDelta": 255,
+  "thresholdStatus": "FAIL",
+  "missingCoreText": [],
+  "missingRequiredControls": [],
+  "fullScreenReferenceMounted": false,
+  "remoteVisualDependency": false,
+  "finalScreenVerdict": "REPAIR_REQUIRED"
+}

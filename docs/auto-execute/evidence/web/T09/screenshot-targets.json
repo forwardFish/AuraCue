@@ -1,0 +1,12 @@
+{
+  "taskId": "T09",
+  "status": "TARGETS_DEFINED",
+  "owner": "T13/T14/T15 runtime capture",
+  "targets": [
+    "screenshots/web/T14/UI-001-home-mood.png",
+    "screenshots/web/T14/UI-002-context.png",
+    "screenshots/web/T14/UI-003-upload-success-error-skip.png",
+    "screenshots/web/T14/UI-004-draw-selected-generating.png",
+    "screenshots/web/T14/UI-010-draw-generation-error.png"
+  ]
+}

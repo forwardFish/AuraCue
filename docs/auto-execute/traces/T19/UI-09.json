@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-09",
+  "route": "/share/:id",
+  "pagePath": "pages/share/index",
+  "state": "story-preview",
+  "ownerScenario": "SCN-008",
+  "sourceReference": "docs/UI/小程序/P0-09-Share-Story卡预览与保存.png",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "Save Image",
+      "status": "PASS"
+    },
+    {
+      "label": "Share to Friend",
+      "status": "PASS"
+    },
+    {
+      "label": "Copy Link",
+      "status": "PASS"
+    },
+    {
+      "label": "Back",
+      "status": "PASS"
+    }
+  ]
+}

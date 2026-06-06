@@ -1,0 +1,110 @@
+{
+  "taskId": "T16",
+  "taskName": "Share And Save Pages",
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "completedAt": "2026-05-26T04:18:01+08:00",
+  "scope": {
+    "implementedUiIds": ["UI-15", "UI-16", "UI-17"],
+    "requirements": ["REQ-011", "REQ-014", "REQ-017"],
+    "routes": ["/share/:id", "/share/:id/channels", "/saved/:id"],
+    "apiIds": ["API-007", "API-008", "API-009", "API-010"]
+  },
+  "changedFiles": [
+    "apps/wechat-mini/package.json",
+    "apps/wechat-mini/src/pages/share/share-save-page.mjs",
+    "apps/wechat-mini/src/pages/share/story.js",
+    "apps/wechat-mini/src/pages/share/story.json",
+    "apps/wechat-mini/src/pages/share/story.wxml",
+    "apps/wechat-mini/src/pages/share/story.wxss",
+    "apps/wechat-mini/src/pages/share/channels.js",
+    "apps/wechat-mini/src/pages/share/channels.json",
+    "apps/wechat-mini/src/pages/share/channels.wxml",
+    "apps/wechat-mini/src/pages/share/channels.wxss",
+    "apps/wechat-mini/src/pages/saved/success.js",
+    "apps/wechat-mini/src/pages/saved/success.json",
+    "apps/wechat-mini/src/pages/saved/success.wxml",
+    "apps/wechat-mini/src/pages/saved/success.wxss",
+    "apps/wechat-mini/tests/t16-share-save-pages.test.mjs",
+    "docs/auto-execute/traces/T16/share-save.json",
+    "docs/auto-execute/logs/T16/share-save-pages-test-command.log",
+    "docs/auto-execute/logs/T16/share-save-pages-test.log",
+    "docs/auto-execute/logs/T16/share-save-local-only.json",
+    "docs/auto-execute/logs/T16/wechat-route-verify.log",
+    "docs/auto-execute/logs/T16/typecheck.log",
+    "docs/auto-execute/logs/T16/lint.log",
+    "docs/auto-execute/logs/T16/diff-check.log",
+    "docs/auto-execute/logs/T16/wechat-mini-test.log",
+    "docs/auto-execute/screenshots/T16/UI-15-share-story.html",
+    "docs/auto-execute/screenshots/T16/UI-15-share-story-render-summary.json",
+    "docs/auto-execute/screenshots/T16/UI-16-share-channels.html",
+    "docs/auto-execute/screenshots/T16/UI-16-share-channels-render-summary.json",
+    "docs/auto-execute/screenshots/T16/UI-17-save-success.html",
+    "docs/auto-execute/screenshots/T16/UI-17-save-success-render-summary.json",
+    "docs/auto-execute/results/T16.json",
+    "docs/auto-execute/latest/T16-HANDOFF.md"
+  ],
+  "commandsRun": [
+    {
+      "command": "pnpm --filter @auracue/wechat-mini test:t16 *> docs/auto-execute/logs/T16/share-save-pages-test-command.log",
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "evidence": "PowerShell blocked pnpm.ps1 execution policy before product tests ran."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t16 *> docs/auto-execute/logs/T16/share-save-pages-test-command.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T16/share-save-pages-test-command.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini dev:weapp *> docs/auto-execute/logs/T16/wechat-route-verify.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T16/wechat-route-verify.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini typecheck *> docs/auto-execute/logs/T16/typecheck.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T16/typecheck.log"
+    },
+    {
+      "command": "pnpm.cmd lint *> docs/auto-execute/logs/T16/lint.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T16/lint.log"
+    },
+    {
+      "command": "git diff --check *> docs/auto-execute/logs/T16/diff-check.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T16/diff-check.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test *> docs/auto-execute/logs/T16/wechat-mini-test.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T16/wechat-mini-test.log"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/traces/T16/share-save.json",
+    "docs/auto-execute/logs/T16/share-save-local-only.json",
+    "docs/auto-execute/screenshots/T16/UI-15-share-story.html",
+    "docs/auto-execute/screenshots/T16/UI-15-share-story-render-summary.json",
+    "docs/auto-execute/screenshots/T16/UI-16-share-channels.html",
+    "docs/auto-execute/screenshots/T16/UI-16-share-channels-render-summary.json",
+    "docs/auto-execute/screenshots/T16/UI-17-save-success.html",
+    "docs/auto-execute/screenshots/T16/UI-17-save-success-render-summary.json",
+    "docs/auto-execute/logs/T16/share-save-pages-test-command.log",
+    "docs/auto-execute/logs/T16/wechat-mini-test.log",
+    "docs/auto-execute/logs/T16/wechat-route-verify.log",
+    "docs/auto-execute/logs/T16/typecheck.log",
+    "docs/auto-execute/logs/T16/lint.log",
+    "docs/auto-execute/logs/T16/diff-check.log"
+  ],
+  "blockers": [
+    {
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "detail": "T16 produced deterministic HTML structural captures and render summaries, but no raster screenshots or pixel-diff metrics. Per task rules, pure PASS is deferred to T22/T23 visual capture and diff."
+    }
+  ],
+  "nextStepNotes": [
+    "T17 can build the share-card renderer using T16 UI-15 share image contract and localPath expectations.",
+    "T19/T24 should reuse docs/auto-execute/traces/T16/share-save.json as page-control click seed evidence.",
+    "T22/T23 must capture raster screenshots and pixel diffs for UI-15, UI-16, and UI-17 before any pure visual PASS claim."
+  ]
+}

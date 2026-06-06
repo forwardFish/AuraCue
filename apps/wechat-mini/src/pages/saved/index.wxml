@@ -1,0 +1,8 @@
+<view class="page">
+  <view class="brand">AuraCue</view>
+  <view class="title">Saved to your Aura Cards</view>
+  <view class="copy">Your lucky aura is ready whenever you step out.</view>
+  <view class="saved-card">Soft Confidence</view>
+  <button class="primary" bindtap="shareNow">Share Now</button>
+  <button class="secondary" bindtap="backHome">Back Home</button>
+</view>

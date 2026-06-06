@@ -1,0 +1,307 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "sourceOfTruth": "final-prd-v1.0",
+  "uiRange": "UI-01..UI-12",
+  "pageCount": 12,
+  "controlCount": 35,
+  "legacyP0Status": "DEMOTED",
+  "pages": [
+    {
+      "uiId": "UI-01",
+      "route": "/",
+      "pagePath": "pages/index/index",
+      "state": "mood-home",
+      "ownerScenario": "SCN-001",
+      "sourceReference": "docs/UI/小程序/P0-01-Mood-首页选择今日状态.png",
+      "renderStatus": "PASS",
+      "clickStatus": "PASS",
+      "analyticsStatus": "PASS",
+      "controls": [
+        {
+          "label": "Start My Aura Card",
+          "status": "PASS"
+        },
+        {
+          "label": "mood choices",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "uiId": "UI-02",
+      "route": "/create/context",
+      "pagePath": "pages/create/context",
+      "state": "optional-context",
+      "ownerScenario": "SCN-002",
+      "sourceReference": "docs/UI/小程序/P0-02-Context-可选今日上下文.png",
+      "renderStatus": "PASS",
+      "clickStatus": "PASS",
+      "analyticsStatus": "PASS",
+      "controls": [
+        {
+          "label": "Continue",
+          "status": "PASS"
+        },
+        {
+          "label": "Skip",
+          "status": "PASS"
+        },
+        {
+          "label": "context choices",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "uiId": "UI-03",
+      "route": "/create/upload",
+      "pagePath": "pages/create/upload",
+      "state": "optional-outfit-upload",
+      "ownerScenario": "SCN-003",
+      "sourceReference": "docs/UI/小程序/P0-03-Outfit-可选穿搭上传.png",
+      "renderStatus": "PASS",
+      "clickStatus": "PASS",
+      "analyticsStatus": "PASS",
+      "controls": [
+        {
+          "label": "Upload Outfit",
+          "status": "PASS"
+        },
+        {
+          "label": "Skip for Today",
+          "status": "PASS"
+        },
+        {
+          "label": "Continue",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "uiId": "UI-04",
+      "route": "/create/draw",
+      "pagePath": "pages/create/draw",
+      "state": "draw-card-selection",
+      "ownerScenario": "SCN-004",
+      "sourceReference": "docs/UI/小程序/P0-04-Draw-三卡选择.png",
+      "renderStatus": "PASS",
+      "clickStatus": "PASS",
+      "analyticsStatus": "PASS",
+      "controls": [
+        {
+          "label": "Card I",
+          "status": "PASS"
+        },
+        {
+          "label": "Card II",
+          "status": "PASS"
+        },
+        {
+          "label": "Card III",
+          "status": "PASS"
+        },
+        {
+          "label": "Reveal My Aura",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "uiId": "UI-05",
+      "route": "/create/draw",
+      "pagePath": "pages/create/draw",
+      "state": "draw-generation-loading",
+      "ownerScenario": "SCN-004",
+      "sourceReference": "docs/UI/小程序/P0-05-Reveal-生成中抽卡仪式.png",
+      "renderStatus": "PASS",
+      "clickStatus": "PASS",
+      "analyticsStatus": "PASS",
+      "controls": [
+        {
+          "label": "pending generation",
+          "status": "PASS"
+        },
+        {
+          "label": "duplicate submit blocked",
+          "status": "PASS"
+        },
+        {
+          "label": "retry on failure",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "uiId": "UI-06",
+      "route": "/result/:id",
+      "pagePath": "pages/result/index",
+      "state": "aura-card-result",
+      "ownerScenario": "SCN-005",
+      "sourceReference": "docs/UI/小程序/P0-06-Result-完整气场卡结果.png",
+      "renderStatus": "PASS",
+      "clickStatus": "PASS",
+      "analyticsStatus": "PASS",
+      "controls": [
+        {
+          "label": "Activate Today's Aura",
+          "status": "PASS"
+        },
+        {
+          "label": "Save Card",
+          "status": "PASS"
+        },
+        {
+          "label": "Share Story",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "uiId": "UI-07",
+      "route": "/activate/:id",
+      "pagePath": "pages/activate/index",
+      "state": "activate-hold-to-seal",
+      "ownerScenario": "SCN-006",
+      "sourceReference": "docs/UI/小程序/P0-07-Activate-选择锚点并长按封存.png",
+      "renderStatus": "PASS",
+      "clickStatus": "PASS",
+      "analyticsStatus": "PASS",
+      "controls": [
+        {
+          "label": "anchor choices",
+          "status": "PASS"
+        },
+        {
+          "label": "Hold to Seal Your Aura",
+          "status": "PASS"
+        },
+        {
+          "label": "Cancel Seal",
+          "status": "PASS"
+        },
+        {
+          "label": "disabled before anchor",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "uiId": "UI-08",
+      "route": "/activated/:id",
+      "pagePath": "pages/activated/index",
+      "state": "aura-activated",
+      "ownerScenario": "SCN-007",
+      "sourceReference": "docs/UI/小程序/P0-08-Activated-气场已激活成功.png",
+      "renderStatus": "PASS",
+      "clickStatus": "PASS",
+      "analyticsStatus": "PASS",
+      "controls": [
+        {
+          "label": "Save Card",
+          "status": "PASS"
+        },
+        {
+          "label": "Done",
+          "status": "PASS"
+        },
+        {
+          "label": "Share Story",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "uiId": "UI-09",
+      "route": "/share/:id",
+      "pagePath": "pages/share/index",
+      "state": "story-preview",
+      "ownerScenario": "SCN-008",
+      "sourceReference": "docs/UI/小程序/P0-09-Share-Story卡预览与保存.png",
+      "renderStatus": "PASS",
+      "clickStatus": "PASS",
+      "analyticsStatus": "PASS",
+      "controls": [
+        {
+          "label": "Save Image",
+          "status": "PASS"
+        },
+        {
+          "label": "Share to Friend",
+          "status": "PASS"
+        },
+        {
+          "label": "Copy Link",
+          "status": "PASS"
+        },
+        {
+          "label": "Back",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "uiId": "UI-10",
+      "route": "/share/:id/channels",
+      "pagePath": "pages/share/index",
+      "state": "share-channel-chooser",
+      "ownerScenario": "SCN-008",
+      "sourceReference": "docs/UI/小程序/P0-09A-Share-渠道选择状态.png",
+      "renderStatus": "PASS",
+      "clickStatus": "PASS",
+      "analyticsStatus": "PASS",
+      "controls": [
+        {
+          "label": "channel options",
+          "status": "PASS"
+        },
+        {
+          "label": "Cancel",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "uiId": "UI-11",
+      "route": "/saved/:id",
+      "pagePath": "pages/saved/index",
+      "state": "save-success",
+      "ownerScenario": "SCN-009",
+      "sourceReference": "docs/UI/小程序/P0-10-Saved-保存成功反馈.png",
+      "renderStatus": "PASS",
+      "clickStatus": "PASS",
+      "analyticsStatus": "PASS",
+      "controls": [
+        {
+          "label": "Share Now",
+          "status": "PASS"
+        },
+        {
+          "label": "Back Home",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "uiId": "UI-12",
+      "route": "/error/network",
+      "pagePath": "pages/error/network",
+      "state": "network-error",
+      "ownerScenario": "SCN-010",
+      "sourceReference": "docs/UI/小程序/P0-11-Error-生成失败重试.png",
+      "renderStatus": "PASS",
+      "clickStatus": "PASS",
+      "analyticsStatus": "PASS",
+      "controls": [
+        {
+          "label": "Try Again",
+          "status": "PASS"
+        },
+        {
+          "label": "Change Context",
+          "status": "PASS"
+        }
+      ]
+    }
+  ]
+}

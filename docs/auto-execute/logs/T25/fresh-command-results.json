@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "generatedAt": "2026-05-26T09:40:34.795Z",
+  "commands": [
+    {
+      "command": "node JSON.parse docs/auto-execute/results/T00.json as utf8",
+      "status": "PASS",
+      "evidence": "terminal output: T00 JSON.parse PASS"
+    },
+    {
+      "command": "Get-Content docs\\auto-execute\\results\\T00.json -Encoding UTF8 -Raw | ConvertFrom-Json",
+      "status": "PASS",
+      "evidence": "terminal output: T00 ConvertFrom-Json UTF8 PASS"
+    },
+    {
+      "command": "pnpm.cmd lint",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T25/lint-local-only.log"
+    },
+    {
+      "command": "pnpm.cmd typecheck",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T25/typecheck.log"
+    },
+    {
+      "command": "pnpm.cmd test",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T25/smoke-test.log"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T25/git-diff-check.log"
+    }
+  ],
+  "notes": [
+    "PowerShell pnpm.ps1 shim was blocked by execution policy, so T25 reran through pnpm.cmd without changing system policy."
+  ]
+}

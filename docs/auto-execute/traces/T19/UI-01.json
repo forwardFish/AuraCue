@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-01",
+  "route": "/",
+  "pagePath": "pages/index/index",
+  "state": "mood-home",
+  "ownerScenario": "SCN-001",
+  "sourceReference": "docs/UI/小程序/P0-01-Mood-首页选择今日状态.png",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "Start My Aura Card",
+      "status": "PASS"
+    },
+    {
+      "label": "mood choices",
+      "status": "PASS"
+    }
+  ]
+}

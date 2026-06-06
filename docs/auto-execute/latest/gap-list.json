@@ -1,0 +1,175 @@
+{
+  "status": "REPAIR_REQUIRED",
+  "reason": "Runtime screenshot and pixel-diff evidence has not been regenerated in this command.",
+  "lastGapCount": 12,
+  "gaps": [
+    {
+      "uiId": "UI-01",
+      "route": "/",
+      "missing": [
+        "actual screenshot",
+        "diff image",
+        "pixel metrics"
+      ],
+      "requiredEvidence": [
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-01.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-01.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-01.json"
+      ]
+    },
+    {
+      "uiId": "UI-02",
+      "route": "/create/context",
+      "missing": [
+        "actual screenshot",
+        "diff image",
+        "pixel metrics"
+      ],
+      "requiredEvidence": [
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-02.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-02.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-02.json"
+      ]
+    },
+    {
+      "uiId": "UI-03",
+      "route": "/create/upload",
+      "missing": [
+        "actual screenshot",
+        "diff image",
+        "pixel metrics"
+      ],
+      "requiredEvidence": [
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-03.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-03.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-03.json"
+      ]
+    },
+    {
+      "uiId": "UI-04",
+      "route": "/create/draw",
+      "missing": [
+        "actual screenshot",
+        "diff image",
+        "pixel metrics"
+      ],
+      "requiredEvidence": [
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-04.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-04.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-04.json"
+      ]
+    },
+    {
+      "uiId": "UI-05",
+      "route": "/create/draw",
+      "missing": [
+        "actual screenshot",
+        "diff image",
+        "pixel metrics"
+      ],
+      "requiredEvidence": [
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-05.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-05.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-05.json"
+      ]
+    },
+    {
+      "uiId": "UI-06",
+      "route": "/result/:id",
+      "missing": [
+        "actual screenshot",
+        "diff image",
+        "pixel metrics"
+      ],
+      "requiredEvidence": [
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-06.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-06.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-06.json"
+      ]
+    },
+    {
+      "uiId": "UI-07",
+      "route": "/activate/:id",
+      "missing": [
+        "actual screenshot",
+        "diff image",
+        "pixel metrics"
+      ],
+      "requiredEvidence": [
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-07.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-07.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-07.json"
+      ]
+    },
+    {
+      "uiId": "UI-08",
+      "route": "/activated/:id",
+      "missing": [
+        "actual screenshot",
+        "diff image",
+        "pixel metrics"
+      ],
+      "requiredEvidence": [
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-08.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-08.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-08.json"
+      ]
+    },
+    {
+      "uiId": "UI-09",
+      "route": "/share/:id",
+      "missing": [
+        "actual screenshot",
+        "diff image",
+        "pixel metrics"
+      ],
+      "requiredEvidence": [
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-09.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-09.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-09.json"
+      ]
+    },
+    {
+      "uiId": "UI-10",
+      "route": "/share/:id/channels",
+      "missing": [
+        "actual screenshot",
+        "diff image",
+        "pixel metrics"
+      ],
+      "requiredEvidence": [
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-10.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-10.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-10.json"
+      ]
+    },
+    {
+      "uiId": "UI-11",
+      "route": "/saved/:id",
+      "missing": [
+        "actual screenshot",
+        "diff image",
+        "pixel metrics"
+      ],
+      "requiredEvidence": [
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-11.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-11.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-11.json"
+      ]
+    },
+    {
+      "uiId": "UI-12",
+      "route": "/error/network",
+      "missing": [
+        "actual screenshot",
+        "diff image",
+        "pixel metrics"
+      ],
+      "requiredEvidence": [
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-12.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-12.png",
+        "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-12.json"
+      ]
+    }
+  ]
+}

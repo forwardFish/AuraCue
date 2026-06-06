@@ -1,0 +1,242 @@
+import { shellFixtureIds } from "../../fixtures/shell-fixtures.mjs";
+
+export const loadingPageViewModel = {
+  uiId: "UI-05",
+  route: "/create/loading",
+  sourceReference: "docs/UI/\u5c0f\u7a0b\u5e8f/04-\u751f\u6210_\u62bd\u5361\u4eea\u5f0f.png",
+  stitchReference: "docs/UI/\u5c0f\u7a0b\u5e8f/stitch_codex_ui_code_generator/04/code.html",
+  viewport: {
+    sourceWidth: 941,
+    sourceHeight: 1672,
+    miniProgramWidth: 390
+  },
+  header: {
+    brand: "AuraCue"
+  },
+  hero: {
+    titleLines: ["Drawing your", "Lucky Aura Card..."],
+    subtitle: "Matching your scene, energy, and today's vibe."
+  },
+  ritual: {
+    cardLabel: "Aura Card Back",
+    progressSteps: [
+      { id: "mood", labelLines: ["Reading your", "mood"], active: true },
+      { id: "energy", labelLines: ["Aligning your", "energy"], active: false },
+      { id: "cues", labelLines: ["Revealing your", "cues"], active: false }
+    ],
+    footnoteLines: ["This takes a few seconds.", "Good things are unfolding."]
+  }
+};
+
+export function renderLoadingPage({ jobId = shellFixtureIds.jobId, pollStatus = "pending" } = {}) {
+  return {
+    ...structuredClone(loadingPageViewModel),
+    jobId,
+    pollStatus,
+    apiId: "API-002",
+    nextRoutes: {
+      success: "/result/:id",
+      failure: "/error/network"
+    }
+  };
+}
+
+export async function trackLoadingPageView({ analytics, jobId = shellFixtureIds.jobId }) {
+  return analytics.track("generation_started", "/create/loading", {
+    uiId: "UI-05",
+    jobId,
+    requirementId: "REQ-013"
+  });
+}
+
+export async function pollGenerationJob({ jobId = shellFixtureIds.jobId, store, navigator, apiClient, analytics }) {
+  const job = await apiClient.getGenerationJob(jobId);
+  store.setJob(job);
+
+  const analyticsResponse = await analytics.track(job.status === "success" ? "generation_success" : job.status === "failed" || job.errorCode ? "generation_failed" : "poll_generation_job", "/create/loading", {
+    uiId: "UI-05",
+    apiId: "API-002",
+    jobId,
+    status: job.status,
+    requirementId: "REQ-013"
+  });
+
+  if (job.status === "success" && job.cardId) {
+    const route = navigator.navigate("/result/:id", { id: job.cardId });
+    return {
+      apiCalled: true,
+      job,
+      route,
+      analyticsResponse
+    };
+  }
+
+  if (job.status === "failed" || job.errorCode) {
+    store.setError({
+      code: job.errorCode ?? "LOCAL_GENERATION_FAILURE",
+      jobId,
+      safeMessage: "Your aura slipped away for a second."
+    });
+    const route = navigator.navigate("/error/network");
+    return {
+      apiCalled: true,
+      job,
+      route,
+      analyticsResponse
+    };
+  }
+
+  return {
+    apiCalled: true,
+    job,
+    route: navigator.currentRoute(),
+    analyticsResponse
+  };
+}
+
+export function renderLoadingPageHtml(viewModel = renderLoadingPage()) {
+  const stepIconClass = ["sun", "sparkle", "moon"];
+  const steps = viewModel.ritual.progressSteps
+    .map((step, index) => `<div class="step ${step.active ? "active" : ""}">
+      <div class="step-dot ${stepIconClass[index]}"></div>
+      <span>${step.labelLines[0]}<br>${step.labelLines[1]}</span>
+    </div>`)
+    .join("");
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AuraCue UI-05 Generation Ritual</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fdf9f3; color: #111827; font-family: Inter, Arial, sans-serif; }
+    .device { width: 941px; height: 1672px; margin: 0 auto; padding: 36px 58px 0; background: radial-gradient(circle at 50% 48%, #fff8ef 0%, #fdf9f3 58%, #f7eee7 100%); overflow: hidden; position: relative; border-radius: 42px; }
+    .device::before { content: ""; position: absolute; inset: 200px -220px auto; height: 1010px; background: radial-gradient(circle, rgba(235,178,126,.22) 0%, rgba(253,249,243,0) 70%); }
+    .device::after { content: ""; position: absolute; left: 0; right: 0; top: 650px; height: 570px; background:
+      radial-gradient(circle at 15% 46%, rgba(255,255,255,.92) 0 8px, transparent 9px),
+      radial-gradient(circle at 88% 42%, rgba(255,255,255,.88) 0 5px, transparent 6px),
+      radial-gradient(circle at 54% 70%, rgba(255,255,255,.74) 0 4px, transparent 5px),
+      radial-gradient(circle at 68% 80%, rgba(255,255,255,.62) 0 3px, transparent 4px),
+      radial-gradient(circle at 32% 78%, rgba(255,255,255,.58) 0 3px, transparent 4px),
+      radial-gradient(ellipse at 50% 88%, rgba(255,222,190,.68) 0%, rgba(255,226,214,.44) 36%, rgba(255,255,255,0) 72%),
+      radial-gradient(circle at 25% 76%, rgba(255,200,207,.52) 0%, rgba(255,255,255,0) 28%),
+      radial-gradient(circle at 78% 76%, rgba(255,210,214,.38) 0%, rgba(255,255,255,0) 32%);
+      pointer-events: none;
+    }
+    .status { position: relative; z-index: 1; display:flex; justify-content:space-between; align-items:center; height:50px; padding:0 0 0 28px; color:#050505; font-size:32px; font-weight:800; margin-bottom:28px; }
+    .status-icons { width:164px; height:34px; display:block; position:relative; font-size:0; }
+    .status-icons::before { content:""; position:absolute; left:0; top:2px; width:94px; height:30px; background:
+      linear-gradient(#050505,#050505) 0 19px/8px 10px no-repeat,
+      linear-gradient(#050505,#050505) 14px 14px/8px 15px no-repeat,
+      linear-gradient(#050505,#050505) 28px 8px/8px 21px no-repeat,
+      linear-gradient(#050505,#050505) 42px 2px/8px 27px no-repeat,
+      radial-gradient(ellipse at 50% 100%, transparent 0 8px, #050505 9px 13px, transparent 14px) 58px 0/36px 25px no-repeat,
+      radial-gradient(ellipse at 50% 100%, transparent 0 3px, #050505 4px 7px, transparent 8px) 68px 13px/16px 12px no-repeat; }
+    .status-icons::after { content:""; position:absolute; right:0; top:3px; width:53px; height:25px; border:4px solid #050505; border-radius:6px; box-shadow:7px 8px 0 -5px #050505, inset 0 0 0 3px #fff, inset 5px 0 0 3px #050505; }
+    header { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; margin-bottom: 34px; }
+    .icon { width: 90px; height: 90px; border: 0; border-radius: 999px; background: rgba(255,255,255,.88); color: #b88445; box-shadow: 0 8px 24px rgba(0,0,0,.04); font-size: 0; position: relative; }
+    .back::before { content: ""; position: absolute; width: 30px; height: 30px; border-left: 5px solid currentColor; border-bottom: 5px solid currentColor; transform: rotate(45deg); left: 34px; top: 28px; border-radius: 2px; }
+    .gift::before { content: ""; position: absolute; left: 30px; top: 38px; width: 31px; height: 31px; border-radius: 3px; background: currentColor; box-shadow: inset 13px 0 0 rgba(255,255,255,.5); }
+    .gift::after { content: ""; position: absolute; left: 27px; top: 30px; width: 38px; height: 10px; background: currentColor; border-radius: 3px; box-shadow: 11px -13px 0 -7px currentColor, -11px -13px 0 -7px currentColor; }
+    .brand, h1 { font-family: Georgia, serif; color: #1a2340; }
+    .brand { font-size: 64px; font-weight: 700; }
+    main { position: relative; z-index: 1; text-align: center; }
+    .spark-rule { width: 238px; height: 34px; margin: 12px auto 24px; position: relative; }
+    .spark-rule::before, .spark-rule::after { content: ""; position: absolute; top: 16px; width: 76px; height: 2px; background: linear-gradient(90deg, transparent, rgba(197,160,112,.36)); }
+    .spark-rule::before { left: 0; }
+    .spark-rule::after { right: 0; transform: scaleX(-1); }
+    .spark-rule i { position: absolute; left: 50%; top: 0; width: 34px; height: 34px; transform: translateX(-50%) rotate(45deg); background: #c5a070; clip-path: polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%); opacity: .72; }
+    h1 { margin: 0; font-size: 58px; line-height: 1.12; font-weight: 700; }
+    h1 .gold { color: #a76e58; }
+    .subtitle { color: #71717a; font-size: 26px; line-height: 1.5; margin: 24px 0 38px; }
+    .heart { color: #e39aa6; font-weight: 700; }
+    .ritual { position: relative; display: grid; place-items: center; min-height: 570px; }
+    .orbit { position: absolute; width: 780px; height: 310px; border: 2px dashed rgba(197,160,112,.48); border-radius: 50%; transform: rotate(-15deg); top: 176px; }
+    .orbit.second { width: 690px; height: 440px; transform: rotate(12deg); opacity: .72; top: 112px; }
+    .moon { position: absolute; right: 112px; top: 210px; width: 86px; height: 86px; border-radius: 50%; background: #d9ab79; opacity: .72; }
+    .moon::after { content: ""; position: absolute; left: 21px; top: -4px; width: 76px; height: 82px; border-radius: 50%; background: #fdf9f3; }
+    .star { position: absolute; width: 38px; height: 38px; background: #d7ad74; clip-path: polygon(50% 0,59% 39%,100% 50%,59% 61%,50% 100%,41% 61%,0 50%,41% 39%); opacity: .82; }
+    .star.one { left: 166px; top: 260px; width: 54px; height: 54px; }
+    .star.two { right: 75px; top: 345px; width: 45px; height: 45px; }
+    .star.three { left: 190px; bottom: 94px; width: 38px; height: 38px; }
+    .card { position: relative; width: 312px; height: 535px; border-radius: 31px; border: 8px solid rgba(199,151,99,.78); background:
+      radial-gradient(circle at 50% 50%, rgba(255,236,163,.98) 0 3px, rgba(249,195,97,.92) 4px 11px, rgba(249,195,97,.24) 12px 17px, transparent 18px),
+      radial-gradient(circle at 50% 50%, transparent 0 63px, rgba(211,169,97,.78) 64px 66px, transparent 67px 84px, rgba(211,169,97,.55) 85px 87px, transparent 88px),
+      radial-gradient(circle at 50% 17%, #e7bd68 0 5px, transparent 6px),
+      radial-gradient(circle at 36% 30%, #f3d293 0 2px, transparent 3px),
+      radial-gradient(circle at 62% 37%, #f3d293 0 3px, transparent 4px),
+      radial-gradient(circle at 43% 54%, #f3d293 0 2px, transparent 3px),
+      radial-gradient(circle at 57% 62%, #f3d293 0 2px, transparent 3px),
+      radial-gradient(circle at 38% 22%, #e7bd68 0 3px, transparent 4px),
+      radial-gradient(circle at 66% 31%, #e7bd68 0 4px, transparent 5px),
+      radial-gradient(circle at 25% 43%, #e7bd68 0 3px, transparent 4px),
+      radial-gradient(circle at 75% 59%, #e7bd68 0 3px, transparent 5px),
+      linear-gradient(165deg,#151d37 0%, #111a32 62%, #243553 100%);
+      box-shadow: 0 42px 74px rgba(26,35,64,.26); color: transparent; transform: rotate(-2deg); overflow: hidden; }
+    .card::before { content: ""; position: absolute; inset: 18px; border: 2px solid rgba(213,169,95,.70); border-radius: 22px; background:
+      linear-gradient(90deg, transparent 49.5%, rgba(213,169,95,.24) 50%, transparent 50.5%),
+      linear-gradient(0deg, transparent 49.5%, rgba(213,169,95,.16) 50%, transparent 50.5%);
+      box-shadow: inset 0 0 0 7px rgba(17,26,50,.28);
+    }
+    .card::after { content: ""; position: absolute; inset: 44px 30px; border-radius: 50%; border: 2px solid rgba(213,169,95,.28); transform: scaleY(1.5); box-shadow:
+      0 -112px 0 -52px rgba(213,169,95,.20),
+      0 112px 0 -52px rgba(213,169,95,.20),
+      73px 0 0 -54px rgba(213,169,95,.20),
+      -73px 0 0 -54px rgba(213,169,95,.20);
+    }
+    .card-art { position: absolute; inset: 0; background:
+      radial-gradient(circle at 32% 68%, transparent 0 34px, rgba(213,169,95,.25) 35px 37px, transparent 38px),
+      radial-gradient(circle at 69% 70%, transparent 0 42px, rgba(213,169,95,.25) 43px 45px, transparent 46px),
+      radial-gradient(circle at 18% 22%, transparent 0 31px, rgba(213,169,95,.24) 32px 34px, transparent 35px),
+      radial-gradient(circle at 82% 24%, transparent 0 31px, rgba(213,169,95,.24) 32px 34px, transparent 35px),
+      radial-gradient(ellipse at 20% 34%, transparent 0 28px, rgba(213,169,95,.22) 29px 31px, transparent 32px),
+      radial-gradient(ellipse at 80% 67%, transparent 0 34px, rgba(213,169,95,.22) 35px 37px, transparent 38px);
+      opacity: .9;
+    }
+    .glow { width: 610px; height: 122px; margin: -50px auto 10px; background: radial-gradient(ellipse at center, rgba(255,235,180,.72), rgba(255,255,255,0) 70%); filter: blur(10px); }
+    .progress { position: relative; background: rgba(255,255,255,.56); border: 2px solid rgba(255,255,255,.82); border-radius: 34px; padding: 39px 34px 32px; display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; box-shadow: 0 9px 25px rgba(0,0,0,.045); }
+    .progress::before { content: ""; position: absolute; left: 150px; right: 150px; top: 76px; height: 3px; background: #d7d1ca; }
+    .progress::after { content: ""; position: absolute; left: 150px; top: 76px; width: 150px; height: 3px; background: #c69055; }
+    .step { color: #525a67; font-size: 24px; line-height: 1.28; position: relative; z-index: 1; }
+    .step-dot { width: 76px; height: 76px; margin: 0 auto 16px; border-radius: 999px; background: rgba(255,255,255,.84); border: 4px solid #e4ded7; display: grid; place-items: center; color: rgba(26,35,64,.68); position: relative; box-shadow: 0 3px 9px rgba(0,0,0,.05); }
+    .step.active { color: #c5a070; }
+    .step.active .step-dot { border-color: #c5a070; color: #c5a070; }
+    .step-dot.sun::before { content: ""; width: 24px; height: 24px; border-radius: 50%; background: currentColor; box-shadow: 0 -20px 0 -8px currentColor, 0 20px 0 -8px currentColor, 20px 0 0 -8px currentColor, -20px 0 0 -8px currentColor, 14px 14px 0 -8px currentColor, -14px -14px 0 -8px currentColor, 14px -14px 0 -8px currentColor, -14px 14px 0 -8px currentColor; }
+    .step-dot.sparkle::before { content: ""; width: 37px; height: 37px; background: currentColor; clip-path: polygon(50% 0,60% 38%,100% 50%,60% 62%,50% 100%,40% 62%,0 50%,40% 38%); }
+    .step-dot.moon::before { content: ""; width: 40px; height: 40px; border-radius: 50%; background: currentColor; }
+    .step-dot.moon::after { content: ""; position: absolute; width: 40px; height: 40px; border-radius: 50%; background: white; left: 27px; top: 13px; }
+    .footnote { color: #71717a; font-size: 24px; line-height: 1.55; margin-top: 24px; }
+    .footnote .tiny { display:inline-block; width:22px; height:22px; margin-right:18px; background:#c5a070; clip-path: polygon(50% 0,60% 38%,100% 50%,60% 62%,50% 100%,40% 62%,0 50%,40% 38%); vertical-align: -3px; opacity:.82; }
+    footer { position:absolute; left:0; right:0; bottom:0; height:154px; border-top:1px solid #f2eadf; background:rgba(255,255,255,.80); display:flex; align-items:flex-start; justify-content:space-around; color:#71717a; font-size:24px; padding-top: 26px; border-radius: 42px 42px 0 0; }
+    footer span, footer strong { display:flex; flex-direction:column; align-items:center; gap:9px; font-weight:400; }
+    footer strong { color:#a67c4b; }
+    footer i { width: 42px; height: 42px; display:block; position:relative; color: currentColor; }
+    .nav-home::before { content:""; position:absolute; left:5px; top:17px; width:32px; height:24px; background:currentColor; border-radius:4px; }
+    .nav-home::after { content:""; position:absolute; left:2px; top:4px; width:38px; height:38px; background:currentColor; clip-path:polygon(50% 0,100% 45%,86% 45%,86% 100%,14% 100%,14% 45%,0 45%); }
+    .nav-history::before { content:""; position:absolute; inset:4px; border:4px solid currentColor; border-radius:50%; }
+    .nav-history::after { content:""; position:absolute; left:20px; top:12px; width:15px; height:17px; border-left:4px solid currentColor; border-bottom:4px solid currentColor; }
+    .nav-profile::before { content:""; position:absolute; left:11px; top:3px; width:20px; height:20px; border:4px solid currentColor; border-radius:50%; }
+    .nav-profile::after { content:""; position:absolute; left:4px; bottom:2px; width:34px; height:21px; border:4px solid currentColor; border-radius:20px 20px 3px 3px; }
+    .home-indicator { position:absolute; left:50%; bottom:18px; width:296px; height:12px; transform:translateX(-50%); border-radius:99px; background:#050505; }
+  </style>
+</head>
+<body>
+  <main class="device">
+    <div class="status"><span>9:41</span><span class="status-icons">icons</span></div>
+    <header><button class="icon back">Back</button><div class="brand">${viewModel.header.brand}</div><button class="icon gift">Gift</button></header>
+    <section>
+      <div class="spark-rule"><i></i></div>
+      <h1 data-required-text="Lucky Aura Card"><span>${viewModel.hero.titleLines[0]}</span><br><span>Lucky </span><span class="gold">Aura Card...</span></h1>
+      <p class="subtitle">${viewModel.hero.subtitle} <span class="heart">&#x1F496;</span></p>
+      <div class="ritual"><div class="orbit"></div><div class="orbit second"></div><div class="moon"></div><div class="star one"></div><div class="star two"></div><div class="star three"></div><div class="card"><div class="card-art"></div>${viewModel.ritual.cardLabel}</div></div>
+      <div class="glow"></div>
+      <section class="progress">${steps}</section>
+      <p class="footnote"><span class="tiny"></span>${viewModel.ritual.footnoteLines[0]}<br>${viewModel.ritual.footnoteLines[1]} <span class="heart">&#x1F49B;</span></p>
+    </section>
+    <footer><strong><i class="nav-home"></i>Home</strong><span><i class="nav-history"></i>History</span><span><i class="nav-profile"></i>Profile</span><div class="home-indicator"></div></footer>
+  </main>
+</body>
+</html>`;
+}

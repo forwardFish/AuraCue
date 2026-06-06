@@ -1,0 +1,106 @@
+{
+  "taskId": "T05",
+  "taskName": "Identity Upload Draw APIs",
+  "templateId": "TPL-API-DOMAIN",
+  "status": "COMPLETE",
+  "verdict": "PASS_FOR_T05_SCOPE",
+  "productPassClaimed": false,
+  "timestamp": "2026-06-04T21:21:56+08:00",
+  "scope": {
+    "executedOnlyTask": "T05",
+    "implementedApis": [
+      "POST /api/v1/identity/anonymous",
+      "GET /api/v1/aura-cards/today",
+      "POST /api/v1/uploads/outfit",
+      "POST /api/v1/draw-sessions/start"
+    ],
+    "usedProductionCloud": false,
+    "usedProductionDb": false,
+    "usedProductionAi": false,
+    "usedSecrets": false,
+    "notes": "T05 verified local DB-backed identity, today-card readback, local metadata-only upload records, and draw-session start behavior. This is not a final product PASS claim."
+  },
+  "coveredIds": [
+    "API-001",
+    "API-002",
+    "API-003",
+    "API-004",
+    "DB-AnonymousUser",
+    "DB-OutfitUpload",
+    "DB-DrawSession"
+  ],
+  "changedFiles": [
+    "apps/web/app/api/v1/identity/anonymous/route.ts",
+    "apps/web/app/api/v1/aura-cards/today/route.ts",
+    "apps/web/app/api/v1/uploads/outfit/route.ts",
+    "apps/web/app/api/v1/draw-sessions/start/route.ts",
+    "apps/web/server/services/identity-upload-draw.ts",
+    "apps/web/server/repositories/identity-upload-draw-repository.ts",
+    "apps/web/tests/api/identity-upload-draw.test.mjs",
+    "docs/auto-execute/results/web/T05.json",
+    "docs/auto-execute/latest/web/T05-HANDOFF.md",
+    "docs/auto-execute/logs/web/T05-command-log.md"
+  ],
+  "commands": [
+    {
+      "command": "pnpm.cmd --filter @auracue/web test:api -- identity-upload-draw",
+      "status": "PASS",
+      "evidence": "Wrote T05 API transcript and DB readback evidence; covered API-001..004 success, validation, not-found, idempotency, upload type/size, draw cards, expiry, and today active readback."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web test:db",
+      "status": "PASS",
+      "evidence": "T03 P0 DB readback remained passing across all 10 Web P0 models and idempotency constraints."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web typecheck",
+      "status": "PASS",
+      "evidence": "TypeScript completed with no emit and no errors for route handlers, service, and repository code."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web lint",
+      "status": "PASS",
+      "evidence": "ESLint completed with max-warnings=0."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web build",
+      "status": "PASS",
+      "evidence": "Next build compiled and listed the four T05 route handlers as dynamic routes."
+    }
+  ],
+  "evidence": [
+    {
+      "type": "api_transcript",
+      "path": "docs/auto-execute/evidence/web/T05/api-transcript.json",
+      "status": "PASS",
+      "summary": "16 transcript cases across identity create/idempotent/invalid, today not-found/empty/active, upload jpg/png/webp/too-large/bad-type, draw missing mood/no upload/idempotent/with upload/upload not found."
+    },
+    {
+      "type": "db_readback",
+      "path": "docs/auto-execute/evidence/web/T05/db-readback.json",
+      "status": "PASS",
+      "summary": "Readback counts: AnonymousUser=1, OutfitUpload=3, DrawSession=2, GenerationJob=1, AuraCard=1."
+    },
+    {
+      "type": "build_routes",
+      "path": "command output: pnpm.cmd --filter @auracue/web build",
+      "status": "PASS",
+      "summary": "Build listed /api/v1/identity/anonymous, /api/v1/aura-cards/today, /api/v1/uploads/outfit, and /api/v1/draw-sessions/start."
+    }
+  ],
+  "blockers": [],
+  "nextRepair": null,
+  "rerunResumeState": {
+    "canRerun": true,
+    "safeToResumeAt": "T06",
+    "commands": [
+      "pnpm.cmd --filter @auracue/web test:api -- identity-upload-draw",
+      "pnpm.cmd --filter @auracue/web test:db",
+      "pnpm.cmd --filter @auracue/web typecheck",
+      "pnpm.cmd --filter @auracue/web lint",
+      "pnpm.cmd --filter @auracue/web build"
+    ],
+    "notes": "Use pnpm.cmd on this Windows PowerShell surface. T05 evidence uses local SQLite and local metadata-only upload URLs; no real object storage or production DB was used."
+  },
+  "exitCondition": "T09 create flow can call the local T05 API routes for anonymous identity, today active-card lookup, optional outfit upload, and draw-session start."
+}

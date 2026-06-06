@@ -1,0 +1,72 @@
+{
+  "date": "2026-06-03",
+  "goal": "扫描历史项目已生成的 auto-execute task，校验现有 task-auto-execute 模板覆盖度，并补强缺失或不够具体的独立模板",
+  "overallStatus": "BLOCKED_BY_GLOBAL_SKILL_WRITE_PERMISSION",
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "requirement": "Scan historical auto-execute task files from prior projects.",
+      "status": "COMPLETE",
+      "evidence": [
+        "patched-history-template-map.json: task_files=218, projects=7",
+        "history-template-coverage.md"
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "requirement": "Map historical tasks to matching task-auto-execute templates and identify missing families.",
+      "status": "COMPLETE",
+      "evidence": [
+        "patched-history-template-map.json: missing_with_current_templates={}",
+        "template-content-audit.md"
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "requirement": "Add and strengthen missing or too-generic independent templates.",
+      "status": "COMPLETE_IN_PATCHED_SNAPSHOT",
+      "evidence": [
+        "patched-skill/task-auto-execute/references/templates: 58 TPL-*.md files",
+        "template-content-quality-patched.json: fail_count=0",
+        "patched-skill-manifest.json: templateCount=58, auditIdCount=58"
+      ]
+    },
+    {
+      "id": "REQ-004",
+      "requirement": "Ensure template contents are accurate enough to generate executable tasks, not just add template IDs.",
+      "status": "COMPLETE_IN_PATCHED_SNAPSHOT",
+      "evidence": [
+        "template-content-audit.md",
+        "audit-template-content-quality.py",
+        "template-content-quality-patched.json: 58/58 PASS",
+        "patched SKILL.md includes Template Content Accuracy Gate"
+      ]
+    },
+    {
+      "id": "REQ-005",
+      "requirement": "Update global task-auto-execute skill so future sessions use the strengthened templates.",
+      "status": "BLOCKED",
+      "evidence": [
+        "global sync dry-run still requires 11 template copies, audit-template-content-quality.py, audit IDs, index updates, SKILL.md update, and 47 quality appendices for both global roots",
+        "manifest verification passes patched snapshot and fails both C-drive global roots",
+        "direct --apply reports PermissionError on both C-drive global roots"
+      ]
+    }
+  ],
+  "verifiedPatchedArtifacts": {
+    "skillRoot": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute",
+    "manifest": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill-manifest.json",
+    "package": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\task-auto-execute-patched-skill.zip",
+    "packageSha256": "090cb95fca23c0dc3813b083b50f04e97c6f6923b523ca71a7772e9cf1da6d74",
+    "templateCount": 58,
+    "auditIdCount": 58,
+    "contentAuditFailures": 0,
+    "historicalCoverageMissingFamilies": 0
+  },
+  "blockedGlobalRoots": [
+    "C:\\Users\\linyanhui\\.agents\\skills\\task-auto-execute",
+    "C:\\Users\\linyanhui\\.codex\\skills\\task-auto-execute"
+  ],
+  "unblockCommand": "powershell -ExecutionPolicy Bypass -File D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\scripts\\apply-global-task-auto-execute-sync.ps1",
+  "completionCondition": "Both global roots must match patched-skill-manifest.json, content audit must pass 58/58, historical coverage must show zero missing template families, and sync dry-run must report zero pending changes."
+}

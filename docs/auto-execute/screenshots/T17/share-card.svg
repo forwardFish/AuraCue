@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-label="AuraCue Golden Comet Aura share card">
+  <defs>
+    <linearGradient id="auracue-bg-card-t17-render-001" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a1a4a"/>
+      <stop offset="42%" stop-color="#8d5bff"/>
+      <stop offset="72%" stop-color="#f48fb1"/>
+      <stop offset="100%" stop-color="#d4af37"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#auracue-bg-card-t17-render-001)"/>
+  <rect x="42" y="42" width="996" height="1836" rx="64" fill="none" stroke="#d4af37" stroke-width="4" opacity="0.72"/>
+  <text x="540" y="176" text-anchor="middle" fill="#d4af37" font-family="Georgia, serif" font-size="42" letter-spacing="10">AURACUE</text>
+  <text x="540" y="292" text-anchor="middle" fill="#ffffff" font-family="Georgia, serif" font-size="82" font-weight="700">Full Lucky Aura Card</text>
+  <text x="540" y="382" text-anchor="middle" fill="#fff7dc" font-family="Inter, Arial, sans-serif" font-size="42">The Sun</text>
+  <rect x="96" y="1080" width="888" height="696" rx="54" fill="#fffdf8" opacity="0.92"/>
+  <text x="540" y="1198" text-anchor="middle" fill="#2a1a4a" font-family="Georgia, serif" font-size="68" font-weight="700">Golden Comet Aura</text>
+  <text x="540" y="1272" text-anchor="middle" fill="#7a6b5c" font-family="Inter, Arial, sans-serif" font-size="34">golden-night</text>
+  <text x="180" y="1382" fill="#7a6b5c" font-family="Inter, Arial, sans-serif" font-size="30">Lucky Color</text>
+  <text x="900" y="1382" text-anchor="end" fill="#2a1a4a" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Champagne Gold</text>
+  <text x="180" y="1480" fill="#7a6b5c" font-family="Inter, Arial, sans-serif" font-size="30">Outfit Energy</text>
+  <text x="900" y="1480" text-anchor="end" fill="#2a1a4a" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Use one playful accent and keep the rest effortless.</text>
+  <text x="180" y="1578" fill="#7a6b5c" font-family="Inter, Arial, sans-serif" font-size="30">Social Action</text>
+  <text x="900" y="1578" text-anchor="end" fill="#2a1a4a" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Join the first friendly circle and ask what made their week brighter.</text>
+  <text x="180" y="1676" fill="#7a6b5c" font-family="Inter, Arial, sans-serif" font-size="30">Tiny Ritual</text>
+  <text x="900" y="1676" text-anchor="end" fill="#2a1a4a" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Smile at yourself once before you enter the room.</text>
+  <text x="540" y="1748" text-anchor="middle" fill="#2a1a4a" font-family="Georgia, serif" font-size="30" font-style="italic">Today I am carrying golden comet aura.</text>
+</svg>

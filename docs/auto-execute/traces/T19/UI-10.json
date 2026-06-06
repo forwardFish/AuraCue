@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-10",
+  "route": "/share/:id/channels",
+  "pagePath": "pages/share/index",
+  "state": "share-channel-chooser",
+  "ownerScenario": "SCN-008",
+  "sourceReference": "docs/UI/小程序/P0-09A-Share-渠道选择状态.png",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "channel options",
+      "status": "PASS"
+    },
+    {
+      "label": "Cancel",
+      "status": "PASS"
+    }
+  ]
+}

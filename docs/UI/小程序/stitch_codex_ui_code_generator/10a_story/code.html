@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AuraCue - Saved to your Aura Cards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'aura-navy': '#1A184A',
+            'aura-gold': '#C5A365',
+            'aura-pink': '#F4D4D8',
+            'aura-purple': '#9B7DB8',
+          },
+          backgroundImage: {
+            'main-bg': 'radial-gradient(circle at 50% 30%, #FFF4F5 0%, #FDF0ED 50%, #F8EBE6 100%)',
+            'btn-gradient': 'linear-gradient(90deg, #F9A4A9 0%, #D88CB2 50%, #876EBA 100%)',
+            'card-bg': 'linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%)',
+          },
+          boxShadow: {
+            'glow': '0 0 20px rgba(197, 163, 101, 0.3)',
+            'btn-glow': '0 0 15px rgba(216, 140, 178, 0.4)',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-utilities">
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, #1A184A 0%, #3B368A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);
+    }
+    
+    .sparkle::before, .sparkle::after {
+      content: '';
+      position: absolute;
+      background: white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    .sparkle::before {
+      width: 1px;
+      height: 12px;
+    }
+    
+    .sparkle::after {
+      width: 12px;
+      height: 1px;
+    }
+  </style>
+</head>
+<body class="bg-main-bg min-h-screen text-aura-navy font-sans antialiased overflow-x-hidden relative flex flex-col items-center justify-start pb-12">
+<!-- Background Effects -->
+<div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+<div class="absolute top-10 left-[10%] w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+<div class="absolute top-40 right-[10%] w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+<!-- Random sparkles -->
+<div class="sparkle top-[20%] left-[15%] scale-75"></div>
+<div class="sparkle top-[15%] right-[20%] scale-100"></div>
+<div class="sparkle top-[40%] right-[10%] scale-50"></div>
+</div>
+<div class="relative z-10 w-full max-w-[430px] px-6 pt-12 flex flex-col items-center">
+<!-- BEGIN: Header Section -->
+<header class="w-full flex justify-between items-center mb-8 relative">
+<button aria-label="Close" class="w-10 h-10 rounded-full border border-aura-gold/30 flex items-center justify-center text-aura-navy bg-white/50 backdrop-blur-sm shadow-sm hover:bg-white/80 transition-colors z-20">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>
+</svg>
+</button>
+<!-- Logo -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="flex flex-col items-center text-aura-gold">
+<svg class="mb-1" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M12 22C12 22 16 18 16 12C16 6 12 2 12 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M12 22C12 22 8 18 8 12C8 6 12 2 12 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<span class="font-serif tracking-[0.2em] text-sm uppercase">AuraCue</span>
+</div>
+</div>
+</header>
+<!-- END: Header Section -->
+<!-- BEGIN: Title Section -->
+<div class="flex flex-col items-center text-center mb-6 w-full relative">
+<!-- Success Icon -->
+<div class="w-16 h-16 rounded-full border border-aura-gold flex items-center justify-center mb-4 shadow-glow relative bg-white/40 backdrop-blur-sm">
+<div class="absolute inset-[-4px] rounded-full border border-aura-gold/30"></div>
+<svg fill="none" height="32" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 13L9 17L19 7" stroke="#C5A365" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h1 class="font-serif text-4xl leading-tight mb-2 text-aura-navy relative">
+<div class="sparkle -left-6 top-2 scale-50 text-aura-gold"></div>
+<div class="sparkle -right-8 bottom-4 scale-75 text-aura-gold"></div>
+        Saved to your<br/>Aura Cards
+      </h1>
+<p class="text-aura-navy/80 text-[15px] font-medium">Your lucky aura is ready whenever you step out.</p>
+</div>
+<!-- END: Title Section -->
+<!-- BEGIN: Card Preview -->
+<div class="w-full relative mb-6">
+<!-- Outer glow/border effect -->
+<div class="absolute inset-[-2px] rounded-[2rem] bg-gradient-to-b from-aura-gold/40 to-aura-gold/10 blur-[1px] z-0"></div>
+<div class="relative z-10 w-full aspect-[9/14] rounded-[30px] overflow-hidden border border-white/40 shadow-2xl">
+<img alt="Aura Card Preview" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUD8bW3X4PZ_a8g3ardi3Es7QDpmZHs_4dT94MVYPKmapY6l0RrsTpWIc0LuomeeRGkbQjd8ApogYy_txIZreBpZVGXVC3vYCKVT5BVK18KScxY066AzkhfS7smvnIt2RWwg-LW8Kefu50BRPAnZ7VfPsWHVXbGmrDrHxUsUGHSuaF8c2BCm8forEgOKmT7NAXmfaahiF3EGDCt-6RgukWmt5M_6RpbeBCeUsnGzsixsUxOEffjSNeNUPOR-Ir6l8Cx2kO574eqMs"/>
+</div>
+</div>
+<!-- END: Card Preview -->
+<!-- BEGIN: Status Rows -->
+<div class="w-full flex flex-col gap-3 mb-6">
+<!-- Saved to Photos -->
+<div class="glass-panel rounded-full px-5 py-3.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<svg class="text-aura-navy/70" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<rect height="18" rx="2" ry="2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" width="18" x="3" y="3"></rect>
+<circle cx="8.5" cy="8.5" fill="currentColor" r="1.5"></circle>
+<polyline points="21 15 16 10 5 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></polyline>
+</svg>
+<span class="font-serif text-[17px] text-aura-navy">Saved to Photos</span>
+</div>
+<div class="w-6 h-6 rounded-full bg-[#D88CB2] flex items-center justify-center">
+<svg fill="none" height="14" viewbox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 13L9 17L19 7" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+</div>
+<!-- Saved to Aura Cards -->
+<div class="glass-panel rounded-full px-5 py-3.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<svg class="text-aura-navy/70" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M12 22C12 22 16 18 16 12C16 6 12 2 12 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M12 22C12 22 8 18 8 12C8 6 12 2 12 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<span class="font-serif text-[17px] text-aura-navy">Saved to Aura Cards</span>
+</div>
+<div class="w-6 h-6 rounded-full bg-[#D88CB2] flex items-center justify-center">
+<svg fill="none" height="14" viewbox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 13L9 17L19 7" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- END: Status Rows -->
+<!-- BEGIN: Actions -->
+<div class="w-full flex flex-col gap-4">
+<!-- Share Now Button -->
+<button class="w-full relative group">
+<div class="absolute inset-0 rounded-full bg-btn-gradient opacity-70 blur-md group-hover:opacity-100 transition-opacity"></div>
+<div class="relative w-full rounded-full bg-btn-gradient p-[1px]">
+<div class="w-full h-full rounded-full bg-btn-gradient flex items-center justify-center py-4 relative overflow-hidden">
+<!-- Shimmer effect -->
+<div class="absolute inset-0 bg-white/20 translate-x-[-100%] skew-x-[-20deg] group-hover:animate-[shimmer_1.5s_infinite]"></div>
+<span class="font-serif text-[19px] text-white flex items-center gap-2 relative z-10">
+              Share Now
+              <svg class="text-white/80" fill="none" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="currentColor"></path>
+</svg>
+</span>
+</div>
+</div>
+</button>
+<!-- Back Home Button -->
+<button class="w-full rounded-full border border-aura-gold/40 py-4 font-serif text-[18px] text-aura-navy bg-white/30 backdrop-blur-sm hover:bg-white/50 transition-colors">
+        Back Home
+      </button>
+<!-- View Saved Card Link -->
+<div class="w-full flex justify-center mt-2">
+<a class="flex items-center gap-2 text-aura-navy/80 hover:text-aura-navy transition-colors" href="#">
+<span class="text-aura-gold text-xs">✦</span>
+<span class="font-serif text-[15px] underline decoration-aura-navy/30 underline-offset-4">View Saved Card</span>
+<span class="text-aura-gold text-xs">✦</span>
+</a>
+</div>
+</div>
+<!-- END: Actions -->
+</div>
+<style>
+    @keyframes shimmer {
+      100% {
+        transform: translateX(100%) skewX(-20deg);
+      }
+    }
+  </style>
+</body></html>

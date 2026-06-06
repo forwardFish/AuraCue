@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "taskId": "T17",
+  "requirementIds": [
+    "REQ-014"
+  ],
+  "uiIds": [
+    "UI-15"
+  ],
+  "apiIds": [
+    "API-009"
+  ],
+  "renderer": {
+    "cardId": "card-t17-render-001",
+    "templateId": "template-story-001",
+    "format": "story-9x16",
+    "localPath": "local://share-images/card-t17-render-001-template-story-001.png",
+    "width": 1080,
+    "height": 1920,
+    "aspectRatio": "9:16",
+    "artifactKind": "svg-data-url",
+    "dataUrlSha256": "6010440e7ca82a8a3c683d785853da420cf26242b94aa16712e171a4fa1ebf35",
+    "deterministicKey": "card-t17-render-001|template-story-001|Full Lucky Aura Card|Golden Comet Aura|Champagne Gold|golden-night|Today I am carrying golden comet aura.",
+    "requiredTextFields": {
+      "title": "Full Lucky Aura Card",
+      "auraName": "Golden Comet Aura",
+      "tarotSymbol": "The Sun",
+      "message": "Warm presence can turn a small exchange into a memorable one.",
+      "luckyColor": "Champagne Gold",
+      "outfit": "Use one playful accent and keep the rest effortless.",
+      "beauty": "Let one feature catch light while the rest stays natural.",
+      "social": "Join the first friendly circle and ask what made their week brighter.",
+      "ritual": "Smile at yourself once before you enter the room.",
+      "avoid": "Avoid performing for people who are not meeting your energy.",
+      "caption": "Today I am carrying golden comet aura.",
+      "theme": "golden-night"
+    },
+    "layerTypes": [
+      "background",
+      "title",
+      "auraName",
+      "tarotSymbol",
+      "luckyColor",
+      "outfit",
+      "social",
+      "ritual",
+      "caption"
+    ]
+  },
+  "assertions": {
+    "deterministicRepeat": true,
+    "stableDimensions": true,
+    "requiredFieldsPresent": true,
+    "externalNetworkUsed": false,
+    "cloudStorageUsed": false
+  }
+}

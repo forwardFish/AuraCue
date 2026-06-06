@@ -1,0 +1,180 @@
+{
+  "taskId": "T32",
+  "status": "PASS",
+  "scope": "Click, route, owner E2E, API/DB/contract, local-only, and secret-safety regression verification after T26-T31 visual repair work.",
+  "changedFiles": [
+    "docs/auto-execute/logs/T32/",
+    "docs/auto-execute/results/T32.json",
+    "docs/auto-execute/latest/T32-HANDOFF.md"
+  ],
+  "codeRepairs": [],
+  "inputHandoffsReviewed": [
+    {
+      "taskId": "T26",
+      "status": "REPAIR_REQUIRED",
+      "evidence": "docs/auto-execute/latest/T26-HANDOFF.md"
+    },
+    {
+      "taskId": "T27",
+      "status": "REPAIR_REQUIRED",
+      "evidence": "docs/auto-execute/latest/T27-HANDOFF.md"
+    },
+    {
+      "taskId": "T28",
+      "status": "REPAIR_REQUIRED",
+      "evidence": "docs/auto-execute/latest/T28-HANDOFF.md"
+    },
+    {
+      "taskId": "T29",
+      "status": "REPAIR_REQUIRED",
+      "evidence": "docs/auto-execute/latest/T29-HANDOFF.md"
+    },
+    {
+      "taskId": "T30",
+      "status": "REPAIR_REQUIRED",
+      "evidence": "docs/auto-execute/latest/T30-HANDOFF.md"
+    },
+    {
+      "taskId": "T31",
+      "status": "REPAIR_REQUIRED",
+      "evidence": "docs/auto-execute/latest/T31-HANDOFF.md"
+    }
+  ],
+  "routeManifest": {
+    "status": "PASS",
+    "uiCoverage": "UI-01..UI-18",
+    "command": "node scripts/verify-wechat-routes.mjs",
+    "evidence": "docs/auto-execute/logs/T32/verify-wechat-routes.log"
+  },
+  "pageSimulation": {
+    "status": "PASS",
+    "command": "pnpm.cmd --filter @auracue/wechat-mini test:t19",
+    "evidence": [
+      "docs/auto-execute/logs/T32/wechat-t19-page-simulated.log",
+      "docs/auto-execute/traces/T19/page-coverage.json",
+      "docs/auto-execute/traces/T19/page-simulated-tests.json"
+    ]
+  },
+  "ownerE2E": {
+    "status": "PASS",
+    "command": "pnpm.cmd --filter @auracue/wechat-mini test:t24",
+    "evidence": [
+      "docs/auto-execute/logs/T32/wechat-t24-owner-e2e.log",
+      "docs/auto-execute/traces/T24/owner-e2e-summary.json",
+      "docs/auto-execute/traces/T24/all-click-targets.json"
+    ]
+  },
+  "apiDbContract": {
+    "status": "PASS",
+    "commands": [
+      "pnpm.cmd --filter @auracue/api test",
+      "pnpm.cmd --filter @auracue/api test:t20",
+      "node apps/wechat-mini/tests/t21-frontend-backend-contract.test.mjs"
+    ],
+    "evidence": [
+      "docs/auto-execute/logs/T32/api-test.log",
+      "docs/auto-execute/logs/T32/api-t20-db-readback.log",
+      "docs/auto-execute/logs/T32/wechat-t21-contract.log",
+      "docs/auto-execute/api/T20/all-api-summary.json",
+      "docs/auto-execute/api/T21/contract-summary.json",
+      "docs/auto-execute/db/T20/db-readbacks.json"
+    ]
+  },
+  "localOnlyAndSecretSafety": {
+    "status": "PASS",
+    "commands": [
+      "pnpm.cmd lint",
+      "pnpm.cmd --filter @auracue/api test:t18"
+    ],
+    "evidence": [
+      "docs/auto-execute/logs/T32/pnpm-lint.log",
+      "docs/auto-execute/logs/T32/api-t18-safety.log"
+    ],
+    "productionServicesUsed": false,
+    "realPaymentUsed": false,
+    "secretsUsed": false
+  },
+  "verificationResults": [
+    {
+      "command": "pnpm.cmd test",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T32/pnpm-test.log"
+    },
+    {
+      "command": "pnpm.cmd lint",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T32/pnpm-lint.log"
+    },
+    {
+      "command": "pnpm.cmd typecheck",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T32/pnpm-typecheck.log"
+    },
+    {
+      "command": "node scripts/verify-wechat-routes.mjs",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T32/verify-wechat-routes.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T32/wechat-test.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t19",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T32/wechat-t19-page-simulated.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t24",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T32/wechat-t24-owner-e2e.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/api test",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T32/api-test.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/api test:t20",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T32/api-t20-db-readback.log"
+    },
+    {
+      "command": "node apps/wechat-mini/tests/t21-frontend-backend-contract.test.mjs",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T32/wechat-t21-contract.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/api test:t18",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T32/api-t18-safety.log"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T32/git-diff-check.log"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/logs/T32/command-summary.json",
+    "docs/auto-execute/logs/T32/pnpm-test.log",
+    "docs/auto-execute/logs/T32/pnpm-lint.log",
+    "docs/auto-execute/logs/T32/pnpm-typecheck.log",
+    "docs/auto-execute/logs/T32/verify-wechat-routes.log",
+    "docs/auto-execute/logs/T32/wechat-test.log",
+    "docs/auto-execute/logs/T32/wechat-t19-page-simulated.log",
+    "docs/auto-execute/logs/T32/wechat-t24-owner-e2e.log",
+    "docs/auto-execute/logs/T32/api-test.log",
+    "docs/auto-execute/logs/T32/api-t20-db-readback.log",
+    "docs/auto-execute/logs/T32/wechat-t21-contract.log",
+    "docs/auto-execute/logs/T32/api-t18-safety.log",
+    "docs/auto-execute/logs/T32/git-diff-check.log"
+  ],
+  "blockers": [],
+  "notes": [
+    "Used pnpm.cmd in PowerShell to execute the same pnpm CLI without relying on the pnpm.ps1 shim.",
+    "T26-T31 visual pixel gates remain historical visual repair status only; T32 did not mark visual failures as functional PASS.",
+    "No regression caused by visual repair was found in the available route/click/owner/API/contract/local-only/secret checks."
+  ]
+}

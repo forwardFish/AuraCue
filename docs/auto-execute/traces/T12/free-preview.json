@@ -1,0 +1,131 @@
+{
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "taskId": "T12",
+  "requirementIds": [
+    "REQ-002",
+    "REQ-003",
+    "REQ-004",
+    "REQ-009",
+    "REQ-017"
+  ],
+  "uiIds": [
+    "UI-06"
+  ],
+  "routes": [
+    "/result/:id",
+    "/result/card-locked-001",
+    "/unlock/card-locked-001",
+    "/invite/card-locked-001"
+  ],
+  "sourceReferences": {
+    "UI-06": "docs/UI/小程序/05-结果_免费预览待解锁.png"
+  },
+  "stitchReferences": {
+    "UI-06": "docs/UI/小程序/stitch_codex_ui_code_generator/05/code.html"
+  },
+  "renderAssertions": {
+    "apiId": "API-003",
+    "requestedView": "free",
+    "freeFieldsShown": [
+      "auraName",
+      "luckyColor",
+      "oneLineReminder",
+      "previewImage"
+    ],
+    "lockedFullContentExposed": false,
+    "hiddenFields": [
+      "outfit",
+      "beauty",
+      "social",
+      "ritual",
+      "avoid",
+      "caption",
+      "theme"
+    ],
+    "lockedRows": [
+      "outfit",
+      "beauty",
+      "social",
+      "ritual",
+      "avoid"
+    ],
+    "nativePageFiles": [
+      "apps/wechat-mini/src/pages/result/free-preview.wxml",
+      "apps/wechat-mini/src/pages/result/free-preview.wxss",
+      "apps/wechat-mini/src/pages/result/free-preview.js",
+      "apps/wechat-mini/src/pages/result/free-preview.json"
+    ]
+  },
+  "clicks": {
+    "unlock": {
+      "controlId": "unlock-full-card",
+      "expectedRoute": "/unlock/:id",
+      "actualRoute": "/unlock/card-locked-001",
+      "analyticsAccepted": true
+    },
+    "invite": {
+      "controlId": "invite-three-friends",
+      "expectedRoute": "/invite/:id",
+      "actualRoute": "/invite/card-locked-001",
+      "analyticsAccepted": true
+    }
+  },
+  "apiMockTrace": [
+    {
+      "apiId": "API-003",
+      "method": "getCard",
+      "cardId": "card-locked-001",
+      "view": "free"
+    }
+  ],
+  "analyticsReadback": [
+    {
+      "eventName": "view_result_free",
+      "page": "/result/:id",
+      "properties": {
+        "uiId": "UI-06",
+        "apiId": "API-003",
+        "cardId": "card-locked-001",
+        "view": "free",
+        "requirementId": "REQ-009"
+      },
+      "analyticsEventId": "analytics-view_result_free"
+    },
+    {
+      "eventName": "click_unlock",
+      "page": "/result/:id",
+      "properties": {
+        "uiId": "UI-06",
+        "cardId": "card-locked-001",
+        "requirementId": "REQ-009"
+      },
+      "analyticsEventId": "analytics-click_unlock"
+    },
+    {
+      "eventName": "click_invite_unlock_entry",
+      "page": "/result/:id",
+      "properties": {
+        "uiId": "UI-06",
+        "cardId": "card-locked-001",
+        "requirementId": "REQ-009"
+      },
+      "analyticsEventId": "analytics-click_invite_unlock_entry"
+    }
+  ],
+  "localOnly": {
+    "payment": "not-used-on-preview",
+    "ai": "fixture-api-client-no-provider-call",
+    "analytics": "local-fixture-client",
+    "storage": "local-evidence-files-only",
+    "db": "no-production-write"
+  },
+  "visualEvidence": {
+    "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+    "reason": "T12 generated deterministic HTML structural capture and render summary for UI-06; automated raster screenshot and pixel-diff evidence were unavailable in this task boundary.",
+    "captures": [
+      "docs/auto-execute/screenshots/T12/UI-06-free-preview.html",
+      "docs/auto-execute/screenshots/T12/UI-06-free-preview-render-summary.json"
+    ],
+    "missingRequestedRasterPath": "docs/auto-execute/screenshots/T12/UI-06-free-preview.png"
+  }
+}

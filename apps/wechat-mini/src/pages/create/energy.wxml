@@ -1,0 +1,47 @@
+<view class="energy-page">
+  <view class="status-bar">
+    <text class="status-time">9:41</text>
+    <text class="status-icons">signal wifi battery</text>
+  </view>
+
+  <scroll-view class="energy-scroll" scroll-y="true">
+    <view class="energy-header">
+      <button class="back-button" bindtap="onBackTap">‹</button>
+      <text class="brand">AuraCue</text>
+      <view class="brand-rule">✦</view>
+      <text class="step-pill">Step 2 of 2</text>
+      <text class="energy-title">What energy do you</text>
+      <text class="energy-title">need today?</text>
+      <text class="energy-copy">Choose the energy you want to invite in.</text>
+      <text class="energy-copy">Your card will be aligned to support it. ✨</text>
+    </view>
+
+    <view class="energy-grid">
+      <button
+        wx:for="{{energyOptions}}"
+        wx:key="id"
+        class="energy-card {{selectedEnergy === item.id ? 'energy-card-selected' : ''}}"
+        data-energy="{{item.id}}"
+        bindtap="onEnergyTap"
+      >
+        <text class="energy-check" wx:if="{{selectedEnergy === item.id}}">✓</text>
+        <view class="energy-icon energy-icon-{{item.id}}">{{item.icon}}</view>
+        <view class="energy-copy-block">
+          <text class="energy-label">{{item.label}}</text>
+          <text class="energy-description">{{item.description}}</text>
+        </view>
+      </button>
+    </view>
+
+    <view class="feeling-card">
+      <text class="feeling-title">✦ How do you feel today?</text>
+      <input class="feeling-input" value="{{feeling}}" placeholder="Share anything that's on your heart... (optional)" bindinput="onFeelingInput" />
+    </view>
+
+    <button class="generate-button {{!canGenerate ? 'generate-disabled' : ''}}" bindtap="onGenerateTap" disabled="{{!canGenerate}}">
+      <text class="button-spark">✦</text>
+      <text>Generate My Lucky Aura Card</text>
+    </button>
+    <text class="trust-copy">Private. Personal. Just for you.</text>
+  </scroll-view>
+</view>

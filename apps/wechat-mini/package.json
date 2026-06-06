@@ -1,0 +1,24 @@
+{
+  "name": "@auracue/wechat-mini",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:weapp": "node ../../scripts/verify-wechat-routes.mjs",
+    "test": "node tests/route-manifest.test.mjs && node tests/t08-route-smoke.test.mjs && node tests/t08-shell-state-api-client.test.mjs",
+    "test:legacy": "node tests/t09-home-page.test.mjs && node tests/t10-scene-energy-pages.test.mjs && node tests/t11-generation-ritual-error-pages.test.mjs && node tests/t12-free-preview-locked-result.test.mjs && node tests/t13-unlock-invite-pages.test.mjs && node tests/t14-mock-payment-states.test.mjs && node tests/t15-full-result-page.test.mjs && node tests/t16-share-save-pages.test.mjs && node tests/t17-share-card-renderer-integration.test.mjs && node tests/t19-all-page-simulated-tests.test.mjs",
+    "test:t08": "node tests/t08-route-smoke.test.mjs && node tests/t08-shell-state-api-client.test.mjs",
+    "test:t09": "node tests/t09-home-page.test.mjs",
+    "test:t10": "node tests/t10-scene-energy-pages.test.mjs",
+    "test:t11": "node tests/t11-generation-ritual-error-pages.test.mjs",
+    "test:t12": "node tests/t12-free-preview-locked-result.test.mjs",
+    "test:t13": "node tests/t13-unlock-invite-pages.test.mjs",
+    "test:t14": "node tests/t14-mock-payment-states.test.mjs",
+    "test:t15": "node tests/t15-full-result-page.test.mjs",
+    "test:t16": "node tests/t16-share-save-pages.test.mjs",
+    "test:t17": "node tests/t17-share-card-renderer-integration.test.mjs",
+    "test:t19": "node tests/t19-all-page-simulated-tests.test.mjs",
+    "test:t24": "node tests/t24-owner-e2e-full-click-journey.test.mjs",
+    "typecheck": "cd ../.. && node scripts/typecheck-placeholders.mjs"
+  }
+}

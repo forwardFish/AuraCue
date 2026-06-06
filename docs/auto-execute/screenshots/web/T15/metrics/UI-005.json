@@ -1,0 +1,48 @@
+{
+  "uiId": "UI-005",
+  "route": "/result/[id]",
+  "state": "result loaded",
+  "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
+  "reference": "docs/auto-execute/screenshots/web/T15/reference/UI-005.png",
+  "actual": "docs/auto-execute/screenshots/web/T15/actual/UI-005.png",
+  "diff": "docs/auto-execute/screenshots/web/T15/diff/UI-005-diff.png",
+  "referenceSource": "docs/UI/小程序/P0-06-Result-完整气场卡结果.png",
+  "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/05-result.png",
+  "referenceImage": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 1747476,
+    "sha256": "ce4f16f4986d4a6fad4c8cca82424f303338ce784cdc7078b256d1c559554e5f"
+  },
+  "actualImage": {
+    "width": 390,
+    "height": 693,
+    "bytes": 258881,
+    "sha256": "d1f6cc38aafbc82d39e895a9c12b0522ae6893b216b1b233cb3e3dc3a4b561d8"
+  },
+  "diffImage": {
+    "width": 840,
+    "height": 920,
+    "bytes": 547962,
+    "sha256": "ddd5f7d7cfbd22600a659addcb83db5447a3b6d230aa7de85ea4817145a72e72"
+  },
+  "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
+  "normalizedPixelDiff": {
+    "width": 390,
+    "height": 693,
+    "totalPixels": 270270,
+    "changedPixels": 129,
+    "diffRatio": 0.000477,
+    "averageChannelDelta": 1.325,
+    "maxChannelDelta": 22.333,
+    "changeThresholdPerPixel": 12
+  },
+  "diffRatio": 0.000477,
+  "threshold": 0.005,
+  "pixelPerfectStatus": "PASS",
+  "materialDeviation": "NONE_DETECTED_BY_PIXEL_GATE",
+  "notes": [
+    "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
+    "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
+  ]
+}

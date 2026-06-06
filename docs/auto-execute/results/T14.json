@@ -1,0 +1,142 @@
+{
+  "taskId": "T14",
+  "taskName": "Mock Payment States",
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "completedAt": "2026-05-26T16:08:00+08:00",
+  "scope": {
+    "implementedUiIds": ["UI-11", "UI-12", "UI-13"],
+    "implementedRoutes": ["/unlock/:id/pay", "/unlock/:id/pay-failed", "/unlock/:id/success"],
+    "requirementIds": ["REQ-002", "REQ-003", "REQ-004", "REQ-010", "REQ-012", "REQ-017"],
+    "apiCallers": ["API-004", "API-005", "API-010"],
+    "allowedFilesObserved": true
+  },
+  "summary": {
+    "implemented": [
+      "Added native WeChat mini-program mock payment confirmation page for UI-11.",
+      "Added payment failure and recovery page for UI-12 with Try Again, Restore Purchase, Invite 3 Friends Instead, and Contact Support controls.",
+      "Added payment success page for UI-13 with View Full Card and Share Story controls.",
+      "Added T14 payment state view-model/helpers and a simulated test that clicks every T14 control.",
+      "Added local-only payment guard evidence proving T14 uses fixture/mock payment behavior only."
+    ],
+    "localOnly": [
+      "No real WeChat Pay integration.",
+      "No live payment SDK call.",
+      "No production payment URL.",
+      "No production DB/cloud/AI/analytics usage.",
+      "All payment, analytics, storage, and DB behavior remains fixture/local evidence only."
+    ]
+  },
+  "changedFiles": [
+    "apps/wechat-mini/package.json",
+    "apps/wechat-mini/src/pages/unlock/payment-state-page.mjs",
+    "apps/wechat-mini/src/pages/unlock/pay.json",
+    "apps/wechat-mini/src/pages/unlock/pay.js",
+    "apps/wechat-mini/src/pages/unlock/pay.wxml",
+    "apps/wechat-mini/src/pages/unlock/pay.wxss",
+    "apps/wechat-mini/src/pages/unlock/pay-failed.json",
+    "apps/wechat-mini/src/pages/unlock/pay-failed.js",
+    "apps/wechat-mini/src/pages/unlock/pay-failed.wxml",
+    "apps/wechat-mini/src/pages/unlock/pay-failed.wxss",
+    "apps/wechat-mini/src/pages/unlock/success.json",
+    "apps/wechat-mini/src/pages/unlock/success.js",
+    "apps/wechat-mini/src/pages/unlock/success.wxml",
+    "apps/wechat-mini/src/pages/unlock/success.wxss",
+    "apps/wechat-mini/tests/t14-mock-payment-states.test.mjs",
+    "docs/auto-execute/traces/T14/mock-payment.json",
+    "docs/auto-execute/screenshots/T14/UI-11-payment-confirm.html",
+    "docs/auto-execute/screenshots/T14/UI-11-payment-confirm-render-summary.json",
+    "docs/auto-execute/screenshots/T14/UI-12-payment-failed.html",
+    "docs/auto-execute/screenshots/T14/UI-12-payment-failed-render-summary.json",
+    "docs/auto-execute/screenshots/T14/UI-13-payment-success.html",
+    "docs/auto-execute/screenshots/T14/UI-13-payment-success-render-summary.json",
+    "docs/auto-execute/logs/T14/mock-payment-states-test.log",
+    "docs/auto-execute/logs/T14/mock-payment-states-test-command.log",
+    "docs/auto-execute/logs/T14/payment-local-only.json",
+    "docs/auto-execute/logs/T14/wechat-route-verify.log",
+    "docs/auto-execute/logs/T14/typecheck.log",
+    "docs/auto-execute/logs/T14/lint.log",
+    "docs/auto-execute/logs/T14/wechat-mini-test.log",
+    "docs/auto-execute/logs/T14/diff-check.log",
+    "docs/auto-execute/logs/T14/diff-check-final.log",
+    "docs/auto-execute/logs/T14/mock-payment-states-initial-failure.log",
+    "docs/auto-execute/results/T14.json",
+    "docs/auto-execute/latest/T14-HANDOFF.md"
+  ],
+  "commandsRun": [
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t14",
+      "status": "FAIL_THEN_FIXED",
+      "evidence": "docs/auto-execute/logs/T14/mock-payment-states-initial-failure.log",
+      "note": "Initial run failed because the local-only evidence helper included the forbidden literal as prose; wording was changed and the command passed on rerun."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t14",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "evidence": "docs/auto-execute/logs/T14/mock-payment-states-test-command.log"
+    },
+    {
+      "command": "node scripts/verify-wechat-routes.mjs",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T14/wechat-route-verify.log"
+    },
+    {
+      "command": "node scripts/typecheck-placeholders.mjs",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T14/typecheck.log"
+    },
+    {
+      "command": "node scripts/lint-local-only.mjs",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T14/lint.log"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T14/diff-check.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "evidence": "docs/auto-execute/logs/T14/wechat-mini-test.log"
+    },
+    {
+      "command": "node -e \"JSON.parse(require('fs').readFileSync('docs/auto-execute/results/T14.json','utf8')); console.log('T14 result JSON valid')\"",
+      "status": "PASS",
+      "evidence": "terminal output: T14 result JSON valid"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T14/diff-check-final.log"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/traces/T14/mock-payment.json",
+    "docs/auto-execute/logs/T14/payment-local-only.json",
+    "docs/auto-execute/screenshots/T14/UI-11-payment-confirm.html",
+    "docs/auto-execute/screenshots/T14/UI-11-payment-confirm-render-summary.json",
+    "docs/auto-execute/screenshots/T14/UI-12-payment-failed.html",
+    "docs/auto-execute/screenshots/T14/UI-12-payment-failed-render-summary.json",
+    "docs/auto-execute/screenshots/T14/UI-13-payment-success.html",
+    "docs/auto-execute/screenshots/T14/UI-13-payment-success-render-summary.json",
+    "docs/auto-execute/logs/T14/mock-payment-states-test-command.log",
+    "docs/auto-execute/logs/T14/wechat-mini-test.log",
+    "docs/auto-execute/logs/T14/wechat-route-verify.log",
+    "docs/auto-execute/logs/T14/typecheck.log",
+    "docs/auto-execute/logs/T14/lint.log",
+    "docs/auto-execute/logs/T14/diff-check.log",
+    "docs/auto-execute/logs/T14/diff-check-final.log",
+    "docs/auto-execute/logs/T14/mock-payment-states-initial-failure.log"
+  ],
+  "blockers": [
+    {
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "reason": "T14 generated deterministic HTML structural captures and render summaries only. Raster screenshot and pixel-diff evidence are unavailable in this task boundary and remain required for later visual acceptance."
+    }
+  ],
+  "nextSteps": [
+    "T15 can implement the full result page in a fresh task boundary; do not treat T14 as pure visual PASS.",
+    "T20/T21/T24 must provide API/DB readback, contract, and owner journey evidence for API-004/API-005/API-010.",
+    "T22/T23 must capture actual raster screenshots and visual diffs for UI-11..UI-13."
+  ]
+}

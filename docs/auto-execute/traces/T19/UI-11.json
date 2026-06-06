@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-11",
+  "route": "/saved/:id",
+  "pagePath": "pages/saved/index",
+  "state": "save-success",
+  "ownerScenario": "SCN-009",
+  "sourceReference": "docs/UI/小程序/P0-10-Saved-保存成功反馈.png",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "Share Now",
+      "status": "PASS"
+    },
+    {
+      "label": "Back Home",
+      "status": "PASS"
+    }
+  ]
+}

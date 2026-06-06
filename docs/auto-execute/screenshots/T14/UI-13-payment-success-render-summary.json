@@ -1,0 +1,47 @@
+{
+  "uiId": "UI-13",
+  "route": "/unlock/:id/success",
+  "sourceReference": "docs/UI/小程序/08C-支付解锁_成功状态.png",
+  "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/08c/code.html",
+  "requirementIds": [
+    "REQ-010",
+    "REQ-012",
+    "REQ-017"
+  ],
+  "apiIds": [
+    "API-004",
+    "API-010"
+  ],
+  "cardId": "card-locked-001",
+  "orderId": "order-paid-001",
+  "title": "Your full aura is unlocked!",
+  "cardPreview": {
+    "title": "Today's Lucky Aura",
+    "auraName": "Soft Confidence",
+    "theme": "Romantic Clarity",
+    "luckyColor": "Champagne Gold"
+  },
+  "actions": {
+    "viewFullCard": {
+      "controlId": "view-full-card",
+      "label": "View Full Card",
+      "route": "/result/:id/full"
+    },
+    "shareStory": {
+      "controlId": "share-story",
+      "label": "Share Story",
+      "route": "/share/:id"
+    }
+  },
+  "localOnly": {
+    "payment": "local-mock-api-client-only",
+    "forbiddenSdkCalls": [
+      "wechat-payment-sdk-call",
+      "live-payment-provider",
+      "live-payment-url"
+    ],
+    "analytics": "local-fixture-client",
+    "storage": "local-evidence-files-only",
+    "db": "mock repository/readback deferred to T20"
+  }
+}

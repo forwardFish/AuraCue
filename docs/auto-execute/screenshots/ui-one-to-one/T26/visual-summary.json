@@ -1,0 +1,317 @@
+{
+  "taskId": "T26",
+  "status": "REPAIR_REQUIRED",
+  "generatedAt": "2026-05-27T03:28:35.118Z",
+  "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs",
+  "viewport": {
+    "width": 941,
+    "height": 1672
+  },
+  "threshold": 0.005,
+  "screenCount": 18,
+  "actualPngCount": 18,
+  "diffPngCount": 18,
+  "metricsJsonCount": 18,
+  "dependencyEvidence": {
+    "browserPath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "browserKind": "local-headless-chrome-compatible",
+    "pixelDiff": "in-repo deterministic PNG RGBA decoder/encoder with max-channel threshold",
+    "remoteServices": "not-used",
+    "nativeWechatCapture": "unavailable-in-this-local-harness",
+    "fallback": "local DOM render from current page view-model HTML renderers under apps/wechat-mini/src/pages/**"
+  },
+  "finalVisualConclusion": "REPAIR_REQUIRED",
+  "summaryNote": "Harness produced real PNG evidence through local browser fallback, but screen-level pixel gate is not fully passing.",
+  "screens": [
+    {
+      "uiId": "UI-01",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/01-进入_首页生成入口.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-01-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-01-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-01-metrics.json",
+      "diffRatio": 0.218057,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-02",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/02-选择_出门场景.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-02-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-02-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-02-metrics.json",
+      "diffRatio": 0.24331,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-03",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/03-选择_今日能量.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-03-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-03-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-03-metrics.json",
+      "diffRatio": 0.258656,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-04",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/03A-选择_场景与能量未完成状态.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-04-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-04-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-04-metrics.json",
+      "diffRatio": 0.30664,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-05",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/04-生成_抽卡仪式.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-05-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-05-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-05-metrics.json",
+      "diffRatio": 0.364333,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-06",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/05-结果_免费预览待解锁.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-06-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-06-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-06-metrics.json",
+      "diffRatio": 0.40879,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-07",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/06-解锁_付费与邀请入口.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-07-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-07-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-07-metrics.json",
+      "diffRatio": 0.218829,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-08",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/07A-邀请解锁_邀请3人入口.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-08-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-08-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-08-metrics.json",
+      "diffRatio": 0.294838,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-09",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/07B-邀请解锁_邀请进度.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-09-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-09-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-09-metrics.json",
+      "diffRatio": 0.569317,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-10",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/07C-邀请解锁_好友承接页.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-10-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-10-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-10-metrics.json",
+      "diffRatio": 0.346646,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-11",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/08A-支付解锁_确认支付.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-11-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-11-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-11-metrics.json",
+      "diffRatio": 0.600243,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-12",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/08B-支付解锁_失败与恢复购买.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-12-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-12-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-12-metrics.json",
+      "diffRatio": 0.614982,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-13",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/08C-支付解锁_成功状态.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-13-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-13-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-13-metrics.json",
+      "diffRatio": 0.619658,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-14",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/09-结果_完整气场卡与分享入口.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-14-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-14-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-14-metrics.json",
+      "diffRatio": 0.544078,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-15",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/10A-分享_Story卡预览与保存.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-15-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-15-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-15-metrics.json",
+      "diffRatio": 0.721088,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-16",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/10B-分享_渠道选择.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-16-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-16-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-16-metrics.json",
+      "diffRatio": 0.518919,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-17",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/10C-保存_保存成功反馈.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-17-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-17-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-17-metrics.json",
+      "diffRatio": 0.308903,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-18",
+      "viewport": {
+        "width": 941,
+        "height": 1672
+      },
+      "referencePath": "docs/UI/小程序/11-异常_生成失败网络异常.png",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-18-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-18-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-18-metrics.json",
+      "diffRatio": 0.369695,
+      "thresholdStatus": "FAIL",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    }
+  ],
+  "blockers": [],
+  "failedCaptureCommands": []
+}

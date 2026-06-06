@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-12",
+  "route": "/error/network",
+  "pagePath": "pages/error/network",
+  "state": "network-error",
+  "ownerScenario": "SCN-010",
+  "sourceReference": "docs/UI/小程序/P0-11-Error-生成失败重试.png",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "Try Again",
+      "status": "PASS"
+    },
+    {
+      "label": "Change Context",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "taskId": "T22",
+  "status": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+  "uiRange": "UI-01..UI-12",
+  "scope": "Final P0 visual target scope audit for AuraCue mini-program UI-01 through UI-12.",
+  "changedFiles": [
+    "scripts/t22-visual-harness.mjs",
+    "docs/auto-execute/screenshots/T22/",
+    "docs/auto-execute/screenshots/diffs/T22/",
+    "docs/auto-execute/logs/T22/visual-harness.log",
+    "docs/auto-execute/results/T22.json",
+    "docs/auto-execute/latest/T22-HANDOFF.md"
+  ],
+  "commands": [
+    "node scripts/t22-visual-harness.mjs"
+  ],
+  "evidence": [
+    "docs/auto-execute/screenshots/T22/screenshot-manifest.json",
+    "docs/auto-execute/screenshots/diffs/T22/visual-summary.json",
+    "docs/auto-execute/logs/T22/visual-harness.log",
+    "docs/auto-execute/screenshots/diffs/T22/UI-01-metrics.json",
+    "docs/auto-execute/screenshots/diffs/T22/UI-02-metrics.json",
+    "docs/auto-execute/screenshots/diffs/T22/UI-03-metrics.json",
+    "docs/auto-execute/screenshots/diffs/T22/UI-04-metrics.json",
+    "docs/auto-execute/screenshots/diffs/T22/UI-05-metrics.json",
+    "docs/auto-execute/screenshots/diffs/T22/UI-06-metrics.json",
+    "docs/auto-execute/screenshots/diffs/T22/UI-07-metrics.json",
+    "docs/auto-execute/screenshots/diffs/T22/UI-08-metrics.json",
+    "docs/auto-execute/screenshots/diffs/T22/UI-09-metrics.json",
+    "docs/auto-execute/screenshots/diffs/T22/UI-10-metrics.json",
+    "docs/auto-execute/screenshots/diffs/T22/UI-11-metrics.json",
+    "docs/auto-execute/screenshots/diffs/T22/UI-12-metrics.json"
+  ],
+  "blockers": [],
+  "nonPassReason": "Pure visual PASS is not claimed because runtime actual screenshots, diff images, and pixel metrics have not been regenerated for final P0.",
+  "nextActions": [
+    "Generate actual screenshots, diff images, and pixel metrics for UI-01..UI-12 only.",
+    "Keep legacy unlock/pay/invite screens excluded unless product scope explicitly changes.",
+    "Rerun T33 after a final-P0 raster capture path exists."
+  ],
+  "localOnly": {
+    "payment": "not-used",
+    "ai": "not-used",
+    "analytics": "not-used",
+    "storage": "local evidence files only",
+    "db": "not-used"
+  }
+}

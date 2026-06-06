@@ -1,0 +1,13 @@
+<view class="page">
+  <view class="brand">AuraCue</view>
+  <view class="title">Aura Activated</view>
+  <view class="copy">Golden Bloom is active for today.</view>
+  <view class="card">
+    <view class="aura">Golden Bloom</view>
+    <view>Lucky Color: Blush Pink</view>
+    <view>Lucky Anchor: Jewelry</view>
+  </view>
+  <button class="secondary" bindtap="saveCard">Save Card</button>
+  <button class="secondary" bindtap="done">Done</button>
+  <button class="primary" bindtap="shareStory">Share Story</button>
+</view>

@@ -1,0 +1,50 @@
+{
+  "uiId": "UI-08",
+  "route": "/invite/:id",
+  "sourceReference": "docs/UI/小程序/07A-邀请解锁_邀请3人入口.png",
+  "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/07a_3/code.html",
+  "requirementIds": [
+    "REQ-010",
+    "REQ-012",
+    "REQ-017"
+  ],
+  "apiIds": [
+    "API-006",
+    "API-008",
+    "API-010"
+  ],
+  "cardId": "card-locked-001",
+  "title": "Invite 3 friends to unlock your full Aura Card",
+  "progress": 1,
+  "required": 3,
+  "rewardRows": [
+    "Unlock full reading",
+    "Outfit & color guide",
+    "Social action plan",
+    "Lucky ritual",
+    "High-quality share card"
+  ],
+  "actions": {
+    "inviteFriends": {
+      "controlId": "invite-friends",
+      "label": "Invite Friends",
+      "route": "/invite/:id/progress"
+    },
+    "paidUnlock": {
+      "controlId": "unlock-for-199",
+      "label": "Unlock for $1.99",
+      "route": "/unlock/:id/pay"
+    },
+    "back": {
+      "controlId": "back-from-invite",
+      "route": "/unlock/:id"
+    }
+  },
+  "localOnly": {
+    "payment": "local-mock-route-only",
+    "invitePlatform": "fixture-api-client-no-platform-share-api",
+    "analytics": "local-fixture-client",
+    "storage": "local-evidence-files-only",
+    "db": "no-production-write"
+  }
+}

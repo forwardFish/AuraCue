@@ -1,0 +1,114 @@
+{
+  "status": "PASS",
+  "apiCases": {
+    "API-003-C01-free-result-success": {
+      "status": "PASS",
+      "response": {
+        "cardId": "card-locked-001",
+        "view": "free",
+        "locked": true,
+        "auraName": "Soft Glow Aura",
+        "luckyColor": "rose quartz",
+        "oneLineReminder": "A small confident choice can make the next moment feel easier.",
+        "previewImage": {
+          "variant": "low-res-watermarked",
+          "localPath": "local://cards/card-locked-001/preview-watermarked.png",
+          "watermark": "AuraCue Preview",
+          "blurred": true
+        },
+        "lockedPreview": {
+          "fullContentAvailable": false,
+          "unlockRequired": true,
+          "hiddenFields": [
+            "outfit",
+            "beauty",
+            "social",
+            "ritual",
+            "avoid",
+            "caption",
+            "theme"
+          ]
+        }
+      }
+    },
+    "API-003-C02-full-result-locked": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "ENTITLEMENT_REQUIRED",
+          "message": "Unlock this card to view the full AuraCue result.",
+          "details": {
+            "cardId": "card-locked-001",
+            "locked": true
+          }
+        }
+      }
+    },
+    "API-003-C03-full-result-success": {
+      "status": "PASS",
+      "response": {
+        "cardId": "card-unlocked-001",
+        "view": "full",
+        "locked": false,
+        "entitlement": {
+          "entitled": true,
+          "entitlementId": "entitlement-paid-001",
+          "method": "payment"
+        },
+        "card": {
+          "title": "Full Lucky Aura Card",
+          "auraName": "Golden Comet Aura",
+          "tarotSymbol": "The Sun",
+          "message": "Warm presence can turn a small exchange into a memorable one.",
+          "luckyColor": "warm gold",
+          "colors": {
+            "primary": "warm gold",
+            "accent": "berry gloss",
+            "background": "warm moonlight"
+          },
+          "outfit": "Use one playful accent and keep the rest effortless.",
+          "beauty": "Let one feature catch light while the rest stays natural.",
+          "social": "Join the first friendly circle and ask what made their week brighter.",
+          "ritual": "Smile at yourself once before you enter the room.",
+          "avoid": "Avoid performing for people who are not meeting your energy.",
+          "caption": "Today I am carrying golden comet aura.",
+          "theme": "golden-night"
+        },
+        "shareImagePath": "local://share-images/card-unlocked-001-story.png",
+        "savedAt": null
+      }
+    },
+    "API-003-C04-not-found": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "NOT_FOUND",
+          "message": "Aura card was not found.",
+          "details": {
+            "cardId": "card-does-not-exist"
+          }
+        }
+      }
+    },
+    "API-003-validation-invalid-view": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Card view must be free or full.",
+          "details": {
+            "view": "secret"
+          }
+        }
+      }
+    }
+  },
+  "contractSupport": {
+    "UI-06": "free response contains auraName, luckyColor, oneLineReminder, low-res watermarked preview metadata, and locked preview markers",
+    "UI-14": "full response contains complete structured card fields after entitlement readback"
+  },
+  "forbiddenLeakChecks": {
+    "freeResponseExposesFullCard": false,
+    "lockedFullResponseExposesFullCard": false
+  }
+}

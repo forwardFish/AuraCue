@@ -1,0 +1,163 @@
+{
+  "taskId": "UI-ONE-TO-ONE-AUDIT",
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "productPassClaim": false,
+  "generatedAt": "2026-05-27T09:20:35.0591770+08:00",
+  "scope": "Read-only UI/page one-to-one audit for AuraCue P0 mini-program screens UI-01 through UI-18.",
+  "projectRoot": "D:/lyh/agent/agent-frame/AuraCue",
+  "uiReferenceRoot": "docs/UI",
+  "taskOutputRoot": "docs/auto-execute",
+  "sourcesRead": [
+    "AGENTS.md",
+    "docs/auto-execute/auracue-codex-exec-prompts.md",
+    "docs/auto-execute/auracue-ui-reference-map.md",
+    "docs/auto-execute/auracue-final-acceptance-gate.md",
+    "docs/AUTO_EXECUTE_DELIVERY_REPORT.md",
+    "apps/wechat-mini/src/app.config.ts",
+    "apps/wechat-mini/src/routes/p0-routes.ts",
+    "apps/wechat-mini/src/routes/route-registry.mjs",
+    "docs/auto-execute/screenshots/diffs/T22/visual-summary.json",
+    "docs/auto-execute/screenshots/diffs/T23/repair-summary.json",
+    "docs/auto-execute/traces/T19/page-coverage.json",
+    "docs/auto-execute/traces/T24/owner-e2e-summary.json"
+  ],
+  "uiTargetSummary": {
+    "p0TargetCount": 18,
+    "p1Excluded": true,
+    "referencePngCount": 18,
+    "stitchCodeHtmlCount": 18,
+    "registeredRouteCount": 18,
+    "pageImplementationCount": 18,
+    "structuralHtmlEvidenceCount": 18,
+    "actualRasterEvidenceCount": 1,
+    "pixelPerfectDiffCount": 0,
+    "ownerClickCoveredUiCount": 18
+  },
+  "badPatternScan": {
+    "fullScreenReferenceImageMountedAsUi": false,
+    "remoteCdnFontsOrImages": false,
+    "genericReplicaShellDetected": false,
+    "routeMissing": false,
+    "clickOwnerFlowMissing": false,
+    "notes": [
+      "One <image> usage exists in apps/wechat-mini/src/pages/share/story.wxml for local rendered share output; it is not a mounted reference screenshot.",
+      "Local support placeholder copy appears in payment failure support behavior; it is a local no-op/toast boundary, not a fake reference page.",
+      "The existing visual harness uses structural HTML captures for all P0 screens but lacks complete actual raster captures and pixel diffs."
+    ]
+  },
+  "commandsRun": [
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/UI-ONE-TO-ONE-AUDIT/git-diff-check.log"
+    },
+    {
+      "command": "pnpm.cmd test",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/UI-ONE-TO-ONE-AUDIT/pnpm-test.log"
+    },
+    {
+      "command": "pnpm.cmd lint",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/UI-ONE-TO-ONE-AUDIT/pnpm-lint.log"
+    },
+    {
+      "command": "pnpm.cmd typecheck",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/UI-ONE-TO-ONE-AUDIT/pnpm-typecheck.log"
+    },
+    {
+      "command": "node scripts/verify-wechat-routes.mjs",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/UI-ONE-TO-ONE-AUDIT/verify-wechat-routes.log"
+    },
+    {
+      "command": "node scripts/t22-visual-harness.mjs",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "evidence": "docs/auto-execute/logs/UI-ONE-TO-ONE-AUDIT/t22-visual-harness.log"
+    },
+    {
+      "command": "node scripts/t23-visual-repair-loop.mjs",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "evidence": "docs/auto-execute/logs/UI-ONE-TO-ONE-AUDIT/t23-visual-repair-loop.log"
+    }
+  ],
+  "commandsNotRun": [
+    {
+      "command": "npm run build / pnpm build",
+      "reason": "No build script is declared in package.json."
+    },
+    {
+      "command": "npm run visual:*",
+      "reason": "No package visual script is declared; project visual equivalents are node scripts/t22-visual-harness.mjs and node scripts/t23-visual-repair-loop.mjs, both run above."
+    }
+  ],
+  "trulyOneToOnePages": [],
+  "structurallyCoveredPages": [
+    "UI-01",
+    "UI-02",
+    "UI-03",
+    "UI-04",
+    "UI-05",
+    "UI-06",
+    "UI-07",
+    "UI-08",
+    "UI-09",
+    "UI-10",
+    "UI-11",
+    "UI-12",
+    "UI-13",
+    "UI-14",
+    "UI-15",
+    "UI-16",
+    "UI-17",
+    "UI-18"
+  ],
+  "pagesNeedingRepair": [],
+  "pagesNeedingManualUiReview": [
+    "UI-01",
+    "UI-02",
+    "UI-03",
+    "UI-04",
+    "UI-05",
+    "UI-06",
+    "UI-07",
+    "UI-08",
+    "UI-09",
+    "UI-10",
+    "UI-11",
+    "UI-12",
+    "UI-13",
+    "UI-14",
+    "UI-15",
+    "UI-16",
+    "UI-17",
+    "UI-18"
+  ],
+  "evidencePaths": [
+    "docs/auto-execute/results/UI-ONE-TO-ONE-AUDIT.json",
+    "docs/auto-execute/latest/UI-ONE-TO-ONE-AUDIT-HANDOFF.md",
+    "docs/auto-execute/logs/UI-ONE-TO-ONE-AUDIT/",
+    "docs/auto-execute/screenshots/diffs/T22/visual-summary.json",
+    "docs/auto-execute/screenshots/diffs/T23/repair-summary.json",
+    "docs/auto-execute/traces/T19/page-coverage.json",
+    "docs/auto-execute/traces/T24/owner-e2e-summary.json",
+    "docs/AUTO_EXECUTE_DELIVERY_REPORT.md"
+  ],
+  "repairTaskPack": {
+    "generated": false,
+    "reason": "The audit did not find confirmed page-code repair gaps such as missing routes, screenshot-mounted UI, generic replica shell, or broken click owner flow. The remaining limitation is visual evidence depth, so the honest status is PASS_NEEDS_MANUAL_UI_REVIEW rather than REPAIR_REQUIRED."
+  },
+  "blockers": [
+    {
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "detail": "Complete actual raster capture and pixel-diff evidence are unavailable for pure UI one-to-one PASS.",
+      "evidence": "docs/auto-execute/screenshots/diffs/T23/repair-summary.json"
+    }
+  ],
+  "nextStepNotes": [
+    "Before claiming pure PASS, add or enable a real mini-program/browser raster capture path for UI-01 through UI-18.",
+    "Generate reference-equivalent actual PNGs and numeric pixel diff metrics for every P0 UI target.",
+    "Only generate a UI repair task pack if a later raster/manual review finds concrete implementation mismatches."
+  ]
+}

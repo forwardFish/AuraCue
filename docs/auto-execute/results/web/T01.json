@@ -1,0 +1,391 @@
+{
+  "taskId": "T01",
+  "taskName": "Web-first Source Lock And Intake",
+  "templateId": "TPL-INTAKE",
+  "status": "COMPLETE",
+  "verdict": "PASS",
+  "productPassClaim": false,
+  "timestamp": "2026-06-04T18:47:28+08:00",
+  "scope": {
+    "executedOnlyTask": "T01",
+    "implementedProductCode": false,
+    "startedService": false,
+    "usedProductionCloud": false,
+    "usedProductionDb": false,
+    "usedProductionAi": false,
+    "usedProductionAnalytics": false,
+    "usedSecrets": false,
+    "outputFiles": [
+      "docs/auto-execute/results/web/T01.json",
+      "docs/auto-execute/latest/web/T01-HANDOFF.md",
+      "docs/auto-execute/logs/web/T01-intake-command-log.md"
+    ]
+  },
+  "coveredIds": [
+    "SRC-AGENTS",
+    "SRC-PRD-001",
+    "SRC-WEB-001",
+    "SRC-UI-P0",
+    "SRC-API-LEGACY",
+    "SRC-WEB-CURRENT",
+    "SRC-WEB-DB",
+    "SRC-PACKAGES",
+    "TPL-REQ-MATRIX"
+  ],
+  "sourceInventory": {
+    "instructions": [
+      {
+        "id": "SRC-AGENTS",
+        "path": "AGENTS.md",
+        "status": "READ",
+        "notes": "Top-level autonomous execution and verification guidance applies."
+      },
+      {
+        "id": "SRC-TASK-T01",
+        "path": "docs/auto-execute/auracue-web-tasks/T01-source-lock-and-intake.md",
+        "status": "READ",
+        "notes": "T01 is intake/source-lock only; product code implementation and service startup are forbidden."
+      },
+      {
+        "id": "SRC-EXEC-PROMPTS",
+        "path": "docs/auto-execute/auracue-web-codex-exec-prompts.md",
+        "status": "READ",
+        "notes": "The auto-execute package is an execution entry point, not a final product completion report."
+      }
+    ],
+    "primarySpecs": [
+      {
+        "id": "SRC-WEB-001",
+        "path": "docs/AuraCue_Web_First_Full_Development_Spec_v1.0.md",
+        "status": "READ_BY_SEARCH",
+        "lockedDecision": "Web/H5 is the main product, main engineering project, and main acceptance surface. Mini-program is a later validation entry using the unified API."
+      },
+      {
+        "id": "SRC-PRD-001",
+        "path": "docs/AuraCue_Final_PRD_Codex_Development_Spec_v1.0.md",
+        "status": "READ_BY_SEARCH",
+        "lockedDecision": "AuraCue P0 is an anonymous daily aura activation flow with optional upload, draw, generated card, activation, save, share, and unified API/DB backing."
+      }
+    ],
+    "uiSources": [
+      {
+        "id": "SRC-UI-P0",
+        "path": "docs/UI/小程序/README.md",
+        "status": "READ",
+        "lockedDecision": "Only P0-prefixed mini-program references drive P0 visual direction; legacy unlock/payment/invite/profile/trend/P1 references are demoted and must not drive P0."
+      },
+      {
+        "id": "SRC-UI-P0-ASSETS",
+        "path": "docs/UI/小程序/P0-*.png",
+        "status": "PRESENT",
+        "lockedDecision": "P0 visual references cover Mood, Context, Outfit, Draw, Reveal, Result, Activate, Activated, Share, Saved, and Error states."
+      }
+    ],
+    "currentCodeAssets": {
+      "appsWeb": {
+        "path": "apps/web",
+        "status": "PRESENT_SCAFFOLDED",
+        "evidence": [
+          "apps/web/package.json exists with Next.js, React, Prisma, lint, build, test, and typecheck scripts.",
+          "apps/web/app contains all nine required P0 route page.tsx placeholders.",
+          "apps/web/tests/smoke-routes.test.mjs validates route placeholder presence."
+        ],
+        "remainingGap": "Routes are scaffold placeholders; no final product PASS is claimed by T01."
+      },
+      "appsWebApiV1": {
+        "path": "apps/web/app/api/v1",
+        "status": "MISSING",
+        "impact": "Downstream API implementation remains required; no route.ts handlers were found under apps/web/app/api/v1."
+      },
+      "appsWebDb": {
+        "path": "apps/web/prisma/schema.prisma",
+        "status": "PRESENT_LOCAL_SQLITE_PRISMA",
+        "evidence": [
+          "Schema includes AnonymousUser, OutfitUpload, DrawSession, GenerationJob, AuraCard, AuraActivation, SavedCard, ShareEvent, AnalyticsEvent, and CardTemplate.",
+          "apps/web/tests/db-readback.test.mjs exists and targets local SQLite readback evidence."
+        ],
+        "remainingGap": "Root prisma/schema.prisma is absent and the current app-local datasource is SQLite, while the Web-first spec names PostgreSQL + Prisma as the production source of truth."
+      },
+      "appsApi": {
+        "path": "apps/api",
+        "status": "PRESENT_LEGACY_LOCAL_API",
+        "reusable": [
+          "mock/local Node API server pattern",
+          "AI provider fallback concept",
+          "local repository/readback testing idea",
+          "local-only health/evidence discipline"
+        ],
+        "notReusableAsIs": [
+          "legacy /api/* paths",
+          "unlock/payment/invite-centered API surface",
+          "in-memory/local repository as final DB source"
+        ]
+      },
+      "appsWechatMini": {
+        "path": "apps/wechat-mini",
+        "status": "PRESENT_LEGACY_AND_REFERENCE",
+        "reusable": [
+          "page/state inventory",
+          "Taro storage/upload/share/save-image adapter concepts",
+          "P0 route mapping reference"
+        ],
+        "boundary": "Not the Web v1.0 implementation source; after Web PASS, mini-program should call the unified /api/v1/* and avoid duplicated prompt, AI, renderer, activation, payment, or invite business logic."
+      },
+      "packages": [
+        {
+          "path": "packages/shared-types",
+          "status": "PRESENT",
+          "reuse": "Types/enums/type guard starting point; must be reconciled with Web-first API contracts."
+        },
+        {
+          "path": "packages/ui-tokens",
+          "status": "PRESENT",
+          "reuse": "Visual token starting point for Web UI."
+        },
+        {
+          "path": "packages/analytics-events",
+          "status": "PRESENT",
+          "reuse": "Local analytics contract/validation starting point."
+        },
+        {
+          "path": "packages/card-renderer",
+          "status": "PRESENT",
+          "reuse": "Local 9:16 share-card render concept; must fit Web-first renderer contract."
+        },
+        {
+          "path": "packages/prompt-core",
+          "status": "PRESENT",
+          "reuse": "Prompt/mock generator/safety guard concepts; frontends must not call AI directly."
+        }
+      ]
+    }
+  },
+  "lockedWebMainline": {
+    "primarySurface": "Web/H5",
+    "runtimeCandidate": "Next.js App Router under apps/web",
+    "apiLocationCandidate": "apps/web/app/api/v1",
+    "dbCandidate": "PostgreSQL + Prisma for production contract; current repaired repo has app-local SQLite Prisma scaffold for local evidence",
+    "aiCandidate": "mock provider by default; OpenAI-compatible adapter optional",
+    "storageBoundary": "Web localStorage only for temporary draft/anonymousId; API/DB is source of truth for card/activation data.",
+    "uploadBoundary": "Outfit upload is optional and skippable; failure must not block the flow.",
+    "paymentBoundary": "Real payment, WeChat Pay, paywall, unlock/payment/invite are not Web P0.",
+    "legacyMiniProgramBoundary": "Mini-program is non-primary for this phase and must not pull legacy unlock/payment/invite into Web P0."
+  },
+  "requiredWebRoutes": [
+    "/",
+    "/create/context",
+    "/create/upload",
+    "/create/draw",
+    "/result/[id]",
+    "/activate/[id]",
+    "/activated/[id]",
+    "/share/[id]",
+    "/saved/[id]"
+  ],
+  "currentWebRoutes": [
+    "/",
+    "/create/context",
+    "/create/upload",
+    "/create/draw",
+    "/result/[id]",
+    "/activate/[id]",
+    "/activated/[id]",
+    "/share/[id]",
+    "/saved/[id]"
+  ],
+  "requiredApiContracts": [
+    "POST /api/v1/identity/anonymous",
+    "GET /api/v1/aura-cards/today",
+    "POST /api/v1/uploads/outfit",
+    "POST /api/v1/draw-sessions/start",
+    "POST /api/v1/aura-cards/generate",
+    "GET /api/v1/generation-jobs/:jobId",
+    "GET /api/v1/aura-cards/:cardId",
+    "POST /api/v1/aura-cards/:cardId/render",
+    "POST /api/v1/aura-cards/:cardId/activation/start",
+    "POST /api/v1/activations/:activationId/seal",
+    "POST /api/v1/aura-cards/:cardId/save",
+    "POST /api/v1/aura-cards/:cardId/share",
+    "POST /api/v1/analytics/events"
+  ],
+  "currentApiV1Contracts": [],
+  "requiredDbModels": [
+    "AnonymousUser",
+    "OutfitUpload",
+    "DrawSession",
+    "GenerationJob",
+    "AuraCard",
+    "AuraActivation",
+    "SavedCard",
+    "ShareEvent",
+    "AnalyticsEvent",
+    "CardTemplate"
+  ],
+  "currentDbModels": [
+    "AnonymousUser",
+    "OutfitUpload",
+    "DrawSession",
+    "GenerationJob",
+    "AuraCard",
+    "AuraActivation",
+    "SavedCard",
+    "ShareEvent",
+    "AnalyticsEvent",
+    "CardTemplate"
+  ],
+  "blockers": [],
+  "downstreamPendingWork": [
+    {
+      "id": "PENDING_API_V1_IMPLEMENTATION",
+      "severity": "P0_FOR_PRODUCT",
+      "evidence": "No apps/web/app/api/v1 route handlers were found.",
+      "nextRepair": "T04-T07 implement unified /api/v1/* route handlers under apps/web/app/api/v1."
+    },
+    {
+      "id": "PENDING_WEB_PLACEHOLDER_REPLACEMENT",
+      "severity": "P0_FOR_PRODUCT",
+      "evidence": "apps/web/tests/smoke-routes.test.mjs expects route pages to use RoutePlaceholder.",
+      "nextRepair": "T08-T11 replace placeholder route surfaces with real Web P0 flows and visual evidence."
+    },
+    {
+      "id": "PENDING_DB_PRODUCTION_ALIGNMENT",
+      "severity": "P0_FOR_PRODUCT",
+      "evidence": "apps/web/prisma/schema.prisma uses a SQLite datasource; root prisma/schema.prisma is absent.",
+      "nextRepair": "Later backend/DB repair should decide whether to preserve local SQLite evidence mode, add PostgreSQL deployment config, or move/copy the canonical Prisma schema to the expected root path."
+    },
+    {
+      "id": "PENDING_FINAL_GATE_EVIDENCE",
+      "severity": "P0_FOR_PRODUCT",
+      "evidence": "T01 did not start services, click pages, run API transcripts, or produce screenshots by design.",
+      "nextRepair": "T12-T16 add API/DB contract tests, smoke, owner click E2E, visual compare, and final gate evidence."
+    }
+  ],
+  "commands": [
+    "Get-Content -Raw -LiteralPath .codex-runs/T01-rerun-real-20260604-184231.prompt.md",
+    "Get-Content -Raw -LiteralPath AGENTS.md",
+    "Get-Content -Raw -LiteralPath docs/auto-execute/auracue-web-codex-exec-prompts.md",
+    "Get-Content -Raw -LiteralPath docs/auto-execute/auracue-web-tasks/T01-source-lock-and-intake.md",
+    "Get-ChildItem -LiteralPath docs -File",
+    "Get-ChildItem -LiteralPath apps -Directory",
+    "Get-ChildItem -LiteralPath packages -Directory",
+    "Get-Content -Raw -LiteralPath docs/auto-execute/results/web/T01.json",
+    "Get-Content -Raw -LiteralPath docs/auto-execute/latest/web/T01-HANDOFF.md",
+    "rg -n \"apps/web|/api/v1|Web/H5|P0|PostgreSQL|Prisma|AnonymousUser|AuraCard|AuraActivation|Next\\.js|App Router\" docs/AuraCue_Web_First_Full_Development_Spec_v1.0.md",
+    "rg -n \"/api/v1|AnonymousUser|AuraCard|AuraActivation|OutfitUpload|DrawSession|GenerationJob|SavedCard|ShareEvent|AnalyticsEvent|CardTemplate|P0\" docs/AuraCue_Final_PRD_Codex_Development_Spec_v1.0.md",
+    "Get-ChildItem -LiteralPath docs/UI -Recurse -File",
+    "Get-ChildItem -LiteralPath apps/web -Recurse -File",
+    "Test-Path -LiteralPath prisma/schema.prisma",
+    "rg --files apps/web -g !node_modules/** -g !.next/**",
+    "rg -n \"/api/v1|export async function|NextResponse|route\\.ts|POST|GET|PUT|DELETE\" apps/web/app apps/web/server apps/web/prisma -g !node_modules/** -g !.next/**",
+    "Get-Content -Raw -LiteralPath apps/web/package.json",
+    "Get-Content -Raw -LiteralPath apps/web/prisma/schema.prisma",
+    "rg -n \"url\\.pathname|request\\.method|/api/|/api/v1|payment|invite|unlock|generation-jobs|share-events|analytics\" apps/api -g !node_modules/**",
+    "git status --short -- docs/auto-execute/results/web/T01.json docs/auto-execute/latest/web/T01-HANDOFF.md docs/auto-execute/logs/web/T01-intake-command-log.md apps/web prisma docs/auto-execute",
+    "Get-Content -Raw -LiteralPath docs/UI/小程序/README.md",
+    "Get-Content -Raw -LiteralPath apps/web/tests/smoke-routes.test.mjs",
+    "Get-Content -Raw -LiteralPath apps/web/tests/db-readback.test.mjs",
+    "Get-ChildItem -LiteralPath apps/web/app -Recurse -File -Filter page.tsx",
+    "Get-Date -Format yyyy-MM-ddTHH:mm:ssK",
+    "node -e \"const fs=require('fs'); const p='docs/auto-execute/results/web/T01.json'; const j=JSON.parse(fs.readFileSync(p,'utf8')); console.log(JSON.stringify({parsed:true, verdict:j.verdict, productPassClaim:j.productPassClaim, blockers:j.blockers.length, downstreamPendingWork:j.downstreamPendingWork.length}, null, 2));\"",
+    "Get-Item -LiteralPath docs/auto-execute/results/web/T01.json,docs/auto-execute/latest/web/T01-HANDOFF.md,docs/auto-execute/logs/web/T01-intake-command-log.md",
+    "git diff --check -- docs/auto-execute/results/web/T01.json docs/auto-execute/latest/web/T01-HANDOFF.md docs/auto-execute/logs/web/T01-intake-command-log.md"
+  ],
+  "evidence": [
+    {
+      "type": "command_log",
+      "path": "docs/auto-execute/logs/web/T01-intake-command-log.md",
+      "status": "WRITTEN"
+    },
+    {
+      "type": "task_spec",
+      "path": "docs/auto-execute/auracue-web-tasks/T01-source-lock-and-intake.md",
+      "status": "READ"
+    },
+    {
+      "type": "web_first_spec",
+      "path": "docs/AuraCue_Web_First_Full_Development_Spec_v1.0.md",
+      "status": "READ_BY_SEARCH"
+    },
+    {
+      "type": "final_prd",
+      "path": "docs/AuraCue_Final_PRD_Codex_Development_Spec_v1.0.md",
+      "status": "READ_BY_SEARCH"
+    },
+    {
+      "type": "ui_readme",
+      "path": "docs/UI/小程序/README.md",
+      "status": "READ"
+    },
+    {
+      "type": "web_scaffold",
+      "path": "apps/web",
+      "status": "PRESENT"
+    },
+    {
+      "type": "web_route_inventory",
+      "path": "apps/web/app",
+      "status": "NINE_REQUIRED_PAGES_PRESENT"
+    },
+    {
+      "type": "web_api_inventory",
+      "path": "apps/web/app/api/v1",
+      "status": "MISSING"
+    },
+    {
+      "type": "web_prisma_schema",
+      "path": "apps/web/prisma/schema.prisma",
+      "status": "PRESENT"
+    },
+    {
+      "type": "root_prisma_schema",
+      "path": "prisma/schema.prisma",
+      "status": "MISSING"
+    },
+    {
+      "type": "legacy_api_source",
+      "path": "apps/api",
+      "status": "READ_BY_SEARCH"
+    },
+    {
+      "type": "web_t01_result",
+      "path": "docs/auto-execute/results/web/T01.json",
+      "status": "WRITTEN"
+    },
+    {
+      "type": "web_t01_handoff",
+      "path": "docs/auto-execute/latest/web/T01-HANDOFF.md",
+      "status": "WRITTEN"
+    },
+    {
+      "type": "exit_check_json_parse",
+      "path": "docs/auto-execute/results/web/T01.json",
+      "status": "PASS",
+      "notes": "Node JSON.parse succeeded and reported verdict PASS, productPassClaim false, blockers 0, downstreamPendingWork 4."
+    },
+    {
+      "type": "exit_check_artifact_existence",
+      "path": "docs/auto-execute/results/web/T01.json; docs/auto-execute/latest/web/T01-HANDOFF.md; docs/auto-execute/logs/web/T01-intake-command-log.md",
+      "status": "PASS"
+    },
+    {
+      "type": "exit_check_diff_whitespace",
+      "path": "docs/auto-execute/results/web/T01.json; docs/auto-execute/latest/web/T01-HANDOFF.md; docs/auto-execute/logs/web/T01-intake-command-log.md",
+      "status": "PASS"
+    }
+  ],
+  "nextRepair": [
+    "T04-T07: implement /api/v1/* route handlers under apps/web/app/api/v1 and connect them to the Web-first contracts.",
+    "T08-T11: replace the current placeholder Web route pages with real P0 flow pages using the P0 visual references.",
+    "Resolve DB deployment alignment: the current app-local Prisma schema is SQLite for local evidence; production contract still requires PostgreSQL + Prisma.",
+    "T12-T16: run API/DB/e2e/visual/final gate evidence before any product PASS claim."
+  ],
+  "rerunResumeState": {
+    "safeToRerun": true,
+    "resumeFrom": "T04-api-v1-contracts",
+    "completedBeforeThisRerun": [
+      "T02-style apps/web scaffold now exists.",
+      "T03-style app-local Prisma schema and DB readback test now exist."
+    ],
+    "reason": "T01 intake/source-lock artifacts are complete and refreshed against current repo state; downstream implementation remains outside T01 scope."
+  }
+}

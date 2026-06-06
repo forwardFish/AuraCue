@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-04",
+  "route": "/create/draw",
+  "pagePath": "pages/create/draw",
+  "state": "draw-card-selection",
+  "ownerScenario": "SCN-004",
+  "sourceReference": "docs/UI/小程序/P0-04-Draw-三卡选择.png",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "Card I",
+      "status": "PASS"
+    },
+    {
+      "label": "Card II",
+      "status": "PASS"
+    },
+    {
+      "label": "Card III",
+      "status": "PASS"
+    },
+    {
+      "label": "Reveal My Aura",
+      "status": "PASS"
+    }
+  ]
+}

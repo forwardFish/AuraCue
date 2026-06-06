@@ -1,0 +1,147 @@
+{
+  "taskId": "T18",
+  "taskName": "analytics-and-safety-copy-guard",
+  "status": "PASS",
+  "completedAt": "2026-05-26",
+  "requirements": [
+    "REQ-017",
+    "REQ-018"
+  ],
+  "scope": {
+    "implemented": [
+      "Centralized PRD section 23 analytics event registry and API validator contract.",
+      "Wired canonical PRD analytics names into representative mini-program page flows for generation, free result view, checkout, save, share, copy, invite, and return events.",
+      "Added copy safety guard categories for guaranteed destiny claims, negative judgment, appearance anxiety, therapy/medical claims, and mandatory selfie requirements.",
+      "Added T18 API/safety test that writes analytics coverage, API-010 transcript, and copy safety audit evidence."
+    ],
+    "notImplemented": [
+      "No production analytics SDK, real cloud write, production AI call, real payment, or secret integration."
+    ]
+  },
+  "changedFiles": [
+    "packages/analytics-events/src/events.mjs",
+    "packages/analytics-events/src/event-contract.mjs",
+    "packages/analytics-events/src/local-validator.mjs",
+    "packages/analytics-events/src/index.ts",
+    "packages/prompt-core/src/safety-copy-guard.mjs",
+    "packages/prompt-core/src/local-generator.mjs",
+    "packages/prompt-core/src/index.ts",
+    "apps/api/package.json",
+    "apps/api/tests/t18-analytics-safety-copy-guard.test.mjs",
+    "apps/wechat-mini/src/pages/create/loading-page.mjs",
+    "apps/wechat-mini/src/pages/create/loading.js",
+    "apps/wechat-mini/src/pages/result/free-preview-page.mjs",
+    "apps/wechat-mini/src/pages/result/free-preview.js",
+    "apps/wechat-mini/src/pages/result/full-page.mjs",
+    "apps/wechat-mini/src/pages/result/full.js",
+    "apps/wechat-mini/src/pages/unlock/payment-state-page.mjs",
+    "apps/wechat-mini/src/pages/unlock/pay.js",
+    "apps/wechat-mini/src/pages/unlock/pay-failed.js",
+    "apps/wechat-mini/src/pages/unlock/unlock-invite-page.mjs",
+    "apps/wechat-mini/src/pages/invite/start.js",
+    "apps/wechat-mini/src/pages/invite/progress.js",
+    "apps/wechat-mini/src/pages/share/share-save-page.mjs",
+    "apps/wechat-mini/src/pages/share/story.js",
+    "apps/wechat-mini/src/pages/share/channels.js",
+    "apps/wechat-mini/src/pages/saved/success.js",
+    "apps/wechat-mini/tests/t11-generation-ritual-error-pages.test.mjs",
+    "apps/wechat-mini/tests/t12-free-preview-locked-result.test.mjs",
+    "apps/wechat-mini/tests/t13-unlock-invite-pages.test.mjs",
+    "apps/wechat-mini/tests/t14-mock-payment-states.test.mjs",
+    "apps/wechat-mini/tests/t15-full-result-page.test.mjs",
+    "apps/wechat-mini/tests/t16-share-save-pages.test.mjs"
+  ],
+  "commandsRun": [
+    {
+      "command": "pnpm --filter @auracue/api test:t18 *> docs/auto-execute/logs/T18/analytics-safety-test.log",
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "note": "PowerShell script execution policy blocked pnpm.ps1; retried with pnpm.cmd."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/api test:t18 *> docs/auto-execute/logs/T18/analytics-safety-test.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T18/analytics-safety-test.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t11 *> docs/auto-execute/logs/T18/regression-t11.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T18/regression-t11.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t12 *> docs/auto-execute/logs/T18/regression-t12.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T18/regression-t12.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t13 *> docs/auto-execute/logs/T18/regression-t13.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T18/regression-t13.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t14 *> docs/auto-execute/logs/T18/regression-t14.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T18/regression-t14.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t15 *> docs/auto-execute/logs/T18/regression-t15.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T18/regression-t15.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t16 *> docs/auto-execute/logs/T18/regression-t16.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T18/regression-t16.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t17 *> docs/auto-execute/logs/T18/regression-t17.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T18/regression-t17.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/api test *> docs/auto-execute/logs/T18/api-regression.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T18/api-regression.log"
+    },
+    {
+      "command": "pnpm.cmd typecheck *> docs/auto-execute/logs/T18/typecheck.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T18/typecheck.log"
+    },
+    {
+      "command": "pnpm.cmd lint *> docs/auto-execute/logs/T18/lint.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T18/lint.log"
+    },
+    {
+      "command": "git diff --check *> docs/auto-execute/logs/T18/diff-check.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T18/diff-check.log"
+    },
+    {
+      "command": "pnpm.cmd test *> docs/auto-execute/logs/T18/root-test.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T18/root-test.log"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/traces/T18/analytics-coverage.json",
+    "docs/auto-execute/logs/T18/copy-safety-audit.json",
+    "docs/auto-execute/api/T18/API-010-analytics.json",
+    "docs/auto-execute/logs/T18/analytics-safety-test.log",
+    "docs/auto-execute/logs/T18/api-regression.log",
+    "docs/auto-execute/logs/T18/typecheck.log",
+    "docs/auto-execute/logs/T18/lint.log",
+    "docs/auto-execute/logs/T18/diff-check.log",
+    "docs/auto-execute/logs/T18/root-test.log"
+  ],
+  "blockers": [],
+  "limitations": [
+    "T18 does not provide raster screenshot or pixel diff evidence; visual acceptance remains scheduled for T22/T23.",
+    "Full owner exact-click analytics aggregation remains scheduled for T24."
+  ],
+  "nextSteps": [
+    "T19 should consume the canonical analytics registry while building all-page simulated tests.",
+    "T20 should include API-010 DB readback across the required event set.",
+    "T24 should verify owner journey analytics traces include all required PRD section 23 events."
+  ]
+}

@@ -1,0 +1,80 @@
+<view class="full-result-page">
+  <view class="glass-header">
+    <button class="round-button" bindtap="onBackTap">back</button>
+    <text class="brand-title">AuraCue</text>
+    <button class="round-button">tag</button>
+  </view>
+
+  <scroll-view class="content-scroll" scroll-y="true">
+    <view class="ready-block">
+      <text class="spark">✦</text>
+      <text class="ready-title">Your Aura Card is Ready</text>
+    </view>
+
+    <view class="tarot-card">
+      <view class="tarot-art">
+        <text class="tarot-art-copy">{{tarotSymbol}}</text>
+      </view>
+      <view class="tarot-footer">
+        <text class="tarot-name">{{tarotSymbol}}</text>
+        <text class="tarot-keywords">{{tarotKeywords}}</text>
+      </view>
+    </view>
+
+    <view class="aura-heading">
+      <text class="section-kicker">TODAY'S AURA</text>
+      <text class="aura-name">{{auraName}}</text>
+      <text class="tarot-line">{{tarotSymbol}} · {{tarotKeywords}}</text>
+    </view>
+
+    <view class="guidance-panel">
+      <block wx:for="{{guidanceRows}}" wx:key="id">
+        <view class="guidance-row" data-field="{{item.id}}">
+          <view class="guidance-icon">{{item.label[0]}}</view>
+          <view class="guidance-copy">
+            <text class="guidance-label">{{item.label}}</text>
+            <text class="guidance-title">{{item.title}}</text>
+            <text class="guidance-detail">{{item.detail}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view class="message-panel">
+      <text class="quote-mark">“</text>
+      <text class="message-copy">{{message}}</text>
+    </view>
+
+    <button class="trend-button" disabled bindtap="onTrendTap">
+      <text>View 7-Day Trend</text>
+      <text class="coming-soon">Coming Soon</text>
+    </button>
+
+    <view class="share-panel">
+      <view class="share-title-row">
+        <text class="spark small">✦</text>
+        <text class="share-title">Share Your Card</text>
+        <text class="spark small">✦</text>
+      </view>
+      <text class="share-subtitle">Inspire someone's day</text>
+
+      <view class="mini-share-card">
+        <view class="mini-art"></view>
+        <view class="mini-copy">
+          <text class="mini-title">{{auraName}}</text>
+          <text class="mini-tarot">{{tarotSymbol}}</text>
+          <text class="mini-caption">"{{caption}}"</text>
+          <text class="mini-brand">AuraCue</text>
+        </view>
+      </view>
+
+      <view class="actions">
+        <button class="primary-action" bindtap="onSaveTap">Save Card</button>
+        <button class="secondary-action" bindtap="onShareStoryTap">Share Story</button>
+        <button class="tertiary-action" bindtap="onMoreShareTap">More Sharing Options</button>
+      </view>
+    </view>
+
+    <view class="footer-note">Private. Personal. Just for you.</view>
+  </scroll-view>
+</view>

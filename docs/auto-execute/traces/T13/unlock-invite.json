@@ -1,0 +1,329 @@
+{
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "taskId": "T13",
+  "requirementIds": [
+    "REQ-002",
+    "REQ-003",
+    "REQ-004",
+    "REQ-010",
+    "REQ-012",
+    "REQ-017"
+  ],
+  "uiIds": [
+    "UI-07",
+    "UI-08",
+    "UI-09",
+    "UI-10"
+  ],
+  "routes": [
+    "/unlock/:id",
+    "/invite/:id",
+    "/invite/:id/progress",
+    "/invite/landing/:code",
+    "/unlock/card-locked-001",
+    "/invite/card-locked-001",
+    "/invite/card-locked-001/progress",
+    "/invite/landing/INVITE-LOCAL-001"
+  ],
+  "sourceReferences": {
+    "UI-07": "docs/UI/小程序/06-解锁_付费与邀请入口.png",
+    "UI-08": "docs/UI/小程序/07A-邀请解锁_邀请3人入口.png",
+    "UI-09": "docs/UI/小程序/07B-邀请解锁_邀请进度.png",
+    "UI-10": "docs/UI/小程序/07C-邀请解锁_好友承接页.png"
+  },
+  "stitchReferences": {
+    "UI-07": "docs/UI/小程序/stitch_codex_ui_code_generator/06/code.html",
+    "UI-08": "docs/UI/小程序/stitch_codex_ui_code_generator/07a_3/code.html",
+    "UI-09": "docs/UI/小程序/stitch_codex_ui_code_generator/07b/code.html",
+    "UI-10": "docs/UI/小程序/stitch_codex_ui_code_generator/07c/code.html"
+  },
+  "renderAssertions": {
+    "nativePageFiles": [
+      "apps/wechat-mini/src/pages/unlock/index.wxml",
+      "apps/wechat-mini/src/pages/unlock/index.wxss",
+      "apps/wechat-mini/src/pages/unlock/index.js",
+      "apps/wechat-mini/src/pages/invite/start.wxml",
+      "apps/wechat-mini/src/pages/invite/start.wxss",
+      "apps/wechat-mini/src/pages/invite/start.js",
+      "apps/wechat-mini/src/pages/invite/progress.wxml",
+      "apps/wechat-mini/src/pages/invite/progress.wxss",
+      "apps/wechat-mini/src/pages/invite/progress.js",
+      "apps/wechat-mini/src/pages/invite/landing.wxml",
+      "apps/wechat-mini/src/pages/invite/landing.wxss",
+      "apps/wechat-mini/src/pages/invite/landing.js"
+    ],
+    "unlockFeatures": [
+      "full-reading",
+      "outfit",
+      "beauty",
+      "social",
+      "ritual",
+      "avoid",
+      "share-card"
+    ],
+    "inviteRewards": [
+      "Unlock full reading",
+      "Outfit & color guide",
+      "Social action plan",
+      "Lucky ritual",
+      "High-quality share card"
+    ],
+    "inviteProgressFixture": {
+      "progress": 2,
+      "required": 3,
+      "friends": [
+        "Joined",
+        "Joined",
+        "Pending"
+      ]
+    },
+    "friendLandingNoLoginRequired": true
+  },
+  "clicks": {
+    "paidUnlock": {
+      "controlId": "paid-unlock",
+      "expectedRoute": "/unlock/:id/pay",
+      "actualRoute": "/unlock/card-locked-001/pay",
+      "analyticsAccepted": true
+    },
+    "inviteInstead": {
+      "controlId": "invite-three-friends-instead",
+      "expectedRoute": "/invite/:id",
+      "actualRoute": "/invite/card-locked-001",
+      "analyticsAccepted": true
+    },
+    "inviteFriends": {
+      "controlId": "invite-friends",
+      "expectedRoute": "/invite/:id/progress",
+      "actualRoute": "/invite/card-locked-001/progress",
+      "inviteApiProgress": 0,
+      "shareEventId": "share-t08-001"
+    },
+    "invitePaidUnlock": {
+      "controlId": "unlock-for-199",
+      "expectedRoute": "/unlock/:id/pay",
+      "actualRoute": "/unlock/card-locked-001/pay"
+    },
+    "copy": {
+      "controlId": "copy-invite-link",
+      "copiedLink": "auracue.local/invite/INVITE-LOCAL-001",
+      "shareEventId": "share-t08-001"
+    },
+    "inviteAgain": {
+      "controlId": "invite-again",
+      "shareEventId": "share-t08-001"
+    },
+    "howItWorks": {
+      "controlId": "how-it-works",
+      "modalShown": true
+    },
+    "friendGenerate": {
+      "controlId": "generate-my-lucky-aura-card",
+      "expectedRoute": "/create/scene",
+      "actualRoute": "/create/scene",
+      "noLoginRequired": true
+    }
+  },
+  "apiMockTrace": [
+    {
+      "apiId": "API-006",
+      "method": "recordInviteEvent",
+      "cardId": "card-locked-001",
+      "request": {
+        "action": "invite_started",
+        "inviteCode": "INVITE-LOCAL-001",
+        "source": "UI-08"
+      }
+    },
+    {
+      "apiId": "API-006",
+      "method": "recordInviteEvent",
+      "cardId": "card-locked-001",
+      "request": {
+        "action": "invite_again",
+        "inviteCode": "INVITE-LOCAL-001",
+        "source": "UI-08"
+      }
+    },
+    {
+      "apiId": "API-008",
+      "method": "recordShareEvent",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "wechat",
+        "source": "UI-08"
+      }
+    },
+    {
+      "apiId": "API-008",
+      "method": "recordShareEvent",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "copy_link",
+        "source": "UI-09"
+      }
+    },
+    {
+      "apiId": "API-006",
+      "method": "recordInviteEvent",
+      "cardId": "card-locked-001",
+      "request": {
+        "action": "invite_again",
+        "inviteCode": "INVITE-LOCAL-001",
+        "source": "UI-09"
+      }
+    },
+    {
+      "apiId": "API-008",
+      "method": "recordShareEvent",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "wechat",
+        "source": "UI-09"
+      }
+    },
+    {
+      "apiId": "API-006",
+      "method": "recordInviteEvent",
+      "cardId": "card-locked-001",
+      "request": {
+        "action": "friend_accept",
+        "inviteCode": "INVITE-LOCAL-001",
+        "friendId": "friend-local-landing",
+        "source": "UI-10"
+      }
+    }
+  ],
+  "analyticsReadback": [
+    {
+      "eventName": "page_view_unlock_choice",
+      "page": "/unlock/:id",
+      "properties": {
+        "uiId": "UI-07",
+        "cardId": "card-locked-001",
+        "requirementId": "REQ-010"
+      },
+      "analyticsEventId": "analytics-page_view_unlock_choice"
+    },
+    {
+      "eventName": "click_paid_unlock_entry",
+      "page": "/unlock/:id",
+      "properties": {
+        "uiId": "UI-07",
+        "cardId": "card-locked-001",
+        "requirementId": "REQ-012"
+      },
+      "analyticsEventId": "analytics-click_paid_unlock_entry"
+    },
+    {
+      "eventName": "click_invite_instead",
+      "page": "/unlock/:id",
+      "properties": {
+        "uiId": "UI-07",
+        "cardId": "card-locked-001",
+        "requirementId": "REQ-012"
+      },
+      "analyticsEventId": "analytics-click_invite_instead"
+    },
+    {
+      "eventName": "invite_started",
+      "page": "/invite/:id",
+      "properties": {
+        "uiId": "UI-08",
+        "cardId": "card-locked-001",
+        "inviteCode": "INVITE-LOCAL-001"
+      },
+      "analyticsEventId": "analytics-invite_started"
+    },
+    {
+      "eventName": "click_invite_friends",
+      "page": "/invite/:id",
+      "properties": {
+        "uiId": "UI-08",
+        "cardId": "card-locked-001",
+        "inviteCode": "INVITE-LOCAL-001"
+      },
+      "analyticsEventId": "analytics-click_invite_friends"
+    },
+    {
+      "eventName": "click_invite_paid_unlock",
+      "page": "/invite/:id",
+      "properties": {
+        "uiId": "UI-08",
+        "cardId": "card-locked-001"
+      },
+      "analyticsEventId": "analytics-click_invite_paid_unlock"
+    },
+    {
+      "eventName": "copy_share_link",
+      "page": "/invite/:id/progress",
+      "properties": {
+        "uiId": "UI-09",
+        "cardId": "card-locked-001",
+        "inviteCode": "INVITE-LOCAL-001"
+      },
+      "analyticsEventId": "analytics-copy_share_link"
+    },
+    {
+      "eventName": "click_invite_again",
+      "page": "/invite/:id/progress",
+      "properties": {
+        "uiId": "UI-09",
+        "cardId": "card-locked-001"
+      },
+      "analyticsEventId": "analytics-click_invite_again"
+    },
+    {
+      "eventName": "click_invite_how_it_works",
+      "page": "/invite/:id/progress",
+      "properties": {
+        "uiId": "UI-09",
+        "cardId": "card-locked-001",
+        "modal": "invite-explainer"
+      },
+      "analyticsEventId": "analytics-click_invite_how_it_works"
+    },
+    {
+      "eventName": "page_view_invite_landing",
+      "page": "/invite/landing/:code",
+      "properties": {
+        "uiId": "UI-10",
+        "inviteCode": "INVITE-LOCAL-001"
+      },
+      "analyticsEventId": "analytics-page_view_invite_landing"
+    },
+    {
+      "eventName": "click_friend_generate_card",
+      "page": "/invite/landing/:code",
+      "properties": {
+        "uiId": "UI-10",
+        "inviteCode": "INVITE-LOCAL-001",
+        "noLoginRequired": true
+      },
+      "analyticsEventId": "analytics-click_friend_generate_card"
+    }
+  ],
+  "localOnly": {
+    "payment": "local-mock-route-only",
+    "invitePlatform": "fixture-api-client-no-platform-share-api",
+    "analytics": "local-fixture-client",
+    "storage": "local-evidence-files-only",
+    "db": "no-production-write"
+  },
+  "visualEvidence": {
+    "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+    "reason": "T13 generated deterministic HTML structural captures and render summaries for UI-07..UI-10; automated raster screenshot and pixel-diff evidence are deferred to T22/T23.",
+    "captures": [
+      "docs/auto-execute/screenshots/T13/UI-07-unlock-choice.html",
+      "docs/auto-execute/screenshots/T13/UI-08-invite-start.html",
+      "docs/auto-execute/screenshots/T13/UI-09-invite-progress.html",
+      "docs/auto-execute/screenshots/T13/UI-10-friend-landing.html"
+    ],
+    "missingRasterScreenshots": [
+      "docs/auto-execute/screenshots/T13/UI-07-unlock-choice.png",
+      "docs/auto-execute/screenshots/T13/UI-08-invite-start.png",
+      "docs/auto-execute/screenshots/T13/UI-09-invite-progress.png",
+      "docs/auto-execute/screenshots/T13/UI-10-friend-landing.png"
+    ]
+  }
+}

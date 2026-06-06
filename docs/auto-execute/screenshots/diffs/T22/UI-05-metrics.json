@@ -1,0 +1,19 @@
+{
+  "taskId": "T22",
+  "uiId": "UI-05",
+  "title": "Draw Generation Loading",
+  "route": "/create/draw",
+  "pagePath": "pages/create/draw",
+  "state": "draw-generation-loading",
+  "sourceReference": "docs/UI/小程序/P0-05-Reveal-生成中抽卡仪式.png",
+  "referencePresent": true,
+  "actualScreenshotPresent": false,
+  "diffImagePresent": false,
+  "metricsPresent": false,
+  "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+  "requiredEvidence": {
+    "actualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-05.png",
+    "diffImage": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-05.png",
+    "pixelMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-05.json"
+  }
+}

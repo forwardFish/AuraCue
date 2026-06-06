@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "payment": "mock-only",
+  "realWeChatPayCallsAllowed": false,
+  "realPaymentCallbackAllowed": false,
+  "productionPaymentKeysUsed": false,
+  "networkPaymentProviderCalls": [],
+  "db": "deterministic-json-repository"
+}

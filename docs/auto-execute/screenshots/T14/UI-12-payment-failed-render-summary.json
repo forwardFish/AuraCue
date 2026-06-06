@@ -1,0 +1,56 @@
+{
+  "uiId": "UI-12",
+  "route": "/unlock/:id/pay-failed",
+  "sourceReference": "docs/UI/小程序/08B-支付解锁_失败与恢复购买.png",
+  "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/08b/code.html",
+  "requirementIds": [
+    "REQ-010",
+    "REQ-012",
+    "REQ-017"
+  ],
+  "apiIds": [
+    "API-005",
+    "API-004",
+    "API-010"
+  ],
+  "cardId": "card-locked-001",
+  "orderId": "order-failed-001",
+  "title": "Payment didn't go through",
+  "message": "No worries, it happens. Please try again.",
+  "actions": {
+    "tryAgain": {
+      "controlId": "try-again",
+      "label": "Try Again",
+      "route": "/unlock/:id/success"
+    },
+    "restorePurchase": {
+      "controlId": "restore-purchase",
+      "label": "Restore Purchase",
+      "route": "/unlock/:id/success"
+    },
+    "inviteInstead": {
+      "controlId": "invite-3-friends-instead",
+      "label": "Invite 3 Friends Instead",
+      "route": "/invite/:id"
+    },
+    "contactSupport": {
+      "controlId": "contact-support",
+      "label": "Contact Support"
+    },
+    "back": {
+      "controlId": "back-from-payment-failed",
+      "route": "/unlock/:id/pay"
+    }
+  },
+  "localOnly": {
+    "payment": "local-mock-api-client-only",
+    "forbiddenSdkCalls": [
+      "wechat-payment-sdk-call",
+      "live-payment-provider",
+      "live-payment-url"
+    ],
+    "analytics": "local-fixture-client",
+    "storage": "local-evidence-files-only",
+    "db": "mock repository/readback deferred to T20"
+  }
+}

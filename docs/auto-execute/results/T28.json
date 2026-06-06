@@ -1,0 +1,519 @@
+{
+  "taskId": "T28",
+  "status": "REPAIR_REQUIRED",
+  "scope": "Visual capture and pixel diff harness for UI-01 through UI-18 at 941x1672",
+  "changedFiles": [
+    "scripts/t26-visual-capture-pixel-diff-harness.mjs",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/",
+    "docs/auto-execute/logs/T28/",
+    "docs/auto-execute/results/T28.json",
+    "docs/auto-execute/latest/T28-HANDOFF.md"
+  ],
+  "commands": [
+    "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T28"
+  ],
+  "verificationCommands": [
+    "pnpm test",
+    "pnpm lint",
+    "pnpm typecheck",
+    "node scripts/verify-wechat-routes.mjs",
+    "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T28",
+    "git diff --check"
+  ],
+  "evidence": [
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/visual-summary.json",
+    "docs/auto-execute/logs/T28/visual-harness.log",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-01-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-01-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-01-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-02-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-02-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-02-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-03-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-03-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-03-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-04-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-04-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-04-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-05-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-05-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-05-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-06-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-06-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-06-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-07-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-07-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-07-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-08-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-08-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-08-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-09-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-09-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-09-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-10-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-10-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-10-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-11-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-11-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-11-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-12-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-12-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-12-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-13-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-13-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-13-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-14-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-14-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-14-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-15-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-15-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-15-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-16-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-16-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-16-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-17-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-17-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-17-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-18-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-18-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-18-metrics.json"
+  ],
+  "dependencyEvidence": {
+    "browserPath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "browserKind": "local-headless-chrome-compatible",
+    "pixelDiff": "in-repo deterministic PNG RGBA decoder/encoder with max-channel threshold",
+    "remoteServices": "not-used",
+    "nativeWechatCapture": "unavailable-in-this-local-harness",
+    "fallback": "local DOM render from current page view-model HTML renderers under apps/wechat-mini/src/pages/**"
+  },
+  "unresolvedScreens": [
+    {
+      "uiId": "UI-01",
+      "diffRatio": 0.142936,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-01-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-01-diff.png"
+    },
+    {
+      "uiId": "UI-02",
+      "diffRatio": 0.212549,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-02-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-02-diff.png"
+    },
+    {
+      "uiId": "UI-03",
+      "diffRatio": 0.174261,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-03-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-03-diff.png"
+    },
+    {
+      "uiId": "UI-04",
+      "diffRatio": 0.193674,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 107,
+        "y": 48,
+        "width": 727,
+        "height": 1603
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 107,
+          "y": 48,
+          "width": 727,
+          "height": 1603
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-04-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-04-diff.png"
+    },
+    {
+      "uiId": "UI-05",
+      "diffRatio": 0.262479,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-05-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-05-diff.png"
+    },
+    {
+      "uiId": "UI-06",
+      "diffRatio": 0.288386,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-06-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-06-diff.png"
+    },
+    {
+      "uiId": "UI-07",
+      "diffRatio": 0.216334,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-07-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-07-diff.png"
+    },
+    {
+      "uiId": "UI-08",
+      "diffRatio": 0.257127,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 76,
+        "y": 10,
+        "width": 788,
+        "height": 1629
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 76,
+          "y": 10,
+          "width": 788,
+          "height": 1629
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-08-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-08-diff.png"
+    },
+    {
+      "uiId": "UI-09",
+      "diffRatio": 0.343375,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 47,
+        "y": 0,
+        "width": 847,
+        "height": 1656
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 47,
+          "y": 0,
+          "width": 847,
+          "height": 1656
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-09-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-09-diff.png"
+    },
+    {
+      "uiId": "UI-10",
+      "diffRatio": 0.337765,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 84,
+        "y": 3,
+        "width": 774,
+        "height": 1600
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 84,
+          "y": 3,
+          "width": 774,
+          "height": 1600
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-10-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-10-diff.png"
+    },
+    {
+      "uiId": "UI-11",
+      "diffRatio": 0.600235,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-11-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-11-diff.png"
+    },
+    {
+      "uiId": "UI-12",
+      "diffRatio": 0.614982,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-12-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-12-diff.png"
+    },
+    {
+      "uiId": "UI-13",
+      "diffRatio": 0.619667,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-13-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-13-diff.png"
+    },
+    {
+      "uiId": "UI-14",
+      "diffRatio": 0.544078,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-14-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-14-diff.png"
+    },
+    {
+      "uiId": "UI-15",
+      "diffRatio": 0.721088,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-15-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-15-diff.png"
+    },
+    {
+      "uiId": "UI-16",
+      "diffRatio": 0.518919,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-16-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-16-diff.png"
+    },
+    {
+      "uiId": "UI-17",
+      "diffRatio": 0.308903,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-17-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-17-diff.png"
+    },
+    {
+      "uiId": "UI-18",
+      "diffRatio": 0.369695,
+      "thresholdStatus": "FAIL",
+      "finalScreenVerdict": "REPAIR_REQUIRED",
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ],
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-18-metrics.json",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-18-diff.png"
+    }
+  ],
+  "blockers": [],
+  "failedCaptureCommands": [],
+  "recoveryInstructions": [
+    "Use the generated metrics to drive T27-T31 one-to-one visual repairs.",
+    "Keep any screen with thresholdStatus FAIL at REPAIR_REQUIRED until its actual PNG diffRatio is <= 0.005 and required text/control checks are clean."
+  ],
+  "localOnly": {
+    "browser": "local Chrome/Edge only",
+    "payment": "not-used",
+    "ai": "not-used",
+    "analytics": "not-used",
+    "db": "not-used",
+    "remoteServices": "not-used"
+  }
+}

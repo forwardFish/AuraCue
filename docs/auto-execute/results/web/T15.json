@@ -1,0 +1,204 @@
+{
+  "taskId": "T15",
+  "taskName": "visual-compare",
+  "status": "COMPLETE",
+  "verdict": "PASS",
+  "productPassClaimed": true,
+  "coveredIds": [
+    "UI-001",
+    "UI-002",
+    "UI-003",
+    "UI-004",
+    "UI-005",
+    "UI-006",
+    "UI-007",
+    "UI-008",
+    "UI-009",
+    "UI-010"
+  ],
+  "commands": [
+    {
+      "command": "pnpm.cmd --filter @auracue/web test:visual",
+      "status": "PASS",
+      "exitCode": 0,
+      "evidence": "docs/auto-execute/logs/web/T15-command-log.md"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/screenshots/web/T15/reference",
+    "docs/auto-execute/screenshots/web/T15/actual",
+    "docs/auto-execute/screenshots/web/T15/diff",
+    "docs/auto-execute/screenshots/web/T15/metrics",
+    "docs/auto-execute/screenshots/web/T15/visual-summary.json",
+    "docs/auto-execute/logs/web/T15-command-log.md"
+  ],
+  "counts": {
+    "referenceCount": 10,
+    "actualCount": 10,
+    "diffCount": 10,
+    "metricsCount": 10,
+    "missingEvidence": [],
+    "materialDeviations": [
+      {
+        "uiId": "UI-001",
+        "status": "NONE_DETECTED_BY_PIXEL_GATE",
+        "diffRatio": 0.000037,
+        "threshold": 0.005,
+        "basis": "Normalized pixel diff is within threshold."
+      },
+      {
+        "uiId": "UI-002",
+        "status": "NONE_DETECTED_BY_PIXEL_GATE",
+        "diffRatio": 0.000244,
+        "threshold": 0.005,
+        "basis": "Normalized pixel diff is within threshold."
+      },
+      {
+        "uiId": "UI-003",
+        "status": "NONE_DETECTED_BY_PIXEL_GATE",
+        "diffRatio": 0.000796,
+        "threshold": 0.005,
+        "basis": "Normalized pixel diff is within threshold."
+      },
+      {
+        "uiId": "UI-004",
+        "status": "NONE_DETECTED_BY_PIXEL_GATE",
+        "diffRatio": 0.000348,
+        "threshold": 0.005,
+        "basis": "Normalized pixel diff is within threshold."
+      },
+      {
+        "uiId": "UI-005",
+        "status": "NONE_DETECTED_BY_PIXEL_GATE",
+        "diffRatio": 0.000477,
+        "threshold": 0.005,
+        "basis": "Normalized pixel diff is within threshold."
+      },
+      {
+        "uiId": "UI-006",
+        "status": "NONE_DETECTED_BY_PIXEL_GATE",
+        "diffRatio": 0.0001,
+        "threshold": 0.005,
+        "basis": "Normalized pixel diff is within threshold."
+      },
+      {
+        "uiId": "UI-007",
+        "status": "NONE_DETECTED_BY_PIXEL_GATE",
+        "diffRatio": 0.000544,
+        "threshold": 0.005,
+        "basis": "Normalized pixel diff is within threshold."
+      },
+      {
+        "uiId": "UI-008",
+        "status": "NONE_DETECTED_BY_PIXEL_GATE",
+        "diffRatio": 0.000414,
+        "threshold": 0.005,
+        "basis": "Normalized pixel diff is within threshold."
+      },
+      {
+        "uiId": "UI-009",
+        "status": "NONE_DETECTED_BY_PIXEL_GATE",
+        "diffRatio": 0.000396,
+        "threshold": 0.005,
+        "basis": "Normalized pixel diff is within threshold."
+      },
+      {
+        "uiId": "UI-010",
+        "status": "NONE_DETECTED_BY_PIXEL_GATE",
+        "diffRatio": 0.000252,
+        "threshold": 0.005,
+        "basis": "Normalized pixel diff is within threshold."
+      }
+    ],
+    "passingScreens": 10,
+    "failingScreens": 0,
+    "maxDiffRatio": 0.000796,
+    "threshold": 0.005
+  },
+  "blockers": [],
+  "limitations": [],
+  "materialDeviations": [
+    {
+      "uiId": "UI-001",
+      "status": "NONE_DETECTED_BY_PIXEL_GATE",
+      "diffRatio": 0.000037,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff is within threshold."
+    },
+    {
+      "uiId": "UI-002",
+      "status": "NONE_DETECTED_BY_PIXEL_GATE",
+      "diffRatio": 0.000244,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff is within threshold."
+    },
+    {
+      "uiId": "UI-003",
+      "status": "NONE_DETECTED_BY_PIXEL_GATE",
+      "diffRatio": 0.000796,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff is within threshold."
+    },
+    {
+      "uiId": "UI-004",
+      "status": "NONE_DETECTED_BY_PIXEL_GATE",
+      "diffRatio": 0.000348,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff is within threshold."
+    },
+    {
+      "uiId": "UI-005",
+      "status": "NONE_DETECTED_BY_PIXEL_GATE",
+      "diffRatio": 0.000477,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff is within threshold."
+    },
+    {
+      "uiId": "UI-006",
+      "status": "NONE_DETECTED_BY_PIXEL_GATE",
+      "diffRatio": 0.0001,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff is within threshold."
+    },
+    {
+      "uiId": "UI-007",
+      "status": "NONE_DETECTED_BY_PIXEL_GATE",
+      "diffRatio": 0.000544,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff is within threshold."
+    },
+    {
+      "uiId": "UI-008",
+      "status": "NONE_DETECTED_BY_PIXEL_GATE",
+      "diffRatio": 0.000414,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff is within threshold."
+    },
+    {
+      "uiId": "UI-009",
+      "status": "NONE_DETECTED_BY_PIXEL_GATE",
+      "diffRatio": 0.000396,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff is within threshold."
+    },
+    {
+      "uiId": "UI-010",
+      "status": "NONE_DETECTED_BY_PIXEL_GATE",
+      "diffRatio": 0.000252,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff is within threshold."
+    }
+  ],
+  "nextRepair": "T15 pixel gate is within threshold for covered Web screenshots.",
+  "rerunResumeState": {
+    "command": "pnpm --filter @auracue/web test:visual",
+    "safeToRerun": true,
+    "inputs": [
+      "docs/auto-execute/auracue-web-ui-reference-map.md",
+      "docs/UI/小程序/P0-*.png",
+      "docs/auto-execute/screenshots/web/T13/runtime-smoke/",
+      "docs/auto-execute/screenshots/web/T14/owner-click-e2e/"
+    ]
+  },
+  "handoff": "docs/auto-execute/latest/web/T15-HANDOFF.md"
+}

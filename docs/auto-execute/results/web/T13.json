@@ -1,0 +1,192 @@
+{
+  "taskId": "T13",
+  "taskName": "Run Whole App Page API Smoke",
+  "templateId": "TPL-LOCAL-SMOKE",
+  "status": "COMPLETE",
+  "verdict": "PASS",
+  "productPassClaimed": false,
+  "timestamp": "2026-06-05T18:46:49+08:00",
+  "scope": {
+    "executedOnlyTask": "T13",
+    "startedWholeWebApp": true,
+    "openedLivePages": true,
+    "calledBackendApisFromBrowser": true,
+    "capturedDbReadback": true,
+    "usedProductionCloud": false,
+    "usedProductionDb": false,
+    "usedProductionAi": false,
+    "usedSecrets": false,
+    "notes": "T13 proves runtime smoke only. Final product acceptance remains T16."
+  },
+  "coveredIds": [
+    "Runtime-Web",
+    "UI-001",
+    "UI-002",
+    "UI-003",
+    "UI-004",
+    "UI-005",
+    "UI-006",
+    "UI-007",
+    "UI-008",
+    "UI-009",
+    "API-001",
+    "API-002",
+    "API-003",
+    "API-004",
+    "API-005",
+    "API-006",
+    "API-007",
+    "API-008",
+    "API-009",
+    "API-010",
+    "API-011",
+    "API-012",
+    "API-013",
+    "DB-AnonymousUser",
+    "DB-OutfitUpload",
+    "DB-DrawSession",
+    "DB-GenerationJob",
+    "DB-AuraCard",
+    "DB-AuraActivation",
+    "DB-SavedCard",
+    "DB-ShareEvent",
+    "DB-AnalyticsEvent",
+    "Owner-001",
+    "Owner-004",
+    "Owner-005"
+  ],
+  "commands": [
+    {
+      "command": "pnpm.cmd --filter @auracue/web test:e2e -- web-p0-runtime-smoke",
+      "status": "PASS_AFTER_REPAIR",
+      "evidence": "docs/auto-execute/logs/web/T13-command-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web typecheck",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T13-validation-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web lint",
+      "status": "FAIL_THEN_PASS",
+      "evidence": "docs/auto-execute/logs/web/T13-validation-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web test:api -- card-activation-share",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T13-validation-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web test:pages -- share-save",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T13-validation-log.md"
+    },
+    {
+      "command": "node -e evidence summary checks for API IDs, failed responses, screenshots, console errors, and DB counts",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T13-validation-log.md"
+    }
+  ],
+  "runtime": {
+    "liveUrl": "http://127.0.0.1:3213",
+    "databaseUrl": "file:./t13-runtime-smoke.sqlite",
+    "browser": "Google Chrome headless via Chrome DevTools Protocol",
+    "shutdown": "T13 harness shuts down the temporary Next dev server and browser before exit."
+  },
+  "evidence": [
+    {
+      "type": "start_log",
+      "path": "docs/auto-execute/logs/web/T13-start.log",
+      "status": "PASS",
+      "summary": "Next dev server reached ready state and served the live app/API."
+    },
+    {
+      "type": "browser_log",
+      "path": "docs/auto-execute/logs/web/T13-browser.log",
+      "status": "PASS",
+      "summary": "Chrome DevTools endpoint started for the headless browser run."
+    },
+    {
+      "type": "command_log",
+      "path": "docs/auto-execute/logs/web/T13-command-log.md",
+      "status": "PASS"
+    },
+    {
+      "type": "validation_log",
+      "path": "docs/auto-execute/logs/web/T13-validation-log.md",
+      "status": "PASS"
+    },
+    {
+      "type": "api_transcript",
+      "path": "docs/auto-execute/api/web/T13/runtime-smoke-api-transcript.json",
+      "status": "PASS",
+      "summary": "46 live browser/API responses captured; API-001 through API-013 are present; zero HTTP response status >= 400."
+    },
+    {
+      "type": "db_readback",
+      "path": "docs/auto-execute/db/web/T13/runtime-smoke-readback.json",
+      "status": "PASS",
+      "summary": "Runtime DB readback has one user, upload, draw session, generation job, aura card, activation, saved card, four share events, and fifteen analytics events."
+    },
+    {
+      "type": "trace",
+      "path": "docs/auto-execute/traces/web/T13/runtime-smoke/runtime-smoke-trace.json",
+      "status": "PASS",
+      "summary": "Trace JSON records ten screenshot checkpoints and zero console/blocking console errors."
+    },
+    {
+      "type": "screenshots",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke",
+      "status": "PASS",
+      "summary": "Home, context, upload, draw, result, activate, activated, share, saved, and saved-copy screenshots captured."
+    }
+  ],
+  "repairRecord": [
+    {
+      "issue": "Initial T13 harness could not spawn pnpm.cmd with shell:false on this Windows surface.",
+      "repair": "Ran pnpm through cmd.exe for DB setup and started Next directly through node_modules/next/dist/bin/next."
+    },
+    {
+      "issue": "Headless browser initially crashed or disconnected under default Edge/Chrome GPU mode.",
+      "repair": "Switched to installed Chrome with headless CDP, no-sandbox, and software rendering flags."
+    },
+    {
+      "issue": "The harness waited for text while document.body was not yet available.",
+      "repair": "Made readiness polling null-safe."
+    },
+    {
+      "issue": "Duplicate React draw-page effects raced into a Prisma unique constraint and one /draw-sessions/start request returned 500.",
+      "repair": "Made draw-session creation atomic/idempotent with Prisma upsert on userId + drawSeed."
+    },
+    {
+      "issue": "Web analytics events emitted by the client were rejected by the shared server validator and surfaced as 400 console errors.",
+      "repair": "Added the Web P0 analytics event names to the shared analytics-events contract."
+    },
+    {
+      "issue": "The harness clicked draw controls before the draw-session response enabled them.",
+      "repair": "Added enabled-state waits before selecting Card II and revealing the aura."
+    },
+    {
+      "issue": "The share-page download action tried to launch a local:// renderer URL and favicon produced a 404 browser console event.",
+      "repair": "Download now falls back to the share URL for local-only renderer paths, and /favicon.ico returns 204."
+    },
+    {
+      "issue": "A passing smoke run left child processes alive until the outer command timed out.",
+      "repair": "Started Next without shell wrapping, destroyed the CDP socket on cleanup, killed child processes, and exited explicitly after evidence was written."
+    },
+    {
+      "issue": "Lint flagged T13 harness style warnings.",
+      "repair": "Removed the unused rerun variable and expanded ternary side-effect expressions."
+    }
+  ],
+  "blockers": [],
+  "nextRepair": null,
+  "rerunResumeState": {
+    "attempts": 11,
+    "rerunCount": 10,
+    "lastCleanRerun": "pnpm.cmd --filter @auracue/web test:e2e -- web-p0-runtime-smoke",
+    "safeToRerun": true,
+    "safeToResumeAt": "T14",
+    "notes": "T13 evidence is runtime/browser based, not a static local smoke substitute. T14/T15/T16 must not infer final product PASS from this T13 task alone."
+  }
+}

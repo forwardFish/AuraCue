@@ -1,0 +1,31 @@
+<view class="error-page">
+  <view class="error-header">
+    <button class="close-button" bindtap="onCloseTap">x</button>
+    <view class="brand-wrap">
+      <text class="brand-spark">*</text>
+      <text class="brand">AuraCue</text>
+      <text class="brand-spark">*</text>
+    </view>
+  </view>
+
+  <view class="hero-illustration">
+    <view class="pink-glow"></view>
+    <view class="moon-card">
+      <text></text>
+      <view class="card-border"></view>
+    </view>
+    <view class="cloud"></view>
+    <view class="error-badge">!</view>
+  </view>
+
+  <view class="error-copy">
+    <text class="error-title">Your aura slipped away</text>
+    <text class="error-title">for a second.</text>
+    <text class="error-body">Let's reconnect and try again.</text>
+  </view>
+
+  <view class="error-actions">
+    <button class="retry-button" bindtap="onTryAgainTap">Try Again</button>
+    <button class="change-button" bindtap="onChangeSceneTap">Change Context</button>
+  </view>
+</view>

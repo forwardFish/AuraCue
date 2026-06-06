@@ -1,0 +1,25 @@
+{
+  "apiId": "API-001",
+  "caseId": "C01",
+  "caseKey": "API-001-C01",
+  "caseType": "success",
+  "method": "POST",
+  "path": "/api/generation-jobs",
+  "expectedStatus": 201,
+  "actualStatus": 201,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-001-success.json",
+  "response": {
+    "jobId": "job-004",
+    "status": "success",
+    "cardId": "card-004",
+    "generationSource": "local-fallback",
+    "aiProvider": {
+      "providerId": "deepseek",
+      "providerLabel": "DeepSeek",
+      "baseUrl": "https://api.deepseek.com",
+      "model": "deepseek-chat",
+      "hasApiKey": false
+    }
+  }
+}

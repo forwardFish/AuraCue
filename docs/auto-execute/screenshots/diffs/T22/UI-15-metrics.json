@@ -1,0 +1,30 @@
+{
+  "taskId": "T22",
+  "uiId": "UI-15",
+  "reference": {
+    "path": "docs/UI/小程序/10A-分享_Story卡预览与保存.png",
+    "exists": true,
+    "dimensions": {
+      "width": 941,
+      "height": 1672
+    }
+  },
+  "actual": {
+    "htmlSource": "docs/auto-execute/screenshots/T16/UI-15-share-story.html",
+    "htmlPath": "docs/auto-execute/screenshots/T22/UI-15-actual.html",
+    "htmlExists": true,
+    "rasterPath": null,
+    "rasterExists": false,
+    "rasterDimensions": null
+  },
+  "structureStatus": "PASS_WITH_LIMITATION",
+  "screenshotStatus": "MANUAL_REVIEW_REQUIRED",
+  "pixelDiffStatus": "MANUAL_REVIEW_REQUIRED",
+  "canClaimPixelPerfect": false,
+  "diffRatio": null,
+  "sizeMismatch": null,
+  "knownDifferences": [
+    "Actual evidence is HTML structural capture only; raster screenshot capture is unavailable for this UI in the current scaffold."
+  ],
+  "finalUiStatus": "PASS_NEEDS_MANUAL_UI_REVIEW"
+}

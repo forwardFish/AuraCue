@@ -1,0 +1,129 @@
+{
+  "taskId": "T06",
+  "taskName": "AI Generation APIs",
+  "templateId": "TPL-AI-PROVIDER",
+  "status": "COMPLETE",
+  "verdict": "PASS_FOR_T06_SCOPE",
+  "productPassClaimed": false,
+  "timestamp": "2026-06-04T22:05:16+08:00",
+  "scope": {
+    "executedOnlyTask": "T06",
+    "implementedApis": [
+      "POST /api/v1/aura-cards/generate",
+      "POST /api/v1/generations/start",
+      "GET /api/v1/generation-jobs/:jobId"
+    ],
+    "usedProductionAi": false,
+    "usedSecrets": false,
+    "usedProductionDb": false,
+    "notes": "The contract path /api/v1/aura-cards/generate and the user-requested alias /api/v1/generations/start share the same DB-backed generation service. No AI key was present or used; fallback evidence is deterministic mock/local."
+  },
+  "coveredIds": [
+    "API-005",
+    "API-006",
+    "AI-001",
+    "DB-GenerationJob",
+    "DB-AuraCard"
+  ],
+  "changedFiles": [
+    "apps/web/package.json",
+    "apps/web/server/ai/schemas.ts",
+    "apps/web/server/ai/mock-provider.ts",
+    "apps/web/server/ai/openai-compatible-provider.ts",
+    "apps/web/server/ai/provider.ts",
+    "apps/web/server/repositories/generation-repository.ts",
+    "apps/web/server/services/generation.ts",
+    "apps/web/app/api/v1/aura-cards/generate/route.ts",
+    "apps/web/app/api/v1/generations/start/route.ts",
+    "apps/web/app/api/v1/generation-jobs/[jobId]/route.ts",
+    "apps/web/tests/api/run-api-tests.mjs",
+    "apps/web/tests/api/foundation.test.mjs",
+    "apps/web/tests/api/generation.test.mjs",
+    "docs/auto-execute/evidence/web/T06/api-transcript.json",
+    "docs/auto-execute/evidence/web/T06/mock-transcript.json",
+    "docs/auto-execute/evidence/web/T06/db-readback.json",
+    "docs/auto-execute/evidence/web/T06/secret-scan.json",
+    "docs/auto-execute/results/web/T06.json",
+    "docs/auto-execute/latest/web/T06-HANDOFF.md",
+    "docs/auto-execute/logs/web/T06-command-log.md"
+  ],
+  "commands": [
+    {
+      "command": "pnpm.cmd --filter @auracue/web test:api -- generation",
+      "status": "PASS_AFTER_REPAIR",
+      "evidence": "Wrote API transcript, mock transcript, and DB readback evidence. Covered validation failure, missing draw session, mock fallback generation, idempotency, /generations/start alias, job success readback, and job not found."
+    },
+    {
+      "command": "node scripts/acceptance/check-web-copy-safety.mjs",
+      "status": "PASS",
+      "evidence": "No secret-like literals or forbidden Web P0 copy found in apps/web/server, apps/web/app/api, or apps/web/tests/api. T06 secret-scan evidence was also written."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web typecheck",
+      "status": "PASS_AFTER_REPAIR",
+      "evidence": "tsc --noEmit passed after replacing self-referential repository types and making Prisma JSON input explicit."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web lint",
+      "status": "PASS",
+      "evidence": "ESLint passed with max-warnings=0."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web build",
+      "status": "PASS",
+      "evidence": "Next production build compiled /api/v1/aura-cards/generate, /api/v1/generations/start, and /api/v1/generation-jobs/[jobId] as dynamic Route Handlers."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web test:api",
+      "status": "PASS_AFTER_REPAIR",
+      "evidence": "Default API runner still executes foundation coverage after updating the T04 hard-coded script assertion."
+    }
+  ],
+  "evidence": [
+    {
+      "type": "api_transcript",
+      "path": "docs/auto-execute/evidence/web/T06/api-transcript.json",
+      "status": "PASS",
+      "summary": "7 transcript cases across API-005/API-006, including mock fallback success and idempotent repeat."
+    },
+    {
+      "type": "mock_transcript",
+      "path": "docs/auto-execute/evidence/web/T06/mock-transcript.json",
+      "status": "PASS",
+      "summary": "No AI key used; provider mock-fallback-forced generated a complete structured Aura Card."
+    },
+    {
+      "type": "db_readback",
+      "path": "docs/auto-execute/evidence/web/T06/db-readback.json",
+      "status": "PASS",
+      "summary": "Readback counts: GenerationJob=2, AuraCard=2; each job resultCardId matches a persisted AuraCard."
+    },
+    {
+      "type": "secret_scan",
+      "path": "docs/auto-execute/evidence/web/T06/secret-scan.json",
+      "status": "PASS",
+      "summary": "No API keys, bearer tokens, or secret-like literals detected in the T06 API/server/test scan roots."
+    },
+    {
+      "type": "build_routes",
+      "path": "command output: pnpm.cmd --filter @auracue/web build",
+      "status": "PASS",
+      "summary": "Build listed all new T06 routes as dynamic handlers."
+    }
+  ],
+  "blockers": [],
+  "nextRepair": null,
+  "rerunResumeState": {
+    "canRerun": true,
+    "safeToResumeAt": "T07",
+    "commands": [
+      "pnpm.cmd --filter @auracue/web test:api -- generation",
+      "node scripts/acceptance/check-web-copy-safety.mjs",
+      "pnpm.cmd --filter @auracue/web typecheck",
+      "pnpm.cmd --filter @auracue/web lint",
+      "pnpm.cmd --filter @auracue/web build"
+    ],
+    "notes": "T06 test prepares a local SQLite schema with prisma db push before resetting data. A real OpenAI-compatible call is gated behind AURACUE_AI_PROVIDER=openai and an API key; no live provider proof was attempted in this worker."
+  },
+  "exitCondition": "T09/T13 can create or poll a locally generated result card through API-005/API-006 with persisted GenerationJob/AuraCard readback."
+}

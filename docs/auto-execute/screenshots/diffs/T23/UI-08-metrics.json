@@ -1,0 +1,15 @@
+{
+  "taskId": "T23",
+  "sourceTaskId": "T22",
+  "uiId": "UI-08",
+  "route": "/activated/:id",
+  "pagePath": "pages/activated/index",
+  "sourceReference": "docs/UI/小程序/P0-08-Activated-气场已激活成功.png",
+  "repairDecision": "scope_confirmed_waiting_for_runtime_evidence",
+  "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+  "canClaimPixelPerfect": false,
+  "diffRatio": null,
+  "knownDifferences": [
+    "Runtime screenshot, diff image, and pixel metrics still need to be generated for final P0."
+  ]
+}

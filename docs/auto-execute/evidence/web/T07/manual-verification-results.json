@@ -1,0 +1,32 @@
+﻿[
+    {
+        "command":  "pnpm.cmd --filter @auracue/web test:api -- card-activation-share",
+        "exitCode":  0,
+        "startedAt":  "2026-06-05T08:42:06.4521329+08:00",
+        "finishedAt":  "2026-06-05T08:42:19.4873747+08:00"
+    },
+    {
+        "command":  "pnpm.cmd --filter @auracue/web test:db",
+        "exitCode":  0,
+        "startedAt":  "2026-06-05T08:42:19.5618275+08:00",
+        "finishedAt":  "2026-06-05T08:42:23.6203451+08:00"
+    },
+    {
+        "command":  "pnpm.cmd --filter @auracue/web typecheck",
+        "exitCode":  0,
+        "startedAt":  "2026-06-05T08:42:23.6233481+08:00",
+        "finishedAt":  "2026-06-05T08:42:29.7021751+08:00"
+    },
+    {
+        "command":  "pnpm.cmd --filter @auracue/web lint",
+        "exitCode":  0,
+        "startedAt":  "2026-06-05T08:42:29.7113485+08:00",
+        "finishedAt":  "2026-06-05T08:42:44.7037757+08:00"
+    },
+    {
+        "command":  "pnpm.cmd --filter @auracue/web build",
+        "exitCode":  0,
+        "startedAt":  "2026-06-05T08:42:44.7057887+08:00",
+        "finishedAt":  "2026-06-05T08:43:44.5660642+08:00"
+    }
+]

@@ -1,0 +1,38 @@
+﻿[
+    {
+        "name":  "T29",
+        "command":  "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T29",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/U04/T29-round2.log"
+    },
+    {
+        "name":  "T31",
+        "command":  "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T31",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/U04/T31-round2.log"
+    },
+    {
+        "name":  "T33",
+        "command":  "node scripts/t33-final-ui-one-to-one-gate.mjs",
+        "exitCode":  2,
+        "log":  "docs/auto-execute/logs/U04/T33-round2.log"
+    },
+    {
+        "name":  "pnpm-test",
+        "command":  "pnpm.cmd test",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/U04/pnpm-test-round2.log"
+    },
+    {
+        "name":  "routes",
+        "command":  "node scripts/verify-wechat-routes.mjs",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/U04/routes-round2.log"
+    },
+    {
+        "name":  "diff-check",
+        "command":  "git diff --check",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/U04/diff-check-round2.log"
+    }
+]

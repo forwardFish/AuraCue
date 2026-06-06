@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura Activation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            aura: {
+              navy: '#1A1C3B',
+              muted: '#7A7585',
+              gold: '#D4AF37',
+              pink: '#F4B6C2',
+              bgLight: '#FCF7F6',
+              bgPink: '#F9E6E9',
+              bgLavender: '#EAE1F0',
+            }
+          },
+          boxShadow: {
+            'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
+            'inner-glow': 'inset 0 0 20px rgba(255, 255, 255, 0.5)',
+            'card-selected': '0 0 15px rgba(212, 175, 55, 0.3)',
+          },
+          backgroundImage: {
+            'main-bg': 'radial-gradient(circle at 20% 10%, #FCF7F6 0%, transparent 40%), radial-gradient(circle at 80% 30%, #F9E6E9 0%, transparent 50%), radial-gradient(circle at 50% 80%, #EAE1F0 0%, transparent 60%), linear-gradient(to bottom, #FCF7F6, #F9E6E9, #EAE1F0)',
+            'orb-pink': 'radial-gradient(circle at 30% 30%, #FFD6DE, #F4B6C2)',
+            'orb-navy': 'radial-gradient(circle at 30% 30%, #3A3D6B, #1A1C3B)',
+            'orb-gold': 'radial-gradient(circle at 30% 30%, #FDE9A9, #D4AF37)',
+            'seal-ring': 'conic-gradient(from 0deg, #EAE1F0 0deg 90deg, #F9E6E9 90deg 180deg, #FCF7F6 180deg 270deg, #D4AF37 270deg 360deg)',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-animations">
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 10px 2px rgba(255,255,255,0.8);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-aura-navy bg-main-bg min-h-screen relative overflow-x-hidden flex justify-center">
+<!-- Background Effects -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+<!-- Sparkles -->
+<div class="sparkle top-[15%] left-[10%] animate-pulse"></div>
+<div class="sparkle top-[25%] right-[15%] animate-pulse delay-75"></div>
+<div class="sparkle top-[45%] left-[5%] animate-pulse delay-150"></div>
+<div class="sparkle top-[65%] right-[10%] animate-pulse delay-300"></div>
+<div class="sparkle bottom-[20%] left-[20%] animate-pulse delay-500"></div>
+<!-- Clouds -->
+<div class="absolute -bottom-20 -right-20 w-96 h-96 bg-white/30 rounded-full blur-[80px]"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-white/20 rounded-full blur-[60px]"></div>
+</div>
+<!-- Mobile Container -->
+<div class="relative w-full max-w-[390px] min-h-[844px] bg-transparent overflow-hidden flex flex-col z-10">
+<!-- BEGIN: Header -->
+<header class="pt-12 px-6 flex items-center justify-between relative z-20">
+<!-- Back Button -->
+<button class="w-10 h-10 rounded-full bg-white/50 backdrop-blur-md flex items-center justify-center border border-white/60 shadow-sm text-aura-muted">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Logo -->
+<div class="flex flex-col items-center absolute left-1/2 -translate-x-1/2 top-11">
+<svg class="w-8 h-8 text-aura-navy mb-1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24">
+<path d="M12 22c-4-4-6-8-6-12a6 6 0 0 1 12 0c0 4-2 8-6 12z"></path>
+<path d="M12 22c-2-4-3-8-3-12a3 3 0 0 1 6 0c0 4-1 8-3 12z"></path>
+<path d="M3 10c0-2.5 2-4.5 4.5-4.5S12 7.5 12 10"></path>
+<path d="M21 10c0-2.5-2-4.5-4.5-4.5S12 7.5 12 10"></path>
+</svg>
+<h1 class="font-serif tracking-[0.2em] text-sm uppercase">AuraCue</h1>
+</div>
+<!-- Placeholder to balance flex -->
+<div class="w-10"></div>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: Main Content -->
+<main class="flex-1 px-6 pb-8 flex flex-col items-center mt-6 relative z-20">
+<!-- Hero Section -->
+<div class="text-center mb-8 relative">
+<h2 class="font-serif text-4xl mb-2 text-aura-navy relative inline-block">
+          Activate Today's Aura
+          <span class="absolute -top-4 -right-8 text-aura-pink opacity-80 animate-pulse text-2xl">✦</span>
+<span class="absolute top-2 -right-12 text-aura-pink opacity-50 animate-pulse delay-150 text-xl">✦</span>
+</h2>
+<p class="text-aura-muted text-[13px]">Choose one thing to carry today's energy.</p>
+</div>
+<!-- Lucky Colors Section -->
+<section class="w-full mb-8 flex flex-col items-center">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-aura-gold text-xs">✦</span>
+<h3 class="font-serif text-lg text-aura-navy">Your lucky colors</h3>
+<span class="text-aura-gold text-xs">✦</span>
+</div>
+<div class="flex justify-center gap-6 w-full mb-3">
+<!-- Pink Orb -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-[72px] h-[72px] rounded-full bg-orb-pink shadow-lg shadow-pink-200/50 border border-white/50 relative overflow-hidden group">
+<div class="absolute inset-0 shadow-inner-glow rounded-full"></div>
+<!-- Internal sparkles -->
+<div class="absolute w-1 h-1 bg-white rounded-full top-[20%] left-[30%] opacity-80 shadow-[0_0_4px_white]"></div>
+<div class="absolute w-0.5 h-0.5 bg-white rounded-full top-[40%] right-[20%] opacity-60"></div>
+<div class="absolute w-[40px] h-[40px] bg-white/20 rounded-full top-[-10px] left-[-10px] blur-sm"></div>
+</div>
+<span class="text-xs text-aura-muted">Blush Pink</span>
+</div>
+<!-- Navy Orb -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-[72px] h-[72px] rounded-full bg-orb-navy shadow-lg shadow-blue-900/30 border border-white/20 relative overflow-hidden">
+<div class="absolute inset-0 shadow-inner-glow rounded-full opacity-30"></div>
+<!-- Internal sparkles -->
+<div class="absolute w-1 h-1 bg-white rounded-full top-[30%] left-[40%] opacity-90 shadow-[0_0_4px_white]"></div>
+<div class="absolute w-1.5 h-1.5 bg-yellow-100 rounded-full bottom-[30%] right-[30%] opacity-80 shadow-[0_0_5px_#fef08a]"></div>
+<div class="absolute w-0.5 h-0.5 bg-white rounded-full top-[60%] left-[20%] opacity-50"></div>
+<div class="absolute w-[40px] h-[40px] bg-white/10 rounded-full top-[-10px] left-[-10px] blur-sm"></div>
+</div>
+<span class="text-xs text-aura-muted">Deep Navy</span>
+</div>
+<!-- Gold Orb -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-[72px] h-[72px] rounded-full bg-orb-gold shadow-lg shadow-yellow-600/20 border border-white/50 relative overflow-hidden">
+<div class="absolute inset-0 shadow-inner-glow rounded-full"></div>
+<!-- Internal sparkles -->
+<div class="absolute w-1 h-1 bg-white rounded-full top-[25%] right-[35%] opacity-90 shadow-[0_0_4px_white]"></div>
+<div class="absolute w-0.5 h-0.5 bg-white rounded-full bottom-[40%] left-[30%] opacity-70"></div>
+<div class="absolute w-[40px] h-[40px] bg-white/30 rounded-full top-[-10px] left-[-10px] blur-sm"></div>
+</div>
+<span class="text-xs text-aura-muted">Soft Gold</span>
+</div>
+</div>
+<p class="text-[12px] text-aura-muted">Wear one color that carries today's aura.</p>
+</section>
+<!-- Lucky Anchor Grid -->
+<section class="w-full mb-10 flex flex-col items-center">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-aura-gold text-xs">✦</span>
+<h3 class="font-serif text-lg text-aura-navy">Choose your lucky anchor</h3>
+<span class="text-aura-gold text-xs">✦</span>
+</div>
+<div class="grid grid-cols-3 gap-3 w-full">
+<!-- Card 1: Selected -->
+<div class="glass-card rounded-[20px] p-3 flex flex-col items-center justify-center aspect-square relative border-aura-gold/50 shadow-card-selected bg-white/60">
+<div class="absolute -top-2 -right-2 bg-aura-gold text-white rounded-full w-6 h-6 flex items-center justify-center shadow-md border-2 border-white z-10">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<!-- Missing Image Placeholder -->
+<img alt="Lucky Color" class="w-12 h-12 mb-2 object-contain animate-float" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAufchTH-hKdT2o71MYrfnyHVlARffwx-1Gd1qCMah08Yljz3LPpu0W5bytTSfQSvXfL4xiGXFyPMFffsOFLtMqFgK42QRy8ahu6dG0MSo8rV2smo90oHKA8IZ17bqd7RAKuerWyroP_B1Q_82LRmG2gzsTEys6YWy_4GLcX_H-gbgZfMvilfftgin86S11lsEbfFH7YGqV3RBJcVUhJM4KlpRJbRceANHkLFh0p7xgFI7n1kf2Z8roHbtJbcYm3AYsLviQopEBCfg"/>
+<span class="text-[11px] font-medium text-aura-navy whitespace-nowrap">Lucky Color</span>
+</div>
+<!-- Card 2 -->
+<div class="glass-card rounded-[20px] p-3 flex flex-col items-center justify-center aspect-square">
+<img alt="Jewelry" class="w-12 h-12 mb-2 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVKPRdjrXXKt4pes8AlObTdyLzwd3WP6CI-BeIsjxXN9nAeN8TMvOmpcwFNPnPq6B3xFhK4MJAdJxZQhYWcPI59NzwF0lyg0fOdvUlXPlUYVDi9L32DENP2RJkc23p2cNRG2EejIfidkQPM-vsC8I-ydnSEex-sfYA1DzaiwkKkF74scivMLzrjJh-2OJ52nz0peYtrYT88JP2EsqWSpS_JTnm8UujhHnEu9yl_tQoyKKaNcCIuQM_Qg6e9vvydJoTAdmjclj-9EQ"/>
+<span class="text-[11px] text-aura-navy whitespace-nowrap">Jewelry</span>
+</div>
+<!-- Card 3 -->
+<div class="glass-card rounded-[20px] p-3 flex flex-col items-center justify-center aspect-square">
+<img alt="Crystal" class="w-12 h-12 mb-2 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsY3xx_0f32ZfoxlMRfz8YlzzV1Wg13nKORLVt5g3nU-zXCDdMh8LpbaIw0JUCKmn5KDdYZKf2d78c3QQIuTsDRFMRi2MkHqQ1g_2lG86FdjWohBkOFY7FrbUb4kFuSt_cM3zU1tY-vOEpl_LF-DA_l4pZxne9ltl_eldvLpvBQi5z2KB_WjQ-GVHROsQ5FNwoEc9kXWcPlBcVNpUuuwJjGZQa3iG7NDebuCPR9EHKULBPG1Ft9PBov8c6s36SnOVFZOb37N3LOfo"/>
+<span class="text-[11px] text-aura-navy whitespace-nowrap">Crystal</span>
+</div>
+<!-- Card 4 -->
+<div class="glass-card rounded-[20px] p-3 flex flex-col items-center justify-center aspect-square">
+<img alt="Lipstick" class="w-12 h-12 mb-2 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG8eCUOYawkUmIUm3RO4C5nGXkz-UOFocQfD8WXYdihsloOp5XkJJIqb_ze_fYbHNCsXHDDX_vHj-qmVYTjVRbfrFmxd6oXsk4grjUUW2TywvUBdIU24rmlQ2-Gm-5_2H4RgRkhwiGRD3UoysbEOX_Th2EUDns1Q0_cExGbiBxRyUubgFi5oORwj6OeK8xKvvtHIB9Gh3-VObBRdLLqRz4JRMdA_EHCxlu0fF02A9HWCmbVaBC5yWTZHauOnihYfECjMlAHvfrMeI"/>
+<span class="text-[11px] text-aura-navy whitespace-nowrap">Lipstick</span>
+</div>
+<!-- Card 5 -->
+<div class="glass-card rounded-[20px] p-3 flex flex-col items-center justify-center aspect-square">
+<img alt="Perfume" class="w-12 h-12 mb-2 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ4p6XpbeYKxZw_3JIX4ojVhfb5j-49_W3Tal0YWdn9rPOGWXlWbQ5LQCnR4xa5VICUWiJNTdY4jw4CwzklLXovZfVgOLBuVmtWnHsX13e2-wcxm3vMdv8uFuvCwVO545UHPcMOh0SX62l0Ee-KsBmSHe_XVSnpQ0tKdgXkVGM7hvkgcTDqvmVZoQYNfyddl7LsMpllA6OJSrx9fQ2T_205r3-Hz4s0-MhSS82ZA5OCPzPibM6LsschwY3Ysz5-ZJJysV4NVFPdSQ"/>
+<span class="text-[11px] text-aura-navy whitespace-nowrap">Perfume</span>
+</div>
+<!-- Card 6 -->
+<div class="glass-card rounded-[20px] p-3 flex flex-col items-center justify-center aspect-square">
+<img alt="Outfit Detail" class="w-12 h-12 mb-2 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbnC7Xz23Ivj0ejWZ5Jxs5X9onAEjNh5KI18z3Choc5yGU1J7eBw1cVr0SacYaHJW9VxLhRwlRYysy39dEAcjdMzIwiVTN-PKCXkmYWopHJN3VDwtY_N-ueJzcTJ0i3arh_Nu_5RT3ihSmqK1G6xBk2y_8ZHZdgxV_DNDZk4qyLRxnjnLUDAbeOKdt9IV6dVMBf8ughtGiyoPFHT5jx07TMZGgZ1YgbZVOtOj1ZEM7lbzZ-fvjEqJl2JCrm-gk12tkO_-N-8yUz5Q"/>
+<span class="text-[11px] text-aura-navy whitespace-nowrap">Outfit Detail</span>
+</div>
+</div>
+</section>
+<!-- Hold to Seal Section -->
+<section class="w-full flex flex-col items-center mt-auto">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-aura-gold text-xs">✦</span>
+<h3 class="font-serif text-2xl text-aura-navy">Hold to Seal</h3>
+<span class="text-aura-gold text-xs">✦</span>
+</div>
+<p class="text-aura-muted text-[13px] text-center mb-6 leading-relaxed">
+          Touch your anchor. Take one slow breath.<br/>Hold to seal today's aura.
+        </p>
+<!-- Main Button -->
+<div class="relative w-40 h-40 flex items-center justify-center mb-4">
+<!-- Gradient Ring -->
+<div class="absolute inset-0 rounded-full bg-seal-ring p-[3px] shadow-[0_0_30px_rgba(212,175,55,0.2)]">
+<div class="w-full h-full bg-white/20 rounded-full backdrop-blur-[2px]"></div>
+</div>
+<!-- Inner Button -->
+<button class="relative w-[148px] h-[148px] rounded-full bg-white/60 backdrop-blur-md flex flex-col items-center justify-center border border-white shadow-inner-glow transition-transform active:scale-95">
+<svg class="w-8 h-8 text-aura-pink mb-1 opacity-80" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M12 22c-4-4-6-8-6-12a6 6 0 0 1 12 0c0 4-2 8-6 12z"></path>
+<path d="M12 22c-2-4-3-8-3-12a3 3 0 0 1 6 0c0 4-1 8-3 12z"></path>
+<path d="M3 10c0-2.5 2-4.5 4.5-4.5S12 7.5 12 10"></path>
+<path d="M21 10c0-2.5-2-4.5-4.5-4.5S12 7.5 12 10"></path>
+</svg>
+<span class="font-serif text-aura-navy text-sm leading-tight text-center mt-1">Hold to Seal<br/>Your Aura</span>
+<div class="flex gap-1 mt-2">
+<span class="text-[8px] text-aura-gold">✦</span>
+<span class="text-[10px] text-aura-gold">✦</span>
+<span class="text-[8px] text-aura-gold">✦</span>
+</div>
+</button>
+</div>
+<p class="text-[12px] text-aura-muted mb-6">Keep holding for 3 seconds.</p>
+<!-- Footer -->
+<p class="text-[10px] text-aura-muted/60 text-center mt-4">
+          For reflection and fun. Not a guarantee or professional advice.
+        </p>
+</section>
+</main>
+<!-- END: Main Content -->
+</div>
+</body></html>

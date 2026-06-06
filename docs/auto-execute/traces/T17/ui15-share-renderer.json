@@ -1,0 +1,68 @@
+{
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "taskId": "T17",
+  "requirementIds": [
+    "REQ-002",
+    "REQ-014"
+  ],
+  "uiIds": [
+    "UI-15"
+  ],
+  "apiIds": [
+    "API-009"
+  ],
+  "route": "/share/:id",
+  "rendererDisplayedByUi15": true,
+  "shareImage": {
+    "cardId": "card-unlocked-001",
+    "localPath": "local://share-images/card-unlocked-001-template-story-001.png",
+    "width": 1080,
+    "height": 1920,
+    "artifactKind": "svg-data-url",
+    "dataUrlSha256": "e49f553836567ab5b64ac3b0f387c4e4097ee01dfcf0c5709f1b0b41537709d1",
+    "deterministicKey": "card-unlocked-001|template-story-001|Full Lucky Aura Card|Golden Comet Aura|Champagne Gold|golden-night|Tonight I am choosing the brighter signal."
+  },
+  "apiTrace": [
+    {
+      "apiId": "API-003",
+      "method": "getCard",
+      "cardId": "card-unlocked-001",
+      "view": "full"
+    },
+    {
+      "apiId": "API-009",
+      "method": "renderShareImage",
+      "cardId": "card-unlocked-001",
+      "request": {
+        "templateId": "template-story-001",
+        "format": "story-9x16"
+      },
+      "response": {
+        "localPath": "local://share-images/card-unlocked-001-template-story-001.png",
+        "width": 1080,
+        "height": 1920,
+        "artifactKind": "svg-data-url",
+        "dataUrlSha256": "e49f553836567ab5b64ac3b0f387c4e4097ee01dfcf0c5709f1b0b41537709d1"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "page_view_share_story",
+        "page": "/share/:id",
+        "properties": {
+          "uiId": "UI-15",
+          "apiId": "API-009",
+          "cardId": "card-unlocked-001",
+          "requirementId": "REQ-014"
+        }
+      }
+    }
+  ],
+  "visualEvidence": {
+    "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+    "reason": "T17 verifies deterministic renderer integration and writes structural HTML/SVG evidence. Raster screenshot and pixel diff remain scheduled for T22/T23.",
+    "structuralCapture": "docs/auto-execute/screenshots/T17/UI-15-share-renderer.html"
+  }
+}

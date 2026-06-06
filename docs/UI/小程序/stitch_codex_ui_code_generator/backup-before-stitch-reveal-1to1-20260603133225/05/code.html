@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lucky Aura Card - Preview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="custom-fonts-and-utilities">
+    body {
+      background-color: #FDF9F6;
+      font-family: 'Inter', sans-serif;
+      color: #1F2937;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    .text-brand-dark {
+      color: #121A3B;
+    }
+    .text-brand-accent {
+      color: #D47B78;
+    }
+    .bg-card-gradient {
+      background: linear-gradient(135deg, #2D3A5F 0%, #D4A39B 100%);
+    }
+    .bg-inner-card {
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+    }
+    .bg-gold-gradient {
+      background: linear-gradient(90deg, #D6A875 0%, #B78A5B 100%);
+    }
+    .shadow-soft {
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    }
+    .shadow-card {
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+    }
+    .text-glow {
+      text-shadow: 0 2px 10px rgba(255,255,255,0.5);
+    }
+    .blur-text {
+      filter: blur(4px);
+      user-select: none;
+    }
+    .blur-icon {
+      filter: blur(2px);
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex justify-center pb-8">
+<!-- Main Container to simulate mobile width -->
+<main class="w-full max-w-[430px] bg-[#FDF9F6] relative overflow-hidden flex flex-col min-h-[932px]" data-purpose="mobile-container">
+<!-- Top decorative gradient blur -->
+<div class="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-white/60 to-transparent pointer-events-none z-0"></div>
+<!-- BEGIN: Header Section -->
+<header class="px-6 pt-14 pb-4 relative z-10 flex items-center justify-between" data-purpose="app-header">
+<button aria-label="Go back" class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm text-gray-600 hover:bg-gray-50 transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.75 19.5L8.25 12l7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<h1 class="text-[28px] font-serif font-medium text-brand-dark tracking-tight leading-none text-center flex-1 mx-2 mt-1">
+        Your Lucky Aura Card
+      </h1>
+<button aria-label="Share" class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm text-gray-600 hover:bg-gray-50 transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</header>
+<!-- END: Header Section -->
+<!-- BEGIN: Subtitle & Context -->
+<section class="px-6 pb-6 text-center relative z-10" data-purpose="subtitle-section">
+<div class="flex items-center justify-center gap-2 mb-2 relative">
+<!-- Decorative Star Left -->
+<svg class="w-4 h-4 text-[#D6A875] absolute -left-2 top-0" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 0C12 6.62742 6.62742 12 0 12C6.62742 12 12 17.3726 12 24C12 17.3726 17.3726 12 24 12C17.3726 12 12 6.62742 12 0Z"></path>
+</svg>
+<div class="flex items-center gap-2 text-[15px] font-medium text-brand-dark mt-2">
+<span>Work / Meeting</span>
+<span class="w-1 h-1 rounded-full bg-gray-400"></span>
+<span class="text-brand-accent">Confidence</span>
+</div>
+<!-- Decorative Star Right -->
+<svg class="w-3 h-3 text-[#D6A875] absolute right-6 -top-2" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 0C12 6.62742 6.62742 12 0 12C6.62742 12 12 17.3726 12 24C12 17.3726 17.3726 12 24 12C17.3726 12 12 6.62742 12 0Z"></path>
+</svg>
+</div>
+<p class="text-[13px] text-gray-500 font-medium tracking-wide">
+        Here's the energy aligned just for you. <span class="text-brand-accent text-sm">💖</span>
+</p>
+</section>
+<!-- END: Subtitle & Context -->
+<div class="flex-1 overflow-y-auto px-5 pb-32 hide-scrollbar relative z-10" data-purpose="scrollable-content">
+<!-- BEGIN: Main Card -->
+<article class="bg-card-gradient rounded-[32px] p-4 shadow-card mb-6 text-white relative overflow-hidden flex gap-4" data-purpose="main-aura-card">
+<!-- Subtle noise overlay for texture could go here in a real app, simulated with simple CSS -->
+<!-- Left: Tarot Card Illustration Container -->
+<div class="w-[145px] flex-shrink-0 relative rounded-2xl overflow-hidden border border-white/20 shadow-inner">
+<!-- Using placeholder image to match layout, representing THE EMPEROR card -->
+<img alt="The Emperor Tarot Card" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq9yNWqMPtW28HsokfwDnkvx95UX-ze7BIDAlr5ePO8TvfQEuXlcpIMsoIIMEV4NpYOhrbYs28kz-diO3sjyWclo1Wrw64PmE1euQJEiDKicppwLbpIZ_VU9xnPHE9RHClcbB7TrOdD90LHF4811oHtbH1GebCM4OkcAys-BokxBvDuLKIGyrBNv_mLow774-D_CEluWErqicjjq9SD1ECSOCgQ5_GRzODVtUnRcg0CwGecJkhCOuGvjTT4OpeAsqZpn6cI5V9"/>
+</div>
+<!-- Right: Aura Details -->
+<div class="flex-1 flex flex-col justify-between py-2 pr-1">
+<div>
+<div class="flex items-center gap-1.5 mb-1 opacity-90">
+<svg class="w-2.5 h-2.5 text-white/80" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0C12 6.62742 6.62742 12 0 12C6.62742 12 12 17.3726 12 24C12 17.3726 17.3726 12 24 12C17.3726 12 12 6.62742 12 0Z"></path></svg>
+<span class="text-[10px] uppercase tracking-[0.15em] font-semibold">TODAY'S AURA</span>
+<svg class="w-2.5 h-2.5 text-white/80" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0C12 6.62742 6.62742 12 0 12C6.62742 12 12 17.3726 12 24C12 17.3726 17.3726 12 24 12C17.3726 12 12 6.62742 12 0Z"></path></svg>
+</div>
+<h2 class="text-3xl font-serif mb-2 leading-tight text-glow">Calm Power Day</h2>
+<p class="text-[13px] leading-snug opacity-90 mb-4 font-medium">
+              Lead with clarity. Decide with calm. You've got this. ✨
+            </p>
+</div>
+<!-- Color and Message Info Box -->
+<div class="bg-inner-card rounded-[20px] p-3 shadow-sm text-brand-dark space-y-3">
+<!-- Lucky Color Row -->
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#E5B5B3] flex items-center justify-center flex-shrink-0 shadow-inner">
+<div class="w-6 h-6 rounded-full bg-white/20"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-gray-500 uppercase font-semibold tracking-wider mb-0.5">Lucky Color</span>
+<span class="text-[14px] font-semibold">Blush Pink</span>
+</div>
+</div>
+<!-- Divider -->
+<div class="h-px bg-gray-200/60 w-full"></div>
+<!-- Message Row -->
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-full bg-[#FDF9F6] border border-[#E5E7EB] flex items-center justify-center flex-shrink-0 mt-0.5">
+<svg class="w-4 h-4 text-[#D6A875]" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0C12 6.62742 6.62742 12 0 12C6.62742 12 12 17.3726 12 24C12 17.3726 17.3726 12 24 12C17.3726 12 12 6.62742 12 0Z"></path></svg>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-gray-500 uppercase font-semibold tracking-wider mb-0.5">Message</span>
+<span class="text-[13px] font-medium leading-tight">Your calm is your superpower. Lead from it.</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- END: Main Card -->
+<!-- BEGIN: Locked Features List -->
+<section class="bg-white/60 backdrop-blur-md rounded-[32px] p-2 shadow-soft space-y-1 mb-6 border border-white/40" data-purpose="locked-features">
+<!-- Feature Item 1 -->
+<div class="flex items-center justify-between p-3 rounded-2xl bg-transparent">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-[#F6F2EC] flex items-center justify-center blur-icon">
+<svg class="w-6 h-6 text-[#A08875]" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M16.5 12.75v-1.5A3.5 3.5 0 0013 7.75h-2a3.5 3.5 0 00-3.5 3.5v1.5m10 0v5.5a2 2 0 01-2 2h-6a2 2 0 01-2-2v-5.5a2 2 0 012-2h6a2 2 0 012 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<div class="font-bold text-[#1F2937] text-[15px] mb-0.5 blur-text">Outfit Energy</div>
+<div class="text-[13px] text-gray-400 blur-text">Best styles &amp; fabrics for today</div>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-[#FDF9F6] border border-[#E5E7EB] flex items-center justify-center text-[#A08875]">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" fill-rule="evenodd"></path>
+</svg>
+</div>
+</div>
+<!-- Feature Item 2 -->
+<div class="flex items-center justify-between p-3 rounded-2xl bg-transparent">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-[#F6F2EC] flex items-center justify-center blur-icon">
+<svg class="w-6 h-6 text-[#A08875]" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<div class="font-bold text-[#1F2937] text-[15px] mb-0.5 blur-text">Beauty Cue</div>
+<div class="text-[13px] text-gray-400 blur-text">Hair, makeup &amp; scent aligned for you</div>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-[#FDF9F6] border border-[#E5E7EB] flex items-center justify-center text-[#A08875]">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" fill-rule="evenodd"></path>
+</svg>
+</div>
+</div>
+<!-- Feature Item 3 -->
+<div class="flex items-center justify-between p-3 rounded-2xl bg-transparent">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-[#F6F2EC] flex items-center justify-center blur-icon">
+<svg class="w-6 h-6 text-[#A08875]" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<div class="font-bold text-[#1F2937] text-[15px] mb-0.5 blur-text">Social Move</div>
+<div class="text-[13px] text-gray-400 blur-text">How to show up &amp; connect</div>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-[#FDF9F6] border border-[#E5E7EB] flex items-center justify-center text-[#A08875]">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" fill-rule="evenodd"></path>
+</svg>
+</div>
+</div>
+<!-- Feature Item 4 -->
+<div class="flex items-center justify-between p-3 rounded-2xl bg-transparent">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-[#F6F2EC] flex items-center justify-center blur-icon">
+<svg class="w-6 h-6 text-[#A08875]" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<div class="font-bold text-[#1F2937] text-[15px] mb-0.5 blur-text">Tiny Ritual</div>
+<div class="text-[13px] text-gray-400 blur-text">A 1-minute practice to shift your energy</div>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-[#FDF9F6] border border-[#E5E7EB] flex items-center justify-center text-[#A08875]">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" fill-rule="evenodd"></path>
+</svg>
+</div>
+</div>
+<!-- Feature Item 5 -->
+<div class="flex items-center justify-between p-3 rounded-2xl bg-transparent">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-[#F6F2EC] flex items-center justify-center blur-icon">
+<svg class="w-6 h-6 text-[#A08875]" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<path d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<div class="font-bold text-[#1F2937] text-[15px] mb-0.5 blur-text">Avoid Today</div>
+<div class="text-[13px] text-gray-400 blur-text">What to avoid for smooth flow</div>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-[#FDF9F6] border border-[#E5E7EB] flex items-center justify-center text-[#A08875]">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" fill-rule="evenodd"></path>
+</svg>
+</div>
+</div>
+</section>
+<!-- END: Locked Features List -->
+</div>
+<!-- BEGIN: Fixed Bottom Actions -->
+<div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-[#FDF9F6] via-[#FDF9F6] to-transparent pt-12 z-20 flex flex-col gap-3" data-purpose="bottom-actions">
+<!-- Primary Action -->
+<button class="w-full h-[60px] rounded-full bg-gold-gradient text-white font-medium text-[17px] shadow-lg flex items-center justify-center gap-2 hover:opacity-95 transition-opacity">
+<svg class="w-5 h-5 text-white/80" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0C12 6.62742 6.62742 12 0 12C6.62742 12 12 17.3726 12 24C12 17.3726 17.3726 12 24 12C17.3726 12 12 6.62742 12 0Z"></path></svg>
+        Unlock Full Card
+      </button>
+<!-- Secondary Action -->
+<button class="w-full h-[60px] rounded-full bg-transparent border border-[#D6A875] text-[#A07044] font-medium text-[16px] flex items-center justify-center gap-3 hover:bg-[#D6A875]/5 transition-colors">
+<div class="flex items-center gap-2">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          Invite 3 friends to unlock
+        </div>
+<span class="bg-[#F8EAEB] text-[#D47B78] px-3 py-1 rounded-full text-sm font-semibold">0 / 3</span>
+</button>
+<!-- Footer text -->
+<div class="text-center mt-2">
+<p class="text-[12px] text-gray-500 flex items-center justify-center gap-1">
+<svg class="w-3 h-3 opacity-70" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" fill-rule="evenodd"></path>
+</svg>
+          Unlock to reveal your full personalized guidance.
+        </p>
+<p class="text-[11px] text-gray-400 mt-1">Private. Personal. Just for you.</p>
+</div>
+</div>
+<!-- END: Fixed Bottom Actions -->
+</main>
+</body></html>

@@ -1,0 +1,14 @@
+<view class="page">
+  <view class="brand">AuraCue</view>
+  <view class="title">Share your Lucky Aura</view>
+  <view class="story-card">Soft Confidence</view>
+  <view class="channels">
+    <button>WeChat</button>
+    <button>Moments</button>
+    <button>Instagram Story</button>
+    <button bindtap="saveImage">Save Image</button>
+    <button bindtap="copyLink">Copy Link</button>
+    <button>More</button>
+  </view>
+  <button class="cancel" bindtap="cancel">Cancel</button>
+</view>

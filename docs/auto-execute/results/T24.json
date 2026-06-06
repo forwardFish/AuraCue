@@ -1,0 +1,115 @@
+{
+  "taskId": "T24",
+  "taskName": "Simulated Owner E2E Full Click Journey",
+  "status": "PASS",
+  "verdict": "PASS",
+  "completedAt": "2026-05-26T17:23:34.4663648+08:00",
+  "scope": "Executed SCN-001 through SCN-016 owner exact-click journey with route/UI state, API call, DB readback, analytics, local-only, and P1 exclusion evidence.",
+  "summary": {
+    "scenarioCount": 20,
+    "pageCount": 18,
+    "clickCount": 54,
+    "apiCount": 111,
+    "dbReadbackCount": 21,
+    "analyticsEventCount": 75,
+    "missingScenarioSteps": [],
+    "missingUiIds": [],
+    "missingApiIds": [],
+    "unresolvedGaps": []
+  },
+  "requirementsCovered": [
+    "REQ-001",
+    "REQ-002",
+    "REQ-003",
+    "REQ-004",
+    "REQ-005",
+    "REQ-006",
+    "REQ-007",
+    "REQ-008",
+    "REQ-009",
+    "REQ-010",
+    "REQ-011",
+    "REQ-012",
+    "REQ-013",
+    "REQ-014",
+    "REQ-015",
+    "REQ-016",
+    "REQ-017",
+    "REQ-018",
+    "REQ-019",
+    "REQ-020"
+  ],
+  "ownerScenariosCovered": [
+    "SCN-001",
+    "SCN-002",
+    "SCN-003",
+    "SCN-004",
+    "SCN-005",
+    "SCN-006",
+    "SCN-007",
+    "SCN-008",
+    "SCN-009",
+    "SCN-010",
+    "SCN-011",
+    "SCN-012",
+    "SCN-013",
+    "SCN-014",
+    "SCN-015",
+    "SCN-016"
+  ],
+  "commandsRun": [
+    {
+      "command": "pnpm --filter @auracue/wechat-mini test:t24",
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "notes": "PowerShell execution policy blocked pnpm.ps1 shim; reran through pnpm.cmd without changing policy."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t24",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T24/owner-e2e.log"
+    },
+    {
+      "command": "pnpm.cmd lint",
+      "status": "PASS"
+    },
+    {
+      "command": "pnpm.cmd typecheck",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/traces/T24/owner-e2e-summary.json",
+    "docs/auto-execute/traces/T24/all-click-targets.json",
+    "docs/auto-execute/traces/T24/api-db-readbacks.json",
+    "docs/auto-execute/traces/T24/analytics-events.json",
+    "docs/auto-execute/traces/T24/owner-main-flow.json",
+    "docs/auto-execute/traces/T24/unlock-flow.json",
+    "docs/auto-execute/traces/T24/generation-retry.json",
+    "docs/auto-execute/logs/T24/owner-e2e.log"
+  ],
+  "changedFiles": [
+    "apps/wechat-mini/package.json",
+    "apps/wechat-mini/tests/t24-owner-e2e-full-click-journey.test.mjs",
+    "docs/auto-execute/logs/T24/owner-e2e.log",
+    "docs/auto-execute/results/T24.json",
+    "docs/auto-execute/traces/T24/*.json",
+    "docs/auto-execute/latest/T24-HANDOFF.md"
+  ],
+  "localOnly": {
+    "realWeChatPay": false,
+    "realCloudWrites": false,
+    "productionDb": false,
+    "productionAi": false,
+    "productionAnalytics": false,
+    "secretsUsed": false
+  },
+  "blockers": [],
+  "nextStepNotes": [
+    "T25 should consume the accumulated evidence and final-gate honestly.",
+    "T24 does not claim final product acceptance; it only proves the owner E2E click journey evidence for this task."
+  ]
+}

@@ -1,0 +1,381 @@
+{
+  "generatedAt": "2026-06-05T10:11:53.524Z",
+  "verdict": "PASS",
+  "coveredIds": [
+    "API-001",
+    "API-002",
+    "API-003",
+    "API-004",
+    "API-005",
+    "API-006",
+    "API-007",
+    "API-008",
+    "API-009",
+    "API-010",
+    "API-011",
+    "API-012",
+    "API-013"
+  ],
+  "sourceEvidence": [
+    "docs/auto-execute/evidence/web/T03/db-readback.json",
+    "docs/auto-execute/evidence/web/T05/api-transcript.json",
+    "docs/auto-execute/evidence/web/T05/db-readback.json",
+    "docs/auto-execute/evidence/web/T06/api-transcript.json",
+    "docs/auto-execute/evidence/web/T06/db-readback.json",
+    "docs/auto-execute/evidence/web/T06/mock-transcript.json",
+    "docs/auto-execute/evidence/web/T07/api-transcript.json",
+    "docs/auto-execute/evidence/web/T07/db-readback.json",
+    "docs/auto-execute/evidence/web/T07/renderer-proof.json"
+  ],
+  "endpoints": [
+    {
+      "id": "API-001",
+      "endpoint": "POST /api/v1/identity/anonymous",
+      "status": "PASS",
+      "cases": [
+        {
+          "name": "create",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        },
+        {
+          "name": "idempotent",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        },
+        {
+          "name": "invalid platform",
+          "httpStatus": 400,
+          "ok": false,
+          "errorCode": "VALIDATION_ERROR"
+        }
+      ]
+    },
+    {
+      "id": "API-002",
+      "endpoint": "GET /api/v1/aura-cards/today",
+      "status": "PASS",
+      "cases": [
+        {
+          "name": "not found",
+          "httpStatus": 404,
+          "ok": false,
+          "errorCode": "NOT_FOUND"
+        },
+        {
+          "name": "empty",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        },
+        {
+          "name": "active",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        }
+      ]
+    },
+    {
+      "id": "API-003",
+      "endpoint": "POST /api/v1/uploads/outfit",
+      "status": "PASS",
+      "cases": [
+        {
+          "name": "image/jpeg",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        },
+        {
+          "name": "image/png",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        },
+        {
+          "name": "image/webp",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        },
+        {
+          "name": "too large",
+          "httpStatus": 413,
+          "ok": false,
+          "errorCode": "FILE_TOO_LARGE"
+        },
+        {
+          "name": "bad type",
+          "httpStatus": 415,
+          "ok": false,
+          "errorCode": "UNSUPPORTED_FILE_TYPE"
+        }
+      ]
+    },
+    {
+      "id": "API-004",
+      "endpoint": "POST /api/v1/draw-sessions/start",
+      "status": "PASS",
+      "cases": [
+        {
+          "name": "missing mood",
+          "httpStatus": 400,
+          "ok": false,
+          "errorCode": "VALIDATION_ERROR"
+        },
+        {
+          "name": "no upload",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        },
+        {
+          "name": "idempotent",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        },
+        {
+          "name": "with upload",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        },
+        {
+          "name": "upload not found",
+          "httpStatus": 404,
+          "ok": false,
+          "errorCode": "NOT_FOUND"
+        }
+      ]
+    },
+    {
+      "id": "API-005",
+      "endpoint": "POST /api/v1/aura-cards/generate",
+      "status": "PASS",
+      "cases": [
+        {
+          "name": "missing drawPosition",
+          "httpStatus": 400,
+          "ok": false,
+          "errorCode": "VALIDATION_ERROR"
+        },
+        {
+          "name": "draw session not found",
+          "httpStatus": 404,
+          "ok": false,
+          "errorCode": "NOT_FOUND"
+        },
+        {
+          "name": "mock fallback success",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        },
+        {
+          "name": "idempotent",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        }
+      ]
+    },
+    {
+      "id": "API-006",
+      "endpoint": "GET /api/v1/generation-jobs/:jobId",
+      "status": "PASS",
+      "cases": [
+        {
+          "name": "success readback",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        },
+        {
+          "name": "not found",
+          "httpStatus": 404,
+          "ok": false,
+          "errorCode": "NOT_FOUND"
+        }
+      ]
+    },
+    {
+      "id": "API-007",
+      "endpoint": "GET /api/v1/aura-cards/:cardId",
+      "status": "PASS",
+      "cases": [
+        {
+          "name": "success no secrets",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        },
+        {
+          "name": "not found",
+          "httpStatus": 404,
+          "ok": false,
+          "errorCode": "NOT_FOUND"
+        },
+        {
+          "name": "activation state readback",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        }
+      ]
+    },
+    {
+      "id": "API-008",
+      "endpoint": "POST /api/v1/aura-cards/:cardId/render",
+      "status": "PASS",
+      "cases": [
+        {
+          "name": "invalid platform",
+          "httpStatus": 400,
+          "ok": false,
+          "errorCode": "VALIDATION_ERROR"
+        },
+        {
+          "name": "success 1080x1920",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        },
+        {
+          "name": "idempotent",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        }
+      ]
+    },
+    {
+      "id": "API-009",
+      "endpoint": "POST /api/v1/aura-cards/:cardId/activation/start",
+      "status": "PASS",
+      "cases": [
+        {
+          "name": "anchor required",
+          "httpStatus": 400,
+          "ok": false,
+          "errorCode": "VALIDATION_ERROR"
+        },
+        {
+          "name": "success",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        },
+        {
+          "name": "idempotent",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        }
+      ]
+    },
+    {
+      "id": "API-010",
+      "endpoint": "POST /api/v1/activations/:activationId/seal",
+      "status": "PASS",
+      "cases": [
+        {
+          "name": "hold too short",
+          "httpStatus": 400,
+          "ok": false,
+          "errorCode": "HOLD_TOO_SHORT"
+        },
+        {
+          "name": "wrong user",
+          "httpStatus": 404,
+          "ok": false,
+          "errorCode": "NOT_FOUND"
+        },
+        {
+          "name": "success",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        },
+        {
+          "name": "idempotent repeat",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        }
+      ]
+    },
+    {
+      "id": "API-011",
+      "endpoint": "POST /api/v1/aura-cards/:cardId/save",
+      "status": "PASS",
+      "cases": [
+        {
+          "name": "not found",
+          "httpStatus": 404,
+          "ok": false,
+          "errorCode": "NOT_FOUND"
+        },
+        {
+          "name": "success",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        },
+        {
+          "name": "idempotent",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        }
+      ]
+    },
+    {
+      "id": "API-012",
+      "endpoint": "POST /api/v1/aura-cards/:cardId/share",
+      "status": "PASS",
+      "cases": [
+        {
+          "name": "channel validation",
+          "httpStatus": 400,
+          "ok": false,
+          "errorCode": "VALIDATION_ERROR"
+        },
+        {
+          "name": "success",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        }
+      ]
+    },
+    {
+      "id": "API-013",
+      "endpoint": "POST /api/v1/analytics/events",
+      "status": "PASS",
+      "cases": [
+        {
+          "name": "secret-like payload rejected",
+          "httpStatus": 400,
+          "ok": false,
+          "errorCode": "VALIDATION_ERROR"
+        },
+        {
+          "name": "event whitelist",
+          "httpStatus": 400,
+          "ok": false,
+          "errorCode": "VALIDATION_ERROR"
+        },
+        {
+          "name": "success",
+          "httpStatus": 200,
+          "ok": true,
+          "errorCode": null
+        }
+      ]
+    }
+  ]
+}

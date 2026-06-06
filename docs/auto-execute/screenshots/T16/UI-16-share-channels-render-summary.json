@@ -1,0 +1,66 @@
+{
+  "uiId": "UI-16",
+  "route": "/share/:id/channels",
+  "sourceReference": "docs/UI/小程序/10B-分享_渠道选择.png",
+  "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/10b/code.html",
+  "requirementIds": [
+    "REQ-014",
+    "REQ-017"
+  ],
+  "apiIds": [
+    "API-008",
+    "API-010"
+  ],
+  "ownerScenario": "SCN-013",
+  "cardId": "card-unlocked-001",
+  "title": "Share your Lucky Aura",
+  "channels": [
+    {
+      "id": "wechat",
+      "label": "WeChat",
+      "accent": "#07c160",
+      "apiChannel": "wechat"
+    },
+    {
+      "id": "moments",
+      "label": "Moments",
+      "accent": "#18b77a",
+      "apiChannel": "moments"
+    },
+    {
+      "id": "xiaohongshu",
+      "label": "Xiaohongshu",
+      "accent": "#ff2442",
+      "apiChannel": "story"
+    },
+    {
+      "id": "instagram-story",
+      "label": "Instagram Story",
+      "accent": "#d84bb5",
+      "apiChannel": "story"
+    },
+    {
+      "id": "save-image",
+      "label": "Save Image",
+      "accent": "#64748b",
+      "apiChannel": "save_image"
+    },
+    {
+      "id": "copy-link",
+      "label": "Copy Link",
+      "accent": "#8b5cf6",
+      "apiChannel": "copy_link"
+    }
+  ],
+  "actions": {
+    "cancel": {
+      "controlId": "cancel-share-channel",
+      "label": "Cancel",
+      "route": "/share/:id"
+    }
+  },
+  "localOnly": {
+    "externalPlatform": "forbidden in tests; all channel taps are mocked local events",
+    "analytics": "local fixture collector"
+  }
+}

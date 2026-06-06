@@ -1,0 +1,19 @@
+{
+  "taskId": "T22",
+  "uiId": "UI-07",
+  "title": "Activate Today's Aura",
+  "route": "/activate/:id",
+  "pagePath": "pages/activate/index",
+  "state": "activate-hold-to-seal",
+  "sourceReference": "docs/UI/小程序/P0-07-Activate-选择锚点并长按封存.png",
+  "referencePresent": true,
+  "actualScreenshotPresent": false,
+  "diffImagePresent": false,
+  "metricsPresent": false,
+  "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+  "requiredEvidence": {
+    "actualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-07.png",
+    "diffImage": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-07.png",
+    "pixelMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-07.json"
+  }
+}

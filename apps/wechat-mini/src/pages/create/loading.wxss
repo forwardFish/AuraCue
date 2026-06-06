@@ -1,0 +1,200 @@
+page {
+  background: #fdf9f3;
+}
+
+.loading-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 44px 24px 18px;
+  box-sizing: border-box;
+  background: radial-gradient(circle at 50% 48%, #fff5ed 0%, #fdf9f3 100%);
+  color: #111827;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.loading-glow {
+  position: absolute;
+  top: 80px;
+  left: -140px;
+  right: -140px;
+  height: 540px;
+  background: radial-gradient(circle, rgba(235, 178, 126, 0.2) 0%, rgba(253, 249, 243, 0) 70%);
+}
+
+.top-bar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.round-button {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #c5a070;
+  font-size: 26px;
+  line-height: 38px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.05);
+}
+
+.round-button::after {
+  border: 0;
+}
+
+.brand,
+.title {
+  font-family: Georgia, serif;
+}
+
+.brand {
+  color: #1a2340;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.loading-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.spark {
+  color: #c5a070;
+  opacity: 0.68;
+  margin: 6px 0;
+}
+
+.title {
+  display: block;
+  color: #1a2340;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.title-emphasis {
+  color: #c5a070;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.subtitle {
+  display: block;
+  color: #71717a;
+  font-size: 14px;
+  line-height: 21px;
+  margin: 12px 0 34px;
+}
+
+.ritual-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px dashed rgba(197, 160, 112, 0.42);
+  border-radius: 50%;
+}
+
+.orbit-one {
+  width: 314px;
+  height: 174px;
+  transform: rotate(-15deg);
+}
+
+.orbit-two {
+  width: 260px;
+  height: 244px;
+  transform: rotate(12deg);
+  opacity: 0.72;
+}
+
+.tarot-card {
+  position: relative;
+  width: 184px;
+  height: 280px;
+  border-radius: 22px;
+  border: 6px solid rgba(197, 160, 112, 0.26);
+  background: linear-gradient(145deg, #1a2340, #8757a6 42%, #f0b66e);
+  box-shadow: 0 28px 54px rgba(26, 35, 64, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: Georgia, serif;
+  font-size: 22px;
+}
+
+.tarot-card::after {
+  content: "";
+  position: absolute;
+  inset: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  border-radius: 16px;
+}
+
+.card-glow {
+  width: 290px;
+  height: 70px;
+  margin: -24px auto 18px;
+  background: radial-gradient(ellipse at center, rgba(255, 235, 180, 0.62), rgba(255, 255, 255, 0) 70%);
+  filter: blur(10px);
+}
+
+.progress-card {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 26px;
+  padding: 20px 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+}
+
+.progress-step {
+  color: #71717a;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.step-dot {
+  width: 38px;
+  height: 38px;
+  margin: 0 auto 8px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 2px solid #f2eadf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(26, 35, 64, 0.6);
+  font-weight: 700;
+}
+
+.active {
+  color: #c5a070;
+}
+
+.active .step-dot {
+  border-color: #c5a070;
+  color: #c5a070;
+}
+
+.footnote {
+  color: #71717a;
+  font-size: 12px;
+  line-height: 19px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+}

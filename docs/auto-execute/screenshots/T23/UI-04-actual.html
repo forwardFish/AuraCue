@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AuraCue UI-04 Incomplete Selection</title>
+  <style>
+    body { margin: 0; background: #fffaf7; color: #10213d; font-family: Inter, system-ui, sans-serif; }
+    .phone { width: 390px; min-height: 844px; margin: 0 auto; padding: 54px 24px 28px; box-sizing: border-box; background: linear-gradient(180deg,#fdf8f3 0%,#fdf8f3 72%,#f7dce9 100%); }
+    .top { display: grid; grid-template-columns: 48px 1fr 48px; align-items: center; margin-bottom: 58px; }
+    .back { width: 44px; height: 44px; border-radius: 999px; border: 1px solid #f3c9d8; background: rgba(255,255,255,.68); color: #10213d; font-size: 24px; }
+    .brand, h2, .cta { font-family: Georgia, serif; }
+    .brand { text-align: center; font-size: 28px; font-weight: 700; }
+    h2 { text-align: center; font-size: 24px; margin: 0 0 30px; }
+    .scenes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 48px; }
+    .scene { border: 1px solid #f2c9d4; background: rgba(255,255,255,.52); border-radius: 22px; min-height: 112px; color: #10213d; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 6px; }
+    .scene::after, .chip::after, .cta::after { border: 0; }
+    .scene.selected { background: linear-gradient(180deg,#ff6b98 0%,#ef3470 100%); color: white; box-shadow: 0 0 22px rgba(239,52,112,.34); }
+    .scene span { font-size: 11px; }
+    .scene strong { font-size: 15px; font-weight: 600; line-height: 1.05; }
+    .scene small { font-size: 10px; line-height: 1; }
+    .divider { display: flex; align-items: center; gap: 16px; color: #efb47d; margin-bottom: 46px; }
+    .divider::before, .divider::after { content: ""; height: 1px; flex: 1; background: #f1d8d4; }
+    .chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 50px; }
+    .chip { height: 44px; border-radius: 999px; border: 1px solid #efc7d2; background: rgba(255,255,255,.48); color: #10213d; font-size: 15px; }
+    .validation { margin: 0 16px 26px; min-height: 64px; border-radius: 22px; border: 1px solid #efc7d2; color: #ec3c77; background: rgba(255,255,255,.55); display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 17px; }
+    .cta { width: calc(100% - 32px); margin: 0 16px; min-height: 58px; border: 0; border-radius: 999px; color: #88898d; background: #e7e1dd; font-size: 22px; box-shadow: inset 0 2px 6px rgba(0,0,0,.06); }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <header class="top"><button class="back">‹</button><div class="brand">✦ AuraCue ✦</div><div></div></header>
+    <h2>Choose your scene</h2>
+    <section class="scenes"><button class="scene" data-scene="date"><span>heart</span><strong>Date</strong></button><button class="scene selected" data-scene="work"><span>briefcase</span><strong>Work</strong></button><button class="scene" data-scene="party"><span>party</span><strong>Party</strong></button><button class="scene" data-scene="luck"><span>person</span><strong>Just me</strong><small>Just need luck</small></button></section>
+    <div class="divider">✦</div>
+    <h2>Choose your energy</h2>
+    <section class="chips"><button class="chip" data-energy="confidence">Confidence</button><button class="chip" data-energy="calm">Calm</button><button class="chip" data-energy="love">Love</button><button class="chip" data-energy="focus">Focus</button><button class="chip" data-energy="luck">Luck</button><button class="chip" data-energy="charm">Charm</button></section>
+    <section class="validation">✦ Choose one energy to continue.</section>
+    <button class="cta" disabled>✦ Generate My Aura Card</button>
+  </main>
+</body>
+</html>

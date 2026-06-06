@@ -1,0 +1,12 @@
+<view class="page">
+  <view class="brand">AuraCue</view>
+  <view class="hero-title">{{title}}</view>
+  <view class="hero-copy">{{subtitle}}</view>
+  <view class="mood-list">
+    <button class="mood selected">Confident</button>
+    <button class="mood">Romantic</button>
+    <button class="mood">Calm</button>
+  </view>
+  <button class="primary" bindtap="startAuraCard">Start My Aura Card</button>
+  <view class="trust">Private. Personal. Just for you.</view>
+</view>

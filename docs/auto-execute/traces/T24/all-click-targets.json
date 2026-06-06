@@ -1,0 +1,189 @@
+{
+  "status": "PASS",
+  "clickCount": 12,
+  "coveredUiIds": [
+    "UI-01",
+    "UI-02",
+    "UI-03",
+    "UI-04",
+    "UI-05",
+    "UI-06",
+    "UI-07",
+    "UI-08",
+    "UI-09",
+    "UI-10",
+    "UI-11",
+    "UI-12"
+  ],
+  "targets": [
+    {
+      "scenarioId": "SCN-001",
+      "stepId": "01",
+      "uiId": "UI-01",
+      "controlId": "start-my-aura-card",
+      "label": "Start My Aura Card",
+      "expectedRoute": "/",
+      "actualRoute": "/",
+      "status": "PASS",
+      "apiIds": [
+        "API-010"
+      ]
+    },
+    {
+      "scenarioId": "SCN-002",
+      "stepId": "02",
+      "uiId": "UI-02",
+      "controlId": "continue",
+      "label": "Continue",
+      "expectedRoute": "/create/context",
+      "actualRoute": "/create/context",
+      "status": "PASS",
+      "apiIds": [
+        "API-010"
+      ]
+    },
+    {
+      "scenarioId": "SCN-003",
+      "stepId": "03",
+      "uiId": "UI-03",
+      "controlId": "skip-for-today",
+      "label": "Skip for Today",
+      "expectedRoute": "/create/upload",
+      "actualRoute": "/create/upload",
+      "status": "PASS",
+      "apiIds": [
+        "API-010"
+      ]
+    },
+    {
+      "scenarioId": "SCN-004",
+      "stepId": "04",
+      "uiId": "UI-04",
+      "controlId": "reveal-my-aura",
+      "label": "Reveal My Aura",
+      "expectedRoute": "/create/draw",
+      "actualRoute": "/create/draw",
+      "status": "PASS",
+      "apiIds": [
+        "API-001",
+        "API-010"
+      ]
+    },
+    {
+      "scenarioId": "SCN-004",
+      "stepId": "05",
+      "uiId": "UI-05",
+      "controlId": "local-generation-completes",
+      "label": "local generation completes",
+      "expectedRoute": "/create/draw",
+      "actualRoute": "/create/draw",
+      "status": "PASS",
+      "apiIds": [
+        "API-002",
+        "API-010"
+      ]
+    },
+    {
+      "scenarioId": "SCN-005",
+      "stepId": "06",
+      "uiId": "UI-06",
+      "controlId": "activate-today-s-aura",
+      "label": "Activate Today's Aura",
+      "expectedRoute": "/result/:id",
+      "actualRoute": "/result/:id",
+      "status": "PASS",
+      "apiIds": [
+        "API-003",
+        "API-010"
+      ]
+    },
+    {
+      "scenarioId": "SCN-006",
+      "stepId": "07",
+      "uiId": "UI-07",
+      "controlId": "hold-to-seal-your-aura",
+      "label": "Hold to Seal Your Aura",
+      "expectedRoute": "/activate/:id",
+      "actualRoute": "/activate/:id",
+      "status": "PASS",
+      "apiIds": [
+        "API-004",
+        "API-010"
+      ]
+    },
+    {
+      "scenarioId": "SCN-007",
+      "stepId": "08",
+      "uiId": "UI-08",
+      "controlId": "save-card",
+      "label": "Save Card",
+      "expectedRoute": "/activated/:id",
+      "actualRoute": "/activated/:id",
+      "status": "PASS",
+      "apiIds": [
+        "API-004",
+        "API-007",
+        "API-008",
+        "API-010"
+      ]
+    },
+    {
+      "scenarioId": "SCN-008",
+      "stepId": "09",
+      "uiId": "UI-09",
+      "controlId": "share-to-friend",
+      "label": "Share to Friend",
+      "expectedRoute": "/share/:id",
+      "actualRoute": "/share/:id",
+      "status": "PASS",
+      "apiIds": [
+        "API-008",
+        "API-009",
+        "API-010"
+      ]
+    },
+    {
+      "scenarioId": "SCN-008",
+      "stepId": "10",
+      "uiId": "UI-10",
+      "controlId": "cancel",
+      "label": "Cancel",
+      "expectedRoute": "/share/:id/channels",
+      "actualRoute": "/share/:id/channels",
+      "status": "PASS",
+      "apiIds": [
+        "API-008",
+        "API-010"
+      ]
+    },
+    {
+      "scenarioId": "SCN-009",
+      "stepId": "11",
+      "uiId": "UI-11",
+      "controlId": "back-home",
+      "label": "Back Home",
+      "expectedRoute": "/saved/:id",
+      "actualRoute": "/saved/:id",
+      "status": "PASS",
+      "apiIds": [
+        "API-007",
+        "API-010"
+      ]
+    },
+    {
+      "scenarioId": "SCN-010",
+      "stepId": "12",
+      "uiId": "UI-12",
+      "controlId": "change-context",
+      "label": "Change Context",
+      "expectedRoute": "/error/network",
+      "actualRoute": "/error/network",
+      "status": "PASS",
+      "apiIds": [
+        "API-001",
+        "API-002",
+        "API-010"
+      ]
+    }
+  ]
+}

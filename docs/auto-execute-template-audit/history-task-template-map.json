@@ -1,0 +1,1808 @@
+{
+  "summary": {
+    "task_files": 218,
+    "projects": {
+      "scoremap": 80,
+      "AuraCue": 46,
+      "xwstarmap": 36,
+      "SnapRep": 24,
+      "ShopOps": 12,
+      "finahuntV2": 10,
+      "printersheet": 10
+    },
+    "primary_counts": {
+      "TPL-FRONTEND-PAGE": 59,
+      "TPL-AI-PROVIDER": 22,
+      "TPL-PAYMENT-ENTITLEMENT": 22,
+      "TPL-API-DOMAIN": 13,
+      "TPL-DEV-FEATURE": 12,
+      "TPL-MINIAPP-PAGE": 8,
+      "TPL-HARNESS-EVIDENCE-GATE": 7,
+      "TPL-DATA-MODEL-MIGRATION": 6,
+      "TPL-SCREENSHOT-PIXEL-HARNESS": 6,
+      "TPL-ADMIN-WORKFLOW": 6,
+      "TPL-BUSINESS-ENGINE": 6,
+      "TPL-AUTH-IDENTITY": 6,
+      "TPL-API-DB-E2E": 5,
+      "TPL-MINIAPP-SHELL": 4,
+      "TPL-DESIGN-TOKEN-ASSET-INVENTORY": 4,
+      "TPL-REPORT-CARD-RENDERER": 4,
+      "TPL-CRAWLER-PIPELINE": 4,
+      "TPL-FINAL-GATE": 4,
+      "TPL-LOCAL-ONLY-GUARD": 3,
+      "TPL-QUOTA-RATE-LIMIT": 2,
+      "TPL-EXPORT-DOWNLOAD": 2,
+      "TPL-OWNER-E2E": 2,
+      "TPL-ORCH-T00": 2,
+      "TPL-DATA-IMPORT": 2,
+      "TPL-ASYNC-JOB-WORKFLOW": 1,
+      "TPL-VISUAL-COMPARE": 1,
+      "TPL-SCAFFOLD": 1,
+      "TPL-FRONTEND-SHELL": 1,
+      "TPL-METRIC-DELTA-ENGINE": 1,
+      "TPL-RELEASE-RUNBOOK": 1,
+      "TPL-OWNER-SCENARIO": 1
+    },
+    "missing_with_current_templates": {
+      "TPL-MINIAPP-PAGE": 8,
+      "TPL-HARNESS-EVIDENCE-GATE": 7,
+      "TPL-SCREENSHOT-PIXEL-HARNESS": 6,
+      "TPL-MINIAPP-SHELL": 4,
+      "TPL-DESIGN-TOKEN-ASSET-INVENTORY": 4,
+      "TPL-REPORT-CARD-RENDERER": 4,
+      "TPL-QUOTA-RATE-LIMIT": 2,
+      "TPL-ASYNC-JOB-WORKFLOW": 1,
+      "TPL-METRIC-DELTA-ENGINE": 1
+    },
+    "missing_with_staged_templates": {},
+    "current_template_count": 47,
+    "staged_template_count": 11,
+    "union_template_count": 58
+  },
+  "rows": [
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-codex-exec-prompts-split.md",
+      "name": "auracue-codex-exec-prompts-split.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-codex-exec-prompts.md",
+      "name": "auracue-codex-exec-prompts.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T00-intake-source-inventory-harness-decision.md",
+      "name": "T00-intake-source-inventory-harness-decision.md",
+      "primary": "TPL-HARNESS-EVIDENCE-GATE",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T01-scaffold-mini-program-backend-shared-workspace.md",
+      "name": "T01-scaffold-mini-program-backend-shared-workspace.md",
+      "primary": "TPL-MINIAPP-SHELL",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T02-extract-ui-tokens-and-asset-inventory.md",
+      "name": "T02-extract-ui-tokens-and-asset-inventory.md",
+      "primary": "TPL-DESIGN-TOKEN-ASSET-INVENTORY",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T03-local-db-repository-and-seed-fixtures.md",
+      "name": "T03-local-db-repository-and-seed-fixtures.md",
+      "primary": "TPL-DATA-MODEL-MIGRATION",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T04-generation-job-and-structured-card-api.md",
+      "name": "T04-generation-job-and-structured-card-api.md",
+      "primary": "TPL-ASYNC-JOB-WORKFLOW",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T05-card-result-and-entitlement-read-apis.md",
+      "name": "T05-card-result-and-entitlement-read-apis.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T06-mock-unlock-payment-invite-apis.md",
+      "name": "T06-mock-unlock-payment-invite-apis.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T07-save-share-renderer-analytics-apis.md",
+      "name": "T07-save-share-renderer-analytics-apis.md",
+      "primary": "TPL-API-DOMAIN",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T08-mini-program-shell-routes-state-api-client.md",
+      "name": "T08-mini-program-shell-routes-state-api-client.md",
+      "primary": "TPL-MINIAPP-SHELL",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T09-home-page-one-to-one.md",
+      "name": "T09-home-page-one-to-one.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T10-scene-energy-selection-pages.md",
+      "name": "T10-scene-energy-selection-pages.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T11-generation-ritual-and-network-error-pages.md",
+      "name": "T11-generation-ritual-and-network-error-pages.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T12-free-preview-locked-result.md",
+      "name": "T12-free-preview-locked-result.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T13-unlock-and-invite-pages.md",
+      "name": "T13-unlock-and-invite-pages.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T14-mock-payment-states.md",
+      "name": "T14-mock-payment-states.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T15-full-result-page.md",
+      "name": "T15-full-result-page.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T16-share-and-save-pages.md",
+      "name": "T16-share-and-save-pages.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T17-share-card-renderer.md",
+      "name": "T17-share-card-renderer.md",
+      "primary": "TPL-REPORT-CARD-RENDERER",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T18-analytics-and-safety-copy-guard.md",
+      "name": "T18-analytics-and-safety-copy-guard.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T19-all-page-simulated-tests.md",
+      "name": "T19-all-page-simulated-tests.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T20-all-api-db-readback-tests.md",
+      "name": "T20-all-api-db-readback-tests.md",
+      "primary": "TPL-API-DB-E2E",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T21-frontend-backend-contract-tests.md",
+      "name": "T21-frontend-backend-contract-tests.md",
+      "primary": "TPL-API-DOMAIN",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T22-visual-one-to-one-capture-and-diff.md",
+      "name": "T22-visual-one-to-one-capture-and-diff.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T23-visual-repair-loop.md",
+      "name": "T23-visual-repair-loop.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-tasks\\T24-simulated-owner-e2e-full-click-journey.md",
+      "name": "T24-simulated-owner-e2e-full-click-journey.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-ui-one-to-one-codex-exec-prompts.md",
+      "name": "auracue-ui-one-to-one-codex-exec-prompts.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-ui-one-to-one-repair-tasks\\T26-visual-capture-pixel-diff-harness.md",
+      "name": "T26-visual-capture-pixel-diff-harness.md",
+      "primary": "TPL-SCREENSHOT-PIXEL-HARNESS",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-ui-one-to-one-repair-tasks\\T27-home-create-flow-one-to-one-repair.md",
+      "name": "T27-home-create-flow-one-to-one-repair.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-ui-one-to-one-repair-tasks\\T28-result-unlock-invite-one-to-one-repair.md",
+      "name": "T28-result-unlock-invite-one-to-one-repair.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-ui-one-to-one-repair-tasks\\T29-payment-full-result-one-to-one-repair.md",
+      "name": "T29-payment-full-result-one-to-one-repair.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-ui-one-to-one-repair-tasks\\T30-share-save-error-one-to-one-repair.md",
+      "name": "T30-share-save-error-one-to-one-repair.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-ui-one-to-one-repair-tasks\\T31-all-ui-raster-diff-repair-loop.md",
+      "name": "T31-all-ui-raster-diff-repair-loop.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-ui-one-to-one-repair-tasks\\T32-click-route-regression-after-visual-repair.md",
+      "name": "T32-click-route-regression-after-visual-repair.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-ui-one-to-one-repair-tasks\\T33-final-ui-one-to-one-gate.md",
+      "name": "T33-final-ui-one-to-one-gate.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-unfinished-ui-one-to-one-codex-exec-prompts.md",
+      "name": "auracue-unfinished-ui-one-to-one-codex-exec-prompts.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-unfinished-ui-one-to-one-repair-tasks\\U01-current-state-intake.md",
+      "name": "U01-current-state-intake.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-unfinished-ui-one-to-one-repair-tasks\\U02-home-create-flow-visual-repair.md",
+      "name": "U02-home-create-flow-visual-repair.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-unfinished-ui-one-to-one-repair-tasks\\U03-result-unlock-invite-visual-repair.md",
+      "name": "U03-result-unlock-invite-visual-repair.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-unfinished-ui-one-to-one-repair-tasks\\U04-payment-full-result-visual-repair.md",
+      "name": "U04-payment-full-result-visual-repair.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-unfinished-ui-one-to-one-repair-tasks\\U05-share-save-error-visual-repair.md",
+      "name": "U05-share-save-error-visual-repair.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-unfinished-ui-one-to-one-repair-tasks\\U06-all-screen-visual-convergence.md",
+      "name": "U06-all-screen-visual-convergence.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\auracue-unfinished-ui-one-to-one-repair-tasks\\U07-final-regression-and-gate.md",
+      "name": "U07-final-regression-and-gate.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\intake\\T00-harness-decision.md",
+      "name": "T00-harness-decision.md",
+      "primary": "TPL-HARNESS-EVIDENCE-GATE",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "AuraCue",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\intake\\T00-source-inventory.md",
+      "name": "T00-source-inventory.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "finahuntV2",
+      "path": "D:\\lyh\\agent\\agent-frame\\finahuntV2\\docs\\auto-execute\\21-task-01-requirements-ui-api-inventory.md",
+      "name": "21-task-01-requirements-ui-api-inventory.md",
+      "primary": "TPL-API-DOMAIN",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "finahuntV2",
+      "path": "D:\\lyh\\agent\\agent-frame\\finahuntV2\\docs\\auto-execute\\21-task-02-harness-and-evidence-gates.md",
+      "name": "21-task-02-harness-and-evidence-gates.md",
+      "primary": "TPL-HARNESS-EVIDENCE-GATE",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "finahuntV2",
+      "path": "D:\\lyh\\agent\\agent-frame\\finahuntV2\\docs\\auto-execute\\21-task-03-repo-architecture-foundation.md",
+      "name": "21-task-03-repo-architecture-foundation.md",
+      "primary": "TPL-DATA-MODEL-MIGRATION",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "finahuntV2",
+      "path": "D:\\lyh\\agent\\agent-frame\\finahuntV2\\docs\\auto-execute\\21-task-04-public-api-data-contract.md",
+      "name": "21-task-04-public-api-data-contract.md",
+      "primary": "TPL-API-DOMAIN",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "finahuntV2",
+      "path": "D:\\lyh\\agent\\agent-frame\\finahuntV2\\docs\\auto-execute\\21-task-05-web-display-ui-acceptance.md",
+      "name": "21-task-05-web-display-ui-acceptance.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "finahuntV2",
+      "path": "D:\\lyh\\agent\\agent-frame\\finahuntV2\\docs\\auto-execute\\21-task-06-miniprogram-ui-acceptance.md",
+      "name": "21-task-06-miniprogram-ui-acceptance.md",
+      "primary": "TPL-MINIAPP-PAGE",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "finahuntV2",
+      "path": "D:\\lyh\\agent\\agent-frame\\finahuntV2\\docs\\auto-execute\\21-task-07-admin-review-publish-acceptance.md",
+      "name": "21-task-07-admin-review-publish-acceptance.md",
+      "primary": "TPL-ADMIN-WORKFLOW",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "finahuntV2",
+      "path": "D:\\lyh\\agent\\agent-frame\\finahuntV2\\docs\\auto-execute\\21-task-08-crawler-normalize-ai-pipeline.md",
+      "name": "21-task-08-crawler-normalize-ai-pipeline.md",
+      "primary": "TPL-CRAWLER-PIPELINE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "finahuntV2",
+      "path": "D:\\lyh\\agent\\agent-frame\\finahuntV2\\docs\\auto-execute\\21-task-09-full-integration-verification.md",
+      "name": "21-task-09-full-integration-verification.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "finahuntV2",
+      "path": "D:\\lyh\\agent\\agent-frame\\finahuntV2\\docs\\auto-execute\\21-task-10-final-acceptance-reporting.md",
+      "name": "21-task-10-final-acceptance-reporting.md",
+      "primary": "TPL-FINAL-GATE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "printersheet",
+      "path": "D:\\lyh\\agent\\agent-frame\\printersheet\\docs\\auto-execute\\codex-exec-prompts\\task-01.md",
+      "name": "task-01.md",
+      "primary": "TPL-DEV-FEATURE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "printersheet",
+      "path": "D:\\lyh\\agent\\agent-frame\\printersheet\\docs\\auto-execute\\codex-exec-prompts\\task-02.md",
+      "name": "task-02.md",
+      "primary": "TPL-DEV-FEATURE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "printersheet",
+      "path": "D:\\lyh\\agent\\agent-frame\\printersheet\\docs\\auto-execute\\codex-exec-prompts\\task-03.md",
+      "name": "task-03.md",
+      "primary": "TPL-DEV-FEATURE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "printersheet",
+      "path": "D:\\lyh\\agent\\agent-frame\\printersheet\\docs\\auto-execute\\codex-exec-prompts\\task-04.md",
+      "name": "task-04.md",
+      "primary": "TPL-DEV-FEATURE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "printersheet",
+      "path": "D:\\lyh\\agent\\agent-frame\\printersheet\\docs\\auto-execute\\codex-exec-prompts\\task-05.md",
+      "name": "task-05.md",
+      "primary": "TPL-DEV-FEATURE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "printersheet",
+      "path": "D:\\lyh\\agent\\agent-frame\\printersheet\\docs\\auto-execute\\codex-exec-prompts\\task-06.md",
+      "name": "task-06.md",
+      "primary": "TPL-DEV-FEATURE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "printersheet",
+      "path": "D:\\lyh\\agent\\agent-frame\\printersheet\\docs\\auto-execute\\codex-exec-prompts\\task-07.md",
+      "name": "task-07.md",
+      "primary": "TPL-DEV-FEATURE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "printersheet",
+      "path": "D:\\lyh\\agent\\agent-frame\\printersheet\\docs\\auto-execute\\codex-exec-prompts\\task-08.md",
+      "name": "task-08.md",
+      "primary": "TPL-DEV-FEATURE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "printersheet",
+      "path": "D:\\lyh\\agent\\agent-frame\\printersheet\\docs\\auto-execute\\codex-exec-prompts\\task-09.md",
+      "name": "task-09.md",
+      "primary": "TPL-DEV-FEATURE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "printersheet",
+      "path": "D:\\lyh\\agent\\agent-frame\\printersheet\\docs\\auto-execute\\codex-exec-prompts\\task-10.md",
+      "name": "task-10.md",
+      "primary": "TPL-DEV-FEATURE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ai-tutor-v13-codex-exec-prompts-split.md",
+      "name": "scoremap-ai-tutor-v13-codex-exec-prompts-split.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ai-tutor-v13-tasks\\T19-v13-inventory-llm-map.md",
+      "name": "T19-v13-inventory-llm-map.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ai-tutor-v13-tasks\\T20-local-ai-adapter-prompt-trace.md",
+      "name": "T20-local-ai-adapter-prompt-trace.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ai-tutor-v13-tasks\\T21-question-interaction-db-schema.md",
+      "name": "T21-question-interaction-db-schema.md",
+      "primary": "TPL-DATA-MODEL-MIGRATION",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ai-tutor-v13-tasks\\T22-full-report-question-cards.md",
+      "name": "T22-full-report-question-cards.md",
+      "primary": "TPL-REPORT-CARD-RENDERER",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ai-tutor-v13-tasks\\T23-ai-tutor-api-quota-auth.md",
+      "name": "T23-ai-tutor-api-quota-auth.md",
+      "primary": "TPL-QUOTA-RATE-LIMIT",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ai-tutor-v13-tasks\\T24-design-tokens-routes.md",
+      "name": "T24-design-tokens-routes.md",
+      "primary": "TPL-DESIGN-TOKEN-ASSET-INVENTORY",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ai-tutor-v13-tasks\\T25-full-report-v13-ui.md",
+      "name": "T25-full-report-v13-ui.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ai-tutor-v13-tasks\\T26-wrong-question-detail-ui.md",
+      "name": "T26-wrong-question-detail-ui.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ai-tutor-v13-tasks\\T27-ai-tutor-interaction-ui.md",
+      "name": "T27-ai-tutor-interaction-ui.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ai-tutor-v13-tasks\\T28-similar-exercise-feedback-ui.md",
+      "name": "T28-similar-exercise-feedback-ui.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ai-tutor-v13-tasks\\T29-my-reports-quota-history.md",
+      "name": "T29-my-reports-quota-history.md",
+      "primary": "TPL-QUOTA-RATE-LIMIT",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ai-tutor-v13-tasks\\T30-visual-one-to-one-v13.md",
+      "name": "T30-visual-one-to-one-v13.md",
+      "primary": "TPL-VISUAL-COMPARE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ai-tutor-v13-tasks\\T31-normal-person-all-page-clicks.md",
+      "name": "T31-normal-person-all-page-clicks.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ai-tutor-v13-tasks\\T32-api-db-llm-trace-e2e.md",
+      "name": "T32-api-db-llm-trace-e2e.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ai-tutor-v13-tasks\\T33-v13-final-acceptance-gate.md",
+      "name": "T33-v13-final-acceptance-gate.md",
+      "primary": "TPL-FINAL-GATE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-codex-exec-prompts-split.md",
+      "name": "scoremap-codex-exec-prompts-split.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-screenshot-pixel-closure-codex-exec-prompts-split.md",
+      "name": "scoremap-screenshot-pixel-closure-codex-exec-prompts-split.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-screenshot-pixel-closure-tasks\\T44-intake-reference-inventory.md",
+      "name": "T44-intake-reference-inventory.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-screenshot-pixel-closure-tasks\\T45-browser-screenshot-harness.md",
+      "name": "T45-browser-screenshot-harness.md",
+      "primary": "TPL-SCREENSHOT-PIXEL-HARNESS",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-screenshot-pixel-closure-tasks\\T46-pixelmatch-artifact-writer.md",
+      "name": "T46-pixelmatch-artifact-writer.md",
+      "primary": "TPL-SCREENSHOT-PIXEL-HARNESS",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-screenshot-pixel-closure-tasks\\T47-old-flow-index-analysis-failure-preview.md",
+      "name": "T47-old-flow-index-analysis-failure-preview.md",
+      "primary": "TPL-BUSINESS-ENGINE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-screenshot-pixel-closure-tasks\\T48-payment-result-unlock-entry.md",
+      "name": "T48-payment-result-unlock-entry.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-screenshot-pixel-closure-tasks\\T49-full-report-my-reports.md",
+      "name": "T49-full-report-my-reports.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-screenshot-pixel-closure-tasks\\T50-v13-tutor-exercise-feedback.md",
+      "name": "T50-v13-tutor-exercise-feedback.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-screenshot-pixel-closure-tasks\\T51-orders-feedback-scaffold.md",
+      "name": "T51-orders-feedback-scaffold.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-screenshot-pixel-closure-tasks\\T52-full-pixel-loop-repair.md",
+      "name": "T52-full-pixel-loop-repair.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-screenshot-pixel-closure-tasks\\T53-functional-regression-guards.md",
+      "name": "T53-functional-regression-guards.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-screenshot-pixel-closure-tasks\\T54-final-screenshot-pixel-gate.md",
+      "name": "T54-final-screenshot-pixel-gate.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T00-intake-harness-and-source-of-truth.md",
+      "name": "T00-intake-harness-and-source-of-truth.md",
+      "primary": "TPL-HARNESS-EVIDENCE-GATE",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T01-local-runtime-scaffold.md",
+      "name": "T01-local-runtime-scaffold.md",
+      "primary": "TPL-SCAFFOLD",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T02-local-db-cloud-payment-adapters.md",
+      "name": "T02-local-db-cloud-payment-adapters.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T03-orders-uploads-preview-api.md",
+      "name": "T03-orders-uploads-preview-api.md",
+      "primary": "TPL-API-DOMAIN",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T04-payment-api-and-entitlements.md",
+      "name": "T04-payment-api-and-entitlements.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T05-full-report-feedback-export-api.md",
+      "name": "T05-full-report-feedback-export-api.md",
+      "primary": "TPL-REPORT-CARD-RENDERER",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T06-miniapp-shell-navigation-and-contract.md",
+      "name": "T06-miniapp-shell-navigation-and-contract.md",
+      "primary": "TPL-MINIAPP-SHELL",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T07-c01-home-upload-auth.md",
+      "name": "T07-c01-home-upload-auth.md",
+      "primary": "TPL-AUTH-IDENTITY",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T08-c03-analysis-and-c04-failure.md",
+      "name": "T08-c03-analysis-and-c04-failure.md",
+      "primary": "TPL-BUSINESS-ENGINE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T09-c05-preview-and-c06-basic-pay-confirm.md",
+      "name": "T09-c05-preview-and-c06-basic-pay-confirm.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T10-c07-basic-result-and-c08-full-unlock.md",
+      "name": "T10-c07-basic-result-and-c08-full-unlock.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T11-c09-c10-full-report-and-pdf.md",
+      "name": "T11-c09-c10-full-report-and-pdf.md",
+      "primary": "TPL-EXPORT-DOWNLOAD",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T12-c11-c12-my-reports-orders-feedback.md",
+      "name": "T12-c11-c12-my-reports-orders-feedback.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T13-auth-permission-state-recovery.md",
+      "name": "T13-auth-permission-state-recovery.md",
+      "primary": "TPL-AUTH-IDENTITY",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T14-visual-one-to-one-comparison-harness.md",
+      "name": "T14-visual-one-to-one-comparison-harness.md",
+      "primary": "TPL-SCREENSHOT-PIXEL-HARNESS",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T15-parent-owner-click-e2e.md",
+      "name": "T15-parent-owner-click-e2e.md",
+      "primary": "TPL-OWNER-E2E",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T16-api-db-readback-e2e.md",
+      "name": "T16-api-db-readback-e2e.md",
+      "primary": "TPL-API-DB-E2E",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T17-local-only-guards-secret-scan.md",
+      "name": "T17-local-only-guards-secret-scan.md",
+      "primary": "TPL-LOCAL-ONLY-GUARD",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-tasks\\T18-final-acceptance-gate.md",
+      "name": "T18-final-acceptance-gate.md",
+      "primary": "TPL-FINAL-GATE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ui-one-to-one-codex-exec-prompts.md",
+      "name": "scoremap-ui-one-to-one-codex-exec-prompts.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ui-one-to-one-repair-tasks\\T34-intake-reference-map.md",
+      "name": "T34-intake-reference-map.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ui-one-to-one-repair-tasks\\T35-revert-generic-replica-shell.md",
+      "name": "T35-revert-generic-replica-shell.md",
+      "primary": "TPL-FRONTEND-SHELL",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ui-one-to-one-repair-tasks\\T36-old-flow-home-analysis-failure.md",
+      "name": "T36-old-flow-home-analysis-failure.md",
+      "primary": "TPL-BUSINESS-ENGINE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ui-one-to-one-repair-tasks\\T37-old-flow-preview-payment-result.md",
+      "name": "T37-old-flow-preview-payment-result.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ui-one-to-one-repair-tasks\\T38-old-flow-full-unlock-entry-my.md",
+      "name": "T38-old-flow-full-unlock-entry-my.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ui-one-to-one-repair-tasks\\T39-v13-report-and-wrong-question.md",
+      "name": "T39-v13-report-and-wrong-question.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ui-one-to-one-repair-tasks\\T40-v13-ai-tutor-exercise-feedback.md",
+      "name": "T40-v13-ai-tutor-exercise-feedback.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ui-one-to-one-repair-tasks\\T41-support-pages-reports-orders-feedback-scaffold.md",
+      "name": "T41-support-pages-reports-orders-feedback-scaffold.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ui-one-to-one-repair-tasks\\T42-visual-click-regression-gate.md",
+      "name": "T42-visual-click-regression-gate.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-ui-one-to-one-repair-tasks\\T43-final-ui-one-to-one-gate.md",
+      "name": "T43-final-ui-one-to-one-gate.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-codex-exec-prompts-split.md",
+      "name": "scoremap-v143-mvp-codex-exec-prompts-split.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\T00-omx-auto-execute-orchestrator.md",
+      "name": "T00-omx-auto-execute-orchestrator.md",
+      "primary": "TPL-ORCH-T00",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-00-intake-harness-and-v143-source-of-truth.md",
+      "name": "V143-00-intake-harness-and-v143-source-of-truth.md",
+      "primary": "TPL-HARNESS-EVIDENCE-GATE",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-01-final-gate-scope-and-traceability-bootstrap.md",
+      "name": "V143-01-final-gate-scope-and-traceability-bootstrap.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-02-local-schema-and-ai-report-contract.md",
+      "name": "V143-02-local-schema-and-ai-report-contract.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-03-orders-uploads-and-preview-analysis-apis.md",
+      "name": "V143-03-orders-uploads-and-preview-analysis-apis.md",
+      "primary": "TPL-API-DOMAIN",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-04-payments-entitlements-and-full-report-apis.md",
+      "name": "V143-04-payments-entitlements-and-full-report-apis.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-05-repair-drawer-interactions-apis.md",
+      "name": "V143-05-repair-drawer-interactions-apis.md",
+      "primary": "TPL-API-DOMAIN",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-06-save-reports-my-reports-feedback-and-export-apis.md",
+      "name": "V143-06-save-reports-my-reports-feedback-and-export-apis.md",
+      "primary": "TPL-EXPORT-DOWNLOAD",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-07-design-tokens-navigation-and-mojibake-guard.md",
+      "name": "V143-07-design-tokens-navigation-and-mojibake-guard.md",
+      "primary": "TPL-DESIGN-TOKEN-ASSET-INVENTORY",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-08-c01-home-upload-page.md",
+      "name": "V143-08-c01-home-upload-page.md",
+      "primary": "TPL-DATA-IMPORT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-09-c02-student-info-and-authorization-page.md",
+      "name": "V143-09-c02-student-info-and-authorization-page.md",
+      "primary": "TPL-AUTH-IDENTITY",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-10-c03-analysis-and-c04-failure-states.md",
+      "name": "V143-10-c03-analysis-and-c04-failure-states.md",
+      "primary": "TPL-BUSINESS-ENGINE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-11-c05-preview-with-1-yuan-half-screen-payment.md",
+      "name": "V143-11-c05-preview-with-1-yuan-half-screen-payment.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-12-c07-basic-result-with-9-9-full-report-payment.md",
+      "name": "V143-12-c07-basic-result-with-9-9-full-report-payment.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-13-c10-full-report-five-cards.md",
+      "name": "V143-13-c10-full-report-five-cards.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-14-c13-repair-drawer-state-machine-and-c10-writeback.md",
+      "name": "V143-14-c13-repair-drawer-state-machine-and-c10-writeback.md",
+      "primary": "TPL-BUSINESS-ENGINE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-15-c11-c12-merged-my-reports-recovery.md",
+      "name": "V143-15-c11-c12-merged-my-reports-recovery.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-16-api-db-readback-and-frontend-backend-contract-e2e.md",
+      "name": "V143-16-api-db-readback-and-frontend-backend-contract-e2e.md",
+      "primary": "TPL-API-DB-E2E",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-17-owner-click-e2e-o143-01-to-12.md",
+      "name": "V143-17-owner-click-e2e-o143-01-to-12.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "scoremap",
+      "path": "D:\\lyh\\agent\\agent-frame\\scoremap\\docs\\auto-execute\\scoremap-v143-mvp-tasks\\V143-18-v143-visual-pixel-harness-and-repair-loop.md",
+      "name": "V143-18-v143-visual-pixel-harness-and-repair-loop.md",
+      "primary": "TPL-SCREENSHOT-PIXEL-HARNESS",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "ShopOps",
+      "path": "D:\\lyh\\agent\\agent-frame\\ShopOps\\docs\\auto-execute\\shopops-codex-exec-prompts-split.md",
+      "name": "shopops-codex-exec-prompts-split.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "ShopOps",
+      "path": "D:\\lyh\\agent\\agent-frame\\ShopOps\\docs\\auto-execute\\shopops-tasks\\T00-omx-auto-execute-orchestrator.md",
+      "name": "T00-omx-auto-execute-orchestrator.md",
+      "primary": "TPL-ORCH-T00",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "ShopOps",
+      "path": "D:\\lyh\\agent\\agent-frame\\ShopOps\\docs\\auto-execute\\shopops-tasks\\T01-python-scaffold-config-models.md",
+      "name": "T01-python-scaffold-config-models.md",
+      "primary": "TPL-DATA-MODEL-MIGRATION",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "ShopOps",
+      "path": "D:\\lyh\\agent\\agent-frame\\ShopOps\\docs\\auto-execute\\shopops-tasks\\T02-real-feishu-bitable-storage.md",
+      "name": "T02-real-feishu-bitable-storage.md",
+      "primary": "TPL-DEV-FEATURE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "ShopOps",
+      "path": "D:\\lyh\\agent\\agent-frame\\ShopOps\\docs\\auto-execute\\shopops-tasks\\T03-order-collectors-api-crawler.md",
+      "name": "T03-order-collectors-api-crawler.md",
+      "primary": "TPL-CRAWLER-PIPELINE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "ShopOps",
+      "path": "D:\\lyh\\agent\\agent-frame\\ShopOps\\docs\\auto-execute\\shopops-tasks\\T04-promotion-crawler-qianniu-safety.md",
+      "name": "T04-promotion-crawler-qianniu-safety.md",
+      "primary": "TPL-CRAWLER-PIPELINE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "ShopOps",
+      "path": "D:\\lyh\\agent\\agent-frame\\ShopOps\\docs\\auto-execute\\shopops-tasks\\T05-metric-snapshot-delta-engine.md",
+      "name": "T05-metric-snapshot-delta-engine.md",
+      "primary": "TPL-METRIC-DELTA-ENGINE",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "ShopOps",
+      "path": "D:\\lyh\\agent\\agent-frame\\ShopOps\\docs\\auto-execute\\shopops-tasks\\T07-scheduler-full-collect-pending-replay.md",
+      "name": "T07-scheduler-full-collect-pending-replay.md",
+      "primary": "TPL-CRAWLER-PIPELINE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "ShopOps",
+      "path": "D:\\lyh\\agent\\agent-frame\\ShopOps\\docs\\auto-execute\\shopops-tasks\\T08-real-feishu-data-correctness-verification.md",
+      "name": "T08-real-feishu-data-correctness-verification.md",
+      "primary": "TPL-DEV-FEATURE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "ShopOps",
+      "path": "D:\\lyh\\agent\\agent-frame\\ShopOps\\docs\\auto-execute\\shopops-tasks\\T09-local-test-suite-and-secret-guard.md",
+      "name": "T09-local-test-suite-and-secret-guard.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "ShopOps",
+      "path": "D:\\lyh\\agent\\agent-frame\\ShopOps\\docs\\auto-execute\\shopops-tasks\\T10-operator-runbook-env-docs.md",
+      "name": "T10-operator-runbook-env-docs.md",
+      "primary": "TPL-RELEASE-RUNBOOK",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "ShopOps",
+      "path": "D:\\lyh\\agent\\agent-frame\\ShopOps\\docs\\auto-execute\\shopops-tasks\\T11-final-acceptance-gate.md",
+      "name": "T11-final-acceptance-gate.md",
+      "primary": "TPL-FINAL-GATE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-closure-codex-exec-prompts-split.md",
+      "name": "xwstarmap-closure-codex-exec-prompts-split.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-closure-tasks\\XWS-C29-runtime-visual-capture-harness.md",
+      "name": "XWS-C29-runtime-visual-capture-harness.md",
+      "primary": "TPL-SCREENSHOT-PIXEL-HARNESS",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-closure-tasks\\XWS-C30-miniprogram-ui-one-to-one-runtime.md",
+      "name": "XWS-C30-miniprogram-ui-one-to-one-runtime.md",
+      "primary": "TPL-MINIAPP-PAGE",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-closure-tasks\\XWS-C31-pc-admin-ui-one-to-one-runtime.md",
+      "name": "XWS-C31-pc-admin-ui-one-to-one-runtime.md",
+      "primary": "TPL-ADMIN-WORKFLOW",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-closure-tasks\\XWS-C32-all-api-contract-db-tests.md",
+      "name": "XWS-C32-all-api-contract-db-tests.md",
+      "primary": "TPL-API-DB-E2E",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-closure-tasks\\XWS-C33-simulated-owner-click-e2e.md",
+      "name": "XWS-C33-simulated-owner-click-e2e.md",
+      "primary": "TPL-OWNER-E2E",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-closure-tasks\\XWS-C34-final-closure-gate.md",
+      "name": "XWS-C34-final-closure-gate.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-codex-exec-prompts-split.md",
+      "name": "xwstarmap-codex-exec-prompts-split.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-codex-exec-prompts.md",
+      "name": "xwstarmap-codex-exec-prompts.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-00-project-intake-harness.md",
+      "name": "XWS-00-project-intake-harness.md",
+      "primary": "TPL-LOCAL-ONLY-GUARD",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-01-requirement-normalization.md",
+      "name": "XWS-01-requirement-normalization.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-02-ui-visual-target-map.md",
+      "name": "XWS-02-ui-visual-target-map.md",
+      "primary": "TPL-DESIGN-TOKEN-ASSET-INVENTORY",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-03-printersheet-reference-map.md",
+      "name": "XWS-03-printersheet-reference-map.md",
+      "primary": "TPL-LOCAL-ONLY-GUARD",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-04-project-scaffold.md",
+      "name": "XWS-04-project-scaffold.md",
+      "primary": "TPL-ADMIN-WORKFLOW",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-05-server-adapter-foundation.md",
+      "name": "XWS-05-server-adapter-foundation.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-06-store-auth-profile-api.md",
+      "name": "XWS-06-store-auth-profile-api.md",
+      "primary": "TPL-AUTH-IDENTITY",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-07-data-import-parsers.md",
+      "name": "XWS-07-data-import-parsers.md",
+      "primary": "TPL-DATA-IMPORT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-08-profit-risk-engine.md",
+      "name": "XWS-08-profit-risk-engine.md",
+      "primary": "TPL-BUSINESS-ENGINE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-09-card-task-report-api.md",
+      "name": "XWS-09-card-task-report-api.md",
+      "primary": "TPL-REPORT-CARD-RENDERER",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-10-server-local-test-suite.md",
+      "name": "XWS-10-server-local-test-suite.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-11-miniprogram-shell.md",
+      "name": "XWS-11-miniprogram-shell.md",
+      "primary": "TPL-MINIAPP-SHELL",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-12-miniprogram-home.md",
+      "name": "XWS-12-miniprogram-home.md",
+      "primary": "TPL-MINIAPP-PAGE",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-13-miniprogram-today-card.md",
+      "name": "XWS-13-miniprogram-today-card.md",
+      "primary": "TPL-MINIAPP-PAGE",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-14-miniprogram-fake-hot.md",
+      "name": "XWS-14-miniprogram-fake-hot.md",
+      "primary": "TPL-MINIAPP-PAGE",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-15-miniprogram-tasks.md",
+      "name": "XWS-15-miniprogram-tasks.md",
+      "primary": "TPL-MINIAPP-PAGE",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-16-miniprogram-shop.md",
+      "name": "XWS-16-miniprogram-shop.md",
+      "primary": "TPL-MINIAPP-PAGE",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-17-admin-dashboard.md",
+      "name": "XWS-17-admin-dashboard.md",
+      "primary": "TPL-ADMIN-WORKFLOW",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-18-admin-upload-review.md",
+      "name": "XWS-18-admin-upload-review.md",
+      "primary": "TPL-ADMIN-WORKFLOW",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-20-contract-alignment.md",
+      "name": "XWS-20-contract-alignment.md",
+      "primary": "TPL-API-DOMAIN",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-21-local-full-flow-smoke.md",
+      "name": "XWS-21-local-full-flow-smoke.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-22-payment-cloud-local-only.md",
+      "name": "XWS-22-payment-cloud-local-only.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-23-visual-one-to-one.md",
+      "name": "XWS-23-visual-one-to-one.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-25-owner-journey-test-plan.md",
+      "name": "XWS-25-owner-journey-test-plan.md",
+      "primary": "TPL-OWNER-SCENARIO",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-26-owner-miniprogram-click-e2e.md",
+      "name": "XWS-26-owner-miniprogram-click-e2e.md",
+      "primary": "TPL-MINIAPP-PAGE",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-27-owner-admin-upload-publish-e2e.md",
+      "name": "XWS-27-owner-admin-upload-publish-e2e.md",
+      "primary": "TPL-ADMIN-WORKFLOW",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "xwstarmap",
+      "path": "D:\\lyh\\agent\\agent-frame\\xwstarmap\\docs\\auto-execute\\xwstarmap-tasks\\XWS-28-final-owner-acceptance-gate.md",
+      "name": "XWS-28-final-owner-acceptance-gate.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\19-task-01-requirements-ui-api-inventory.md",
+      "name": "19-task-01-requirements-ui-api-inventory.md",
+      "primary": "TPL-API-DOMAIN",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\19-task-02-harness-and-evidence-gates.md",
+      "name": "19-task-02-harness-and-evidence-gates.md",
+      "primary": "TPL-HARNESS-EVIDENCE-GATE",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\19-task-03-frontend-contract-acceptance.md",
+      "name": "19-task-03-frontend-contract-acceptance.md",
+      "primary": "TPL-API-DOMAIN",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\19-task-04-backend-api-acceptance.md",
+      "name": "19-task-04-backend-api-acceptance.md",
+      "primary": "TPL-API-DOMAIN",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\19-task-05-main-user-flow-ui-acceptance.md",
+      "name": "19-task-05-main-user-flow-ui-acceptance.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\19-task-06-workout-card-profile-loop-acceptance.md",
+      "name": "19-task-06-workout-card-profile-loop-acceptance.md",
+      "primary": "TPL-AUTH-IDENTITY",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\19-task-07-ai-camera-challenge-acceptance.md",
+      "name": "19-task-07-ai-camera-challenge-acceptance.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\19-task-08-subscription-usage-acceptance.md",
+      "name": "19-task-08-subscription-usage-acceptance.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\19-task-09-full-verification-acceptance.md",
+      "name": "19-task-09-full-verification-acceptance.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\19-task-10-final-acceptance-reporting.md",
+      "name": "19-task-10-final-acceptance-reporting.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\20-task-00-02-window-handoff-summary.md",
+      "name": "20-task-00-02-window-handoff-summary.md",
+      "primary": "TPL-API-DOMAIN",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\task20-repair-codex-exec-prompts-split.md",
+      "name": "task20-repair-codex-exec-prompts-split.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\task20-repair-tasks\\T21-01-secret-hygiene-and-guard-closure.md",
+      "name": "T21-01-secret-hygiene-and-guard-closure.md",
+      "primary": "TPL-AUTH-IDENTITY",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\task20-repair-tasks\\T21-02-safe-local-db-docker-preflight.md",
+      "name": "T21-02-safe-local-db-docker-preflight.md",
+      "primary": "TPL-DATA-MODEL-MIGRATION",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\task20-repair-tasks\\T21-03-db-backed-runtime-e2e-readback.md",
+      "name": "T21-03-db-backed-runtime-e2e-readback.md",
+      "primary": "TPL-DATA-MODEL-MIGRATION",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\task20-repair-tasks\\T21-04-all-p0-p1-backend-api-contract-tests.md",
+      "name": "T21-04-all-p0-p1-backend-api-contract-tests.md",
+      "primary": "TPL-API-DB-E2E",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\task20-repair-tasks\\T21-05-frontend-simulated-user-page-click-expansion.md",
+      "name": "T21-05-frontend-simulated-user-page-click-expansion.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\task20-repair-tasks\\T21-06-result-replace-real-api-path-closure.md",
+      "name": "T21-06-result-replace-real-api-path-closure.md",
+      "primary": "TPL-API-DOMAIN",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\task20-repair-tasks\\T21-07-subscription-sandbox-verify-dto-tests.md",
+      "name": "T21-07-subscription-sandbox-verify-dto-tests.md",
+      "primary": "TPL-PAYMENT-ENTITLEMENT",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\task20-repair-tasks\\T21-08-my-calendar-route-decision-and-tests.md",
+      "name": "T21-08-my-calendar-route-decision-and-tests.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\task20-repair-tasks\\T21-09-ai-recognition-contract-decision-and-mock-tests.md",
+      "name": "T21-09-ai-recognition-contract-decision-and-mock-tests.md",
+      "primary": "TPL-AI-PROVIDER",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\task20-repair-tasks\\T21-10-live-local-frontend-backend-page-runtime-gate.md",
+      "name": "T21-10-live-local-frontend-backend-page-runtime-gate.md",
+      "primary": "TPL-HARNESS-EVIDENCE-GATE",
+      "current_template_exists": false,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\task20-repair-tasks\\T21-11-visual-report-secret-final-gate-rerun.md",
+      "name": "T21-11-visual-report-secret-final-gate-rerun.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    },
+    {
+      "project": "SnapRep",
+      "path": "D:\\lyh\\AI\\SnapRep\\docs\\auto-execute\\task20-repair-tasks\\T21-12-final-acceptance-report-and-closure.md",
+      "name": "T21-12-final-acceptance-report-and-closure.md",
+      "primary": "TPL-FRONTEND-PAGE",
+      "current_template_exists": true,
+      "staged_or_current_template_exists": true
+    }
+  ]
+}

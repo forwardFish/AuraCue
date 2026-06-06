@@ -1,0 +1,22 @@
+﻿{
+    "downloadedAt":  "2026-06-03T12:16:34",
+    "projectId":  "2608521935765193750",
+    "backup":  "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\UI\\小程序\\stitch_codex_ui_code_generator\\backup-before-stitch-mcp-20260603121617",
+    "screens":  [
+                    {
+                        "dir":  "01",
+                        "title":  "Mood Selection (Pixel Perfect)",
+                        "screenId":  "81c9dc279ae048048c07b3ab1eabe3e7"
+                    },
+                    {
+                        "dir":  "02",
+                        "title":  "Context Selection (Refined V4)",
+                        "screenId":  "43d386313b0c426aae0a92a08c42088c"
+                    },
+                    {
+                        "dir":  "03",
+                        "title":  "Outfit Upload (Pixel Perfect)",
+                        "screenId":  "9731f3a3e50241d4b02c7c63e21b2c6a"
+                    }
+                ]
+}

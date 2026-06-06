@@ -1,0 +1,292 @@
+{
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "taskId": "T14",
+  "requirementIds": [
+    "REQ-002",
+    "REQ-003",
+    "REQ-004",
+    "REQ-010",
+    "REQ-012",
+    "REQ-017"
+  ],
+  "uiIds": [
+    "UI-11",
+    "UI-12",
+    "UI-13"
+  ],
+  "routes": [
+    "/unlock/:id/pay",
+    "/unlock/:id/pay-failed",
+    "/unlock/:id/success",
+    "/unlock/card-locked-001/pay",
+    "/unlock/card-locked-001/pay-failed",
+    "/unlock/card-locked-001/success"
+  ],
+  "sourceReferences": {
+    "UI-11": "docs/UI/小程序/08A-支付解锁_确认支付.png",
+    "UI-12": "docs/UI/小程序/08B-支付解锁_失败与恢复购买.png",
+    "UI-13": "docs/UI/小程序/08C-支付解锁_成功状态.png"
+  },
+  "stitchReferences": {
+    "UI-11": "docs/UI/小程序/stitch_codex_ui_code_generator/08a/code.html",
+    "UI-12": "docs/UI/小程序/stitch_codex_ui_code_generator/08b/code.html",
+    "UI-13": "docs/UI/小程序/stitch_codex_ui_code_generator/08c/code.html"
+  },
+  "renderAssertions": {
+    "nativePageFiles": [
+      "apps/wechat-mini/src/pages/unlock/pay.wxml",
+      "apps/wechat-mini/src/pages/unlock/pay.wxss",
+      "apps/wechat-mini/src/pages/unlock/pay.js",
+      "apps/wechat-mini/src/pages/unlock/pay-failed.wxml",
+      "apps/wechat-mini/src/pages/unlock/pay-failed.wxss",
+      "apps/wechat-mini/src/pages/unlock/pay-failed.js",
+      "apps/wechat-mini/src/pages/unlock/success.wxml",
+      "apps/wechat-mini/src/pages/unlock/success.wxss",
+      "apps/wechat-mini/src/pages/unlock/success.js"
+    ],
+    "confirmValueRows": [
+      "Full reading & insights",
+      "Outfit energy details",
+      "Social action plan",
+      "Lucky ritual",
+      "Save & share high-quality card"
+    ],
+    "failedControls": [
+      "tryAgain",
+      "restorePurchase",
+      "inviteInstead",
+      "contactSupport",
+      "back"
+    ],
+    "successControls": [
+      "viewFullCard",
+      "shareStory"
+    ]
+  },
+  "clicks": {
+    "confirmForcedFailure": {
+      "controlId": "confirm-unlock-199",
+      "actualRoute": "/unlock/card-locked-001/pay-failed",
+      "orderStatus": "failed",
+      "entitlementCreated": false
+    },
+    "tryAgain": {
+      "controlId": "try-again",
+      "actualRoute": "/unlock/card-locked-001/success",
+      "orderStatus": "paid",
+      "entitled": true
+    },
+    "restorePurchase": {
+      "controlId": "restore-purchase",
+      "actualRoute": "/unlock/card-locked-001/success",
+      "entitlementMethod": "restore"
+    },
+    "inviteInstead": {
+      "controlId": "invite-3-friends-instead",
+      "actualRoute": "/invite/card-locked-001"
+    },
+    "contactSupport": {
+      "controlId": "contact-support",
+      "toast": "Local support placeholder"
+    },
+    "viewFullCard": {
+      "controlId": "view-full-card",
+      "actualRoute": "/result/card-locked-001/full"
+    },
+    "shareStory": {
+      "controlId": "share-story",
+      "actualRoute": "/share/card-locked-001"
+    }
+  },
+  "apiMockTrace": [
+    {
+      "apiId": "API-005",
+      "method": "createMockPaymentOrder",
+      "request": {
+        "cardId": "card-locked-001",
+        "amount": 1.99,
+        "currency": "USD"
+      }
+    },
+    {
+      "apiId": "API-005",
+      "method": "completeMockPaymentOrder",
+      "orderId": "order-paid-001",
+      "request": {
+        "result": "failed"
+      }
+    },
+    {
+      "apiId": "API-005",
+      "method": "createMockPaymentOrder",
+      "request": {
+        "cardId": "card-locked-001",
+        "amount": 1.99,
+        "currency": "USD"
+      }
+    },
+    {
+      "apiId": "API-005",
+      "method": "completeMockPaymentOrder",
+      "orderId": "order-paid-001",
+      "request": {
+        "result": "success"
+      }
+    },
+    {
+      "apiId": "API-004",
+      "method": "unlockCard",
+      "cardId": "card-locked-001",
+      "request": {
+        "method": "payment",
+        "orderId": "order-paid-001"
+      }
+    },
+    {
+      "apiId": "API-004",
+      "method": "unlockCard",
+      "cardId": "card-locked-001",
+      "request": {
+        "method": "restore",
+        "orderId": null
+      }
+    }
+  ],
+  "analyticsReadback": [
+    {
+      "eventName": "page_view_mock_payment_confirm",
+      "page": "/unlock/:id/pay",
+      "properties": {
+        "uiId": "UI-11",
+        "cardId": "card-locked-001",
+        "requirementId": "REQ-012"
+      },
+      "analyticsEventId": "analytics-page_view_mock_payment_confirm"
+    },
+    {
+      "eventName": "checkout_started",
+      "page": "/unlock/:id/pay",
+      "properties": {
+        "uiId": "UI-11",
+        "cardId": "card-locked-001",
+        "orderId": "order-paid-001",
+        "localMock": true
+      },
+      "analyticsEventId": "analytics-checkout_started"
+    },
+    {
+      "eventName": "mock_payment_completed",
+      "page": "/unlock/:id/pay",
+      "properties": {
+        "uiId": "UI-12",
+        "cardId": "card-locked-001",
+        "orderId": "order-paid-001",
+        "result": "failed"
+      },
+      "analyticsEventId": "analytics-mock_payment_completed"
+    },
+    {
+      "eventName": "checkout_started",
+      "page": "/unlock/:id/pay",
+      "properties": {
+        "uiId": "UI-11",
+        "cardId": "card-locked-001",
+        "orderId": "order-paid-001",
+        "localMock": true
+      },
+      "analyticsEventId": "analytics-checkout_started"
+    },
+    {
+      "eventName": "checkout_success",
+      "page": "/unlock/:id/pay",
+      "properties": {
+        "uiId": "UI-13",
+        "cardId": "card-locked-001",
+        "orderId": "order-paid-001",
+        "result": "success"
+      },
+      "analyticsEventId": "analytics-checkout_success"
+    },
+    {
+      "eventName": "click_restore_purchase",
+      "page": "/unlock/:id/pay-failed",
+      "properties": {
+        "uiId": "UI-12",
+        "cardId": "card-locked-001",
+        "method": "restore"
+      },
+      "analyticsEventId": "analytics-click_restore_purchase"
+    },
+    {
+      "eventName": "click_payment_invite_instead",
+      "page": "/unlock/:id/pay-failed",
+      "properties": {
+        "uiId": "UI-12",
+        "cardId": "card-locked-001"
+      },
+      "analyticsEventId": "analytics-click_payment_invite_instead"
+    },
+    {
+      "eventName": "click_payment_contact_support",
+      "page": "/unlock/:id/pay-failed",
+      "properties": {
+        "uiId": "UI-12",
+        "cardId": "card-locked-001",
+        "localOnly": true
+      },
+      "analyticsEventId": "analytics-click_payment_contact_support"
+    },
+    {
+      "eventName": "click_view_full_card_after_payment",
+      "page": "/unlock/:id/success",
+      "properties": {
+        "uiId": "UI-13",
+        "cardId": "card-locked-001"
+      },
+      "analyticsEventId": "analytics-click_view_full_card_after_payment"
+    },
+    {
+      "eventName": "click_share_story_after_payment",
+      "page": "/unlock/:id/success",
+      "properties": {
+        "uiId": "UI-13",
+        "cardId": "card-locked-001"
+      },
+      "analyticsEventId": "analytics-click_share_story_after_payment"
+    }
+  ],
+  "localOnly": {
+    "status": "PASS",
+    "taskId": "T14",
+    "checkedFiles": [
+      "apps/wechat-mini/src/pages/unlock/pay.js",
+      "apps/wechat-mini/src/pages/unlock/pay-failed.js",
+      "apps/wechat-mini/src/pages/unlock/success.js",
+      "apps/wechat-mini/src/pages/unlock/payment-state-page.mjs"
+    ],
+    "forbiddenPaymentNeedlesAbsent": [
+      "wx.requestPayment(",
+      "live payment SDK",
+      "live payment URL",
+      "secret key"
+    ],
+    "paymentMode": "local/mock API client only",
+    "realPaymentUsed": false,
+    "productionUrlUsed": false,
+    "secretUsed": false
+  },
+  "visualEvidence": {
+    "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+    "reason": "T14 generated deterministic HTML structural captures and render summaries for UI-11..UI-13; automated raster screenshot and pixel-diff evidence are deferred to T22/T23.",
+    "captures": [
+      "docs/auto-execute/screenshots/T14/UI-11-payment-confirm.html",
+      "docs/auto-execute/screenshots/T14/UI-12-payment-failed.html",
+      "docs/auto-execute/screenshots/T14/UI-13-payment-success.html"
+    ],
+    "missingRasterScreenshots": [
+      "docs/auto-execute/screenshots/T14/UI-11-payment-confirm.png",
+      "docs/auto-execute/screenshots/T14/UI-12-payment-failed.png",
+      "docs/auto-execute/screenshots/T14/UI-13-payment-success.png"
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "savedCard": {
+    "id": "card-unlocked-001",
+    "userId": "user-local-001",
+    "jobId": "job-success-002",
+    "scene": "party",
+    "energy": "charm",
+    "content": {
+      "title": "Full Lucky Aura Card",
+      "auraName": "Golden Comet Aura",
+      "tarotSymbol": "The Sun",
+      "message": "Warm presence can turn a small exchange into a memorable one.",
+      "luckyColor": "warm gold",
+      "colors": {
+        "primary": "warm gold",
+        "accent": "berry gloss",
+        "background": "warm moonlight"
+      },
+      "outfit": "Use one playful accent and keep the rest effortless.",
+      "beauty": "Let one feature catch light while the rest stays natural.",
+      "social": "Join the first friendly circle and ask what made their week brighter.",
+      "ritual": "Smile at yourself once before you enter the room.",
+      "avoid": "Avoid performing for people who are not meeting your energy.",
+      "caption": "Today I am carrying golden comet aura.",
+      "theme": "golden-night"
+    },
+    "isUnlocked": true,
+    "savedAt": "2026-05-26T00:00:00.000Z",
+    "shareImagePath": "local://share-images/card-unlocked-001-template-story-001.png",
+    "createdAt": "2026-05-26T00:00:00.000Z"
+  },
+  "shareEvent": {
+    "id": "share-003",
+    "userId": "user-local-001",
+    "cardId": "card-unlocked-001",
+    "channel": "moments",
+    "source": "UI-16-channel-picker",
+    "inviteCode": null,
+    "friendId": null,
+    "createdAt": "2026-05-26T00:00:00.000Z"
+  },
+  "renderedShareImage": {
+    "cardId": "card-unlocked-001",
+    "localPath": "local://share-images/card-unlocked-001-template-story-001.png",
+    "persistedOnCard": true
+  },
+  "analyticsEvents": [
+    {
+      "id": "analytics-003",
+      "userId": "user-local-001",
+      "eventName": "share_image_rendered",
+      "page": "/share/card-unlocked-001",
+      "properties": {
+        "cardId": "card-unlocked-001",
+        "templateId": "template-story-001"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    }
+  ],
+  "idempotency": {
+    "firstSavedAt": "2026-05-26T00:00:00.000Z",
+    "secondSavedAt": "2026-05-26T00:00:00.000Z",
+    "saveTimestampStable": true,
+    "repeatedRenderKeyStable": true
+  }
+}

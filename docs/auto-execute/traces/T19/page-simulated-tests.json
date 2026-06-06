@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "scope": "Final PRD v1.0 P0 mini-program page render/click/state/analytics simulated tests",
+  "upstreamEvidence": [
+    "apps/wechat-mini/src/routes/p0-routes.ts",
+    "apps/wechat-mini/src/routes/route-registry.mjs"
+  ],
+  "pageCoverage": "docs/auto-execute/traces/T19/page-coverage.json",
+  "visualEvidenceStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+  "visualEvidenceNote": "T19 proves the simulated P0 map. Final visual PASS still requires actual screenshots and pixel metrics from the P0-* references."
+}

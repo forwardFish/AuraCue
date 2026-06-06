@@ -1,0 +1,128 @@
+{
+  "scenarioId": "SCN-010",
+  "stepId": "01",
+  "status": "PASS",
+  "personaGoal": "Recover failed payment",
+  "action": "Click Try Again, Restore Purchase, Invite 3 Friends Instead, Contact Support",
+  "uiId": "UI-12",
+  "route": {
+    "uiId": "UI-08",
+    "route": "/invite/:id",
+    "path": "/invite/card-004",
+    "pagePath": "pages/invite/start",
+    "state": "invite-start",
+    "ownerScenario": "SCN-007",
+    "title": "Invite Start"
+  },
+  "apiIds": [
+    "API-004",
+    "API-005",
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-015"
+  ],
+  "clickEvidence": {
+    "retryPayment": {
+      "controlId": "try-again",
+      "order": {
+        "orderId": "order-004",
+        "cardId": "card-004",
+        "amount": 1.99,
+        "currency": "USD",
+        "status": "pending",
+        "entitlement": null
+      },
+      "completed": {
+        "orderId": "order-004",
+        "cardId": "card-004",
+        "amount": 1.99,
+        "currency": "USD",
+        "status": "paid",
+        "entitlement": {
+          "entitled": true,
+          "entitlementId": "entitlement-002",
+          "cardId": "card-004",
+          "method": "payment",
+          "orderId": "order-004"
+        }
+      },
+      "entitlement": {
+        "entitled": true,
+        "entitlementId": "entitlement-002",
+        "cardId": "card-004",
+        "method": "payment",
+        "orderId": "order-004"
+      },
+      "route": {
+        "uiId": "UI-13",
+        "route": "/unlock/:id/success",
+        "path": "/unlock/card-004/success",
+        "pagePath": "pages/unlock/success",
+        "state": "mock-payment-success",
+        "ownerScenario": "SCN-011",
+        "title": "Unlock Success"
+      },
+      "analytics": [
+        {
+          "accepted": true,
+          "analyticsEventId": "analytics-044"
+        },
+        {
+          "accepted": true,
+          "analyticsEventId": "analytics-045"
+        }
+      ],
+      "expectedRoute": "/unlock/:id/success"
+    },
+    "restorePurchase": {
+      "controlId": "restore-purchase",
+      "expectedRoute": "/unlock/:id/success",
+      "entitlement": {
+        "entitled": true,
+        "entitlementId": "entitlement-002",
+        "cardId": "card-004",
+        "method": "payment",
+        "orderId": "order-004"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-046"
+      },
+      "route": {
+        "uiId": "UI-13",
+        "route": "/unlock/:id/success",
+        "path": "/unlock/card-004/success",
+        "pagePath": "pages/unlock/success",
+        "state": "mock-payment-success",
+        "ownerScenario": "SCN-011",
+        "title": "Unlock Success"
+      }
+    },
+    "paymentInvite": {
+      "controlId": "invite-3-friends-instead",
+      "expectedRoute": "/invite/:id",
+      "route": {
+        "uiId": "UI-08",
+        "route": "/invite/:id",
+        "path": "/invite/card-004",
+        "pagePath": "pages/invite/start",
+        "state": "invite-start",
+        "ownerScenario": "SCN-007",
+        "title": "Invite Start"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-047"
+      }
+    },
+    "contactSupport": {
+      "controlId": "contact-support",
+      "toast": "Local support placeholder",
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-048"
+      }
+    }
+  }
+}

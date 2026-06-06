@@ -1,0 +1,1011 @@
+{
+  "status": "PASS",
+  "analyticsEventCount": 75,
+  "eventNames": [
+    "blocked_generate_incomplete_selection",
+    "checkout_started",
+    "checkout_success",
+    "click_cancel_share_channels",
+    "click_friend_generate_card",
+    "click_generate_card",
+    "click_generate_start",
+    "click_generation_change_scene",
+    "click_generation_retry",
+    "click_invite_again",
+    "click_invite_friends",
+    "click_invite_how_it_works",
+    "click_invite_instead",
+    "click_invite_paid_unlock",
+    "click_invite_unlock_entry",
+    "click_more_sharing_options",
+    "click_paid_unlock_entry",
+    "click_payment_contact_support",
+    "click_payment_invite_instead",
+    "click_restore_purchase",
+    "click_scene_continue",
+    "click_share_story_after_payment",
+    "click_unlock",
+    "click_view_7_day_trend_disabled",
+    "click_view_full_card_after_payment",
+    "copy_share_link",
+    "generation_started",
+    "generation_success",
+    "invite_started",
+    "mock_payment_completed",
+    "page_view_full_result",
+    "page_view_generation_error",
+    "page_view_home",
+    "page_view_invite_landing",
+    "page_view_mock_payment_confirm",
+    "page_view_save_success",
+    "page_view_scene_selection",
+    "page_view_share_channels",
+    "page_view_share_story",
+    "page_view_unlock_choice",
+    "return_next_day",
+    "save_card",
+    "select_energy",
+    "select_scene",
+    "share_card",
+    "view_result_free"
+  ],
+  "events": [
+    {
+      "id": "analytics-001",
+      "userId": "user-local-001",
+      "eventName": "page_view_home",
+      "page": "/",
+      "properties": {
+        "source": "seed"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-002",
+      "userId": "user-local-001",
+      "eventName": "select_scene",
+      "page": "/create/scene",
+      "properties": {
+        "scene": "date"
+      },
+      "createdAt": "2026-05-26T00:01:00.000Z"
+    },
+    {
+      "id": "analytics-003",
+      "userId": "user-local-001",
+      "eventName": "page_view_home",
+      "page": "/",
+      "properties": {
+        "uiId": "UI-01",
+        "requirementId": "REQ-004"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-004",
+      "userId": "user-local-001",
+      "eventName": "click_generate_start",
+      "page": "/",
+      "properties": {
+        "uiId": "UI-01",
+        "controlId": "start-card",
+        "requirementId": "REQ-004"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-005",
+      "userId": "user-local-001",
+      "eventName": "click_generate_start",
+      "page": "/",
+      "properties": {
+        "uiId": "UI-01",
+        "controlId": "scene-date",
+        "scene": "date",
+        "requirementId": "REQ-004"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-006",
+      "userId": "user-local-001",
+      "eventName": "click_generate_start",
+      "page": "/",
+      "properties": {
+        "uiId": "UI-01",
+        "controlId": "scene-work",
+        "scene": "work",
+        "requirementId": "REQ-004"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-007",
+      "userId": "user-local-001",
+      "eventName": "click_generate_start",
+      "page": "/",
+      "properties": {
+        "uiId": "UI-01",
+        "controlId": "scene-party",
+        "scene": "party",
+        "requirementId": "REQ-004"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-008",
+      "userId": "user-local-001",
+      "eventName": "click_generate_start",
+      "page": "/",
+      "properties": {
+        "uiId": "UI-01",
+        "controlId": "scene-luck",
+        "scene": "luck",
+        "requirementId": "REQ-004"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-009",
+      "userId": "user-local-001",
+      "eventName": "page_view_scene_selection",
+      "page": "/create/scene",
+      "properties": {
+        "uiId": "UI-02",
+        "requirementId": "REQ-006"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-010",
+      "userId": "user-local-001",
+      "eventName": "select_scene",
+      "page": "/create/scene",
+      "properties": {
+        "uiId": "UI-02",
+        "controlId": "scene-date",
+        "scene": "date",
+        "label": "Date",
+        "requirementId": "REQ-006"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-011",
+      "userId": "user-local-001",
+      "eventName": "select_scene",
+      "page": "/create/scene",
+      "properties": {
+        "uiId": "UI-02",
+        "controlId": "scene-work",
+        "scene": "work",
+        "label": "Work / Meeting",
+        "requirementId": "REQ-006"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-012",
+      "userId": "user-local-001",
+      "eventName": "select_scene",
+      "page": "/create/scene",
+      "properties": {
+        "uiId": "UI-02",
+        "controlId": "scene-party",
+        "scene": "party",
+        "label": "Party / Social",
+        "requirementId": "REQ-006"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-013",
+      "userId": "user-local-001",
+      "eventName": "select_scene",
+      "page": "/create/scene",
+      "properties": {
+        "uiId": "UI-02",
+        "controlId": "scene-luck",
+        "scene": "luck",
+        "label": "Just need luck",
+        "requirementId": "REQ-006"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-014",
+      "userId": "user-local-001",
+      "eventName": "select_scene",
+      "page": "/create/scene",
+      "properties": {
+        "uiId": "UI-02",
+        "controlId": "scene-date",
+        "scene": "date",
+        "label": "Date",
+        "requirementId": "REQ-006"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-015",
+      "userId": "user-local-001",
+      "eventName": "click_scene_continue",
+      "page": "/create/scene",
+      "properties": {
+        "uiId": "UI-02",
+        "controlId": "continue-scene",
+        "scene": "date",
+        "requirementId": "REQ-006"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-016",
+      "userId": "user-local-001",
+      "eventName": "blocked_generate_incomplete_selection",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-04",
+        "controlId": "generate-card",
+        "requirementId": "REQ-006,REQ-007",
+        "reason": "Choose one energy to continue."
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-017",
+      "userId": "user-local-001",
+      "eventName": "select_energy",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-03",
+        "controlId": "energy-confidence",
+        "energy": "confidence",
+        "label": "Confidence",
+        "requirementId": "REQ-007"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-018",
+      "userId": "user-local-001",
+      "eventName": "select_energy",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-03",
+        "controlId": "energy-luck",
+        "energy": "luck",
+        "label": "Luck",
+        "requirementId": "REQ-007"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-019",
+      "userId": "user-local-001",
+      "eventName": "select_energy",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-03",
+        "controlId": "energy-love",
+        "energy": "love",
+        "label": "Love",
+        "requirementId": "REQ-007"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-020",
+      "userId": "user-local-001",
+      "eventName": "select_energy",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-03",
+        "controlId": "energy-calm",
+        "energy": "calm",
+        "label": "Calm",
+        "requirementId": "REQ-007"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-021",
+      "userId": "user-local-001",
+      "eventName": "select_energy",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-03",
+        "controlId": "energy-charm",
+        "energy": "charm",
+        "label": "Charm",
+        "requirementId": "REQ-007"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-022",
+      "userId": "user-local-001",
+      "eventName": "select_energy",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-03",
+        "controlId": "energy-focus",
+        "energy": "focus",
+        "label": "Focus",
+        "requirementId": "REQ-007"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-023",
+      "userId": "user-local-001",
+      "eventName": "select_energy",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-03",
+        "controlId": "energy-confidence",
+        "energy": "confidence",
+        "label": "Confidence",
+        "requirementId": "REQ-007"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-024",
+      "userId": "user-local-001",
+      "eventName": "click_generate_card",
+      "page": "/create/energy",
+      "properties": {
+        "uiId": "UI-03",
+        "controlId": "generate-card",
+        "scene": "date",
+        "energy": "confidence",
+        "jobId": "job-004",
+        "requirementId": "REQ-006,REQ-007"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-025",
+      "userId": "user-local-001",
+      "eventName": "generation_started",
+      "page": "/create/loading",
+      "properties": {
+        "uiId": "UI-05",
+        "jobId": "job-004",
+        "requirementId": "REQ-013"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-026",
+      "userId": "user-local-001",
+      "eventName": "generation_success",
+      "page": "/create/loading",
+      "properties": {
+        "uiId": "UI-05",
+        "apiId": "API-002",
+        "jobId": "job-004",
+        "status": "success",
+        "requirementId": "REQ-013"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-027",
+      "userId": "user-local-001",
+      "eventName": "view_result_free",
+      "page": "/result/:id",
+      "properties": {
+        "uiId": "UI-06",
+        "apiId": "API-003",
+        "cardId": "card-004",
+        "view": "free",
+        "requirementId": "REQ-009"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-028",
+      "userId": "user-local-001",
+      "eventName": "click_unlock",
+      "page": "/result/:id",
+      "properties": {
+        "uiId": "UI-06",
+        "cardId": "card-004",
+        "requirementId": "REQ-009"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-029",
+      "userId": "user-local-001",
+      "eventName": "page_view_unlock_choice",
+      "page": "/unlock/:id",
+      "properties": {
+        "uiId": "UI-07",
+        "cardId": "card-004",
+        "requirementId": "REQ-010"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-030",
+      "userId": "user-local-001",
+      "eventName": "click_invite_unlock_entry",
+      "page": "/result/:id",
+      "properties": {
+        "uiId": "UI-06",
+        "cardId": "card-004",
+        "requirementId": "REQ-009"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-031",
+      "userId": "user-local-001",
+      "eventName": "click_paid_unlock_entry",
+      "page": "/unlock/:id",
+      "properties": {
+        "uiId": "UI-07",
+        "cardId": "card-004",
+        "requirementId": "REQ-012"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-032",
+      "userId": "user-local-001",
+      "eventName": "click_invite_instead",
+      "page": "/unlock/:id",
+      "properties": {
+        "uiId": "UI-07",
+        "cardId": "card-004",
+        "requirementId": "REQ-012"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-033",
+      "userId": "user-local-001",
+      "eventName": "invite_started",
+      "page": "/invite/:id",
+      "properties": {
+        "uiId": "UI-08",
+        "cardId": "card-004",
+        "inviteCode": "INVITE-LOCAL-001"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-034",
+      "userId": "user-local-001",
+      "eventName": "click_invite_paid_unlock",
+      "page": "/invite/:id",
+      "properties": {
+        "uiId": "UI-08",
+        "cardId": "card-004"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-035",
+      "userId": "user-local-001",
+      "eventName": "click_invite_friends",
+      "page": "/invite/:id",
+      "properties": {
+        "uiId": "UI-08",
+        "cardId": "card-004",
+        "inviteCode": "INVITE-LOCAL-001"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-036",
+      "userId": "user-local-001",
+      "eventName": "copy_share_link",
+      "page": "/invite/:id/progress",
+      "properties": {
+        "uiId": "UI-09",
+        "cardId": "card-004",
+        "inviteCode": "INVITE-LOCAL-001"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-037",
+      "userId": "user-local-001",
+      "eventName": "click_invite_again",
+      "page": "/invite/:id/progress",
+      "properties": {
+        "uiId": "UI-09",
+        "cardId": "card-004"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-038",
+      "userId": "user-local-001",
+      "eventName": "click_invite_how_it_works",
+      "page": "/invite/:id/progress",
+      "properties": {
+        "uiId": "UI-09",
+        "cardId": "card-004",
+        "modal": "invite-explainer"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-039",
+      "userId": "user-local-001",
+      "eventName": "page_view_invite_landing",
+      "page": "/invite/landing/:code",
+      "properties": {
+        "uiId": "UI-10",
+        "inviteCode": "INVITE-LOCAL-001"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-040",
+      "userId": "user-local-001",
+      "eventName": "click_friend_generate_card",
+      "page": "/invite/landing/:code",
+      "properties": {
+        "uiId": "UI-10",
+        "inviteCode": "INVITE-LOCAL-001",
+        "noLoginRequired": true
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-041",
+      "userId": "user-local-001",
+      "eventName": "page_view_mock_payment_confirm",
+      "page": "/unlock/:id/pay",
+      "properties": {
+        "uiId": "UI-11",
+        "cardId": "card-004",
+        "requirementId": "REQ-012"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-042",
+      "userId": "user-local-001",
+      "eventName": "checkout_started",
+      "page": "/unlock/:id/pay",
+      "properties": {
+        "uiId": "UI-11",
+        "cardId": "card-004",
+        "orderId": "order-003",
+        "localMock": true
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-043",
+      "userId": "user-local-001",
+      "eventName": "mock_payment_completed",
+      "page": "/unlock/:id/pay",
+      "properties": {
+        "uiId": "UI-12",
+        "cardId": "card-004",
+        "orderId": "order-003",
+        "result": "failed"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-044",
+      "userId": "user-local-001",
+      "eventName": "checkout_started",
+      "page": "/unlock/:id/pay",
+      "properties": {
+        "uiId": "UI-11",
+        "cardId": "card-004",
+        "orderId": "order-004",
+        "localMock": true
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-045",
+      "userId": "user-local-001",
+      "eventName": "checkout_success",
+      "page": "/unlock/:id/pay",
+      "properties": {
+        "uiId": "UI-13",
+        "cardId": "card-004",
+        "orderId": "order-004",
+        "result": "success"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-046",
+      "userId": "user-local-001",
+      "eventName": "click_restore_purchase",
+      "page": "/unlock/:id/pay-failed",
+      "properties": {
+        "uiId": "UI-12",
+        "cardId": "card-004",
+        "method": "restore"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-047",
+      "userId": "user-local-001",
+      "eventName": "click_payment_invite_instead",
+      "page": "/unlock/:id/pay-failed",
+      "properties": {
+        "uiId": "UI-12",
+        "cardId": "card-004"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-048",
+      "userId": "user-local-001",
+      "eventName": "click_payment_contact_support",
+      "page": "/unlock/:id/pay-failed",
+      "properties": {
+        "uiId": "UI-12",
+        "cardId": "card-004",
+        "localOnly": true
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-049",
+      "userId": "user-local-001",
+      "eventName": "checkout_started",
+      "page": "/unlock/:id/pay",
+      "properties": {
+        "uiId": "UI-11",
+        "cardId": "card-004",
+        "orderId": "order-005",
+        "localMock": true
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-050",
+      "userId": "user-local-001",
+      "eventName": "checkout_success",
+      "page": "/unlock/:id/pay",
+      "properties": {
+        "uiId": "UI-13",
+        "cardId": "card-004",
+        "orderId": "order-005",
+        "result": "success"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-051",
+      "userId": "user-local-001",
+      "eventName": "click_view_full_card_after_payment",
+      "page": "/unlock/:id/success",
+      "properties": {
+        "uiId": "UI-13",
+        "cardId": "card-004"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-052",
+      "userId": "user-local-001",
+      "eventName": "click_share_story_after_payment",
+      "page": "/unlock/:id/success",
+      "properties": {
+        "uiId": "UI-13",
+        "cardId": "card-004"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-053",
+      "userId": "user-local-001",
+      "eventName": "page_view_full_result",
+      "page": "/result/:id/full",
+      "properties": {
+        "uiId": "UI-14",
+        "apiId": "API-003",
+        "cardId": "card-004",
+        "view": "full",
+        "requirementId": "REQ-008,REQ-010"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-054",
+      "userId": "user-local-001",
+      "eventName": "save_card",
+      "page": "/result/:id/full",
+      "properties": {
+        "uiId": "UI-14",
+        "apiId": "API-007",
+        "cardId": "card-004",
+        "requirementId": "REQ-010"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-055",
+      "userId": "user-local-001",
+      "eventName": "share_card",
+      "page": "/result/:id/full",
+      "properties": {
+        "uiId": "UI-14",
+        "apiId": "API-008",
+        "cardId": "card-004",
+        "requirementId": "REQ-010"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-056",
+      "userId": "user-local-001",
+      "eventName": "click_more_sharing_options",
+      "page": "/result/:id/full",
+      "properties": {
+        "uiId": "UI-14",
+        "apiId": "API-008",
+        "cardId": "card-004",
+        "requirementId": "REQ-010"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-057",
+      "userId": "user-local-001",
+      "eventName": "click_view_7_day_trend_disabled",
+      "page": "/result/:id/full",
+      "properties": {
+        "uiId": "UI-14",
+        "cardId": "card-004",
+        "p1Deferred": true,
+        "requirementId": "REQ-020"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-058",
+      "userId": "user-local-001",
+      "eventName": "page_view_share_story",
+      "page": "/share/:id",
+      "properties": {
+        "uiId": "UI-15",
+        "apiId": "API-009",
+        "cardId": "card-004",
+        "requirementId": "REQ-014"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-059",
+      "userId": "user-local-001",
+      "eventName": "save_card",
+      "page": "/share/:id",
+      "properties": {
+        "uiId": "UI-15",
+        "apiId": "API-007",
+        "cardId": "card-004",
+        "requirementId": "REQ-011"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-060",
+      "userId": "user-local-001",
+      "eventName": "share_card",
+      "page": "/share/:id",
+      "properties": {
+        "uiId": "UI-15",
+        "apiId": "API-008",
+        "cardId": "card-004",
+        "requirementId": "REQ-014"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-061",
+      "userId": "user-local-001",
+      "eventName": "copy_share_link",
+      "page": "/share/:id",
+      "properties": {
+        "uiId": "UI-15",
+        "apiId": "API-008",
+        "cardId": "card-004",
+        "requirementId": "REQ-014"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-062",
+      "userId": "user-local-001",
+      "eventName": "page_view_share_channels",
+      "page": "/share/:id/channels",
+      "properties": {
+        "uiId": "UI-16",
+        "apiId": "API-008",
+        "cardId": "card-004",
+        "requirementId": "REQ-014"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-063",
+      "userId": "user-local-001",
+      "eventName": "share_card",
+      "page": "/share/:id/channels",
+      "properties": {
+        "uiId": "UI-16",
+        "apiId": "API-008",
+        "cardId": "card-004",
+        "channel": "wechat",
+        "requirementId": "REQ-014"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-064",
+      "userId": "user-local-001",
+      "eventName": "share_card",
+      "page": "/share/:id/channels",
+      "properties": {
+        "uiId": "UI-16",
+        "apiId": "API-008",
+        "cardId": "card-004",
+        "channel": "moments",
+        "requirementId": "REQ-014"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-065",
+      "userId": "user-local-001",
+      "eventName": "share_card",
+      "page": "/share/:id/channels",
+      "properties": {
+        "uiId": "UI-16",
+        "apiId": "API-008",
+        "cardId": "card-004",
+        "channel": "story",
+        "requirementId": "REQ-014"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-066",
+      "userId": "user-local-001",
+      "eventName": "share_card",
+      "page": "/share/:id/channels",
+      "properties": {
+        "uiId": "UI-16",
+        "apiId": "API-008",
+        "cardId": "card-004",
+        "channel": "story",
+        "requirementId": "REQ-014"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-067",
+      "userId": "user-local-001",
+      "eventName": "share_card",
+      "page": "/share/:id/channels",
+      "properties": {
+        "uiId": "UI-16",
+        "apiId": "API-008",
+        "cardId": "card-004",
+        "channel": "save_image",
+        "requirementId": "REQ-014"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-068",
+      "userId": "user-local-001",
+      "eventName": "share_card",
+      "page": "/share/:id/channels",
+      "properties": {
+        "uiId": "UI-16",
+        "apiId": "API-008",
+        "cardId": "card-004",
+        "channel": "copy_link",
+        "requirementId": "REQ-014"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-069",
+      "userId": "user-local-001",
+      "eventName": "click_cancel_share_channels",
+      "page": "/share/:id/channels",
+      "properties": {
+        "uiId": "UI-16",
+        "cardId": "card-004",
+        "requirementId": "REQ-014"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-070",
+      "userId": "user-local-001",
+      "eventName": "page_view_save_success",
+      "page": "/saved/:id",
+      "properties": {
+        "uiId": "UI-17",
+        "apiId": "API-007",
+        "cardId": "card-004",
+        "requirementId": "REQ-011"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-071",
+      "userId": "user-local-001",
+      "eventName": "share_card",
+      "page": "/saved/:id",
+      "properties": {
+        "uiId": "UI-17",
+        "apiId": "API-008",
+        "cardId": "card-004",
+        "requirementId": "REQ-011"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-072",
+      "userId": "user-local-001",
+      "eventName": "return_next_day",
+      "page": "/saved/:id",
+      "properties": {
+        "uiId": "UI-17",
+        "cardId": "card-004",
+        "requirementId": "REQ-011"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-073",
+      "userId": "user-local-001",
+      "eventName": "page_view_generation_error",
+      "page": "/error/network",
+      "properties": {
+        "uiId": "UI-18",
+        "jobId": "job-005",
+        "requirementId": "REQ-013"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-074",
+      "userId": "user-local-001",
+      "eventName": "click_generation_retry",
+      "page": "/error/network",
+      "properties": {
+        "uiId": "UI-18",
+        "controlId": "try-again",
+        "jobId": "job-006",
+        "requirementId": "REQ-013"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-075",
+      "userId": "user-local-001",
+      "eventName": "click_generation_change_scene",
+      "page": "/error/network",
+      "properties": {
+        "uiId": "UI-18",
+        "controlId": "change-scene",
+        "requirementId": "REQ-013"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    }
+  ]
+}

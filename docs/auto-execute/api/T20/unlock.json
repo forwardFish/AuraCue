@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "coveredCases": [
+    "API-004-C01",
+    "API-004-C02",
+    "API-005-C01",
+    "API-005-C02",
+    "API-006-C01",
+    "API-006-C02"
+  ],
+  "evidence": [
+    "docs/auto-execute/api/T20/unlock-payment-invite.json"
+  ]
+}

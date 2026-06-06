@@ -1,0 +1,233 @@
+page {
+  background: #fdf9f2;
+}
+
+.saved-success-page {
+  position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 48px 24px 34px;
+  overflow: hidden;
+  background: #fdf9f2;
+  color: #4a3b2c;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 999px;
+}
+
+.glow-gold {
+  top: 84px;
+  left: 50%;
+  width: 360px;
+  height: 360px;
+  margin-left: -180px;
+  background: radial-gradient(circle, rgba(255, 223, 179, 0.42), rgba(253, 249, 242, 0) 70%);
+}
+
+.glow-pink {
+  top: 340px;
+  left: 50%;
+  width: 430px;
+  height: 430px;
+  margin-left: -215px;
+  background: radial-gradient(circle, rgba(255, 160, 158, 0.2), rgba(253, 249, 242, 0) 70%);
+}
+
+.saved-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.close-button,
+.header-space {
+  width: 42px;
+  height: 42px;
+}
+
+.close-button {
+  border-radius: 999px;
+  border: 1px solid rgba(232, 212, 180, 0.5);
+  background: rgba(255, 255, 255, 0.6);
+  color: #4a3b2c;
+  font-size: 11px;
+}
+
+.close-button::after,
+.primary-action::after,
+.secondary-action::after,
+.link-action::after {
+  border: 0;
+}
+
+.brand {
+  color: #8e6e41;
+  font-family: Georgia, serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.success-ring {
+  position: relative;
+  z-index: 1;
+  width: 96px;
+  height: 96px;
+  margin: 34px auto 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 2px solid rgba(200, 169, 126, 0.32);
+}
+
+.checkmark {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #c8a97e;
+  font-size: 11px;
+  font-weight: 900;
+  box-shadow: 0 0 20px rgba(200, 169, 126, 0.4);
+}
+
+.page-title,
+.subtitle {
+  position: relative;
+  z-index: 1;
+  display: block;
+  text-align: center;
+}
+
+.page-title {
+  font-family: Georgia, serif;
+  font-size: 31px;
+  line-height: 38px;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 10px 0 30px;
+  color: #7a6b5c;
+  font-size: 14px;
+}
+
+.saved-card {
+  position: relative;
+  z-index: 1;
+  width: 240px;
+  height: 360px;
+  margin: 0 auto 24px;
+  display: grid;
+  place-items: end center;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #f7c6bd 0%, #fff0dc 48%, #c8a97e 100%);
+  border: 1px solid rgba(200, 169, 126, 0.42);
+  box-shadow: 0 12px 28px rgba(139, 94, 60, 0.18);
+}
+
+.card-frame {
+  width: calc(100% - 28px);
+  margin: 14px;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.82);
+  text-align: center;
+}
+
+.aura-name,
+.aura-theme {
+  display: block;
+}
+
+.aura-name {
+  font-family: Georgia, serif;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.aura-theme {
+  margin-top: 4px;
+  color: #7a6b5c;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.status-list {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(200, 169, 126, 0.28);
+}
+
+.status-check {
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: #ffa09e;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.actions {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 12px;
+  text-align: center;
+}
+
+.primary-action,
+.secondary-action,
+.link-action {
+  min-height: 54px;
+  border-radius: 999px;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.primary-action {
+  border: 0;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ffb5b3 0%, #ff8f8d 100%);
+  box-shadow: 0 4px 14px rgba(255, 160, 158, 0.39);
+}
+
+.secondary-action {
+  background: #ffffff;
+  border: 1px solid rgba(200, 169, 126, 0.52);
+  color: #8e6e41;
+}
+
+.link-action {
+  background: transparent;
+  color: #ffa09e;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 14px;
+}

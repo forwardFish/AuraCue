@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "scannedRoots": [
+    "apps/web/server",
+    "apps/web/app/api",
+    "apps/web/tests/api"
+  ],
+  "findings": []
+}

@@ -1,0 +1,21 @@
+{
+  "apiId": "API-009",
+  "caseId": "V01",
+  "caseKey": "API-009-V01",
+  "caseType": "validation failure",
+  "method": "POST",
+  "path": "/api/share-images/:cardId",
+  "expectedStatus": 400,
+  "actualStatus": 400,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-009-validation.json",
+  "response": {
+    "error": {
+      "code": "VALIDATION_ERROR",
+      "message": "Share image input is invalid.",
+      "details": {
+        "format": "Only story-9x16 local share rendering is supported."
+      }
+    }
+  }
+}

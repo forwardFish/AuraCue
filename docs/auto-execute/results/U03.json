@@ -1,0 +1,168 @@
+{
+  "taskId": "U03",
+  "status": "REPAIR_REQUIRED",
+  "generatedAt": "2026-05-27T12:50:52.003Z",
+  "scope": "U03 Result / Unlock / Invite Flow Visual Repair round 5 final attempt: UI-06 through UI-10 only.",
+  "targetThreshold": 0.005,
+  "round": 5,
+  "finalAttempt": true,
+  "changedFiles": [
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/",
+    "docs/auto-execute/screenshots/ui-one-to-one/T31/",
+    "docs/auto-execute/screenshots/ui-one-to-one/T33/",
+    "docs/auto-execute/logs/U03/",
+    "docs/auto-execute/results/T28.json",
+    "docs/auto-execute/results/T31.json",
+    "docs/auto-execute/results/T33.json",
+    "docs/auto-execute/results/U03.json",
+    "docs/auto-execute/latest/U03-HANDOFF.md"
+  ],
+  "productChanges": [
+    "Round 5 made no product-code edits. Visual evidence showed the remaining mismatch is dominated by raster assets, phone chrome, cloud/particle texture, avatars/portraits, tarot/card artwork, and font/raster rendering rather than a safe structural layout region.",
+    "No route, entitlement, payment, invite-count, API, DB, threshold, remote-asset, or full-reference-screenshot behavior was changed.",
+    "The retained product state remains the round 4 best retained state."
+  ],
+  "screenRatios": [
+    {
+      "uiId": "UI-06",
+      "t28DiffRatio": 0.288386,
+      "t31DiffRatio": 0.288386,
+      "previousRoundDiffRatio": 0.288386,
+      "deltaFromPrevious": 0,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      }
+    },
+    {
+      "uiId": "UI-07",
+      "t28DiffRatio": 0.216334,
+      "t31DiffRatio": 0.216334,
+      "previousRoundDiffRatio": 0.216334,
+      "deltaFromPrevious": 0,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      }
+    },
+    {
+      "uiId": "UI-08",
+      "t28DiffRatio": 0.257127,
+      "t31DiffRatio": 0.257127,
+      "previousRoundDiffRatio": 0.257127,
+      "deltaFromPrevious": 0,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": {
+        "x": 76,
+        "y": 10,
+        "width": 788,
+        "height": 1629
+      }
+    },
+    {
+      "uiId": "UI-09",
+      "t28DiffRatio": 0.343375,
+      "t31DiffRatio": 0.343375,
+      "previousRoundDiffRatio": 0.343375,
+      "deltaFromPrevious": 0,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": {
+        "x": 47,
+        "y": 0,
+        "width": 847,
+        "height": 1656
+      }
+    },
+    {
+      "uiId": "UI-10",
+      "t28DiffRatio": 0.337765,
+      "t31DiffRatio": 0.337765,
+      "previousRoundDiffRatio": 0.337765,
+      "deltaFromPrevious": 0,
+      "thresholdStatus": "FAIL",
+      "remainingBoundingBox": {
+        "x": 84,
+        "y": 3,
+        "width": 774,
+        "height": 1600
+      }
+    }
+  ],
+  "commands": [
+    {
+      "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T28",
+      "exitCode": 0,
+      "status": "REPAIR_REQUIRED",
+      "log": "docs/auto-execute/logs/U03/T28-round5.log"
+    },
+    {
+      "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T31",
+      "exitCode": 0,
+      "status": "REPAIR_REQUIRED",
+      "log": "docs/auto-execute/logs/U03/T31-round5.log"
+    },
+    {
+      "command": "node scripts/t33-final-ui-one-to-one-gate.mjs",
+      "exitCode": 2,
+      "status": "REPAIR_REQUIRED",
+      "log": "docs/auto-execute/logs/U03/T33-final-round5.log"
+    },
+    {
+      "command": "pnpm.cmd test",
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/U03/pnpm-test-round5.log"
+    },
+    {
+      "command": "node scripts/verify-wechat-routes.mjs",
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/U03/routes-round5.log"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/U03/diff-check-round5.log"
+    }
+  ],
+  "candidateEvidence": [
+    {
+      "candidate": "Round 5 product-code edit",
+      "kept": false,
+      "revertReason": "No safe high-confidence structural edit remained after comparing T28/T31 actual, diff, and reference evidence. Product code was not churned."
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/screenshots/ui-one-to-one/T28/visual-summary.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T31/visual-summary.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T33/visual-summary.json",
+    "docs/auto-execute/results/T28.json",
+    "docs/auto-execute/results/T31.json",
+    "docs/auto-execute/results/T33.json",
+    "docs/auto-execute/logs/U03/T28-round5.log",
+    "docs/auto-execute/logs/U03/T31-round5.log",
+    "docs/auto-execute/logs/U03/T33-final-round5.log",
+    "docs/auto-execute/logs/U03/pnpm-test-round5.log",
+    "docs/auto-execute/logs/U03/routes-round5.log",
+    "docs/auto-execute/logs/U03/diff-check-round5.log"
+  ],
+  "blockerClassification": "ASSET_SOURCE_REQUIRED",
+  "blockers": [
+    "UI-06 through UI-10 still exceed the strict diffRatio <= 0.005 threshold after five U03 repair rounds.",
+    "Round 5 found no safe remaining structural edit that would reduce large regions without recreating reference-only assets or mounting full reference screenshots.",
+    "Remaining mismatch is dominated by reference-only raster tarot/card artwork, realistic portraits/avatars, exact cloud/particle texture, phone hardware chrome, and font/raster rendering.",
+    "No missing core text, missing required controls, route failure, product-test failure, or environment blocker was recorded for U03."
+  ],
+  "nextActions": [
+    "Stop U03 as REPAIR_REQUIRED / ASSET_SOURCE_REQUIRED after round 5. Do not start U04 in this worker.",
+    "To reach diffRatio <= 0.005 for UI-06 through UI-10, obtain approved original component assets or explicit approval for reference-derived per-component assets, then rerun T28, T31, T33 final gate, pnpm.cmd test, route verification, and git diff --check.",
+    "If queue execution continues despite U03 remaining blocked, U04 must be a separate fresh worker."
+  ]
+}

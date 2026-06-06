@@ -1,0 +1,43 @@
+{
+  "anonymousId": "anon_c9af741d08be479fac84f9f554f10bde",
+  "counts": {
+    "GenerationJob": 2,
+    "AuraCard": 2
+  },
+  "jobs": [
+    {
+      "id": "cmq1l71wt0002iwvcjqsp72ji",
+      "status": "success",
+      "provider": "mock-fallback-forced",
+      "fallbackUsed": true,
+      "resultCardId": "cmq1l71wy0003iwvcdby1sr3x",
+      "cardId": "cmq1l71wy0003iwvcdby1sr3x"
+    },
+    {
+      "id": "cmq1l71xm0004iwvch3gnszrd",
+      "status": "success",
+      "provider": "mock-fallback-forced",
+      "fallbackUsed": true,
+      "resultCardId": "cmq1l71xo0005iwvcjznozkuo",
+      "cardId": "cmq1l71xo0005iwvcjznozkuo"
+    }
+  ],
+  "cards": [
+    {
+      "id": "cmq1l71wy0003iwvcdby1sr3x",
+      "generationJobId": "cmq1l71wt0002iwvcjqsp72ji",
+      "drawPosition": 2,
+      "auraName": "Clear Signal Aura",
+      "generationSource": "local-fallback",
+      "fallbackUsed": true
+    },
+    {
+      "id": "cmq1l71xo0005iwvcjznozkuo",
+      "generationJobId": "cmq1l71xm0004iwvch3gnszrd",
+      "drawPosition": 3,
+      "auraName": "Clear Signal Aura",
+      "generationSource": "local-fallback",
+      "fallbackUsed": true
+    }
+  ]
+}

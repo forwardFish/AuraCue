@@ -1,0 +1,21 @@
+{
+  "apiId": "API-007",
+  "caseId": "V01",
+  "caseKey": "API-007-V01",
+  "caseType": "validation failure",
+  "method": "POST",
+  "path": "/api/cards/:cardId/save",
+  "expectedStatus": 400,
+  "actualStatus": 400,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-007-validation.json",
+  "response": {
+    "error": {
+      "code": "VALIDATION_ERROR",
+      "message": "Save card input is invalid.",
+      "details": {
+        "source": "Expected a non-empty save source."
+      }
+    }
+  }
+}

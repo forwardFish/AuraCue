@@ -1,0 +1,47 @@
+<view class="loading-page">
+  <view class="loading-glow"></view>
+  <view class="top-bar">
+    <button class="round-button" bindtap="onBackTap">‹</button>
+    <text class="brand">AuraCue</text>
+    <button class="round-button">gift</button>
+  </view>
+
+  <view class="loading-content">
+    <text class="spark">✦</text>
+    <text class="title">Drawing your</text>
+    <text class="title title-emphasis">Lucky Aura Card...</text>
+    <text class="subtitle">Matching your scene, energy, and today's vibe.</text>
+
+    <view class="ritual-stage">
+      <view class="orbit orbit-one"></view>
+      <view class="orbit orbit-two"></view>
+      <view class="tarot-card">
+        <text>Aura Card Back</text>
+      </view>
+    </view>
+    <view class="card-glow"></view>
+
+    <view class="progress-card">
+      <view class="progress-step active">
+        <view class="step-dot">1</view>
+        <text>Reading your</text>
+        <text>mood</text>
+      </view>
+      <view class="progress-step">
+        <view class="step-dot">2</view>
+        <text>Aligning your</text>
+        <text>energy</text>
+      </view>
+      <view class="progress-step">
+        <view class="step-dot">3</view>
+        <text>Revealing your</text>
+        <text>cues</text>
+      </view>
+    </view>
+
+    <view class="footnote">
+      <text>This takes a few seconds.</text>
+      <text>Good things are unfolding.</text>
+    </view>
+  </view>
+</view>

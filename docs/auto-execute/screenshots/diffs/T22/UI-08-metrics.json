@@ -1,0 +1,19 @@
+{
+  "taskId": "T22",
+  "uiId": "UI-08",
+  "title": "Aura Activated",
+  "route": "/activated/:id",
+  "pagePath": "pages/activated/index",
+  "state": "aura-activated",
+  "sourceReference": "docs/UI/小程序/P0-08-Activated-气场已激活成功.png",
+  "referencePresent": true,
+  "actualScreenshotPresent": false,
+  "diffImagePresent": false,
+  "metricsPresent": false,
+  "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+  "requiredEvidence": {
+    "actualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-08.png",
+    "diffImage": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-08.png",
+    "pixelMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-08.json"
+  }
+}

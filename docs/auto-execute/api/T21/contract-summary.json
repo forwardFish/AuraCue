@@ -1,0 +1,136 @@
+{
+  "status": "PASS",
+  "taskId": "T21",
+  "scope": "Frontend backend contract tests for mini-program API callers API-001..API-010.",
+  "acceptanceCriteria": {
+    "apiClientMethodsMapToApi001ThroughApi010": "PASS",
+    "everyCallerHasSuccessAndErrorContractTests": "PASS",
+    "lockedFreeFullEntitlementVisibilityVerified": "PASS",
+    "contractDriftBlocksTaskSuccess": "PASS"
+  },
+  "backendBaseUrl": "local in-process server on 127.0.0.1:45562",
+  "apiIds": [
+    "API-001",
+    "API-002",
+    "API-003",
+    "API-004",
+    "API-005",
+    "API-006",
+    "API-007",
+    "API-008",
+    "API-009",
+    "API-010"
+  ],
+  "clientMethods": [
+    "completeMockPaymentOrder",
+    "createGenerationJob",
+    "createMockPaymentOrder",
+    "getCard",
+    "getGenerationJob",
+    "recordAnalyticsEvent",
+    "recordInviteEvent",
+    "recordShareEvent",
+    "renderShareImage",
+    "saveCard",
+    "unlockCard"
+  ],
+  "successCallCount": 62,
+  "errorCallCount": 12,
+  "errorContracts": [
+    {
+      "apiId": "API-001",
+      "errorCode": "VALIDATION_ERROR",
+      "status": "PASS"
+    },
+    {
+      "apiId": "API-002",
+      "errorCode": "NOT_FOUND",
+      "status": "PASS"
+    },
+    {
+      "apiId": "API-003",
+      "errorCode": "NOT_FOUND",
+      "status": "PASS"
+    },
+    {
+      "apiId": "API-004",
+      "errorCode": "PAYMENT_REQUIRED",
+      "status": "PASS"
+    },
+    {
+      "apiId": "API-005",
+      "errorCode": "VALIDATION_ERROR",
+      "status": "PASS"
+    },
+    {
+      "apiId": "API-005",
+      "errorCode": "NOT_FOUND",
+      "status": "PASS"
+    },
+    {
+      "apiId": "API-006",
+      "errorCode": "VALIDATION_ERROR",
+      "status": "PASS"
+    },
+    {
+      "apiId": "API-007",
+      "errorCode": "VALIDATION_ERROR",
+      "status": "PASS"
+    },
+    {
+      "apiId": "API-008",
+      "errorCode": "VALIDATION_ERROR",
+      "status": "PASS"
+    },
+    {
+      "apiId": "API-009",
+      "errorCode": "VALIDATION_ERROR",
+      "status": "PASS"
+    },
+    {
+      "apiId": "API-010",
+      "errorCode": "VALIDATION_ERROR",
+      "status": "PASS"
+    }
+  ],
+  "lockedFreeFullVisibility": {
+    "freePreviewLocked": true,
+    "fullAfterMockUnlockLocked": false,
+    "entitlementMethod": "payment"
+  },
+  "loadingAndErrorUi": {
+    "loadingUiId": "UI-05",
+    "networkErrorUiId": "UI-18",
+    "retryRouteUiId": "UI-05",
+    "safeErrorCopy": true
+  },
+  "shareChannelContract": {
+    "backendSupportedShareChannels": [
+      "copy_link",
+      "moments",
+      "save_image",
+      "story",
+      "wechat"
+    ],
+    "observedShareChannels": [
+      "copy_link",
+      "moments",
+      "save_image",
+      "story",
+      "wechat"
+    ]
+  },
+  "evidence": [
+    "docs/auto-execute/api/T21/contract-summary.json",
+    "docs/auto-execute/traces/T21/frontend-backend-contract-trace.json",
+    "docs/auto-execute/logs/T21/contract-tests.log"
+  ],
+  "noProductionSideEffects": {
+    "realWeChatPay": false,
+    "realCloudWrites": false,
+    "productionDb": false,
+    "productionAi": false,
+    "productionAnalytics": false,
+    "secretsUsed": false
+  }
+}

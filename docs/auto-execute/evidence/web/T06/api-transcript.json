@@ -1,0 +1,106 @@
+[
+  {
+    "endpoint": "POST /api/v1/aura-cards/generate",
+    "case": "missing drawPosition",
+    "status": 400,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "anonymousId, drawSessionId, and drawPosition are required.",
+        "details": {}
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/aura-cards/generate",
+    "case": "draw session not found",
+    "status": 404,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "NOT_FOUND",
+        "message": "Draw session was not found for this anonymous user.",
+        "details": {}
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/aura-cards/generate",
+    "case": "mock fallback success",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "jobId": "cmq1l71wt0002iwvcjqsp72ji",
+        "status": "success",
+        "cardId": "cmq1l71wy0003iwvcdby1sr3x",
+        "generationSource": "local-fallback",
+        "fallbackUsed": true,
+        "provider": "mock-fallback-forced"
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/aura-cards/generate",
+    "case": "idempotent",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "jobId": "cmq1l71wt0002iwvcjqsp72ji",
+        "status": "success",
+        "cardId": "cmq1l71wy0003iwvcdby1sr3x",
+        "generationSource": "local-fallback",
+        "fallbackUsed": true,
+        "provider": "mock-fallback-forced"
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/generations/start",
+    "case": "alias mock fallback success",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "jobId": "cmq1l71xm0004iwvch3gnszrd",
+        "status": "success",
+        "cardId": "cmq1l71xo0005iwvcjznozkuo",
+        "generationSource": "local-fallback",
+        "fallbackUsed": true,
+        "provider": "mock-fallback-forced"
+      }
+    }
+  },
+  {
+    "endpoint": "GET /api/v1/generation-jobs/:jobId",
+    "case": "success readback",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "jobId": "cmq1l71wt0002iwvcjqsp72ji",
+        "status": "success",
+        "cardId": "cmq1l71wy0003iwvcdby1sr3x",
+        "error": null,
+        "generationSource": "local-fallback",
+        "fallbackUsed": true,
+        "provider": "mock-fallback-forced"
+      }
+    }
+  },
+  {
+    "endpoint": "GET /api/v1/generation-jobs/:jobId",
+    "case": "not found",
+    "status": 404,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "NOT_FOUND",
+        "message": "Generation job was not found.",
+        "details": {}
+      }
+    }
+  }
+]

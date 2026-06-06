@@ -1,0 +1,569 @@
+{
+  "status": "PASS",
+  "requirementIds": [
+    "REQ-010",
+    "REQ-012"
+  ],
+  "scenarios": [
+    {
+      "scenarioId": "SCN-006",
+      "stepId": "01",
+      "status": "PASS",
+      "personaGoal": "Open unlock options",
+      "action": "Click Unlock Full Card",
+      "uiId": "UI-07",
+      "route": {
+        "uiId": "UI-07",
+        "route": "/unlock/:id",
+        "path": "/unlock/card-004",
+        "pagePath": "pages/unlock/index",
+        "state": "unlock-choice",
+        "ownerScenario": "SCN-006",
+        "title": "Unlock"
+      },
+      "apiIds": [
+        "API-010"
+      ],
+      "dbReadbackIds": [
+        "DB-010"
+      ],
+      "clickEvidence": {
+        "controlId": "unlock-full-card",
+        "expectedRoute": "/unlock/:id",
+        "route": {
+          "uiId": "UI-07",
+          "route": "/unlock/:id",
+          "path": "/unlock/card-004",
+          "pagePath": "pages/unlock/index",
+          "state": "unlock-choice",
+          "ownerScenario": "SCN-006",
+          "title": "Unlock"
+        },
+        "analyticsResponse": {
+          "accepted": true,
+          "analyticsEventId": "analytics-028"
+        }
+      }
+    },
+    {
+      "scenarioId": "SCN-007",
+      "stepId": "01",
+      "status": "PASS",
+      "personaGoal": "Try invite unlock",
+      "action": "Click Invite 3 friends instead",
+      "uiId": "UI-08",
+      "route": {
+        "uiId": "UI-08",
+        "route": "/invite/:id",
+        "path": "/invite/card-004",
+        "pagePath": "pages/invite/start",
+        "state": "invite-start",
+        "ownerScenario": "SCN-007",
+        "title": "Invite Start"
+      },
+      "apiIds": [
+        "API-006",
+        "API-010"
+      ],
+      "dbReadbackIds": [
+        "DB-011"
+      ],
+      "clickEvidence": {
+        "inviteInstead": {
+          "controlId": "invite-three-friends-instead",
+          "expectedRoute": "/invite/:id",
+          "route": {
+            "uiId": "UI-08",
+            "route": "/invite/:id",
+            "path": "/invite/card-004",
+            "pagePath": "pages/invite/start",
+            "state": "invite-start",
+            "ownerScenario": "SCN-007",
+            "title": "Invite Start"
+          },
+          "analyticsResponse": {
+            "accepted": true,
+            "analyticsEventId": "analytics-032"
+          }
+        },
+        "inviteStart": {
+          "apiId": "API-006",
+          "inviteResponse": {
+            "cardId": "card-004",
+            "inviteCode": "INVITE-LOCAL-001",
+            "progress": 0,
+            "required": 3,
+            "completed": false,
+            "entitlement": null
+          },
+          "analyticsResponse": {
+            "accepted": true,
+            "analyticsEventId": "analytics-033"
+          }
+        }
+      }
+    },
+    {
+      "scenarioId": "SCN-007",
+      "stepId": "02",
+      "status": "PASS",
+      "personaGoal": "Invite progress",
+      "action": "Click Invite Friends, Copy, Invite Again, How it works?",
+      "uiId": "UI-09",
+      "route": {
+        "uiId": "UI-09",
+        "route": "/invite/:id/progress",
+        "path": "/invite/card-004/progress",
+        "pagePath": "pages/invite/progress",
+        "state": "invite-progress",
+        "ownerScenario": "SCN-007",
+        "title": "Invite Progress"
+      },
+      "apiIds": [
+        "API-006",
+        "API-008",
+        "API-010"
+      ],
+      "dbReadbackIds": [
+        "DB-012"
+      ],
+      "clickEvidence": {
+        "inviteFriends": {
+          "controlId": "invite-friends",
+          "expectedRoute": "/invite/:id/progress",
+          "route": {
+            "uiId": "UI-09",
+            "route": "/invite/:id/progress",
+            "path": "/invite/card-004/progress",
+            "pagePath": "pages/invite/progress",
+            "state": "invite-progress",
+            "ownerScenario": "SCN-007",
+            "title": "Invite Progress"
+          },
+          "inviteResponse": {
+            "cardId": "card-004",
+            "inviteCode": "INVITE-LOCAL-001",
+            "progress": 0,
+            "required": 3,
+            "completed": false,
+            "entitlement": null
+          },
+          "shareResponse": {
+            "shareEventId": "share-005",
+            "cardId": "card-004",
+            "channel": "wechat",
+            "source": "UI-08"
+          },
+          "analyticsResponse": {
+            "accepted": true,
+            "analyticsEventId": "analytics-035"
+          }
+        },
+        "copyInvite": {
+          "controlId": "copy-invite-link",
+          "shareResponse": {
+            "shareEventId": "share-006",
+            "cardId": "card-004",
+            "channel": "copy_link",
+            "source": "UI-09"
+          },
+          "analyticsResponse": {
+            "accepted": true,
+            "analyticsEventId": "analytics-036"
+          },
+          "copiedLink": "auracue.local/invite/INVITE-LOCAL-001"
+        },
+        "inviteAgain": {
+          "controlId": "invite-again",
+          "inviteResponse": {
+            "cardId": "card-004",
+            "inviteCode": "INVITE-LOCAL-001",
+            "progress": 0,
+            "required": 3,
+            "completed": false,
+            "entitlement": null
+          },
+          "shareResponse": {
+            "shareEventId": "share-008",
+            "cardId": "card-004",
+            "channel": "wechat",
+            "source": "UI-09"
+          },
+          "analyticsResponse": {
+            "accepted": true,
+            "analyticsEventId": "analytics-037"
+          }
+        },
+        "howItWorks": {
+          "controlId": "how-it-works",
+          "modalShown": true,
+          "analyticsResponse": {
+            "accepted": true,
+            "analyticsEventId": "analytics-038"
+          }
+        }
+      }
+    },
+    {
+      "scenarioId": "SCN-008",
+      "stepId": "01",
+      "status": "PASS",
+      "personaGoal": "Friend accepts invite",
+      "action": "Open friend landing and click Generate My Lucky Aura Card",
+      "uiId": "UI-10",
+      "route": {
+        "uiId": "UI-02",
+        "route": "/create/scene",
+        "path": "/create/scene",
+        "pagePath": "pages/create/scene",
+        "state": "scene-selection",
+        "ownerScenario": "SCN-002",
+        "title": "Choose Scene"
+      },
+      "apiIds": [
+        "API-006",
+        "API-010"
+      ],
+      "dbReadbackIds": [
+        "DB-013"
+      ],
+      "clickEvidence": {
+        "friendLanding": {
+          "apiId": "API-006",
+          "inviteResponse": {
+            "cardId": "card-locked-001",
+            "inviteCode": "INVITE-LOCAL-001",
+            "progress": 2,
+            "required": 3,
+            "completed": false,
+            "entitlement": null
+          },
+          "analyticsResponse": {
+            "accepted": true,
+            "analyticsEventId": "analytics-039"
+          }
+        },
+        "friendGenerate": {
+          "controlId": "generate-my-lucky-aura-card",
+          "expectedRoute": "/create/scene",
+          "route": {
+            "uiId": "UI-02",
+            "route": "/create/scene",
+            "path": "/create/scene",
+            "pagePath": "pages/create/scene",
+            "state": "scene-selection",
+            "ownerScenario": "SCN-002",
+            "title": "Choose Scene"
+          },
+          "analyticsResponse": {
+            "accepted": true,
+            "analyticsEventId": "analytics-040"
+          }
+        }
+      }
+    },
+    {
+      "scenarioId": "SCN-009",
+      "stepId": "01",
+      "status": "PASS",
+      "personaGoal": "Try paid unlock",
+      "action": "Click paid unlock, then Confirm Unlock $1.99",
+      "uiId": "UI-11",
+      "route": {
+        "uiId": "UI-12",
+        "route": "/unlock/:id/pay-failed",
+        "path": "/unlock/card-004/pay-failed",
+        "pagePath": "pages/unlock/pay-failed",
+        "state": "mock-payment-failed",
+        "ownerScenario": "SCN-010",
+        "title": "Mock Pay Failed"
+      },
+      "apiIds": [
+        "API-005",
+        "API-010"
+      ],
+      "dbReadbackIds": [
+        "DB-014"
+      ],
+      "clickEvidence": {
+        "controlId": "confirm-unlock-199",
+        "order": {
+          "orderId": "order-003",
+          "cardId": "card-004",
+          "amount": 1.99,
+          "currency": "USD",
+          "status": "pending",
+          "entitlement": null
+        },
+        "completed": {
+          "orderId": "order-003",
+          "cardId": "card-004",
+          "amount": 1.99,
+          "currency": "USD",
+          "status": "failed",
+          "entitlement": null
+        },
+        "entitlement": null,
+        "route": {
+          "uiId": "UI-12",
+          "route": "/unlock/:id/pay-failed",
+          "path": "/unlock/card-004/pay-failed",
+          "pagePath": "pages/unlock/pay-failed",
+          "state": "mock-payment-failed",
+          "ownerScenario": "SCN-010",
+          "title": "Mock Pay Failed"
+        },
+        "analytics": [
+          {
+            "accepted": true,
+            "analyticsEventId": "analytics-042"
+          },
+          {
+            "accepted": true,
+            "analyticsEventId": "analytics-043"
+          }
+        ]
+      }
+    },
+    {
+      "scenarioId": "SCN-010",
+      "stepId": "01",
+      "status": "PASS",
+      "personaGoal": "Recover failed payment",
+      "action": "Click Try Again, Restore Purchase, Invite 3 Friends Instead, Contact Support",
+      "uiId": "UI-12",
+      "route": {
+        "uiId": "UI-08",
+        "route": "/invite/:id",
+        "path": "/invite/card-004",
+        "pagePath": "pages/invite/start",
+        "state": "invite-start",
+        "ownerScenario": "SCN-007",
+        "title": "Invite Start"
+      },
+      "apiIds": [
+        "API-004",
+        "API-005",
+        "API-010"
+      ],
+      "dbReadbackIds": [
+        "DB-015"
+      ],
+      "clickEvidence": {
+        "retryPayment": {
+          "controlId": "try-again",
+          "order": {
+            "orderId": "order-004",
+            "cardId": "card-004",
+            "amount": 1.99,
+            "currency": "USD",
+            "status": "pending",
+            "entitlement": null
+          },
+          "completed": {
+            "orderId": "order-004",
+            "cardId": "card-004",
+            "amount": 1.99,
+            "currency": "USD",
+            "status": "paid",
+            "entitlement": {
+              "entitled": true,
+              "entitlementId": "entitlement-002",
+              "cardId": "card-004",
+              "method": "payment",
+              "orderId": "order-004"
+            }
+          },
+          "entitlement": {
+            "entitled": true,
+            "entitlementId": "entitlement-002",
+            "cardId": "card-004",
+            "method": "payment",
+            "orderId": "order-004"
+          },
+          "route": {
+            "uiId": "UI-13",
+            "route": "/unlock/:id/success",
+            "path": "/unlock/card-004/success",
+            "pagePath": "pages/unlock/success",
+            "state": "mock-payment-success",
+            "ownerScenario": "SCN-011",
+            "title": "Unlock Success"
+          },
+          "analytics": [
+            {
+              "accepted": true,
+              "analyticsEventId": "analytics-044"
+            },
+            {
+              "accepted": true,
+              "analyticsEventId": "analytics-045"
+            }
+          ],
+          "expectedRoute": "/unlock/:id/success"
+        },
+        "restorePurchase": {
+          "controlId": "restore-purchase",
+          "expectedRoute": "/unlock/:id/success",
+          "entitlement": {
+            "entitled": true,
+            "entitlementId": "entitlement-002",
+            "cardId": "card-004",
+            "method": "payment",
+            "orderId": "order-004"
+          },
+          "analyticsResponse": {
+            "accepted": true,
+            "analyticsEventId": "analytics-046"
+          },
+          "route": {
+            "uiId": "UI-13",
+            "route": "/unlock/:id/success",
+            "path": "/unlock/card-004/success",
+            "pagePath": "pages/unlock/success",
+            "state": "mock-payment-success",
+            "ownerScenario": "SCN-011",
+            "title": "Unlock Success"
+          }
+        },
+        "paymentInvite": {
+          "controlId": "invite-3-friends-instead",
+          "expectedRoute": "/invite/:id",
+          "route": {
+            "uiId": "UI-08",
+            "route": "/invite/:id",
+            "path": "/invite/card-004",
+            "pagePath": "pages/invite/start",
+            "state": "invite-start",
+            "ownerScenario": "SCN-007",
+            "title": "Invite Start"
+          },
+          "analyticsResponse": {
+            "accepted": true,
+            "analyticsEventId": "analytics-047"
+          }
+        },
+        "contactSupport": {
+          "controlId": "contact-support",
+          "toast": "Local support placeholder",
+          "analyticsResponse": {
+            "accepted": true,
+            "analyticsEventId": "analytics-048"
+          }
+        }
+      }
+    },
+    {
+      "scenarioId": "SCN-011",
+      "stepId": "01",
+      "status": "PASS",
+      "personaGoal": "Complete mock payment",
+      "action": "Confirm payment success, click View Full Card",
+      "uiId": "UI-13",
+      "route": {
+        "uiId": "UI-14",
+        "route": "/result/:id/full",
+        "path": "/result/card-004/full",
+        "pagePath": "pages/result/full",
+        "state": "full-result",
+        "ownerScenario": "SCN-012",
+        "title": "Full Result"
+      },
+      "apiIds": [
+        "API-004",
+        "API-005",
+        "API-010"
+      ],
+      "dbReadbackIds": [
+        "DB-016"
+      ],
+      "clickEvidence": {
+        "paymentSuccess": {
+          "controlId": "confirm-unlock-199",
+          "order": {
+            "orderId": "order-005",
+            "cardId": "card-004",
+            "amount": 1.99,
+            "currency": "USD",
+            "status": "pending",
+            "entitlement": null
+          },
+          "completed": {
+            "orderId": "order-005",
+            "cardId": "card-004",
+            "amount": 1.99,
+            "currency": "USD",
+            "status": "paid",
+            "entitlement": {
+              "entitled": true,
+              "entitlementId": "entitlement-002",
+              "cardId": "card-004",
+              "method": "payment",
+              "orderId": "order-004"
+            }
+          },
+          "entitlement": {
+            "entitled": true,
+            "entitlementId": "entitlement-002",
+            "cardId": "card-004",
+            "method": "payment",
+            "orderId": "order-004"
+          },
+          "route": {
+            "uiId": "UI-13",
+            "route": "/unlock/:id/success",
+            "path": "/unlock/card-004/success",
+            "pagePath": "pages/unlock/success",
+            "state": "mock-payment-success",
+            "ownerScenario": "SCN-011",
+            "title": "Unlock Success"
+          },
+          "analytics": [
+            {
+              "accepted": true,
+              "analyticsEventId": "analytics-049"
+            },
+            {
+              "accepted": true,
+              "analyticsEventId": "analytics-050"
+            }
+          ]
+        },
+        "viewFullFromSuccess": {
+          "controlId": "view-full-card",
+          "expectedRoute": "/result/:id/full",
+          "route": {
+            "uiId": "UI-14",
+            "route": "/result/:id/full",
+            "path": "/result/card-004/full",
+            "pagePath": "pages/result/full",
+            "state": "full-result",
+            "ownerScenario": "SCN-012",
+            "title": "Full Result"
+          },
+          "analyticsResponse": {
+            "accepted": true,
+            "analyticsEventId": "analytics-051"
+          }
+        },
+        "shareAfterPayment": {
+          "controlId": "share-story",
+          "expectedRoute": "/share/:id",
+          "route": {
+            "uiId": "UI-15",
+            "route": "/share/:id",
+            "path": "/share/card-004",
+            "pagePath": "pages/share/story",
+            "state": "story-preview",
+            "ownerScenario": "SCN-013",
+            "title": "Share Story"
+          },
+          "analyticsResponse": {
+            "accepted": true,
+            "analyticsEventId": "analytics-052"
+          }
+        }
+      }
+    }
+  ]
+}

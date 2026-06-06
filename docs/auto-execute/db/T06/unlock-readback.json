@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "paymentOrders": {
+    "failed": {
+      "id": "order-003",
+      "userId": "user-local-001",
+      "cardId": "card-004",
+      "amount": 1.99,
+      "currency": "USD",
+      "status": "failed",
+      "createdAt": "2026-05-26T00:00:00.000Z",
+      "completedAt": "2026-05-26T00:00:00.000Z"
+    },
+    "retryPaid": {
+      "id": "order-004",
+      "userId": "user-local-001",
+      "cardId": "card-004",
+      "amount": 1.99,
+      "currency": "USD",
+      "status": "paid",
+      "createdAt": "2026-05-26T00:00:00.000Z",
+      "completedAt": "2026-05-26T00:00:00.000Z"
+    }
+  },
+  "entitlements": {
+    "payment": {
+      "id": "entitlement-002",
+      "userId": "user-local-001",
+      "cardId": "card-004",
+      "method": "payment",
+      "orderId": "order-004",
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    "invite": {
+      "id": "entitlement-004",
+      "userId": "user-local-001",
+      "cardId": "card-locked-001",
+      "method": "invite",
+      "orderId": null,
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    "restore": {
+      "id": "entitlement-003",
+      "userId": "user-local-001",
+      "cardId": "card-saved-001",
+      "method": "restore",
+      "orderId": null,
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    }
+  },
+  "inviteProgress": {
+    "progress": 3,
+    "required": 3,
+    "completed": true
+  },
+  "inviteEvents": [
+    {
+      "id": "share-003",
+      "userId": "user-local-001",
+      "cardId": "card-locked-001",
+      "channel": "wechat",
+      "source": "invite-invite_started",
+      "inviteCode": "INVITE-T06",
+      "friendId": null,
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "invite-004",
+      "userId": "user-local-001",
+      "cardId": "card-locked-001",
+      "channel": "wechat",
+      "source": "invite-friend_accept",
+      "inviteCode": "INVITE-T06",
+      "friendId": "friend-t06-001",
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "invite-005",
+      "userId": "user-local-001",
+      "cardId": "card-locked-001",
+      "channel": "wechat",
+      "source": "invite-friend_accept",
+      "inviteCode": "INVITE-T06",
+      "friendId": "friend-t06-002",
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "invite-006",
+      "userId": "user-local-001",
+      "cardId": "card-locked-001",
+      "channel": "wechat",
+      "source": "invite-friend_accept",
+      "inviteCode": "INVITE-T06",
+      "friendId": "friend-t06-003",
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    }
+  ],
+  "duplicateSafety": {
+    "duplicateFriendCount": 1,
+    "entitlementRowsForPaymentCard": 1
+  }
+}

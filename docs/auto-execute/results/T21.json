@@ -1,0 +1,125 @@
+{
+  "taskId": "T21",
+  "taskName": "frontend-backend-contract-tests",
+  "status": "PASS",
+  "completedAt": "2026-05-26T00:00:00.000Z",
+  "scope": "Verified mini-program frontend API callers against local backend contracts for API-001 through API-010.",
+  "changedFiles": [
+    "apps/wechat-mini/src/pages/unlock/unlock-invite-page.mjs",
+    "apps/wechat-mini/src/pages/result/full-page.mjs",
+    "apps/wechat-mini/src/pages/result/full.js",
+    "apps/wechat-mini/src/pages/share/share-save-page.mjs",
+    "apps/wechat-mini/tests/t13-unlock-invite-pages.test.mjs",
+    "apps/wechat-mini/tests/t15-full-result-page.test.mjs",
+    "apps/wechat-mini/tests/t16-share-save-pages.test.mjs",
+    "apps/wechat-mini/tests/t21-frontend-backend-contract.test.mjs",
+    "docs/auto-execute/api/T21/contract-summary.json",
+    "docs/auto-execute/traces/T21/frontend-backend-contract-trace.json",
+    "docs/auto-execute/logs/T21/contract-tests.log",
+    "docs/auto-execute/logs/T21/contract-tests-command.log",
+    "docs/auto-execute/logs/T21/regression-t13.log",
+    "docs/auto-execute/logs/T21/regression-t15.log",
+    "docs/auto-execute/logs/T21/regression-t16.log",
+    "docs/auto-execute/logs/T21/lint.log",
+    "docs/auto-execute/logs/T21/typecheck.log",
+    "docs/auto-execute/logs/T21/api-t20-regression.log",
+    "docs/auto-execute/logs/T21/wechat-mini-regression.log",
+    "docs/auto-execute/logs/T21/diff-check.log",
+    "docs/auto-execute/results/T21.json",
+    "docs/auto-execute/latest/T21-HANDOFF.md"
+  ],
+  "commandsRun": [
+    {
+      "command": "node apps/wechat-mini/tests/t21-frontend-backend-contract.test.mjs",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T21/contract-tests-command.log"
+    },
+    {
+      "command": "node apps/wechat-mini/tests/t13-unlock-invite-pages.test.mjs",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "evidence": "docs/auto-execute/logs/T21/regression-t13.log"
+    },
+    {
+      "command": "node apps/wechat-mini/tests/t15-full-result-page.test.mjs",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "evidence": "docs/auto-execute/logs/T21/regression-t15.log"
+    },
+    {
+      "command": "node apps/wechat-mini/tests/t16-share-save-pages.test.mjs",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "evidence": "docs/auto-execute/logs/T21/regression-t16.log"
+    },
+    {
+      "command": "pnpm lint",
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "evidence": "PowerShell execution policy blocked pnpm.ps1; reran with pnpm.cmd."
+    },
+    {
+      "command": "pnpm typecheck",
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "evidence": "PowerShell execution policy blocked pnpm.ps1; reran with pnpm.cmd."
+    },
+    {
+      "command": "pnpm --filter @auracue/api test:t20",
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "evidence": "PowerShell execution policy blocked pnpm.ps1; reran with pnpm.cmd."
+    },
+    {
+      "command": "pnpm.cmd lint",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T21/lint.log"
+    },
+    {
+      "command": "pnpm.cmd typecheck",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T21/typecheck.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/api test:t20",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T21/api-t20-regression.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T21/wechat-mini-regression.log"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T21/diff-check.log"
+    }
+  ],
+  "acceptanceCriteria": {
+    "apiClientMethodsMapToApi001ThroughApi010": "PASS",
+    "everyCallerHasSuccessAndErrorContractTests": "PASS",
+    "lockedFreeFullEntitlementVisibilityVerified": "PASS",
+    "contractDriftBlocksTaskSuccess": "PASS",
+    "loadingAndErrorUiAsserted": "PASS",
+    "analyticsSideEffectsUseBackendSafePrimitivePayloads": "PASS"
+  },
+  "evidence": [
+    "docs/auto-execute/api/T21/contract-summary.json",
+    "docs/auto-execute/traces/T21/frontend-backend-contract-trace.json",
+    "docs/auto-execute/logs/T21/contract-tests.log",
+    "docs/auto-execute/logs/T21/contract-tests-command.log",
+    "docs/auto-execute/logs/T21/wechat-mini-regression.log",
+    "docs/auto-execute/logs/T21/api-t20-regression.log",
+    "docs/auto-execute/logs/T21/lint.log",
+    "docs/auto-execute/logs/T21/typecheck.log",
+    "docs/auto-execute/logs/T21/diff-check.log"
+  ],
+  "blockers": [],
+  "nextSteps": [
+    "T22 should capture visual screenshot/diff evidence; T21 does not claim pixel-perfect or visual PASS.",
+    "Continue the scheduler with T22 in a fresh task boundary."
+  ],
+  "localOnly": {
+    "realWeChatPay": false,
+    "realCloudWrites": false,
+    "productionDb": false,
+    "productionAi": false,
+    "productionAnalytics": false,
+    "secretsUsed": false
+  }
+}

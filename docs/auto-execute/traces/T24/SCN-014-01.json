@@ -1,0 +1,198 @@
+{
+  "scenarioId": "SCN-014",
+  "stepId": "01",
+  "status": "PASS",
+  "personaGoal": "Confirm save",
+  "action": "Click Share Now, then return and Back Home",
+  "uiId": "UI-17",
+  "visibleState": {
+    "uiId": "UI-17",
+    "route": "/saved/:id",
+    "sourceReference": "docs/UI/小程序/10C-保存_保存成功反馈.png",
+    "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/10c/code.html",
+    "requirementIds": [
+      "REQ-011",
+      "REQ-014",
+      "REQ-017"
+    ],
+    "apiIds": [
+      "API-007",
+      "API-010"
+    ],
+    "ownerScenario": "SCN-014",
+    "cardId": "card-004",
+    "title": "Saved to your Aura Cards",
+    "subtitle": "Your lucky aura is ready whenever you step out.",
+    "auraName": "Soft Confidence",
+    "theme": "Romantic Clarity",
+    "savedAt": "2026-05-26T00:00:00.000Z",
+    "statusRows": [
+      {
+        "id": "photos",
+        "label": "Saved to Photos",
+        "status": "saved"
+      },
+      {
+        "id": "aura-cards",
+        "label": "Saved to Aura Cards",
+        "status": "saved"
+      }
+    ],
+    "actions": {
+      "shareNow": {
+        "controlId": "share-now",
+        "label": "Share Now",
+        "route": "/share/:id",
+        "apiId": "API-008"
+      },
+      "backHome": {
+        "controlId": "back-home",
+        "label": "Back Home",
+        "route": "/",
+        "apiId": "API-010"
+      },
+      "viewSavedCard": {
+        "controlId": "view-saved-card",
+        "label": "View Saved Card",
+        "route": "/result/:id/full"
+      }
+    },
+    "localOnly": {
+      "storage": "local save fixture only",
+      "analytics": "local fixture collector",
+      "db": "mock save readback deferred to T20"
+    }
+  },
+  "route": {
+    "uiId": "UI-01",
+    "route": "/",
+    "path": "/",
+    "pagePath": "pages/home/index",
+    "state": "home",
+    "ownerScenario": "SCN-001",
+    "title": "Home"
+  },
+  "apiIds": [
+    "API-007",
+    "API-008",
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-019"
+  ],
+  "clickEvidence": {
+    "savedPage": {
+      "apiCalled": true,
+      "apiId": "API-007",
+      "saved": {
+        "saved": true,
+        "cardId": "card-004",
+        "savedAt": "2026-05-26T00:00:00.000Z",
+        "source": "save_success"
+      },
+      "viewModel": {
+        "uiId": "UI-17",
+        "route": "/saved/:id",
+        "sourceReference": "docs/UI/小程序/10C-保存_保存成功反馈.png",
+        "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/10c/code.html",
+        "requirementIds": [
+          "REQ-011",
+          "REQ-014",
+          "REQ-017"
+        ],
+        "apiIds": [
+          "API-007",
+          "API-010"
+        ],
+        "ownerScenario": "SCN-014",
+        "cardId": "card-004",
+        "title": "Saved to your Aura Cards",
+        "subtitle": "Your lucky aura is ready whenever you step out.",
+        "auraName": "Soft Confidence",
+        "theme": "Romantic Clarity",
+        "savedAt": "2026-05-26T00:00:00.000Z",
+        "statusRows": [
+          {
+            "id": "photos",
+            "label": "Saved to Photos",
+            "status": "saved"
+          },
+          {
+            "id": "aura-cards",
+            "label": "Saved to Aura Cards",
+            "status": "saved"
+          }
+        ],
+        "actions": {
+          "shareNow": {
+            "controlId": "share-now",
+            "label": "Share Now",
+            "route": "/share/:id",
+            "apiId": "API-008"
+          },
+          "backHome": {
+            "controlId": "back-home",
+            "label": "Back Home",
+            "route": "/",
+            "apiId": "API-010"
+          },
+          "viewSavedCard": {
+            "controlId": "view-saved-card",
+            "label": "View Saved Card",
+            "route": "/result/:id/full"
+          }
+        },
+        "localOnly": {
+          "storage": "local save fixture only",
+          "analytics": "local fixture collector",
+          "db": "mock save readback deferred to T20"
+        }
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-070"
+      }
+    },
+    "shareNow": {
+      "controlId": "share-now",
+      "expectedRoute": "/share/:id",
+      "apiId": "API-008",
+      "share": {
+        "shareEventId": "share-020",
+        "cardId": "card-004",
+        "channel": "story",
+        "source": "save_success"
+      },
+      "route": {
+        "uiId": "UI-15",
+        "route": "/share/:id",
+        "path": "/share/card-004",
+        "pagePath": "pages/share/story",
+        "state": "story-preview",
+        "ownerScenario": "SCN-013",
+        "title": "Share Story"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-071"
+      }
+    },
+    "backHome": {
+      "controlId": "back-home",
+      "expectedRoute": "/",
+      "route": {
+        "uiId": "UI-01",
+        "route": "/",
+        "path": "/",
+        "pagePath": "pages/home/index",
+        "state": "home",
+        "ownerScenario": "SCN-001",
+        "title": "Home"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-072"
+      }
+    }
+  }
+}

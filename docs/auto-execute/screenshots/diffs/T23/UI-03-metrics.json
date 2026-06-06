@@ -1,0 +1,15 @@
+{
+  "taskId": "T23",
+  "sourceTaskId": "T22",
+  "uiId": "UI-03",
+  "route": "/create/upload",
+  "pagePath": "pages/create/upload",
+  "sourceReference": "docs/UI/小程序/P0-03-Outfit-可选穿搭上传.png",
+  "repairDecision": "scope_confirmed_waiting_for_runtime_evidence",
+  "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+  "canClaimPixelPerfect": false,
+  "diffRatio": null,
+  "knownDifferences": [
+    "Runtime screenshot, diff image, and pixel metrics still need to be generated for final P0."
+  ]
+}

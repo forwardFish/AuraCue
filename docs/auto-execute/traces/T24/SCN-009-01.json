@@ -1,0 +1,63 @@
+{
+  "scenarioId": "SCN-009",
+  "stepId": "01",
+  "status": "PASS",
+  "personaGoal": "Try paid unlock",
+  "action": "Click paid unlock, then Confirm Unlock $1.99",
+  "uiId": "UI-11",
+  "route": {
+    "uiId": "UI-12",
+    "route": "/unlock/:id/pay-failed",
+    "path": "/unlock/card-004/pay-failed",
+    "pagePath": "pages/unlock/pay-failed",
+    "state": "mock-payment-failed",
+    "ownerScenario": "SCN-010",
+    "title": "Mock Pay Failed"
+  },
+  "apiIds": [
+    "API-005",
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-014"
+  ],
+  "clickEvidence": {
+    "controlId": "confirm-unlock-199",
+    "order": {
+      "orderId": "order-003",
+      "cardId": "card-004",
+      "amount": 1.99,
+      "currency": "USD",
+      "status": "pending",
+      "entitlement": null
+    },
+    "completed": {
+      "orderId": "order-003",
+      "cardId": "card-004",
+      "amount": 1.99,
+      "currency": "USD",
+      "status": "failed",
+      "entitlement": null
+    },
+    "entitlement": null,
+    "route": {
+      "uiId": "UI-12",
+      "route": "/unlock/:id/pay-failed",
+      "path": "/unlock/card-004/pay-failed",
+      "pagePath": "pages/unlock/pay-failed",
+      "state": "mock-payment-failed",
+      "ownerScenario": "SCN-010",
+      "title": "Mock Pay Failed"
+    },
+    "analytics": [
+      {
+        "accepted": true,
+        "analyticsEventId": "analytics-042"
+      },
+      {
+        "accepted": true,
+        "analyticsEventId": "analytics-043"
+      }
+    ]
+  }
+}

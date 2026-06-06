@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AuraCue UI-16 Share Channels</title><style>
+    body { margin: 0; min-height: 100vh; font-family: Inter, system-ui, sans-serif; color: #2a1a4a; background: linear-gradient(180deg, #fdf0f3, #f8d0e3 45%, #f5b0c9); }
+    .phone { width: 390px; min-height: 844px; margin: 0 auto; box-sizing: border-box; padding: 48px 24px 28px; position: relative; overflow: hidden; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    header strong { font: 600 22px Georgia, serif; color: #c8a04f; }
+    .round { width: 42px; height: 42px; border-radius: 999px; border: 1px solid rgba(255,255,255,.55); background: rgba(255,255,255,.72); color: #2a1a4a; }
+    .share-title { text-align: center; margin-bottom: 18px; }
+    .share-title p { margin: 0; color: rgba(42,26,74,.75); font-size: 14px; }
+    h1 { margin: 0; text-align: center; font: 600 31px/36px Georgia, serif; }
+    .story-card { aspect-ratio: 9 / 16; max-height: 548px; border-radius: 24px; overflow: hidden; position: relative; background: linear-gradient(165deg, #2a1a4a, #8d5bff 42%, #f48fb1 72%, #d4af37); color: white; border: 1px solid rgba(212,175,55,.55); box-shadow: 0 14px 32px rgba(42,26,74,.22); }
+    .inner-frame { position: absolute; inset: 10px; border: 1px solid rgba(212,175,55,.38); border-radius: 18px; }
+    .story-top { position: relative; text-align: center; padding-top: 34px; }
+    .story-top h2 { margin: 6px 0; font: 600 29px Georgia, serif; }
+    .story-panel { position: absolute; left: 14px; right: 14px; bottom: 14px; padding: 18px; border-radius: 18px; background: rgba(255,253,248,.9); color: #2a1a4a; }
+    .story-panel h3 { margin: 0; text-align: center; font: 600 22px Georgia, serif; }
+    .story-panel p { margin: 4px 0 14px; text-align: center; color: rgba(42,26,74,.65); }
+    .story-panel div { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-top: 1px solid rgba(212,175,55,.18); font-size: 12px; }
+    .story-panel strong { text-align: right; max-width: 165px; }
+    .story-panel em { display: block; margin-top: 12px; text-align: center; font: 500 12px/17px Georgia, serif; }
+    .round-actions { display: flex; justify-content: center; gap: 26px; margin-top: 18px; }
+    .round-actions button { width: 76px; height: 76px; border-radius: 999px; border: 0; background: rgba(255,255,255,.9); color: #2a1a4a; font-weight: 800; box-shadow: 0 8px 18px rgba(42,26,74,.12); }
+    .channels { background: #fdf9f1; }
+    .compact-preview h1 { font-size: 26px; margin-bottom: 18px; }
+    .story-mini { width: 224px; height: 398px; margin: 0 auto; border-radius: 28px; background: linear-gradient(165deg, #2a1a4a, #f48fb1 70%, #fff0f5); box-shadow: 0 16px 32px rgba(42,26,74,.16); }
+    .sheet { position: absolute; left: 0; right: 0; bottom: 0; padding: 24px 18px 32px; border-radius: 32px 32px 0 0; background: rgba(253,249,241,.9); box-shadow: 0 -12px 36px rgba(42,26,74,.08); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 12px; padding: 16px; border-radius: 28px; background: rgba(255,255,255,.6); }
+    .channel { display: grid; gap: 8px; place-items: center; border: 0; background: transparent; color: #374151; font-size: 12px; }
+    .channel i { width: 44px; height: 44px; border-radius: 999px; display: grid; place-items: center; color: white; font-style: normal; font-weight: 900; }
+    .cancel { width: 100%; min-height: 54px; margin-top: 14px; border-radius: 999px; border: 1px solid rgba(248,113,113,.18); background: rgba(254,242,242,.6); font-weight: 700; }
+    .saved-body { background: #fdf9f2; }
+    .success-mark { width: 82px; height: 82px; margin: 28px auto 18px; display: grid; place-items: center; border-radius: 999px; background: white; color: #c8a97e; box-shadow: 0 0 24px rgba(200,169,126,.35); font-weight: 900; }
+    .subtitle { text-align: center; color: #7a6b5c; margin: 10px 0 30px; }
+    .saved-card { width: 240px; height: 360px; margin: 0 auto 24px; display: grid; place-items: end center; border-radius: 18px; overflow: hidden; background: linear-gradient(160deg, #f7c6bd, #fff0dc 48%, #c8a97e); border: 1px solid rgba(200,169,126,.42); box-shadow: 0 12px 28px rgba(139,94,60,.18); }
+    .saved-card div { width: calc(100% - 28px); margin: 14px; padding: 16px; border-radius: 14px; background: rgba(255,255,255,.8); text-align: center; }
+    .saved-card h2 { margin: 0; font: 600 21px Georgia, serif; }
+    .saved-card p { margin: 4px 0 0; color: #7a6b5c; }
+    .status-list { display: grid; gap: 10px; margin-bottom: 22px; }
+    .status-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-radius: 18px; background: rgba(255,255,255,.65); border: 1px solid rgba(200,169,126,.28); }
+    .status-row b { color: white; background: #ffa09e; border-radius: 999px; padding: 4px 7px; font-size: 10px; }
+    .stack-actions { display: grid; gap: 12px; text-align: center; }
+    .stack-actions button { min-height: 54px; border-radius: 999px; font: 700 17px Georgia, serif; }
+    .stack-actions button:first-child { border: 0; background: linear-gradient(135deg, #ffb5b3, #ff8f8d); color: white; }
+    .stack-actions button:nth-child(2) { background: white; border: 1px solid rgba(200,169,126,.52); color: #8e6e41; }
+    .stack-actions a { color: #ffa09e; font-size: 14px; }
+  </style></head>
+<body>
+  <main class="phone channels">
+    <header><button class="round">x</button><strong>AuraCue</strong><span></span></header>
+    <section class="compact-preview"><h1>Share your Lucky Aura</h1><div class="story-mini"></div></section>
+    <section class="sheet"><div class="grid"><button class="channel" data-control-id="share-channel-wechat"><i style="background:#07c160">W</i><span>WeChat</span></button><button class="channel" data-control-id="share-channel-moments"><i style="background:#18b77a">M</i><span>Moments</span></button><button class="channel" data-control-id="share-channel-xiaohongshu"><i style="background:#ff2442">X</i><span>Xiaohongshu</span></button><button class="channel" data-control-id="share-channel-instagram-story"><i style="background:#d84bb5">I</i><span>Instagram Story</span></button><button class="channel" data-control-id="share-channel-save-image"><i style="background:#64748b">S</i><span>Save Image</span></button><button class="channel" data-control-id="share-channel-copy-link"><i style="background:#8b5cf6">C</i><span>Copy Link</span></button></div><button class="cancel" data-control-id="cancel-share-channel">Cancel</button></section>
+  </main>
+</body>
+</html>

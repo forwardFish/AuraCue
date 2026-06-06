@@ -1,0 +1,229 @@
+page {
+  background: #fff8f6;
+}
+
+.invite-progress-page {
+  position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 52px 24px 34px;
+  overflow: hidden;
+  background: radial-gradient(circle at 16% 12%, rgba(253, 224, 235, 0.78), transparent 38%), radial-gradient(circle at 86% 22%, rgba(253, 224, 235, 0.72), transparent 36%), #fff8f6;
+  color: #1c2939;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.brand,
+.title {
+  font-family: Georgia, serif;
+}
+
+.brand {
+  color: #fbbf24;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.title {
+  display: block;
+  text-align: center;
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 700;
+}
+
+.progress-copy {
+  margin: 22px 0;
+  text-align: center;
+  color: rgba(28, 41, 57, 0.72);
+  font-size: 17px;
+}
+
+.count {
+  color: #e11d48;
+  font-weight: 800;
+}
+
+.step-track {
+  position: relative;
+  width: 280px;
+  height: 36px;
+  margin: 0 auto 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step-track::before,
+.step-fill {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 17px;
+  height: 2px;
+  background: #fdf2f8;
+}
+
+.step-fill {
+  right: 50%;
+  background: #f472b6;
+}
+
+.step {
+  position: relative;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 2px solid #fdf2f8;
+  color: #f472b6;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.step.done {
+  color: #ffffff;
+  background: #f472b6;
+}
+
+.friend-list {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.friend-row {
+  display: grid;
+  grid-template-columns: 52px 1fr 30px;
+  gap: 14px;
+  align-items: center;
+  border-radius: 20px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+}
+
+.friend-row.pending {
+  opacity: 0.72;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e11d48;
+  background: #fce7f3;
+  border: 2px solid #ffffff;
+  font-weight: 800;
+}
+
+.friend-name,
+.friend-status {
+  display: block;
+}
+
+.friend-name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.friend-status {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.friend-check {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #f472b6;
+  font-size: 9px;
+  text-align: center;
+  line-height: 24px;
+}
+
+.share-box {
+  border-radius: 20px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.62);
+}
+
+.share-title {
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.link-row {
+  display: grid;
+  grid-template-columns: 1fr 72px;
+  gap: 8px;
+  align-items: center;
+  border-radius: 14px;
+  padding: 7px 7px 7px 12px;
+  background: rgba(255, 248, 246, 0.8);
+  border: 1px solid #fdf2f8;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.link-row button {
+  min-height: 36px;
+  border: 0;
+  border-radius: 10px;
+  color: #ffffff;
+  background: #f472b6;
+}
+
+.link-row button::after,
+.primary-action::after,
+.text-action::after {
+  border: 0;
+}
+
+.primary-action {
+  margin-top: 22px;
+  min-height: 58px;
+  border-radius: 24px;
+  color: #ffffff;
+  background: linear-gradient(90deg, #f472b6, #fb7185);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.text-action {
+  margin: 18px auto 0;
+  display: block;
+  color: #6b7280;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.modal {
+  margin-top: 18px;
+  border-radius: 18px;
+  padding: 14px;
+  color: #1c2939;
+  background: #ffffff;
+  font-size: 13px;
+  line-height: 18px;
+  box-shadow: 0 8px 24px rgba(244, 114, 182, 0.16);
+}

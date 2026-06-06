@@ -1,0 +1,109 @@
+{
+  "taskId": "T28",
+  "status": "REPAIR_REQUIRED",
+  "generatedAt": "2026-05-27T02:58:55.216Z",
+  "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs then T28 subset artifact normalization",
+  "viewport": {
+    "width": 941,
+    "height": 1672
+  },
+  "threshold": 0.005,
+  "screenCount": 5,
+  "actualPngCount": 5,
+  "diffPngCount": 5,
+  "metricsJsonCount": 5,
+  "finalVisualConclusion": "REPAIR_REQUIRED",
+  "summaryNote": "UI-06..UI-10 have real actual/diff/metrics evidence and clean text/control gates, but remain above the 0.005 pixel threshold. Remaining mismatches are dominated by non-reusable generated raster artwork/device chrome in the references.",
+  "screens": [
+    {
+      "uiId": "UI-06",
+      "diffRatio": 0.40879,
+      "thresholdStatus": "FAIL",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-06-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-06-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-06-metrics.json",
+      "htmlPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/html/UI-06-actual.html",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-07",
+      "diffRatio": 0.218829,
+      "thresholdStatus": "FAIL",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-07-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-07-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-07-metrics.json",
+      "htmlPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/html/UI-07-actual.html",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-08",
+      "diffRatio": 0.294838,
+      "thresholdStatus": "FAIL",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-08-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-08-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-08-metrics.json",
+      "htmlPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/html/UI-08-actual.html",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-09",
+      "diffRatio": 0.569317,
+      "thresholdStatus": "FAIL",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-09-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-09-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-09-metrics.json",
+      "htmlPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/html/UI-09-actual.html",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    },
+    {
+      "uiId": "UI-10",
+      "diffRatio": 0.346646,
+      "thresholdStatus": "FAIL",
+      "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/actual/UI-10-actual.png",
+      "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/diff/UI-10-diff.png",
+      "metricsPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/metrics/UI-10-metrics.json",
+      "htmlPath": "docs/auto-execute/screenshots/ui-one-to-one/T28/html/UI-10-actual.html",
+      "missingCoreText": [],
+      "missingRequiredControls": [],
+      "remainingBoundingBox": {
+        "x": 0,
+        "y": 0,
+        "width": 941,
+        "height": 1672
+      },
+      "finalScreenVerdict": "REPAIR_REQUIRED"
+    }
+  ]
+}

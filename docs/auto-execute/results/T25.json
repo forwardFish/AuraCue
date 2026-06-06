@@ -1,0 +1,158 @@
+{
+  "taskId": "T25",
+  "taskName": "Final Acceptance Gate And Delivery Report",
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "verdict": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "productPassClaim": false,
+  "completedAt": "2026-05-26T09:40:34.795Z",
+  "scope": "Final fail-closed acceptance aggregation for accumulated T00-T24 evidence after UTF-8 report-integrity rerun.",
+  "summary": {
+    "pureProductPass": false,
+    "reason": "Report integrity is clean after explicit UTF-8/Node parsing, but visual one-to-one evidence lacks complete raster and pixel-diff proof for pure PASS.",
+    "taskResultsChecked": "T00-T24 plus T25 output presence",
+    "handoffsChecked": "T00-T24 plus T25 output presence",
+    "freshT25Checks": "PASS",
+    "reportIntegrity": "PASS",
+    "secretLocalGuard": "PASS",
+    "visualStatus": "PASS_NEEDS_MANUAL_UI_REVIEW"
+  },
+  "commandsRun": [
+    {
+      "command": "node JSON.parse docs/auto-execute/results/T00.json as utf8",
+      "status": "PASS",
+      "evidence": "terminal output: T00 JSON.parse PASS"
+    },
+    {
+      "command": "Get-Content docs\\auto-execute\\results\\T00.json -Encoding UTF8 -Raw | ConvertFrom-Json",
+      "status": "PASS",
+      "evidence": "terminal output: T00 ConvertFrom-Json UTF8 PASS"
+    },
+    {
+      "command": "pnpm.cmd lint",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T25/lint-local-only.log"
+    },
+    {
+      "command": "pnpm.cmd typecheck",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T25/typecheck.log"
+    },
+    {
+      "command": "pnpm.cmd test",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T25/smoke-test.log"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T25/git-diff-check.log"
+    },
+    {
+      "command": "T25 report-integrity scan over T00-T25 results, handoffs, and required evidence using Node UTF-8 JSON.parse",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T25/report-integrity.json"
+    },
+    {
+      "command": "T25 secret/local-only scan with implementation lint-local-only evidence",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T25/secret-local-guard.json"
+    }
+  ],
+  "categoryVerdicts": {
+    "requirements": {
+      "status": "PASS_WITH_LIMITATION",
+      "evidence": [
+        "docs/auto-execute/results/T24.json",
+        "docs/auto-execute/traces/T24/owner-e2e-summary.json"
+      ],
+      "notes": "T24 claims REQ-001..REQ-020 coverage; final status remains limited by visual manual-review evidence."
+    },
+    "uiOneToOne": {
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "evidence": [
+        "docs/auto-execute/screenshots/diffs/T22/visual-summary.json",
+        "docs/auto-execute/screenshots/diffs/T23/repair-summary.json"
+      ],
+      "notes": "Structural captures exist for UI-01..UI-18; raster and pixel diff proof are incomplete, so pure PASS is not claimed."
+    },
+    "pageSimulatedTests": {
+      "status": "PASS",
+      "evidence": [
+        "docs/auto-execute/traces/T19/page-coverage.json"
+      ]
+    },
+    "apiDbReadback": {
+      "status": "PASS",
+      "evidence": [
+        "docs/auto-execute/api/T20/all-api-summary.json",
+        "docs/auto-execute/db/T20/db-readbacks.json"
+      ]
+    },
+    "contracts": {
+      "status": "PASS",
+      "evidence": [
+        "docs/auto-execute/api/T21/contract-summary.json"
+      ]
+    },
+    "ownerE2e": {
+      "status": "PASS",
+      "evidence": [
+        "docs/auto-execute/traces/T24/owner-e2e-summary.json"
+      ]
+    },
+    "safety": {
+      "status": "PASS",
+      "evidence": [
+        "docs/auto-execute/logs/T25/secret-local-guard.json",
+        "docs/auto-execute/logs/T25/lint-local-only.log"
+      ]
+    },
+    "reportIntegrity": {
+      "status": "PASS",
+      "evidence": [
+        "docs/auto-execute/logs/T25/report-integrity.json"
+      ]
+    }
+  },
+  "evidence": [
+    "docs/AUTO_EXECUTE_DELIVERY_REPORT.md",
+    "docs/auto-execute/logs/T25/fresh-command-results.json",
+    "docs/auto-execute/logs/T25/report-integrity.json",
+    "docs/auto-execute/logs/T25/secret-local-guard.json",
+    "docs/auto-execute/logs/T25/lint-local-only.log",
+    "docs/auto-execute/logs/T25/typecheck.log",
+    "docs/auto-execute/logs/T25/smoke-test.log",
+    "docs/auto-execute/logs/T25/git-diff-check.log"
+  ],
+  "changedFiles": [
+    "docs/AUTO_EXECUTE_DELIVERY_REPORT.md",
+    "docs/auto-execute/logs/T25/fresh-command-results.json",
+    "docs/auto-execute/logs/T25/report-integrity.json",
+    "docs/auto-execute/logs/T25/secret-local-guard.json",
+    "docs/auto-execute/logs/T25/lint-local-only.log",
+    "docs/auto-execute/logs/T25/typecheck.log",
+    "docs/auto-execute/logs/T25/smoke-test.log",
+    "docs/auto-execute/logs/T25/git-diff-check.log",
+    "docs/auto-execute/results/T25.json",
+    "docs/auto-execute/latest/T25-HANDOFF.md"
+  ],
+  "blockers": [
+    {
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "path": "docs/auto-execute/screenshots/diffs/T23/repair-summary.json",
+      "detail": "P0 UI visual proof lacks complete raster capture and pixel diff evidence, so manual UI review remains required before pure PASS."
+    }
+  ],
+  "nextStepNotes": [
+    "Do not rerun or rewrite T00 evidence for this T25 boundary; T00 now parses successfully with explicit UTF-8 and Node JSON.parse.",
+    "Enable local raster capture and pixel diff tooling for UI-01 through UI-18 before claiming pure UI/product PASS."
+  ],
+  "localOnly": {
+    "realWeChatPay": false,
+    "realCloudWrites": false,
+    "productionDb": false,
+    "productionAi": false,
+    "productionAnalytics": false,
+    "secretsUsed": false
+  }
+}

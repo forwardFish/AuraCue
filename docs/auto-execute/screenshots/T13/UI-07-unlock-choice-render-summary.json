@@ -1,0 +1,103 @@
+{
+  "uiId": "UI-07",
+  "route": "/unlock/:id",
+  "sourceReference": "docs/UI/小程序/06-解锁_付费与邀请入口.png",
+  "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/06/code.html",
+  "requirementIds": [
+    "REQ-010",
+    "REQ-012",
+    "REQ-017"
+  ],
+  "apiIds": [
+    "API-010"
+  ],
+  "cardId": "card-locked-001",
+  "title": "Unlock today's full energy plan",
+  "subtitle": "Get your complete Aura Card with premium insights, guidance and actions.",
+  "features": [
+    {
+      "id": "full-reading",
+      "title": "Full Aura Reading",
+      "teaser": "Deep insights for your energy today"
+    },
+    {
+      "id": "outfit",
+      "title": "Outfit Energy",
+      "teaser": "Best colors, style and vibe for you"
+    },
+    {
+      "id": "beauty",
+      "title": "Beauty Cue",
+      "teaser": "Glow tips aligned with your aura"
+    },
+    {
+      "id": "social",
+      "title": "Social Move",
+      "teaser": "What to say and how to connect"
+    },
+    {
+      "id": "ritual",
+      "title": "Tiny Ritual",
+      "teaser": "Simple practice to stay aligned"
+    },
+    {
+      "id": "avoid",
+      "title": "Avoid Today",
+      "teaser": "What to avoid for smooth energy"
+    },
+    {
+      "id": "share-card",
+      "title": "HD Share Card",
+      "teaser": "Beautiful card to share and inspire"
+    }
+  ],
+  "pricing": [
+    {
+      "id": "single",
+      "label": "Unlock This Card",
+      "price": "$1.99",
+      "note": "One-time access to today's full energy plan",
+      "selected": true,
+      "badge": "BEST CHOICE"
+    },
+    {
+      "id": "weekly",
+      "label": "7-Day Energy Pack",
+      "price": "$4.99",
+      "note": "Unlock all premium features for 7 days",
+      "selected": false,
+      "badge": "SAVE 30%"
+    },
+    {
+      "id": "monthly",
+      "label": "AuraCue Plus",
+      "price": "$9.99 / month",
+      "note": "Unlimited access. Cancel anytime.",
+      "selected": false,
+      "badge": "MOST POPULAR"
+    }
+  ],
+  "actions": {
+    "paidUnlock": {
+      "controlId": "paid-unlock",
+      "label": "Unlock This Card",
+      "route": "/unlock/:id/pay"
+    },
+    "inviteAlternative": {
+      "controlId": "invite-three-friends-instead",
+      "label": "Invite 3 friends instead",
+      "route": "/invite/:id"
+    },
+    "close": {
+      "controlId": "close-unlock",
+      "route": "/result/:id"
+    }
+  },
+  "localOnly": {
+    "payment": "local-mock-route-only",
+    "invitePlatform": "fixture-api-client-no-platform-share-api",
+    "analytics": "local-fixture-client",
+    "storage": "local-evidence-files-only",
+    "db": "no-production-write"
+  }
+}

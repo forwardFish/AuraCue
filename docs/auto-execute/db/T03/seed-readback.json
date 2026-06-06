@@ -1,0 +1,221 @@
+{
+  "schemaEntities": [
+    "users",
+    "aura_cards",
+    "generation_jobs",
+    "card_templates",
+    "share_events",
+    "analytics_events",
+    "payment_orders",
+    "user_entitlements"
+  ],
+  "fixtureManifest": {
+    "lockedCardId": "card-locked-001",
+    "unlockedCardId": "card-unlocked-001",
+    "failedJobId": "job-failed-001",
+    "inviteProgressCardId": "card-locked-001",
+    "paymentSuccessOrderId": "order-paid-001",
+    "paymentFailureOrderId": "order-failed-001",
+    "savedCardId": "card-saved-001",
+    "shareEventId": "share-001",
+    "analyticsEventIds": [
+      "analytics-001",
+      "analytics-002",
+      "analytics-003"
+    ],
+    "uiStateCoverage": [
+      "UI-05",
+      "UI-06",
+      "UI-07",
+      "UI-08",
+      "UI-09",
+      "UI-10",
+      "UI-11",
+      "UI-12",
+      "UI-13",
+      "UI-14",
+      "UI-15",
+      "UI-16",
+      "UI-17",
+      "UI-18"
+    ]
+  },
+  "counts": {
+    "users": 1,
+    "aura_cards": 4,
+    "generation_jobs": 4,
+    "card_templates": 1,
+    "share_events": 3,
+    "analytics_events": 3,
+    "payment_orders": 3,
+    "user_entitlements": 2
+  },
+  "lockedCard": {
+    "id": "card-locked-001",
+    "userId": "user-local-001",
+    "jobId": "job-success-001",
+    "scene": "date",
+    "energy": "confidence",
+    "content": {
+      "title": "Tonight's Lucky Aura Preview",
+      "auraName": "Soft Glow Aura",
+      "tarotSymbol": "The Star",
+      "message": "A small confident choice can make the next moment feel easier.",
+      "luckyColor": "rose quartz",
+      "colors": {
+        "primary": "rose quartz",
+        "accent": "champagne gold",
+        "background": "warm moonlight"
+      },
+      "outfit": "Wear one clean line with a soft highlight near the face.",
+      "beauty": "Keep the glow fresh and the finish light.",
+      "social": "Open with a warm compliment and one clear question.",
+      "ritual": "Take three slow breaths before stepping out.",
+      "avoid": "Avoid over-planning the first ten minutes.",
+      "caption": "Today I am carrying rose lantern aura.",
+      "theme": "soft-preview"
+    },
+    "isUnlocked": false,
+    "savedAt": null,
+    "shareImagePath": null,
+    "createdAt": "2026-05-26T00:00:00.000Z"
+  },
+  "unlockedCard": {
+    "id": "card-unlocked-001",
+    "userId": "user-local-001",
+    "jobId": "job-success-002",
+    "scene": "party",
+    "energy": "charm",
+    "content": {
+      "title": "Full Lucky Aura Card",
+      "auraName": "Golden Comet Aura",
+      "tarotSymbol": "The Sun",
+      "message": "Warm presence can turn a small exchange into a memorable one.",
+      "luckyColor": "warm gold",
+      "colors": {
+        "primary": "warm gold",
+        "accent": "berry gloss",
+        "background": "warm moonlight"
+      },
+      "outfit": "Use one playful accent and keep the rest effortless.",
+      "beauty": "Let one feature catch light while the rest stays natural.",
+      "social": "Join the first friendly circle and ask what made their week brighter.",
+      "ritual": "Smile at yourself once before you enter the room.",
+      "avoid": "Avoid performing for people who are not meeting your energy.",
+      "caption": "Today I am carrying golden comet aura.",
+      "theme": "golden-night"
+    },
+    "isUnlocked": true,
+    "savedAt": null,
+    "shareImagePath": "local://share-images/card-unlocked-001-story.png",
+    "createdAt": "2026-05-26T00:00:00.000Z"
+  },
+  "failedJob": {
+    "id": "job-failed-001",
+    "userId": "user-local-001",
+    "scene": "luck",
+    "energy": "calm",
+    "status": "failed",
+    "cardId": null,
+    "errorCode": "LOCAL_GENERATION_FAILURE",
+    "createdAt": "2026-05-26T00:00:00.000Z",
+    "completedAt": "2026-05-26T00:00:07.000Z"
+  },
+  "inviteProgress": {
+    "progress": 1,
+    "required": 3,
+    "completed": false
+  },
+  "paymentSuccess": {
+    "id": "order-paid-001",
+    "userId": "user-local-001",
+    "cardId": "card-unlocked-001",
+    "amount": 1.99,
+    "currency": "USD",
+    "status": "paid",
+    "createdAt": "2026-05-26T00:00:00.000Z",
+    "completedAt": "2026-05-26T00:04:00.000Z"
+  },
+  "paymentFailure": {
+    "id": "order-failed-001",
+    "userId": "user-local-001",
+    "cardId": "card-locked-001",
+    "amount": 1.99,
+    "currency": "USD",
+    "status": "failed",
+    "createdAt": "2026-05-26T00:00:00.000Z",
+    "completedAt": "2026-05-26T00:04:30.000Z"
+  },
+  "savedCard": {
+    "id": "card-saved-001",
+    "userId": "user-local-001",
+    "jobId": "job-success-003",
+    "scene": "work",
+    "energy": "focus",
+    "content": {
+      "title": "Full Lucky Aura Card",
+      "auraName": "Golden Comet Aura",
+      "tarotSymbol": "The Sun",
+      "message": "Warm presence can turn a small exchange into a memorable one.",
+      "luckyColor": "warm gold",
+      "colors": {
+        "primary": "warm gold",
+        "accent": "berry gloss",
+        "background": "warm moonlight"
+      },
+      "outfit": "Use one playful accent and keep the rest effortless.",
+      "beauty": "Let one feature catch light while the rest stays natural.",
+      "social": "Join the first friendly circle and ask what made their week brighter.",
+      "ritual": "Smile at yourself once before you enter the room.",
+      "avoid": "Avoid performing for people who are not meeting your energy.",
+      "caption": "Today I am carrying golden comet aura.",
+      "theme": "golden-night"
+    },
+    "isUnlocked": true,
+    "savedAt": "2026-05-26T00:05:00.000Z",
+    "shareImagePath": "local://share-images/card-saved-001-story.png",
+    "createdAt": "2026-05-26T00:00:00.000Z"
+  },
+  "shareEvent": {
+    "id": "share-001",
+    "userId": "user-local-001",
+    "cardId": "card-unlocked-001",
+    "channel": "story",
+    "source": "seed-share",
+    "inviteCode": null,
+    "friendId": null,
+    "createdAt": "2026-05-26T00:02:00.000Z"
+  },
+  "analyticsEvents": [
+    {
+      "id": "analytics-001",
+      "userId": "user-local-001",
+      "eventName": "page_view_home",
+      "page": "/",
+      "properties": {
+        "source": "seed"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-002",
+      "userId": "user-local-001",
+      "eventName": "select_scene",
+      "page": "/create/scene",
+      "properties": {
+        "scene": "date"
+      },
+      "createdAt": "2026-05-26T00:01:00.000Z"
+    },
+    {
+      "id": "analytics-003",
+      "userId": "user-local-001",
+      "eventName": "click_generate_start",
+      "page": "/",
+      "properties": {
+        "source": "unit-test"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    }
+  ]
+}

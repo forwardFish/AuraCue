@@ -1,0 +1,58 @@
+{
+  "scenarioId": "SCN-007",
+  "stepId": "01",
+  "status": "PASS",
+  "personaGoal": "Try invite unlock",
+  "action": "Click Invite 3 friends instead",
+  "uiId": "UI-08",
+  "route": {
+    "uiId": "UI-08",
+    "route": "/invite/:id",
+    "path": "/invite/card-004",
+    "pagePath": "pages/invite/start",
+    "state": "invite-start",
+    "ownerScenario": "SCN-007",
+    "title": "Invite Start"
+  },
+  "apiIds": [
+    "API-006",
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-011"
+  ],
+  "clickEvidence": {
+    "inviteInstead": {
+      "controlId": "invite-three-friends-instead",
+      "expectedRoute": "/invite/:id",
+      "route": {
+        "uiId": "UI-08",
+        "route": "/invite/:id",
+        "path": "/invite/card-004",
+        "pagePath": "pages/invite/start",
+        "state": "invite-start",
+        "ownerScenario": "SCN-007",
+        "title": "Invite Start"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-032"
+      }
+    },
+    "inviteStart": {
+      "apiId": "API-006",
+      "inviteResponse": {
+        "cardId": "card-004",
+        "inviteCode": "INVITE-LOCAL-001",
+        "progress": 0,
+        "required": 3,
+        "completed": false,
+        "entitlement": null
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-033"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@auracue/card-renderer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/t17-share-card-renderer.test.mjs",
+    "test:t17": "node tests/t17-share-card-renderer.test.mjs"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

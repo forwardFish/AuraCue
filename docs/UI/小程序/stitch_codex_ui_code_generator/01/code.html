@@ -1,0 +1,406 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>AuraCue - Start Your Aura Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#171545",
+                      "on-error": "#ffffff",
+                      "on-tertiary-container": "#0a0304",
+                      "on-secondary-fixed": "#3c0700",
+                      "on-tertiary-fixed": "#24191a",
+                      "secondary-fixed": "#ffdad2",
+                      "tertiary-fixed": "#f2dedf",
+                      "inverse-surface": "#2c2b5b",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#d5c2c3",
+                      "primary": "#613dde",
+                      "on-primary-fixed-variant": "#491ac6",
+                      "inverse-on-surface": "#f2efff",
+                      "surface-bright": "#fcf8ff",
+                      "background": "#fffaf7",
+                      "on-secondary-container": "#783220",
+                      "surface-container-low": "#f6f2ff",
+                      "surface-variant": "#e2dfff",
+                      "primary-container": "#7a5af8",
+                      "tertiary-container": "#837374",
+                      "on-primary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "outline": "#797586",
+                      "surface-container-highest": "#e2dfff",
+                      "inverse-primary": "#cabeff",
+                      "primary-fixed": "#e6deff",
+                      "on-primary-fixed": "#1d0061",
+                      "surface-tint": "#613ede",
+                      "on-secondary-fixed-variant": "#773120",
+                      "surface-container-high": "#e9e5ff",
+                      "secondary": "#954835",
+                      "on-primary-container": "#ffffff",
+                      "surface": "#fcf8ff",
+                      "tertiary": "#695b5c",
+                      "primary-fixed-dim": "#cabeff",
+                      "on-background": "#171545",
+                      "on-tertiary-fixed-variant": "#514344",
+                      "surface-container": "#efebff",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#484555",
+                      "secondary-fixed-dim": "#ffb4a2",
+                      "secondary-container": "#fe9c84",
+                      "outline-variant": "#cac4d7",
+                      "surface-dim": "#d9d6ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-padding": "24px",
+                      "stack-md": "16px",
+                      "gutter": "16px",
+                      "stack-sm": "8px",
+                      "stack-lg": "32px",
+                      "unit": "8px",
+                      "safe": "env(safe-area-inset-bottom)"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "label-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "title-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "title-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "44px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.03em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "44px",
+                                      "fontWeight": "600",
+                                      "letterSpacing": "-0.02em"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>body {
+            background: #fffaf7;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(230, 220, 255, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 90% 10%, rgba(255, 230, 235, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(255, 248, 240, 0.6) 0%, transparent 80%),
+                radial-gradient(circle at 80% 90%, rgba(230, 220, 255, 0.3) 0%, transparent 40%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
+            opacity: 0.02;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 0.5px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px -4px rgba(26, 22, 69, 0.04);
+        }
+        
+        .glass-card-active {
+            box-shadow: 0 0 40px rgba(122, 90, 248, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.4);
+            border: 0.5px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .glow-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            box-shadow: inset 0 0 30px rgba(255,255,255,0.2);
+            pointer-events: none;
+        }
+
+        .sparkle-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px);
+            background-size: 80px 80px;
+            opacity: 0.1;
+        }
+        
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }</style>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>body {
+            background: #fffaf7;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(230, 220, 255, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 90% 10%, rgba(255, 230, 235, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(255, 248, 240, 0.6) 0%, transparent 80%),
+                radial-gradient(circle at 80% 90%, rgba(230, 220, 255, 0.3) 0%, transparent 40%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
+            opacity: 0.02;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 0.5px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px -4px rgba(26, 22, 69, 0.04);
+        }
+        
+        .glass-card-active {
+            box-shadow: 0 0 40px rgba(122, 90, 248, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.4);
+            border: 0.5px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .glow-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            box-shadow: inset 0 0 30px rgba(255,255,255,0.2);
+            pointer-events: none;
+        }
+
+        .sparkle-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px);
+            background-size: 80px 80px;
+            opacity: 0.1;
+        }
+        
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }</style></head>
+<body class="text-on-surface font-body-md min-h-screen flex flex-col relative pb-32">
+<div class="sparkle-bg"></div>
+<!-- TopAppBar -->
+<header class="docked full-width top-0 bg-transparent flex justify-between items-center px-container-padding py-stack-md w-full z-40 relative h-[88px]">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/80 shadow-sm relative shrink-0">
+<img alt="User profile portrait" class="w-full h-full object-cover" data-alt="A soft, ethereal portrait of a young woman bathed in glowing, warm light. The image features a high-key, ethereal aesthetic with a pastel aura glow. She is looking slightly off-camera, exuding calmness and confidence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT5GbxbxO4Df6yv36rlxDv0Zcxs6Z4pYPmVLhmgs5nGwJ1U8vk77k6Ee4hoSbS-D_EsInGereq-A1IFvKmH7Ky6P1Trd2v7dRqZP51VWri6d2r44sB2QrwNx1uX96YHEYiLr_EbbOhRL0ZQmOv3KAa0iVVPz8pGrWGzJgaUX-CUHqoMU_1t7wJyMYbR8V03yjdZ9FJyHnCSfmj2KSRmpQ2TbxKfqP5d1xOcy_JgnENilmlxDv3qTCYtvmQdcSvgR7_BckG59vVbsc">
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-[#9b85ed] rounded-full border-2 border-white shadow-sm"></div>
+</div>
+<div class="flex flex-col items-center justify-center">
+<div class="flex items-center justify-center mb-0.5">
+<span class="material-symbols-outlined text-[#1a1645] text-[24px]">local_florist</span>
+</div>
+<h1 class="font-headline-lg-mobile text-[18px] tracking-[0.15em] uppercase font-medium text-[#1a1645]">AuraCue</h1>
+</div>
+<button class="w-12 h-12 rounded-full border border-black/5 flex items-center justify-center text-[#1a1645] hover:opacity-80 transition-opacity active:scale-95 duration-200 shrink-0 bg-white/40 backdrop-blur-md">
+<span class="material-symbols-outlined font-light">card_giftcard</span>
+</button>
+</header>
+<main class="flex-grow flex flex-col px-container-padding relative z-10 w-full max-w-md mx-auto mt-2">
+<!-- Date Pill -->
+<div class="flex justify-center mb-6">
+<div class="bg-white/40 backdrop-blur-md border border-white/60 rounded-full px-5 py-1.5 flex items-center gap-2 text-[#484555] font-body-md text-[13px] shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-gray-500">calendar_today</span>
+<span class="">Today, 18 Jul 2024</span>
+</div>
+</div>
+<!-- Heading Section -->
+<div class="text-center mb-8 relative">
+<span class="material-symbols-outlined absolute -top-4 right-[5%] text-[#fcb3b6] opacity-70 rotate-12 text-3xl">flare</span>
+<span class="material-symbols-outlined absolute top-10 left-[5%] text-[#e6deff] opacity-80 -rotate-12 text-sm">flare</span>
+<h2 class="font-headline-lg-mobile text-[40px] leading-[1.1] text-[#1a1645] mb-4 font-headline-lg" style="letter-spacing: -0.02em; line-height: 1.1; font-family: 'Playfair Display', serif;">Start Your<br>Aura Journey</h2>
+<p class="text-[#484555] font-body-md text-[15px] max-w-[280px] mx-auto leading-relaxed" style="letter-spacing: 0.01em; color: rgb(72, 69, 85);">Choose today's mood to reveal<br>your lucky aura card.</p>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-3 overflow-x-auto no-scrollbar pb-2 mb-6 -mx-container-padding px-container-padding">
+<button class="shrink-0 bg-gradient-to-r from-[#9b72d2] to-[#cf8b95] text-white rounded-full px-7 py-2 font-body-md text-[14px] flex items-center gap-2 shadow-[0_4px_16px_rgba(138,104,216,0.3)] transition-transform active:scale-95">
+                All <span class="material-symbols-outlined text-[16px]">flare</span>
+</button>
+<button class="shrink-0 bg-white/60 backdrop-blur-md border border-white/80 text-[#484555] rounded-full px-6 py-2 font-body-md text-[14px] flex items-center gap-2 transition-all hover:bg-white/80 active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[16px] font-light">energy_savings_leaf</span> Calm
+            </button>
+<button class="shrink-0 bg-white/60 backdrop-blur-md border border-white/80 text-[#484555] rounded-full px-6 py-2 font-body-md text-[14px] flex items-center gap-2 transition-all hover:bg-white/80 active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[16px] font-light">favorite</span> Romantic
+            </button>
+<button class="shrink-0 bg-white/60 backdrop-blur-md border border-white/80 text-[#484555] rounded-full px-6 py-2 font-body-md text-[14px] flex items-center gap-2 transition-all hover:bg-white/80 active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[16px] font-light">psychiatry</span> Lucky
+            </button>
+</div>
+<!-- Cards List -->
+<div class="flex flex-col gap-4 mb-8">
+<!-- Confident Card (Active) -->
+<div class="relative overflow-hidden rounded-[24px] cursor-pointer transition-transform active:scale-[0.98] glass-card glass-card-active h-[150px]">
+<div class="absolute inset-0 bg-gradient-to-r from-[#c0a8f8] to-[#e4caed] opacity-90 z-0"></div>
+<img alt="Confident Aura" class="absolute right-0 top-0 h-full w-[65%] object-cover mix-blend-overlay opacity-90 z-0" data-alt="An ethereal, dreamlike composite image showing a serene woman with her eyes closed in a confident pose, surrounded by a glowing purple and pink aura. Soft clouds and sparkling light particles float around her head, emphasizing a magical, high-energy mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRTCNnEKdZByW-MFOIcoDDuVYTWBO_a9gYsPp6_OcNeyV2kIcXQKJH5Zht8nIkPtHj6xezq30RvLAAil8GCI5v07FxhT_lxaJovZj4cQoPukCp8llajYORyfckM-IHEAq3u064eWiKCO7ZSqAFDKW4fsQjg_-uqCVxvPvTLD15hyYbH8sm767fW4014il23h3Jb6_vz7013UaeyXwC8qMSaKbZ2EAkX1ZaUX1hQ8iVxWaIZWF7sYsQcLkJDAxXLN9fU-D9eYP2w1Y" style="mask-image: linear-gradient(to right, transparent, black 40%); -webkit-mask-image: linear-gradient(to right, transparent, black 40%);">
+<div class="relative z-10 p-5 h-full flex flex-col justify-center glow-overlay rounded-[24px]">
+<div class="absolute top-4 right-4 w-6 h-6 rounded-full bg-[#8a68d8] flex items-center justify-center shadow-md border-2 border-white">
+<span class="material-symbols-outlined text-white text-[16px] font-bold">check</span>
+</div>
+<div class="w-[60%]">
+<h3 class="font-headline-lg-mobile text-[32px] text-white mb-1 shadow-sm drop-shadow-md">Confident</h3>
+<p class="text-white/95 font-body-md text-[13px] leading-snug mb-3 drop-shadow">Walk in your power<br>and shine today.</p>
+<div class="flex items-center gap-1.5 text-white/95 font-body-md text-[11px] uppercase tracking-widest drop-shadow">
+<span class="material-symbols-outlined text-[14px]">flare</span>
+                            High Energy
+                        </div>
+</div>
+</div>
+</div>
+<!-- Romantic Card -->
+<div class="relative overflow-hidden rounded-[24px] cursor-pointer transition-transform active:scale-[0.98] glass-card h-[150px]">
+<div class="absolute inset-0 bg-gradient-to-r from-[#ffd8db] to-[#fde9eb] opacity-80 z-0"></div>
+<img alt="Romantic Aura" class="absolute right-0 top-0 h-full w-[65%] object-cover mix-blend-multiply opacity-70 z-0" data-alt="A close-up, soft-focus macro shot of a blooming pink rose floating in an ethereal pastel haze. Delicate pink petals drift gently around the flower, conveying a romantic, loving mood bathed in warm, glowing light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmQRmfgWP5apXUb_bVPJW-TsTcuSj9u7SPegsYWOsrBlQiJD_ZR-MPWDHkWIusOLnpBMu0tRmUz4Wv_Bq14h8-SJCijVDUsad6N_eQBNQCi6aGt82Or1dTwqmK7Nw4LxZLhsJXEexYmMIixgoTLVyk4EobOBU27SZ_dC_AeEU0db0A9gvx97wrHz4jX0nTnxoWzE6HPk-OJYcMyi4RbA9_r1ji2z_QAy0_2OgWdwQUfeexqGpGMT0yqEdqYoIc75Wf9CFQ2mWxJAs" style="mask-image: linear-gradient(to right, transparent, black 40%); -webkit-mask-image: linear-gradient(to right, transparent, black 40%);">
+<div class="relative z-10 p-5 h-full flex flex-col justify-center glow-overlay rounded-[24px]">
+<div class="absolute top-4 right-4 w-6 h-6 rounded-full border-[1.5px] border-white/60 flex items-center justify-center bg-white/10 backdrop-blur-sm"></div>
+<div class="w-[60%]">
+<h3 class="font-headline-lg-mobile text-[32px] text-[#1a1645] mb-1">Romantic</h3>
+<p class="text-[#484555] font-body-md text-[13px] leading-snug mb-3">Open your heart to love<br>and beautiful moments.</p>
+<div class="flex items-center gap-1.5 text-[#d46d79] font-body-md text-[11px] uppercase tracking-widest">
+<span class="material-symbols-outlined text-[14px]">favorite</span>
+                            Love Energy
+                        </div>
+</div>
+</div>
+</div>
+<!-- Calm Card -->
+<div class="relative overflow-hidden rounded-[24px] cursor-pointer transition-transform active:scale-[0.98] glass-card h-[150px]">
+<div class="absolute inset-0 bg-gradient-to-r from-[#dbe4f6] to-[#f2ebf4] opacity-80 z-0"></div>
+<img alt="Calm Aura" class="absolute right-0 top-0 h-full w-[65%] object-cover mix-blend-multiply opacity-70 z-0" data-alt="A tranquil scene showing stacked Zen stones resting on still, glowing water, reflecting a soft pastel sunset. A delicate pink lotus flower floats gently nearby. The overall aesthetic is ethereal, calming, and focused on inner peace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4JUodYVpscF-LLiCodMM0v-apI7KVm0a32uuHT9wL5wBnnLuNXiRfCtIiHNugb4mbnGsSZ5XRtsFpLF9wMZt6zrclb2gWeA7pffepG-KMsLNTKReEGq1sceexF34Z3qbeBtY0O98vfyy66uFqV5pRCNk7YDxrjUuVXHxGRkR7RouzzsB69wV1xC7l1fCM1Jrp7U2nL8fU-LbgKYTB_n4V7t_PdjsmnvTWx6t2S_zICf7Zo5PMQ20Di4V1RQbG2i6Hcq4WnVG3k0c" style="mask-image: linear-gradient(to right, transparent, black 40%); -webkit-mask-image: linear-gradient(to right, transparent, black 40%);">
+<div class="relative z-10 p-5 h-full flex flex-col justify-center glow-overlay rounded-[24px]">
+<div class="absolute top-4 right-4 w-6 h-6 rounded-full border-[1.5px] border-white/60 flex items-center justify-center bg-white/10 backdrop-blur-sm"></div>
+<div class="w-[60%]">
+<h3 class="font-headline-lg-mobile text-[32px] text-[#1a1645] mb-1">Calm</h3>
+<p class="text-[#484555] font-body-md text-[13px] leading-snug mb-3">Breathe deep and find<br>your inner peace.</p>
+<div class="flex items-center gap-1.5 text-[#7c8ecc] font-body-md text-[11px] uppercase tracking-widest">
+<span class="material-symbols-outlined text-[14px]">energy_savings_leaf</span>
+                            Peace Energy
+                        </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Action Button -->
+<button class="w-full bg-gradient-to-r from-[#7a5af8] via-[#c471b0] to-[#ff9d7e] text-white rounded-full py-4 px-6 font-body-md text-[18px] flex items-center justify-center gap-3 shadow-[0_12px_40px_rgba(122,90,248,0.25)] inset-0 box-shadow-[inset_0_0_20px_rgba(255,255,255,0.3)] transition-transform active:scale-[0.98] relative overflow-hidden group h-[60px] border border-white/20 mb-8" style="box-shadow: rgba(122, 90, 248, 0.35) 0px 20px 48px -12px; background: linear-gradient(90deg, rgb(122, 90, 248) 0%, rgb(196, 113, 176) 50%, rgb(255, 157, 126) 100%);"><div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-[18px] opacity-70">flare</span>
+<span class="tracking-wide">Start My Aura Card</span>
+<span class="material-symbols-outlined text-[18px] opacity-70">flare</span></button>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[90px] px-8 pb-safe bg-white/90 backdrop-blur-3xl rounded-t-[32px] shadow-[0_-8px_32px_rgba(0,0,0,0.05)] border-t border-white/50">
+<!-- Home (Active) -->
+<button class="flex flex-col items-center justify-center text-[#6b4cba] font-semibold tap:scale-90 transition-all hover:bg-black/5 p-2 rounded-xl flex-1">
+<div class="bg-[#f2efff] px-5 py-1.5 rounded-full mb-1">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<span class="font-body-md text-[12px] font-medium mt-1">Home</span>
+</button>
+<div class="h-8 w-[1px] bg-black/5"></div>
+<!-- Profile (Inactive) -->
+<button class="flex flex-col items-center justify-center text-[#797586] tap:scale-90 transition-all hover:bg-black/5 p-2 rounded-xl flex-1">
+<div class="px-5 py-1.5 rounded-full mb-1">
+<span class="material-symbols-outlined text-[24px]">person</span>
+</div>
+<span class="font-body-md text-[12px] font-medium mt-1">Profile</span>
+</button>
+</nav>
+
+
+</body></html>

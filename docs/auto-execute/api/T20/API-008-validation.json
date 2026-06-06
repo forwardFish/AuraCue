@@ -1,0 +1,22 @@
+{
+  "apiId": "API-008",
+  "caseId": "V01",
+  "caseKey": "API-008-V01",
+  "caseType": "validation failure",
+  "method": "POST",
+  "path": "/api/share-events",
+  "expectedStatus": 400,
+  "actualStatus": 400,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-008-validation.json",
+  "response": {
+    "error": {
+      "code": "VALIDATION_ERROR",
+      "message": "Share event input is invalid.",
+      "details": {
+        "channel": "Expected wechat, moments, copy_link, save_image, or story.",
+        "source": "Expected a non-empty share source."
+      }
+    }
+  }
+}

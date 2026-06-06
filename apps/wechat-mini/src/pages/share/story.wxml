@@ -1,0 +1,37 @@
+<view class="share-story-page">
+  <view class="decor-star star-a">star</view>
+  <view class="decor-star star-b">star</view>
+  <view class="share-header">
+    <button class="close-button" bindtap="onCloseTap">x</button>
+    <text class="brand">AuraCue</text>
+    <view class="header-space"></view>
+  </view>
+  <view class="title-block">
+    <text class="eyebrow">Share your</text>
+    <text class="page-title">Today's Lucky Aura</text>
+    <view class="title-rule"><view></view><text>star</text><view></view></view>
+  </view>
+  <view class="story-card" data-renderer-path="{{shareImagePath}}" data-renderer-key="{{shareImageKey}}">
+    <image wx:if="{{shareImageDataUrl}}" class="renderer-output" src="{{shareImageDataUrl}}" mode="aspectFill"></image>
+    <view class="inner-border"></view>
+    <view class="card-top">
+      <text class="card-brand">AuraCue</text>
+      <text class="card-title">Today's Lucky Aura</text>
+      <text class="card-date">May 26, 2026</text>
+    </view>
+    <view class="card-panel">
+      <text class="aura-name">Soft Confidence</text>
+      <text class="aura-theme">Romantic Clarity</text>
+      <view class="detail-row"><text>Lucky Color</text><text>Embrace your glow</text></view>
+      <view class="detail-row"><text>Outfit Energy</text><text>Dress</text></view>
+      <view class="detail-row"><text>Social Action</text><text>Message</text></view>
+      <view class="detail-row"><text>Tiny Ritual</text><text>Rose</text></view>
+      <text class="caption">"Speak from heart, your words create magic."</text>
+    </view>
+  </view>
+  <view class="action-row">
+    <button class="round-action" bindtap="onSaveTap">Save</button>
+    <button class="round-action" bindtap="onShareTap">Share</button>
+    <button class="round-action" bindtap="onCopyTap">Copy Link</button>
+  </view>
+</view>

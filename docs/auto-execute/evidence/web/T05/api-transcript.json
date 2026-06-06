@@ -1,0 +1,261 @@
+[
+  {
+    "endpoint": "POST /api/v1/identity/anonymous",
+    "case": "create",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "anonymousId": "anon_2240cc01486c419e867569eacd07ce42",
+        "created": true
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/identity/anonymous",
+    "case": "idempotent",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "anonymousId": "anon_2240cc01486c419e867569eacd07ce42",
+        "created": false
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/identity/anonymous",
+    "case": "invalid platform",
+    "status": 400,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "platform must be web or wechat.",
+        "details": {}
+      }
+    }
+  },
+  {
+    "endpoint": "GET /api/v1/aura-cards/today",
+    "case": "not found",
+    "status": 404,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "NOT_FOUND",
+        "message": "Anonymous user was not found.",
+        "details": {}
+      }
+    }
+  },
+  {
+    "endpoint": "GET /api/v1/aura-cards/today",
+    "case": "empty",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "hasActiveCard": false
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/uploads/outfit",
+    "case": "image/jpeg",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "uploadId": "cmq1l6xlf0001bcvchktq7e31",
+        "publicUrl": "/uploads/upload_9f40571137b34f0b91261112c5f1e3c5.jpg",
+        "styleNotes": {
+          "mood": "soft polished",
+          "source": "local-metadata-only",
+          "uploadMimeType": "image/jpeg"
+        }
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/uploads/outfit",
+    "case": "image/png",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "uploadId": "cmq1l6xlm0002bcvcnxxzku1d",
+        "publicUrl": "/uploads/upload_3c6faabe54c34d31b7cd920cdff82afb.png",
+        "styleNotes": {
+          "mood": "soft polished",
+          "source": "local-metadata-only",
+          "uploadMimeType": "image/png"
+        }
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/uploads/outfit",
+    "case": "image/webp",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "uploadId": "cmq1l6xlt0003bcvcyoal2uwe",
+        "publicUrl": "/uploads/upload_88163539009e4f0789e3396fa2459d61.webp",
+        "styleNotes": {
+          "mood": "soft polished",
+          "source": "local-metadata-only",
+          "uploadMimeType": "image/webp"
+        }
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/uploads/outfit",
+    "case": "too large",
+    "status": 413,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "FILE_TOO_LARGE",
+        "message": "Upload must be 8MB or smaller.",
+        "details": {}
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/uploads/outfit",
+    "case": "bad type",
+    "status": 415,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "UNSUPPORTED_FILE_TYPE",
+        "message": "Upload must be jpg, png, or webp.",
+        "details": {}
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/draw-sessions/start",
+    "case": "missing mood",
+    "status": 400,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "mood is required.",
+        "details": {}
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/draw-sessions/start",
+    "case": "no upload",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "drawSessionId": "cmq1l6xma0004bcvci3r2iol5",
+        "drawSeed": "seed_3203d55b51ccf17c",
+        "expiresAt": "2026-06-06T01:00:12.463Z",
+        "cards": [
+          {
+            "position": 1,
+            "label": "Card I"
+          },
+          {
+            "position": 2,
+            "label": "Card II"
+          },
+          {
+            "position": 3,
+            "label": "Card III"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/draw-sessions/start",
+    "case": "idempotent",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "drawSessionId": "cmq1l6xma0004bcvci3r2iol5",
+        "drawSeed": "seed_3203d55b51ccf17c",
+        "expiresAt": "2026-06-06T01:00:12.463Z",
+        "cards": [
+          {
+            "position": 1,
+            "label": "Card I"
+          },
+          {
+            "position": 2,
+            "label": "Card II"
+          },
+          {
+            "position": 3,
+            "label": "Card III"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/draw-sessions/start",
+    "case": "with upload",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "drawSessionId": "cmq1l6xmn0005bcvcizad4ng4",
+        "drawSeed": "seed_449a653ad139d47d",
+        "expiresAt": "2026-06-06T01:00:12.478Z",
+        "cards": [
+          {
+            "position": 1,
+            "label": "Card I"
+          },
+          {
+            "position": 2,
+            "label": "Card II"
+          },
+          {
+            "position": 3,
+            "label": "Card III"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/draw-sessions/start",
+    "case": "upload not found",
+    "status": 404,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "NOT_FOUND",
+        "message": "Upload was not found for this anonymous user.",
+        "details": {}
+      }
+    }
+  },
+  {
+    "endpoint": "GET /api/v1/aura-cards/today",
+    "case": "active",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "hasActiveCard": true,
+        "cardId": "cmq1l6xnc0007bcvcdj963ewh",
+        "auraName": "Quiet Power Bloom",
+        "activatedAt": "2026-06-06T00:00:12.502Z"
+      }
+    }
+  }
+]

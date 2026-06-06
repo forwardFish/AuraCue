@@ -1,0 +1,107 @@
+{
+  "scenarioId": "SCN-004",
+  "stepId": "01",
+  "status": "PASS",
+  "personaGoal": "Wait through ritual",
+  "action": "Let local mock complete",
+  "uiId": "UI-05",
+  "visibleState": {
+    "uiId": "UI-05",
+    "route": "/create/loading",
+    "sourceReference": "docs/UI/小程序/04-生成_抽卡仪式.png",
+    "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/04/code.html",
+    "viewport": {
+      "sourceWidth": 941,
+      "sourceHeight": 1672,
+      "miniProgramWidth": 390
+    },
+    "header": {
+      "brand": "AuraCue"
+    },
+    "hero": {
+      "titleLines": [
+        "Drawing your",
+        "Lucky Aura Card..."
+      ],
+      "subtitle": "Matching your scene, energy, and today's vibe."
+    },
+    "ritual": {
+      "cardLabel": "Aura Card Back",
+      "progressSteps": [
+        {
+          "id": "mood",
+          "labelLines": [
+            "Reading your",
+            "mood"
+          ],
+          "active": true
+        },
+        {
+          "id": "energy",
+          "labelLines": [
+            "Aligning your",
+            "energy"
+          ],
+          "active": false
+        },
+        {
+          "id": "cues",
+          "labelLines": [
+            "Revealing your",
+            "cues"
+          ],
+          "active": false
+        }
+      ],
+      "footnoteLines": [
+        "This takes a few seconds.",
+        "Good things are unfolding."
+      ]
+    },
+    "jobId": "job-004",
+    "pollStatus": "pending",
+    "apiId": "API-002",
+    "nextRoutes": {
+      "success": "/result/:id",
+      "failure": "/error/network"
+    }
+  },
+  "route": {
+    "uiId": "UI-06",
+    "route": "/result/:id",
+    "path": "/result/card-004",
+    "pagePath": "pages/result/free-preview",
+    "state": "locked-free-preview",
+    "ownerScenario": "SCN-005",
+    "title": "Free Preview"
+  },
+  "apiIds": [
+    "API-002",
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-008"
+  ],
+  "clickEvidence": {
+    "apiCalled": true,
+    "job": {
+      "jobId": "job-004",
+      "status": "success",
+      "cardId": "card-004",
+      "errorCode": null
+    },
+    "route": {
+      "uiId": "UI-06",
+      "route": "/result/:id",
+      "path": "/result/card-004",
+      "pagePath": "pages/result/free-preview",
+      "state": "locked-free-preview",
+      "ownerScenario": "SCN-005",
+      "title": "Free Preview"
+    },
+    "analyticsResponse": {
+      "accepted": true,
+      "analyticsEventId": "analytics-026"
+    }
+  }
+}

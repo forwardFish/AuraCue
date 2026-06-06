@@ -1,0 +1,94 @@
+{
+  "taskId": "T08",
+  "taskName": "Mini-Program Shell Routes State API Client",
+  "status": "PASS",
+  "completedAt": "2026-05-26T00:00:00.000Z",
+  "scope": {
+    "requirements": ["REQ-001", "REQ-002", "REQ-004", "REQ-016", "REQ-017", "REQ-019"],
+    "uiCoverage": ["UI-01", "UI-02", "UI-03", "UI-04", "UI-05", "UI-06", "UI-07", "UI-08", "UI-09", "UI-10", "UI-11", "UI-12", "UI-13", "UI-14", "UI-15", "UI-16", "UI-17", "UI-18"],
+    "apiCoverage": ["API-001", "API-002", "API-003", "API-004", "API-005", "API-006", "API-007", "API-008", "API-009", "API-010"],
+    "localOnly": true,
+    "visualClaim": "No page visuals implemented in T08 beyond shell placeholders; visual one-to-one remains for T09-T18/T22."
+  },
+  "changedFiles": [
+    "apps/wechat-mini/package.json",
+    "apps/wechat-mini/src/routes/p0-routes.ts",
+    "apps/wechat-mini/src/routes/route-registry.mjs",
+    "apps/wechat-mini/src/navigation/router.mjs",
+    "apps/wechat-mini/src/state/shell-store.mjs",
+    "apps/wechat-mini/src/fixtures/shell-fixtures.mjs",
+    "apps/wechat-mini/src/api/api-client.mjs",
+    "apps/wechat-mini/src/api/api-client.ts",
+    "apps/wechat-mini/src/api/analytics-client.mjs",
+    "apps/wechat-mini/tests/t08-route-smoke.test.mjs",
+    "apps/wechat-mini/tests/t08-shell-state-api-client.test.mjs",
+    "packages/shared-types/src/index.ts",
+    "docs/auto-execute/traces/T08/route-smoke.json",
+    "docs/auto-execute/logs/T08/shell-tests.log",
+    "docs/auto-execute/logs/T08/shell-tests-command.log",
+    "docs/auto-execute/logs/T08/wechat-mini-test.log",
+    "docs/auto-execute/logs/T08/root-test.log",
+    "docs/auto-execute/logs/T08/typecheck.log",
+    "docs/auto-execute/logs/T08/lint.log",
+    "docs/auto-execute/logs/T08/diff-check.log",
+    "docs/auto-execute/results/T08.json",
+    "docs/auto-execute/latest/T08-HANDOFF.md"
+  ],
+  "commandsRun": [
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t08",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T08/shell-tests-command.log",
+      "note": "First run exposed duplicate route-pattern resolution for UI-03/UI-04; navigator was repaired and the command was rerun successfully."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T08/wechat-mini-test.log",
+      "note": "Log includes the sandbox pnpm filter warning, then executes the package test suite successfully."
+    },
+    {
+      "command": "pnpm.cmd test",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T08/root-test.log"
+    },
+    {
+      "command": "pnpm.cmd typecheck",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T08/typecheck.log"
+    },
+    {
+      "command": "pnpm.cmd lint",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T08/lint.log"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T08/diff-check.log"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/traces/T08/route-smoke.json",
+    "docs/auto-execute/logs/T08/shell-tests.log",
+    "docs/auto-execute/logs/T08/wechat-mini-test.log",
+    "docs/auto-execute/logs/T08/root-test.log",
+    "docs/auto-execute/logs/T08/typecheck.log",
+    "docs/auto-execute/logs/T08/lint.log",
+    "docs/auto-execute/logs/T08/diff-check.log"
+  ],
+  "acceptance": {
+    "routeRegistryCoversUi01ThroughUi18": "PASS",
+    "shellSmokeNavigatesAllRoutesWithFixtures": "PASS",
+    "stateTracksSceneEnergyJobCardEntitlementInvitePaymentShareSaveError": "PASS",
+    "apiClientMapsApi001ThroughApi010": "PASS",
+    "analyticsClientUsesLocalFixtureClient": "PASS",
+    "productionPaymentCloudAiAnalyticsOrDbUsed": false
+  },
+  "blockers": [],
+  "nextSteps": [
+    "T09-T18 should replace shell placeholders with one-to-one page visuals from docs/UI and keep the route registry metadata intact.",
+    "T19 should extend simulated page tests to click every visible P0 control after page visuals are implemented.",
+    "T21 should bind the T08 API client contract to frontend/backend contract tests against the T04-T07 local mock endpoints."
+  ]
+}

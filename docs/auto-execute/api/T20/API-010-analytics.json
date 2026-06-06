@@ -1,0 +1,16 @@
+{
+  "apiId": "API-010",
+  "caseId": "C01",
+  "caseKey": "API-010-C01",
+  "caseType": "analytics record",
+  "method": "POST",
+  "path": "/api/analytics-events",
+  "expectedStatus": 202,
+  "actualStatus": 202,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-010-analytics.json",
+  "response": {
+    "accepted": true,
+    "analyticsEventId": "analytics-003"
+  }
+}

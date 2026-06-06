@@ -1,0 +1,22 @@
+{
+  "apiId": "API-001",
+  "caseId": "C02",
+  "caseKey": "API-001-C02",
+  "caseType": "validation failure",
+  "method": "POST",
+  "path": "/api/generation-jobs",
+  "expectedStatus": 400,
+  "actualStatus": 400,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-001-validation.json",
+  "response": {
+    "error": {
+      "code": "VALIDATION_ERROR",
+      "message": "Choose a supported scene and energy before generating.",
+      "details": {
+        "scene": "Expected one of: date, work, party, luck",
+        "energy": "Expected one of: confidence, luck, love, calm, charm, focus"
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "incremental": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2022"
+    ],
+    "noEmit": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "types": [
+      "node"
+    ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@auracue/shared-types": [
+        "../../packages/shared-types/src/index.ts"
+      ],
+      "@auracue/ui-tokens": [
+        "../../packages/ui-tokens/src/index.ts"
+      ],
+      "@auracue/analytics-events": [
+        "../../packages/analytics-events/src/index.ts"
+      ],
+      "@auracue/card-renderer": [
+        "../../packages/card-renderer/src/index.ts"
+      ],
+      "@auracue/prompt-core": [
+        "../../packages/prompt-core/src/index.ts"
+      ]
+    },
+    "esModuleInterop": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

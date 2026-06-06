@@ -1,0 +1,19 @@
+{
+  "apiId": "API-004",
+  "caseId": "C01",
+  "caseKey": "API-004-C01",
+  "caseType": "mock unlock success",
+  "method": "POST",
+  "path": "/api/cards/:cardId/unlock/mock",
+  "expectedStatus": 200,
+  "actualStatus": 200,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-004-success.json",
+  "response": {
+    "entitled": true,
+    "entitlementId": "entitlement-002",
+    "cardId": "card-005",
+    "method": "invite",
+    "orderId": null
+  }
+}

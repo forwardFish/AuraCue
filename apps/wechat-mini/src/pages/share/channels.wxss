@@ -1,0 +1,137 @@
+page {
+  background: #fdf9f1;
+}
+
+.share-channels-page {
+  position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 48px 24px 280px;
+  overflow: hidden;
+  background: #fdf9f1;
+  color: #2c3e50;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.share-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.close-button,
+.header-space {
+  width: 42px;
+  height: 42px;
+}
+
+.close-button {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.72);
+  color: #374151;
+  font-size: 11px;
+}
+
+.close-button::after,
+.channel-button::after,
+.cancel-button::after {
+  border: 0;
+}
+
+.brand {
+  color: #f0a447;
+  font-family: Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.preview-area {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+}
+
+.page-title {
+  font-family: Georgia, serif;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.preview-card {
+  position: relative;
+  width: 250px;
+  height: 444px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: linear-gradient(165deg, #2a1a4a 0%, #f48fb1 70%, #fff0f5 100%);
+  box-shadow: 0 16px 32px rgba(42, 26, 74, 0.16);
+}
+
+.preview-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 34px 20px;
+  text-align: center;
+  color: #ffffff;
+  font-family: Georgia, serif;
+  font-size: 24px;
+}
+
+.bottom-sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 24px 18px 32px;
+  border-radius: 32px 32px 0 0;
+  background: rgba(253, 249, 241, 0.92);
+  border-top: 1px solid rgba(255, 255, 255, 0.66);
+  box-shadow: 0 -12px 36px rgba(42, 26, 74, 0.08);
+}
+
+.channel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px 12px;
+  padding: 16px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.channel-button {
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #374151;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.channel-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.cancel-button {
+  width: 100%;
+  min-height: 54px;
+  margin-top: 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(248, 113, 113, 0.18);
+  background: rgba(254, 242, 242, 0.64);
+  color: #1f2937;
+  font-weight: 700;
+}

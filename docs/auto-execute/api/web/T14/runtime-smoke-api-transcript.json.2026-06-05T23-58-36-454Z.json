@@ -1,0 +1,2689 @@
+[
+  {
+    "id": "77696.25",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/identity/anonymous",
+    "path": "/api/v1/identity/anonymous",
+    "postData": {
+      "platform": "web",
+      "timezone": "Asia/Shanghai"
+    },
+    "timestamp": "2026-06-05T23:58:21.407Z",
+    "apiId": "API-001"
+  },
+  {
+    "id": "77696.25",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/identity/anonymous",
+    "path": "/api/v1/identity/anonymous",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:21.626Z",
+    "body": null,
+    "apiId": "API-001"
+  },
+  {
+    "id": "77696.30",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/today?anonymousId=anon_c2f8259b53a042f3a42a5991f2417d67",
+    "path": "/api/v1/aura-cards/today",
+    "postData": null,
+    "timestamp": "2026-06-05T23:58:21.628Z",
+    "apiId": "API-002"
+  },
+  {
+    "id": "77696.25",
+    "phase": "body-error",
+    "error": "Error: {\"code\":-32000,\"message\":\"No resource with given identifier found\"}",
+    "timestamp": "2026-06-05T23:58:21.708Z",
+    "apiId": "UNKNOWN"
+  },
+  {
+    "id": "77696.55",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/identity/anonymous",
+    "path": "/api/v1/identity/anonymous",
+    "postData": {
+      "platform": "web",
+      "timezone": "Asia/Shanghai",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67"
+    },
+    "timestamp": "2026-06-05T23:58:21.720Z",
+    "apiId": "API-001"
+  },
+  {
+    "id": "77696.55",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/identity/anonymous",
+    "path": "/api/v1/identity/anonymous",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:21.741Z",
+    "body": {
+      "ok": true,
+      "requestId": "c78b18b6-9440-4ad0-96b8-e150b4961873",
+      "data": {
+        "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+        "created": false
+      }
+    },
+    "apiId": "API-001"
+  },
+  {
+    "id": "77696.60",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/today?anonymousId=anon_c2f8259b53a042f3a42a5991f2417d67",
+    "path": "/api/v1/aura-cards/today",
+    "postData": null,
+    "timestamp": "2026-06-05T23:58:21.742Z",
+    "apiId": "API-002"
+  },
+  {
+    "id": "77696.60",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/today?anonymousId=anon_c2f8259b53a042f3a42a5991f2417d67",
+    "path": "/api/v1/aura-cards/today",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:21.773Z",
+    "body": {
+      "ok": true,
+      "requestId": "ba75b17c-d249-44da-92af-33b9b858ad34",
+      "data": {
+        "hasActiveCard": false
+      }
+    },
+    "apiId": "API-002"
+  },
+  {
+    "id": "77696.64",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "select_mood",
+      "page": "/",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "mood": "confident"
+      }
+    },
+    "timestamp": "2026-06-05T23:58:21.993Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.64",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:22.012Z",
+    "body": {
+      "ok": true,
+      "requestId": "a7887837-4d32-43ea-8029-bafc4a0477ac",
+      "data": {
+        "analyticsEventId": "cmq1l4kdn0001hwvcv1jm7dpi",
+        "eventName": "select_mood",
+        "page": "/"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.65",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "click_start_card",
+      "page": "/",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "mood": "confident"
+      }
+    },
+    "timestamp": "2026-06-05T23:58:22.024Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.65",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:22.038Z",
+    "body": {
+      "ok": true,
+      "requestId": "01493545-3896-4c91-b5f7-d4bc492f1669",
+      "data": {
+        "analyticsEventId": "cmq1l4kec0002hwvcs7zg9zy2",
+        "eventName": "click_start_card",
+        "page": "/"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.70",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "select_context",
+      "page": "/create/context",
+      "platform": "web",
+      "anonymousId": null,
+      "payload": {
+        "context": "Work"
+      }
+    },
+    "timestamp": "2026-06-05T23:58:22.305Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.70",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:22.332Z",
+    "body": {
+      "ok": true,
+      "requestId": "4723f18b-a1bb-4ab7-b251-730c0f7975b3",
+      "data": {
+        "analyticsEventId": "cmq1l4km60003hwvckgv2zdhh",
+        "eventName": "select_context",
+        "page": "/create/context"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.75",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "skip_upload",
+      "page": "/create/upload",
+      "platform": "web",
+      "anonymousId": null,
+      "payload": {}
+    },
+    "timestamp": "2026-06-05T23:58:22.603Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.75",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:22.627Z",
+    "body": {
+      "ok": true,
+      "requestId": "5ca65627-1990-40a1-bd65-205da54809af",
+      "data": {
+        "analyticsEventId": "cmq1l4kui0004hwvco14cddp4",
+        "eventName": "skip_upload",
+        "page": "/create/upload"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.78",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/identity/anonymous",
+    "path": "/api/v1/identity/anonymous",
+    "postData": {
+      "platform": "web",
+      "timezone": "Asia/Shanghai",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67"
+    },
+    "timestamp": "2026-06-05T23:58:22.632Z",
+    "apiId": "API-001"
+  },
+  {
+    "id": "77696.78",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/identity/anonymous",
+    "path": "/api/v1/identity/anonymous",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:22.642Z",
+    "body": {
+      "ok": true,
+      "requestId": "61ad0be1-a633-4006-a626-61a6d8e4f900",
+      "data": {
+        "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+        "created": false
+      }
+    },
+    "apiId": "API-001"
+  },
+  {
+    "id": "77696.80",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/draw-sessions/start",
+    "path": "/api/v1/draw-sessions/start",
+    "postData": {
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "platform": "web",
+      "mood": "confident",
+      "context": "work",
+      "uploadId": null
+    },
+    "timestamp": "2026-06-05T23:58:22.643Z",
+    "apiId": "API-004"
+  },
+  {
+    "id": "77696.80",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/draw-sessions/start",
+    "path": "/api/v1/draw-sessions/start",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:22.681Z",
+    "body": {
+      "ok": true,
+      "requestId": "fb6fb618-d4a8-4139-a11e-057c435e58d9",
+      "data": {
+        "drawSessionId": "cmq1l4kvx0005hwvcnkhdpxrk",
+        "drawSeed": "seed_c6bab6e0bca2a9b9",
+        "expiresAt": "2026-06-06T00:58:22.642Z",
+        "cards": [
+          {
+            "position": 1,
+            "label": "Card I"
+          },
+          {
+            "position": 2,
+            "label": "Card II"
+          },
+          {
+            "position": 3,
+            "label": "Card III"
+          }
+        ]
+      }
+    },
+    "apiId": "API-004"
+  },
+  {
+    "id": "77696.81",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "draw_session_started",
+      "page": "/create/draw",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "drawSessionId": "cmq1l4kvx0005hwvcnkhdpxrk"
+      }
+    },
+    "timestamp": "2026-06-05T23:58:22.684Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.81",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:22.697Z",
+    "body": {
+      "ok": true,
+      "requestId": "d53d4515-cac1-4dbc-af6a-21373c12452b",
+      "data": {
+        "analyticsEventId": "cmq1l4kwq0006hwvcuh7vr6pb",
+        "eventName": "draw_session_started",
+        "page": "/create/draw"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.82",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "draw_card_selected",
+      "page": "/create/draw",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "drawPosition": 2
+      }
+    },
+    "timestamp": "2026-06-05T23:58:22.884Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.82",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:22.895Z",
+    "body": {
+      "ok": true,
+      "requestId": "1eb2246f-30ad-4c9c-888b-3090664b8939",
+      "data": {
+        "analyticsEventId": "cmq1l4l290007hwvc5sj7z1n9",
+        "eventName": "draw_card_selected",
+        "page": "/create/draw"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.83",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/generations/start",
+    "path": "/api/v1/generations/start",
+    "postData": {
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "platform": "web",
+      "drawSessionId": "cmq1l4kvx0005hwvcnkhdpxrk",
+      "drawPosition": 2
+    },
+    "timestamp": "2026-06-05T23:58:22.908Z",
+    "apiId": "API-005"
+  },
+  {
+    "id": "77696.84",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "generation_started",
+      "page": "/create/draw",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "drawSessionId": "cmq1l4kvx0005hwvcnkhdpxrk",
+        "drawPosition": 2
+      }
+    },
+    "timestamp": "2026-06-05T23:58:22.908Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.83",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/generations/start",
+    "path": "/api/v1/generations/start",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:22.945Z",
+    "body": {
+      "ok": true,
+      "requestId": "2246e8bc-c521-4a34-b0fc-b023ace92b86",
+      "data": {
+        "jobId": "cmq1l4l3f0008hwvc7ixltmve",
+        "status": "success",
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "generationSource": "local-fallback",
+        "fallbackUsed": true,
+        "provider": "mock-fallback"
+      }
+    },
+    "apiId": "API-005"
+  },
+  {
+    "id": "77696.85",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "generation_completed",
+      "page": "/create/draw",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun"
+      }
+    },
+    "timestamp": "2026-06-05T23:58:22.948Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.84",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:22.956Z",
+    "body": {
+      "ok": true,
+      "requestId": "accd032b-042c-4a34-ac0c-984eed217d15",
+      "data": {
+        "analyticsEventId": "cmq1l4l3x000ahwvcvwaurjph",
+        "eventName": "generation_started",
+        "page": "/create/draw"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.85",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:22.966Z",
+    "body": {
+      "ok": true,
+      "requestId": "4096230d-dd04-485e-967c-9188d940ba01",
+      "data": {
+        "analyticsEventId": "cmq1l4l47000bhwvc39m5pvgy",
+        "eventName": "generation_completed",
+        "page": "/create/draw"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.91",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "postData": null,
+    "timestamp": "2026-06-05T23:58:23.032Z",
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.91",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:23.050Z",
+    "body": {
+      "ok": true,
+      "requestId": "c58a9ee4-f915-44b5-b431-e12ddbd2895e",
+      "data": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "ownerAnonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+        "mood": "confident",
+        "context": "work",
+        "drawSeed": "seed_c6bab6e0bca2a9b9",
+        "drawPosition": 2,
+        "content": {
+          "title": "Meeting Glow Aura Card",
+          "auraName": "Clear Signal Aura",
+          "tarotSymbol": "The Magician",
+          "message": "A small confident choice can make the next moment feel easier.",
+          "luckyColor": "soft ivory",
+          "colors": {
+            "primary": "soft ivory",
+            "accent": "polished jade",
+            "background": "warm moonlight"
+          },
+          "outfit": "Wear one clean line with a soft highlight near the face.",
+          "beauty": "Keep the glow fresh and the finish light.",
+          "social": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "ritual": "Take three slow breaths before stepping out.",
+          "avoid": "Avoid over-planning the first ten minutes.",
+          "caption": "Today I am carrying clear signal aura.",
+          "theme": "work-confidence-local",
+          "cardTitle": "Meeting Glow Aura Card",
+          "auraColor": "soft ivory",
+          "luckyColors": [
+            "soft ivory",
+            "polished jade"
+          ],
+          "styleVibe": "Clear Signal Aura with polished jade",
+          "energyMessage": "A small confident choice can make the next moment feel easier.",
+          "outfitEnergy": "Wear one clean line with a soft highlight near the face.",
+          "beautyCue": "Keep the glow fresh and the finish light.",
+          "socialMove": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "miniRitual": "Take three slow breaths before stepping out.",
+          "todayIntention": "I carry confidence with ease.",
+          "luckyAnchorCandidates": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            }
+          ],
+          "luckyAnchorSuggestions": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            }
+          ],
+          "generatedAt": "2026-06-05T23:58:22.918Z",
+          "generationSource": "local-fallback",
+          "fallbackUsed": true
+        },
+        "shareImageUrl": null,
+        "isActivated": false,
+        "activatedAt": null,
+        "activation": null,
+        "createdAt": "2026-06-05T23:58:22.928Z",
+        "updatedAt": "2026-06-05T23:58:22.928Z"
+      }
+    },
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.93",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/render",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/render",
+    "postData": {
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "platform": "web"
+    },
+    "timestamp": "2026-06-05T23:58:23.051Z",
+    "apiId": "API-008"
+  },
+  {
+    "id": "77696.93",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/render",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/render",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:23.073Z",
+    "body": {
+      "ok": true,
+      "requestId": "521bc3a9-3f3d-4991-ac69-49ba16a90212",
+      "data": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "shareImageUrl": "local://share-images/cmq1l4l3k0009hwvcme1cyrun-template-story-001.png",
+        "width": 1080,
+        "height": 1920,
+        "renderer": "deterministic-local-renderer",
+        "deterministicKey": "cmq1l4l3k0009hwvcme1cyrun|template-story-001|Meeting Glow Aura Card|Clear Signal Aura|soft ivory|work-confidence-local|Today I am carrying clear signal aura.",
+        "dataUrlSha256": "6ddea74e481165013168ff4f16f87f092755cdff94b512d701ee0c0d907767ff",
+        "reused": false
+      }
+    },
+    "apiId": "API-008"
+  },
+  {
+    "id": "77696.94",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "postData": null,
+    "timestamp": "2026-06-05T23:58:23.074Z",
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.94",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:23.083Z",
+    "body": {
+      "ok": true,
+      "requestId": "6ca02fde-0e9d-4d41-8c71-9b0051093dc3",
+      "data": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "ownerAnonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+        "mood": "confident",
+        "context": "work",
+        "drawSeed": "seed_c6bab6e0bca2a9b9",
+        "drawPosition": 2,
+        "content": {
+          "title": "Meeting Glow Aura Card",
+          "auraName": "Clear Signal Aura",
+          "tarotSymbol": "The Magician",
+          "message": "A small confident choice can make the next moment feel easier.",
+          "luckyColor": "soft ivory",
+          "colors": {
+            "primary": "soft ivory",
+            "accent": "polished jade",
+            "background": "warm moonlight"
+          },
+          "outfit": "Wear one clean line with a soft highlight near the face.",
+          "beauty": "Keep the glow fresh and the finish light.",
+          "social": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "ritual": "Take three slow breaths before stepping out.",
+          "avoid": "Avoid over-planning the first ten minutes.",
+          "caption": "Today I am carrying clear signal aura.",
+          "theme": "work-confidence-local",
+          "cardTitle": "Meeting Glow Aura Card",
+          "auraColor": "soft ivory",
+          "luckyColors": [
+            "soft ivory",
+            "polished jade"
+          ],
+          "styleVibe": "Clear Signal Aura with polished jade",
+          "energyMessage": "A small confident choice can make the next moment feel easier.",
+          "outfitEnergy": "Wear one clean line with a soft highlight near the face.",
+          "beautyCue": "Keep the glow fresh and the finish light.",
+          "socialMove": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "miniRitual": "Take three slow breaths before stepping out.",
+          "todayIntention": "I carry confidence with ease.",
+          "luckyAnchorCandidates": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            }
+          ],
+          "luckyAnchorSuggestions": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            }
+          ],
+          "generatedAt": "2026-06-05T23:58:22.918Z",
+          "generationSource": "local-fallback",
+          "fallbackUsed": true
+        },
+        "shareImageUrl": "local://share-images/cmq1l4l3k0009hwvcme1cyrun-template-story-001.png",
+        "isActivated": false,
+        "activatedAt": null,
+        "activation": null,
+        "createdAt": "2026-06-05T23:58:22.928Z",
+        "updatedAt": "2026-06-05T23:58:23.057Z"
+      }
+    },
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.95",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3214/api/v1/generation-jobs/cmq1l4l3f0008hwvc7ixltmve?anonymousId=anon_c2f8259b53a042f3a42a5991f2417d67",
+    "path": "/api/v1/generation-jobs/cmq1l4l3f0008hwvc7ixltmve",
+    "postData": null,
+    "timestamp": "2026-06-05T23:58:23.180Z",
+    "apiId": "API-006"
+  },
+  {
+    "id": "77696.95",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/generation-jobs/cmq1l4l3f0008hwvc7ixltmve?anonymousId=anon_c2f8259b53a042f3a42a5991f2417d67",
+    "path": "/api/v1/generation-jobs/cmq1l4l3f0008hwvc7ixltmve",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:23.194Z",
+    "body": {
+      "ok": true,
+      "requestId": "dff56d23-ce6a-467e-9a85-58cf758e3520",
+      "data": {
+        "jobId": "cmq1l4l3f0008hwvc7ixltmve",
+        "status": "success",
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "generationSource": "local-fallback",
+        "fallbackUsed": true,
+        "provider": "mock-fallback",
+        "error": null
+      }
+    },
+    "apiId": "API-006"
+  },
+  {
+    "id": "77696.101",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "postData": null,
+    "timestamp": "2026-06-05T23:58:23.443Z",
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.101",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:23.443Z",
+    "body": {
+      "ok": true,
+      "requestId": "54df5a1b-8e48-41e6-800b-9f9e3bcd55b4",
+      "data": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "ownerAnonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+        "mood": "confident",
+        "context": "work",
+        "drawSeed": "seed_c6bab6e0bca2a9b9",
+        "drawPosition": 2,
+        "content": {
+          "title": "Meeting Glow Aura Card",
+          "auraName": "Clear Signal Aura",
+          "tarotSymbol": "The Magician",
+          "message": "A small confident choice can make the next moment feel easier.",
+          "luckyColor": "soft ivory",
+          "colors": {
+            "primary": "soft ivory",
+            "accent": "polished jade",
+            "background": "warm moonlight"
+          },
+          "outfit": "Wear one clean line with a soft highlight near the face.",
+          "beauty": "Keep the glow fresh and the finish light.",
+          "social": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "ritual": "Take three slow breaths before stepping out.",
+          "avoid": "Avoid over-planning the first ten minutes.",
+          "caption": "Today I am carrying clear signal aura.",
+          "theme": "work-confidence-local",
+          "cardTitle": "Meeting Glow Aura Card",
+          "auraColor": "soft ivory",
+          "luckyColors": [
+            "soft ivory",
+            "polished jade"
+          ],
+          "styleVibe": "Clear Signal Aura with polished jade",
+          "energyMessage": "A small confident choice can make the next moment feel easier.",
+          "outfitEnergy": "Wear one clean line with a soft highlight near the face.",
+          "beautyCue": "Keep the glow fresh and the finish light.",
+          "socialMove": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "miniRitual": "Take three slow breaths before stepping out.",
+          "todayIntention": "I carry confidence with ease.",
+          "luckyAnchorCandidates": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            }
+          ],
+          "luckyAnchorSuggestions": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            }
+          ],
+          "generatedAt": "2026-06-05T23:58:22.918Z",
+          "generationSource": "local-fallback",
+          "fallbackUsed": true
+        },
+        "shareImageUrl": "local://share-images/cmq1l4l3k0009hwvcme1cyrun-template-story-001.png",
+        "isActivated": false,
+        "activatedAt": null,
+        "activation": null,
+        "createdAt": "2026-06-05T23:58:22.928Z",
+        "updatedAt": "2026-06-05T23:58:23.057Z"
+      }
+    },
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.103",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/activation/start",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/activation/start",
+    "postData": {
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "platform": "web",
+      "anchorType": "lucky_color",
+      "anchorLabel": "soft ivory"
+    },
+    "timestamp": "2026-06-05T23:58:23.785Z",
+    "apiId": "API-009"
+  },
+  {
+    "id": "77696.103",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/activation/start",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/activation/start",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:23.807Z",
+    "body": {
+      "ok": true,
+      "requestId": "067a9b0f-dcd9-4b70-a5bb-49033c333b29",
+      "data": {
+        "activationId": "cmq1l4lri000chwvcgrsm61s7",
+        "status": "started",
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "anchorType": "lucky_color",
+        "anchorLabel": "soft ivory",
+        "alreadyActivated": false
+      }
+    },
+    "apiId": "API-009"
+  },
+  {
+    "id": "77696.104",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "activation_started",
+      "page": "/activate/cmq1l4l3k0009hwvcme1cyrun",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "anchorType": "lucky_color"
+      }
+    },
+    "timestamp": "2026-06-05T23:58:23.808Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.104",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:23.824Z",
+    "body": {
+      "ok": true,
+      "requestId": "c9ea42ec-9f98-4113-bbae-fd0ceb26a658",
+      "data": {
+        "analyticsEventId": "cmq1l4lrz000dhwvci0qs6upo",
+        "eventName": "activation_started",
+        "page": "/activate/cmq1l4l3k0009hwvcme1cyrun"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.105",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "activation_hold_cancelled",
+      "page": "/activate/cmq1l4l3k0009hwvcme1cyrun",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "holdDurationMs": 1017
+      }
+    },
+    "timestamp": "2026-06-05T23:58:25.068Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.105",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:25.082Z",
+    "body": {
+      "ok": true,
+      "requestId": "24a3cc24-6ce1-45b2-a7d1-570f31c0e181",
+      "data": {
+        "analyticsEventId": "cmq1l4mqy000ehwvcqmoti9zi",
+        "eventName": "activation_hold_cancelled",
+        "page": "/activate/cmq1l4l3k0009hwvcme1cyrun"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.106",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/activations/cmq1l4lri000chwvcgrsm61s7/seal",
+    "path": "/api/v1/activations/cmq1l4lri000chwvcgrsm61s7/seal",
+    "postData": {
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "platform": "web",
+      "holdDurationMs": 3003
+    },
+    "timestamp": "2026-06-05T23:58:28.684Z",
+    "apiId": "API-010"
+  },
+  {
+    "id": "77696.106",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/activations/cmq1l4lri000chwvcgrsm61s7/seal",
+    "path": "/api/v1/activations/cmq1l4lri000chwvcgrsm61s7/seal",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:28.709Z",
+    "body": {
+      "ok": true,
+      "requestId": "6fd2ccca-dbe9-47e0-974a-f300312e2650",
+      "data": {
+        "activationId": "cmq1l4lri000chwvcgrsm61s7",
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "sealed": true,
+        "status": "sealed",
+        "activatedAt": "2026-06-05T23:58:28.684Z",
+        "holdDurationMs": 3003
+      }
+    },
+    "apiId": "API-010"
+  },
+  {
+    "id": "77696.111",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "postData": null,
+    "timestamp": "2026-06-05T23:58:28.740Z",
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.111",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:28.749Z",
+    "body": {
+      "ok": true,
+      "requestId": "e4f39e95-cdb2-4406-adc7-00d64b0cead5",
+      "data": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "ownerAnonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+        "mood": "confident",
+        "context": "work",
+        "drawSeed": "seed_c6bab6e0bca2a9b9",
+        "drawPosition": 2,
+        "content": {
+          "title": "Meeting Glow Aura Card",
+          "auraName": "Clear Signal Aura",
+          "tarotSymbol": "The Magician",
+          "message": "A small confident choice can make the next moment feel easier.",
+          "luckyColor": "soft ivory",
+          "colors": {
+            "primary": "soft ivory",
+            "accent": "polished jade",
+            "background": "warm moonlight"
+          },
+          "outfit": "Wear one clean line with a soft highlight near the face.",
+          "beauty": "Keep the glow fresh and the finish light.",
+          "social": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "ritual": "Take three slow breaths before stepping out.",
+          "avoid": "Avoid over-planning the first ten minutes.",
+          "caption": "Today I am carrying clear signal aura.",
+          "theme": "work-confidence-local",
+          "cardTitle": "Meeting Glow Aura Card",
+          "auraColor": "soft ivory",
+          "luckyColors": [
+            "soft ivory",
+            "polished jade"
+          ],
+          "styleVibe": "Clear Signal Aura with polished jade",
+          "energyMessage": "A small confident choice can make the next moment feel easier.",
+          "outfitEnergy": "Wear one clean line with a soft highlight near the face.",
+          "beautyCue": "Keep the glow fresh and the finish light.",
+          "socialMove": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "miniRitual": "Take three slow breaths before stepping out.",
+          "todayIntention": "I carry confidence with ease.",
+          "luckyAnchorCandidates": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            }
+          ],
+          "luckyAnchorSuggestions": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            }
+          ],
+          "generatedAt": "2026-06-05T23:58:22.918Z",
+          "generationSource": "local-fallback",
+          "fallbackUsed": true
+        },
+        "shareImageUrl": "local://share-images/cmq1l4l3k0009hwvcme1cyrun-template-story-001.png",
+        "isActivated": true,
+        "activatedAt": "2026-06-05T23:58:28.684Z",
+        "activation": {
+          "activationId": "cmq1l4lri000chwvcgrsm61s7",
+          "status": "sealed",
+          "anchorType": "lucky_color",
+          "anchorLabel": "soft ivory",
+          "holdDurationMs": 3003,
+          "startedAt": "2026-06-05T23:58:23.790Z",
+          "sealedAt": "2026-06-05T23:58:28.684Z"
+        },
+        "createdAt": "2026-06-05T23:58:22.928Z",
+        "updatedAt": "2026-06-05T23:58:28.693Z"
+      }
+    },
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.114",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/save",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/save",
+    "postData": {
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "platform": "web",
+      "source": "activated"
+    },
+    "timestamp": "2026-06-05T23:58:29.054Z",
+    "apiId": "API-011"
+  },
+  {
+    "id": "77696.114",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/save",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/save",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:29.078Z",
+    "body": {
+      "ok": true,
+      "requestId": "2600c514-9608-4c60-adf7-0991e12c91de",
+      "data": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "savedAt": "2026-06-05T23:58:29.060Z",
+        "savedCardId": "cmq1l4ptw000fhwvc4th4m1eo",
+        "idempotent": false
+      }
+    },
+    "apiId": "API-011"
+  },
+  {
+    "id": "77696.115",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "card_saved",
+      "page": "/activated/cmq1l4l3k0009hwvcme1cyrun",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "source": "activated"
+      }
+    },
+    "timestamp": "2026-06-05T23:58:29.079Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.115",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:29.093Z",
+    "body": {
+      "ok": true,
+      "requestId": "52610520-e1c9-4682-9b03-c8b31b33aa61",
+      "data": {
+        "analyticsEventId": "cmq1l4pud000ghwvcfhgfkcmx",
+        "eventName": "card_saved",
+        "page": "/activated/cmq1l4l3k0009hwvcme1cyrun"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.116",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/share",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/share",
+    "postData": {
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "platform": "web",
+      "channel": "web_share",
+      "source": "activated"
+    },
+    "timestamp": "2026-06-05T23:58:29.338Z",
+    "apiId": "API-012"
+  },
+  {
+    "id": "77696.116",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/share",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/share",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:29.353Z",
+    "body": {
+      "ok": true,
+      "requestId": "86f78ed5-46d7-43f3-8de6-d051eddbf181",
+      "data": {
+        "shareEventId": "cmq1l4q1l000hhwvc44ma47vv",
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "channel": "web_share",
+        "source": "activated",
+        "shareUrl": "/share/cmq1l4l3k0009hwvcme1cyrun"
+      }
+    },
+    "apiId": "API-012"
+  },
+  {
+    "id": "77696.122",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "postData": null,
+    "timestamp": "2026-06-05T23:58:29.660Z",
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.122",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:29.667Z",
+    "body": {
+      "ok": true,
+      "requestId": "e76fd726-4290-49d9-acbf-6e3bf6433446",
+      "data": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "ownerAnonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+        "mood": "confident",
+        "context": "work",
+        "drawSeed": "seed_c6bab6e0bca2a9b9",
+        "drawPosition": 2,
+        "content": {
+          "title": "Meeting Glow Aura Card",
+          "auraName": "Clear Signal Aura",
+          "tarotSymbol": "The Magician",
+          "message": "A small confident choice can make the next moment feel easier.",
+          "luckyColor": "soft ivory",
+          "colors": {
+            "primary": "soft ivory",
+            "accent": "polished jade",
+            "background": "warm moonlight"
+          },
+          "outfit": "Wear one clean line with a soft highlight near the face.",
+          "beauty": "Keep the glow fresh and the finish light.",
+          "social": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "ritual": "Take three slow breaths before stepping out.",
+          "avoid": "Avoid over-planning the first ten minutes.",
+          "caption": "Today I am carrying clear signal aura.",
+          "theme": "work-confidence-local",
+          "cardTitle": "Meeting Glow Aura Card",
+          "auraColor": "soft ivory",
+          "luckyColors": [
+            "soft ivory",
+            "polished jade"
+          ],
+          "styleVibe": "Clear Signal Aura with polished jade",
+          "energyMessage": "A small confident choice can make the next moment feel easier.",
+          "outfitEnergy": "Wear one clean line with a soft highlight near the face.",
+          "beautyCue": "Keep the glow fresh and the finish light.",
+          "socialMove": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "miniRitual": "Take three slow breaths before stepping out.",
+          "todayIntention": "I carry confidence with ease.",
+          "luckyAnchorCandidates": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            }
+          ],
+          "luckyAnchorSuggestions": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            }
+          ],
+          "generatedAt": "2026-06-05T23:58:22.918Z",
+          "generationSource": "local-fallback",
+          "fallbackUsed": true
+        },
+        "shareImageUrl": "local://share-images/cmq1l4l3k0009hwvcme1cyrun-template-story-001.png",
+        "isActivated": true,
+        "activatedAt": "2026-06-05T23:58:28.684Z",
+        "activation": {
+          "activationId": "cmq1l4lri000chwvcgrsm61s7",
+          "status": "sealed",
+          "anchorType": "lucky_color",
+          "anchorLabel": "soft ivory",
+          "holdDurationMs": 3003,
+          "startedAt": "2026-06-05T23:58:23.790Z",
+          "sealedAt": "2026-06-05T23:58:28.684Z"
+        },
+        "createdAt": "2026-06-05T23:58:22.928Z",
+        "updatedAt": "2026-06-05T23:58:28.693Z"
+      }
+    },
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.124",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "share_opened",
+      "page": "/share/cmq1l4l3k0009hwvcme1cyrun",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "hasShareImage": true
+      }
+    },
+    "timestamp": "2026-06-05T23:58:29.669Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.124",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:29.680Z",
+    "body": {
+      "ok": true,
+      "requestId": "f686249f-6d7f-43ec-ba51-76e7008771d3",
+      "data": {
+        "analyticsEventId": "cmq1l4qap000ihwvcmp88ftd1",
+        "eventName": "share_opened",
+        "page": "/share/cmq1l4l3k0009hwvcme1cyrun"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.125",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/share",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/share",
+    "postData": {
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "platform": "web",
+      "channel": "copy",
+      "source": "share_preview"
+    },
+    "timestamp": "2026-06-05T23:58:30.032Z",
+    "apiId": "API-012"
+  },
+  {
+    "id": "77696.125",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/share",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/share",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:30.049Z",
+    "body": {
+      "ok": true,
+      "requestId": "4b977c53-317d-4a4c-886a-fe3745867ba5",
+      "data": {
+        "shareEventId": "cmq1l4qkx000jhwvcuq05y1v6",
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "channel": "copy",
+        "source": "share_preview",
+        "shareUrl": "/share/cmq1l4l3k0009hwvcme1cyrun"
+      }
+    },
+    "apiId": "API-012"
+  },
+  {
+    "id": "77696.126",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "share_completed",
+      "page": "/share/cmq1l4l3k0009hwvcme1cyrun",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "channel": "copy",
+        "copied": true
+      }
+    },
+    "timestamp": "2026-06-05T23:58:30.050Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.126",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:30.062Z",
+    "body": {
+      "ok": true,
+      "requestId": "6d5c28ac-695e-4914-a307-49e4540748da",
+      "data": {
+        "analyticsEventId": "cmq1l4qlc000khwvc9j84sdhp",
+        "eventName": "share_completed",
+        "page": "/share/cmq1l4l3k0009hwvcme1cyrun"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.127",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/share",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/share",
+    "postData": {
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "platform": "web",
+      "channel": "download",
+      "source": "share_preview"
+    },
+    "timestamp": "2026-06-05T23:58:30.287Z",
+    "apiId": "API-012"
+  },
+  {
+    "id": "77696.127",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/share",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/share",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:30.331Z",
+    "body": {
+      "ok": true,
+      "requestId": "2ef1438b-710b-4768-a025-a96224b9645d",
+      "data": {
+        "shareEventId": "cmq1l4qsq000lhwvc196pw5jh",
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "channel": "download",
+        "source": "share_preview",
+        "shareUrl": "/share/cmq1l4l3k0009hwvcme1cyrun"
+      }
+    },
+    "apiId": "API-012"
+  },
+  {
+    "id": "77696.128",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "share_completed",
+      "page": "/share/cmq1l4l3k0009hwvcme1cyrun",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "channel": "download",
+        "hasShareImage": true
+      }
+    },
+    "timestamp": "2026-06-05T23:58:30.332Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.128",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:30.346Z",
+    "body": {
+      "ok": true,
+      "requestId": "9b06fc46-886e-41ba-8071-f8b7cd5da88e",
+      "data": {
+        "analyticsEventId": "cmq1l4qt7000mhwvcop8gdwre",
+        "eventName": "share_completed",
+        "page": "/share/cmq1l4l3k0009hwvcme1cyrun"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.129",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/save",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/save",
+    "postData": {
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "platform": "web",
+      "source": "share"
+    },
+    "timestamp": "2026-06-05T23:58:30.553Z",
+    "apiId": "API-011"
+  },
+  {
+    "id": "77696.129",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/save",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/save",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:30.568Z",
+    "body": {
+      "ok": true,
+      "requestId": "fb989443-a32a-4350-bfc0-f4b8dc8141a8",
+      "data": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "savedAt": "2026-06-05T23:58:29.060Z",
+        "savedCardId": "cmq1l4ptw000fhwvc4th4m1eo",
+        "idempotent": true
+      }
+    },
+    "apiId": "API-011"
+  },
+  {
+    "id": "77696.130",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "card_saved",
+      "page": "/share/cmq1l4l3k0009hwvcme1cyrun",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "source": "share"
+      }
+    },
+    "timestamp": "2026-06-05T23:58:30.570Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.130",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:30.583Z",
+    "body": {
+      "ok": true,
+      "requestId": "644f1542-2f27-4176-a039-8162b144fca3",
+      "data": {
+        "analyticsEventId": "cmq1l4qzs000ohwvcue9wxp42",
+        "eventName": "card_saved",
+        "page": "/share/cmq1l4l3k0009hwvcme1cyrun"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.135",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "postData": null,
+    "timestamp": "2026-06-05T23:58:30.617Z",
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.135",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:30.628Z",
+    "body": {
+      "ok": true,
+      "requestId": "2e47d418-6ad0-4f1b-a997-58ff521782a0",
+      "data": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "ownerAnonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+        "mood": "confident",
+        "context": "work",
+        "drawSeed": "seed_c6bab6e0bca2a9b9",
+        "drawPosition": 2,
+        "content": {
+          "title": "Meeting Glow Aura Card",
+          "auraName": "Clear Signal Aura",
+          "tarotSymbol": "The Magician",
+          "message": "A small confident choice can make the next moment feel easier.",
+          "luckyColor": "soft ivory",
+          "colors": {
+            "primary": "soft ivory",
+            "accent": "polished jade",
+            "background": "warm moonlight"
+          },
+          "outfit": "Wear one clean line with a soft highlight near the face.",
+          "beauty": "Keep the glow fresh and the finish light.",
+          "social": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "ritual": "Take three slow breaths before stepping out.",
+          "avoid": "Avoid over-planning the first ten minutes.",
+          "caption": "Today I am carrying clear signal aura.",
+          "theme": "work-confidence-local",
+          "cardTitle": "Meeting Glow Aura Card",
+          "auraColor": "soft ivory",
+          "luckyColors": [
+            "soft ivory",
+            "polished jade"
+          ],
+          "styleVibe": "Clear Signal Aura with polished jade",
+          "energyMessage": "A small confident choice can make the next moment feel easier.",
+          "outfitEnergy": "Wear one clean line with a soft highlight near the face.",
+          "beautyCue": "Keep the glow fresh and the finish light.",
+          "socialMove": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "miniRitual": "Take three slow breaths before stepping out.",
+          "todayIntention": "I carry confidence with ease.",
+          "luckyAnchorCandidates": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            }
+          ],
+          "luckyAnchorSuggestions": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            }
+          ],
+          "generatedAt": "2026-06-05T23:58:22.918Z",
+          "generationSource": "local-fallback",
+          "fallbackUsed": true
+        },
+        "shareImageUrl": "local://share-images/cmq1l4l3k0009hwvcme1cyrun-template-story-001.png",
+        "isActivated": true,
+        "activatedAt": "2026-06-05T23:58:28.684Z",
+        "activation": {
+          "activationId": "cmq1l4lri000chwvcgrsm61s7",
+          "status": "sealed",
+          "anchorType": "lucky_color",
+          "anchorLabel": "soft ivory",
+          "holdDurationMs": 3003,
+          "startedAt": "2026-06-05T23:58:23.790Z",
+          "sealedAt": "2026-06-05T23:58:28.684Z"
+        },
+        "createdAt": "2026-06-05T23:58:22.928Z",
+        "updatedAt": "2026-06-05T23:58:28.693Z"
+      }
+    },
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.137",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/share",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/share",
+    "postData": {
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "platform": "web",
+      "channel": "copy",
+      "source": "saved"
+    },
+    "timestamp": "2026-06-05T23:58:30.948Z",
+    "apiId": "API-012"
+  },
+  {
+    "id": "77696.137",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/share",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun/share",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:30.964Z",
+    "body": {
+      "ok": true,
+      "requestId": "dbdfb15e-ab37-497c-b18f-9596e17d212d",
+      "data": {
+        "shareEventId": "cmq1l4rac000phwvcnrcfugpc",
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "channel": "copy",
+        "source": "saved",
+        "shareUrl": "/share/cmq1l4l3k0009hwvcme1cyrun"
+      }
+    },
+    "apiId": "API-012"
+  },
+  {
+    "id": "77696.138",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "share_completed",
+      "page": "/saved/cmq1l4l3k0009hwvcme1cyrun",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "channel": "copy",
+        "source": "saved"
+      }
+    },
+    "timestamp": "2026-06-05T23:58:30.965Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.138",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:30.978Z",
+    "body": {
+      "ok": true,
+      "requestId": "0b3dc7af-ea51-4eba-ab91-8ec8d13e648c",
+      "data": {
+        "analyticsEventId": "cmq1l4rar000qhwvcltq9yuq1",
+        "eventName": "share_completed",
+        "page": "/saved/cmq1l4l3k0009hwvcme1cyrun"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.163",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/identity/anonymous",
+    "path": "/api/v1/identity/anonymous",
+    "postData": {
+      "platform": "web",
+      "timezone": "Asia/Shanghai",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67"
+    },
+    "timestamp": "2026-06-05T23:58:31.343Z",
+    "apiId": "API-001"
+  },
+  {
+    "id": "77696.163",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/identity/anonymous",
+    "path": "/api/v1/identity/anonymous",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:31.358Z",
+    "body": {
+      "ok": true,
+      "requestId": "f22bab21-52c8-4162-b644-c909f0504001",
+      "data": {
+        "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+        "created": false
+      }
+    },
+    "apiId": "API-001"
+  },
+  {
+    "id": "77696.168",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/today?anonymousId=anon_c2f8259b53a042f3a42a5991f2417d67",
+    "path": "/api/v1/aura-cards/today",
+    "postData": null,
+    "timestamp": "2026-06-05T23:58:31.359Z",
+    "apiId": "API-002"
+  },
+  {
+    "id": "77696.168",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/today?anonymousId=anon_c2f8259b53a042f3a42a5991f2417d67",
+    "path": "/api/v1/aura-cards/today",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:31.379Z",
+    "body": {
+      "ok": true,
+      "requestId": "482a1d64-ac64-4126-91b0-d2be7e4ab151",
+      "data": {
+        "hasActiveCard": true,
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "auraName": "Clear Signal Aura",
+        "activatedAt": "2026-06-05T23:58:28.684Z"
+      }
+    },
+    "apiId": "API-002"
+  },
+  {
+    "id": "77696.179",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "postData": null,
+    "timestamp": "2026-06-05T23:58:31.750Z",
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.179",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "path": "/api/v1/aura-cards/cmq1l4l3k0009hwvcme1cyrun",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:31.759Z",
+    "body": {
+      "ok": true,
+      "requestId": "f4fc83e6-4b4f-4cbd-97d1-9a46669b5a4d",
+      "data": {
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "ownerAnonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+        "mood": "confident",
+        "context": "work",
+        "drawSeed": "seed_c6bab6e0bca2a9b9",
+        "drawPosition": 2,
+        "content": {
+          "title": "Meeting Glow Aura Card",
+          "auraName": "Clear Signal Aura",
+          "tarotSymbol": "The Magician",
+          "message": "A small confident choice can make the next moment feel easier.",
+          "luckyColor": "soft ivory",
+          "colors": {
+            "primary": "soft ivory",
+            "accent": "polished jade",
+            "background": "warm moonlight"
+          },
+          "outfit": "Wear one clean line with a soft highlight near the face.",
+          "beauty": "Keep the glow fresh and the finish light.",
+          "social": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "ritual": "Take three slow breaths before stepping out.",
+          "avoid": "Avoid over-planning the first ten minutes.",
+          "caption": "Today I am carrying clear signal aura.",
+          "theme": "work-confidence-local",
+          "cardTitle": "Meeting Glow Aura Card",
+          "auraColor": "soft ivory",
+          "luckyColors": [
+            "soft ivory",
+            "polished jade"
+          ],
+          "styleVibe": "Clear Signal Aura with polished jade",
+          "energyMessage": "A small confident choice can make the next moment feel easier.",
+          "outfitEnergy": "Wear one clean line with a soft highlight near the face.",
+          "beautyCue": "Keep the glow fresh and the finish light.",
+          "socialMove": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "miniRitual": "Take three slow breaths before stepping out.",
+          "todayIntention": "I carry confidence with ease.",
+          "luckyAnchorCandidates": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            }
+          ],
+          "luckyAnchorSuggestions": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            }
+          ],
+          "generatedAt": "2026-06-05T23:58:22.918Z",
+          "generationSource": "local-fallback",
+          "fallbackUsed": true
+        },
+        "shareImageUrl": "local://share-images/cmq1l4l3k0009hwvcme1cyrun-template-story-001.png",
+        "isActivated": true,
+        "activatedAt": "2026-06-05T23:58:28.684Z",
+        "activation": {
+          "activationId": "cmq1l4lri000chwvcgrsm61s7",
+          "status": "sealed",
+          "anchorType": "lucky_color",
+          "anchorLabel": "soft ivory",
+          "holdDurationMs": 3003,
+          "startedAt": "2026-06-05T23:58:23.790Z",
+          "sealedAt": "2026-06-05T23:58:28.684Z"
+        },
+        "createdAt": "2026-06-05T23:58:22.928Z",
+        "updatedAt": "2026-06-05T23:58:28.693Z"
+      }
+    },
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.206",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/identity/anonymous",
+    "path": "/api/v1/identity/anonymous",
+    "postData": {
+      "platform": "web",
+      "timezone": "Asia/Shanghai",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67"
+    },
+    "timestamp": "2026-06-05T23:58:32.142Z",
+    "apiId": "API-001"
+  },
+  {
+    "id": "77696.206",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/identity/anonymous",
+    "path": "/api/v1/identity/anonymous",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:32.155Z",
+    "body": {
+      "ok": true,
+      "requestId": "73730363-1452-4e5c-bec5-f170f084250b",
+      "data": {
+        "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+        "created": false
+      }
+    },
+    "apiId": "API-001"
+  },
+  {
+    "id": "77696.211",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/today?anonymousId=anon_c2f8259b53a042f3a42a5991f2417d67",
+    "path": "/api/v1/aura-cards/today",
+    "postData": null,
+    "timestamp": "2026-06-05T23:58:32.156Z",
+    "apiId": "API-002"
+  },
+  {
+    "id": "77696.211",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/today?anonymousId=anon_c2f8259b53a042f3a42a5991f2417d67",
+    "path": "/api/v1/aura-cards/today",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:32.172Z",
+    "body": {
+      "ok": true,
+      "requestId": "b42a17ba-d3a6-4a18-ac49-b1b8353f3666",
+      "data": {
+        "hasActiveCard": true,
+        "cardId": "cmq1l4l3k0009hwvcme1cyrun",
+        "auraName": "Clear Signal Aura",
+        "activatedAt": "2026-06-05T23:58:28.684Z"
+      }
+    },
+    "apiId": "API-002"
+  },
+  {
+    "id": "77696.215",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "select_mood",
+      "page": "/",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "mood": "calm"
+      }
+    },
+    "timestamp": "2026-06-05T23:58:32.419Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.215",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:32.432Z",
+    "body": {
+      "ok": true,
+      "requestId": "6e35e189-91d6-4b3a-92d1-10576f0ecd6f",
+      "data": {
+        "analyticsEventId": "cmq1l4sf4000rhwvcwad08m23",
+        "eventName": "select_mood",
+        "page": "/"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.216",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "click_start_card",
+      "page": "/",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "mood": "calm"
+      }
+    },
+    "timestamp": "2026-06-05T23:58:32.435Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.216",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:32.447Z",
+    "body": {
+      "ok": true,
+      "requestId": "dff9a186-3246-47c7-bc47-59a52a152275",
+      "data": {
+        "analyticsEventId": "cmq1l4sfk000shwvcq1g56wn4",
+        "eventName": "click_start_card",
+        "page": "/"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.222",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "select_context",
+      "page": "/create/context",
+      "platform": "web",
+      "anonymousId": null,
+      "payload": {
+        "context": "Travel"
+      }
+    },
+    "timestamp": "2026-06-05T23:58:32.720Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.222",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:32.732Z",
+    "body": {
+      "ok": true,
+      "requestId": "fe314944-bf6d-48bd-96e4-9783c669a73c",
+      "data": {
+        "analyticsEventId": "cmq1l4sng000thwvcu15nv6h6",
+        "eventName": "select_context",
+        "page": "/create/context"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.231",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "upload_outfit_failed",
+      "page": "/create/upload",
+      "platform": "web",
+      "anonymousId": null,
+      "payload": {
+        "reason": "Upload must be a jpg, png, or webp image."
+      }
+    },
+    "timestamp": "2026-06-05T23:58:32.996Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.231",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:33.007Z",
+    "body": {
+      "ok": true,
+      "requestId": "3f7cdd26-ccb4-42bd-8802-4425b16ece38",
+      "data": {
+        "analyticsEventId": "cmq1l4sv5000uhwvcft0loa0j",
+        "eventName": "upload_outfit_failed",
+        "page": "/create/upload"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.232",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/uploads/outfit",
+    "path": "/api/v1/uploads/outfit",
+    "postData": null,
+    "timestamp": "2026-06-05T23:58:33.232Z",
+    "apiId": "API-003"
+  },
+  {
+    "id": "77696.232",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/uploads/outfit",
+    "path": "/api/v1/uploads/outfit",
+    "status": 413,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:33.288Z",
+    "body": {
+      "ok": false,
+      "requestId": "e6dc971d-3cbe-4b01-b281-7eb4a2281708",
+      "error": {
+        "code": "FILE_TOO_LARGE",
+        "message": "Upload must be 8MB or smaller.",
+        "details": {
+          "maxBytes": 8388608,
+          "actualBytes": 8388609
+        }
+      }
+    },
+    "apiId": "API-003"
+  },
+  {
+    "id": "77696.233",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "skip_upload",
+      "page": "/create/upload",
+      "platform": "web",
+      "anonymousId": null,
+      "payload": {}
+    },
+    "timestamp": "2026-06-05T23:58:33.296Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.238",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/identity/anonymous",
+    "path": "/api/v1/identity/anonymous",
+    "postData": {
+      "platform": "web",
+      "timezone": "Asia/Shanghai",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67"
+    },
+    "timestamp": "2026-06-05T23:58:33.307Z",
+    "apiId": "API-001"
+  },
+  {
+    "id": "77696.233",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:33.310Z",
+    "body": {
+      "ok": true,
+      "requestId": "f65e535f-ba89-48c2-a378-ad8dad45b5b8",
+      "data": {
+        "analyticsEventId": "cmq1l4t3g000vhwvcby3ii1ep",
+        "eventName": "skip_upload",
+        "page": "/create/upload"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.238",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/identity/anonymous",
+    "path": "/api/v1/identity/anonymous",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:33.318Z",
+    "body": {
+      "ok": true,
+      "requestId": "c65e13ed-4bc3-4863-8369-1aedcc24aa29",
+      "data": {
+        "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+        "created": false
+      }
+    },
+    "apiId": "API-001"
+  },
+  {
+    "id": "77696.240",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/draw-sessions/start",
+    "path": "/api/v1/draw-sessions/start",
+    "postData": {
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "platform": "web",
+      "mood": "calm",
+      "context": "travel",
+      "uploadId": null
+    },
+    "timestamp": "2026-06-05T23:58:33.319Z",
+    "apiId": "API-004"
+  },
+  {
+    "id": "77696.240",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/draw-sessions/start",
+    "path": "/api/v1/draw-sessions/start",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:33.333Z",
+    "body": {
+      "ok": true,
+      "requestId": "a27f0946-92b0-4239-bc4b-65170081125c",
+      "data": {
+        "drawSessionId": "cmq1l4t46000whwvcrcb23z2m",
+        "drawSeed": "seed_10f5d1b25abadca6",
+        "expiresAt": "2026-06-06T00:58:33.317Z",
+        "cards": [
+          {
+            "position": 1,
+            "label": "Card I"
+          },
+          {
+            "position": 2,
+            "label": "Card II"
+          },
+          {
+            "position": 3,
+            "label": "Card III"
+          }
+        ]
+      }
+    },
+    "apiId": "API-004"
+  },
+  {
+    "id": "77696.241",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "draw_session_started",
+      "page": "/create/draw",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "drawSessionId": "cmq1l4t46000whwvcrcb23z2m"
+      }
+    },
+    "timestamp": "2026-06-05T23:58:33.334Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.241",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:33.346Z",
+    "body": {
+      "ok": true,
+      "requestId": "ce3b89ba-2b5d-4499-81c2-85674500d22b",
+      "data": {
+        "analyticsEventId": "cmq1l4t4j000xhwvcb7g7zmzs",
+        "eventName": "draw_session_started",
+        "page": "/create/draw"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.242",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "draw_card_selected",
+      "page": "/create/draw",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "drawPosition": 1
+      }
+    },
+    "timestamp": "2026-06-05T23:58:33.563Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.242",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:33.575Z",
+    "body": {
+      "ok": true,
+      "requestId": "9194c0f4-4975-44a9-8332-b654c777ff3c",
+      "data": {
+        "analyticsEventId": "cmq1l4tav000yhwvca3eqljsx",
+        "eventName": "draw_card_selected",
+        "page": "/create/draw"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.243",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/generations/start",
+    "path": "/api/v1/generations/start",
+    "postData": {
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "platform": "web",
+      "drawSessionId": "cmq1l4t46000whwvcrcb23z2m",
+      "drawPosition": 1
+    },
+    "timestamp": "2026-06-05T23:58:33.587Z",
+    "apiId": "API-005"
+  },
+  {
+    "id": "77696.244",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "generation_started",
+      "page": "/create/draw",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "drawSessionId": "cmq1l4t46000whwvcrcb23z2m",
+        "drawPosition": 1
+      }
+    },
+    "timestamp": "2026-06-05T23:58:33.587Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.243",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/generations/start",
+    "path": "/api/v1/generations/start",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:33.606Z",
+    "body": {
+      "ok": true,
+      "requestId": "115580fe-6c1e-4bab-8aa3-16eab13f87f0",
+      "data": {
+        "jobId": "cmq1l4tbm000zhwvcy6re10ea",
+        "status": "success",
+        "cardId": "cmq1l4tbp0010hwvcwz78d2mc",
+        "generationSource": "local-fallback",
+        "fallbackUsed": true,
+        "provider": "mock-fallback"
+      }
+    },
+    "apiId": "API-005"
+  },
+  {
+    "id": "77696.245",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "postData": {
+      "eventName": "generation_completed",
+      "page": "/create/draw",
+      "platform": "web",
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "payload": {
+        "cardId": "cmq1l4tbp0010hwvcwz78d2mc"
+      }
+    },
+    "timestamp": "2026-06-05T23:58:33.608Z",
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.244",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:33.617Z",
+    "body": {
+      "ok": true,
+      "requestId": "d248c87f-02d4-408e-aa30-037448fb7590",
+      "data": {
+        "analyticsEventId": "cmq1l4tc20011hwvcwjpuwva5",
+        "eventName": "generation_started",
+        "page": "/create/draw"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.245",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/analytics/events",
+    "path": "/api/v1/analytics/events",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:33.628Z",
+    "body": {
+      "ok": true,
+      "requestId": "aa3058a9-b61f-48db-a1bc-b1e98f2c77d4",
+      "data": {
+        "analyticsEventId": "cmq1l4tce0012hwvch3h4fqyq",
+        "eventName": "generation_completed",
+        "page": "/create/draw"
+      }
+    },
+    "apiId": "API-013"
+  },
+  {
+    "id": "77696.253",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4tbp0010hwvcwz78d2mc",
+    "path": "/api/v1/aura-cards/cmq1l4tbp0010hwvcwz78d2mc",
+    "postData": null,
+    "timestamp": "2026-06-05T23:58:33.651Z",
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.253",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4tbp0010hwvcwz78d2mc",
+    "path": "/api/v1/aura-cards/cmq1l4tbp0010hwvcwz78d2mc",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:33.661Z",
+    "body": {
+      "ok": true,
+      "requestId": "8e90ec5c-cc5c-4d52-ada0-b145315c07a4",
+      "data": {
+        "cardId": "cmq1l4tbp0010hwvcwz78d2mc",
+        "ownerAnonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+        "mood": "calm",
+        "context": "travel",
+        "drawSeed": "seed_10f5d1b25abadca6",
+        "drawPosition": 1,
+        "content": {
+          "title": "Light Luck Aura Card",
+          "auraName": "Moonlit Clover Aura",
+          "tarotSymbol": "Wheel of Fortune",
+          "message": "A steady pace can keep the day open without asking you to force anything.",
+          "luckyColor": "misty green",
+          "colors": {
+            "primary": "misty green",
+            "accent": "pearl white",
+            "background": "warm moonlight"
+          },
+          "outfit": "Choose balanced layers with one soft color near the collar.",
+          "beauty": "Keep the face fresh and reduce anything that feels heavy.",
+          "social": "Pick the low-pressure option first and let the next step stay easy.",
+          "ritual": "Put both feet down and count five steady breaths.",
+          "avoid": "Avoid rushing to answer every signal at once.",
+          "caption": "Today I am carrying moonlit clover aura.",
+          "theme": "luck-calm-local",
+          "cardTitle": "Light Luck Aura Card",
+          "auraColor": "misty green",
+          "luckyColors": [
+            "misty green",
+            "pearl white"
+          ],
+          "styleVibe": "Moonlit Clover Aura with pearl white",
+          "energyMessage": "A steady pace can keep the day open without asking you to force anything.",
+          "outfitEnergy": "Choose balanced layers with one soft color near the collar.",
+          "beautyCue": "Keep the face fresh and reduce anything that feels heavy.",
+          "socialMove": "Pick the low-pressure option first and let the next step stay easy.",
+          "miniRitual": "Put both feet down and count five steady breaths.",
+          "todayIntention": "I carry calm with ease.",
+          "luckyAnchorCandidates": [
+            {
+              "type": "lucky_color",
+              "label": "misty green"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "pearl white"
+            }
+          ],
+          "luckyAnchorSuggestions": [
+            {
+              "type": "lucky_color",
+              "label": "misty green"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "pearl white"
+            }
+          ],
+          "generatedAt": "2026-06-05T23:58:33.585Z",
+          "generationSource": "local-fallback",
+          "fallbackUsed": true
+        },
+        "shareImageUrl": null,
+        "isActivated": false,
+        "activatedAt": null,
+        "activation": null,
+        "createdAt": "2026-06-05T23:58:33.589Z",
+        "updatedAt": "2026-06-05T23:58:33.589Z"
+      }
+    },
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.255",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4tbp0010hwvcwz78d2mc/render",
+    "path": "/api/v1/aura-cards/cmq1l4tbp0010hwvcwz78d2mc/render",
+    "postData": {
+      "anonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+      "platform": "web"
+    },
+    "timestamp": "2026-06-05T23:58:33.662Z",
+    "apiId": "API-008"
+  },
+  {
+    "id": "77696.255",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4tbp0010hwvcwz78d2mc/render",
+    "path": "/api/v1/aura-cards/cmq1l4tbp0010hwvcwz78d2mc/render",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:33.679Z",
+    "body": {
+      "ok": true,
+      "requestId": "2badb2ca-a343-4d04-b01a-d5fd82054628",
+      "data": {
+        "cardId": "cmq1l4tbp0010hwvcwz78d2mc",
+        "shareImageUrl": "local://share-images/cmq1l4tbp0010hwvcwz78d2mc-template-story-001.png",
+        "width": 1080,
+        "height": 1920,
+        "renderer": "deterministic-local-renderer",
+        "deterministicKey": "cmq1l4tbp0010hwvcwz78d2mc|template-story-001|Light Luck Aura Card|Moonlit Clover Aura|misty green|luck-calm-local|Today I am carrying moonlit clover aura.",
+        "dataUrlSha256": "655be367b8b5820f2625a45ae031533262b5e4bb3bc4f9df54097658aef76b4a",
+        "reused": false
+      }
+    },
+    "apiId": "API-008"
+  },
+  {
+    "id": "77696.256",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4tbp0010hwvcwz78d2mc",
+    "path": "/api/v1/aura-cards/cmq1l4tbp0010hwvcwz78d2mc",
+    "postData": null,
+    "timestamp": "2026-06-05T23:58:33.680Z",
+    "apiId": "API-007"
+  },
+  {
+    "id": "77696.256",
+    "phase": "response",
+    "url": "http://127.0.0.1:3214/api/v1/aura-cards/cmq1l4tbp0010hwvcwz78d2mc",
+    "path": "/api/v1/aura-cards/cmq1l4tbp0010hwvcwz78d2mc",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-05T23:58:33.689Z",
+    "body": {
+      "ok": true,
+      "requestId": "d35295dc-f070-4dbd-aba2-77fb2767a7dd",
+      "data": {
+        "cardId": "cmq1l4tbp0010hwvcwz78d2mc",
+        "ownerAnonymousId": "anon_c2f8259b53a042f3a42a5991f2417d67",
+        "mood": "calm",
+        "context": "travel",
+        "drawSeed": "seed_10f5d1b25abadca6",
+        "drawPosition": 1,
+        "content": {
+          "title": "Light Luck Aura Card",
+          "auraName": "Moonlit Clover Aura",
+          "tarotSymbol": "Wheel of Fortune",
+          "message": "A steady pace can keep the day open without asking you to force anything.",
+          "luckyColor": "misty green",
+          "colors": {
+            "primary": "misty green",
+            "accent": "pearl white",
+            "background": "warm moonlight"
+          },
+          "outfit": "Choose balanced layers with one soft color near the collar.",
+          "beauty": "Keep the face fresh and reduce anything that feels heavy.",
+          "social": "Pick the low-pressure option first and let the next step stay easy.",
+          "ritual": "Put both feet down and count five steady breaths.",
+          "avoid": "Avoid rushing to answer every signal at once.",
+          "caption": "Today I am carrying moonlit clover aura.",
+          "theme": "luck-calm-local",
+          "cardTitle": "Light Luck Aura Card",
+          "auraColor": "misty green",
+          "luckyColors": [
+            "misty green",
+            "pearl white"
+          ],
+          "styleVibe": "Moonlit Clover Aura with pearl white",
+          "energyMessage": "A steady pace can keep the day open without asking you to force anything.",
+          "outfitEnergy": "Choose balanced layers with one soft color near the collar.",
+          "beautyCue": "Keep the face fresh and reduce anything that feels heavy.",
+          "socialMove": "Pick the low-pressure option first and let the next step stay easy.",
+          "miniRitual": "Put both feet down and count five steady breaths.",
+          "todayIntention": "I carry calm with ease.",
+          "luckyAnchorCandidates": [
+            {
+              "type": "lucky_color",
+              "label": "misty green"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "pearl white"
+            }
+          ],
+          "luckyAnchorSuggestions": [
+            {
+              "type": "lucky_color",
+              "label": "misty green"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "pearl white"
+            }
+          ],
+          "generatedAt": "2026-06-05T23:58:33.585Z",
+          "generationSource": "local-fallback",
+          "fallbackUsed": true
+        },
+        "shareImageUrl": "local://share-images/cmq1l4tbp0010hwvcwz78d2mc-template-story-001.png",
+        "isActivated": false,
+        "activatedAt": null,
+        "activation": null,
+        "createdAt": "2026-06-05T23:58:33.589Z",
+        "updatedAt": "2026-06-05T23:58:33.662Z"
+      }
+    },
+    "apiId": "API-007"
+  }
+]

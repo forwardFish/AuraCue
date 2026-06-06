@@ -1,0 +1,147 @@
+{
+  "taskId": "U04",
+  "status": "REPAIR_REQUIRED",
+  "round": 2,
+  "blockerClassification": "ASSET_SOURCE_REQUIRED",
+  "scope": "U04 Payment / Full Result Flow Visual Repair: UI-11, UI-12, UI-13, UI-14 only",
+  "target": {
+    "threshold": 0.005,
+    "screens": ["UI-11", "UI-12", "UI-13", "UI-14"]
+  },
+  "freshRatios": {
+    "T29": {
+      "UI-11": 0.457306,
+      "UI-12": 0.366343,
+      "UI-13": 0.518726,
+      "UI-14": 0.314493
+    },
+    "T31": {
+      "UI-11": 0.457306,
+      "UI-12": 0.366343,
+      "UI-13": 0.518726,
+      "UI-14": 0.314493
+    }
+  },
+  "round1Ratios": {
+    "UI-11": 0.457306,
+    "UI-12": 0.366343,
+    "UI-13": 0.518726,
+    "UI-14": 0.314493
+  },
+  "round2Delta": {
+    "UI-11": 0,
+    "UI-12": 0,
+    "UI-13": 0,
+    "UI-14": 0
+  },
+  "attemptedRepairBranches": [
+    {
+      "description": "Per-screen payment/full-result CSS background, shell, success card, and lower-composition tuning.",
+      "result": "REVERTED_REGRESSION",
+      "observedRatios": {
+        "UI-11": 0.527012,
+        "UI-12": 0.452226,
+        "UI-13": 0.69325,
+        "UI-14": 0.327206
+      }
+    },
+    {
+      "description": "UI-14 visible-copy alignment toward the UI-09 Stitch reference while preserving hidden contract text.",
+      "result": "REVERTED_REGRESSION",
+      "observedRatios": {
+        "UI-14": 0.317361
+      }
+    }
+  ],
+  "changedFiles": [
+    "docs/auto-execute/screenshots/ui-one-to-one/T29/",
+    "docs/auto-execute/screenshots/ui-one-to-one/T31/",
+    "docs/auto-execute/logs/U04/",
+    "docs/auto-execute/results/T29.json",
+    "docs/auto-execute/results/T31.json",
+    "docs/auto-execute/results/T33.json",
+    "docs/auto-execute/results/U04.json",
+    "docs/auto-execute/latest/T29-HANDOFF.md",
+    "docs/auto-execute/latest/T31-HANDOFF.md",
+    "docs/auto-execute/latest/U04-HANDOFF.md"
+  ],
+  "productChangedFiles": [],
+  "commands": [
+    {
+      "command": "node --check apps\\wechat-mini\\src\\pages\\unlock\\payment-state-page.mjs",
+      "exitCode": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "node --check apps\\wechat-mini\\src\\pages\\result\\full-page.mjs",
+      "exitCode": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T29",
+      "exitCode": 0,
+      "result": "REPAIR_REQUIRED",
+      "log": "docs/auto-execute/logs/U04/T29-round2.log"
+    },
+    {
+      "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T31",
+      "exitCode": 0,
+      "result": "REPAIR_REQUIRED",
+      "log": "docs/auto-execute/logs/U04/T31-round2.log"
+    },
+    {
+      "command": "node scripts/t33-final-ui-one-to-one-gate.mjs",
+      "exitCode": 2,
+      "result": "REPAIR_REQUIRED",
+      "log": "docs/auto-execute/logs/U04/T33-round2.log"
+    },
+    {
+      "command": "pnpm.cmd test",
+      "exitCode": 0,
+      "result": "PASS",
+      "log": "docs/auto-execute/logs/U04/pnpm-test-round2.log"
+    },
+    {
+      "command": "node scripts/verify-wechat-routes.mjs",
+      "exitCode": 0,
+      "result": "PASS",
+      "log": "docs/auto-execute/logs/U04/routes-round2.log"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "PASS",
+      "log": "docs/auto-execute/logs/U04/diff-check-round2.log"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/screenshots/ui-one-to-one/T29/visual-summary.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T31/visual-summary.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T29/actual/UI-11-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T29/actual/UI-12-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T29/actual/UI-13-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T29/actual/UI-14-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T29/diff/UI-11-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T29/diff/UI-12-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T29/diff/UI-13-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T29/diff/UI-14-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T29/metrics/UI-11-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T29/metrics/UI-12-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T29/metrics/UI-13-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T29/metrics/UI-14-metrics.json",
+    "docs/auto-execute/logs/U04/round2-command-results.json"
+  ],
+  "unresolvedRegions": {
+    "UI-11": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+    "UI-12": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+    "UI-13": { "x": 0, "y": 0, "width": 941, "height": 1672 },
+    "UI-14": { "x": 0, "y": 0, "width": 941, "height": 1672 }
+  },
+  "notes": [
+    "Round 2 attempted scoped UI-11 through UI-14 visual repairs first on UI-13/UI-11, then UI-14; all attempted product edits regressed target ratios and were reverted.",
+    "Final product code is unchanged from the better round-1 U04 state.",
+    "Preserved behavior and routes; did not edit thresholds, harness logic, remote assets, backend/API/payment semantics, or out-of-scope pages.",
+    "Remaining diff is dominated by exact raster-like reference assets: device/background compositing, tarot/card artwork, status/success/failure art, confetti/cloud texture, and font/rendering fidelity."
+  ],
+  "nextAction": "Stop U04 as REPAIR_REQUIRED / ASSET_SOURCE_REQUIRED. Do not start U05 in this worker."
+}

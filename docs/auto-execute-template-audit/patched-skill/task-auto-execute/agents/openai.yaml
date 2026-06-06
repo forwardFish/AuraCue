@@ -1,0 +1,4 @@
+interface:
+  display_name: "Task Auto Execute"
+  short_description: "Generate detailed auto-execute task packs."
+  default_prompt: "Use task-auto-execute to generate a detailed task pack from my PRD/UI. Do not run the generated tasks."

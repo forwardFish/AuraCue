@@ -1,0 +1,22 @@
+{
+  "apiId": "API-004",
+  "caseId": "N01",
+  "caseKey": "API-004-N01",
+  "caseType": "payment-required conflict",
+  "method": "POST",
+  "path": "/api/cards/:cardId/unlock/mock",
+  "expectedStatus": 409,
+  "actualStatus": 409,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-004-payment-required.json",
+  "response": {
+    "error": {
+      "code": "PAYMENT_REQUIRED",
+      "message": "Complete the local mock payment order before payment unlock.",
+      "details": {
+        "cardId": "card-005",
+        "orderId": "order-does-not-exist"
+      }
+    }
+  }
+}

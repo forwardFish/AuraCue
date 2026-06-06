@@ -1,0 +1,16 @@
+<view class="friend-landing-page">
+  <view class="status-space"></view>
+  <text class="brand">AuraCue</text>
+  <view class="profile">Mia</view>
+  <text class="title">Mia sent you today's aura spark</text>
+  <view class="locked-card">
+    <text class="card-kicker">AuraCue</text>
+    <text class="card-title">Today's Lucky Aura</text>
+    <view class="lock-icon">lock</view>
+  </view>
+  <text class="invite-copy">Join AuraCue to get your own lucky aura card.</text>
+  <button class="primary-action" bindtap="onGenerateTap">Generate My Lucky Aura Card</button>
+  <view class="helper-copy">
+    <text>Help Mia unlock her full reading</text>
+  </view>
+</view>

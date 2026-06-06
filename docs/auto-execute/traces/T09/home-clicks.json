@@ -1,0 +1,150 @@
+{
+  "status": "PASS",
+  "taskId": "T09",
+  "requirementIds": [
+    "REQ-002",
+    "REQ-003",
+    "REQ-004",
+    "REQ-017"
+  ],
+  "uiId": "UI-01",
+  "route": "/",
+  "sourceReference": "docs/UI/小程序/01-进入_首页生成入口.png",
+  "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/01/code.html",
+  "renderAssertions": {
+    "brand": "AuraCue",
+    "hero": [
+      "Before you step out,",
+      "draw today's tiny advantage."
+    ],
+    "cardTitle": "Golden Bloom",
+    "shortcuts": [
+      "Date",
+      "Work",
+      "Party",
+      "Just need luck"
+    ],
+    "primaryCta": "Start My 30-Second Card",
+    "trustCopy": "Private. Personal. Just for you.",
+    "nativePageFiles": [
+      "apps/wechat-mini/src/pages/home/index.wxml",
+      "apps/wechat-mini/src/pages/home/index.wxss",
+      "apps/wechat-mini/src/pages/home/index.js",
+      "apps/wechat-mini/src/pages/home/index.json"
+    ]
+  },
+  "clicks": [
+    {
+      "controlId": "scene-date",
+      "label": "Date",
+      "selectedScene": "date",
+      "expectedRoute": "/create/scene",
+      "actualRoute": "/create/scene",
+      "analyticsAccepted": true
+    },
+    {
+      "controlId": "scene-work",
+      "label": "Work",
+      "selectedScene": "work",
+      "expectedRoute": "/create/scene",
+      "actualRoute": "/create/scene",
+      "analyticsAccepted": true
+    },
+    {
+      "controlId": "scene-party",
+      "label": "Party",
+      "selectedScene": "party",
+      "expectedRoute": "/create/scene",
+      "actualRoute": "/create/scene",
+      "analyticsAccepted": true
+    },
+    {
+      "controlId": "scene-luck",
+      "label": "Just need luck",
+      "selectedScene": "luck",
+      "expectedRoute": "/create/scene",
+      "actualRoute": "/create/scene",
+      "analyticsAccepted": true
+    },
+    {
+      "controlId": "start-card",
+      "label": "Start My 30-Second Card",
+      "selectedScene": null,
+      "expectedRoute": "/create/scene",
+      "actualRoute": "/create/scene",
+      "analyticsAccepted": true
+    }
+  ],
+  "analyticsReadback": [
+    {
+      "eventName": "page_view_home",
+      "page": "/",
+      "properties": {
+        "uiId": "UI-01",
+        "requirementId": "REQ-004"
+      },
+      "analyticsEventId": "analytics-page_view_home"
+    },
+    {
+      "eventName": "click_generate_start",
+      "page": "/",
+      "properties": {
+        "uiId": "UI-01",
+        "controlId": "scene-date",
+        "scene": "date",
+        "requirementId": "REQ-004"
+      },
+      "analyticsEventId": "analytics-click_generate_start"
+    },
+    {
+      "eventName": "click_generate_start",
+      "page": "/",
+      "properties": {
+        "uiId": "UI-01",
+        "controlId": "scene-work",
+        "scene": "work",
+        "requirementId": "REQ-004"
+      },
+      "analyticsEventId": "analytics-click_generate_start"
+    },
+    {
+      "eventName": "click_generate_start",
+      "page": "/",
+      "properties": {
+        "uiId": "UI-01",
+        "controlId": "scene-party",
+        "scene": "party",
+        "requirementId": "REQ-004"
+      },
+      "analyticsEventId": "analytics-click_generate_start"
+    },
+    {
+      "eventName": "click_generate_start",
+      "page": "/",
+      "properties": {
+        "uiId": "UI-01",
+        "controlId": "scene-luck",
+        "scene": "luck",
+        "requirementId": "REQ-004"
+      },
+      "analyticsEventId": "analytics-click_generate_start"
+    },
+    {
+      "eventName": "click_generate_start",
+      "page": "/",
+      "properties": {
+        "uiId": "UI-01",
+        "controlId": "start-card",
+        "requirementId": "REQ-004"
+      },
+      "analyticsEventId": "analytics-click_generate_start"
+    }
+  ],
+  "localOnly": {
+    "payment": "not-used",
+    "ai": "not-used",
+    "analytics": "fixture-api-client",
+    "storage": "local-evidence-files-only",
+    "db": "no-production-write"
+  }
+}

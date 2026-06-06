@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-06-06T00:00:23.854Z",
+  "databaseUrl": null,
+  "strategy": "local SQLite test DB via Prisma 7 for non-destructive T03 validation",
+  "p0Models": [
+    "AnonymousUser",
+    "OutfitUpload",
+    "DrawSession",
+    "GenerationJob",
+    "AuraCard",
+    "AuraActivation",
+    "SavedCard",
+    "ShareEvent",
+    "AnalyticsEvent",
+    "CardTemplate"
+  ],
+  "counts": {
+    "AnonymousUser": 1,
+    "OutfitUpload": 1,
+    "DrawSession": 1,
+    "GenerationJob": 1,
+    "AuraCard": 1,
+    "AuraActivation": 1,
+    "SavedCard": 1,
+    "ShareEvent": 1,
+    "AnalyticsEvent": 3,
+    "CardTemplate": 3
+  },
+  "fixtureIds": {
+    "anonymousId": "anon_web_seed_001",
+    "userId": "cmpysqaug0000mkvc9a1u5gs9",
+    "uploadId": "cmpysqaus0001mkvcx90c5hbf",
+    "drawSessionId": "cmpysqav30002mkvcourw8niq",
+    "generationJobId": "cmpysqavb0003mkvcbuzj4033",
+    "auraCardId": "cmpysqavj0004mkvcyluxwcdh",
+    "activationId": "cmpysqaw00005mkvcn15lgk8q",
+    "savedCardId": "cmpysqaw90006mkvcfxri3jnt",
+    "shareEventId": "cmpysqaww0007mkvcjr14xt5v",
+    "analyticsEventIds": [
+      "cmpysqax40008mkvc8jlzg0is",
+      "cmpysqaxc0009mkvc24kbqr6p",
+      "cmpysqaxi000amkvc8apxusbz"
+    ],
+    "templateIds": [
+      "moon_silver_01",
+      "rose_charm_01",
+      "warm_gold_01"
+    ]
+  },
+  "idempotency": {
+    "draw": "DrawSession @@unique([userId, drawSeed])",
+    "generate": "GenerationJob @@unique([drawSessionId, drawPosition])",
+    "save": "SavedCard @@unique([userId, cardId])",
+    "seal": "AuraActivation @@unique([cardId, userId, anchorType, anchorLabel])"
+  }
+}

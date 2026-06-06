@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-02",
+  "route": "/create/context",
+  "pagePath": "pages/create/context",
+  "state": "optional-context",
+  "ownerScenario": "SCN-002",
+  "sourceReference": "docs/UI/小程序/P0-02-Context-可选今日上下文.png",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "Continue",
+      "status": "PASS"
+    },
+    {
+      "label": "Skip",
+      "status": "PASS"
+    },
+    {
+      "label": "context choices",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "binary"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model AnonymousUser {
+  id          String   @id @default(cuid())
+  anonymousId String   @unique
+  platform    String
+  timezone    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  uploads      OutfitUpload[]
+  drawSessions DrawSession[]
+  jobs         GenerationJob[]
+  cards        AuraCard[]
+  activations  AuraActivation[]
+  savedCards   SavedCard[]
+  shares       ShareEvent[]
+  analytics    AnalyticsEvent[]
+}
+
+model OutfitUpload {
+  id          String        @id @default(cuid())
+  userId      String
+  user        AnonymousUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+  platform    String
+  fileName    String
+  mimeType    String
+  fileSize    Int
+  storagePath String        @unique
+  publicUrl   String?
+  styleNotes  Json?
+  createdAt   DateTime      @default(now())
+
+  drawSessions DrawSession[]
+  cards        AuraCard[]
+
+  @@index([userId, createdAt])
+}
+
+model DrawSession {
+  id            String        @id @default(cuid())
+  userId        String
+  user          AnonymousUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+  mood          String
+  context       String?
+  uploadId      String?
+  upload        OutfitUpload? @relation(fields: [uploadId], references: [id], onDelete: SetNull)
+  drawSeed      String
+  cardOptions   Json
+  selectedIndex Int?
+  selectedAt    DateTime?
+  expiresAt     DateTime
+  createdAt     DateTime      @default(now())
+
+  jobs GenerationJob[]
+
+  @@unique([userId, drawSeed])
+  @@index([userId, createdAt])
+  @@index([uploadId])
+}
+
+model GenerationJob {
+  id            String        @id @default(cuid())
+  userId        String
+  user          AnonymousUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+  drawSessionId String
+  drawSession   DrawSession   @relation(fields: [drawSessionId], references: [id], onDelete: Cascade)
+  drawPosition  Int
+  status        String
+  provider      String
+  fallbackUsed  Boolean       @default(false)
+  errorCode     String?
+  resultCardId  String?
+  startedAt     DateTime      @default(now())
+  completedAt   DateTime?
+
+  card AuraCard?
+
+  @@unique([drawSessionId, drawPosition])
+  @@index([userId, startedAt])
+  @@index([status, startedAt])
+}
+
+model AuraCard {
+  id              String        @id @default(cuid())
+  userId          String
+  user            AnonymousUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+  generationJobId String        @unique
+  generationJob   GenerationJob @relation(fields: [generationJobId], references: [id], onDelete: Cascade)
+  uploadId        String?
+  upload          OutfitUpload? @relation(fields: [uploadId], references: [id], onDelete: SetNull)
+  mood            String
+  context         String?
+  drawSeed        String
+  drawPosition    Int
+  content         Json
+  shareImageUrl   String?
+  isActivated     Boolean       @default(false)
+  activatedAt     DateTime?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  activations AuraActivation[]
+  savedCards  SavedCard[]
+  shares      ShareEvent[]
+
+  @@index([userId, createdAt])
+  @@index([isActivated, activatedAt])
+  @@index([uploadId])
+}
+
+model AuraActivation {
+  id             String        @id @default(cuid())
+  userId         String
+  user           AnonymousUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+  cardId         String
+  card           AuraCard      @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  anchorType     String
+  anchorLabel    String
+  status         String
+  holdDurationMs Int?
+  startedAt      DateTime      @default(now())
+  sealedAt       DateTime?
+
+  @@unique([cardId, userId, anchorType, anchorLabel])
+  @@index([cardId, status])
+  @@index([userId, startedAt])
+}
+
+model SavedCard {
+  id        String        @id @default(cuid())
+  userId    String
+  user      AnonymousUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+  cardId    String
+  card      AuraCard      @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  source    String
+  createdAt DateTime      @default(now())
+
+  @@unique([userId, cardId])
+  @@index([cardId, createdAt])
+}
+
+model ShareEvent {
+  id        String        @id @default(cuid())
+  userId    String
+  user      AnonymousUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+  cardId    String
+  card      AuraCard      @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  channel   String
+  source    String
+  createdAt DateTime      @default(now())
+
+  @@index([cardId, createdAt])
+  @@index([userId, createdAt])
+  @@index([channel, createdAt])
+}
+
+model AnalyticsEvent {
+  id        String         @id @default(cuid())
+  userId    String?
+  user      AnonymousUser? @relation(fields: [userId], references: [id], onDelete: SetNull)
+  eventName String
+  page      String?
+  platform  String
+  payload   Json
+  createdAt DateTime       @default(now())
+
+  @@index([eventName, createdAt])
+  @@index([userId, createdAt])
+}
+
+model CardTemplate {
+  id        String   @id
+  name      String
+  format    String
+  version   String
+  config    Json
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  @@index([format, isActive])
+}

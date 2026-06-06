@@ -1,0 +1,1752 @@
+{
+  "status": "PASS",
+  "calls": [
+    {
+      "apiId": "API-001",
+      "clientMethod": "createGenerationJob",
+      "method": "POST",
+      "path": "/api/generation-jobs",
+      "request": {
+        "scene": "date",
+        "energy": "confidence",
+        "locale": "en-US",
+        "source": "UI-03"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "jobId": "job-004",
+        "status": "success",
+        "cardId": "card-004"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "click_generate_card",
+        "page": "/create/energy",
+        "properties": {
+          "uiId": "UI-03",
+          "controlId": "generate-card",
+          "scene": "date",
+          "energy": "confidence",
+          "jobId": "job-004",
+          "requirementId": "REQ-006,REQ-007"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-003"
+      }
+    },
+    {
+      "apiId": "API-002",
+      "clientMethod": "getGenerationJob",
+      "method": "GET",
+      "path": "/api/generation-jobs/:id",
+      "request": null,
+      "actualStatus": 200,
+      "expectedStatus": 200,
+      "responseShape": "success",
+      "response": {
+        "jobId": "job-004",
+        "status": "success",
+        "cardId": "card-004",
+        "errorCode": null
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "generation_success",
+        "page": "/create/loading",
+        "properties": {
+          "uiId": "UI-05",
+          "apiId": "API-002",
+          "jobId": "job-004",
+          "status": "success",
+          "requirementId": "REQ-013"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-004"
+      }
+    },
+    {
+      "apiId": "API-003",
+      "clientMethod": "getCard",
+      "method": "GET",
+      "path": "/api/:id/:id?view=free",
+      "request": null,
+      "actualStatus": 200,
+      "expectedStatus": 200,
+      "responseShape": "success",
+      "response": {
+        "cardId": "card-locked-001",
+        "view": "free",
+        "locked": true,
+        "auraName": "Soft Glow Aura",
+        "luckyColor": "rose quartz",
+        "oneLineReminder": "A small confident choice can make the next moment feel easier.",
+        "previewImage": {
+          "variant": "low-res-watermarked",
+          "localPath": "local://cards/card-locked-001/preview-watermarked.png",
+          "watermark": "AuraCue Preview",
+          "blurred": true
+        },
+        "lockedPreview": {
+          "fullContentAvailable": false,
+          "unlockRequired": true,
+          "hiddenFields": [
+            "outfit",
+            "beauty",
+            "social",
+            "ritual",
+            "avoid",
+            "caption",
+            "theme"
+          ]
+        }
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "view_result_free",
+        "page": "/result/:id",
+        "properties": {
+          "uiId": "UI-06",
+          "apiId": "API-003",
+          "cardId": "card-locked-001",
+          "view": "free",
+          "requirementId": "REQ-009"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-005"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "blocked_generate_incomplete_selection",
+        "page": "/create/energy",
+        "properties": {
+          "uiId": "UI-04",
+          "controlId": "generate-card",
+          "requirementId": "REQ-006,REQ-007",
+          "reason": "Choose one scene and one energy to continue."
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-006"
+      }
+    },
+    {
+      "apiId": "API-001",
+      "clientMethod": "createGenerationJob",
+      "method": "POST",
+      "path": "/api/generation-jobs",
+      "request": {
+        "scene": "luck",
+        "energy": "calm",
+        "source": "T21-error-ui",
+        "forceFailure": true
+      },
+      "actualStatus": 503,
+      "expectedStatus": 503,
+      "responseShape": "error-envelope",
+      "response": {
+        "error": {
+          "code": "LOCAL_GENERATION_FAILURE",
+          "message": "The local generator could not finish this card. Please try again.",
+          "details": {
+            "jobId": "job-005",
+            "status": "failed"
+          }
+        }
+      }
+    },
+    {
+      "apiId": "API-001",
+      "clientMethod": "createGenerationJob",
+      "method": "POST",
+      "path": "/api/generation-jobs",
+      "request": {
+        "scene": "date",
+        "energy": "confidence",
+        "locale": "en-US",
+        "source": "UI-18-retry"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "jobId": "job-006",
+        "status": "success",
+        "cardId": "card-005"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "click_generation_retry",
+        "page": "/error/network",
+        "properties": {
+          "uiId": "UI-18",
+          "controlId": "try-again",
+          "jobId": "job-006",
+          "requirementId": "REQ-013"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-007"
+      }
+    },
+    {
+      "apiId": "API-005",
+      "clientMethod": "createMockPaymentOrder",
+      "method": "POST",
+      "path": "/api/payment-orders/mock",
+      "request": {
+        "cardId": "card-locked-001",
+        "amount": 1.99,
+        "currency": "USD"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "orderId": "order-003",
+        "cardId": "card-locked-001",
+        "amount": 1.99,
+        "currency": "USD",
+        "status": "pending",
+        "entitlement": null
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "checkout_started",
+        "page": "/unlock/:id/pay",
+        "properties": {
+          "uiId": "UI-11",
+          "cardId": "card-locked-001",
+          "orderId": "order-003",
+          "localMock": true
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-008"
+      }
+    },
+    {
+      "apiId": "API-005",
+      "clientMethod": "completeMockPaymentOrder",
+      "method": "POST",
+      "path": "/api/payment-orders/mock/:orderId/complete",
+      "request": {
+        "result": "success"
+      },
+      "actualStatus": 200,
+      "expectedStatus": 200,
+      "responseShape": "success",
+      "response": {
+        "orderId": "order-003",
+        "cardId": "card-locked-001",
+        "amount": 1.99,
+        "currency": "USD",
+        "status": "paid",
+        "entitlement": {
+          "entitled": true,
+          "entitlementId": "entitlement-002",
+          "cardId": "card-locked-001",
+          "method": "payment",
+          "orderId": "order-003"
+        }
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "checkout_success",
+        "page": "/unlock/:id/pay",
+        "properties": {
+          "uiId": "UI-13",
+          "cardId": "card-locked-001",
+          "orderId": "order-003",
+          "result": "success"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-009"
+      }
+    },
+    {
+      "apiId": "API-004",
+      "clientMethod": "unlockCard",
+      "method": "POST",
+      "path": "/api/:id/:id/unlock/mock",
+      "request": {
+        "method": "payment",
+        "orderId": "order-003"
+      },
+      "actualStatus": 200,
+      "expectedStatus": 200,
+      "responseShape": "success",
+      "response": {
+        "entitled": true,
+        "entitlementId": "entitlement-002",
+        "cardId": "card-locked-001",
+        "method": "payment",
+        "orderId": "order-003"
+      }
+    },
+    {
+      "apiId": "API-004",
+      "clientMethod": "unlockCard",
+      "method": "POST",
+      "path": "/api/:id/:id/unlock/mock",
+      "request": {
+        "method": "restore",
+        "orderId": null
+      },
+      "actualStatus": 200,
+      "expectedStatus": 200,
+      "responseShape": "success",
+      "response": {
+        "entitled": true,
+        "entitlementId": "entitlement-002",
+        "cardId": "card-locked-001",
+        "method": "payment",
+        "orderId": "order-003"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "click_restore_purchase",
+        "page": "/unlock/:id/pay-failed",
+        "properties": {
+          "uiId": "UI-12",
+          "cardId": "card-locked-001",
+          "method": "restore"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-010"
+      }
+    },
+    {
+      "apiId": "API-003",
+      "clientMethod": "getCard",
+      "method": "GET",
+      "path": "/api/:id/:id?view=full",
+      "request": null,
+      "actualStatus": 200,
+      "expectedStatus": 200,
+      "responseShape": "success",
+      "response": {
+        "cardId": "card-locked-001",
+        "view": "full",
+        "locked": false,
+        "entitlement": {
+          "entitled": true,
+          "entitlementId": "entitlement-002",
+          "method": "payment"
+        },
+        "card": {
+          "title": "Tonight's Lucky Aura Preview",
+          "auraName": "Soft Glow Aura",
+          "tarotSymbol": "The Star",
+          "message": "A small confident choice can make the next moment feel easier.",
+          "luckyColor": "rose quartz",
+          "colors": {
+            "primary": "rose quartz",
+            "accent": "champagne gold",
+            "background": "warm moonlight"
+          },
+          "outfit": "Wear one clean line with a soft highlight near the face.",
+          "beauty": "Keep the glow fresh and the finish light.",
+          "social": "Open with a warm compliment and one clear question.",
+          "ritual": "Take three slow breaths before stepping out.",
+          "avoid": "Avoid over-planning the first ten minutes.",
+          "caption": "Today I am carrying rose lantern aura.",
+          "theme": "soft-preview"
+        },
+        "shareImagePath": null,
+        "savedAt": null
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "page_view_full_result",
+        "page": "/result/:id/full",
+        "properties": {
+          "uiId": "UI-14",
+          "apiId": "API-003",
+          "cardId": "card-locked-001",
+          "view": "full",
+          "requirementId": "REQ-008,REQ-010"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-011"
+      }
+    },
+    {
+      "apiId": "API-007",
+      "clientMethod": "saveCard",
+      "method": "POST",
+      "path": "/api/:id/:id/save",
+      "request": {
+        "source": "full_result"
+      },
+      "actualStatus": 200,
+      "expectedStatus": 200,
+      "responseShape": "success",
+      "response": {
+        "saved": true,
+        "cardId": "card-locked-001",
+        "savedAt": "2026-05-26T00:00:00.000Z",
+        "source": "full_result"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "save_card",
+        "page": "/result/:id/full",
+        "properties": {
+          "uiId": "UI-14",
+          "apiId": "API-007",
+          "cardId": "card-locked-001",
+          "requirementId": "REQ-010"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-012"
+      }
+    },
+    {
+      "apiId": "API-008",
+      "clientMethod": "recordShareEvent",
+      "method": "POST",
+      "path": "/api/share-events",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "story",
+        "source": "full_result"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "shareEventId": "share-003",
+        "cardId": "card-locked-001",
+        "channel": "story",
+        "source": "full_result"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "share_card",
+        "page": "/result/:id/full",
+        "properties": {
+          "uiId": "UI-14",
+          "apiId": "API-008",
+          "cardId": "card-locked-001",
+          "requirementId": "REQ-010"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-013"
+      }
+    },
+    {
+      "apiId": "API-008",
+      "clientMethod": "recordShareEvent",
+      "method": "POST",
+      "path": "/api/share-events",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "story",
+        "source": "full_result_more_options"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "shareEventId": "share-004",
+        "cardId": "card-locked-001",
+        "channel": "story",
+        "source": "full_result_more_options"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "click_more_sharing_options",
+        "page": "/result/:id/full",
+        "properties": {
+          "uiId": "UI-14",
+          "apiId": "API-008",
+          "cardId": "card-locked-001",
+          "requirementId": "REQ-010"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-014"
+      }
+    },
+    {
+      "apiId": "API-006",
+      "clientMethod": "recordInviteEvent",
+      "method": "POST",
+      "path": "/api/invites/:id/events",
+      "request": {
+        "action": "invite_started",
+        "inviteCode": "INVITE-LOCAL-001",
+        "source": "UI-08"
+      },
+      "actualStatus": 200,
+      "expectedStatus": 200,
+      "responseShape": "success",
+      "response": {
+        "cardId": "card-locked-001",
+        "inviteCode": "INVITE-LOCAL-001",
+        "progress": 1,
+        "required": 3,
+        "completed": false,
+        "entitlement": {
+          "entitled": true,
+          "entitlementId": "entitlement-002",
+          "cardId": "card-locked-001",
+          "method": "payment",
+          "orderId": "order-003"
+        }
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "invite_started",
+        "page": "/invite/:id",
+        "properties": {
+          "uiId": "UI-08",
+          "cardId": "card-locked-001",
+          "inviteCode": "INVITE-LOCAL-001"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-015"
+      }
+    },
+    {
+      "apiId": "API-006",
+      "clientMethod": "recordInviteEvent",
+      "method": "POST",
+      "path": "/api/invites/:id/events",
+      "request": {
+        "action": "invite_again",
+        "inviteCode": "INVITE-LOCAL-001",
+        "source": "UI-08"
+      },
+      "actualStatus": 200,
+      "expectedStatus": 200,
+      "responseShape": "success",
+      "response": {
+        "cardId": "card-locked-001",
+        "inviteCode": "INVITE-LOCAL-001",
+        "progress": 1,
+        "required": 3,
+        "completed": false,
+        "entitlement": {
+          "entitled": true,
+          "entitlementId": "entitlement-002",
+          "cardId": "card-locked-001",
+          "method": "payment",
+          "orderId": "order-003"
+        }
+      }
+    },
+    {
+      "apiId": "API-008",
+      "clientMethod": "recordShareEvent",
+      "method": "POST",
+      "path": "/api/share-events",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "wechat",
+        "source": "UI-08"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "shareEventId": "share-007",
+        "cardId": "card-locked-001",
+        "channel": "wechat",
+        "source": "UI-08"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "click_invite_friends",
+        "page": "/invite/:id",
+        "properties": {
+          "uiId": "UI-08",
+          "cardId": "card-locked-001",
+          "inviteCode": "INVITE-LOCAL-001"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-016"
+      }
+    },
+    {
+      "apiId": "API-008",
+      "clientMethod": "recordShareEvent",
+      "method": "POST",
+      "path": "/api/share-events",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "copy_link",
+        "source": "UI-09"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "shareEventId": "share-008",
+        "cardId": "card-locked-001",
+        "channel": "copy_link",
+        "source": "UI-09"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "copy_share_link",
+        "page": "/invite/:id/progress",
+        "properties": {
+          "uiId": "UI-09",
+          "cardId": "card-locked-001",
+          "inviteCode": "INVITE-LOCAL-001"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-017"
+      }
+    },
+    {
+      "apiId": "API-006",
+      "clientMethod": "recordInviteEvent",
+      "method": "POST",
+      "path": "/api/invites/:id/events",
+      "request": {
+        "action": "invite_again",
+        "inviteCode": "INVITE-LOCAL-001",
+        "source": "UI-09"
+      },
+      "actualStatus": 200,
+      "expectedStatus": 200,
+      "responseShape": "success",
+      "response": {
+        "cardId": "card-locked-001",
+        "inviteCode": "INVITE-LOCAL-001",
+        "progress": 1,
+        "required": 3,
+        "completed": false,
+        "entitlement": {
+          "entitled": true,
+          "entitlementId": "entitlement-002",
+          "cardId": "card-locked-001",
+          "method": "payment",
+          "orderId": "order-003"
+        }
+      }
+    },
+    {
+      "apiId": "API-008",
+      "clientMethod": "recordShareEvent",
+      "method": "POST",
+      "path": "/api/share-events",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "wechat",
+        "source": "UI-09"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "shareEventId": "share-010",
+        "cardId": "card-locked-001",
+        "channel": "wechat",
+        "source": "UI-09"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "click_invite_again",
+        "page": "/invite/:id/progress",
+        "properties": {
+          "uiId": "UI-09",
+          "cardId": "card-locked-001"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-018"
+      }
+    },
+    {
+      "apiId": "API-006",
+      "clientMethod": "recordInviteEvent",
+      "method": "POST",
+      "path": "/api/invites/:id/events",
+      "request": {
+        "action": "friend_accept",
+        "inviteCode": "INVITE-LOCAL-001",
+        "friendId": "friend-local-landing",
+        "source": "UI-10"
+      },
+      "actualStatus": 200,
+      "expectedStatus": 200,
+      "responseShape": "success",
+      "response": {
+        "cardId": "card-locked-001",
+        "inviteCode": "INVITE-LOCAL-001",
+        "progress": 2,
+        "required": 3,
+        "completed": false,
+        "entitlement": {
+          "entitled": true,
+          "entitlementId": "entitlement-002",
+          "cardId": "card-locked-001",
+          "method": "payment",
+          "orderId": "order-003"
+        }
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "page_view_invite_landing",
+        "page": "/invite/landing/:code",
+        "properties": {
+          "uiId": "UI-10",
+          "inviteCode": "INVITE-LOCAL-001"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-019"
+      }
+    },
+    {
+      "apiId": "API-003",
+      "clientMethod": "getCard",
+      "method": "GET",
+      "path": "/api/:id/:id?view=full",
+      "request": null,
+      "actualStatus": 200,
+      "expectedStatus": 200,
+      "responseShape": "success",
+      "response": {
+        "cardId": "card-locked-001",
+        "view": "full",
+        "locked": false,
+        "entitlement": {
+          "entitled": true,
+          "entitlementId": "entitlement-002",
+          "method": "payment"
+        },
+        "card": {
+          "title": "Tonight's Lucky Aura Preview",
+          "auraName": "Soft Glow Aura",
+          "tarotSymbol": "The Star",
+          "message": "A small confident choice can make the next moment feel easier.",
+          "luckyColor": "rose quartz",
+          "colors": {
+            "primary": "rose quartz",
+            "accent": "champagne gold",
+            "background": "warm moonlight"
+          },
+          "outfit": "Wear one clean line with a soft highlight near the face.",
+          "beauty": "Keep the glow fresh and the finish light.",
+          "social": "Open with a warm compliment and one clear question.",
+          "ritual": "Take three slow breaths before stepping out.",
+          "avoid": "Avoid over-planning the first ten minutes.",
+          "caption": "Today I am carrying rose lantern aura.",
+          "theme": "soft-preview"
+        },
+        "shareImagePath": null,
+        "savedAt": "2026-05-26T00:00:00.000Z"
+      }
+    },
+    {
+      "apiId": "API-009",
+      "clientMethod": "renderShareImage",
+      "method": "POST",
+      "path": "/api/share-images/:id",
+      "request": {
+        "templateId": "template-story-001",
+        "format": "story-9x16"
+      },
+      "actualStatus": 200,
+      "expectedStatus": 200,
+      "responseShape": "success",
+      "response": {
+        "cardId": "card-locked-001",
+        "templateId": "template-story-001",
+        "format": "story-9x16",
+        "localPath": "local://share-images/card-locked-001-template-story-001.png",
+        "width": 1080,
+        "height": 1920,
+        "aspectRatio": "9:16",
+        "renderer": "deterministic-local-renderer",
+        "deterministicKey": "card-locked-001|template-story-001|Tonight's Lucky Aura Preview|Soft Glow Aura|rose quartz|soft-preview|Today I am carrying rose lantern aura.",
+        "artifactKind": "svg-data-url",
+        "dataUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iQXVyYUN1ZSBTb2Z0IEdsb3cgQXVyYSBzaGFyZSBjYXJkIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYXVyYWN1ZS1iZy1jYXJkLWxvY2tlZC0wMDEiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJhMWE0YSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjQyJSIgc3RvcC1jb2xvcj0iIzhkNWJmZiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjcyJSIgc3RvcC1jb2xvcj0iI2Y0OGZiMSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkNGFmMzciLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIGZpbGw9InVybCgjYXVyYWN1ZS1iZy1jYXJkLWxvY2tlZC0wMDEpIi8+CiAgPHJlY3QgeD0iNDIiIHk9IjQyIiB3aWR0aD0iOTk2IiBoZWlnaHQ9IjE4MzYiIHJ4PSI2NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDRhZjM3IiBzdHJva2Utd2lkdGg9IjQiIG9wYWNpdHk9IjAuNzIiLz4KICA8dGV4dCB4PSI1NDAiIHk9IjE3NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2Q0YWYzNyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjQyIiBsZXR0ZXItc3BhY2luZz0iMTAiPkFVUkFDVUU8L3RleHQ+CiAgPHRleHQgeD0iNTQwIiB5PSIyOTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmZmZmYiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSI4MiIgZm9udC13ZWlnaHQ9IjcwMCI+VG9uaWdodCdzIEx1Y2t5IEF1cmEgUHJldmlldzwvdGV4dD4KICA8dGV4dCB4PSI1NDAiIHk9IjM4MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZjdkYyIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0MiI+VGhlIFN0YXI8L3RleHQ+CiAgPHJlY3QgeD0iOTYiIHk9IjEwODAiIHdpZHRoPSI4ODgiIGhlaWdodD0iNjk2IiByeD0iNTQiIGZpbGw9IiNmZmZkZjgiIG9wYWNpdHk9IjAuOTIiLz4KICA8dGV4dCB4PSI1NDAiIHk9IjExOTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMyYTFhNGEiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSI2OCIgZm9udC13ZWlnaHQ9IjcwMCI+U29mdCBHbG93IEF1cmE8L3RleHQ+CiAgPHRleHQgeD0iNTQwIiB5PSIxMjcyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjN2E2YjVjIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0Ij5zb2Z0LXByZXZpZXc8L3RleHQ+CiAgPHRleHQgeD0iMTgwIiB5PSIxMzgyIiBmaWxsPSIjN2E2YjVjIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIj5MdWNreSBDb2xvcjwvdGV4dD4KICA8dGV4dCB4PSI5MDAiIHk9IjEzODIiIHRleHQtYW5jaG9yPSJlbmQiIGZpbGw9IiMyYTFhNGEiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSI3MDAiPnJvc2UgcXVhcnR6PC90ZXh0PgogIDx0ZXh0IHg9IjE4MCIgeT0iMTQ4MCIgZmlsbD0iIzdhNmI1YyIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCI+T3V0Zml0IEVuZXJneTwvdGV4dD4KICA8dGV4dCB4PSI5MDAiIHk9IjE0ODAiIHRleHQtYW5jaG9yPSJlbmQiIGZpbGw9IiMyYTFhNGEiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSI3MDAiPldlYXIgb25lIGNsZWFuIGxpbmUgd2l0aCBhIHNvZnQgaGlnaGxpZ2h0IG5lYXIgdGhlIGZhY2UuPC90ZXh0PgogIDx0ZXh0IHg9IjE4MCIgeT0iMTU3OCIgZmlsbD0iIzdhNmI1YyIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCI+U29jaWFsIEFjdGlvbjwvdGV4dD4KICA8dGV4dCB4PSI5MDAiIHk9IjE1NzgiIHRleHQtYW5jaG9yPSJlbmQiIGZpbGw9IiMyYTFhNGEiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSI3MDAiPk9wZW4gd2l0aCBhIHdhcm0gY29tcGxpbWVudCBhbmQgb25lIGNsZWFyIHF1ZXN0aW9uLjwvdGV4dD4KICA8dGV4dCB4PSIxODAiIHk9IjE2NzYiIGZpbGw9IiM3YTZiNWMiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiPlRpbnkgUml0dWFsPC90ZXh0PgogIDx0ZXh0IHg9IjkwMCIgeT0iMTY3NiIgdGV4dC1hbmNob3I9ImVuZCIgZmlsbD0iIzJhMWE0YSIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9IjcwMCI+VGFrZSB0aHJlZSBzbG93IGJyZWF0aHMgYmVmb3JlIHN0ZXBwaW5nIG91dC48L3RleHQ+CiAgPHRleHQgeD0iNTQwIiB5PSIxNzQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtc3R5bGU9Iml0YWxpYyI+VG9kYXkgSSBhbSBjYXJyeWluZyByb3NlIGxhbnRlcm4gYXVyYS48L3RleHQ+Cjwvc3ZnPg==",
+        "dataUrlSha256": "05e93a0b4abf329d1ee8ac3b815461d3d31c6a163e184f7122d844570866a362",
+        "textFields": {
+          "title": "Tonight's Lucky Aura Preview",
+          "auraName": "Soft Glow Aura",
+          "tarotSymbol": "The Star",
+          "message": "A small confident choice can make the next moment feel easier.",
+          "luckyColor": "rose quartz",
+          "outfit": "Wear one clean line with a soft highlight near the face.",
+          "beauty": "Keep the glow fresh and the finish light.",
+          "social": "Open with a warm compliment and one clear question.",
+          "ritual": "Take three slow breaths before stepping out.",
+          "avoid": "Avoid over-planning the first ten minutes.",
+          "caption": "Today I am carrying rose lantern aura.",
+          "theme": "soft-preview"
+        },
+        "layers": [
+          {
+            "type": "background",
+            "color": "warm moonlight"
+          },
+          {
+            "type": "title",
+            "text": "Tonight's Lucky Aura Preview"
+          },
+          {
+            "type": "auraName",
+            "text": "Soft Glow Aura"
+          },
+          {
+            "type": "tarotSymbol",
+            "text": "The Star"
+          },
+          {
+            "type": "luckyColor",
+            "text": "rose quartz"
+          },
+          {
+            "type": "outfit",
+            "text": "Wear one clean line with a soft highlight near the face."
+          },
+          {
+            "type": "social",
+            "text": "Open with a warm compliment and one clear question."
+          },
+          {
+            "type": "ritual",
+            "text": "Take three slow breaths before stepping out."
+          },
+          {
+            "type": "caption",
+            "text": "Today I am carrying rose lantern aura."
+          }
+        ]
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "page_view_share_story",
+        "page": "/share/:id",
+        "properties": {
+          "uiId": "UI-15",
+          "apiId": "API-009",
+          "cardId": "card-locked-001",
+          "requirementId": "REQ-014"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-020"
+      }
+    },
+    {
+      "apiId": "API-007",
+      "clientMethod": "saveCard",
+      "method": "POST",
+      "path": "/api/:id/:id/save",
+      "request": {
+        "source": "share_story_preview"
+      },
+      "actualStatus": 200,
+      "expectedStatus": 200,
+      "responseShape": "success",
+      "response": {
+        "saved": true,
+        "cardId": "card-locked-001",
+        "savedAt": "2026-05-26T00:00:00.000Z",
+        "source": "share_story_preview"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "save_card",
+        "page": "/share/:id",
+        "properties": {
+          "uiId": "UI-15",
+          "apiId": "API-007",
+          "cardId": "card-locked-001",
+          "requirementId": "REQ-011"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-021"
+      }
+    },
+    {
+      "apiId": "API-008",
+      "clientMethod": "recordShareEvent",
+      "method": "POST",
+      "path": "/api/share-events",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "story",
+        "source": "share_story_preview"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "shareEventId": "share-012",
+        "cardId": "card-locked-001",
+        "channel": "story",
+        "source": "share_story_preview"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "share_card",
+        "page": "/share/:id",
+        "properties": {
+          "uiId": "UI-15",
+          "apiId": "API-008",
+          "cardId": "card-locked-001",
+          "requirementId": "REQ-014"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-022"
+      }
+    },
+    {
+      "apiId": "API-008",
+      "clientMethod": "recordShareEvent",
+      "method": "POST",
+      "path": "/api/share-events",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "copy_link",
+        "source": "share_story_preview"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "shareEventId": "share-013",
+        "cardId": "card-locked-001",
+        "channel": "copy_link",
+        "source": "share_story_preview"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "copy_share_link",
+        "page": "/share/:id",
+        "properties": {
+          "uiId": "UI-15",
+          "apiId": "API-008",
+          "cardId": "card-locked-001",
+          "requirementId": "REQ-014"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-023"
+      }
+    },
+    {
+      "apiId": "API-008",
+      "clientMethod": "recordShareEvent",
+      "method": "POST",
+      "path": "/api/share-events",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "wechat",
+        "source": "share_channel_chooser:wechat"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "shareEventId": "share-014",
+        "cardId": "card-locked-001",
+        "channel": "wechat",
+        "source": "share_channel_chooser:wechat"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "share_card",
+        "page": "/share/:id/channels",
+        "properties": {
+          "uiId": "UI-16",
+          "apiId": "API-008",
+          "cardId": "card-locked-001",
+          "channel": "wechat",
+          "requirementId": "REQ-014"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-024"
+      }
+    },
+    {
+      "apiId": "API-008",
+      "clientMethod": "recordShareEvent",
+      "method": "POST",
+      "path": "/api/share-events",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "moments",
+        "source": "share_channel_chooser:moments"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "shareEventId": "share-015",
+        "cardId": "card-locked-001",
+        "channel": "moments",
+        "source": "share_channel_chooser:moments"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "share_card",
+        "page": "/share/:id/channels",
+        "properties": {
+          "uiId": "UI-16",
+          "apiId": "API-008",
+          "cardId": "card-locked-001",
+          "channel": "moments",
+          "requirementId": "REQ-014"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-025"
+      }
+    },
+    {
+      "apiId": "API-008",
+      "clientMethod": "recordShareEvent",
+      "method": "POST",
+      "path": "/api/share-events",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "story",
+        "source": "share_channel_chooser:xiaohongshu"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "shareEventId": "share-016",
+        "cardId": "card-locked-001",
+        "channel": "story",
+        "source": "share_channel_chooser:xiaohongshu"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "share_card",
+        "page": "/share/:id/channels",
+        "properties": {
+          "uiId": "UI-16",
+          "apiId": "API-008",
+          "cardId": "card-locked-001",
+          "channel": "story",
+          "requirementId": "REQ-014"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-026"
+      }
+    },
+    {
+      "apiId": "API-008",
+      "clientMethod": "recordShareEvent",
+      "method": "POST",
+      "path": "/api/share-events",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "story",
+        "source": "share_channel_chooser:instagram-story"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "shareEventId": "share-017",
+        "cardId": "card-locked-001",
+        "channel": "story",
+        "source": "share_channel_chooser:instagram-story"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "share_card",
+        "page": "/share/:id/channels",
+        "properties": {
+          "uiId": "UI-16",
+          "apiId": "API-008",
+          "cardId": "card-locked-001",
+          "channel": "story",
+          "requirementId": "REQ-014"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-027"
+      }
+    },
+    {
+      "apiId": "API-008",
+      "clientMethod": "recordShareEvent",
+      "method": "POST",
+      "path": "/api/share-events",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "save_image",
+        "source": "share_channel_chooser:save-image"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "shareEventId": "share-018",
+        "cardId": "card-locked-001",
+        "channel": "save_image",
+        "source": "share_channel_chooser:save-image"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "share_card",
+        "page": "/share/:id/channels",
+        "properties": {
+          "uiId": "UI-16",
+          "apiId": "API-008",
+          "cardId": "card-locked-001",
+          "channel": "save_image",
+          "requirementId": "REQ-014"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-028"
+      }
+    },
+    {
+      "apiId": "API-008",
+      "clientMethod": "recordShareEvent",
+      "method": "POST",
+      "path": "/api/share-events",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "copy_link",
+        "source": "share_channel_chooser:copy-link"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "shareEventId": "share-019",
+        "cardId": "card-locked-001",
+        "channel": "copy_link",
+        "source": "share_channel_chooser:copy-link"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "share_card",
+        "page": "/share/:id/channels",
+        "properties": {
+          "uiId": "UI-16",
+          "apiId": "API-008",
+          "cardId": "card-locked-001",
+          "channel": "copy_link",
+          "requirementId": "REQ-014"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-029"
+      }
+    },
+    {
+      "apiId": "API-007",
+      "clientMethod": "saveCard",
+      "method": "POST",
+      "path": "/api/:id/:id/save",
+      "request": {
+        "source": "save_success"
+      },
+      "actualStatus": 200,
+      "expectedStatus": 200,
+      "responseShape": "success",
+      "response": {
+        "saved": true,
+        "cardId": "card-locked-001",
+        "savedAt": "2026-05-26T00:00:00.000Z",
+        "source": "save_success"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "page_view_save_success",
+        "page": "/saved/:id",
+        "properties": {
+          "uiId": "UI-17",
+          "apiId": "API-007",
+          "cardId": "card-locked-001",
+          "requirementId": "REQ-011"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-030"
+      }
+    },
+    {
+      "apiId": "API-008",
+      "clientMethod": "recordShareEvent",
+      "method": "POST",
+      "path": "/api/share-events",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "story",
+        "source": "save_success"
+      },
+      "actualStatus": 201,
+      "expectedStatus": 201,
+      "responseShape": "success",
+      "response": {
+        "shareEventId": "share-020",
+        "cardId": "card-locked-001",
+        "channel": "story",
+        "source": "save_success"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "share_card",
+        "page": "/saved/:id",
+        "properties": {
+          "uiId": "UI-17",
+          "apiId": "API-008",
+          "cardId": "card-locked-001",
+          "requirementId": "REQ-011"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-031"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "return_next_day",
+        "page": "/saved/:id",
+        "properties": {
+          "uiId": "UI-17",
+          "cardId": "card-locked-001",
+          "requirementId": "REQ-011"
+        }
+      },
+      "actualStatus": 202,
+      "expectedStatus": 202,
+      "responseShape": "success",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-032"
+      }
+    },
+    {
+      "apiId": "API-001",
+      "clientMethod": "createGenerationJob",
+      "method": "POST",
+      "path": "/api/generation-jobs",
+      "request": {
+        "scene": "",
+        "energy": "",
+        "source": "T21-invalid"
+      },
+      "actualStatus": 400,
+      "expectedStatus": 400,
+      "responseShape": "error-envelope",
+      "response": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Choose a supported scene and energy before generating.",
+          "details": {
+            "scene": "Expected one of: date, work, party, luck",
+            "energy": "Expected one of: confidence, luck, love, calm, charm, focus"
+          }
+        }
+      }
+    },
+    {
+      "apiId": "API-002",
+      "clientMethod": "getGenerationJob",
+      "method": "GET",
+      "path": "/api/generation-jobs/:id",
+      "request": null,
+      "actualStatus": 404,
+      "expectedStatus": 404,
+      "responseShape": "error-envelope",
+      "response": {
+        "error": {
+          "code": "NOT_FOUND",
+          "message": "Generation job was not found.",
+          "details": {
+            "jobId": "job-does-not-exist"
+          }
+        }
+      }
+    },
+    {
+      "apiId": "API-003",
+      "clientMethod": "getCard",
+      "method": "GET",
+      "path": "/api/:id/:id?view=free",
+      "request": null,
+      "actualStatus": 404,
+      "expectedStatus": 404,
+      "responseShape": "error-envelope",
+      "response": {
+        "error": {
+          "code": "NOT_FOUND",
+          "message": "Aura card was not found.",
+          "details": {
+            "cardId": "card-does-not-exist"
+          }
+        }
+      }
+    },
+    {
+      "apiId": "API-004",
+      "clientMethod": "unlockCard",
+      "method": "POST",
+      "path": "/api/:id/:id/unlock/mock",
+      "request": {
+        "method": "payment",
+        "orderId": "order-does-not-exist"
+      },
+      "actualStatus": 409,
+      "expectedStatus": 409,
+      "responseShape": "error-envelope",
+      "response": {
+        "error": {
+          "code": "PAYMENT_REQUIRED",
+          "message": "Complete the local mock payment order before payment unlock.",
+          "details": {
+            "cardId": "card-locked-001",
+            "orderId": "order-does-not-exist"
+          }
+        }
+      }
+    },
+    {
+      "apiId": "API-005",
+      "clientMethod": "createMockPaymentOrder",
+      "method": "POST",
+      "path": "/api/payment-orders/mock",
+      "request": {
+        "cardId": "",
+        "amount": -1,
+        "currency": "USD"
+      },
+      "actualStatus": 400,
+      "expectedStatus": 400,
+      "responseShape": "error-envelope",
+      "response": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Mock payment order input is invalid.",
+          "details": {
+            "cardId": "Expected a cardId.",
+            "amount": "Expected a positive number."
+          }
+        }
+      }
+    },
+    {
+      "apiId": "API-005",
+      "clientMethod": "completeMockPaymentOrder",
+      "method": "POST",
+      "path": "/api/payment-orders/mock/:orderId/complete",
+      "request": {
+        "result": "success"
+      },
+      "actualStatus": 404,
+      "expectedStatus": 404,
+      "responseShape": "error-envelope",
+      "response": {
+        "error": {
+          "code": "NOT_FOUND",
+          "message": "Mock payment order was not found.",
+          "details": {
+            "orderId": "order-does-not-exist"
+          }
+        }
+      }
+    },
+    {
+      "apiId": "API-006",
+      "clientMethod": "recordInviteEvent",
+      "method": "POST",
+      "path": "/api/invites/:id/events",
+      "request": {
+        "action": "invite_button_tap",
+        "inviteCode": "INVITE-LOCAL-001"
+      },
+      "actualStatus": 400,
+      "expectedStatus": 400,
+      "responseShape": "error-envelope",
+      "response": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Invite event input is invalid.",
+          "details": {
+            "action": "Expected invite_started, copy, invite_again, or friend_accept."
+          }
+        }
+      }
+    },
+    {
+      "apiId": "API-007",
+      "clientMethod": "saveCard",
+      "method": "POST",
+      "path": "/api/:id/:id/save",
+      "request": {
+        "source": ""
+      },
+      "actualStatus": 400,
+      "expectedStatus": 400,
+      "responseShape": "error-envelope",
+      "response": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Save card input is invalid.",
+          "details": {
+            "source": "Expected a non-empty save source."
+          }
+        }
+      }
+    },
+    {
+      "apiId": "API-008",
+      "clientMethod": "recordShareEvent",
+      "method": "POST",
+      "path": "/api/share-events",
+      "request": {
+        "cardId": "card-locked-001",
+        "channel": "wechat_mock_share",
+        "source": "T21"
+      },
+      "actualStatus": 400,
+      "expectedStatus": 400,
+      "responseShape": "error-envelope",
+      "response": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Share event input is invalid.",
+          "details": {
+            "channel": "Expected wechat, moments, copy_link, save_image, or story."
+          }
+        }
+      }
+    },
+    {
+      "apiId": "API-009",
+      "clientMethod": "renderShareImage",
+      "method": "POST",
+      "path": "/api/share-images/:id",
+      "request": {
+        "templateId": "template-story-001",
+        "format": "square"
+      },
+      "actualStatus": 400,
+      "expectedStatus": 400,
+      "responseShape": "error-envelope",
+      "response": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Share image input is invalid.",
+          "details": {
+            "format": "Only story-9x16 local share rendering is supported."
+          }
+        }
+      }
+    },
+    {
+      "apiId": "API-010",
+      "clientMethod": "recordAnalyticsEvent",
+      "method": "POST",
+      "path": "/api/analytics-events",
+      "request": {
+        "eventName": "send_to_production_analytics",
+        "page": "/",
+        "properties": {}
+      },
+      "actualStatus": 400,
+      "expectedStatus": 400,
+      "responseShape": "error-envelope",
+      "response": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Analytics event input is invalid.",
+          "details": {
+            "eventName": "Expected one of: page_view_home, click_generate_start, select_scene, select_energy, generation_started, generation_success, generation_failed, view_result_free, click_unlock, checkout_started, checkout_success, save_card, share_card, copy_share_link, invite_started, invite_completed, return_next_day, page_view_scene_selection, page_view_energy_selection, blocked_continue_scene, click_scene_continue, blocked_generate_incomplete_selection, click_generate_card, page_view_generation_loading, poll_generation_job, page_view_generation_error, click_generation_retry, click_generation_change_scene, page_view_free_preview, click_invite_unlock_entry, click_preview_share_locked, page_view_unlock_choice, click_paid_unlock_entry, click_invite_instead, page_view_invite_start, click_invite_friends, click_invite_paid_unlock, page_view_invite_progress, click_copy_invite_link, click_invite_again, click_invite_how_it_works, page_view_invite_landing, click_friend_generate_card, page_view_mock_payment_confirm, mock_payment_started, mock_payment_completed, page_view_mock_payment_failed, click_restore_purchase, click_payment_invite_instead, click_payment_contact_support, page_view_mock_payment_success, click_view_full_card_after_payment, click_share_story_after_payment, page_view_full_result, click_save_card, click_share_story, click_more_sharing_options, click_view_7_day_trend_disabled, page_view_share, page_view_share_story, page_view_share_channels, share_started, share_channel_selected, share_image_rendered, click_close_share_preview, click_save_story_card, click_share_story_card, click_copy_story_link, click_share_channel, click_cancel_share_channels, card_saved, page_view_save_success, save_success_viewed, click_save_success_share_now, click_save_success_back_home, click_view_saved_card"
+          }
+        }
+      }
+    }
+  ]
+}

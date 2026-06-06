@@ -1,0 +1,44 @@
+<view class="unlock-page">
+  <view class="soft-glow"></view>
+  <view class="header">
+    <button class="circle-button" bindtap="onCloseTap">close</button>
+    <text class="brand">AuraCue</text>
+  </view>
+  <view class="hero">
+    <text class="hero-title">Unlock today's full energy plan</text>
+    <text class="hero-copy">Get your complete Aura Card with premium insights, guidance and actions.</text>
+  </view>
+  <view class="value-layout">
+    <view class="mini-card">
+      <text class="mini-card-title">The Radiant Muse</text>
+      <text class="mini-card-mark">AuraCue</text>
+    </view>
+    <view class="feature-panel">
+      <text class="panel-title">Today's full plan includes:</text>
+      <block wx:for="{{features}}" wx:key="id">
+        <view class="feature-row">
+          <view class="feature-dot"></view>
+          <view>
+            <text class="feature-title">{{item.title}}</text>
+            <text class="feature-copy">{{item.teaser}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="pricing-card selected">
+    <text class="price">$1.99</text>
+    <view class="price-copy">
+      <text class="price-title">Unlock This Card</text>
+      <text class="price-note">One-time access to today's full energy plan</text>
+    </view>
+    <text class="badge">BEST CHOICE</text>
+  </view>
+  <view class="divider"><view></view><text>OR</text><view></view></view>
+  <button class="invite-button" bindtap="onInviteTap">
+    <text>Invite 3 friends instead</text>
+    <text class="invite-note">Get today's card free when 3 friends join</text>
+  </button>
+  <button class="primary-action" bindtap="onPaidUnlockTap">Unlock This Card</button>
+  <text class="trust-copy">Private. Secure. Local mock unlock in MVP.</text>
+</view>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AuraCue UI-13 Payment Success</title>
+<style>
+  body { margin: 0; font-family: Inter, "Plus Jakarta Sans", Nunito, system-ui, sans-serif; color: #101b3b; }
+  body.confirm-bg { background: radial-gradient(circle at 50% 35%, #fff8f3 0%, #fff0f5 47%, #e7d9ff 100%); }
+  body.failed-bg { background: linear-gradient(180deg, #fdf7f0 0%, #fff0f0 100%); }
+  body.success-bg { background: linear-gradient(180deg, #fff0ee 0%, #ffe6ed 50%, #ffd6e3 100%); }
+  .phone { position: relative; width: 390px; min-height: 844px; margin: 0 auto; box-sizing: border-box; overflow: hidden; }
+  .visual-contract { display: none; }
+  button { font: inherit; }
+  .device-top { display: flex; align-items: center; justify-content: space-between; padding: 17px 28px 0; font-weight: 800; font-size: 14px; color: #050914; }
+  .island { width: 132px; height: 31px; border-radius: 999px; background: #000; }
+  .pay-header, .fail-header { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 24px 24px 0; }
+  .pay-header button, .fail-header button { width: 40px; height: 40px; border: 0; background: transparent; color: #101b3b; font-size: 34px; line-height: 40px; }
+  .pay-header h2, .fail-header h1 { position: absolute; left: 0; right: 0; text-align: center; margin: 0; font: 700 20px/1.1 Georgia, serif; color: #8b7bd9; }
+  .pay-header h2 span { color: #f6b567; font-size: 14px; }
+  .confirm-title h1, .fail-copy h2, .success-title h1 { margin: 0; text-align: center; font-family: Georgia, serif; letter-spacing: 0; }
+  .confirm-title h1 { padding-top: 30px; font-size: 33px; line-height: 38px; }
+  .confirm-title span { color: #f4b269; }
+  .card-fan { position: relative; height: 213px; margin-top: 20px; }
+  .fan-card { position: absolute; top: 34px; left: 50%; width: 100px; height: 142px; margin-left: -50px; border-radius: 14px; border: 1px solid #f6b48a; display: grid; place-items: center; color: #eda66e; font-size: 48px; background: rgba(255,255,255,.75); box-shadow: 0 15px 24px rgba(255,105,180,.18); }
+  .fan-card.left { transform: translateX(-74px) rotate(-15deg); background: #fff1e8; }
+  .fan-card.center { z-index: 3; width: 112px; height: 156px; margin-left: -56px; top: 24px; font-size: 58px; background: #fffafa; }
+  .fan-card.right { transform: translateX(74px) rotate(15deg); background: #f9e9ff; border-color: #d9b8e7; color: #c5a3d8; }
+  .clouds { position: absolute; left: 52px; right: 52px; bottom: 0; height: 42px; border-radius: 999px 999px 0 0; background: rgba(255,255,255,.62); filter: blur(2px); }
+  .benefits { margin: 0 24px; padding: 13px 18px; border: 1px solid rgba(244,202,206,.8); border-radius: 22px; background: rgba(255,255,255,.67); box-shadow: 0 6px 20px rgba(255,105,180,.07); }
+  .benefit-row { display: grid; grid-template-columns: 34px 1fr 28px; align-items: center; min-height: 45px; border-top: 1px solid rgba(28,39,76,.09); font-size: 15px; font-weight: 600; }
+  .benefit-row:first-child { border-top: 0; }
+  .check { width: 24px; height: 24px; border-radius: 50%; background: #ff5f91; color: white; display: grid; place-items: center; font-weight: 800; }
+  .benefit-icon { text-align: right; color: #bd8ce1; font-size: 21px; }
+  .price { position: relative; text-align: center; margin: 18px 0 20px; color: #101b3b; }
+  .price h3 { margin: 0; font: 700 47px/52px Georgia, serif; }
+  .price p { margin: 4px 0 0; color: #72749b; font-size: 15px; }
+  .price i { position: absolute; top: 14px; color: #edae6a; font-style: normal; }
+  .price i:first-child { left: 118px; } .price i:nth-child(3) { right: 118px; top: 28px; }
+  .pill, .block { width: calc(100% - 48px); margin-left: 24px; border: 0; min-height: 54px; border-radius: 999px; font-weight: 800; font-size: 16px; }
+  .primary { color: white; background: linear-gradient(90deg, #ff4f8c 0%, #ff7aa2 100%); box-shadow: 0 8px 20px rgba(255,80,140,.32); }
+  .primary span { float: right; margin-right: 10px; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.34); line-height: 34px; }
+  .secondary { color: #ee2f73; background: rgba(255,255,255,.43); border: 1px solid rgba(238,47,115,.22); box-shadow: none; }
+  .secure { display: flex; align-items: center; gap: 10px; padding: 18px 38px; color: #7d7fa2; font-size: 13px; }
+  .secure b { flex: 1; height: 1px; background: #cfcfe0; }
+  .fineprint { margin: 13px 0 0; text-align: center; color: #8b8ba6; font-size: 12px; }
+  .failed { padding: 0 24px 34px; }
+  .fail-header { padding-left: 0; padding-right: 0; margin-top: 20px; }
+  .fail-header button { background: white; border-radius: 50%; color: #64748b; font-size: 30px; box-shadow: 0 2px 10px rgba(0,0,0,.04); }
+  .fail-header h1 { color: transparent; background: linear-gradient(90deg,#ff9a9e,#fecfef); -webkit-background-clip: text; background-clip: text; font-weight: 500; }
+  .fail-art { position: relative; display: flex; justify-content: center; height: 202px; align-items: center; margin-top: 18px; }
+  .spark { position: absolute; color: #f5d2aa; } .spark.a { left: 48px; top: 44px; } .spark.b { right: 55px; top: 24px; }
+  .cloud { width: 246px; height: 158px; border-radius: 86px; background: #ffe5ec; display: grid; place-items: center; box-shadow: 0 18px 28px rgba(255,142,158,.16); }
+  .cloud b { width: 78px; height: 78px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(180deg,#ff8e9e,#ff6b81); color: #fff; font-size: 52px; }
+  .fail-copy { text-align: center; margin-top: 2px; }
+  .fail-copy h2 { font-size: 33px; line-height: 38px; font-weight: 700; }
+  .fail-copy p { margin: 14px 0 36px; color: #64748b; font-size: 16px; line-height: 24px; }
+  .fail-actions { display: grid; gap: 14px; }
+  .fail-actions .block { width: 100%; margin: 0; min-height: 56px; border-radius: 24px; }
+  .surface { color: #1e293b; background: rgba(255,255,255,.62); border: 1px solid rgba(255,255,255,.85); box-shadow: 0 4px 10px rgba(0,0,0,.03); }
+  .support { display: block; margin: 36px auto 0; border: 0; background: transparent; color: #64748b; font-size: 14px; font-weight: 700; }
+  .success { min-height: 844px; padding: 72px 24px 42px; background: linear-gradient(180deg, #fff0ee 0%, #ffe6ed 50%, #ffd6e3 100%); }
+  .success-sparkles span { position: absolute; color: #d4af37; } .success-sparkles span:nth-child(1) { left: 42px; top: 76px; } .success-sparkles span:nth-child(2) { right: 64px; top: 124px; color: #ff6b9e; } .success-sparkles span:nth-child(3) { left: 22px; top: 260px; color: #c6afe7; }
+  .success-title { text-align: center; }
+  .success-check { width: 86px; height: 86px; margin: 0 auto 20px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg,#ffd275,#e6a840); border: 6px solid rgba(255,255,255,.75); color: white; font-size: 42px; box-shadow: 0 0 34px rgba(255,223,137,.48); }
+  .success-title h1 { font-size: 33px; line-height: 38px; font-weight: 700; }
+  .success-title span { color: #d4af37; }
+  .success-card { position: relative; width: 320px; height: 512px; margin: 24px auto 22px; border-radius: 20px; overflow: hidden; border: 2px solid #e5c384; background: linear-gradient(160deg,#47377b,#ff6b9e 52%,#f4c76b); box-shadow: 0 16px 34px rgba(28,41,69,.18); color: white; }
+  .card-image { position: absolute; inset: 0; background: radial-gradient(circle at 50% 35%, rgba(255,255,255,.28), transparent 35%), linear-gradient(160deg,#47377b,#ff6b9e 58%,#f4c76b); }
+  .card-overlay { position: absolute; inset: 6px; display: flex; flex-direction: column; justify-content: space-between; border-radius: 14px; overflow: hidden; }
+  .success-card-top { text-align: center; padding: 24px 14px 118px; }
+  .success-card-top p { margin: 0 0 8px; opacity: .82; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; }
+  .success-card-top h2 { margin: 0 0 4px; font: 500 21px/25px Georgia, serif; }
+  .success-card-top small { opacity: .9; }
+  .success-panel { margin: 0 12px 12px; padding: 16px; border-radius: 14px; background: rgba(255,255,255,.9); color: #2d3748; }
+  .success-panel h3 { margin: 0; text-align: center; font: 700 19px/23px Georgia, serif; }
+  .success-panel p { margin: 4px 0 12px; text-align: center; color: #64748b; font-size: 14px; }
+  .success-panel div { display: flex; align-items: center; justify-content: space-between; min-height: 34px; border-top: 1px solid rgba(45,55,72,.12); font-size: 12px; font-weight: 700; }
+  .success-panel b { width: 16px; height: 16px; border-radius: 50%; background: #a898d8; margin-left: 4px; } .success-panel b:nth-child(3) { background: #ff9eb5; } .success-panel b:nth-child(4) { background: #ffb58a; }
+  .success-actions { display: grid; gap: 12px; }
+  .success-actions .pill { width: 100%; margin: 0; min-height: 56px; }
+  .white { color: #1c2945; background: rgba(255,255,255,.82); border: 1px solid rgba(255,214,227,.8); }
+</style>
+<style id="t26-capture-shell">
+    html, body { width: 941px !important; height: 1672px !important; margin: 0 !important; overflow: hidden !important; background: #ffffff !important; }
+    body > .phone, body > main.phone, body .phone:first-child {
+      transform: scale(2.4128205128205127);
+      transform-origin: top center;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  </style></head>
+<body class="success-bg"><main class="phone success">
+      <span class="visual-contract">Your full aura is unlocked</span>
+      <div class="success-sparkles"><span>✦</span><span>✦</span><span>✦</span></div>
+      <section class="success-title"><div class="success-check">✓</div><h1>Your full aura<br>is unlocked! <span>✦</span></h1></section>
+      <section class="success-card">
+        <div class="card-image"></div>
+        <div class="card-overlay">
+          <div class="success-card-top"><p>✦ AuraCue ✦</p><h2>Today's Lucky Aura</h2><small>May 18, 2025</small></div>
+          <div class="success-panel">
+            <h3>Soft Confidence</h3><p>Romantic Clarity</p>
+            <div><span>♡ Lucky Color</span><b></b><b></b><b></b></div>
+            <div><span>☷ Social Action</span><em>☷</em></div>
+            <div><span>♙ Outfit Energy</span><em>♙</em></div>
+          </div>
+        </div>
+      </section>
+      <footer class="success-actions">
+        <button class="primary pill" data-control-id="view-full-card">View Full Card ✦</button>
+        <button class="white pill" data-control-id="share-story">⇧ Share Story</button>
+      </footer>
+    </main></body>
+</html>

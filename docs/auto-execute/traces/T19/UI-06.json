@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-06",
+  "route": "/result/:id",
+  "pagePath": "pages/result/index",
+  "state": "aura-card-result",
+  "ownerScenario": "SCN-005",
+  "sourceReference": "docs/UI/小程序/P0-06-Result-完整气场卡结果.png",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "Activate Today's Aura",
+      "status": "PASS"
+    },
+    {
+      "label": "Save Card",
+      "status": "PASS"
+    },
+    {
+      "label": "Share Story",
+      "status": "PASS"
+    }
+  ]
+}

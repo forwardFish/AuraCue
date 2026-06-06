@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-08",
+  "route": "/activated/:id",
+  "pagePath": "pages/activated/index",
+  "state": "aura-activated",
+  "ownerScenario": "SCN-007",
+  "sourceReference": "docs/UI/小程序/P0-08-Activated-气场已激活成功.png",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "Save Card",
+      "status": "PASS"
+    },
+    {
+      "label": "Done",
+      "status": "PASS"
+    },
+    {
+      "label": "Share Story",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "apiId": "API-006",
+  "caseId": "C01",
+  "caseKey": "API-006-C01",
+  "caseType": "invite event/progress",
+  "method": "POST",
+  "path": "/api/invites/:cardId/events",
+  "expectedStatus": 200,
+  "actualStatus": 200,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-006-progress.json",
+  "response": {
+    "cardId": "card-007",
+    "inviteCode": "INVITE-T20",
+    "progress": 3,
+    "required": 3,
+    "completed": true,
+    "entitlement": {
+      "entitled": true,
+      "entitlementId": "entitlement-004",
+      "cardId": "card-007",
+      "method": "invite",
+      "orderId": null
+    }
+  }
+}

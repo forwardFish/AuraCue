@@ -1,0 +1,45 @@
+.page {
+  min-height: 100vh;
+  padding: 88rpx 48rpx 40rpx;
+  background: #fff9f7;
+  color: #151642;
+  text-align: center;
+}
+.brand {
+  font-size: 36rpx;
+  letter-spacing: 8rpx;
+}
+.title {
+  margin-top: 80rpx;
+  font-size: 56rpx;
+  font-family: serif;
+}
+.copy {
+  margin: 24rpx auto 56rpx;
+  color: #70758d;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24rpx;
+}
+.context {
+  min-height: 156rpx;
+  border-radius: 28rpx;
+  background: rgba(255, 255, 255, 0.82);
+  color: #151642;
+}
+.selected {
+  border: 2rpx solid #d6a45c;
+}
+.skip {
+  margin-top: 52rpx;
+  background: transparent;
+  color: #6f7287;
+}
+.primary {
+  margin-top: 20rpx;
+  border-radius: 48rpx;
+  background: linear-gradient(90deg, #8b54d9, #ff9b7a);
+  color: white;
+}

@@ -1,0 +1,18 @@
+{
+  "apiId": "API-007",
+  "caseId": "C01",
+  "caseKey": "API-007-C01",
+  "caseType": "save card success",
+  "method": "POST",
+  "path": "/api/cards/:cardId/save",
+  "expectedStatus": 200,
+  "actualStatus": 200,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-007-save.json",
+  "response": {
+    "saved": true,
+    "cardId": "card-unlocked-001",
+    "savedAt": "2026-05-26T00:00:00.000Z",
+    "source": "T20-API-007"
+  }
+}

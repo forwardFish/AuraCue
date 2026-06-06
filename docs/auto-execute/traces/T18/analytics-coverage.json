@@ -1,0 +1,469 @@
+{
+  "status": "PASS",
+  "taskId": "T18",
+  "requirementId": "REQ-017",
+  "apiId": "API-010",
+  "requiredEvents": [
+    "page_view_home",
+    "click_generate_start",
+    "select_scene",
+    "select_energy",
+    "generation_started",
+    "generation_success",
+    "generation_failed",
+    "view_result_free",
+    "click_unlock",
+    "checkout_started",
+    "checkout_success",
+    "save_card",
+    "share_card",
+    "copy_share_link",
+    "invite_started",
+    "invite_completed",
+    "return_next_day"
+  ],
+  "knownEventCount": 76,
+  "coverage": {
+    "page_view_home": {
+      "surface": "UI-01",
+      "flow": "home page view"
+    },
+    "click_generate_start": {
+      "surface": "UI-01",
+      "flow": "home start CTA and scene shortcuts"
+    },
+    "select_scene": {
+      "surface": "UI-02/UI-04",
+      "flow": "scene selection"
+    },
+    "select_energy": {
+      "surface": "UI-03/UI-04",
+      "flow": "energy selection"
+    },
+    "generation_started": {
+      "surface": "UI-05",
+      "flow": "generation ritual starts"
+    },
+    "generation_success": {
+      "surface": "UI-05",
+      "flow": "local generation job succeeds"
+    },
+    "generation_failed": {
+      "surface": "UI-18",
+      "flow": "local generation job fails"
+    },
+    "view_result_free": {
+      "surface": "UI-06",
+      "flow": "locked preview is loaded"
+    },
+    "click_unlock": {
+      "surface": "UI-06",
+      "flow": "unlock entry"
+    },
+    "checkout_started": {
+      "surface": "UI-11",
+      "flow": "mock checkout starts"
+    },
+    "checkout_success": {
+      "surface": "UI-13",
+      "flow": "mock checkout succeeds"
+    },
+    "save_card": {
+      "surface": "UI-14/UI-15",
+      "flow": "card save action"
+    },
+    "share_card": {
+      "surface": "UI-14/UI-15/UI-16/UI-17",
+      "flow": "share action or channel choice"
+    },
+    "copy_share_link": {
+      "surface": "UI-09/UI-15",
+      "flow": "copy invite/story link"
+    },
+    "invite_started": {
+      "surface": "UI-08",
+      "flow": "invite unlock starts"
+    },
+    "invite_completed": {
+      "surface": "API-006",
+      "flow": "third friend acceptance completes invite unlock"
+    },
+    "return_next_day": {
+      "surface": "API-010",
+      "flow": "next-day return event accepted by local collector"
+    }
+  },
+  "apiEventTranscripts": [
+    {
+      "eventName": "page_view_home",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-003"
+      }
+    },
+    {
+      "eventName": "click_generate_start",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-004"
+      }
+    },
+    {
+      "eventName": "select_scene",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-005"
+      }
+    },
+    {
+      "eventName": "select_energy",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-006"
+      }
+    },
+    {
+      "eventName": "generation_started",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-007"
+      }
+    },
+    {
+      "eventName": "generation_success",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-008"
+      }
+    },
+    {
+      "eventName": "generation_failed",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-009"
+      }
+    },
+    {
+      "eventName": "view_result_free",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-010"
+      }
+    },
+    {
+      "eventName": "click_unlock",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-011"
+      }
+    },
+    {
+      "eventName": "checkout_started",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-012"
+      }
+    },
+    {
+      "eventName": "checkout_success",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-013"
+      }
+    },
+    {
+      "eventName": "save_card",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-014"
+      }
+    },
+    {
+      "eventName": "share_card",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-015"
+      }
+    },
+    {
+      "eventName": "copy_share_link",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-016"
+      }
+    },
+    {
+      "eventName": "invite_started",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-017"
+      }
+    },
+    {
+      "eventName": "invite_completed",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-018"
+      }
+    },
+    {
+      "eventName": "return_next_day",
+      "status": 202,
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-019"
+      }
+    }
+  ],
+  "negativeCases": {
+    "invalidEventStatus": 400,
+    "secretPropertyStatus": 400
+  },
+  "dbReadback": [
+    {
+      "id": "analytics-001",
+      "userId": "user-local-001",
+      "eventName": "page_view_home",
+      "page": "/",
+      "properties": {
+        "source": "seed"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-002",
+      "userId": "user-local-001",
+      "eventName": "select_scene",
+      "page": "/create/scene",
+      "properties": {
+        "scene": "date"
+      },
+      "createdAt": "2026-05-26T00:01:00.000Z"
+    },
+    {
+      "id": "analytics-003",
+      "userId": "user-local-001",
+      "eventName": "page_view_home",
+      "page": "/",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "home page view"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-004",
+      "userId": "user-local-001",
+      "eventName": "click_generate_start",
+      "page": "/local-flow",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "home start CTA and scene shortcuts"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-005",
+      "userId": "user-local-001",
+      "eventName": "select_scene",
+      "page": "/local-flow",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "scene selection"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-006",
+      "userId": "user-local-001",
+      "eventName": "select_energy",
+      "page": "/local-flow",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "energy selection"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-007",
+      "userId": "user-local-001",
+      "eventName": "generation_started",
+      "page": "/local-flow",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "generation ritual starts"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-008",
+      "userId": "user-local-001",
+      "eventName": "generation_success",
+      "page": "/local-flow",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "local generation job succeeds"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-009",
+      "userId": "user-local-001",
+      "eventName": "generation_failed",
+      "page": "/local-flow",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "local generation job fails"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-010",
+      "userId": "user-local-001",
+      "eventName": "view_result_free",
+      "page": "/local-flow",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "locked preview is loaded"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-011",
+      "userId": "user-local-001",
+      "eventName": "click_unlock",
+      "page": "/local-flow",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "unlock entry"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-012",
+      "userId": "user-local-001",
+      "eventName": "checkout_started",
+      "page": "/local-flow",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "mock checkout starts"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-013",
+      "userId": "user-local-001",
+      "eventName": "checkout_success",
+      "page": "/local-flow",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "mock checkout succeeds"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-014",
+      "userId": "user-local-001",
+      "eventName": "save_card",
+      "page": "/local-flow",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "card save action"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-015",
+      "userId": "user-local-001",
+      "eventName": "share_card",
+      "page": "/local-flow",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "share action or channel choice"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-016",
+      "userId": "user-local-001",
+      "eventName": "copy_share_link",
+      "page": "/local-flow",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "copy invite/story link"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-017",
+      "userId": "user-local-001",
+      "eventName": "invite_started",
+      "page": "/local-flow",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "invite unlock starts"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-018",
+      "userId": "user-local-001",
+      "eventName": "invite_completed",
+      "page": "/api/local-flow",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "third friend acceptance completes invite unlock"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    },
+    {
+      "id": "analytics-019",
+      "userId": "user-local-001",
+      "eventName": "return_next_day",
+      "page": "/api/local-flow",
+      "properties": {
+        "requirementId": "REQ-017",
+        "taskId": "T18",
+        "flow": "next-day return event accepted by local collector"
+      },
+      "createdAt": "2026-05-26T00:00:00.000Z"
+    }
+  ],
+  "localOnly": {
+    "analyticsService": "local-collector-only",
+    "productionAnalyticsEndpointUsed": false,
+    "realCloudWritesUsed": false
+  }
+}

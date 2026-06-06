@@ -1,0 +1,140 @@
+{
+  "taskId": "T10",
+  "taskName": "Web Result Activation Pages",
+  "templateId": "TPL-FRONTEND-PAGE",
+  "status": "COMPLETE",
+  "verdict": "PASS_FOR_T10_SCOPE",
+  "productPassClaimed": false,
+  "timestamp": "2026-06-05T17:48:23.5968918+08:00",
+  "scope": {
+    "executedOnlyTask": "T10",
+    "implementedRoutes": [
+      "/result/[id]",
+      "/activate/[id]",
+      "/activated/[id]"
+    ],
+    "usedProductionCloud": false,
+    "usedProductionDb": false,
+    "usedProductionAi": false,
+    "usedSecrets": false,
+    "notes": "T10 implemented result, activation, activated page flows against the existing T07 API client methods. Runtime browser/API transcript evidence remains T13/T14 scope; final product PASS remains T16 scope."
+  },
+  "coveredIds": [
+    "UI-005",
+    "UI-006",
+    "UI-007",
+    "API-007",
+    "API-008",
+    "API-009",
+    "API-010",
+    "API-011",
+    "API-012",
+    "Owner-004"
+  ],
+  "changedFiles": [
+    "apps/web/app/result/[id]/page.tsx",
+    "apps/web/app/activate/[id]/page.tsx",
+    "apps/web/app/activated/[id]/page.tsx",
+    "apps/web/components/result-activation-flow.tsx",
+    "apps/web/app/globals.css",
+    "apps/web/tests/pages/run-page-tests.mjs",
+    "apps/web/tests/pages/result-activation.test.mjs",
+    "apps/web/tests/pages/hold-to-seal.test.mjs",
+    "apps/web/tests/smoke-routes.test.mjs",
+    "docs/auto-execute/evidence/web/T10/page-contract.json",
+    "docs/auto-execute/evidence/web/T10/hold-to-seal.json",
+    "docs/auto-execute/logs/web/T10-page-test-log.md",
+    "docs/auto-execute/logs/web/T10-hold-to-seal-log.md",
+    "docs/auto-execute/logs/web/T10-typecheck-log.md",
+    "docs/auto-execute/logs/web/T10-lint-log.md",
+    "docs/auto-execute/logs/web/T10-route-smoke-log.md",
+    "docs/auto-execute/logs/web/T10-command-log.md",
+    "docs/auto-execute/results/web/T10.json",
+    "docs/auto-execute/latest/web/T10-HANDOFF.md"
+  ],
+  "commands": [
+    {
+      "command": "pnpm.cmd --filter @auracue/web test:pages -- result-activation",
+      "status": "PASS_AFTER_REPAIR",
+      "evidence": "docs/auto-execute/logs/web/T10-page-test-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web test -- hold-to-seal",
+      "status": "PASS_AFTER_REPAIR",
+      "evidence": "docs/auto-execute/logs/web/T10-hold-to-seal-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web typecheck",
+      "status": "PASS_AFTER_REPAIR",
+      "evidence": "docs/auto-execute/logs/web/T10-typecheck-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web lint",
+      "status": "PASS_AFTER_REPAIR",
+      "evidence": "docs/auto-execute/logs/web/T10-lint-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web test",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T10-route-smoke-log.md"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "page_contract",
+      "path": "docs/auto-execute/evidence/web/T10/page-contract.json",
+      "status": "PASS",
+      "summary": "Verified result, activate, and activated routes render T10 flow components, no longer use placeholders, wire card/render/start/seal/save/share client methods, include required copy, guard already activated cards, and avoid forbidden paywall copy."
+    },
+    {
+      "type": "hold_to_seal",
+      "path": "docs/auto-execute/evidence/web/T10/hold-to-seal.json",
+      "status": "PASS",
+      "summary": "Verified 3000ms threshold, timer-backed completion, pointer cancellation paths, completed hold duration never below 3000ms, and cancel path does not invoke completion."
+    },
+    {
+      "type": "static_checks",
+      "path": "docs/auto-execute/logs/web/T10-typecheck-log.md",
+      "status": "PASS",
+      "summary": "TypeScript completed with no emit and no errors after repairing timer typing."
+    },
+    {
+      "type": "lint",
+      "path": "docs/auto-execute/logs/web/T10-lint-log.md",
+      "status": "PASS",
+      "summary": "ESLint completed with max-warnings=0 after removing an unused card-read variable."
+    },
+    {
+      "type": "route_smoke",
+      "path": "docs/auto-execute/logs/web/T10-route-smoke-log.md",
+      "status": "PASS",
+      "summary": "Route smoke recognizes the new T10 route components while leaving T11 placeholders intact."
+    }
+  ],
+  "repairRecord": [
+    {
+      "issue": "Initial typecheck failed because the browser timer ref was typed as Node Timeout.",
+      "repair": "Changed the hold timer ref to number | null and reran typecheck successfully."
+    },
+    {
+      "issue": "Initial lint failed on an unused card-read variable in ResultPageFlow.",
+      "repair": "Removed the unused binding while preserving the guard read, then reran lint successfully."
+    }
+  ],
+  "blockers": [],
+  "nextRepair": null,
+  "rerunResumeState": {
+    "canRerun": true,
+    "safeToResumeAt": "T11",
+    "commands": [
+      "pnpm.cmd --filter @auracue/web test:pages -- result-activation",
+      "pnpm.cmd --filter @auracue/web test -- hold-to-seal",
+      "pnpm.cmd --filter @auracue/web typecheck",
+      "pnpm.cmd --filter @auracue/web lint",
+      "pnpm.cmd --filter @auracue/web test",
+      "Get-Content -Raw docs/auto-execute/results/web/T10.json | ConvertFrom-Json"
+    ],
+    "notes": "Use pnpm.cmd on this Windows PowerShell surface. T10 did not start a browser/server or capture API transcripts/screenshots; runtime click/API evidence remains T13/T14/T15."
+  },
+  "exitCondition": "T13 can execute result -> activate -> hold 3s seal -> activated browser clicks, and T11 can build share/saved pages from the T10 save/share/done CTAs."
+}

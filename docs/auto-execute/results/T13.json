@@ -1,0 +1,151 @@
+{
+  "taskId": "T13",
+  "taskName": "Unlock And Invite Pages",
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "completedAt": "2026-05-26T15:12:40.1543452+08:00",
+  "scope": {
+    "implementedUiIds": ["UI-07", "UI-08", "UI-09", "UI-10"],
+    "implementedRoutes": ["/unlock/:id", "/invite/:id", "/invite/:id/progress", "/invite/landing/:code"],
+    "requirementIds": ["REQ-002", "REQ-003", "REQ-004", "REQ-010", "REQ-012", "REQ-017"],
+    "apiCallers": ["API-006", "API-008", "API-010"],
+    "allowedFilesObserved": true
+  },
+  "summary": {
+    "implemented": [
+      "Added native WeChat mini-program unlock choice page with local paid mock entry and invite alternative.",
+      "Added invite start page with invite CTA, paid unlock fallback, fixture progress, API-006/API-008/API-010 traces.",
+      "Added invite progress page with Copy, Invite Again, and How it works modal behavior.",
+      "Added friend invite landing page that records friend_accept and starts the generation flow without login.",
+      "Added T13 simulated test that clicks every T13 control and writes trace plus structural UI evidence."
+    ],
+    "localOnly": [
+      "No real WeChat Pay integration.",
+      "No real invite platform API dependency.",
+      "No production DB/cloud/AI/analytics usage.",
+      "All payment, invite, analytics, storage, and DB behavior remains fixture/local evidence only."
+    ]
+  },
+  "changedFiles": [
+    "apps/wechat-mini/package.json",
+    "apps/wechat-mini/src/pages/unlock/unlock-invite-page.mjs",
+    "apps/wechat-mini/src/pages/unlock/index.json",
+    "apps/wechat-mini/src/pages/unlock/index.js",
+    "apps/wechat-mini/src/pages/unlock/index.wxml",
+    "apps/wechat-mini/src/pages/unlock/index.wxss",
+    "apps/wechat-mini/src/pages/invite/start.json",
+    "apps/wechat-mini/src/pages/invite/start.js",
+    "apps/wechat-mini/src/pages/invite/start.wxml",
+    "apps/wechat-mini/src/pages/invite/start.wxss",
+    "apps/wechat-mini/src/pages/invite/progress.json",
+    "apps/wechat-mini/src/pages/invite/progress.js",
+    "apps/wechat-mini/src/pages/invite/progress.wxml",
+    "apps/wechat-mini/src/pages/invite/progress.wxss",
+    "apps/wechat-mini/src/pages/invite/landing.json",
+    "apps/wechat-mini/src/pages/invite/landing.js",
+    "apps/wechat-mini/src/pages/invite/landing.wxml",
+    "apps/wechat-mini/src/pages/invite/landing.wxss",
+    "apps/wechat-mini/tests/t13-unlock-invite-pages.test.mjs",
+    "docs/auto-execute/traces/T13/unlock-invite.json",
+    "docs/auto-execute/screenshots/T13/UI-07-unlock-choice.html",
+    "docs/auto-execute/screenshots/T13/UI-07-unlock-choice-render-summary.json",
+    "docs/auto-execute/screenshots/T13/UI-08-invite-start.html",
+    "docs/auto-execute/screenshots/T13/UI-08-invite-start-render-summary.json",
+    "docs/auto-execute/screenshots/T13/UI-09-invite-progress.html",
+    "docs/auto-execute/screenshots/T13/UI-09-invite-progress-render-summary.json",
+    "docs/auto-execute/screenshots/T13/UI-10-friend-landing.html",
+    "docs/auto-execute/screenshots/T13/UI-10-friend-landing-render-summary.json",
+    "docs/auto-execute/logs/T13/unlock-invite-pages-test.log",
+    "docs/auto-execute/logs/T13/unlock-invite-pages-test-command.log",
+    "docs/auto-execute/logs/T13/wechat-route-verify.log",
+    "docs/auto-execute/logs/T13/typecheck.log",
+    "docs/auto-execute/logs/T13/lint.log",
+    "docs/auto-execute/logs/T13/wechat-mini-test.log",
+    "docs/auto-execute/logs/T13/diff-check.log",
+    "docs/auto-execute/logs/T13/diff-check-final.log",
+    "docs/auto-execute/results/T13.json",
+    "docs/auto-execute/latest/T13-HANDOFF.md"
+  ],
+  "commandsRun": [
+    {
+      "command": "pnpm --filter @auracue/wechat-mini test:t13",
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "evidence": null,
+      "note": "Initial PowerShell invocation hit the pnpm.ps1 execution policy block; reran with pnpm.cmd."
+    },
+    {
+      "command": "node scripts/verify-wechat-routes.mjs",
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "evidence": null,
+      "note": "Initial Tee-Object run failed before the T13 log directory existed; reran after creating evidence directories."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t13",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "evidence": "docs/auto-execute/logs/T13/unlock-invite-pages-test-command.log"
+    },
+    {
+      "command": "node scripts/verify-wechat-routes.mjs",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T13/wechat-route-verify.log"
+    },
+    {
+      "command": "node scripts/typecheck-placeholders.mjs",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T13/typecheck.log"
+    },
+    {
+      "command": "node scripts/lint-local-only.mjs",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T13/lint.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "evidence": "docs/auto-execute/logs/T13/wechat-mini-test.log"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T13/diff-check.log"
+    },
+    {
+      "command": "node -e \"JSON.parse(require('fs').readFileSync('docs/auto-execute/results/T13.json','utf8')); console.log('T13 result JSON valid')\"",
+      "status": "PASS",
+      "evidence": "terminal output: T13 result JSON valid"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T13/diff-check-final.log"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/traces/T13/unlock-invite.json",
+    "docs/auto-execute/screenshots/T13/UI-07-unlock-choice.html",
+    "docs/auto-execute/screenshots/T13/UI-07-unlock-choice-render-summary.json",
+    "docs/auto-execute/screenshots/T13/UI-08-invite-start.html",
+    "docs/auto-execute/screenshots/T13/UI-08-invite-start-render-summary.json",
+    "docs/auto-execute/screenshots/T13/UI-09-invite-progress.html",
+    "docs/auto-execute/screenshots/T13/UI-09-invite-progress-render-summary.json",
+    "docs/auto-execute/screenshots/T13/UI-10-friend-landing.html",
+    "docs/auto-execute/screenshots/T13/UI-10-friend-landing-render-summary.json",
+    "docs/auto-execute/logs/T13/unlock-invite-pages-test-command.log",
+    "docs/auto-execute/logs/T13/wechat-mini-test.log",
+    "docs/auto-execute/logs/T13/wechat-route-verify.log",
+    "docs/auto-execute/logs/T13/typecheck.log",
+    "docs/auto-execute/logs/T13/lint.log",
+    "docs/auto-execute/logs/T13/diff-check.log",
+    "docs/auto-execute/logs/T13/diff-check-final.log"
+  ],
+  "blockers": [
+    {
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "reason": "T13 generated deterministic HTML structural captures and render summaries only. Raster screenshot and pixel-diff evidence are unavailable in this task boundary and remain required for later visual acceptance."
+    }
+  ],
+  "nextSteps": [
+    "T14 can implement mock payment states; do not treat T13 as pure visual PASS.",
+    "T22/T23 must capture actual raster screenshots and visual diffs for UI-07..UI-10.",
+    "T20/T21/T24 must provide API/DB readback, contract, and full owner journey evidence for API-006/API-008/API-010."
+  ]
+}

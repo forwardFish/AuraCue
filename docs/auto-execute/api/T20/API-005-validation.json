@@ -1,0 +1,23 @@
+{
+  "apiId": "API-005",
+  "caseId": "V01",
+  "caseKey": "API-005-V01",
+  "caseType": "validation failure",
+  "method": "POST",
+  "path": "/api/payment-orders/mock",
+  "expectedStatus": 400,
+  "actualStatus": 400,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-005-validation.json",
+  "response": {
+    "error": {
+      "code": "VALIDATION_ERROR",
+      "message": "Mock payment order input is invalid.",
+      "details": {
+        "cardId": "Expected a cardId.",
+        "amount": "Expected a positive number.",
+        "currency": "Only USD mock pricing is supported in the local MVP."
+      }
+    }
+  }
+}

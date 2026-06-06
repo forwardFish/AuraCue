@@ -1,0 +1,65 @@
+{
+  "uiId": "UI-02",
+  "route": "/create/scene",
+  "sourceReference": "docs/UI/小程序/02-选择_出门场景.png",
+  "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/02/code.html",
+  "viewport": {
+    "sourceWidth": 941,
+    "sourceHeight": 1672,
+    "miniProgramWidth": 390
+  },
+  "statusBar": {
+    "time": "9:41"
+  },
+  "header": {
+    "step": "Step 1 of 2"
+  },
+  "hero": {
+    "titleLines": [
+      "Where are you",
+      "going today?"
+    ],
+    "subtitleLines": [
+      "Choose the scene that fits your plans",
+      "so we can tune your aura just right."
+    ]
+  },
+  "options": [
+    {
+      "id": "date",
+      "label": "Date",
+      "icon": "heart",
+      "description": "Romantic, magnetic & heart-open.",
+      "selected": true
+    },
+    {
+      "id": "work",
+      "label": "Work / Meeting",
+      "icon": "briefcase",
+      "description": "Confident, focused & respected.",
+      "selected": false
+    },
+    {
+      "id": "party",
+      "label": "Party / Social",
+      "icon": "party",
+      "description": "Radiant, fun & unforgettable.",
+      "selected": false
+    },
+    {
+      "id": "luck",
+      "label": "Just need luck",
+      "icon": "clover",
+      "description": "Lucky, aligned & open to magic.",
+      "selected": false
+    }
+  ],
+  "primaryCta": {
+    "id": "continue-scene",
+    "label": "Continue",
+    "disabledLabel": "Choose a scene to continue.",
+    "route": "/create/energy"
+  },
+  "selectedScene": "date",
+  "canContinue": true
+}

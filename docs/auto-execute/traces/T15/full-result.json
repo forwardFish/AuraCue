@@ -1,0 +1,259 @@
+{
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "taskId": "T15",
+  "requirementIds": [
+    "REQ-002",
+    "REQ-003",
+    "REQ-004",
+    "REQ-008",
+    "REQ-010",
+    "REQ-017",
+    "REQ-020"
+  ],
+  "uiIds": [
+    "UI-14"
+  ],
+  "routes": [
+    "/result/:id/full",
+    "/result/card-unlocked-001/full"
+  ],
+  "sourceReferences": {
+    "UI-14": "docs/UI/小程序/09-结果_完整气场卡与分享入口.png"
+  },
+  "stitchReferences": {
+    "UI-14": "docs/UI/小程序/stitch_codex_ui_code_generator/09/code.html"
+  },
+  "renderAssertions": {
+    "nativePageFiles": [
+      "apps/wechat-mini/src/pages/result/full.wxml",
+      "apps/wechat-mini/src/pages/result/full.wxss",
+      "apps/wechat-mini/src/pages/result/full.js",
+      "apps/wechat-mini/src/pages/result/full-page.mjs"
+    ],
+    "structuredFields": {
+      "title": "Full Lucky Aura Card",
+      "auraName": "Golden Comet Aura",
+      "tarot": "The Star",
+      "message": "Your best signal today is warm certainty.",
+      "colors": "Navy, Rose, Gold",
+      "outfit": "A clean light layer with one luminous accessory.",
+      "beauty": "Soft highlight and a confident lip tint.",
+      "social": "Open with a sincere compliment.",
+      "ritual": "Take three slow breaths before entering the room.",
+      "avoid": "Do not rush into a promise before you feel ready.",
+      "caption": "Tonight I am choosing the brighter signal.",
+      "theme": "golden-night"
+    },
+    "p1Trend": {
+      "disabled": true,
+      "status": "P1_COMING_SOON",
+      "toast": "7-Day Trend is coming in a later AuraCue release."
+    }
+  },
+  "clicks": {
+    "saveCard": {
+      "controlId": "save-card",
+      "actualRoute": "/saved/card-unlocked-001",
+      "apiId": "API-007",
+      "saved": true
+    },
+    "shareStory": {
+      "controlId": "share-story",
+      "actualRoute": "/share/card-unlocked-001",
+      "apiId": "API-008",
+      "shareEventId": "share-t08-001"
+    },
+    "moreSharingOptions": {
+      "controlId": "more-sharing-options",
+      "actualRoute": "/share/card-unlocked-001/channels",
+      "apiId": "API-008",
+      "channel": "story"
+    },
+    "viewTrend": {
+      "controlId": "view-7-day-trend",
+      "disabled": true,
+      "route": null,
+      "p1Status": "P1_COMING_SOON"
+    }
+  },
+  "apiMockTrace": [
+    {
+      "apiId": "API-003",
+      "method": "getCard",
+      "cardId": "card-unlocked-001",
+      "view": "full"
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "page_view_full_result",
+        "page": "/result/:id/full",
+        "properties": {
+          "uiId": "UI-14",
+          "apiId": "API-003",
+          "cardId": "card-unlocked-001",
+          "view": "full",
+          "requirementId": "REQ-008,REQ-010"
+        }
+      }
+    },
+    {
+      "apiId": "API-007",
+      "method": "saveCard",
+      "cardId": "card-unlocked-001",
+      "request": {
+        "source": "full_result"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "save_card",
+        "page": "/result/:id/full",
+        "properties": {
+          "uiId": "UI-14",
+          "apiId": "API-007",
+          "cardId": "card-unlocked-001",
+          "requirementId": "REQ-010"
+        }
+      }
+    },
+    {
+      "apiId": "API-008",
+      "method": "recordShareEvent",
+      "request": {
+        "cardId": "card-unlocked-001",
+        "channel": "story",
+        "source": "full_result"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "share_card",
+        "page": "/result/:id/full",
+        "properties": {
+          "uiId": "UI-14",
+          "apiId": "API-008",
+          "cardId": "card-unlocked-001",
+          "requirementId": "REQ-010"
+        }
+      }
+    },
+    {
+      "apiId": "API-008",
+      "method": "recordShareEvent",
+      "request": {
+        "cardId": "card-unlocked-001",
+        "channel": "story",
+        "source": "full_result_more_options"
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "click_more_sharing_options",
+        "page": "/result/:id/full",
+        "properties": {
+          "uiId": "UI-14",
+          "apiId": "API-008",
+          "cardId": "card-unlocked-001",
+          "requirementId": "REQ-010"
+        }
+      }
+    },
+    {
+      "apiId": "API-010",
+      "method": "recordAnalyticsEvent",
+      "request": {
+        "eventName": "click_view_7_day_trend_disabled",
+        "page": "/result/:id/full",
+        "properties": {
+          "uiId": "UI-14",
+          "cardId": "card-unlocked-001",
+          "p1Deferred": true,
+          "requirementId": "REQ-020"
+        }
+      }
+    }
+  ],
+  "analyticsReadback": [
+    {
+      "eventName": "page_view_full_result",
+      "page": "/result/:id/full",
+      "properties": {
+        "uiId": "UI-14",
+        "apiId": "API-003",
+        "cardId": "card-unlocked-001",
+        "view": "full",
+        "requirementId": "REQ-008,REQ-010"
+      },
+      "analyticsEventId": "analytics-page_view_full_result"
+    },
+    {
+      "eventName": "save_card",
+      "page": "/result/:id/full",
+      "properties": {
+        "uiId": "UI-14",
+        "apiId": "API-007",
+        "cardId": "card-unlocked-001",
+        "requirementId": "REQ-010"
+      },
+      "analyticsEventId": "analytics-save_card"
+    },
+    {
+      "eventName": "share_card",
+      "page": "/result/:id/full",
+      "properties": {
+        "uiId": "UI-14",
+        "apiId": "API-008",
+        "cardId": "card-unlocked-001",
+        "requirementId": "REQ-010"
+      },
+      "analyticsEventId": "analytics-share_card"
+    },
+    {
+      "eventName": "click_more_sharing_options",
+      "page": "/result/:id/full",
+      "properties": {
+        "uiId": "UI-14",
+        "apiId": "API-008",
+        "cardId": "card-unlocked-001",
+        "requirementId": "REQ-010"
+      },
+      "analyticsEventId": "analytics-click_more_sharing_options"
+    },
+    {
+      "eventName": "click_view_7_day_trend_disabled",
+      "page": "/result/:id/full",
+      "properties": {
+        "uiId": "UI-14",
+        "cardId": "card-unlocked-001",
+        "p1Deferred": true,
+        "requirementId": "REQ-020"
+      },
+      "analyticsEventId": "analytics-click_view_7_day_trend_disabled"
+    }
+  ],
+  "localOnly": {
+    "payment": "entitlement supplied by local mock unlock fixture",
+    "ai": "fixture-api-client-no-provider-call",
+    "analytics": "local-fixture-client",
+    "storage": "local-evidence-files-only",
+    "db": "mock repository/readback deferred to T20"
+  },
+  "visualEvidence": {
+    "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+    "reason": "T15 generated deterministic HTML structural capture and render summary for UI-14; automated raster screenshot and pixel-diff evidence are deferred to T22/T23.",
+    "captures": [
+      "docs/auto-execute/screenshots/T15/UI-14-full-result.html"
+    ],
+    "missingRasterScreenshots": [
+      "docs/auto-execute/screenshots/T15/UI-14-full-result.png"
+    ]
+  }
+}

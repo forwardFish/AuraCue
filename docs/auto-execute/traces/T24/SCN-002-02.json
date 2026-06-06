@@ -1,0 +1,26 @@
+{
+  "scenarioId": "SCN-002",
+  "stepId": "02",
+  "status": "PASS",
+  "personaGoal": "Continue after valid scene",
+  "action": "Click Continue",
+  "uiId": "UI-02",
+  "route": {
+    "uiId": "UI-03",
+    "route": "/create/energy",
+    "path": "/create/energy",
+    "pagePath": "pages/create/energy",
+    "state": "energy-selected",
+    "ownerScenario": "SCN-003",
+    "title": "Choose Energy"
+  },
+  "apiIds": [
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-005"
+  ],
+  "persistedState": {
+    "scene": "date"
+  }
+}

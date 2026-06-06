@@ -1,0 +1,124 @@
+{
+  "scenarioId": "SCN-003",
+  "stepId": "01",
+  "status": "PASS",
+  "personaGoal": "Validate incomplete state",
+  "action": "Click Generate while incomplete",
+  "uiId": "UI-04",
+  "visibleState": {
+    "uiId": "UI-04",
+    "route": "/create/energy",
+    "sourceReference": "docs/UI/小程序/03A-选择_场景与能量未完成状态.png",
+    "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/03a/code.html",
+    "statusBar": {
+      "time": "9:41"
+    },
+    "header": {
+      "brand": "AuraCue"
+    },
+    "sceneOptions": [
+      {
+        "id": "date",
+        "label": "Date",
+        "icon": "heart",
+        "selected": true
+      },
+      {
+        "id": "work",
+        "label": "Work / Meeting",
+        "shortLabel": "Work",
+        "subLabel": null,
+        "icon": "briefcase",
+        "selected": false
+      },
+      {
+        "id": "party",
+        "label": "Party / Social",
+        "shortLabel": "Party",
+        "subLabel": null,
+        "icon": "party",
+        "selected": false
+      },
+      {
+        "id": "luck",
+        "label": "Just need luck",
+        "shortLabel": "Just me",
+        "subLabel": "Just need luck",
+        "icon": "person",
+        "selected": false
+      }
+    ],
+    "energyOptions": [
+      {
+        "id": "confidence",
+        "label": "Confidence",
+        "selected": false
+      },
+      {
+        "id": "calm",
+        "label": "Calm",
+        "selected": false
+      },
+      {
+        "id": "love",
+        "label": "Love",
+        "selected": false
+      },
+      {
+        "id": "focus",
+        "label": "Focus",
+        "selected": false
+      },
+      {
+        "id": "luck",
+        "label": "Luck",
+        "selected": false
+      },
+      {
+        "id": "charm",
+        "label": "Charm",
+        "selected": false
+      }
+    ],
+    "complete": false,
+    "validationMessage": "Choose one energy to continue.",
+    "primaryCta": {
+      "id": "generate-card",
+      "label": "Generate My Lucky Aura Card",
+      "incompleteLabel": "Generate My Aura Card",
+      "route": "/create/loading"
+    }
+  },
+  "route": {
+    "uiId": "UI-03",
+    "route": "/create/energy",
+    "path": "/create/energy",
+    "pagePath": "pages/create/energy",
+    "state": "energy-selected",
+    "ownerScenario": "SCN-003",
+    "title": "Choose Energy"
+  },
+  "apiIds": [],
+  "dbReadbackIds": [
+    "DB-006"
+  ],
+  "clickEvidence": {
+    "controlId": "generate-card",
+    "blocked": true,
+    "validationMessage": "Choose one energy to continue.",
+    "apiCalled": false,
+    "route": {
+      "uiId": "UI-03",
+      "route": "/create/energy",
+      "path": "/create/energy",
+      "pagePath": "pages/create/energy",
+      "state": "energy-selected",
+      "ownerScenario": "SCN-003",
+      "title": "Choose Energy"
+    },
+    "analyticsResponse": {
+      "accepted": true,
+      "analyticsEventId": "analytics-016"
+    }
+  }
+}

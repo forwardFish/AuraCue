@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "suite": "share-save-pages",
+  "covered": [
+    "UI-008",
+    "UI-009",
+    "API-008",
+    "API-011",
+    "API-012",
+    "Owner-005"
+  ],
+  "mocks": [
+    "navigator.clipboard.writeText",
+    "navigator.share",
+    "anchor.download"
+  ],
+  "evidence": [
+    "docs/auto-execute/evidence/web/T11/share-action-api-transcript.json"
+  ]
+}

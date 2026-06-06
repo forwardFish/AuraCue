@@ -1,0 +1,114 @@
+{
+  "scenarioId": "SCN-003",
+  "stepId": "02",
+  "status": "PASS",
+  "personaGoal": "Choose energy and generate",
+  "action": "Click Confidence, then Generate My Lucky Aura Card",
+  "uiId": "UI-03",
+  "route": {
+    "uiId": "UI-05",
+    "route": "/create/loading",
+    "path": "/create/loading",
+    "pagePath": "pages/create/loading",
+    "state": "generation-ritual",
+    "ownerScenario": "SCN-004",
+    "title": "Generating"
+  },
+  "apiIds": [
+    "API-001",
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-007"
+  ],
+  "clickEvidence": {
+    "energySelections": [
+      {
+        "controlId": "energy-confidence",
+        "label": "Confidence",
+        "selectedEnergy": "confidence",
+        "analyticsResponse": {
+          "accepted": true,
+          "analyticsEventId": "analytics-017"
+        }
+      },
+      {
+        "controlId": "energy-luck",
+        "label": "Luck",
+        "selectedEnergy": "luck",
+        "analyticsResponse": {
+          "accepted": true,
+          "analyticsEventId": "analytics-018"
+        }
+      },
+      {
+        "controlId": "energy-love",
+        "label": "Love",
+        "selectedEnergy": "love",
+        "analyticsResponse": {
+          "accepted": true,
+          "analyticsEventId": "analytics-019"
+        }
+      },
+      {
+        "controlId": "energy-calm",
+        "label": "Calm",
+        "selectedEnergy": "calm",
+        "analyticsResponse": {
+          "accepted": true,
+          "analyticsEventId": "analytics-020"
+        }
+      },
+      {
+        "controlId": "energy-charm",
+        "label": "Charm",
+        "selectedEnergy": "charm",
+        "analyticsResponse": {
+          "accepted": true,
+          "analyticsEventId": "analytics-021"
+        }
+      },
+      {
+        "controlId": "energy-focus",
+        "label": "Focus",
+        "selectedEnergy": "focus",
+        "analyticsResponse": {
+          "accepted": true,
+          "analyticsEventId": "analytics-022"
+        }
+      },
+      {
+        "controlId": "energy-confidence",
+        "label": "Confidence",
+        "selectedEnergy": "confidence",
+        "analyticsResponse": {
+          "accepted": true,
+          "analyticsEventId": "analytics-023"
+        }
+      }
+    ],
+    "generate": {
+      "controlId": "generate-card",
+      "blocked": false,
+      "apiCalled": true,
+      "job": {
+        "jobId": "job-004",
+        "status": "success",
+        "cardId": "card-004"
+      },
+      "route": {
+        "uiId": "UI-05",
+        "route": "/create/loading",
+        "path": "/create/loading",
+        "pagePath": "pages/create/loading",
+        "state": "generation-ritual",
+        "ownerScenario": "SCN-004",
+        "title": "Generating"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-024"
+      }
+    }
+  }
+}

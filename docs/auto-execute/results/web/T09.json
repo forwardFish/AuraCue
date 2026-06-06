@@ -1,0 +1,160 @@
+{
+  "taskId": "T09",
+  "taskName": "Web Create Flow Pages",
+  "templateId": "TPL-FRONTEND-PAGE",
+  "status": "COMPLETE",
+  "verdict": "PASS_FOR_T09_SCOPE",
+  "productPassClaimed": false,
+  "timestamp": "2026-06-05T17:34:43.1760824+08:00",
+  "scope": {
+    "executedOnlyTask": "T09",
+    "implementedRoutes": [
+      "/",
+      "/create/context",
+      "/create/upload",
+      "/create/draw"
+    ],
+    "usedProductionCloud": false,
+    "usedProductionDb": false,
+    "usedProductionAi": false,
+    "usedSecrets": false,
+    "notes": "T09 implemented the Web create-flow pages against the existing local API client and draft store. Runtime browser screenshots and full product acceptance remain owned by T13-T16."
+  },
+  "coveredIds": [
+    "UI-001",
+    "UI-002",
+    "UI-003",
+    "UI-004",
+    "UI-010",
+    "API-001",
+    "API-002",
+    "API-003",
+    "API-004",
+    "API-005",
+    "Owner-001",
+    "Owner-002",
+    "Owner-003"
+  ],
+  "changedFiles": [
+    "apps/web/app/page.tsx",
+    "apps/web/app/create/context/page.tsx",
+    "apps/web/app/create/upload/page.tsx",
+    "apps/web/app/create/draw/page.tsx",
+    "apps/web/app/globals.css",
+    "apps/web/components/create-flow.tsx",
+    "apps/web/lib/analytics.js",
+    "apps/web/package.json",
+    "apps/web/tests/pages/run-page-tests.mjs",
+    "apps/web/tests/pages/create-flow.test.mjs",
+    "apps/web/tests/smoke-routes.test.mjs",
+    "docs/auto-execute/evidence/web/T09/screenshot-targets.json",
+    "docs/auto-execute/logs/web/T09-page-test-log.md",
+    "docs/auto-execute/logs/web/T09-typecheck-log.md",
+    "docs/auto-execute/logs/web/T09-lint-log.md",
+    "docs/auto-execute/logs/web/T09-smoke-log.md",
+    "docs/auto-execute/logs/web/T09-api-client-log.md",
+    "docs/auto-execute/logs/web/T09-command-log.md",
+    "docs/auto-execute/results/web/T09.json",
+    "docs/auto-execute/latest/web/T09-HANDOFF.md"
+  ],
+  "commands": [
+    {
+      "command": "pnpm.cmd --filter @auracue/web test:pages -- create-flow",
+      "status": "PASS_AFTER_REPAIR",
+      "evidence": "docs/auto-execute/logs/web/T09-page-test-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web typecheck",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T09-typecheck-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web lint",
+      "status": "PASS_AFTER_REPAIR",
+      "evidence": "docs/auto-execute/logs/web/T09-lint-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web test",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T09-smoke-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web test -- api-client",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T09-api-client-log.md"
+    },
+    {
+      "command": "Get-Content -Raw docs/auto-execute/results/web/T09.json | ConvertFrom-Json; Test-Path docs/auto-execute/latest/web/T09-HANDOFF.md; Test-Path docs/auto-execute/logs/web/T09-command-log.md",
+      "status": "PASS",
+      "evidence": "PowerShell artifact check parsed T09.json and verified required handoff/log/evidence files exist."
+    }
+  ],
+  "evidence": [
+    {
+      "type": "page_contract",
+      "path": "docs/auto-execute/logs/web/T09-page-test-log.md",
+      "status": "PASS",
+      "summary": "Verified four create-flow routes no longer use placeholders, required copy and controls exist, API-001..005 client calls are wired, mood guards exist, upload failure can skip, generation needs selected drawPosition, duplicate generation is disabled, and forbidden paywall terms are absent."
+    },
+    {
+      "type": "screenshot_targets",
+      "path": "docs/auto-execute/evidence/web/T09/screenshot-targets.json",
+      "status": "TARGETS_DEFINED",
+      "summary": "Defined UI-001, UI-002, UI-003, UI-004, and UI-010 screenshot target paths for T13/T14/T15 runtime capture."
+    },
+    {
+      "type": "static_checks",
+      "path": "docs/auto-execute/logs/web/T09-typecheck-log.md",
+      "status": "PASS",
+      "summary": "TypeScript completed with no emit and no errors."
+    },
+    {
+      "type": "lint",
+      "path": "docs/auto-execute/logs/web/T09-lint-log.md",
+      "status": "PASS",
+      "summary": "ESLint completed with max-warnings=0 after escaping JSX apostrophes and removing an unused test import."
+    },
+    {
+      "type": "route_smoke",
+      "path": "docs/auto-execute/logs/web/T09-smoke-log.md",
+      "status": "PASS",
+      "summary": "Route smoke recognizes the new T09 flow components and existing later placeholders."
+    },
+    {
+      "type": "analytics_unit",
+      "path": "docs/auto-execute/logs/web/T09-api-client-log.md",
+      "status": "PASS",
+      "summary": "Existing API client and analytics whitelist unit slice passed after adding click_start_card."
+    }
+  ],
+  "repairRecord": [
+    {
+      "issue": "Initial create-flow page test failed because the new test passed a string to assert.match instead of a RegExp.",
+      "repair": "Wrapped static copy checks in RegExp construction and reran the required page test."
+    },
+    {
+      "issue": "Lint failed on unescaped apostrophes in JSX and one unused test import.",
+      "repair": "Escaped JSX apostrophes, removed the unused import, normalized visible text in the page test, and reran lint/page/typecheck."
+    },
+    {
+      "issue": "Spec required the home CTA to emit click_start_card but the inherited analytics whitelist lacked that event.",
+      "repair": "Added click_start_card to the whitelist, emitted it from the home CTA, asserted it in the page test, and reran the analytics unit slice."
+    }
+  ],
+  "blockers": [],
+  "nextRepair": null,
+  "rerunResumeState": {
+    "canRerun": true,
+    "safeToResumeAt": "T10",
+    "commands": [
+      "pnpm.cmd --filter @auracue/web test:pages -- create-flow",
+      "pnpm.cmd --filter @auracue/web typecheck",
+      "pnpm.cmd --filter @auracue/web lint",
+      "pnpm.cmd --filter @auracue/web test",
+      "pnpm.cmd --filter @auracue/web test -- api-client",
+      "Get-Content -Raw docs/auto-execute/results/web/T09.json | ConvertFrom-Json"
+    ],
+    "notes": "Use pnpm.cmd on this Windows PowerShell surface. T09 did not start a browser/server or capture real screenshots; runtime click/API transcripts and visual screenshots remain T13-T15 work."
+  },
+  "exitCondition": "T13 can execute create-stage browser clicks from mood selection through context, upload or skip, draw selection, generation, and navigation to /result/[id]."
+}

@@ -1,0 +1,16 @@
+<view class="page">
+  <view class="brand">AuraCue</view>
+  <view class="title">Any context for today?</view>
+  <view class="copy">Optional. Add a scene if you want us to tune your card a little more.</view>
+  <view class="grid">
+    <button
+      wx:for="{{contexts}}"
+      wx:key="*this"
+      data-context="{{item}}"
+      class="context"
+      bindtap="selectContext"
+    >{{item}}</button>
+  </view>
+  <button class="skip" bindtap="skipContext">Skip</button>
+  <button class="primary" bindtap="continueFlow">Continue</button>
+</view>

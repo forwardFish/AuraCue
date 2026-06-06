@@ -1,0 +1,22 @@
+{
+  "apiId": "API-003",
+  "caseId": "C02",
+  "caseKey": "API-003-C02",
+  "caseType": "full result locked",
+  "method": "GET",
+  "path": "/api/cards/:cardId?view=full",
+  "expectedStatus": 403,
+  "actualStatus": 403,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-003-locked.json",
+  "response": {
+    "error": {
+      "code": "ENTITLEMENT_REQUIRED",
+      "message": "Unlock this card to view the full AuraCue result.",
+      "details": {
+        "cardId": "card-locked-001",
+        "locked": true
+      }
+    }
+  }
+}

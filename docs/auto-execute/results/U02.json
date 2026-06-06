@@ -1,0 +1,192 @@
+{
+  "taskId": "U02",
+  "status": "REPAIR_REQUIRED",
+  "round": 5,
+  "scope": "Home/create visual repair for UI-01 through UI-05 only",
+  "threshold": 0.005,
+  "changedFiles": [
+    "docs/auto-execute/screenshots/ui-one-to-one/T27/",
+    "docs/auto-execute/screenshots/ui-one-to-one/T31/",
+    "docs/auto-execute/screenshots/ui-one-to-one/T33/",
+    "docs/auto-execute/logs/U02/",
+    "docs/auto-execute/results/T27.json",
+    "docs/auto-execute/results/T31.json",
+    "docs/auto-execute/results/T33.json",
+    "docs/auto-execute/results/U02.json",
+    "docs/auto-execute/latest/U02-HANDOFF.md"
+  ],
+  "productSourceFilesRetained": [],
+  "forbiddenScopeTouched": false,
+  "thresholdLowered": false,
+  "referenceScreenshotsMounted": false,
+  "behaviorSummary": {
+    "sceneShortcuts": "unchanged",
+    "startCta": "unchanged",
+    "sceneSelection": "unchanged",
+    "energySelection": "unchanged",
+    "incompleteState": "unchanged",
+    "generationRouting": "unchanged"
+  },
+  "round5Diagnosis": [
+    "A local vector/component-asset pass was attempted on UI-05 tarot/celestial detail, UI-02 scene illustrations, and UI-04 phone hardware sizing/status treatment.",
+    "The attempted vector/CSS component changes either regressed measured ratios or only moved decorative pixels without reducing the full-screen mismatch, so they were not retained.",
+    "The fresh accepted state matches round-4 ratios for UI-01 through UI-05. The blocker is not missing evidence or broken routes; it is high-fidelity raster illustration/font/texture mismatch against screenshot references.",
+    "After five repair loops, the remaining gap cannot materially converge to diffRatio <= 0.005 through local CSS/vector approximations alone under the constraints that full reference screenshots, cropped reference PNG assets, remote assets, and threshold changes are forbidden."
+  ],
+  "visualEvidence": {
+    "T27": {
+      "status": "REPAIR_REQUIRED",
+      "generatedAt": "2026-05-27T10:31:14.200Z",
+      "summary": "docs/auto-execute/screenshots/ui-one-to-one/T27/visual-summary.json",
+      "result": "docs/auto-execute/results/T27.json"
+    },
+    "T31": {
+      "status": "REPAIR_REQUIRED",
+      "generatedAt": "2026-05-27T10:32:33.414Z",
+      "summary": "docs/auto-execute/screenshots/ui-one-to-one/T31/visual-summary.json",
+      "result": "docs/auto-execute/results/T31.json"
+    },
+    "T33": {
+      "status": "REPAIR_REQUIRED",
+      "generatedAt": "2026-05-27T10:33:26.298Z",
+      "result": "docs/auto-execute/results/T33.json"
+    }
+  },
+  "targetScreens": [
+    {
+      "uiId": "UI-01",
+      "previousDiffRatio": 0.142936,
+      "afterDiffRatio": 0.142936,
+      "status": "REPAIR_REQUIRED",
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T27/actual/UI-01-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T27/diff/UI-01-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T27/metrics/UI-01-metrics.json",
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ]
+    },
+    {
+      "uiId": "UI-02",
+      "previousDiffRatio": 0.212549,
+      "afterDiffRatio": 0.212549,
+      "status": "REPAIR_REQUIRED",
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T27/actual/UI-02-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T27/diff/UI-02-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T27/metrics/UI-02-metrics.json",
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ]
+    },
+    {
+      "uiId": "UI-03",
+      "previousDiffRatio": 0.174261,
+      "afterDiffRatio": 0.174261,
+      "status": "REPAIR_REQUIRED",
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T27/actual/UI-03-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T27/diff/UI-03-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T27/metrics/UI-03-metrics.json",
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ]
+    },
+    {
+      "uiId": "UI-04",
+      "previousDiffRatio": 0.193674,
+      "afterDiffRatio": 0.193674,
+      "status": "REPAIR_REQUIRED",
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T27/actual/UI-04-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T27/diff/UI-04-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T27/metrics/UI-04-metrics.json",
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 107,
+          "y": 48,
+          "width": 727,
+          "height": 1603
+        }
+      ]
+    },
+    {
+      "uiId": "UI-05",
+      "previousDiffRatio": 0.262479,
+      "afterDiffRatio": 0.262479,
+      "status": "REPAIR_REQUIRED",
+      "actualPng": "docs/auto-execute/screenshots/ui-one-to-one/T27/actual/UI-05-actual.png",
+      "diffPng": "docs/auto-execute/screenshots/ui-one-to-one/T27/diff/UI-05-diff.png",
+      "metricsJson": "docs/auto-execute/screenshots/ui-one-to-one/T27/metrics/UI-05-metrics.json",
+      "remainingRegions": [
+        {
+          "type": "mismatched-pixels-bounding-box",
+          "x": 0,
+          "y": 0,
+          "width": 941,
+          "height": 1672
+        }
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T27",
+      "status": "REPAIR_REQUIRED",
+      "exitCode": 0,
+      "log": "docs/auto-execute/logs/U02/T27.log"
+    },
+    {
+      "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T31",
+      "status": "REPAIR_REQUIRED",
+      "exitCode": 0,
+      "log": "docs/auto-execute/logs/U02/T31.log"
+    },
+    {
+      "command": "node scripts/t33-final-ui-one-to-one-gate.mjs",
+      "status": "REPAIR_REQUIRED",
+      "exitCode": 2,
+      "log": "docs/auto-execute/logs/U02/T33.log"
+    },
+    {
+      "command": "pnpm.cmd test",
+      "status": "PASS",
+      "exitCode": 0,
+      "log": "docs/auto-execute/logs/U02/pnpm-test.log"
+    },
+    {
+      "command": "node scripts/verify-wechat-routes.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "log": "docs/auto-execute/logs/U02/routes.log"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "exitCode": 0,
+      "log": "docs/auto-execute/logs/U02/diff-check.log"
+    }
+  ],
+  "remainingBlockerClassification": {
+    "type": "ASSET_SOURCE_REQUIRED",
+    "precision": "Required UI references contain high-detail raster-like artwork, font rendering, texture, glow, and device chrome that the current local DOM/CSS renderer cannot reproduce to <= 0.005 after five repair loops without using the screenshot/reference image assets themselves or equivalent approved original vector/raster assets.",
+    "affectedScreens": ["UI-01", "UI-02", "UI-03", "UI-04", "UI-05"],
+    "notBlockedBy": ["missing screenshots", "missing metrics", "missing routes", "test failure", "remote service", "threshold configuration"]
+  },
+  "recommendation": "Stop U02 under the current no-screenshot-crop/no-remote-asset constraint and proceed to U03 only after recording U02 as REPAIR_REQUIRED, unless the owner explicitly approves original asset sources or permits reference-derived per-component asset extraction. Do not spend another CSS-only repair round."
+}

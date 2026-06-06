@@ -1,0 +1,623 @@
+{
+  "status": "PASS",
+  "readbackRule": "Every mutation row is independently read from createLocalRepository test helpers after API execution.",
+  "totalReadbacks": 20,
+  "readbacks": [
+    {
+      "apiId": "API-001",
+      "caseId": "C01",
+      "caseKey": "API-001-C01",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "generationJob": {
+          "id": "job-004",
+          "userId": "user-local-001",
+          "scene": "date",
+          "energy": "confidence",
+          "status": "success",
+          "cardId": "card-004",
+          "errorCode": null,
+          "createdAt": "2026-05-26T00:00:00.000Z",
+          "completedAt": "2026-05-26T00:00:00.000Z"
+        },
+        "auraCard": {
+          "id": "card-004",
+          "userId": "user-local-001",
+          "jobId": "job-004",
+          "scene": "date",
+          "energy": "confidence",
+          "content": {
+            "title": "Tonight's Lucky Aura Card",
+            "auraName": "Rose Lantern Aura",
+            "tarotSymbol": "The Star",
+            "message": "A small confident choice can make the next moment feel easier.",
+            "luckyColor": "rose quartz",
+            "colors": {
+              "primary": "rose quartz",
+              "accent": "champagne gold",
+              "background": "warm moonlight"
+            },
+            "outfit": "Wear one clean line with a soft highlight near the face.",
+            "beauty": "Keep the glow fresh and the finish light.",
+            "social": "Open with a warm compliment and one clear question.",
+            "ritual": "Take three slow breaths before stepping out.",
+            "avoid": "Avoid over-planning the first ten minutes.",
+            "caption": "Today I am carrying rose lantern aura.",
+            "theme": "date-confidence-local"
+          },
+          "isUnlocked": false,
+          "savedAt": null,
+          "shareImagePath": null,
+          "createdAt": "2026-05-26T00:00:00.000Z"
+        }
+      }
+    },
+    {
+      "apiId": "API-001",
+      "caseId": "C02",
+      "caseKey": "API-001-C02",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "noNewJobForInvalidInput": true,
+        "countsBeforeValidCreate": {
+          "users": 1,
+          "aura_cards": 4,
+          "generation_jobs": 4,
+          "card_templates": 1,
+          "share_events": 2,
+          "analytics_events": 2,
+          "payment_orders": 2,
+          "user_entitlements": 1
+        },
+        "countsAfterValidation": {
+          "users": 1,
+          "aura_cards": 4,
+          "generation_jobs": 4,
+          "card_templates": 1,
+          "share_events": 2,
+          "analytics_events": 2,
+          "payment_orders": 2,
+          "user_entitlements": 1
+        }
+      }
+    },
+    {
+      "apiId": "API-001",
+      "caseId": "C03",
+      "caseKey": "API-001-C03",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "failedGenerationJob": {
+          "id": "job-005",
+          "userId": "user-local-001",
+          "scene": "luck",
+          "energy": "calm",
+          "status": "failed",
+          "cardId": null,
+          "errorCode": "LOCAL_GENERATION_FAILURE",
+          "createdAt": "2026-05-26T00:00:00.000Z",
+          "completedAt": "2026-05-26T00:00:00.000Z"
+        }
+      }
+    },
+    {
+      "apiId": "API-002",
+      "caseId": "C01",
+      "caseKey": "API-002-C01",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "generationJob": {
+          "id": "job-004",
+          "userId": "user-local-001",
+          "scene": "date",
+          "energy": "confidence",
+          "status": "success",
+          "cardId": "card-004",
+          "errorCode": null,
+          "createdAt": "2026-05-26T00:00:00.000Z",
+          "completedAt": "2026-05-26T00:00:00.000Z"
+        }
+      }
+    },
+    {
+      "apiId": "API-003",
+      "caseId": "C01",
+      "caseKey": "API-003-C01",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "auraCard": {
+          "id": "card-locked-001",
+          "userId": "user-local-001",
+          "jobId": "job-success-001",
+          "scene": "date",
+          "energy": "confidence",
+          "content": {
+            "title": "Tonight's Lucky Aura Preview",
+            "auraName": "Soft Glow Aura",
+            "tarotSymbol": "The Star",
+            "message": "A small confident choice can make the next moment feel easier.",
+            "luckyColor": "rose quartz",
+            "colors": {
+              "primary": "rose quartz",
+              "accent": "champagne gold",
+              "background": "warm moonlight"
+            },
+            "outfit": "Wear one clean line with a soft highlight near the face.",
+            "beauty": "Keep the glow fresh and the finish light.",
+            "social": "Open with a warm compliment and one clear question.",
+            "ritual": "Take three slow breaths before stepping out.",
+            "avoid": "Avoid over-planning the first ten minutes.",
+            "caption": "Today I am carrying rose lantern aura.",
+            "theme": "soft-preview"
+          },
+          "isUnlocked": false,
+          "savedAt": null,
+          "shareImagePath": null,
+          "createdAt": "2026-05-26T00:00:00.000Z"
+        }
+      }
+    },
+    {
+      "apiId": "API-003",
+      "caseId": "C02",
+      "caseKey": "API-003-C02",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "entitlement": null,
+        "fullContentLeaked": false
+      }
+    },
+    {
+      "apiId": "API-003",
+      "caseId": "C03",
+      "caseKey": "API-003-C03",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "auraCard": {
+          "id": "card-unlocked-001",
+          "userId": "user-local-001",
+          "jobId": "job-success-002",
+          "scene": "party",
+          "energy": "charm",
+          "content": {
+            "title": "Full Lucky Aura Card",
+            "auraName": "Golden Comet Aura",
+            "tarotSymbol": "The Sun",
+            "message": "Warm presence can turn a small exchange into a memorable one.",
+            "luckyColor": "warm gold",
+            "colors": {
+              "primary": "warm gold",
+              "accent": "berry gloss",
+              "background": "warm moonlight"
+            },
+            "outfit": "Use one playful accent and keep the rest effortless.",
+            "beauty": "Let one feature catch light while the rest stays natural.",
+            "social": "Join the first friendly circle and ask what made their week brighter.",
+            "ritual": "Smile at yourself once before you enter the room.",
+            "avoid": "Avoid performing for people who are not meeting your energy.",
+            "caption": "Today I am carrying golden comet aura.",
+            "theme": "golden-night"
+          },
+          "isUnlocked": true,
+          "savedAt": null,
+          "shareImagePath": "local://share-images/card-unlocked-001-story.png",
+          "createdAt": "2026-05-26T00:00:00.000Z"
+        },
+        "entitlement": {
+          "id": "entitlement-paid-001",
+          "userId": "user-local-001",
+          "cardId": "card-unlocked-001",
+          "method": "payment",
+          "orderId": "order-paid-001",
+          "createdAt": "2026-05-26T00:04:00.000Z"
+        }
+      }
+    },
+    {
+      "apiId": "API-004",
+      "caseId": "C01",
+      "caseKey": "API-004-C01",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "entitlement": {
+          "id": "entitlement-002",
+          "userId": "user-local-001",
+          "cardId": "card-005",
+          "method": "invite",
+          "orderId": null,
+          "createdAt": "2026-05-26T00:00:00.000Z"
+        },
+        "unlockedCard": {
+          "id": "card-005",
+          "userId": "user-local-001",
+          "jobId": "job-006",
+          "scene": "party",
+          "energy": "charm",
+          "content": {
+            "title": "Social Spark Aura Card",
+            "auraName": "Golden Comet Aura",
+            "tarotSymbol": "The Sun",
+            "message": "Warm presence can turn a small exchange into a memorable one.",
+            "luckyColor": "warm gold",
+            "colors": {
+              "primary": "warm gold",
+              "accent": "berry gloss",
+              "background": "warm moonlight"
+            },
+            "outfit": "Use one playful accent and keep the rest effortless.",
+            "beauty": "Let one feature catch light while the rest stays natural.",
+            "social": "Join the first friendly circle and ask what made their week brighter.",
+            "ritual": "Smile at yourself once before you enter the room.",
+            "avoid": "Avoid performing for people who are not meeting your energy.",
+            "caption": "Today I am carrying golden comet aura.",
+            "theme": "party-charm-local"
+          },
+          "isUnlocked": true,
+          "savedAt": null,
+          "shareImagePath": null,
+          "createdAt": "2026-05-26T00:00:00.000Z"
+        }
+      }
+    },
+    {
+      "apiId": "API-004",
+      "caseId": "C02",
+      "caseKey": "API-004-C02",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "entitlementRowsForCard": [
+          {
+            "id": "entitlement-002",
+            "userId": "user-local-001",
+            "cardId": "card-005",
+            "method": "invite",
+            "orderId": null,
+            "createdAt": "2026-05-26T00:00:00.000Z"
+          }
+        ],
+        "duplicatePrevented": true
+      }
+    },
+    {
+      "apiId": "API-004",
+      "caseId": "N01",
+      "caseKey": "API-004-N01",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "entitlementRowsForCard": [
+          {
+            "id": "entitlement-002",
+            "userId": "user-local-001",
+            "cardId": "card-005",
+            "method": "invite",
+            "orderId": null,
+            "createdAt": "2026-05-26T00:00:00.000Z"
+          }
+        ],
+        "noPaymentEntitlementCreated": true
+      }
+    },
+    {
+      "apiId": "API-005",
+      "caseId": "C01",
+      "caseKey": "API-005-C01",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "paymentOrder": {
+          "id": "order-003",
+          "userId": "user-local-001",
+          "cardId": "card-006",
+          "amount": 1.99,
+          "currency": "USD",
+          "status": "pending",
+          "createdAt": "2026-05-26T00:00:00.000Z",
+          "completedAt": null
+        }
+      }
+    },
+    {
+      "apiId": "API-005",
+      "caseId": "V01",
+      "caseKey": "API-005-V01",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "noInvalidPaymentOrderCreated": true
+      }
+    },
+    {
+      "apiId": "API-005",
+      "caseId": "C02F",
+      "caseKey": "API-005-C02F",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "paymentOrder": {
+          "id": "order-004",
+          "userId": "user-local-001",
+          "cardId": "card-006",
+          "amount": 1.99,
+          "currency": "USD",
+          "status": "failed",
+          "createdAt": "2026-05-26T00:00:00.000Z",
+          "completedAt": "2026-05-26T00:00:00.000Z"
+        },
+        "entitlementAfterFailedPayment": null
+      }
+    },
+    {
+      "apiId": "API-005",
+      "caseId": "C02",
+      "caseKey": "API-005-C02",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "paymentOrder": {
+          "id": "order-003",
+          "userId": "user-local-001",
+          "cardId": "card-006",
+          "amount": 1.99,
+          "currency": "USD",
+          "status": "paid",
+          "createdAt": "2026-05-26T00:00:00.000Z",
+          "completedAt": "2026-05-26T00:00:00.000Z"
+        },
+        "entitlement": {
+          "id": "entitlement-003",
+          "userId": "user-local-001",
+          "cardId": "card-006",
+          "method": "payment",
+          "orderId": "order-003",
+          "createdAt": "2026-05-26T00:00:00.000Z"
+        }
+      }
+    },
+    {
+      "apiId": "API-006",
+      "caseId": "C01",
+      "caseKey": "API-006-C01",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "inviteProgress": {
+          "progress": 3,
+          "required": 3,
+          "completed": true
+        },
+        "inviteEvents": [
+          {
+            "id": "share-003",
+            "userId": "user-local-001",
+            "cardId": "card-007",
+            "channel": "wechat",
+            "source": "invite-invite_started",
+            "inviteCode": "INVITE-T20",
+            "friendId": null,
+            "createdAt": "2026-05-26T00:00:00.000Z"
+          },
+          {
+            "id": "invite-004",
+            "userId": "user-local-001",
+            "cardId": "card-007",
+            "channel": "wechat",
+            "source": "invite-friend_accept",
+            "inviteCode": "INVITE-T20",
+            "friendId": "friend-t20-001",
+            "createdAt": "2026-05-26T00:00:00.000Z"
+          },
+          {
+            "id": "invite-005",
+            "userId": "user-local-001",
+            "cardId": "card-007",
+            "channel": "wechat",
+            "source": "invite-friend_accept",
+            "inviteCode": "INVITE-T20",
+            "friendId": "friend-t20-002",
+            "createdAt": "2026-05-26T00:00:00.000Z"
+          },
+          {
+            "id": "invite-006",
+            "userId": "user-local-001",
+            "cardId": "card-007",
+            "channel": "wechat",
+            "source": "invite-friend_accept",
+            "inviteCode": "INVITE-T20",
+            "friendId": "friend-t20-003",
+            "createdAt": "2026-05-26T00:00:00.000Z"
+          }
+        ],
+        "entitlement": {
+          "id": "entitlement-004",
+          "userId": "user-local-001",
+          "cardId": "card-007",
+          "method": "invite",
+          "orderId": null,
+          "createdAt": "2026-05-26T00:00:00.000Z"
+        }
+      }
+    },
+    {
+      "apiId": "API-006",
+      "caseId": "C02",
+      "caseKey": "API-006-C02",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "duplicateFriendRows": [
+          {
+            "id": "invite-004",
+            "userId": "user-local-001",
+            "cardId": "card-007",
+            "channel": "wechat",
+            "source": "invite-friend_accept",
+            "inviteCode": "INVITE-T20",
+            "friendId": "friend-t20-001",
+            "createdAt": "2026-05-26T00:00:00.000Z"
+          }
+        ],
+        "duplicatePrevented": true
+      }
+    },
+    {
+      "apiId": "API-007",
+      "caseId": "C01",
+      "caseKey": "API-007-C01",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "savedCard": {
+          "id": "card-unlocked-001",
+          "userId": "user-local-001",
+          "jobId": "job-success-002",
+          "scene": "party",
+          "energy": "charm",
+          "content": {
+            "title": "Full Lucky Aura Card",
+            "auraName": "Golden Comet Aura",
+            "tarotSymbol": "The Sun",
+            "message": "Warm presence can turn a small exchange into a memorable one.",
+            "luckyColor": "warm gold",
+            "colors": {
+              "primary": "warm gold",
+              "accent": "berry gloss",
+              "background": "warm moonlight"
+            },
+            "outfit": "Use one playful accent and keep the rest effortless.",
+            "beauty": "Let one feature catch light while the rest stays natural.",
+            "social": "Join the first friendly circle and ask what made their week brighter.",
+            "ritual": "Smile at yourself once before you enter the room.",
+            "avoid": "Avoid performing for people who are not meeting your energy.",
+            "caption": "Today I am carrying golden comet aura.",
+            "theme": "golden-night"
+          },
+          "isUnlocked": true,
+          "savedAt": "2026-05-26T00:00:00.000Z",
+          "shareImagePath": "local://share-images/card-unlocked-001-story.png",
+          "createdAt": "2026-05-26T00:00:00.000Z"
+        }
+      }
+    },
+    {
+      "apiId": "API-008",
+      "caseId": "C01",
+      "caseKey": "API-008-C01",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "shareEvent": {
+          "id": "share-007",
+          "userId": "user-local-001",
+          "cardId": "card-unlocked-001",
+          "channel": "story",
+          "source": "T20-API-008",
+          "inviteCode": null,
+          "friendId": null,
+          "createdAt": "2026-05-26T00:00:00.000Z"
+        }
+      }
+    },
+    {
+      "apiId": "API-009",
+      "caseId": "C01",
+      "caseKey": "API-009-C01",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "renderedShareImage": {
+          "cardId": "card-unlocked-001",
+          "localPath": "local://share-images/card-unlocked-001-template-story-001.png",
+          "persistedOnCard": true
+        },
+        "template": {
+          "id": "template-story-001",
+          "name": "AuraCue Story 9:16",
+          "format": "story-9x16",
+          "version": "1.0.0"
+        },
+        "card": {
+          "id": "card-unlocked-001",
+          "userId": "user-local-001",
+          "jobId": "job-success-002",
+          "scene": "party",
+          "energy": "charm",
+          "content": {
+            "title": "Full Lucky Aura Card",
+            "auraName": "Golden Comet Aura",
+            "tarotSymbol": "The Sun",
+            "message": "Warm presence can turn a small exchange into a memorable one.",
+            "luckyColor": "warm gold",
+            "colors": {
+              "primary": "warm gold",
+              "accent": "berry gloss",
+              "background": "warm moonlight"
+            },
+            "outfit": "Use one playful accent and keep the rest effortless.",
+            "beauty": "Let one feature catch light while the rest stays natural.",
+            "social": "Join the first friendly circle and ask what made their week brighter.",
+            "ritual": "Smile at yourself once before you enter the room.",
+            "avoid": "Avoid performing for people who are not meeting your energy.",
+            "caption": "Today I am carrying golden comet aura.",
+            "theme": "golden-night"
+          },
+          "isUnlocked": true,
+          "savedAt": "2026-05-26T00:00:00.000Z",
+          "shareImagePath": "local://share-images/card-unlocked-001-template-story-001.png",
+          "createdAt": "2026-05-26T00:00:00.000Z"
+        }
+      }
+    },
+    {
+      "apiId": "API-010",
+      "caseId": "C01",
+      "caseKey": "API-010-C01",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/db/T20/db-readbacks.json",
+      "readback": {
+        "analyticsEvents": [
+          {
+            "id": "analytics-001",
+            "userId": "user-local-001",
+            "eventName": "page_view_home",
+            "page": "/",
+            "properties": {
+              "source": "seed"
+            },
+            "createdAt": "2026-05-26T00:00:00.000Z"
+          },
+          {
+            "id": "analytics-003",
+            "userId": "user-local-001",
+            "eventName": "page_view_home",
+            "page": "/",
+            "properties": {
+              "source": "T20",
+              "apiId": "API-010"
+            },
+            "createdAt": "2026-05-26T00:00:00.000Z"
+          }
+        ]
+      }
+    }
+  ],
+  "finalCounts": {
+    "users": 1,
+    "aura_cards": 7,
+    "generation_jobs": 8,
+    "card_templates": 1,
+    "share_events": 7,
+    "analytics_events": 3,
+    "payment_orders": 4,
+    "user_entitlements": 4
+  }
+}

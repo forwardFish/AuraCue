@@ -1,0 +1,20 @@
+{
+  "apiId": "API-005",
+  "caseId": "C02F",
+  "caseKey": "API-005-C02F",
+  "caseType": "payment failure",
+  "method": "POST",
+  "path": "/api/payment-orders/mock/:orderId/complete",
+  "expectedStatus": 200,
+  "actualStatus": 200,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-005-complete-failed.json",
+  "response": {
+    "orderId": "order-004",
+    "cardId": "card-006",
+    "amount": 1.99,
+    "currency": "USD",
+    "status": "failed",
+    "entitlement": null
+  }
+}

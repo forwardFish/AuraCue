@@ -1,0 +1,98 @@
+{
+  "taskId": "T05",
+  "taskName": "Card Result And Entitlement Read APIs",
+  "status": "PASS",
+  "verdict": "PASS",
+  "completedAt": "2026-05-26T13:22:00+08:00",
+  "scope": {
+    "allowedFilesHonored": true,
+    "implementedFiles": [
+      "apps/api/src/server.mjs",
+      "apps/api/tests/card-result-api.test.mjs",
+      "apps/api/package.json",
+      "packages/shared-types/src/index.ts"
+    ],
+    "evidenceFiles": [
+      "docs/auto-execute/api/T05/card-api.json",
+      "docs/auto-execute/db/T05/card-readback.json",
+      "docs/auto-execute/logs/T05/card-api-test.log",
+      "docs/auto-execute/logs/T05/api-package-test.log",
+      "docs/auto-execute/logs/T05/lint.log",
+      "docs/auto-execute/logs/T05/typecheck.log",
+      "docs/auto-execute/logs/T05/root-test.log",
+      "docs/auto-execute/logs/T05/diff-check.log"
+    ]
+  },
+  "requirementsCovered": [
+    "REQ-008",
+    "REQ-010",
+    "REQ-016"
+  ],
+  "apiCoverage": [
+    "API-003 C01 free result success",
+    "API-003 C02 full result locked without entitlement",
+    "API-003 C03 full result success with entitlement",
+    "API-003 C04 not found",
+    "API-003 invalid view validation"
+  ],
+  "dbCoverage": [
+    "locked aura_cards readback",
+    "unlocked aura_cards readback",
+    "missing aura_cards readback",
+    "locked card user_entitlements null readback",
+    "unlocked card user_entitlements paid readback"
+  ],
+  "contractSupport": [
+    "UI-06 free preview response: auraName, luckyColor, oneLineReminder, low-res watermarked preview metadata, locked markers",
+    "UI-14 full result response: complete structured card content only after entitlement readback"
+  ],
+  "securityAndSafety": {
+    "fullLockedContentExposedToFreeResponse": false,
+    "fullLockedContentExposedToLockedFullResponse": false,
+    "realPaymentCallsAllowed": false,
+    "realCloudWritesAllowed": false,
+    "productionDbAllowed": false
+  },
+  "commands": [
+    {
+      "command": "pnpm.cmd --filter @auracue/api test:card *> docs\\auto-execute\\logs\\T05\\card-api-test.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T05/card-api-test.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/api test *> docs\\auto-execute\\logs\\T05\\api-package-test.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T05/api-package-test.log"
+    },
+    {
+      "command": "pnpm.cmd lint *> docs\\auto-execute\\logs\\T05\\lint.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T05/lint.log"
+    },
+    {
+      "command": "pnpm.cmd typecheck *> docs\\auto-execute\\logs\\T05\\typecheck.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T05/typecheck.log"
+    },
+    {
+      "command": "pnpm.cmd test *> docs\\auto-execute\\logs\\T05\\root-test.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T05/root-test.log"
+    },
+    {
+      "command": "git diff --check *> docs\\auto-execute\\logs\\T05\\diff-check.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T05/diff-check.log"
+    }
+  ],
+  "blockers": [],
+  "limitations": [
+    "T05 is backend/API/shared-types scope only and does not implement mini-program pages or visual screenshot/diff evidence.",
+    "Entitlement is local/mock repository readback only; real payment, cloud, production DB, and production entitlement services remain forbidden and unused."
+  ],
+  "nextSteps": [
+    "T06 can implement local mock unlock/payment/invite writes against the existing user_entitlements repository boundary.",
+    "T12 and T15 can consume the API-003 free/full response shapes for UI-06 and UI-14.",
+    "T20 should rerun API-003 cases and independent card/entitlement DB readback as part of the full API/DB gate."
+  ]
+}

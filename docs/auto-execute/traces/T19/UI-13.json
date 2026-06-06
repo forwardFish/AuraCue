@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-13",
+  "route": "/unlock/:id/success",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "View Full Card",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T14/mock-payment.json"
+    },
+    {
+      "label": "Share Story",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T14/mock-payment.json"
+    }
+  ],
+  "analytics": [
+    {
+      "eventName": "click_view_full_card_after_payment",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T14/mock-payment.json"
+    },
+    {
+      "eventName": "click_share_story_after_payment",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T14/mock-payment.json"
+    }
+  ],
+  "upstreamTrace": "docs/auto-execute/traces/T14/mock-payment.json"
+}

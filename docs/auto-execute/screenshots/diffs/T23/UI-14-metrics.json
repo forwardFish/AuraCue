@@ -1,0 +1,37 @@
+{
+  "taskId": "T23",
+  "sourceTaskId": "T22",
+  "uiId": "UI-14",
+  "reference": {
+    "path": "docs/UI/小程序/09-结果_完整气场卡与分享入口.png",
+    "exists": true,
+    "dimensions": {
+      "width": 941,
+      "height": 1672
+    }
+  },
+  "actual": {
+    "htmlSource": "docs/auto-execute/screenshots/T22/UI-14-actual.html",
+    "htmlPath": "docs/auto-execute/screenshots/T23/UI-14-actual.html",
+    "htmlExists": true,
+    "rasterSource": null,
+    "rasterPath": null,
+    "rasterExists": false,
+    "rasterDimensions": null
+  },
+  "t22MaterialDeviationSeverity": "manual_review_required",
+  "t22LikelyCause": "No raster capture path exists in this scaffold for this screen.",
+  "repairDecision": "downgraded_with_evidence",
+  "repairEvidence": "Reference and structural HTML evidence exist; T22 deviation is an automated raster evidence gap, not a confirmed implementation mismatch.",
+  "structureStatus": "PASS_WITH_LIMITATION",
+  "screenshotStatus": "MANUAL_REVIEW_REQUIRED",
+  "pixelDiffStatus": "MANUAL_REVIEW_REQUIRED",
+  "canClaimPixelPerfect": false,
+  "diffRatio": null,
+  "sizeMismatch": false,
+  "knownDifferences": [
+    "Actual raster capture is unavailable in the current scaffold.",
+    "Local pixel diff packages are unavailable, so T23 cannot claim pixel-perfect PASS."
+  ],
+  "finalUiStatus": "PASS_NEEDS_MANUAL_UI_REVIEW"
+}

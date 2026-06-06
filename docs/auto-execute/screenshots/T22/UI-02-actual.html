@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AuraCue UI-02 Scene Selection</title>
+  <style>
+    body { margin: 0; background: #fbf6f0; color: #10213d; font-family: Inter, system-ui, sans-serif; }
+    .phone { width: 390px; min-height: 844px; margin: 0 auto; padding: 16px 20px 24px; box-sizing: border-box; background: radial-gradient(circle at top, #fffaf5 0%, #f8f1e9 100%); }
+    .status { display: flex; justify-content: space-between; font-size: 14px; font-weight: 700; margin-bottom: 26px; }
+    .top { display: grid; grid-template-columns: 52px 1fr 52px; align-items: center; margin-bottom: 18px; }
+    .back { width: 48px; height: 48px; border-radius: 999px; border: 0; background: white; color: #a68154; font-size: 26px; box-shadow: 0 8px 20px rgba(166,129,84,.08); }
+    .step { text-align: center; color: #c59a65; font-size: 14px; font-weight: 700; }
+    h1 { font-family: Georgia, serif; font-size: 39px; line-height: 1.08; text-align: center; margin: 0 0 14px; font-weight: 700; }
+    .copy { color: #6b7280; text-align: center; line-height: 1.45; margin: 0 0 28px; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 34px; }
+    .scene-card { position: relative; min-height: 182px; border: 1px solid #eee4dc; border-radius: 28px; background: rgba(255,255,255,.78); padding: 12px; color: #10213d; box-shadow: 0 8px 24px rgba(0,0,0,.04); text-align: center; }
+    .scene-card::after { border: 0; }
+    .scene-card.selected { border: 2px solid #e2b879; background: #fff8f3; }
+    .scene-check { position: absolute; top: 10px; right: 10px; width: 28px; height: 28px; border-radius: 999px; background: #c4945c; color: white; font-size: 10px; line-height: 28px; }
+    .scene-card:not(.selected) .scene-check { display: none; }
+    .scene-art { width: 112px; height: 92px; margin: 6px auto 12px; border-radius: 50px 50px 12px 12px; border: 1px solid #f1e2d7; background: #fff1f2; display: grid; place-items: center; color: #c4945c; font-size: 12px; }
+    .scene-art.work { background: #f2f4f7; }
+    .scene-art.party { background: #fde8e8; }
+    .scene-art.luck { background: #fef7eb; }
+    strong { display: block; font-family: Georgia, serif; font-size: 22px; line-height: 1.1; margin-bottom: 8px; }
+    small { display: block; color: #5f6673; font-size: 13px; line-height: 1.35; }
+    .cta { width: 100%; min-height: 58px; border: 0; border-radius: 999px; color: white; font-family: Georgia, serif; font-size: 26px; background: linear-gradient(180deg,#d9ad75 0%,#a67c4b 100%); box-shadow: 0 14px 30px rgba(166,124,75,.22); }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status"><span>9:41</span><span>signal wifi battery</span></div>
+    <header class="top"><button class="back">‹</button><div class="step">✦ Step 1 of 2 ✦</div><div></div></header>
+    <h1>Where are you<br>going today?</h1>
+    <p class="copy">Choose the scene that fits your plans<br>so we can tune your aura just right. 💖</p>
+    <section class="grid"><button class="scene-card selected" data-scene="date">
+      <span class="scene-check">check</span>
+      <span class="scene-art date">heart</span>
+      <strong>Date</strong>
+      <small>Romantic, magnetic & heart-open.</small>
+    </button><button class="scene-card" data-scene="work">
+      <span class="scene-check"></span>
+      <span class="scene-art work">briefcase</span>
+      <strong>Work / Meeting</strong>
+      <small>Confident, focused & respected.</small>
+    </button><button class="scene-card" data-scene="party">
+      <span class="scene-check"></span>
+      <span class="scene-art party">party</span>
+      <strong>Party / Social</strong>
+      <small>Radiant, fun & unforgettable.</small>
+    </button><button class="scene-card" data-scene="luck">
+      <span class="scene-check"></span>
+      <span class="scene-art luck">clover</span>
+      <strong>Just need luck</strong>
+      <small>Lucky, aligned & open to magic.</small>
+    </button></section>
+    <button class="cta">✦ Continue</button>
+  </main>
+</body>
+</html>

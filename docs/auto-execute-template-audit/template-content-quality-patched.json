@@ -1,0 +1,416 @@
+{
+  "summary": {
+    "template_dir": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates",
+    "template_count": 58,
+    "fail_count": 0,
+    "failed_templates": []
+  },
+  "rows": [
+    {
+      "template": "TPL-ACCESSIBILITY",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-ACCESSIBILITY.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-ADMIN-WORKFLOW",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-ADMIN-WORKFLOW.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-AI-PROVIDER",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-AI-PROVIDER.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-ALERT-REPORTING",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-ALERT-REPORTING.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-API-DB-E2E",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-API-DB-E2E.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-API-DOMAIN",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-API-DOMAIN.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-ASYNC-JOB-WORKFLOW",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-ASYNC-JOB-WORKFLOW.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-AUTH-IDENTITY",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-AUTH-IDENTITY.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-BACKEND-FOUNDATION",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-BACKEND-FOUNDATION.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-BUSINESS-ENGINE",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-BUSINESS-ENGINE.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-CODE-REVIEW",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-CODE-REVIEW.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-CONTRACT",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-CONTRACT.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-CRAWLER-PIPELINE",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-CRAWLER-PIPELINE.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-DATA-IMPORT",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-DATA-IMPORT.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-DATA-MODEL-MIGRATION",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-DATA-MODEL-MIGRATION.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-DEPLOY-ENV",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-DEPLOY-ENV.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-DESIGN-TOKEN-ASSET-INVENTORY",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-DESIGN-TOKEN-ASSET-INVENTORY.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-DEV-FEATURE",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-DEV-FEATURE.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-DOCS-HANDOFF",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-DOCS-HANDOFF.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-EXPORT-DOWNLOAD",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-EXPORT-DOWNLOAD.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-EXTERNAL-DATA",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-EXTERNAL-DATA.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-FINAL-GATE",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-FINAL-GATE.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-FRONTEND-COMPONENT",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-FRONTEND-COMPONENT.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-FRONTEND-PAGE",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-FRONTEND-PAGE.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-FRONTEND-SHELL",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-FRONTEND-SHELL.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-HARNESS-EVIDENCE-GATE",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-HARNESS-EVIDENCE-GATE.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-INTAKE",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-INTAKE.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-LEGACY-MIGRATION",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-LEGACY-MIGRATION.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-LOCAL-ONLY-GUARD",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-LOCAL-ONLY-GUARD.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-LOCAL-SMOKE",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-LOCAL-SMOKE.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-LOCALE-ENCODING-GUARD",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-LOCALE-ENCODING-GUARD.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-METRIC-DELTA-ENGINE",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-METRIC-DELTA-ENGINE.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-MINIAPP-PAGE",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-MINIAPP-PAGE.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-MINIAPP-SHELL",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-MINIAPP-SHELL.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-OBSERVABILITY",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-OBSERVABILITY.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-ORCH-T00",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-ORCH-T00.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-OWNER-E2E",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-OWNER-E2E.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-OWNER-SCENARIO",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-OWNER-SCENARIO.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-PAGE-CLICK-API",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-PAGE-CLICK-API.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-PAYMENT-ENTITLEMENT",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-PAYMENT-ENTITLEMENT.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-PERFORMANCE",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-PERFORMANCE.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-QUOTA-RATE-LIMIT",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-QUOTA-RATE-LIMIT.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-REF-MAP",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-REF-MAP.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-RELEASE-RUNBOOK",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-RELEASE-RUNBOOK.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-REPAIR",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-REPAIR.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-REPORT-CARD-RENDERER",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-REPORT-CARD-RENDERER.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-REPORT-GUARD",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-REPORT-GUARD.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-REQ-MATRIX",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-REQ-MATRIX.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-SCAFFOLD",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-SCAFFOLD.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-SCHEDULER-JOB",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-SCHEDULER-JOB.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-SCREENSHOT-PIXEL-HARNESS",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-SCREENSHOT-PIXEL-HARNESS.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-SECURITY",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-SECURITY.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-TEST-E2E",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-TEST-E2E.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-TEST-INTEGRATION",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-TEST-INTEGRATION.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-TEST-UNIT",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-TEST-UNIT.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-UI-MAP",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-UI-MAP.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-VISUAL-COMPARE",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-VISUAL-COMPARE.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-VISUAL-REPAIR",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute\\references\\templates\\TPL-VISUAL-REPAIR.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    }
+  ]
+}

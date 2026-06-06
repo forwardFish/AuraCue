@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-07",
+  "route": "/activate/:id",
+  "pagePath": "pages/activate/index",
+  "state": "activate-hold-to-seal",
+  "ownerScenario": "SCN-006",
+  "sourceReference": "docs/UI/小程序/P0-07-Activate-选择锚点并长按封存.png",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "anchor choices",
+      "status": "PASS"
+    },
+    {
+      "label": "Hold to Seal Your Aura",
+      "status": "PASS"
+    },
+    {
+      "label": "Cancel Seal",
+      "status": "PASS"
+    },
+    {
+      "label": "disabled before anchor",
+      "status": "PASS"
+    }
+  ]
+}

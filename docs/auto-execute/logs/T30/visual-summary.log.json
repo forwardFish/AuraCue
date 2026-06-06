@@ -1,0 +1,90 @@
+﻿{
+    "taskId":  "T30",
+    "status":  "REPAIR_REQUIRED",
+    "generatedAt":  "2026-05-27T03:31:47.5795699Z",
+    "command":  "node scripts/t26-visual-capture-pixel-diff-harness.mjs",
+    "uiRange":  "UI-15..UI-18",
+    "viewport":  {
+                     "height":  1672,
+                     "width":  941
+                 },
+    "threshold":  0.005,
+    "actualPngCount":  4,
+    "diffPngCount":  4,
+    "metricsJsonCount":  4,
+    "finalVisualConclusion":  "REPAIR_REQUIRED",
+    "summaryNote":  "T30 produced real PNG/diff/metrics evidence for UI-15..UI-18. Required text/control checks are clean, but strict pixel ratios remain above the 0.005 gate.",
+    "screens":  [
+                    {
+                        "uiId":  "UI-15",
+                        "actualPath":  "docs/auto-execute/screenshots/ui-one-to-one/T30/actual/UI-15-actual.png",
+                        "diffPath":  "docs/auto-execute/screenshots/ui-one-to-one/T30/diff/UI-15-diff.png",
+                        "metricsPath":  "docs/auto-execute/screenshots/ui-one-to-one/T30/metrics/UI-15-metrics.json",
+                        "diffRatio":  0.721088,
+                        "thresholdStatus":  "FAIL",
+                        "missingCoreText":  [
+
+                                            ],
+                        "missingRequiredControls":  [
+
+                                                    ],
+                        "finalScreenVerdict":  "REPAIR_REQUIRED",
+                        "fullScreenReferenceMounted":  false,
+                        "remoteVisualDependency":  false
+                    },
+                    {
+                        "uiId":  "UI-16",
+                        "actualPath":  "docs/auto-execute/screenshots/ui-one-to-one/T30/actual/UI-16-actual.png",
+                        "diffPath":  "docs/auto-execute/screenshots/ui-one-to-one/T30/diff/UI-16-diff.png",
+                        "metricsPath":  "docs/auto-execute/screenshots/ui-one-to-one/T30/metrics/UI-16-metrics.json",
+                        "diffRatio":  0.518919,
+                        "thresholdStatus":  "FAIL",
+                        "missingCoreText":  [
+
+                                            ],
+                        "missingRequiredControls":  [
+
+                                                    ],
+                        "finalScreenVerdict":  "REPAIR_REQUIRED",
+                        "fullScreenReferenceMounted":  false,
+                        "remoteVisualDependency":  false
+                    },
+                    {
+                        "uiId":  "UI-17",
+                        "actualPath":  "docs/auto-execute/screenshots/ui-one-to-one/T30/actual/UI-17-actual.png",
+                        "diffPath":  "docs/auto-execute/screenshots/ui-one-to-one/T30/diff/UI-17-diff.png",
+                        "metricsPath":  "docs/auto-execute/screenshots/ui-one-to-one/T30/metrics/UI-17-metrics.json",
+                        "diffRatio":  0.308903,
+                        "thresholdStatus":  "FAIL",
+                        "missingCoreText":  [
+
+                                            ],
+                        "missingRequiredControls":  [
+
+                                                    ],
+                        "finalScreenVerdict":  "REPAIR_REQUIRED",
+                        "fullScreenReferenceMounted":  false,
+                        "remoteVisualDependency":  false
+                    },
+                    {
+                        "uiId":  "UI-18",
+                        "actualPath":  "docs/auto-execute/screenshots/ui-one-to-one/T30/actual/UI-18-actual.png",
+                        "diffPath":  "docs/auto-execute/screenshots/ui-one-to-one/T30/diff/UI-18-diff.png",
+                        "metricsPath":  "docs/auto-execute/screenshots/ui-one-to-one/T30/metrics/UI-18-metrics.json",
+                        "diffRatio":  0.369695,
+                        "thresholdStatus":  "FAIL",
+                        "missingCoreText":  [
+
+                                            ],
+                        "missingRequiredControls":  [
+
+                                                    ],
+                        "finalScreenVerdict":  "REPAIR_REQUIRED",
+                        "fullScreenReferenceMounted":  false,
+                        "remoteVisualDependency":  false
+                    }
+                ],
+    "blockers":  [
+
+                 ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "auracue",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AuraCue MVP local WeChat mini-program verification workspace.",
+  "type": "module",
+  "scripts": {
+    "dev:api": "node apps/api/src/server.mjs",
+    "dev:web": "pnpm --filter @auracue/web dev",
+    "build:web": "pnpm --filter @auracue/web build",
+    "package:web:google": "node scripts/package-web-google.mjs",
+    "dev:weapp": "node scripts/verify-wechat-routes.mjs",
+    "health:write": "node scripts/write-health-evidence.mjs",
+    "lint": "node scripts/lint-local-only.mjs",
+    "smoke": "node scripts/t01-smoke.mjs",
+    "test": "node scripts/t01-smoke.mjs",
+    "test:web": "pnpm --filter @auracue/web test",
+    "test:web:db": "pnpm --filter @auracue/web test:db",
+    "visual:t26": "node scripts/t26-visual-capture-pixel-diff-harness.mjs",
+    "typecheck": "node scripts/typecheck-placeholders.mjs",
+    "typecheck:web": "pnpm --filter @auracue/web typecheck"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

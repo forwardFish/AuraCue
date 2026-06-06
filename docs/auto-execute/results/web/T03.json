@@ -1,0 +1,132 @@
+{
+  "taskId": "T03",
+  "taskName": "Prisma Data Model Seed",
+  "status": "COMPLETE",
+  "verdict": "PASS",
+  "productPassClaimed": false,
+  "scope": "Implement Web P0 Prisma schema, migration, seed, local DB strategy, and P0 model readback tests only.",
+  "coveredIds": [
+    "DB-AnonymousUser",
+    "DB-OutfitUpload",
+    "DB-DrawSession",
+    "DB-GenerationJob",
+    "DB-AuraCard",
+    "DB-Activation",
+    "DB-SavedCard",
+    "DB-ShareEvent",
+    "DB-AnalyticsEvent",
+    "DB-CardTemplate",
+    "IDEMPOTENCY-draw",
+    "IDEMPOTENCY-generate",
+    "IDEMPOTENCY-save",
+    "IDEMPOTENCY-seal"
+  ],
+  "commands": [
+    {
+      "command": "pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web prisma generate",
+      "status": "FAIL_THEN_PASS",
+      "evidence": "Initial Prisma 7 failures were fixed by adding prisma.config.ts, removing datasource url from schema.prisma, regenerating after adapter install, and using explicit Prisma Client adapter construction."
+    },
+    {
+      "command": "pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web prisma db push",
+      "status": "PASS",
+      "evidence": "Local SQLite database apps/web/t03-local.sqlite was created/synced non-destructively from apps/web/prisma/schema.prisma."
+    },
+    {
+      "command": "pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web add @prisma/adapter-better-sqlite3 better-sqlite3",
+      "status": "PASS",
+      "evidence": "Installed Prisma 7 SQLite adapter dependencies required for direct Prisma Client readback."
+    },
+    {
+      "command": "pnpm.cmd run install in better-sqlite3 with workspace npm_config_cache/npm_config_devdir",
+      "status": "FAIL_THEN_PASS",
+      "evidence": "Native binding build first failed on sandbox-denied user/D:\\tmp cache paths; final build passed using .pnpm-store/native-cache under the workspace."
+    },
+    {
+      "command": "pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web prisma db seed",
+      "status": "FAIL_THEN_PASS",
+      "evidence": "Seed initially failed on Prisma 7 client adapter and CJS import issues; final seed inserted anon_web_seed_001 and generated an AuraCard fixture."
+    },
+    {
+      "command": "pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web prisma migrate dev --name init --create-only",
+      "status": "PASS",
+      "evidence": "Generated apps/web/prisma/migrations/20260604010930_init/migration.sql against a separate local SQLite migration DB."
+    },
+    {
+      "command": "pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web test:db",
+      "status": "PASS",
+      "evidence": "Final readback verified all 10 P0 models, counts, fixture IDs, and draw/generate/save/seal idempotency keys."
+    },
+    {
+      "command": "pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web typecheck",
+      "status": "PASS",
+      "evidence": "tsc --noEmit passed after Prisma helper additions."
+    },
+    {
+      "command": "pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web lint",
+      "status": "PASS",
+      "evidence": "ESLint passed with max-warnings=0."
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "No whitespace errors reported."
+    }
+  ],
+  "evidence": {
+    "schema": "apps/web/prisma/schema.prisma",
+    "migration": "apps/web/prisma/migrations/20260604010930_init/migration.sql",
+    "seed": "apps/web/prisma/seed.mjs",
+    "prismaConfig": "apps/web/prisma.config.ts",
+    "repositoryHelpers": [
+      "apps/web/server/repositories/prisma-client.ts",
+      "apps/web/server/repositories/prisma-sqlite-adapter.ts",
+      "apps/web/server/repositories/prisma-sqlite-adapter.mjs",
+      "apps/web/server/repositories/readback.ts"
+    ],
+    "dbReadbackJson": "docs/auto-execute/evidence/web/T03/db-readback.json",
+    "commandLog": "docs/auto-execute/logs/web/T03-command-log.md",
+    "handoff": "docs/auto-execute/latest/web/T03-HANDOFF.md",
+    "resultJson": "docs/auto-execute/results/web/T03.json",
+    "testFile": "apps/web/tests/db-readback.test.mjs"
+  },
+  "localDbStrategy": {
+    "productionTarget": "PostgreSQL + Prisma remains the product target from the PRD/spec.",
+    "t03Validation": "SQLite via Prisma 7 and @prisma/adapter-better-sqlite3 was used for local, non-destructive, sandbox-safe schema/seed/readback validation.",
+    "databaseUrl": "file:./t03-local.sqlite",
+    "note": "Generated *.sqlite files are ignored; durable proof is the readback JSON and command log."
+  },
+  "readbackSummary": {
+    "counts": {
+      "AnonymousUser": 1,
+      "OutfitUpload": 1,
+      "DrawSession": 1,
+      "GenerationJob": 1,
+      "AuraCard": 1,
+      "AuraActivation": 1,
+      "SavedCard": 1,
+      "ShareEvent": 1,
+      "AnalyticsEvent": 3,
+      "CardTemplate": 3
+    },
+    "idempotency": {
+      "draw": "DrawSession @@unique([userId, drawSeed])",
+      "generate": "GenerationJob @@unique([drawSessionId, drawPosition])",
+      "save": "SavedCard @@unique([userId, cardId])",
+      "seal": "AuraActivation @@unique([cardId, userId, anchorType, anchorLabel])"
+    }
+  },
+  "blockers": [],
+  "nextRepair": null,
+  "rerunResumeState": {
+    "canRerun": true,
+    "commands": [
+      "$env:DATABASE_URL='file:./t03-local.sqlite'; pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web prisma generate",
+      "$env:DATABASE_URL='file:./t03-local.sqlite'; pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web prisma db push",
+      "$env:DATABASE_URL='file:./t03-local.sqlite'; pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web prisma db seed",
+      "$env:DATABASE_URL='file:./t03-local.sqlite'; pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web test:db"
+    ],
+    "notes": "Use pnpm.cmd and --config.store-dir=.pnpm-store on this Windows surface. If better-sqlite3 binding is missing after a clean install, run its install script with npm_config_cache and npm_config_devdir under .pnpm-store/native-cache."
+  },
+  "exitCondition": "T04-T07 can use @auracue/web Prisma schema, generated client, and repository helpers to implement /api/v1/*; T03 did not implement API routes or later tasks."
+}

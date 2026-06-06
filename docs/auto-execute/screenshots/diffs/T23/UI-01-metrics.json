@@ -1,0 +1,15 @@
+{
+  "taskId": "T23",
+  "sourceTaskId": "T22",
+  "uiId": "UI-01",
+  "route": "/",
+  "pagePath": "pages/index/index",
+  "sourceReference": "docs/UI/小程序/P0-01-Mood-首页选择今日状态.png",
+  "repairDecision": "scope_confirmed_waiting_for_runtime_evidence",
+  "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+  "canClaimPixelPerfect": false,
+  "diffRatio": null,
+  "knownDifferences": [
+    "Runtime screenshot, diff image, and pixel metrics still need to be generated for final P0."
+  ]
+}

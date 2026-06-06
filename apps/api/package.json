@@ -1,0 +1,19 @@
+{
+  "name": "@auracue/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.mjs",
+    "health:write": "node ../../scripts/write-health-evidence.mjs",
+    "test": "node tests/health.test.mjs && node tests/local-repository.test.mjs && node tests/generation-api.test.mjs && node tests/card-result-api.test.mjs && node tests/unlock-payment-invite-api.test.mjs && node tests/save-share-render-analytics-api.test.mjs && node tests/share-card-renderer-api.test.mjs",
+    "test:db": "node tests/local-repository.test.mjs",
+    "test:generation": "node tests/generation-api.test.mjs",
+    "test:card": "node tests/card-result-api.test.mjs",
+    "test:unlock": "node tests/unlock-payment-invite-api.test.mjs",
+    "test:t07": "node tests/save-share-render-analytics-api.test.mjs",
+    "test:t17": "node tests/share-card-renderer-api.test.mjs",
+    "test:t18": "node tests/t18-analytics-safety-copy-guard.test.mjs",
+    "test:t20": "node tests/all-api-db-readback.test.mjs"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "taskId": "T11",
+  "taskName": "Web Share Save Pages",
+  "templateId": "TPL-FRONTEND-PAGE",
+  "status": "COMPLETE",
+  "verdict": "PASS_FOR_T11_SCOPE",
+  "productPassClaimed": false,
+  "timestamp": "2026-06-05T18:01:34.2207423+08:00",
+  "scope": {
+    "executedOnlyTask": "T11",
+    "implementedRoutes": [
+      "/share/[id]",
+      "/saved/[id]"
+    ],
+    "usedProductionCloud": false,
+    "usedProductionDb": false,
+    "usedProductionAi": false,
+    "usedSecrets": false,
+    "notes": "T11 implemented share/save Web pages only. Runtime browser clicks, real screenshots, live API transcript, and final product PASS remain T13-T16 scope."
+  },
+  "coveredIds": [
+    "UI-008",
+    "UI-009",
+    "API-008",
+    "API-011",
+    "API-012",
+    "Owner-005"
+  ],
+  "changedFiles": [
+    "apps/web/app/share/[id]/page.tsx",
+    "apps/web/app/saved/[id]/page.tsx",
+    "apps/web/components/share-save-flow.tsx",
+    "apps/web/app/globals.css",
+    "apps/web/tests/pages/run-page-tests.mjs",
+    "apps/web/tests/pages/share-save.test.mjs",
+    "apps/web/tests/smoke-routes.test.mjs",
+    "docs/auto-execute/evidence/web/T11/page-contract.json",
+    "docs/auto-execute/evidence/web/T11/share-action-api-transcript.json",
+    "docs/auto-execute/logs/web/T11-page-test-log.md",
+    "docs/auto-execute/logs/web/T11-typecheck-log.md",
+    "docs/auto-execute/logs/web/T11-route-smoke-log.md",
+    "docs/auto-execute/logs/web/T11-lint-log.md",
+    "docs/auto-execute/logs/web/T11-command-log.md",
+    "docs/auto-execute/results/web/T11.json",
+    "docs/auto-execute/latest/web/T11-HANDOFF.md"
+  ],
+  "commands": [
+    {
+      "command": "pnpm.cmd --filter @auracue/web test:pages -- share-save",
+      "status": "PASS_AFTER_REPAIR",
+      "exitCode": 0,
+      "evidence": "docs/auto-execute/logs/web/T11-page-test-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web typecheck",
+      "status": "PASS",
+      "exitCode": 0,
+      "evidence": "docs/auto-execute/logs/web/T11-typecheck-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web test",
+      "status": "PASS",
+      "exitCode": 0,
+      "evidence": "docs/auto-execute/logs/web/T11-route-smoke-log.md",
+      "note": "pnpm emitted a sandbox filter warning, then executed @auracue/web smoke routes and exited 0."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web lint",
+      "status": "PASS",
+      "exitCode": 0,
+      "evidence": "docs/auto-execute/logs/web/T11-lint-log.md"
+    },
+    {
+      "command": "Get-Content -Raw docs/auto-execute/results/web/T11.json | ConvertFrom-Json; Test-Path docs/auto-execute/latest/web/T11-HANDOFF.md; Test-Path docs/auto-execute/logs/web/T11-command-log.md",
+      "status": "PASS",
+      "exitCode": 0,
+      "evidence": "PowerShell exit check parsed T11.json and verified handoff, command log, page contract, share transcript, and T11-prefixed verification logs exist."
+    }
+  ],
+  "evidence": [
+    {
+      "type": "page_contract",
+      "path": "docs/auto-execute/evidence/web/T11/page-contract.json",
+      "status": "PASS",
+      "summary": "Verified /share/[id] and /saved/[id] no longer use placeholders, required copy/actions exist, render/save/share client calls are wired, native-share unavailable falls back, clipboard/download mocks are represented, render failure exposes fallback plus Generate Again, and forbidden paywall copy is absent."
+    },
+    {
+      "type": "share_action_api_transcript",
+      "path": "docs/auto-execute/evidence/web/T11/share-action-api-transcript.json",
+      "status": "PASS",
+      "summary": "Documents T11 action-to-API mapping for load/render, copy, download, native share/fallback, and save-to-collection."
+    },
+    {
+      "type": "static_checks",
+      "path": "docs/auto-execute/logs/web/T11-typecheck-log.md",
+      "status": "PASS",
+      "summary": "TypeScript completed with no emit and no errors."
+    },
+    {
+      "type": "lint",
+      "path": "docs/auto-execute/logs/web/T11-lint-log.md",
+      "status": "PASS",
+      "summary": "ESLint completed with max-warnings=0."
+    },
+    {
+      "type": "route_smoke",
+      "path": "docs/auto-execute/logs/web/T11-route-smoke-log.md",
+      "status": "PASS",
+      "summary": "Smoke route suite recognizes SharePageFlow and SavedPageFlow for the T11 routes."
+    }
+  ],
+  "repairRecord": [
+    {
+      "issue": "Initial share-save page test failed because the static assertion expected an inline channel property for web_share while the implementation computes the channel from native-share availability.",
+      "repair": "Updated the assertion to verify the web_share literal and reran the required page test successfully."
+    }
+  ],
+  "blockers": [],
+  "nextRepair": null,
+  "rerunResumeState": {
+    "canRerun": true,
+    "safeToResumeAt": "T12",
+    "commands": [
+      "pnpm.cmd --filter @auracue/web test:pages -- share-save",
+      "pnpm.cmd --filter @auracue/web typecheck",
+      "pnpm.cmd --filter @auracue/web test",
+      "pnpm.cmd --filter @auracue/web lint",
+      "Get-Content -Raw docs/auto-execute/results/web/T11.json | ConvertFrom-Json"
+    ],
+    "notes": "Use pnpm.cmd on this Windows PowerShell surface. T11 did not start a live dev server, click a browser, or prove DB readback; T13/T14/T12 own those later gates."
+  },
+  "exitCondition": "T13/T14 can cover the share/save stage after activation with Copy Link, Share fallback/native share, Save Image/download recording, Save to AuraCue, and Saved Back Home behavior."
+}

@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-05",
+  "route": "/create/draw",
+  "pagePath": "pages/create/draw",
+  "state": "draw-generation-loading",
+  "ownerScenario": "SCN-004",
+  "sourceReference": "docs/UI/小程序/P0-05-Reveal-生成中抽卡仪式.png",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "pending generation",
+      "status": "PASS"
+    },
+    {
+      "label": "duplicate submit blocked",
+      "status": "PASS"
+    },
+    {
+      "label": "retry on failure",
+      "status": "PASS"
+    }
+  ]
+}

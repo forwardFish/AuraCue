@@ -1,0 +1,49 @@
+{
+  "taskId": "T33",
+  "uiId": "UI-10",
+  "viewport": {
+    "width": 941,
+    "height": 1672
+  },
+  "threshold": 0.005,
+  "captureMode": "local DOM render from current page view-model HTML renderers under apps/wechat-mini/src/pages/**",
+  "referencePath": "docs/UI/小程序/07C-邀请解锁_好友承接页.png",
+  "actualPath": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-10-actual.png",
+  "diffPath": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-10-diff.png",
+  "htmlPath": "docs/auto-execute/screenshots/ui-one-to-one/T33/html/UI-10-actual.html",
+  "referenceDimensions": {
+    "width": 941,
+    "height": 1672
+  },
+  "actualDimensions": {
+    "width": 941,
+    "height": 1672
+  },
+  "sizeMatches": true,
+  "diffRatio": 0.337765,
+  "mismatchedPixels": 531424,
+  "comparedPixels": 1573352,
+  "totalPixels": 1573352,
+  "maxChannelDelta": 255,
+  "remainingBoundingBox": {
+    "x": 84,
+    "y": 3,
+    "width": 774,
+    "height": 1600
+  },
+  "remainingRegions": [
+    {
+      "type": "mismatched-pixels-bounding-box",
+      "x": 84,
+      "y": 3,
+      "width": 774,
+      "height": 1600
+    }
+  ],
+  "thresholdStatus": "FAIL",
+  "missingCoreText": [],
+  "missingRequiredControls": [],
+  "fullScreenReferenceMounted": false,
+  "remoteVisualDependency": false,
+  "finalScreenVerdict": "REPAIR_REQUIRED"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "taskId": "T16",
+  "checkedFiles": [
+    "apps/wechat-mini/src/pages/share/story.js",
+    "apps/wechat-mini/src/pages/share/channels.js",
+    "apps/wechat-mini/src/pages/saved/success.js",
+    "apps/wechat-mini/src/pages/share/share-save-page.mjs"
+  ],
+  "forbiddenNeedlesAbsent": [
+    "wx.requestPayment(",
+    "wx.cloud",
+    "production",
+    "secret"
+  ],
+  "externalPlatformShareUsed": false,
+  "localMockShareOnly": true,
+  "productionUrlUsed": false,
+  "secretUsed": false
+}

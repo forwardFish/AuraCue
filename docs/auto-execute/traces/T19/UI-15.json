@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-15",
+  "route": "/share/:id",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "Save",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    },
+    {
+      "label": "Share",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    },
+    {
+      "label": "Copy Link",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    }
+  ],
+  "analytics": [
+    {
+      "eventName": "page_view_share_story",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    },
+    {
+      "eventName": "save_card",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    },
+    {
+      "eventName": "share_card",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    },
+    {
+      "eventName": "copy_share_link",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    }
+  ],
+  "upstreamTrace": "docs/auto-execute/traces/T16/share-save.json"
+}

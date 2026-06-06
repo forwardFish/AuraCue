@@ -1,0 +1,165 @@
+{
+  "status": "PASS",
+  "apiCases": {
+    "API-004-C01-mock-unlock-payment-success": {
+      "status": "PASS",
+      "response": {
+        "entitled": true,
+        "entitlementId": "entitlement-002",
+        "cardId": "card-004",
+        "method": "payment",
+        "orderId": "order-004"
+      }
+    },
+    "API-004-C02-idempotent-duplicate-unlock": {
+      "status": "PASS",
+      "response": {
+        "entitled": true,
+        "entitlementId": "entitlement-002",
+        "cardId": "card-004",
+        "method": "payment",
+        "orderId": "order-004"
+      }
+    },
+    "API-004-payment-required-conflict": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "PAYMENT_REQUIRED",
+          "message": "Complete the local mock payment order before payment unlock.",
+          "details": {
+            "cardId": "card-locked-001",
+            "orderId": "order-003"
+          }
+        }
+      }
+    },
+    "API-004-restore-purchase-fixture": {
+      "status": "PASS",
+      "response": {
+        "entitled": true,
+        "entitlementId": "entitlement-003",
+        "cardId": "card-saved-001",
+        "method": "restore",
+        "orderId": null
+      }
+    },
+    "API-005-C01-create-mock-order": {
+      "status": "PASS",
+      "response": {
+        "orderId": "order-003",
+        "cardId": "card-004",
+        "amount": 1.99,
+        "currency": "USD",
+        "status": "pending",
+        "entitlement": null
+      }
+    },
+    "API-005-validation": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Mock payment order input is invalid.",
+          "details": {
+            "cardId": "Expected a cardId.",
+            "amount": "Expected a positive number.",
+            "currency": "Only USD mock pricing is supported in the local MVP."
+          }
+        }
+      }
+    },
+    "API-005-not-found": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "NOT_FOUND",
+          "message": "Aura card was not found.",
+          "details": {
+            "cardId": "card-does-not-exist"
+          }
+        }
+      }
+    },
+    "API-005-C02-failed-payment": {
+      "status": "PASS",
+      "response": {
+        "orderId": "order-003",
+        "cardId": "card-004",
+        "amount": 1.99,
+        "currency": "USD",
+        "status": "failed",
+        "entitlement": null
+      }
+    },
+    "API-005-C02-retry-payment-success": {
+      "status": "PASS",
+      "response": {
+        "orderId": "order-004",
+        "cardId": "card-004",
+        "amount": 1.99,
+        "currency": "USD",
+        "status": "paid",
+        "entitlement": {
+          "entitled": true,
+          "entitlementId": "entitlement-002",
+          "cardId": "card-004",
+          "method": "payment",
+          "orderId": "order-004"
+        }
+      }
+    },
+    "API-006-C01-invite-progress-complete": {
+      "status": "PASS",
+      "response": {
+        "cardId": "card-locked-001",
+        "inviteCode": "INVITE-T06",
+        "progress": 3,
+        "required": 3,
+        "completed": true,
+        "entitlement": {
+          "entitled": true,
+          "entitlementId": "entitlement-004",
+          "cardId": "card-locked-001",
+          "method": "invite",
+          "orderId": null
+        }
+      }
+    },
+    "API-006-C02-duplicate-invite": {
+      "status": "PASS",
+      "response": {
+        "cardId": "card-locked-001",
+        "inviteCode": "INVITE-T06",
+        "progress": 1,
+        "required": 3,
+        "completed": false,
+        "entitlement": null
+      }
+    },
+    "API-006-validation": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Invite event input is invalid.",
+          "details": {
+            "friendId": "friend_accept requires a friendId for duplicate-safe progress."
+          }
+        }
+      }
+    },
+    "API-006-not-found": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "NOT_FOUND",
+          "message": "Aura card was not found.",
+          "details": {
+            "cardId": "card-does-not-exist"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>AuraCue - Error Feedback</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Outfit:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style data-purpose="custom-utilities">
+    :root {
+      --gold-primary: #D4AF37;
+      --text-dark: #0F172A;
+      --text-muted: #475569;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      /* Soft ethereal mesh gradient background */
+      background: radial-gradient(circle at 50% 30%, #FDF4F6 0%, #FBF1F0 30%, #F5E6E8 60%, #F3EAE8 100%);
+      min-height: 100vh;
+      color: var(--text-dark);
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Top Left Close Button */
+    .btn-close {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: #1E1B4B;
+    }
+
+    /* Main Card Artwork Area */
+    .artwork-container {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      aspect-ratio: 3/4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Central Glass Card */
+    .glass-card {
+      width: 70%;
+      height: 85%;
+      border-radius: 16px;
+      border: 1.5px solid rgba(212, 175, 55, 0.4);
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+      backdrop-filter: blur(4px);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      z-index: 10;
+    }
+
+    /* Decorative inner lines for glass card */
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 12px;
+    }
+
+    /* Cloud Background behind card */
+    .cloud-bg {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140%;
+      height: 60%;
+      background-image: radial-gradient(circle at center, rgba(235, 185, 205, 0.4) 0%, transparent 70%);
+      filter: blur(20px);
+      z-index: 5;
+    }
+
+    /* Error Badge */
+    .error-badge {
+      position: absolute;
+      top: 20%;
+      right: 5%;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: radial-gradient(circle at top left, #FDB7C4, #E9859A);
+      border: 1.5px solid rgba(255,255,255,0.8);
+      box-shadow: 0 0 20px rgba(233, 133, 154, 0.6), inset 0 0 10px rgba(255,255,255,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+    }
+
+    .error-badge svg {
+      width: 28px;
+      height: 28px;
+      color: white;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: linear-gradient(90deg, #A797D4 0%, #D49CA9 50%, #F2C3A8 100%);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15), inset 0 2px 4px rgba(255,255,255,0.4);
+      color: #1E1B4B;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: #1E1B4B;
+      font-weight: 400;
+    }
+
+    /* Decorative Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 200px;
+      margin: 1.5rem auto;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+      flex-grow: 1;
+    }
+    .divider-icon {
+      margin: 0 8px;
+      color: var(--gold-primary);
+    }
+
+    /* Sparkles */
+    .sparkle {
+      position: absolute;
+      color: #FFF;
+      text-shadow: 0 0 8px #FFF, 0 0 15px var(--gold-primary);
+    }
+    .sparkle-btn-1 { top: 10px; left: 15px; font-size: 14px; }
+    .sparkle-btn-2 { bottom: 10px; right: 15px; font-size: 10px; }
+
+  </style>
+</head>
+<body class="antialiased flex flex-col items-center justify-between p-6">
+<!-- BEGIN: Header Section -->
+<header class="w-full flex justify-between items-center relative z-50">
+<button aria-label="Close" class="btn-close">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center text-[#D4AF37]">
+<svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+<path d="M12 2C12 2 15 5 15 9C15 13 12 18 12 18C12 18 9 13 9 9C9 5 12 2 12 2Z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 22C12 22 17 20 19 16C21 12 22 8 22 8C22 8 18 10 15 11" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 22C12 22 7 20 5 16C3 12 2 8 2 8C2 8 6 10 9 11" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="font-serif tracking-widest text-xs uppercase font-medium">AuraCue</span>
+</div>
+<!-- Empty div for flexbox spacing balance -->
+<div class="w-11"></div>
+</header>
+<!-- END: Header Section -->
+<!-- BEGIN: Main Content Area -->
+<main class="w-full flex-1 flex flex-col items-center justify-center mt-8 mb-6 z-10">
+<!-- Artwork Graphic -->
+<div class="artwork-container mb-8" data-purpose="visual-graphic">
+<!-- Decorative background clouds (simulated with CSS blur) -->
+<div class="cloud-bg"></div>
+<!-- The Tarot-style Glass Card -->
+<div class="glass-card flex flex-col items-center justify-center p-4">
+<!-- Inner Card Graphics (Abstract representation) -->
+<svg class="w-full h-full opacity-40 text-[#D4AF37]" fill="none" stroke="currentColor" stroke-width="0.5" viewBox="0 0 100 150">
+<!-- Top Lotus -->
+<path d="M50 15 C52 10, 55 12, 55 15 C55 18, 50 20, 50 20 C50 20, 45 18, 45 15 C45 12, 48 10, 50 15 Z"></path>
+<!-- Inner Circle Orbit -->
+<circle cx="50" cy="70" r="35" stroke-dasharray="2 2"></circle>
+<!-- Moon -->
+<path d="M55 55 A 15 15 0 0 0 55 85 A 18 18 0 0 1 55 55" fill="currentColor" opacity="0.3" stroke="none"></path>
+<!-- Bottom Lotus -->
+<path d="M50 130 C53 125, 57 127, 57 130 C57 133, 50 135, 50 135 C50 135, 43 133, 43 130 C43 127, 47 125, 50 130 Z"></path>
+</svg>
+</div>
+<!-- Error Badge Overlay -->
+<div class="error-badge">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+<!-- Typography Section -->
+<div class="text-center px-4 max-w-sm mb-6 relative">
+<h1 class="font-display-lg text-display-lg text-on-background leading-tight mb-2">Your aura slipped away for a second.
+        <span class="absolute right-0 bottom-8 text-2xl text-[#D4AF37]">✨</span></h1>
+<div class="divider">
+<span class="divider-icon text-xs">✦</span>
+</div>
+<p class="text-[#4F46E5] text-opacity-80 text-[15px]">
+        Let's reconnect and try again.
+      </p>
+</div>
+</main>
+<!-- END: Main Content Area -->
+<!-- BEGIN: Action Buttons -->
+<footer class="w-full max-w-sm space-y-4 pb-8 z-50">
+<button class="btn-primary w-full py-4 rounded-2xl text-lg flex items-center justify-center transition-transform active:scale-[0.98]">
+<span class="sparkle sparkle-btn-1">✦</span>
+      Try Again
+      <span class="sparkle sparkle-btn-2">✦</span>
+</button>
+<button class="btn-secondary w-full py-4 rounded-2xl text-[17px] flex items-center justify-center gap-2 transition-transform active:scale-[0.98]">
+<svg class="w-5 h-5 text-[#D4AF37]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+<path d="M12 4C12 4 16 8 16 12C16 17 12 21 12 21C12 21 8 17 8 12C8 8 12 4 12 4Z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 21C12 21 18 19 21 14C23 10 21 6 21 6C21 6 16 8 12 9" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 21C12 21 6 19 3 14C1 10 3 6 3 6C3 6 8 8 12 9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+      Change Scene
+    </button>
+</footer>
+<!-- END: Action Buttons -->
+
+
+</body></html>

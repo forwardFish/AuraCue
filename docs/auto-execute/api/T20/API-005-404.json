@@ -1,0 +1,21 @@
+{
+  "apiId": "API-005",
+  "caseId": "N01",
+  "caseKey": "API-005-N01",
+  "caseType": "not found",
+  "method": "POST",
+  "path": "/api/payment-orders/mock",
+  "expectedStatus": 404,
+  "actualStatus": 404,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-005-404.json",
+  "response": {
+    "error": {
+      "code": "NOT_FOUND",
+      "message": "Aura card was not found.",
+      "details": {
+        "cardId": "card-does-not-exist"
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "taskId": "T12",
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "summary": "Implemented UI-06 free preview locked result at /result/:id with API-003 free-view consumption, visible free aura fields, blurred locked preview rows, and unlock/invite entry navigation.",
+  "requirementIds": ["REQ-009"],
+  "uiIds": ["UI-06"],
+  "apiIds": ["API-003", "API-010"],
+  "ownerScenarios": ["SCN-005", "SCN-006", "SCN-007"],
+  "changedFiles": [
+    "apps/wechat-mini/package.json",
+    "apps/wechat-mini/src/pages/result/free-preview-page.mjs",
+    "apps/wechat-mini/src/pages/result/free-preview.js",
+    "apps/wechat-mini/src/pages/result/free-preview.json",
+    "apps/wechat-mini/src/pages/result/free-preview.wxml",
+    "apps/wechat-mini/src/pages/result/free-preview.wxss",
+    "apps/wechat-mini/tests/t12-free-preview-locked-result.test.mjs",
+    "docs/auto-execute/results/T12.json",
+    "docs/auto-execute/latest/T12-HANDOFF.md"
+  ],
+  "commandsRun": [
+    {
+      "command": "pnpm --filter @auracue/wechat-mini test:t12",
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "notes": "PowerShell blocked pnpm.ps1 by execution policy before command logs were created; reran with pnpm.cmd."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t12",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "log": "docs/auto-execute/logs/T12/free-preview-locked-result-test-command.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "log": "docs/auto-execute/logs/T12/wechat-mini-test.log"
+    },
+    {
+      "command": "node scripts/verify-wechat-routes.mjs",
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/T12/wechat-route-verify.log"
+    },
+    {
+      "command": "pnpm.cmd lint",
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/T12/lint.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini typecheck",
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/T12/typecheck.log"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/T12/diff-check.log"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/traces/T12/free-preview.json",
+    "docs/auto-execute/screenshots/T12/UI-06-free-preview.html",
+    "docs/auto-execute/screenshots/T12/UI-06-free-preview-render-summary.json",
+    "docs/auto-execute/logs/T12/free-preview-locked-result-test-command.log",
+    "docs/auto-execute/logs/T12/wechat-mini-test.log",
+    "docs/auto-execute/logs/T12/wechat-route-verify.log",
+    "docs/auto-execute/logs/T12/lint.log",
+    "docs/auto-execute/logs/T12/typecheck.log",
+    "docs/auto-execute/logs/T12/diff-check.log"
+  ],
+  "blockers": [
+    {
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "reason": "Automated raster screenshot and pixel-diff evidence were unavailable in this task boundary. Structural HTML capture and render summary were produced instead; pure visual PASS is not claimed."
+    }
+  ],
+  "localOnly": {
+    "payment": "not-used-on-preview",
+    "ai": "fixture-api-client-no-provider-call",
+    "analytics": "local-fixture-client",
+    "storage": "local-evidence-files-only",
+    "db": "no-production-write"
+  },
+  "nextSteps": [
+    "T13 can implement unlock and invite destination pages.",
+    "T22/T23 must produce raster screenshot and visual diff evidence for UI-06 before any pure visual PASS claim."
+  ]
+}

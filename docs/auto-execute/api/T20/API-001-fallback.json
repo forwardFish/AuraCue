@@ -1,0 +1,22 @@
+{
+  "apiId": "API-001",
+  "caseId": "C03",
+  "caseKey": "API-001-C03",
+  "caseType": "timeout/fallback",
+  "method": "POST",
+  "path": "/api/generation-jobs",
+  "expectedStatus": 503,
+  "actualStatus": 503,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-001-fallback.json",
+  "response": {
+    "error": {
+      "code": "LOCAL_GENERATION_FAILURE",
+      "message": "The local generator could not finish this card. Please try again.",
+      "details": {
+        "jobId": "job-005",
+        "status": "failed"
+      }
+    }
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "status": "PASS",
+  "apiCases": {
+    "API-007-C01-save-card-success": {
+      "status": "PASS",
+      "response": {
+        "saved": true,
+        "cardId": "card-unlocked-001",
+        "savedAt": "2026-05-26T00:00:00.000Z",
+        "source": "UI-14-save-card"
+      }
+    },
+    "API-007-idempotent-save": {
+      "status": "PASS",
+      "response": {
+        "saved": true,
+        "cardId": "card-unlocked-001",
+        "savedAt": "2026-05-26T00:00:00.000Z",
+        "source": "UI-17-repeat-save"
+      }
+    },
+    "API-007-validation": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Save card input is invalid.",
+          "details": {
+            "source": "Expected a non-empty save source."
+          }
+        }
+      }
+    },
+    "API-007-not-found": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "NOT_FOUND",
+          "message": "Aura card was not found.",
+          "details": {
+            "cardId": "card-does-not-exist"
+          }
+        }
+      }
+    },
+    "API-008-C01-share-event-success": {
+      "status": "PASS",
+      "response": {
+        "shareEventId": "share-003",
+        "cardId": "card-unlocked-001",
+        "channel": "moments",
+        "source": "UI-16-channel-picker"
+      }
+    },
+    "API-008-validation": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Share event input is invalid.",
+          "details": {
+            "channel": "Expected wechat, moments, copy_link, save_image, or story.",
+            "source": "Expected a non-empty share source."
+          }
+        }
+      }
+    },
+    "API-008-not-found": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "NOT_FOUND",
+          "message": "Aura card was not found.",
+          "details": {
+            "cardId": "card-does-not-exist"
+          }
+        }
+      }
+    },
+    "API-009-C01-render-share-image": {
+      "status": "PASS",
+      "response": {
+        "cardId": "card-unlocked-001",
+        "templateId": "template-story-001",
+        "format": "story-9x16",
+        "localPath": "local://share-images/card-unlocked-001-template-story-001.png",
+        "width": 1080,
+        "height": 1920,
+        "aspectRatio": "9:16",
+        "renderer": "deterministic-local-renderer",
+        "deterministicKey": "card-unlocked-001|template-story-001|Full Lucky Aura Card|Golden Comet Aura|warm gold|golden-night|Today I am carrying golden comet aura.",
+        "artifactKind": "svg-data-url",
+        "dataUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iQXVyYUN1ZSBHb2xkZW4gQ29tZXQgQXVyYSBzaGFyZSBjYXJkIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYXVyYWN1ZS1iZy1jYXJkLXVubG9ja2VkLTAwMSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMmExYTRhIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNDIlIiBzdG9wLWNvbG9yPSIjOGQ1YmZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNzIlIiBzdG9wLWNvbG9yPSIjZjQ4ZmIxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Q0YWYzNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwODAiIGhlaWdodD0iMTkyMCIgZmlsbD0idXJsKCNhdXJhY3VlLWJnLWNhcmQtdW5sb2NrZWQtMDAxKSIvPgogIDxyZWN0IHg9IjQyIiB5PSI0MiIgd2lkdGg9Ijk5NiIgaGVpZ2h0PSIxODM2IiByeD0iNjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q0YWYzNyIgc3Ryb2tlLXdpZHRoPSI0IiBvcGFjaXR5PSIwLjcyIi8+CiAgPHRleHQgeD0iNTQwIiB5PSIxNzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNkNGFmMzciIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSI0MiIgbGV0dGVyLXNwYWNpbmc9IjEwIj5BVVJBQ1VFPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMjkyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iODIiIGZvbnQtd2VpZ2h0PSI3MDAiPkZ1bGwgTHVja3kgQXVyYSBDYXJkPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMzgyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmN2RjIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQyIj5UaGUgU3VuPC90ZXh0PgogIDxyZWN0IHg9Ijk2IiB5PSIxMDgwIiB3aWR0aD0iODg4IiBoZWlnaHQ9IjY5NiIgcng9IjU0IiBmaWxsPSIjZmZmZGY4IiBvcGFjaXR5PSIwLjkyIi8+CiAgPHRleHQgeD0iNTQwIiB5PSIxMTk4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iNjgiIGZvbnQtd2VpZ2h0PSI3MDAiPkdvbGRlbiBDb21ldCBBdXJhPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMTI3MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzdhNmI1YyIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNCI+Z29sZGVuLW5pZ2h0PC90ZXh0PgogIDx0ZXh0IHg9IjE4MCIgeT0iMTM4MiIgZmlsbD0iIzdhNmI1YyIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCI+THVja3kgQ29sb3I8L3RleHQ+CiAgPHRleHQgeD0iOTAwIiB5PSIxMzgyIiB0ZXh0LWFuY2hvcj0iZW5kIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIj53YXJtIGdvbGQ8L3RleHQ+CiAgPHRleHQgeD0iMTgwIiB5PSIxNDgwIiBmaWxsPSIjN2E2YjVjIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIj5PdXRmaXQgRW5lcmd5PC90ZXh0PgogIDx0ZXh0IHg9IjkwMCIgeT0iMTQ4MCIgdGV4dC1hbmNob3I9ImVuZCIgZmlsbD0iIzJhMWE0YSIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9IjcwMCI+VXNlIG9uZSBwbGF5ZnVsIGFjY2VudCBhbmQga2VlcCB0aGUgcmVzdCBlZmZvcnRsZXNzLjwvdGV4dD4KICA8dGV4dCB4PSIxODAiIHk9IjE1NzgiIGZpbGw9IiM3YTZiNWMiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiPlNvY2lhbCBBY3Rpb248L3RleHQ+CiAgPHRleHQgeD0iOTAwIiB5PSIxNTc4IiB0ZXh0LWFuY2hvcj0iZW5kIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIj5Kb2luIHRoZSBmaXJzdCBmcmllbmRseSBjaXJjbGUgYW5kIGFzayB3aGF0IG1hZGUgdGhlaXIgd2VlayBicmlnaHRlci48L3RleHQ+CiAgPHRleHQgeD0iMTgwIiB5PSIxNjc2IiBmaWxsPSIjN2E2YjVjIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIj5UaW55IFJpdHVhbDwvdGV4dD4KICA8dGV4dCB4PSI5MDAiIHk9IjE2NzYiIHRleHQtYW5jaG9yPSJlbmQiIGZpbGw9IiMyYTFhNGEiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSI3MDAiPlNtaWxlIGF0IHlvdXJzZWxmIG9uY2UgYmVmb3JlIHlvdSBlbnRlciB0aGUgcm9vbS48L3RleHQ+CiAgPHRleHQgeD0iNTQwIiB5PSIxNzQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtc3R5bGU9Iml0YWxpYyI+VG9kYXkgSSBhbSBjYXJyeWluZyBnb2xkZW4gY29tZXQgYXVyYS48L3RleHQ+Cjwvc3ZnPg==",
+        "dataUrlSha256": "7591ca34b15922f55b9338498274346b787db42f3459c7825ea2062a4d81d378",
+        "textFields": {
+          "title": "Full Lucky Aura Card",
+          "auraName": "Golden Comet Aura",
+          "tarotSymbol": "The Sun",
+          "message": "Warm presence can turn a small exchange into a memorable one.",
+          "luckyColor": "warm gold",
+          "outfit": "Use one playful accent and keep the rest effortless.",
+          "beauty": "Let one feature catch light while the rest stays natural.",
+          "social": "Join the first friendly circle and ask what made their week brighter.",
+          "ritual": "Smile at yourself once before you enter the room.",
+          "avoid": "Avoid performing for people who are not meeting your energy.",
+          "caption": "Today I am carrying golden comet aura.",
+          "theme": "golden-night"
+        },
+        "layers": [
+          {
+            "type": "background",
+            "color": "warm moonlight"
+          },
+          {
+            "type": "title",
+            "text": "Full Lucky Aura Card"
+          },
+          {
+            "type": "auraName",
+            "text": "Golden Comet Aura"
+          },
+          {
+            "type": "tarotSymbol",
+            "text": "The Sun"
+          },
+          {
+            "type": "luckyColor",
+            "text": "warm gold"
+          },
+          {
+            "type": "outfit",
+            "text": "Use one playful accent and keep the rest effortless."
+          },
+          {
+            "type": "social",
+            "text": "Join the first friendly circle and ask what made their week brighter."
+          },
+          {
+            "type": "ritual",
+            "text": "Smile at yourself once before you enter the room."
+          },
+          {
+            "type": "caption",
+            "text": "Today I am carrying golden comet aura."
+          }
+        ]
+      }
+    },
+    "API-009-deterministic-repeat": {
+      "status": "PASS",
+      "response": {
+        "cardId": "card-unlocked-001",
+        "templateId": "template-story-001",
+        "format": "story-9x16",
+        "localPath": "local://share-images/card-unlocked-001-template-story-001.png",
+        "width": 1080,
+        "height": 1920,
+        "aspectRatio": "9:16",
+        "renderer": "deterministic-local-renderer",
+        "deterministicKey": "card-unlocked-001|template-story-001|Full Lucky Aura Card|Golden Comet Aura|warm gold|golden-night|Today I am carrying golden comet aura.",
+        "artifactKind": "svg-data-url",
+        "dataUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iQXVyYUN1ZSBHb2xkZW4gQ29tZXQgQXVyYSBzaGFyZSBjYXJkIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYXVyYWN1ZS1iZy1jYXJkLXVubG9ja2VkLTAwMSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMmExYTRhIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNDIlIiBzdG9wLWNvbG9yPSIjOGQ1YmZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNzIlIiBzdG9wLWNvbG9yPSIjZjQ4ZmIxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Q0YWYzNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwODAiIGhlaWdodD0iMTkyMCIgZmlsbD0idXJsKCNhdXJhY3VlLWJnLWNhcmQtdW5sb2NrZWQtMDAxKSIvPgogIDxyZWN0IHg9IjQyIiB5PSI0MiIgd2lkdGg9Ijk5NiIgaGVpZ2h0PSIxODM2IiByeD0iNjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q0YWYzNyIgc3Ryb2tlLXdpZHRoPSI0IiBvcGFjaXR5PSIwLjcyIi8+CiAgPHRleHQgeD0iNTQwIiB5PSIxNzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNkNGFmMzciIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSI0MiIgbGV0dGVyLXNwYWNpbmc9IjEwIj5BVVJBQ1VFPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMjkyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iODIiIGZvbnQtd2VpZ2h0PSI3MDAiPkZ1bGwgTHVja3kgQXVyYSBDYXJkPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMzgyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmN2RjIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQyIj5UaGUgU3VuPC90ZXh0PgogIDxyZWN0IHg9Ijk2IiB5PSIxMDgwIiB3aWR0aD0iODg4IiBoZWlnaHQ9IjY5NiIgcng9IjU0IiBmaWxsPSIjZmZmZGY4IiBvcGFjaXR5PSIwLjkyIi8+CiAgPHRleHQgeD0iNTQwIiB5PSIxMTk4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iNjgiIGZvbnQtd2VpZ2h0PSI3MDAiPkdvbGRlbiBDb21ldCBBdXJhPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMTI3MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzdhNmI1YyIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNCI+Z29sZGVuLW5pZ2h0PC90ZXh0PgogIDx0ZXh0IHg9IjE4MCIgeT0iMTM4MiIgZmlsbD0iIzdhNmI1YyIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCI+THVja3kgQ29sb3I8L3RleHQ+CiAgPHRleHQgeD0iOTAwIiB5PSIxMzgyIiB0ZXh0LWFuY2hvcj0iZW5kIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIj53YXJtIGdvbGQ8L3RleHQ+CiAgPHRleHQgeD0iMTgwIiB5PSIxNDgwIiBmaWxsPSIjN2E2YjVjIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIj5PdXRmaXQgRW5lcmd5PC90ZXh0PgogIDx0ZXh0IHg9IjkwMCIgeT0iMTQ4MCIgdGV4dC1hbmNob3I9ImVuZCIgZmlsbD0iIzJhMWE0YSIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9IjcwMCI+VXNlIG9uZSBwbGF5ZnVsIGFjY2VudCBhbmQga2VlcCB0aGUgcmVzdCBlZmZvcnRsZXNzLjwvdGV4dD4KICA8dGV4dCB4PSIxODAiIHk9IjE1NzgiIGZpbGw9IiM3YTZiNWMiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiPlNvY2lhbCBBY3Rpb248L3RleHQ+CiAgPHRleHQgeD0iOTAwIiB5PSIxNTc4IiB0ZXh0LWFuY2hvcj0iZW5kIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIj5Kb2luIHRoZSBmaXJzdCBmcmllbmRseSBjaXJjbGUgYW5kIGFzayB3aGF0IG1hZGUgdGhlaXIgd2VlayBicmlnaHRlci48L3RleHQ+CiAgPHRleHQgeD0iMTgwIiB5PSIxNjc2IiBmaWxsPSIjN2E2YjVjIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIj5UaW55IFJpdHVhbDwvdGV4dD4KICA8dGV4dCB4PSI5MDAiIHk9IjE2NzYiIHRleHQtYW5jaG9yPSJlbmQiIGZpbGw9IiMyYTFhNGEiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSI3MDAiPlNtaWxlIGF0IHlvdXJzZWxmIG9uY2UgYmVmb3JlIHlvdSBlbnRlciB0aGUgcm9vbS48L3RleHQ+CiAgPHRleHQgeD0iNTQwIiB5PSIxNzQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtc3R5bGU9Iml0YWxpYyI+VG9kYXkgSSBhbSBjYXJyeWluZyBnb2xkZW4gY29tZXQgYXVyYS48L3RleHQ+Cjwvc3ZnPg==",
+        "dataUrlSha256": "7591ca34b15922f55b9338498274346b787db42f3459c7825ea2062a4d81d378",
+        "textFields": {
+          "title": "Full Lucky Aura Card",
+          "auraName": "Golden Comet Aura",
+          "tarotSymbol": "The Sun",
+          "message": "Warm presence can turn a small exchange into a memorable one.",
+          "luckyColor": "warm gold",
+          "outfit": "Use one playful accent and keep the rest effortless.",
+          "beauty": "Let one feature catch light while the rest stays natural.",
+          "social": "Join the first friendly circle and ask what made their week brighter.",
+          "ritual": "Smile at yourself once before you enter the room.",
+          "avoid": "Avoid performing for people who are not meeting your energy.",
+          "caption": "Today I am carrying golden comet aura.",
+          "theme": "golden-night"
+        },
+        "layers": [
+          {
+            "type": "background",
+            "color": "warm moonlight"
+          },
+          {
+            "type": "title",
+            "text": "Full Lucky Aura Card"
+          },
+          {
+            "type": "auraName",
+            "text": "Golden Comet Aura"
+          },
+          {
+            "type": "tarotSymbol",
+            "text": "The Sun"
+          },
+          {
+            "type": "luckyColor",
+            "text": "warm gold"
+          },
+          {
+            "type": "outfit",
+            "text": "Use one playful accent and keep the rest effortless."
+          },
+          {
+            "type": "social",
+            "text": "Join the first friendly circle and ask what made their week brighter."
+          },
+          {
+            "type": "ritual",
+            "text": "Smile at yourself once before you enter the room."
+          },
+          {
+            "type": "caption",
+            "text": "Today I am carrying golden comet aura."
+          }
+        ]
+      }
+    },
+    "API-009-validation": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Share image input is invalid.",
+          "details": {
+            "format": "Only story-9x16 local share rendering is supported."
+          }
+        }
+      }
+    },
+    "API-009-not-found": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "NOT_FOUND",
+          "message": "Aura card was not found.",
+          "details": {
+            "cardId": "card-does-not-exist"
+          }
+        }
+      }
+    },
+    "API-010-C01-analytics-record": {
+      "status": "PASS",
+      "response": {
+        "accepted": true,
+        "analyticsEventId": "analytics-003"
+      }
+    },
+    "API-010-invalid-event-name": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Analytics event input is invalid.",
+          "details": {
+            "eventName": "Expected one of: page_view_home, click_generate_start, select_scene, select_energy, generation_started, generation_success, generation_failed, view_result_free, click_unlock, checkout_started, checkout_success, save_card, share_card, copy_share_link, invite_started, invite_completed, return_next_day, page_view_scene_selection, page_view_energy_selection, blocked_continue_scene, click_scene_continue, blocked_generate_incomplete_selection, click_generate_card, page_view_generation_loading, poll_generation_job, page_view_generation_error, click_generation_retry, click_generation_change_scene, page_view_free_preview, click_invite_unlock_entry, click_preview_share_locked, page_view_unlock_choice, click_paid_unlock_entry, click_invite_instead, page_view_invite_start, click_invite_friends, click_invite_paid_unlock, page_view_invite_progress, click_copy_invite_link, click_invite_again, click_invite_how_it_works, page_view_invite_landing, click_friend_generate_card, page_view_mock_payment_confirm, mock_payment_started, mock_payment_completed, page_view_mock_payment_failed, click_restore_purchase, click_payment_invite_instead, click_payment_contact_support, page_view_mock_payment_success, click_view_full_card_after_payment, click_share_story_after_payment, page_view_full_result, click_save_card, click_share_story, click_more_sharing_options, click_view_7_day_trend_disabled, page_view_share, page_view_share_story, page_view_share_channels, share_started, share_channel_selected, share_image_rendered, click_close_share_preview, click_save_story_card, click_share_story_card, click_copy_story_link, click_share_channel, click_cancel_share_channels, card_saved, page_view_save_success, save_success_viewed, click_save_success_share_now, click_save_success_back_home, click_view_saved_card"
+          }
+        }
+      }
+    },
+    "API-010-secret-like-property-rejected": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Analytics event input is invalid.",
+          "details": {
+            "properties.token": "Secret-like analytics properties are not allowed."
+          }
+        }
+      }
+    }
+  },
+  "uiSupport": {
+    "UI-15": "share image endpoint returns deterministic story-9x16 local render metadata",
+    "UI-16": "share event endpoint records selected channel and source",
+    "UI-17": "save endpoint returns saved confirmation data"
+  }
+}

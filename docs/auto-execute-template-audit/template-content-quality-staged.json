@@ -1,0 +1,87 @@
+{
+  "summary": {
+    "template_dir": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\templates",
+    "template_count": 11,
+    "fail_count": 0,
+    "failed_templates": []
+  },
+  "rows": [
+    {
+      "template": "TPL-ALERT-REPORTING",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\templates\\TPL-ALERT-REPORTING.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-ASYNC-JOB-WORKFLOW",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\templates\\TPL-ASYNC-JOB-WORKFLOW.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-DESIGN-TOKEN-ASSET-INVENTORY",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\templates\\TPL-DESIGN-TOKEN-ASSET-INVENTORY.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-HARNESS-EVIDENCE-GATE",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\templates\\TPL-HARNESS-EVIDENCE-GATE.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-LOCALE-ENCODING-GUARD",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\templates\\TPL-LOCALE-ENCODING-GUARD.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-METRIC-DELTA-ENGINE",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\templates\\TPL-METRIC-DELTA-ENGINE.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-MINIAPP-PAGE",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\templates\\TPL-MINIAPP-PAGE.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-MINIAPP-SHELL",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\templates\\TPL-MINIAPP-SHELL.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-QUOTA-RATE-LIMIT",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\templates\\TPL-QUOTA-RATE-LIMIT.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-REPORT-CARD-RENDERER",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\templates\\TPL-REPORT-CARD-RENDERER.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    },
+    {
+      "template": "TPL-SCREENSHOT-PIXEL-HARNESS",
+      "path": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\templates\\TPL-SCREENSHOT-PIXEL-HARNESS.md",
+      "verdict": "PASS",
+      "general_missing": {},
+      "specific_missing": []
+    }
+  ]
+}

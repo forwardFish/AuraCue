@@ -1,0 +1,82 @@
+﻿{
+    "taskId":  "T07",
+    "taskName":  "card activation save share APIs",
+    "verdict":  "PASS_FOR_T07_SCOPE",
+    "finalProductPassClaimed":  false,
+    "coveredIds":  [
+                       "API-007",
+                       "API-008",
+                       "API-009",
+                       "API-010",
+                       "API-011",
+                       "API-012",
+                       "API-013",
+                       "DB-AuraActivation",
+                       "DB-SavedCard",
+                       "DB-ShareEvent",
+                       "DB-AnalyticsEvent"
+                   ],
+    "commands":  [
+                     {
+                         "evidence":  "docs/auto-execute/evidence/web/T07/manual-verification-results.json",
+                         "exitCode":  0,
+                         "command":  "pnpm.cmd --filter @auracue/web test:api -- card-activation-share"
+                     },
+                     {
+                         "evidence":  "docs/auto-execute/evidence/web/T07/manual-verification-results.json",
+                         "exitCode":  0,
+                         "command":  "pnpm.cmd --filter @auracue/web test:db"
+                     },
+                     {
+                         "evidence":  "docs/auto-execute/evidence/web/T07/manual-verification-results.json",
+                         "exitCode":  0,
+                         "command":  "pnpm.cmd --filter @auracue/web typecheck"
+                     },
+                     {
+                         "evidence":  "docs/auto-execute/evidence/web/T07/manual-verification-results.json",
+                         "exitCode":  0,
+                         "command":  "pnpm.cmd --filter @auracue/web lint"
+                     },
+                     {
+                         "evidence":  "docs/auto-execute/evidence/web/T07/manual-verification-results.json",
+                         "exitCode":  0,
+                         "command":  "pnpm.cmd --filter @auracue/web build"
+                     }
+                 ],
+    "evidence":  [
+                     "docs/auto-execute/evidence/web/T07/api-transcript.json",
+                     "docs/auto-execute/evidence/web/T07/db-readback.json",
+                     "docs/auto-execute/evidence/web/T07/renderer-proof.json",
+                     "docs/auto-execute/evidence/web/T07/manual-verification-results.json",
+                     "docs/auto-execute/logs/web/T07-manual-verification-$(Get-Date -Format yyyyMMdd-HHmmss).log",
+                     "docs/auto-execute/logs/web/T07-command-log.md"
+                 ],
+    "blockers":  [
+
+                 ],
+    "repairs":  [
+                    {
+                        "attempt":  "T07-codex-20260604-220815",
+                        "reason":  "Windows sandbox CreateProcessWithLogonW failed: 1326 before verification could run",
+                        "outcome":  "BLOCKED_BY_ENVIRONMENT"
+                    },
+                    {
+                        "attempt":  "T07-repair-codex-20260604-222908",
+                        "reason":  "Fresh repair worker could not spawn local commands",
+                        "outcome":  "BLOCKED_BY_ENVIRONMENT"
+                    },
+                    {
+                        "attempt":  "T07-repair-bypass-codex-20260604-224414",
+                        "reason":  "Bypass worker wrote implementation/evidence but did not update final result before wrapper timeout",
+                        "outcome":  "TIMED_OUT_AFTER_WRITING_EVIDENCE"
+                    },
+                    {
+                        "attempt":  "T07-manual-verification",
+                        "reason":  "Required T07 commands passed against current implementation and evidence",
+                        "outcome":  "PASS"
+                    }
+                ],
+    "nextRepair":  null,
+    "rerunResumeStatus":  "T07 complete; T08 may proceed",
+    "generatedAt":  "2026-06-05T08:45:29.3609721+08:00"
+}

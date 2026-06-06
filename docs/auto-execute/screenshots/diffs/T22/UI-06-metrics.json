@@ -1,0 +1,19 @@
+{
+  "taskId": "T22",
+  "uiId": "UI-06",
+  "title": "Daily Aura Card Result",
+  "route": "/result/:id",
+  "pagePath": "pages/result/index",
+  "state": "aura-card-result",
+  "sourceReference": "docs/UI/小程序/P0-06-Result-完整气场卡结果.png",
+  "referencePresent": true,
+  "actualScreenshotPresent": false,
+  "diffImagePresent": false,
+  "metricsPresent": false,
+  "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+  "requiredEvidence": {
+    "actualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-06.png",
+    "diffImage": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-06.png",
+    "pixelMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-06.json"
+  }
+}

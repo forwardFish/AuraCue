@@ -1,0 +1,234 @@
+{
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "taskId": "T11",
+  "requirementIds": [
+    "REQ-002",
+    "REQ-003",
+    "REQ-004",
+    "REQ-013",
+    "REQ-017"
+  ],
+  "uiIds": [
+    "UI-05",
+    "UI-18"
+  ],
+  "routes": [
+    "/create/loading",
+    "/error/network",
+    "/result/card-locked-001",
+    "/create/scene"
+  ],
+  "sourceReferences": {
+    "UI-05": "docs/UI/小程序/04-生成_抽卡仪式.png",
+    "UI-18": "docs/UI/小程序/11-异常_生成失败网络异常.png"
+  },
+  "stitchReferences": {
+    "UI-05": "docs/UI/小程序/stitch_codex_ui_code_generator/04/code.html",
+    "UI-18": "docs/UI/小程序/stitch_codex_ui_code_generator/11/code.html"
+  },
+  "renderAssertions": {
+    "loading": {
+      "jobId": "job-success-001",
+      "title": [
+        "Drawing your",
+        "Lucky Aura Card..."
+      ],
+      "apiId": "API-002",
+      "nativePageFiles": [
+        "apps/wechat-mini/src/pages/create/loading.wxml",
+        "apps/wechat-mini/src/pages/create/loading.wxss",
+        "apps/wechat-mini/src/pages/create/loading.js"
+      ]
+    },
+    "networkError": {
+      "jobId": "job-failed-001",
+      "title": [
+        "Your aura slipped away",
+        "for a second."
+      ],
+      "safeCopy": true,
+      "nativePageFiles": [
+        "apps/wechat-mini/src/pages/error/network.wxml",
+        "apps/wechat-mini/src/pages/error/network.wxss",
+        "apps/wechat-mini/src/pages/error/network.js"
+      ]
+    }
+  },
+  "clicks": {
+    "pendingPoll": {
+      "apiId": "API-002",
+      "job": {
+        "jobId": "job-pending-001",
+        "status": "pending",
+        "cardId": null,
+        "errorCode": null
+      },
+      "expectedRoute": "/create/loading",
+      "actualRoute": "/create/loading",
+      "analyticsAccepted": true
+    },
+    "successPoll": {
+      "apiId": "API-002",
+      "job": {
+        "jobId": "job-success-001",
+        "status": "success",
+        "cardId": "card-locked-001",
+        "errorCode": null
+      },
+      "expectedRoute": "/result/card-locked-001",
+      "actualRoute": "/result/card-locked-001",
+      "analyticsAccepted": true
+    },
+    "failurePoll": {
+      "apiId": "API-002",
+      "job": {
+        "jobId": "job-failed-001",
+        "status": "failed",
+        "cardId": null,
+        "errorCode": "LOCAL_GENERATION_FAILURE"
+      },
+      "expectedRoute": "/error/network",
+      "actualRoute": "/error/network",
+      "analyticsAccepted": true
+    },
+    "retry": {
+      "controlId": "try-again",
+      "apiId": "API-001",
+      "expectedRoute": "/create/loading",
+      "actualRoute": "/create/loading",
+      "retryJob": {
+        "jobId": "job-success-001",
+        "status": "success",
+        "cardId": "card-locked-001"
+      },
+      "analyticsAccepted": true
+    },
+    "changeScene": {
+      "controlId": "change-scene",
+      "expectedRoute": "/create/scene",
+      "actualRoute": "/create/scene",
+      "analyticsAccepted": true
+    }
+  },
+  "apiMockTrace": [
+    {
+      "apiId": "API-002",
+      "method": "getGenerationJob",
+      "jobId": "job-pending-001"
+    },
+    {
+      "apiId": "API-002",
+      "method": "getGenerationJob",
+      "jobId": "job-success-001"
+    },
+    {
+      "apiId": "API-002",
+      "method": "getGenerationJob",
+      "jobId": "job-failed-001"
+    },
+    {
+      "apiId": "API-001",
+      "method": "createGenerationJob",
+      "request": {
+        "scene": "date",
+        "energy": "confidence",
+        "locale": "en-US",
+        "source": "UI-18-retry"
+      }
+    }
+  ],
+  "analyticsReadback": [
+    {
+      "eventName": "generation_started",
+      "page": "/create/loading",
+      "properties": {
+        "uiId": "UI-05",
+        "jobId": "job-pending-001",
+        "requirementId": "REQ-013"
+      },
+      "analyticsEventId": "analytics-generation_started"
+    },
+    {
+      "eventName": "poll_generation_job",
+      "page": "/create/loading",
+      "properties": {
+        "uiId": "UI-05",
+        "apiId": "API-002",
+        "jobId": "job-pending-001",
+        "status": "pending",
+        "requirementId": "REQ-013"
+      },
+      "analyticsEventId": "analytics-poll_generation_job"
+    },
+    {
+      "eventName": "generation_success",
+      "page": "/create/loading",
+      "properties": {
+        "uiId": "UI-05",
+        "apiId": "API-002",
+        "jobId": "job-success-001",
+        "status": "success",
+        "requirementId": "REQ-013"
+      },
+      "analyticsEventId": "analytics-generation_success"
+    },
+    {
+      "eventName": "generation_failed",
+      "page": "/create/loading",
+      "properties": {
+        "uiId": "UI-05",
+        "apiId": "API-002",
+        "jobId": "job-failed-001",
+        "status": "failed",
+        "requirementId": "REQ-013"
+      },
+      "analyticsEventId": "analytics-generation_failed"
+    },
+    {
+      "eventName": "page_view_generation_error",
+      "page": "/error/network",
+      "properties": {
+        "uiId": "UI-18",
+        "jobId": "job-failed-001",
+        "requirementId": "REQ-013"
+      },
+      "analyticsEventId": "analytics-page_view_generation_error"
+    },
+    {
+      "eventName": "click_generation_retry",
+      "page": "/error/network",
+      "properties": {
+        "uiId": "UI-18",
+        "controlId": "try-again",
+        "jobId": "job-success-001",
+        "requirementId": "REQ-013"
+      },
+      "analyticsEventId": "analytics-click_generation_retry"
+    },
+    {
+      "eventName": "click_generation_change_scene",
+      "page": "/error/network",
+      "properties": {
+        "uiId": "UI-18",
+        "controlId": "change-scene",
+        "requirementId": "REQ-013"
+      },
+      "analyticsEventId": "analytics-click_generation_change_scene"
+    }
+  ],
+  "localOnly": {
+    "payment": "not-used",
+    "ai": "fixture-api-client-no-provider-call",
+    "analytics": "local-fixture-client",
+    "storage": "local-evidence-files-only",
+    "db": "no-production-write"
+  },
+  "visualEvidence": {
+    "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+    "reason": "T11 generated deterministic HTML structural captures for UI-05 and UI-18; automated raster screenshot and pixel-diff evidence were not available in this task boundary.",
+    "captures": [
+      "docs/auto-execute/screenshots/T11/UI-05-loading.html",
+      "docs/auto-execute/screenshots/T11/UI-18-network-error.html"
+    ]
+  }
+}

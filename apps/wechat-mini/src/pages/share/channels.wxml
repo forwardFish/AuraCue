@@ -1,0 +1,25 @@
+<view class="share-channels-page">
+  <view class="share-header">
+    <button class="close-button" bindtap="onCancelTap">close</button>
+    <text class="brand">AuraCue</text>
+    <view class="header-space"></view>
+  </view>
+  <view class="preview-area">
+    <text class="page-title">Share your Lucky Aura</text>
+    <view class="preview-card">
+      <view class="preview-overlay">
+        <text>AuraCue</text>
+        <text>Today's Lucky Aura</text>
+      </view>
+    </view>
+  </view>
+  <view class="bottom-sheet">
+    <view class="channel-grid">
+      <button wx:for="{{channels}}" wx:key="id" class="channel-button" data-channel="{{item.id}}" bindtap="onChannelTap">
+        <view class="channel-icon" style="background: {{item.color}}">{{item.initial}}</view>
+        <text>{{item.label}}</text>
+      </button>
+    </view>
+    <button class="cancel-button" bindtap="onCancelTap">Cancel</button>
+  </view>
+</view>

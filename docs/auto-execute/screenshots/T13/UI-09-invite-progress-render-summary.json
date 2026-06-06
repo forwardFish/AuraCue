@@ -1,0 +1,60 @@
+{
+  "uiId": "UI-09",
+  "route": "/invite/:id/progress",
+  "sourceReference": "docs/UI/小程序/07B-邀请解锁_邀请进度.png",
+  "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/07b/code.html",
+  "requirementIds": [
+    "REQ-010",
+    "REQ-012",
+    "REQ-017"
+  ],
+  "apiIds": [
+    "API-006",
+    "API-008",
+    "API-010"
+  ],
+  "cardId": "card-locked-001",
+  "inviteCode": "INVITE-LOCAL-001",
+  "title": "Invite 3 friends to reveal your full aura card",
+  "progress": 2,
+  "required": 3,
+  "friends": [
+    {
+      "id": "friend-lina",
+      "name": "Lina",
+      "status": "Joined"
+    },
+    {
+      "id": "friend-jason",
+      "name": "Jason",
+      "status": "Joined"
+    },
+    {
+      "id": "friend-pending",
+      "name": "Waiting for a friend",
+      "status": "Pending"
+    }
+  ],
+  "shareLink": "auracue.local/invite/INVITE-LOCAL-001",
+  "actions": {
+    "copy": {
+      "controlId": "copy-invite-link",
+      "label": "Copy"
+    },
+    "inviteAgain": {
+      "controlId": "invite-again",
+      "label": "Invite Again"
+    },
+    "howItWorks": {
+      "controlId": "how-it-works",
+      "label": "How it works?"
+    }
+  },
+  "localOnly": {
+    "payment": "local-mock-route-only",
+    "invitePlatform": "fixture-api-client-no-platform-share-api",
+    "analytics": "local-fixture-client",
+    "storage": "local-evidence-files-only",
+    "db": "no-production-write"
+  }
+}

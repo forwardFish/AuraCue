@@ -1,0 +1,318 @@
+{
+  "status": "PASS",
+  "generatedAt": "2026-05-26T09:41:52.815Z",
+  "checkedTasks": "T00-T25",
+  "parser": "Node fs.readFileSync(path, utf8) + JSON.parse; PowerShell UTF8 parse separately verified for T00",
+  "taskResults": [
+    {
+      "taskId": "T00",
+      "resultPath": "docs/auto-execute/results/T00.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS",
+      "handoffPath": "docs/auto-execute/latest/T00-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T01",
+      "resultPath": "docs/auto-execute/results/T01.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS",
+      "handoffPath": "docs/auto-execute/latest/T01-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T02",
+      "resultPath": "docs/auto-execute/results/T02.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "handoffPath": "docs/auto-execute/latest/T02-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T03",
+      "resultPath": "docs/auto-execute/results/T03.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS",
+      "handoffPath": "docs/auto-execute/latest/T03-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T04",
+      "resultPath": "docs/auto-execute/results/T04.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS",
+      "handoffPath": "docs/auto-execute/latest/T04-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T05",
+      "resultPath": "docs/auto-execute/results/T05.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS",
+      "handoffPath": "docs/auto-execute/latest/T05-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T06",
+      "resultPath": "docs/auto-execute/results/T06.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS",
+      "handoffPath": "docs/auto-execute/latest/T06-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T07",
+      "resultPath": "docs/auto-execute/results/T07.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS",
+      "handoffPath": "docs/auto-execute/latest/T07-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T08",
+      "resultPath": "docs/auto-execute/results/T08.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS",
+      "handoffPath": "docs/auto-execute/latest/T08-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T09",
+      "resultPath": "docs/auto-execute/results/T09.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "handoffPath": "docs/auto-execute/latest/T09-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T10",
+      "resultPath": "docs/auto-execute/results/T10.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "handoffPath": "docs/auto-execute/latest/T10-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T11",
+      "resultPath": "docs/auto-execute/results/T11.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "handoffPath": "docs/auto-execute/latest/T11-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T12",
+      "resultPath": "docs/auto-execute/results/T12.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "handoffPath": "docs/auto-execute/latest/T12-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T13",
+      "resultPath": "docs/auto-execute/results/T13.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "handoffPath": "docs/auto-execute/latest/T13-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T14",
+      "resultPath": "docs/auto-execute/results/T14.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "handoffPath": "docs/auto-execute/latest/T14-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T15",
+      "resultPath": "docs/auto-execute/results/T15.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "handoffPath": "docs/auto-execute/latest/T15-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T16",
+      "resultPath": "docs/auto-execute/results/T16.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "handoffPath": "docs/auto-execute/latest/T16-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T17",
+      "resultPath": "docs/auto-execute/results/T17.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "handoffPath": "docs/auto-execute/latest/T17-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T18",
+      "resultPath": "docs/auto-execute/results/T18.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS",
+      "handoffPath": "docs/auto-execute/latest/T18-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T19",
+      "resultPath": "docs/auto-execute/results/T19.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS",
+      "handoffPath": "docs/auto-execute/latest/T19-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T20",
+      "resultPath": "docs/auto-execute/results/T20.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS",
+      "handoffPath": "docs/auto-execute/latest/T20-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T21",
+      "resultPath": "docs/auto-execute/results/T21.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS",
+      "handoffPath": "docs/auto-execute/latest/T21-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T22",
+      "resultPath": "docs/auto-execute/results/T22.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "handoffPath": "docs/auto-execute/latest/T22-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T23",
+      "resultPath": "docs/auto-execute/results/T23.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "handoffPath": "docs/auto-execute/latest/T23-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T24",
+      "resultPath": "docs/auto-execute/results/T24.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS",
+      "handoffPath": "docs/auto-execute/latest/T24-HANDOFF.md",
+      "handoffExists": true
+    },
+    {
+      "taskId": "T25",
+      "resultPath": "docs/auto-execute/results/T25.json",
+      "resultExists": true,
+      "resultParseStatus": "PASS",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "handoffPath": "docs/auto-execute/latest/T25-HANDOFF.md",
+      "handoffExists": true
+    }
+  ],
+  "requiredEvidence": [
+    {
+      "path": "docs/AUTO_EXECUTE_DELIVERY_REPORT.md",
+      "exists": true
+    },
+    {
+      "path": "docs/auto-execute/auracue-development-standard.md",
+      "exists": true
+    },
+    {
+      "path": "docs/auto-execute/auracue-software-test-standard.md",
+      "exists": true
+    },
+    {
+      "path": "docs/auto-execute/auracue-requirement-traceability-matrix.md",
+      "exists": true
+    },
+    {
+      "path": "docs/auto-execute/auracue-ui-reference-map.md",
+      "exists": true
+    },
+    {
+      "path": "docs/auto-execute/auracue-api-db-contract-matrix.md",
+      "exists": true
+    },
+    {
+      "path": "docs/auto-execute/auracue-owner-scenario-matrix.md",
+      "exists": true
+    },
+    {
+      "path": "docs/auto-execute/auracue-final-acceptance-gate.md",
+      "exists": true
+    },
+    {
+      "path": "docs/auto-execute/traces/T19/page-coverage.json",
+      "exists": true
+    },
+    {
+      "path": "docs/auto-execute/api/T20/all-api-summary.json",
+      "exists": true
+    },
+    {
+      "path": "docs/auto-execute/db/T20/db-readbacks.json",
+      "exists": true
+    },
+    {
+      "path": "docs/auto-execute/api/T21/contract-summary.json",
+      "exists": true
+    },
+    {
+      "path": "docs/auto-execute/screenshots/diffs/T22/visual-summary.json",
+      "exists": true
+    },
+    {
+      "path": "docs/auto-execute/screenshots/diffs/T23/repair-summary.json",
+      "exists": true
+    },
+    {
+      "path": "docs/auto-execute/traces/T24/owner-e2e-summary.json",
+      "exists": true
+    },
+    {
+      "path": "docs/auto-execute/logs/T25/secret-local-guard.json",
+      "exists": true
+    },
+    {
+      "path": "docs/auto-execute/logs/T25/fresh-command-results.json",
+      "exists": true
+    }
+  ],
+  "issues": [],
+  "notes": [
+    "T25 rerun uses explicit UTF-8/Node JSON.parse so Chinese paths are not mojibake-corrupted by default PowerShell encoding.",
+    "T00.json currently parses successfully and is not rewritten by T25.",
+    "This log was refreshed after writing docs/auto-execute/results/T25.json so the T25 row reflects the current rerun verdict."
+  ]
+}

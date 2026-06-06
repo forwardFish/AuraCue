@@ -1,0 +1,155 @@
+{
+  "taskId": "U05",
+  "title": "Share / Save / Error Flow Visual Repair",
+  "status": "REPAIR_REQUIRED",
+  "generatedAt": "2026-05-27T22:30:28+08:00",
+  "scope": {
+    "targetUiIds": ["UI-15", "UI-16", "UI-17", "UI-18"],
+    "targetDiffRatio": 0.005,
+    "continuedTasks": ["U05 round 2"],
+    "didNotContinue": ["U02", "U03", "U04", "U06"]
+  },
+  "freshRatios": {
+    "T30": {
+      "UI-15": 0.642515,
+      "UI-16": 0.476996,
+      "UI-17": 0.309294,
+      "UI-18": 0.369695
+    },
+    "T31": {
+      "UI-15": 0.642515,
+      "UI-16": 0.476996,
+      "UI-17": 0.309294,
+      "UI-18": 0.369695
+    }
+  },
+  "baselineRatiosFromT31Intake": {
+    "UI-15": 0.721088,
+    "UI-16": 0.518919,
+    "UI-17": 0.308903,
+    "UI-18": 0.369695
+  },
+  "deltaFromBaseline": {
+    "UI-15": -0.078573,
+    "UI-16": -0.041923,
+    "UI-17": 0.000391,
+    "UI-18": 0
+  },
+  "round2CandidateResults": [
+    {
+      "candidate": "saved/error compression and CTA layout",
+      "retained": false,
+      "reason": "Regressed target ratios; reverted.",
+      "ratios": {
+        "UI-15": 0.642515,
+        "UI-16": 0.476996,
+        "UI-17": 0.328028,
+        "UI-18": 0.410143
+      },
+      "log": "docs/auto-execute/logs/U05/T30-round2-worker-pass1.log"
+    },
+    {
+      "candidate": "saved-card internal CSS artwork detail only",
+      "retained": false,
+      "reason": "Regressed UI-17; reverted.",
+      "ratios": {
+        "UI-15": 0.642515,
+        "UI-16": 0.476996,
+        "UI-17": 0.316408,
+        "UI-18": 0.369695
+      },
+      "log": "docs/auto-execute/logs/U05/T30-round2-worker-saved-art.log"
+    },
+    {
+      "candidate": "pin UI-18 retry/change-scene CTAs inside viewport",
+      "retained": false,
+      "reason": "Regressed UI-18; reverted.",
+      "ratios": {
+        "UI-15": 0.642515,
+        "UI-16": 0.476996,
+        "UI-17": 0.309294,
+        "UI-18": 0.374238
+      },
+      "log": "docs/auto-execute/logs/U05/T30-round2-worker-error-cta.log"
+    }
+  ],
+  "round2RetainedProductChanges": [],
+  "changedFiles": [
+    "apps/wechat-mini/src/pages/share/share-save-page.mjs",
+    "docs/auto-execute/results/U05.json",
+    "docs/auto-execute/latest/U05-HANDOFF.md",
+    "docs/auto-execute/results/T30.json",
+    "docs/auto-execute/results/T31.json",
+    "docs/auto-execute/results/T33.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T30/**",
+    "docs/auto-execute/screenshots/ui-one-to-one/T31/**",
+    "docs/auto-execute/logs/U05/**"
+  ],
+  "commands": [
+    {
+      "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T30",
+      "exitCode": 0,
+      "status": "REPAIR_REQUIRED",
+      "log": "docs/auto-execute/logs/U05/T30-round2-worker-revert-check.log"
+    },
+    {
+      "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T30",
+      "exitCode": 0,
+      "status": "REPAIR_REQUIRED",
+      "log": "docs/auto-execute/logs/U05/T30-round2-final.log"
+    },
+    {
+      "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T31",
+      "exitCode": 0,
+      "status": "REPAIR_REQUIRED",
+      "log": "docs/auto-execute/logs/U05/T31-round2-final.log"
+    },
+    {
+      "command": "node scripts/t33-final-ui-one-to-one-gate.mjs",
+      "exitCode": 2,
+      "status": "REPAIR_REQUIRED",
+      "log": "docs/auto-execute/logs/U05/T33-round2-final.log"
+    },
+    {
+      "command": "pnpm.cmd test",
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/U05/pnpm-test-round2-final.log"
+    },
+    {
+      "command": "node scripts/verify-wechat-routes.mjs",
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/U05/routes-round2-final.log"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "status": "PASS",
+      "log": "docs/auto-execute/logs/U05/diff-check-round2-after-result-update.log"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/screenshots/ui-one-to-one/T30/visual-summary.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T31/visual-summary.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T30/actual/UI-15-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T30/actual/UI-16-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T30/actual/UI-17-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T30/actual/UI-18-actual.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T30/diff/UI-15-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T30/diff/UI-16-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T30/diff/UI-17-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T30/diff/UI-18-diff.png",
+    "docs/auto-execute/screenshots/ui-one-to-one/T30/metrics/UI-15-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T30/metrics/UI-16-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T30/metrics/UI-17-metrics.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T30/metrics/UI-18-metrics.json"
+  ],
+  "blockerClassification": "ASSET_SOURCE_REQUIRED",
+  "blockers": [
+    "UI-15 and UI-16 improved only modestly after structural layout repair and remain dominated by missing illustrated story-card raster art, ornate frame detail, icon fidelity, cloud texture, and native font rendering.",
+    "UI-17 and UI-18 remain above threshold with mismatch dominated by exact card artwork, glow/cloud texture, icon details, and native visual chrome.",
+    "Strict diffRatio <= 0.005 is not reachable under the current no-remote-assets/no-full-reference-screenshot/no-reference-crop constraints without approved original component assets or explicit approval for reference-derived per-component assets."
+  ],
+  "nextAction": "Stop U05 as REPAIR_REQUIRED / ASSET_SOURCE_REQUIRED. Do not start U06 until asset-source policy is resolved or U05 is accepted as blocked."
+}

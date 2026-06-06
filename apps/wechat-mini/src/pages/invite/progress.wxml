@@ -1,0 +1,41 @@
+<view class="invite-progress-page">
+  <view class="cloud-bg"></view>
+  <view class="header">
+    <text class="brand">AuraCue</text>
+  </view>
+  <text class="title">Invite 3 friends to reveal your full aura card</text>
+  <view class="progress-copy">
+    <text class="count">{{progress}}</text>
+    <text> / {{required}} complete</text>
+  </view>
+  <view class="step-track">
+    <view class="step-fill"></view>
+    <view class="step done">1</view>
+    <view class="step done">2</view>
+    <view class="step">3</view>
+  </view>
+  <view class="friend-list">
+    <block wx:for="{{friends}}" wx:key="id">
+      <view class="friend-row {{item.status === 'Pending' ? 'pending' : ''}}">
+        <view class="avatar">{{index + 1}}</view>
+        <view>
+          <text class="friend-name">{{item.name}}</text>
+          <text class="friend-status">{{item.status}}</text>
+        </view>
+        <view class="friend-check">{{item.status === 'Joined' ? 'ok' : ''}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="share-box">
+    <text class="share-title">Share your link</text>
+    <view class="link-row">
+      <text>auracue.local/invite/{{inviteCode}}</text>
+      <button bindtap="onCopyTap">Copy</button>
+    </view>
+  </view>
+  <button class="primary-action" bindtap="onInviteAgainTap">Invite Again</button>
+  <button class="text-action" bindtap="onHowItWorksTap">How it works?</button>
+  <view wx:if="{{modalVisible}}" class="modal">
+    <text>Each unique friend acceptance counts once toward the 3-friend unlock.</text>
+  </view>
+</view>

@@ -1,0 +1,61 @@
+{
+  "uiId": "UI-05",
+  "route": "/create/loading",
+  "sourceReference": "docs/UI/小程序/04-生成_抽卡仪式.png",
+  "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/04/code.html",
+  "viewport": {
+    "sourceWidth": 941,
+    "sourceHeight": 1672,
+    "miniProgramWidth": 390
+  },
+  "header": {
+    "brand": "AuraCue"
+  },
+  "hero": {
+    "titleLines": [
+      "Drawing your",
+      "Lucky Aura Card..."
+    ],
+    "subtitle": "Matching your scene, energy, and today's vibe."
+  },
+  "ritual": {
+    "cardLabel": "Aura Card Back",
+    "progressSteps": [
+      {
+        "id": "mood",
+        "labelLines": [
+          "Reading your",
+          "mood"
+        ],
+        "active": true
+      },
+      {
+        "id": "energy",
+        "labelLines": [
+          "Aligning your",
+          "energy"
+        ],
+        "active": false
+      },
+      {
+        "id": "cues",
+        "labelLines": [
+          "Revealing your",
+          "cues"
+        ],
+        "active": false
+      }
+    ],
+    "footnoteLines": [
+      "This takes a few seconds.",
+      "Good things are unfolding."
+    ]
+  },
+  "jobId": "job-success-001",
+  "pollStatus": "pending",
+  "apiId": "API-002",
+  "nextRoutes": {
+    "success": "/result/:id",
+    "failure": "/error/network"
+  }
+}

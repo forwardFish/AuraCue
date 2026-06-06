@@ -1,0 +1,24 @@
+{
+  "cardId": "cmq1l75c10004bgvc6ttbhvsb",
+  "shareImageUrl": "local://share-images/cmq1l75c10004bgvc6ttbhvsb-template-story-001.png",
+  "width": 1080,
+  "height": 1920,
+  "aspectRatio": "9:16",
+  "renderer": "deterministic-local-renderer",
+  "deterministicKey": "cmq1l75c10004bgvc6ttbhvsb|template-story-001|Meeting Glow Aura Card|Clear Signal Aura|soft ivory|work-confidence-local-2|Today I am carrying clear signal aura.",
+  "dataUrlSha256": "e9257d242424b60bc0fe184d35e5b16b4d2956e84b410e5f82848b45ced483a8",
+  "textFields": {
+    "title": "Meeting Glow Aura Card",
+    "auraName": "Clear Signal Aura",
+    "tarotSymbol": "The Magician",
+    "message": "A small confident choice can make the next moment feel easier.",
+    "luckyColor": "soft ivory",
+    "outfit": "Wear one clean line with a soft highlight near the face.",
+    "beauty": "Keep the glow fresh and the finish light.",
+    "social": "Lead with the simplest point and leave room for one thoughtful pause.",
+    "ritual": "Take three slow breaths before stepping out.",
+    "avoid": "Avoid over-planning the first ten minutes.",
+    "caption": "Today I am carrying clear signal aura.",
+    "theme": "work-confidence-local-2"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "scenarioId": "SCN-001",
+  "stepId": "02",
+  "status": "PASS",
+  "personaGoal": "Start generation",
+  "action": "Click Start My 30-Second Card",
+  "uiId": "UI-01",
+  "route": {
+    "uiId": "UI-02",
+    "route": "/create/scene",
+    "path": "/create/scene",
+    "pagePath": "pages/create/scene",
+    "state": "scene-selection",
+    "ownerScenario": "SCN-002",
+    "title": "Choose Scene"
+  },
+  "apiIds": [
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-003"
+  ],
+  "clickEvidence": {
+    "controlId": "start-card",
+    "label": "Start My 30-Second Card",
+    "route": {
+      "uiId": "UI-02",
+      "route": "/create/scene",
+      "path": "/create/scene",
+      "pagePath": "pages/create/scene",
+      "state": "scene-selection",
+      "ownerScenario": "SCN-002",
+      "title": "Choose Scene"
+    },
+    "analyticsResponse": {
+      "accepted": true,
+      "analyticsEventId": "analytics-004"
+    }
+  }
+}

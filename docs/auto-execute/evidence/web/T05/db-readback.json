@@ -1,0 +1,34 @@
+{
+  "anonymousId": "anon_2240cc01486c419e867569eacd07ce42",
+  "counts": {
+    "AnonymousUser": 1,
+    "OutfitUpload": 3,
+    "DrawSession": 2,
+    "GenerationJob": 1,
+    "AuraCard": 1
+  },
+  "uploadIds": [
+    "cmq1l6xlf0001bcvchktq7e31",
+    "cmq1l6xlm0002bcvcnxxzku1d",
+    "cmq1l6xlt0003bcvcyoal2uwe"
+  ],
+  "drawSessions": [
+    {
+      "id": "cmq1l6xma0004bcvci3r2iol5",
+      "mood": "confident",
+      "context": "work",
+      "uploadId": null,
+      "drawSeed": "seed_3203d55b51ccf17c",
+      "expiresAt": "2026-06-06T01:00:12.463Z"
+    },
+    {
+      "id": "cmq1l6xmn0005bcvcizad4ng4",
+      "mood": "calm",
+      "context": "skip",
+      "uploadId": "cmq1l6xlf0001bcvchktq7e31",
+      "drawSeed": "seed_449a653ad139d47d",
+      "expiresAt": "2026-06-06T01:00:12.478Z"
+    }
+  ],
+  "todayActiveCardId": "cmq1l6xnc0007bcvcdj963ewh"
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>AuraCue - Daily Tiny Advantage</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts for sophisticated serif and sans-serif look -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'aura-bg': '#FCF9F6',
+            'aura-text': '#1A2A47',
+            'aura-accent': '#C58482',
+            'aura-gold': '#D4AF37',
+            'aura-border': '#F1E1D1',
+          },
+          fontFamily: {
+            serif: ['Bodoni Moda', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="layout-styles">
+    body {
+      background-color: #FCF9F6;
+      color: #1A2A47;
+      -webkit-font-smoothing: antialiased;
+    }
+    .custom-gradient-btn {
+      background: linear-gradient(to right, #DB8A86, #C56E69);
+    }
+    .card-shadow {
+      box-shadow: 0 10px 30px -10px rgba(197, 132, 130, 0.15);
+    }
+    .flower-arch-mask {
+      border-radius: 100px 100px 0 0;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen">
+<!-- BEGIN: Status Bar Space -->
+<div class="h-12 w-full flex justify-between items-end px-8 pb-2">
+<span class="text-[14px] font-semibold">9:41</span>
+<div class="flex gap-1 items-center">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path></svg>
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 8V5a3 3 0 013-3h5c.265 0 .52.105.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" fill-rule="evenodd"></path></svg>
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" fill-rule="evenodd"></path></svg>
+</div>
+</div>
+<!-- END: Status Bar Space -->
+<!-- BEGIN: MainHeader -->
+<header class="relative flex items-center justify-between px-6 pt-4 pb-2" data-purpose="app-header">
+<div class="bg-white rounded-full p-2 shadow-sm border border-orange-50">
+<svg class="w-6 h-6 text-aura-gold" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"></path></svg>
+</div>
+<h1 class="text-3xl font-serif text-aura-text font-semibold tracking-tight">AuraCue</h1>
+<div class="bg-white rounded-full p-2 shadow-sm border border-orange-50">
+<svg class="w-6 h-6 text-aura-gold" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="12" rx="2" width="18" x="3" y="8"></rect><path d="M12 8V3m0 0a3 3 0 10-3 3h6a3 3 0 10-3-3z"></path></svg>
+</div>
+</header>
+<!-- END: MainHeader -->
+<main class="flex-1 px-6 pt-6 overflow-y-auto">
+<!-- BEGIN: Hero Section -->
+<section class="text-center mb-8" data-purpose="hero-text">
+<div class="flex justify-center mb-1">
+<span class="text-aura-gold">✦</span>
+</div>
+<h2 class="text-[32px] leading-tight font-serif text-aura-text mb-2">
+        Before you step out,<br/>
+        draw today's <span class="italic text-aura-accent">tiny advantage.</span>
+<span class="text-aura-accent text-sm ml-1">✦</span>
+</h2>
+<p class="text-gray-500 text-sm leading-relaxed max-w-[260px] mx-auto">
+        Pick your scene. Get one color,<br/>one outfit energy, one social move.
+      </p>
+</section>
+<!-- END: Hero Section -->
+<!-- BEGIN: Central Card -->
+<section class="relative mx-auto mb-8 max-w-[340px]" data-purpose="aura-card-container">
+<div class="bg-white rounded-[32px] p-6 border border-aura-border card-shadow relative overflow-hidden">
+<!-- Corner Sparkles -->
+<div class="absolute top-3 left-3 text-aura-gold/60 text-xs">✦</div>
+<div class="absolute top-3 right-3 text-aura-gold/60 text-xs">✦</div>
+<div class="absolute bottom-3 left-3 text-aura-gold/60 text-xs">✦</div>
+<div class="absolute bottom-3 right-3 text-aura-gold/60 text-xs">✦</div>
+<div class="text-center mb-4">
+<p class="uppercase tracking-widest text-[10px] text-aura-gold mb-1 font-semibold">Today's Aura</p>
+<h3 class="text-2xl font-serif text-aura-text">Golden Bloom</h3>
+</div>
+<!-- Illustration Area -->
+<div class="relative mb-6">
+<div class="mx-auto w-[200px] h-[260px] border border-aura-border flower-arch-mask bg-gradient-to-b from-orange-50 to-pink-50 flex items-end justify-center pb-8 relative">
+<!-- Sparkles and Elements in Illustration -->
+<div class="absolute top-8 text-aura-gold/40 text-[8px] left-6">✦</div>
+<div class="absolute top-20 text-aura-gold/40 text-[8px] right-6">✦</div>
+<div class="absolute top-10 text-aura-gold/40 text-sm">
+<svg class="w-6 h-6 opacity-30" fill="currentColor" viewbox="0 0 24 24"><path d="M12 3a9 9 0 109 9 9.01 9.01 0 01-9-9z"></path></svg>
+</div>
+<!-- Main Flower (Placeholder Styled) -->
+<div class="relative z-10 text-center">
+<div class="w-20 h-20 bg-pink-100 rounded-full blur-xl absolute -top-4 -left-4 opacity-50"></div>
+<img alt="Golden Bloom Illustration" class="w-32 h-auto mix-blend-multiply opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmP_yTKzperALWafSTING_hqEG78xLZTnrHmd5cyrmG6o4k2QN6Wp6wxe8Q_imWnkSOpgzhxXqcXujtPb2onxHv3ttrcrPtSvALTlv_NLIGoYomI5wAyCS5SJOA6Dk6ut0XwXiG1u6U8IJTlUvFFbUX5Lu9-cSA62AKiCQ_sTDNGf3g3mLVFvVmvIN7jB3Kqf_-LNfG9FpSVZpffJfNzoCtl841Uk5npehaQrxPNoXl3sAGGJ3IApzY42-mJ4ORarTT77ReYsa" style="object-fit: contain; clip-path: inset(18% 28% 38% 28%); transform: scale(3.5);"/>
+</div>
+<!-- Sun/Moon bottom -->
+<div class="absolute bottom-6 w-8 h-8 bg-white rounded-full blur-sm opacity-60"></div>
+</div>
+</div>
+<!-- Mini Stats -->
+<div class="flex justify-between border-t border-aura-border pt-4 text-center">
+<div class="flex-1 border-r border-aura-border last:border-0 px-1">
+<div class="w-5 h-5 bg-pink-200 rounded-full mx-auto mb-1"></div>
+<p class="text-[8px] uppercase text-aura-gold font-bold">Lucky Color</p>
+<p class="text-[11px] font-medium text-aura-text">Blush Pink</p>
+</div>
+<div class="flex-1 border-r border-aura-border last:border-0 px-1">
+<div class="flex justify-center mb-1">
+<svg class="w-5 h-5 text-aura-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M7 3l3 2 2-2 2 2 3-2v3l2 2-2 2v10H5V10l-2-2 2-2V3z"></path></svg>
+</div>
+<p class="text-[8px] uppercase text-aura-gold font-bold">Outfit Energy</p>
+<p class="text-[11px] font-medium text-aura-text">Soft Power</p>
+</div>
+<div class="flex-1 border-r border-aura-border last:border-0 px-1">
+<div class="flex justify-center mb-1">
+<svg class="w-5 h-5 text-aura-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+</div>
+<p class="text-[8px] uppercase text-aura-gold font-bold">Social Move</p>
+<p class="text-[11px] font-medium text-aura-text leading-tight">Listen first,<br/>connect deeper.</p>
+</div>
+</div>
+</div>
+<!-- Bottom card decoration -->
+<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-[85%] h-4 border border-aura-border border-t-0 rounded-b-[20px] bg-white/50 -z-10"></div>
+</section>
+<!-- END: Central Card -->
+<!-- BEGIN: Quick Select Buttons -->
+<section class="grid grid-cols-2 gap-3 mb-6" data-purpose="scene-selector">
+<button class="flex items-center bg-white border border-aura-border rounded-2xl py-3 px-4 shadow-sm hover:bg-orange-50 transition-colors">
+<span class="mr-2 text-aura-accent">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+</span>
+<span class="text-sm font-medium">Date</span>
+</button>
+<button class="flex items-center bg-white border border-aura-border rounded-2xl py-3 px-4 shadow-sm hover:bg-orange-50 transition-colors">
+<span class="mr-2 text-aura-accent">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+</span>
+<span class="text-sm font-medium">Work</span>
+</button>
+<button class="flex items-center bg-white border border-aura-border rounded-2xl py-3 px-4 shadow-sm hover:bg-orange-50 transition-colors">
+<span class="mr-2 text-aura-accent">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M11 19l-7 2V9l7-2m0 12v-6m0 6l7 2V9l-7-2m0 6V7l-3-1m3 1l3-1"></path></svg>
+</span>
+<span class="text-sm font-medium">Party</span>
+</button>
+<button class="flex items-center bg-white border border-aura-border rounded-2xl py-3 px-4 shadow-sm hover:bg-orange-50 transition-colors text-left leading-tight">
+<span class="mr-2 text-aura-accent">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"></path></svg>
+</span>
+<span class="text-[13px] font-medium">Just need luck</span>
+</button>
+</section>
+<!-- END: Quick Select Buttons -->
+<!-- BEGIN: Main CTA -->
+<section class="mb-6">
+<button class="w-full custom-gradient-btn text-white py-4 px-6 rounded-2xl flex items-center justify-center gap-3 shadow-lg shadow-aura-accent/20 active:scale-95 transition-transform" data-purpose="start-button">
+<span class="text-lg opacity-80">✦</span>
+<span class="text-xl font-serif tracking-wide">Start My 30-Second Card</span>
+<span class="text-lg opacity-80">✦</span>
+</button>
+<div class="mt-3 flex items-center justify-center gap-1 text-[11px] text-gray-400">
+<svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Private. Personal. Just for you.</span>
+</div>
+</section>
+<!-- END: Main CTA -->
+</main>
+<!-- BEGIN: Bottom Nav Bar -->
+<footer class="bg-white/80 backdrop-blur-md border-t border-aura-border pt-3 pb-8 px-12" data-purpose="footer-nav">
+<nav class="flex justify-between items-center max-w-sm mx-auto">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="p-1 bg-aura-accent/10 rounded-lg">
+<svg class="w-6 h-6 text-aura-accent" fill="currentColor" viewbox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+</div>
+<span class="text-[11px] font-bold text-aura-accent">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="p-1">
+<svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+</div>
+<span class="text-[11px] font-medium text-gray-400">Profile</span>
+</a>
+</nav>
+<!-- iOS Home Indicator -->
+<div class="w-32 h-1 bg-black mx-auto mt-4 rounded-full opacity-20"></div>
+</footer>
+<!-- END: Bottom Nav Bar -->
+</body></html>

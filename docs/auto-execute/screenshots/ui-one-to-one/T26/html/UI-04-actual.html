@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AuraCue UI-04 Incomplete Selection</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fffaf7; color: #10213d; font-family: Inter, Arial, sans-serif; }
+    .device { width: 941px; height: 1672px; margin: 0 auto; padding: 118px 58px 0; background: linear-gradient(180deg,#fdf8f3 0%,#fdf8f3 72%,#f7dce9 100%); overflow: hidden; }
+    .top { display: grid; grid-template-columns: 88px 1fr 88px; align-items: center; margin-bottom: 122px; }
+    .back { width: 82px; height: 82px; border-radius: 999px; border: 2px solid #f3c9d8; background: rgba(255,255,255,.68); color: #10213d; font-size: 42px; }
+    .brand, h2, .cta { font-family: Georgia, serif; }
+    .brand { text-align: center; font-size: 54px; font-weight: 700; }
+    h2 { text-align: center; font-size: 46px; margin: 0 0 62px; }
+    .scenes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; margin-bottom: 100px; }
+    .scene { border: 2px solid #f2c9d4; background: rgba(255,255,255,.52); border-radius: 46px; min-height: 220px; color: #10213d; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 12px; }
+    .scene::after, .chip::after, .cta::after { border: 0; }
+    .scene.selected { background: linear-gradient(180deg,#ff6b98 0%,#ef3470 100%); color: white; box-shadow: 0 0 22px rgba(239,52,112,.34); }
+    .scene span { font-size: 20px; }
+    .scene strong { font-size: 28px; font-weight: 600; line-height: 1.05; }
+    .scene small { font-size: 18px; line-height: 1; }
+    .divider { display: flex; align-items: center; gap: 32px; color: #efb47d; margin-bottom: 94px; font-size: 28px; }
+    .divider::before, .divider::after { content: ""; height: 2px; flex: 1; background: #f1d8d4; }
+    .chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 98px; }
+    .chip { height: 88px; border-radius: 999px; border: 2px solid #efc7d2; background: rgba(255,255,255,.48); color: #10213d; font-size: 28px; }
+    .validation { margin: 0 32px 52px; min-height: 128px; border-radius: 42px; border: 2px solid #efc7d2; color: #ec3c77; background: rgba(255,255,255,.55); display: flex; align-items: center; justify-content: center; gap: 22px; font-size: 30px; }
+    .cta { width: calc(100% - 64px); margin: 0 32px; min-height: 112px; border: 0; border-radius: 999px; color: #88898d; background: #e7e1dd; font-size: 38px; box-shadow: inset 0 2px 6px rgba(0,0,0,.06); }
+  </style>
+<style id="t26-capture-shell">
+    html, body { width: 941px !important; height: 1672px !important; margin: 0 !important; overflow: hidden !important; background: #ffffff !important; }
+    body > .phone, body > main.phone, body .phone:first-child {
+      transform: scale(2.4128205128205127);
+      transform-origin: top center;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  </style></head>
+<body>
+  <main class="device">
+    <header class="top"><button class="back">‹</button><div class="brand">✦ AuraCue ✦</div><div></div></header>
+    <h2>Choose your scene</h2>
+    <section class="scenes"><button class="scene" data-scene="date"><span>heart</span><strong>Date</strong></button><button class="scene selected" data-scene="work"><span>briefcase</span><strong>Work</strong></button><button class="scene" data-scene="party"><span>party</span><strong>Party</strong></button><button class="scene" data-scene="luck"><span>person</span><strong>Just me</strong><small>Just need luck</small></button></section>
+    <div class="divider">✦</div>
+    <h2>Choose your energy</h2>
+    <section class="chips"><button class="chip" data-energy="confidence">Confidence</button><button class="chip" data-energy="calm">Calm</button><button class="chip" data-energy="love">Love</button><button class="chip" data-energy="focus">Focus</button><button class="chip" data-energy="luck">Luck</button><button class="chip" data-energy="charm">Charm</button></section>
+    <section class="validation">✦ Choose one energy to continue.</section>
+    <button class="cta" disabled>✦ Generate My Aura Card</button>
+  </main>
+</body>
+</html>

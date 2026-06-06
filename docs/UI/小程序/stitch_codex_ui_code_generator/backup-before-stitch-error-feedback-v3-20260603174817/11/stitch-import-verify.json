@@ -1,0 +1,59 @@
+﻿{
+    "projectId":  "2608521935765193750",
+    "screenId":  "301a70bfb8474ccaaca4344d00a9c8d2",
+    "title":  "Error Feedback (Final 1:1 Replica)",
+    "stitchMetadataWidth":  780,
+    "stitchMetadataHeight":  1924,
+    "selectedCandidate":  "w780-h1924",
+    "selectedCandidateWidth":  780,
+    "selectedCandidateHeight":  1766,
+    "finalPath":  "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\UI\\小程序\\stitch_codex_ui_code_generator\\11\\screen.png",
+    "finalSignature":  "89 50 4E 47 0D 0A 1A 0A",
+    "finalWidth":  780,
+    "finalHeight":  1766,
+    "finalBytes":  348607,
+    "htmlPath":  "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\UI\\小程序\\stitch_codex_ui_code_generator\\11\\code.html",
+    "htmlBytes":  8859,
+    "candidates":  [
+                       {
+                           "Name":  "s0",
+                           "Path":  "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\UI\\小程序\\stitch_codex_ui_code_generator\\11\\candidate-s0.img",
+                           "Width":  780,
+                           "Height":  1766,
+                           "Bytes":  48009,
+                           "Signature":  "FF D8 FF E0 00 10 4A 46"
+                       },
+                       {
+                           "Name":  "w780",
+                           "Path":  "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\UI\\小程序\\stitch_codex_ui_code_generator\\11\\candidate-w780.img",
+                           "Width":  780,
+                           "Height":  1766,
+                           "Bytes":  48009,
+                           "Signature":  "FF D8 FF E0 00 10 4A 46"
+                       },
+                       {
+                           "Name":  "w780-h1924",
+                           "Path":  "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\UI\\小程序\\stitch_codex_ui_code_generator\\11\\candidate-w780-h1924.img",
+                           "Width":  780,
+                           "Height":  1766,
+                           "Bytes":  48009,
+                           "Signature":  "FF D8 FF E0 00 10 4A 46"
+                       },
+                       {
+                           "Name":  "s1924",
+                           "Path":  "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\UI\\小程序\\stitch_codex_ui_code_generator\\11\\candidate-s1924.img",
+                           "Width":  780,
+                           "Height":  1766,
+                           "Bytes":  48009,
+                           "Signature":  "FF D8 FF E0 00 10 4A 46"
+                       },
+                       {
+                           "Name":  "base",
+                           "Path":  "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\UI\\小程序\\stitch_codex_ui_code_generator\\11\\candidate-base.img",
+                           "Width":  226,
+                           "Height":  512,
+                           "Bytes":  18689,
+                           "Signature":  "FF D8 FF E0 00 10 4A 46"
+                       }
+                   ]
+}

@@ -1,0 +1,126 @@
+{
+  "taskId": "T04",
+  "taskName": "API Foundation Route Handlers",
+  "templateId": "TPL-BACKEND-FOUNDATION",
+  "status": "COMPLETE",
+  "verdict": "PASS",
+  "productPassClaimed": false,
+  "timestamp": "2026-06-04T19:17:20+08:00",
+  "scope": {
+    "executedOnlyTask": "T04",
+    "implementedDomainApis": false,
+    "startedService": false,
+    "usedProductionCloud": false,
+    "usedProductionDb": false,
+    "usedProductionAi": false,
+    "usedSecrets": false,
+    "notes": "T04 implemented reusable API foundation only. T05-T07 still own identity, upload, draw, generation, card, activation, save, share, and analytics domain APIs."
+  },
+  "coveredIds": [
+    "API-FOUNDATION",
+    "API-000-health",
+    "ERROR-ENVELOPE",
+    "ENV-REDACTION",
+    "REQUEST-CONTEXT",
+    "LOCAL-ONLY-GUARD",
+    "SECRET-GUARD"
+  ],
+  "changedFiles": [
+    "apps/web/package.json",
+    "apps/web/server/api/envelope.ts",
+    "apps/web/server/api/redaction.ts",
+    "apps/web/server/api/local-guard.ts",
+    "apps/web/server/config/env.ts",
+    "apps/web/app/api/v1/health/route.ts",
+    "apps/web/tests/api/foundation.test.mjs",
+    "scripts/acceptance/check-web-copy-safety.mjs",
+    "docs/auto-execute/results/web/T04.json",
+    "docs/auto-execute/latest/web/T04-HANDOFF.md",
+    "docs/auto-execute/logs/web/T04-command-log.md"
+  ],
+  "commands": [
+    {
+      "command": "pnpm.cmd --filter @auracue/web test:api",
+      "status": "PASS",
+      "evidence": "Web API foundation test verified helper files, health route contract, local-only boundary source, redaction source, and wrote health response evidence."
+    },
+    {
+      "command": "node scripts/acceptance/check-web-copy-safety.mjs",
+      "status": "PASS",
+      "evidence": "Copy/secret scanner found no findings under apps/web/server, apps/web/app/api, or apps/web/tests/api."
+    },
+    {
+      "command": "pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web typecheck",
+      "status": "PASS",
+      "evidence": "tsc --noEmit passed for the new Route Handler and server helper TypeScript."
+    },
+    {
+      "command": "pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web lint",
+      "status": "PASS",
+      "evidence": "ESLint passed with max-warnings=0."
+    },
+    {
+      "command": "pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web build",
+      "status": "PASS",
+      "evidence": "Next production build compiled successfully and listed /api/v1/health as a dynamic route."
+    }
+  ],
+  "evidence": [
+    {
+      "type": "health_response",
+      "path": "docs/auto-execute/evidence/web/T04/health-response.json",
+      "status": "PASS"
+    },
+    {
+      "type": "copy_safety",
+      "path": "docs/auto-execute/evidence/web/T04/copy-safety.json",
+      "status": "PASS"
+    },
+    {
+      "type": "command_log",
+      "path": "docs/auto-execute/logs/web/T04-command-log.md",
+      "status": "WRITTEN"
+    },
+    {
+      "type": "health_route",
+      "path": "apps/web/app/api/v1/health/route.ts",
+      "status": "COMPILED_BY_NEXT_BUILD"
+    },
+    {
+      "type": "foundation_helpers",
+      "path": "apps/web/server/api",
+      "status": "PRESENT"
+    },
+    {
+      "type": "env_config",
+      "path": "apps/web/server/config/env.ts",
+      "status": "PRESENT"
+    },
+    {
+      "type": "api_foundation_test",
+      "path": "apps/web/tests/api/foundation.test.mjs",
+      "status": "PASS"
+    }
+  ],
+  "blockers": [],
+  "nextRepair": null,
+  "downstreamInputs": [
+    "T05-T07 should reuse apps/web/server/api/envelope.ts for ok/error envelopes and JSON body parsing.",
+    "T05-T07 should reuse apps/web/server/api/redaction.ts before returning config, provider, or diagnostic payloads.",
+    "T05-T07 should use apps/web/server/api/local-guard.ts for any local-only diagnostic/adapter boundary.",
+    "T05-T07 can extend apps/web/app/api/v1 without replacing the T04 health foundation."
+  ],
+  "rerunResumeState": {
+    "canRerun": true,
+    "safeToResumeAt": "T05",
+    "commands": [
+      "pnpm.cmd --filter @auracue/web test:api",
+      "node scripts/acceptance/check-web-copy-safety.mjs",
+      "pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web typecheck",
+      "pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web lint",
+      "pnpm.cmd --config.store-dir=.pnpm-store --filter @auracue/web build"
+    ],
+    "notes": "Use pnpm.cmd on this Windows PowerShell surface. T04 did not execute T05-T07 domain API work."
+  },
+  "exitCondition": "T05-T07 can directly implement API domains using the shared validation/envelope/error/redaction/request-context/local-guard foundation."
+}

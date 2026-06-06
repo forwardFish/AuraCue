@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-17",
+  "route": "/saved/:id",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "Share Now",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    },
+    {
+      "label": "Back Home",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    }
+  ],
+  "analytics": [
+    {
+      "eventName": "page_view_save_success",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    },
+    {
+      "eventName": "return_next_day",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T16/share-save.json"
+    }
+  ],
+  "upstreamTrace": "docs/auto-execute/traces/T16/share-save.json"
+}

@@ -1,0 +1,359 @@
+{
+  "generatedAt": "2026-06-03T01:56:00.345021+00:00",
+  "skillName": "task-auto-execute",
+  "skillRoot": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\patched-skill\\task-auto-execute",
+  "packagePath": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute-template-audit\\task-auto-execute-patched-skill.zip",
+  "templateCount": 58,
+  "auditIdCount": 58,
+  "missingInAudit": [],
+  "extraInAudit": [],
+  "files": [
+    {
+      "path": "agents/openai.yaml",
+      "size": 236,
+      "sha256": "50793bb6d9b9e593f87517a956f1c4506b050070b37e70a5ece6129ac325afdd"
+    },
+    {
+      "path": "references/codex-exec-standard-template.md",
+      "size": 20320,
+      "sha256": "442d85ada4efc010709ae2560e7605ea84f5dc2a345f1f979a931b0db79bcfc3"
+    },
+    {
+      "path": "references/document-templates.md",
+      "size": 28995,
+      "sha256": "68ccb80541f65485fed000d9775779b2e0884d6415b868952c49c408576554e5"
+    },
+    {
+      "path": "references/software-dev-task-templates.md",
+      "size": 31144,
+      "sha256": "6126e5c44f1680f619d51e20db2a07a50209c41e360c85d01f65e30be258cf9b"
+    },
+    {
+      "path": "references/task-archetype-templates.md",
+      "size": 17827,
+      "sha256": "979a8c628efcb11aa6676591467068306077dcf525b00aa17733dc469f71b278"
+    },
+    {
+      "path": "references/task-pack-contract.md",
+      "size": 22104,
+      "sha256": "0690e02f2c72abbffaef1f4e9592f724bf00d808fd0863bd4ff5a62d099c5751"
+    },
+    {
+      "path": "references/templates/README.md",
+      "size": 1366,
+      "sha256": "9e18be3af15476d00c87d9a9b83fb5d37e3d2a5c3e80ceebb0e0818521499a9e"
+    },
+    {
+      "path": "references/templates/TPL-ACCESSIBILITY.md",
+      "size": 4297,
+      "sha256": "6c244d1eb41dc74d59a4a347bc895b907919be167157e3d76fd4d6820d35300e"
+    },
+    {
+      "path": "references/templates/TPL-ADMIN-WORKFLOW.md",
+      "size": 4385,
+      "sha256": "aa6abbc27418e55740154fd44b233cb1ae98171d7df7b3c34c8625acae60b7ff"
+    },
+    {
+      "path": "references/templates/TPL-AI-PROVIDER.md",
+      "size": 4497,
+      "sha256": "b3b9edbe4842588d59b155532fb072279b908e8576a842a65f4a67097b0063a7"
+    },
+    {
+      "path": "references/templates/TPL-ALERT-REPORTING.md",
+      "size": 3793,
+      "sha256": "a7653e68a1bf767fc82f12d0e056e62c1cce7ba0133ebe960033c05ee7e4c2b1"
+    },
+    {
+      "path": "references/templates/TPL-API-DB-E2E.md",
+      "size": 4312,
+      "sha256": "c44af46758561c7b0cd3763aaef47f1638302aa0e7c2087c2801124fe5d6cb49"
+    },
+    {
+      "path": "references/templates/TPL-API-DOMAIN.md",
+      "size": 4518,
+      "sha256": "08782063a8169e1593a5cd040025767f3f2a48c9943bbab9f19fca169123e5e0"
+    },
+    {
+      "path": "references/templates/TPL-ASYNC-JOB-WORKFLOW.md",
+      "size": 3720,
+      "sha256": "e97a9d11605c7b3fef848c7403cbee6f40559de27d29b6389158bc09b1b32408"
+    },
+    {
+      "path": "references/templates/TPL-AUTH-IDENTITY.md",
+      "size": 4337,
+      "sha256": "722923ff3517a50a547d412cbad04eb84075ee5dd200f863e0fb11af519c4952"
+    },
+    {
+      "path": "references/templates/TPL-BACKEND-FOUNDATION.md",
+      "size": 4480,
+      "sha256": "282b3a7e14a695ee9ea816b61578a0f991b99c800b5b6c4e2ba264b161099328"
+    },
+    {
+      "path": "references/templates/TPL-BUSINESS-ENGINE.md",
+      "size": 4324,
+      "sha256": "e097ed6d539bfd69cce79668c9e5422b8d7540f960894c2832a6aa06b6e4a81f"
+    },
+    {
+      "path": "references/templates/TPL-CODE-REVIEW.md",
+      "size": 4177,
+      "sha256": "608b64551f52f6c4f6733889667574d0813028bb9d1687bd74252f3086609c04"
+    },
+    {
+      "path": "references/templates/TPL-CONTRACT.md",
+      "size": 4334,
+      "sha256": "84669ced4e0fcc55df43e0a1bbc63f4b487ae2fc3906eccd529a41f6f8ead988"
+    },
+    {
+      "path": "references/templates/TPL-CRAWLER-PIPELINE.md",
+      "size": 4340,
+      "sha256": "dd53bde7708d8eae32733113df0ef63752ae608e445141338de40415a1816af6"
+    },
+    {
+      "path": "references/templates/TPL-DATA-IMPORT.md",
+      "size": 4510,
+      "sha256": "7d9e3bae1a169498e1cda600997fab9c7cd519ff14053a10d63d923321311d48"
+    },
+    {
+      "path": "references/templates/TPL-DATA-MODEL-MIGRATION.md",
+      "size": 5157,
+      "sha256": "90eb5c11a9227f057205b9dd048e49bcd9dd491a51ab2c2a9b0ba238116fd4c4"
+    },
+    {
+      "path": "references/templates/TPL-DEPLOY-ENV.md",
+      "size": 4227,
+      "sha256": "6c9407c6b11f7f754cabd36a717748312a9d050bb18ac7031ee16f8d0d82e211"
+    },
+    {
+      "path": "references/templates/TPL-DESIGN-TOKEN-ASSET-INVENTORY.md",
+      "size": 3628,
+      "sha256": "9d4b7ed81778c4d0c2686bcdc4e2c0c1b735b0cc9c23824eb8e59cb27accbf3c"
+    },
+    {
+      "path": "references/templates/TPL-DEV-FEATURE.md",
+      "size": 4695,
+      "sha256": "3b6a78bccda0eae147e7ca630e026e6c2e9037c6ba2e266968aed767d9988909"
+    },
+    {
+      "path": "references/templates/TPL-DOCS-HANDOFF.md",
+      "size": 4175,
+      "sha256": "969e821c661c8558d844da6c30050fdc0dd6bafcd5c2df9ca5797631577224e5"
+    },
+    {
+      "path": "references/templates/TPL-EXPORT-DOWNLOAD.md",
+      "size": 4353,
+      "sha256": "eee5a2124da94fa4d23dbc486c096a1b043cfad8ce6c76de638eb93d04a32f3a"
+    },
+    {
+      "path": "references/templates/TPL-EXTERNAL-DATA.md",
+      "size": 4675,
+      "sha256": "e528f94c8599f621cffa217202c4393026647507569d82b9f803969f3fe84e51"
+    },
+    {
+      "path": "references/templates/TPL-FINAL-GATE.md",
+      "size": 5203,
+      "sha256": "84a036a09d19d5ab95beb34aab6d0fc3a4bbf67520305f87ff8d71faf78f4532"
+    },
+    {
+      "path": "references/templates/TPL-FRONTEND-COMPONENT.md",
+      "size": 4310,
+      "sha256": "b47fade8a3a814c54c87e9ce1b7934f5b1621ee61cf407bcc98e96defeb084cc"
+    },
+    {
+      "path": "references/templates/TPL-FRONTEND-PAGE.md",
+      "size": 4606,
+      "sha256": "f65a37d96843f8fcf94ce048e8d38f49e1943dc2c970b34f25c9a80837f787b1"
+    },
+    {
+      "path": "references/templates/TPL-FRONTEND-SHELL.md",
+      "size": 4271,
+      "sha256": "c3703ece83416d6a40a57cf12b726f26f2666d8d181063479135a70fb55b0276"
+    },
+    {
+      "path": "references/templates/TPL-HARNESS-EVIDENCE-GATE.md",
+      "size": 4131,
+      "sha256": "0ffc3bacf154c545ca987d148aa3fd2d5ee409f5b30c910bf61e51b82f3c3b08"
+    },
+    {
+      "path": "references/templates/TPL-INTAKE.md",
+      "size": 5026,
+      "sha256": "314f2c869d4d13174cdc2ec56b7c6784945cc09f6292e045fba7ac9aa9a80404"
+    },
+    {
+      "path": "references/templates/TPL-LEGACY-MIGRATION.md",
+      "size": 4363,
+      "sha256": "58227f822923c2ed418378618431b452d392ef49215b5a76424fe2330e0a7882"
+    },
+    {
+      "path": "references/templates/TPL-LOCAL-ONLY-GUARD.md",
+      "size": 4275,
+      "sha256": "061025fe2b8e1ec6582f6546afa6ce4687d0dfeee423dad1c804201a3872a4ae"
+    },
+    {
+      "path": "references/templates/TPL-LOCAL-SMOKE.md",
+      "size": 4172,
+      "sha256": "77578febe6319a050f91a02119c3abbf233cdd29fd9b712e441909fc077cbb87"
+    },
+    {
+      "path": "references/templates/TPL-LOCALE-ENCODING-GUARD.md",
+      "size": 3843,
+      "sha256": "af45b461d0170ae33a17b8eaa9bb5e32be572e8a55b8a3676c72b59f106b8926"
+    },
+    {
+      "path": "references/templates/TPL-METRIC-DELTA-ENGINE.md",
+      "size": 3486,
+      "sha256": "2e241c5c4dcdfa41a170e1baa2cbb9ac5d5c41e2c00dbca68c865928e51f6899"
+    },
+    {
+      "path": "references/templates/TPL-MINIAPP-PAGE.md",
+      "size": 3524,
+      "sha256": "09bfadcfc966ebd4d4bcb63c2a94d283be5046a3bf169b657661e2047fd88560"
+    },
+    {
+      "path": "references/templates/TPL-MINIAPP-SHELL.md",
+      "size": 3673,
+      "sha256": "82a29651cba95d94f53849ba8aa3a44f8790cfd95ff46ef386896b58fc017b5e"
+    },
+    {
+      "path": "references/templates/TPL-OBSERVABILITY.md",
+      "size": 4245,
+      "sha256": "7680e8ca48ca7b0f69f5d07d807ebda3da0cce556d387d66dd307ffbed7c0e51"
+    },
+    {
+      "path": "references/templates/TPL-ORCH-T00.md",
+      "size": 5617,
+      "sha256": "08cd9560aefe560e926f9d88e55283869136f43645105bdc6c098f09f26ed282"
+    },
+    {
+      "path": "references/templates/TPL-OWNER-E2E.md",
+      "size": 4329,
+      "sha256": "694e487c56c1f5f4f2f181ebe58f16ed6ab34b32a7077883e0e54906995dfec1"
+    },
+    {
+      "path": "references/templates/TPL-OWNER-SCENARIO.md",
+      "size": 4352,
+      "sha256": "ef22bbca55e63ef8cd080ce5ad1e42c1c9f764048bcc0d0a555d2218be6f0a1b"
+    },
+    {
+      "path": "references/templates/TPL-PAGE-CLICK-API.md",
+      "size": 4506,
+      "sha256": "056f782a37f50087380aed12f2fc9e1d695619bcdf3222e3a4d876585b8ce72b"
+    },
+    {
+      "path": "references/templates/TPL-PAYMENT-ENTITLEMENT.md",
+      "size": 4302,
+      "sha256": "38381ebe3788359c20e63f7bccb61978db0debd1aef4d7ac2048a94f3b962164"
+    },
+    {
+      "path": "references/templates/TPL-PERFORMANCE.md",
+      "size": 4317,
+      "sha256": "2e42e3bc4530451ca4a2e276b1e9d0746238612dce58166484e458aceca72f0e"
+    },
+    {
+      "path": "references/templates/TPL-QUOTA-RATE-LIMIT.md",
+      "size": 3650,
+      "sha256": "28b1377f70bfe4c1e059c96a0d3beb90ba3b68a7a70ac680d614785980bd5b6d"
+    },
+    {
+      "path": "references/templates/TPL-REF-MAP.md",
+      "size": 4342,
+      "sha256": "afe53cefbfbcf6f2b3e4b06e75f00e3ee000863ab13ed1ff729d58173887a019"
+    },
+    {
+      "path": "references/templates/TPL-RELEASE-RUNBOOK.md",
+      "size": 4139,
+      "sha256": "d76f81669a7f32320d8901cdfaf227d6ea7074ea5d7d4b415744c4a826a5d99a"
+    },
+    {
+      "path": "references/templates/TPL-REPAIR.md",
+      "size": 4503,
+      "sha256": "a63cf93996c52f617d4791cff04caf1095b6fdd3f31a812ebc635c9ced974318"
+    },
+    {
+      "path": "references/templates/TPL-REPORT-CARD-RENDERER.md",
+      "size": 3701,
+      "sha256": "4913020c93bf5fda273e3c4c877b03a78a939d149b0857a19357287e81692293"
+    },
+    {
+      "path": "references/templates/TPL-REPORT-GUARD.md",
+      "size": 4288,
+      "sha256": "9920f3811ffbc39cb63b933c9978cd38d93d03efcb25eff966f5b3fcad987d77"
+    },
+    {
+      "path": "references/templates/TPL-REQ-MATRIX.md",
+      "size": 4921,
+      "sha256": "39d76087892143ea1bf8a8e530b3dbe2fe7df9385f2e711d242ee76d5aba6d83"
+    },
+    {
+      "path": "references/templates/TPL-SCAFFOLD.md",
+      "size": 4417,
+      "sha256": "b762718a9325e29dd8d6574495a168ec086e0db7b85848a79757ccd4fe2be6d8"
+    },
+    {
+      "path": "references/templates/TPL-SCHEDULER-JOB.md",
+      "size": 4297,
+      "sha256": "a32f8349aa3dfb1f6761137e37cc27ab85114fabe39c6c2e6ab31e2cfeb88a59"
+    },
+    {
+      "path": "references/templates/TPL-SCREENSHOT-PIXEL-HARNESS.md",
+      "size": 4076,
+      "sha256": "0e6c46e85dd3e4bdea1ffb5367e86d50c24b5decd7e38a1af2ef5ea611e8b8d4"
+    },
+    {
+      "path": "references/templates/TPL-SECURITY.md",
+      "size": 4319,
+      "sha256": "632b9f8e110524d93892b2131d6321fb00dd88e9eb6758a800c654956051fad9"
+    },
+    {
+      "path": "references/templates/TPL-TEST-E2E.md",
+      "size": 4173,
+      "sha256": "754b4cfcb5b2d18c3d0f59ca1eb41fc63df14e86eac0c1dd2a573e15f3d56d6f"
+    },
+    {
+      "path": "references/templates/TPL-TEST-INTEGRATION.md",
+      "size": 4184,
+      "sha256": "9f0721263d7780753eaef6ecddc519fca717dbf2dfb43db3de0e0dd68eba5bb1"
+    },
+    {
+      "path": "references/templates/TPL-TEST-UNIT.md",
+      "size": 4201,
+      "sha256": "d1611a054c072c8317456b46abacbd1b0837b8845668de1e2d38ba56e90a350e"
+    },
+    {
+      "path": "references/templates/TPL-UI-MAP.md",
+      "size": 4808,
+      "sha256": "1446b79e9fd2115fa78c24eebcd2cf3ab4ba7f30e64a1ca867b7e26c9e12b13a"
+    },
+    {
+      "path": "references/templates/TPL-VISUAL-COMPARE.md",
+      "size": 5318,
+      "sha256": "dc6da11c0b81545fdc96587453e6fac208c72ab59e200c3e71c0cca136c0530d"
+    },
+    {
+      "path": "references/templates/TPL-VISUAL-REPAIR.md",
+      "size": 4473,
+      "sha256": "6d24f05e36997fc24148693ca7c88557d46153b518009152ffa9cc7a40159060"
+    },
+    {
+      "path": "scripts/audit-task-pack.py",
+      "size": 9022,
+      "sha256": "e4828c658d2443836dec8b0bf43e6012da018eee1336f77f689d0241d9b5b267"
+    },
+    {
+      "path": "scripts/audit-template-content-quality.py",
+      "size": 4654,
+      "sha256": "5dc6879375033f56042d556059cb664f4289a656731013cf9db0ae8ab73b8529"
+    },
+    {
+      "path": "scripts/run-task-pack.ps1",
+      "size": 2093,
+      "sha256": "7b373b39fdd7f1d5db773fb1e1f1dc3ec4bacf3dc53baf69ac266a63797f225e"
+    },
+    {
+      "path": "SKILL.md",
+      "size": 33278,
+      "sha256": "0f07ffd64f764eb0b19b7d41d2a49c9de8436dcd2f2b2c0e204316696e35e2c2"
+    }
+  ],
+  "packageSha256": "090cb95fca23c0dc3813b083b50f04e97c6f6923b523ca71a7772e9cf1da6d74",
+  "packageSize": 204410
+}

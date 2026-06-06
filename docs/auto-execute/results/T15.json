@@ -1,0 +1,114 @@
+{
+  "taskId": "T15",
+  "taskName": "Full Result Page",
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "summary": "Implemented UI-14 full unlocked Aura Card result page at /result/:id/full with structured full-card fields, local API caller simulation for full card read/save/share, disabled P1 7-day trend handling, and simulated page click/state evidence.",
+  "requirements": [
+    "REQ-002",
+    "REQ-003",
+    "REQ-004",
+    "REQ-008",
+    "REQ-010",
+    "REQ-017",
+    "REQ-020"
+  ],
+  "uiIds": [
+    "UI-14"
+  ],
+  "apiIds": [
+    "API-003",
+    "API-007",
+    "API-008",
+    "API-010"
+  ],
+  "ownerScenarios": [
+    "SCN-012",
+    "SCN-016"
+  ],
+  "changedFiles": [
+    "apps/wechat-mini/package.json",
+    "apps/wechat-mini/src/pages/result/full.js",
+    "apps/wechat-mini/src/pages/result/full.json",
+    "apps/wechat-mini/src/pages/result/full.wxml",
+    "apps/wechat-mini/src/pages/result/full.wxss",
+    "apps/wechat-mini/src/pages/result/full-page.mjs",
+    "apps/wechat-mini/tests/t15-full-result-page.test.mjs",
+    "docs/auto-execute/results/T15.json",
+    "docs/auto-execute/latest/T15-HANDOFF.md"
+  ],
+  "commands": [
+    {
+      "command": "pnpm --filter @auracue/wechat-mini test:t15",
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "evidence": null,
+      "note": "Initial PowerShell invocation of pnpm.ps1 was blocked by local execution policy before log capture; rerun with pnpm.cmd succeeded."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t15",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "evidence": "docs/auto-execute/logs/T15/full-result-page-test-command.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini dev:weapp",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T15/wechat-route-verify.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini typecheck",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T15/typecheck.log"
+    },
+    {
+      "command": "pnpm.cmd lint",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T15/lint.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "evidence": "docs/auto-execute/logs/T15/wechat-mini-test.log"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T15/diff-check.log"
+    },
+    {
+      "command": "rg -n \"guarantee|destiny|ugly|anxiety|therapy|medical|diagnos|requestPayment|cloud\\.database|wx\\.cloud|openai|apiKey|secret\" apps\\wechat-mini\\src\\pages\\result apps\\wechat-mini\\tests\\t15-full-result-page.test.mjs apps\\wechat-mini\\src\\pages\\result\\full-page.mjs",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T15/safety-grep.log",
+      "note": "No product-code unsafe/payment/cloud/AI matches; only a test assertion references wx.requestPayment as a forbidden needle."
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/traces/T15/full-result.json",
+    "docs/auto-execute/screenshots/T15/UI-14-full-result.html",
+    "docs/auto-execute/screenshots/T15/UI-14-full-result-render-summary.json",
+    "docs/auto-execute/logs/T15/full-result-page-test-command.log",
+    "docs/auto-execute/logs/T15/wechat-mini-test.log",
+    "docs/auto-execute/logs/T15/wechat-route-verify.log",
+    "docs/auto-execute/logs/T15/typecheck.log",
+    "docs/auto-execute/logs/T15/lint.log",
+    "docs/auto-execute/logs/T15/diff-check.log",
+    "docs/auto-execute/logs/T15/safety-grep.log"
+  ],
+  "blockers": [
+    {
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "reason": "T15 produced deterministic HTML structural capture, but no raster screenshot or pixel-diff evidence. UI-14 visual one-to-one proof remains for T22/T23."
+    }
+  ],
+  "localOnly": {
+    "payment": "local mock entitlement fixture only",
+    "ai": "fixture card data only",
+    "analytics": "local fixture analytics collector",
+    "storage": "local evidence files only",
+    "db": "mock repository/readback deferred to T20"
+  },
+  "nextSteps": [
+    "T16 may implement /share/:id, /share/:id/channels, and /saved/:id pages that T15 navigates to.",
+    "T20 should provide independent API/DB readback for API-003 full, API-007 save, and API-008 share.",
+    "T22/T23 should capture raster screenshot and pixel diff for UI-14 before any pure visual PASS claim."
+  ],
+  "completedAt": "2026-05-26T00:00:00+08:00"
+}

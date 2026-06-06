@@ -1,0 +1,14 @@
+<view class="page">
+  <view class="brand">AuraCue</view>
+  <view class="title">Your Full Reading</view>
+  <view class="card">
+    <view class="eyebrow">Today's Aura</view>
+    <view class="aura">{{auraName}}</view>
+    <view class="copy">Steady confidence. Soft presence. You lead without needing to be loud.</view>
+  </view>
+  <view class="panel">Lucky Colors: Blush Pink, Deep Navy, Soft Gold</view>
+  <view class="panel">Mini Ritual: 3 Deep Anchor Breaths</view>
+  <button class="primary" bindtap="activateAura">Activate Today's Aura</button>
+  <button class="secondary" bindtap="saveCard">Save Card</button>
+  <button class="secondary" bindtap="shareStory">Share Story</button>
+</view>

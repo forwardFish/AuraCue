@@ -1,0 +1,385 @@
+{
+  "scenarioId": "SCN-013",
+  "stepId": "01",
+  "status": "PASS",
+  "personaGoal": "Share card",
+  "action": "Open share route; click save/share/copy/channel options/cancel",
+  "uiIds": [
+    "UI-15",
+    "UI-16"
+  ],
+  "visibleState": {
+    "storyShare": {
+      "uiId": "UI-15",
+      "route": "/share/:id",
+      "sourceReference": "docs/UI/小程序/10A-分享_Story卡预览与保存.png",
+      "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/10a_story/code.html",
+      "requirementIds": [
+        "REQ-011",
+        "REQ-014",
+        "REQ-017"
+      ],
+      "apiIds": [
+        "API-008",
+        "API-009",
+        "API-010"
+      ],
+      "ownerScenario": "SCN-013",
+      "cardId": "card-004",
+      "title": "Today's Lucky Aura",
+      "eyebrow": "Share your",
+      "auraName": "Soft Confidence",
+      "theme": "Romantic Clarity",
+      "luckyColor": "Embrace your glow",
+      "outfit": "Dress",
+      "social": "Message",
+      "ritual": "Rose",
+      "caption": "Speak from heart, your words create magic.",
+      "shareImage": {
+        "cardId": "card-004",
+        "templateId": "template-story-001",
+        "format": "story-9x16",
+        "localPath": "local://share-images/card-004-template-story-001.png",
+        "width": 1080,
+        "height": 1920,
+        "aspectRatio": "9:16",
+        "renderer": "deterministic-local-renderer",
+        "deterministicKey": "card-004|template-story-001|Tonight's Lucky Aura Card|Rose Lantern Aura|rose quartz|date-confidence-local|Today I am carrying rose lantern aura.",
+        "artifactKind": "svg-data-url",
+        "dataUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iQXVyYUN1ZSBSb3NlIExhbnRlcm4gQXVyYSBzaGFyZSBjYXJkIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYXVyYWN1ZS1iZy1jYXJkLTAwNCIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMmExYTRhIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNDIlIiBzdG9wLWNvbG9yPSIjOGQ1YmZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNzIlIiBzdG9wLWNvbG9yPSIjZjQ4ZmIxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Q0YWYzNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwODAiIGhlaWdodD0iMTkyMCIgZmlsbD0idXJsKCNhdXJhY3VlLWJnLWNhcmQtMDA0KSIvPgogIDxyZWN0IHg9IjQyIiB5PSI0MiIgd2lkdGg9Ijk5NiIgaGVpZ2h0PSIxODM2IiByeD0iNjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q0YWYzNyIgc3Ryb2tlLXdpZHRoPSI0IiBvcGFjaXR5PSIwLjcyIi8+CiAgPHRleHQgeD0iNTQwIiB5PSIxNzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNkNGFmMzciIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSI0MiIgbGV0dGVyLXNwYWNpbmc9IjEwIj5BVVJBQ1VFPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMjkyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iODIiIGZvbnQtd2VpZ2h0PSI3MDAiPlRvbmlnaHQncyBMdWNreSBBdXJhIENhcmQ8L3RleHQ+CiAgPHRleHQgeD0iNTQwIiB5PSIzODIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmY3ZGMiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDIiPlRoZSBTdGFyPC90ZXh0PgogIDxyZWN0IHg9Ijk2IiB5PSIxMDgwIiB3aWR0aD0iODg4IiBoZWlnaHQ9IjY5NiIgcng9IjU0IiBmaWxsPSIjZmZmZGY4IiBvcGFjaXR5PSIwLjkyIi8+CiAgPHRleHQgeD0iNTQwIiB5PSIxMTk4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iNjgiIGZvbnQtd2VpZ2h0PSI3MDAiPlJvc2UgTGFudGVybiBBdXJhPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMTI3MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzdhNmI1YyIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNCI+ZGF0ZS1jb25maWRlbmNlLWxvY2FsPC90ZXh0PgogIDx0ZXh0IHg9IjE4MCIgeT0iMTM4MiIgZmlsbD0iIzdhNmI1YyIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCI+THVja3kgQ29sb3I8L3RleHQ+CiAgPHRleHQgeD0iOTAwIiB5PSIxMzgyIiB0ZXh0LWFuY2hvcj0iZW5kIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIj5yb3NlIHF1YXJ0ejwvdGV4dD4KICA8dGV4dCB4PSIxODAiIHk9IjE0ODAiIGZpbGw9IiM3YTZiNWMiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiPk91dGZpdCBFbmVyZ3k8L3RleHQ+CiAgPHRleHQgeD0iOTAwIiB5PSIxNDgwIiB0ZXh0LWFuY2hvcj0iZW5kIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIj5XZWFyIG9uZSBjbGVhbiBsaW5lIHdpdGggYSBzb2Z0IGhpZ2hsaWdodCBuZWFyIHRoZSBmYWNlLjwvdGV4dD4KICA8dGV4dCB4PSIxODAiIHk9IjE1NzgiIGZpbGw9IiM3YTZiNWMiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiPlNvY2lhbCBBY3Rpb248L3RleHQ+CiAgPHRleHQgeD0iOTAwIiB5PSIxNTc4IiB0ZXh0LWFuY2hvcj0iZW5kIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIj5PcGVuIHdpdGggYSB3YXJtIGNvbXBsaW1lbnQgYW5kIG9uZSBjbGVhciBxdWVzdGlvbi48L3RleHQ+CiAgPHRleHQgeD0iMTgwIiB5PSIxNjc2IiBmaWxsPSIjN2E2YjVjIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIj5UaW55IFJpdHVhbDwvdGV4dD4KICA8dGV4dCB4PSI5MDAiIHk9IjE2NzYiIHRleHQtYW5jaG9yPSJlbmQiIGZpbGw9IiMyYTFhNGEiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSI3MDAiPlRha2UgdGhyZWUgc2xvdyBicmVhdGhzIGJlZm9yZSBzdGVwcGluZyBvdXQuPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMTc0OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzJhMWE0YSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXN0eWxlPSJpdGFsaWMiPlRvZGF5IEkgYW0gY2Fycnlpbmcgcm9zZSBsYW50ZXJuIGF1cmEuPC90ZXh0Pgo8L3N2Zz4=",
+        "dataUrlSha256": "70758ecada1dd0d95380b18a299f69306bd74f4f0cbb03605a03c1973d762637",
+        "textFields": {
+          "title": "Tonight's Lucky Aura Card",
+          "auraName": "Rose Lantern Aura",
+          "tarotSymbol": "The Star",
+          "message": "A small confident choice can make the next moment feel easier.",
+          "luckyColor": "rose quartz",
+          "outfit": "Wear one clean line with a soft highlight near the face.",
+          "beauty": "Keep the glow fresh and the finish light.",
+          "social": "Open with a warm compliment and one clear question.",
+          "ritual": "Take three slow breaths before stepping out.",
+          "avoid": "Avoid over-planning the first ten minutes.",
+          "caption": "Today I am carrying rose lantern aura.",
+          "theme": "date-confidence-local"
+        },
+        "layers": [
+          {
+            "type": "background",
+            "color": "warm moonlight"
+          },
+          {
+            "type": "title",
+            "text": "Tonight's Lucky Aura Card"
+          },
+          {
+            "type": "auraName",
+            "text": "Rose Lantern Aura"
+          },
+          {
+            "type": "tarotSymbol",
+            "text": "The Star"
+          },
+          {
+            "type": "luckyColor",
+            "text": "rose quartz"
+          },
+          {
+            "type": "outfit",
+            "text": "Wear one clean line with a soft highlight near the face."
+          },
+          {
+            "type": "social",
+            "text": "Open with a warm compliment and one clear question."
+          },
+          {
+            "type": "ritual",
+            "text": "Take three slow breaths before stepping out."
+          },
+          {
+            "type": "caption",
+            "text": "Today I am carrying rose lantern aura."
+          }
+        ]
+      },
+      "cardAspectRatio": "9:16",
+      "renderedArtifact": {
+        "kind": "svg-data-url",
+        "localPath": "local://share-images/card-004-template-story-001.png",
+        "dataUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iQXVyYUN1ZSBSb3NlIExhbnRlcm4gQXVyYSBzaGFyZSBjYXJkIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYXVyYWN1ZS1iZy1jYXJkLTAwNCIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMmExYTRhIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNDIlIiBzdG9wLWNvbG9yPSIjOGQ1YmZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNzIlIiBzdG9wLWNvbG9yPSIjZjQ4ZmIxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Q0YWYzNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwODAiIGhlaWdodD0iMTkyMCIgZmlsbD0idXJsKCNhdXJhY3VlLWJnLWNhcmQtMDA0KSIvPgogIDxyZWN0IHg9IjQyIiB5PSI0MiIgd2lkdGg9Ijk5NiIgaGVpZ2h0PSIxODM2IiByeD0iNjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q0YWYzNyIgc3Ryb2tlLXdpZHRoPSI0IiBvcGFjaXR5PSIwLjcyIi8+CiAgPHRleHQgeD0iNTQwIiB5PSIxNzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNkNGFmMzciIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSI0MiIgbGV0dGVyLXNwYWNpbmc9IjEwIj5BVVJBQ1VFPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMjkyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iODIiIGZvbnQtd2VpZ2h0PSI3MDAiPlRvbmlnaHQncyBMdWNreSBBdXJhIENhcmQ8L3RleHQ+CiAgPHRleHQgeD0iNTQwIiB5PSIzODIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmY3ZGMiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDIiPlRoZSBTdGFyPC90ZXh0PgogIDxyZWN0IHg9Ijk2IiB5PSIxMDgwIiB3aWR0aD0iODg4IiBoZWlnaHQ9IjY5NiIgcng9IjU0IiBmaWxsPSIjZmZmZGY4IiBvcGFjaXR5PSIwLjkyIi8+CiAgPHRleHQgeD0iNTQwIiB5PSIxMTk4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iNjgiIGZvbnQtd2VpZ2h0PSI3MDAiPlJvc2UgTGFudGVybiBBdXJhPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMTI3MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzdhNmI1YyIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNCI+ZGF0ZS1jb25maWRlbmNlLWxvY2FsPC90ZXh0PgogIDx0ZXh0IHg9IjE4MCIgeT0iMTM4MiIgZmlsbD0iIzdhNmI1YyIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCI+THVja3kgQ29sb3I8L3RleHQ+CiAgPHRleHQgeD0iOTAwIiB5PSIxMzgyIiB0ZXh0LWFuY2hvcj0iZW5kIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIj5yb3NlIHF1YXJ0ejwvdGV4dD4KICA8dGV4dCB4PSIxODAiIHk9IjE0ODAiIGZpbGw9IiM3YTZiNWMiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiPk91dGZpdCBFbmVyZ3k8L3RleHQ+CiAgPHRleHQgeD0iOTAwIiB5PSIxNDgwIiB0ZXh0LWFuY2hvcj0iZW5kIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIj5XZWFyIG9uZSBjbGVhbiBsaW5lIHdpdGggYSBzb2Z0IGhpZ2hsaWdodCBuZWFyIHRoZSBmYWNlLjwvdGV4dD4KICA8dGV4dCB4PSIxODAiIHk9IjE1NzgiIGZpbGw9IiM3YTZiNWMiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiPlNvY2lhbCBBY3Rpb248L3RleHQ+CiAgPHRleHQgeD0iOTAwIiB5PSIxNTc4IiB0ZXh0LWFuY2hvcj0iZW5kIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIj5PcGVuIHdpdGggYSB3YXJtIGNvbXBsaW1lbnQgYW5kIG9uZSBjbGVhciBxdWVzdGlvbi48L3RleHQ+CiAgPHRleHQgeD0iMTgwIiB5PSIxNjc2IiBmaWxsPSIjN2E2YjVjIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIj5UaW55IFJpdHVhbDwvdGV4dD4KICA8dGV4dCB4PSI5MDAiIHk9IjE2NzYiIHRleHQtYW5jaG9yPSJlbmQiIGZpbGw9IiMyYTFhNGEiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSI3MDAiPlRha2UgdGhyZWUgc2xvdyBicmVhdGhzIGJlZm9yZSBzdGVwcGluZyBvdXQuPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMTc0OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzJhMWE0YSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXN0eWxlPSJpdGFsaWMiPlRvZGF5IEkgYW0gY2Fycnlpbmcgcm9zZSBsYW50ZXJuIGF1cmEuPC90ZXh0Pgo8L3N2Zz4=",
+        "dataUrlSha256": "70758ecada1dd0d95380b18a299f69306bd74f4f0cbb03605a03c1973d762637",
+        "deterministicKey": "card-004|template-story-001|Tonight's Lucky Aura Card|Rose Lantern Aura|rose quartz|date-confidence-local|Today I am carrying rose lantern aura.",
+        "dimensions": {
+          "width": 1080,
+          "height": 1920
+        }
+      },
+      "actions": {
+        "close": {
+          "controlId": "close-share-preview",
+          "label": "Close",
+          "route": "/result/:id/full"
+        },
+        "save": {
+          "controlId": "save-story-card",
+          "label": "Save",
+          "route": "/saved/:id",
+          "apiId": "API-007"
+        },
+        "share": {
+          "controlId": "share-story-card",
+          "label": "Share",
+          "route": "/share/:id/channels",
+          "apiId": "API-008"
+        },
+        "copy": {
+          "controlId": "copy-story-link",
+          "label": "Copy Link",
+          "route": null,
+          "apiId": "API-008"
+        }
+      },
+      "localOnly": {
+        "share": "local mocked platform action only",
+        "storage": "local rendered share image path only",
+        "analytics": "local fixture collector",
+        "db": "mock repository/readback deferred to T20"
+      }
+    },
+    "channels": [
+      "WeChat",
+      "Moments",
+      "Xiaohongshu",
+      "Instagram Story",
+      "Save Image",
+      "Copy Link"
+    ]
+  },
+  "route": {
+    "uiId": "UI-15",
+    "route": "/share/:id",
+    "path": "/share/card-004",
+    "pagePath": "pages/share/story",
+    "state": "story-preview",
+    "ownerScenario": "SCN-013",
+    "title": "Share Story"
+  },
+  "apiIds": [
+    "API-007",
+    "API-008",
+    "API-009",
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-018"
+  ],
+  "clickEvidence": {
+    "saveStory": {
+      "controlId": "save-story-card",
+      "expectedRoute": "/saved/:id",
+      "apiId": "API-007",
+      "saved": {
+        "saved": true,
+        "cardId": "card-004",
+        "savedAt": "2026-05-26T00:00:00.000Z",
+        "source": "share_story_preview"
+      },
+      "route": {
+        "uiId": "UI-17",
+        "route": "/saved/:id",
+        "path": "/saved/card-004",
+        "pagePath": "pages/saved/success",
+        "state": "save-success",
+        "ownerScenario": "SCN-014",
+        "title": "Saved"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-059"
+      }
+    },
+    "shareStory": {
+      "controlId": "share-story-card",
+      "expectedRoute": "/share/:id/channels",
+      "apiId": "API-008",
+      "share": {
+        "shareEventId": "share-012",
+        "cardId": "card-004",
+        "channel": "story",
+        "source": "share_story_preview"
+      },
+      "route": {
+        "uiId": "UI-16",
+        "route": "/share/:id/channels",
+        "path": "/share/card-004/channels",
+        "pagePath": "pages/share/channels",
+        "state": "channel-chooser",
+        "ownerScenario": "SCN-013",
+        "title": "Share Channels"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-060"
+      }
+    },
+    "copyStory": {
+      "controlId": "copy-story-link",
+      "apiId": "API-008",
+      "share": {
+        "shareEventId": "share-013",
+        "cardId": "card-004",
+        "channel": "copy_link",
+        "source": "share_story_preview"
+      },
+      "toast": "Link copied",
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-061"
+      }
+    },
+    "channelClicks": [
+      {
+        "controlId": "share-channel-wechat",
+        "apiId": "API-008",
+        "channel": {
+          "id": "wechat",
+          "label": "WeChat",
+          "accent": "#07c160",
+          "apiChannel": "wechat"
+        },
+        "share": {
+          "shareEventId": "share-014",
+          "cardId": "card-004",
+          "channel": "wechat",
+          "source": "share_channel_chooser:wechat"
+        },
+        "mockedExternalAction": true,
+        "analyticsResponse": {
+          "accepted": true,
+          "analyticsEventId": "analytics-063"
+        }
+      },
+      {
+        "controlId": "share-channel-moments",
+        "apiId": "API-008",
+        "channel": {
+          "id": "moments",
+          "label": "Moments",
+          "accent": "#18b77a",
+          "apiChannel": "moments"
+        },
+        "share": {
+          "shareEventId": "share-015",
+          "cardId": "card-004",
+          "channel": "moments",
+          "source": "share_channel_chooser:moments"
+        },
+        "mockedExternalAction": true,
+        "analyticsResponse": {
+          "accepted": true,
+          "analyticsEventId": "analytics-064"
+        }
+      },
+      {
+        "controlId": "share-channel-xiaohongshu",
+        "apiId": "API-008",
+        "channel": {
+          "id": "xiaohongshu",
+          "label": "Xiaohongshu",
+          "accent": "#ff2442",
+          "apiChannel": "story"
+        },
+        "share": {
+          "shareEventId": "share-016",
+          "cardId": "card-004",
+          "channel": "story",
+          "source": "share_channel_chooser:xiaohongshu"
+        },
+        "mockedExternalAction": true,
+        "analyticsResponse": {
+          "accepted": true,
+          "analyticsEventId": "analytics-065"
+        }
+      },
+      {
+        "controlId": "share-channel-instagram-story",
+        "apiId": "API-008",
+        "channel": {
+          "id": "instagram-story",
+          "label": "Instagram Story",
+          "accent": "#d84bb5",
+          "apiChannel": "story"
+        },
+        "share": {
+          "shareEventId": "share-017",
+          "cardId": "card-004",
+          "channel": "story",
+          "source": "share_channel_chooser:instagram-story"
+        },
+        "mockedExternalAction": true,
+        "analyticsResponse": {
+          "accepted": true,
+          "analyticsEventId": "analytics-066"
+        }
+      },
+      {
+        "controlId": "share-channel-save-image",
+        "apiId": "API-008",
+        "channel": {
+          "id": "save-image",
+          "label": "Save Image",
+          "accent": "#64748b",
+          "apiChannel": "save_image"
+        },
+        "share": {
+          "shareEventId": "share-018",
+          "cardId": "card-004",
+          "channel": "save_image",
+          "source": "share_channel_chooser:save-image"
+        },
+        "mockedExternalAction": true,
+        "analyticsResponse": {
+          "accepted": true,
+          "analyticsEventId": "analytics-067"
+        }
+      },
+      {
+        "controlId": "share-channel-copy-link",
+        "apiId": "API-008",
+        "channel": {
+          "id": "copy-link",
+          "label": "Copy Link",
+          "accent": "#8b5cf6",
+          "apiChannel": "copy_link"
+        },
+        "share": {
+          "shareEventId": "share-019",
+          "cardId": "card-004",
+          "channel": "copy_link",
+          "source": "share_channel_chooser:copy-link"
+        },
+        "mockedExternalAction": true,
+        "analyticsResponse": {
+          "accepted": true,
+          "analyticsEventId": "analytics-068"
+        }
+      }
+    ],
+    "cancelChannels": {
+      "controlId": "cancel-share-channel",
+      "expectedRoute": "/share/:id",
+      "route": {
+        "uiId": "UI-15",
+        "route": "/share/:id",
+        "path": "/share/card-004",
+        "pagePath": "pages/share/story",
+        "state": "story-preview",
+        "ownerScenario": "SCN-013",
+        "title": "Share Story"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-069"
+      }
+    }
+  }
+}

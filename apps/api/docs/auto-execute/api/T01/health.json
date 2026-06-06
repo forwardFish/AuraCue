@@ -1,0 +1,31 @@
+{
+  "statusCode": 200,
+  "body": {
+    "status": "ready",
+    "version": "0.1.0-t01",
+    "mode": "local-mock",
+    "services": {
+      "payment": "mock-only",
+      "ai": "deterministic-local-only",
+      "analytics": "local-collector-only",
+      "storage": "local-artifacts-only",
+      "db": "json-repository-placeholder"
+    },
+    "repository": {
+      "status": "ready",
+      "mode": "deterministic-json-placeholder",
+      "entitiesPlannedForT03": [
+        "users",
+        "aura_cards",
+        "generation_jobs",
+        "card_templates",
+        "share_events",
+        "analytics_events",
+        "payment_orders",
+        "user_entitlements"
+      ]
+    }
+  },
+  "source": "apps/api/src/server.mjs",
+  "endpoint": "GET /api/health"
+}

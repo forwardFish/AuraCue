@@ -1,0 +1,19 @@
+{
+  "taskId": "T22",
+  "uiId": "UI-02",
+  "title": "Optional Context",
+  "route": "/create/context",
+  "pagePath": "pages/create/context",
+  "state": "optional-context",
+  "sourceReference": "docs/UI/小程序/P0-02-Context-可选今日上下文.png",
+  "referencePresent": true,
+  "actualScreenshotPresent": false,
+  "diffImagePresent": false,
+  "metricsPresent": false,
+  "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+  "requiredEvidence": {
+    "actualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-02.png",
+    "diffImage": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-02.png",
+    "pixelMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-02.json"
+  }
+}

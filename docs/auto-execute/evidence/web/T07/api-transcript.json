@@ -1,0 +1,437 @@
+[
+  {
+    "endpoint": "GET /api/v1/aura-cards/:cardId",
+    "case": "success no secrets",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "cardId": "cmq1l75c10004bgvc6ttbhvsb",
+        "ownerAnonymousId": "anon_7740a4b2a8d943c1b94c1e2326bc7946",
+        "mood": "confident",
+        "context": "work meeting",
+        "drawSeed": "seed_fc733627808e635f",
+        "drawPosition": 2,
+        "content": {
+          "title": "Meeting Glow Aura Card",
+          "auraName": "Clear Signal Aura",
+          "tarotSymbol": "The Magician",
+          "message": "A small confident choice can make the next moment feel easier.",
+          "luckyColor": "soft ivory",
+          "colors": {
+            "primary": "soft ivory",
+            "accent": "polished jade",
+            "background": "warm moonlight"
+          },
+          "outfit": "Wear one clean line with a soft highlight near the face.",
+          "beauty": "Keep the glow fresh and the finish light.",
+          "social": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "ritual": "Take three slow breaths before stepping out.",
+          "avoid": "Avoid over-planning the first ten minutes.",
+          "caption": "Today I am carrying clear signal aura.",
+          "theme": "work-confidence-local-2",
+          "cardTitle": "Meeting Glow Aura Card",
+          "auraColor": "soft ivory",
+          "luckyColors": [
+            "soft ivory",
+            "polished jade",
+            "warm moonlight"
+          ],
+          "styleVibe": "Clear Signal Aura with polished jade",
+          "energyMessage": "A small confident choice can make the next moment feel easier.",
+          "outfitEnergy": "Wear one clean line with a soft highlight near the face.",
+          "beautyCue": "Keep the glow fresh and the finish light.",
+          "socialMove": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "miniRitual": "Take three slow breaths before stepping out.",
+          "todayIntention": "I carry confidence with ease.",
+          "luckyAnchorCandidates": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            },
+            {
+              "type": "jewelry",
+              "label": "small gold ring"
+            }
+          ],
+          "shareCaption": "Today I am carrying clear signal aura.",
+          "safetyDisclaimer": "For reflection and fun. Not a guarantee or professional advice.",
+          "generatedAt": "2026-06-06T00:00:22.463Z",
+          "generationSource": "local-fallback",
+          "fallbackUsed": true,
+          "drawSeed": "seed_fc733627808e635f"
+        },
+        "shareImageUrl": null,
+        "isActivated": false,
+        "activatedAt": null,
+        "activation": null,
+        "createdAt": "2026-06-06T00:00:22.465Z",
+        "updatedAt": "2026-06-06T00:00:22.465Z"
+      }
+    }
+  },
+  {
+    "endpoint": "GET /api/v1/aura-cards/:cardId",
+    "case": "not found",
+    "status": 404,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "NOT_FOUND",
+        "message": "Aura card was not found.",
+        "details": {}
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/aura-cards/:cardId/render",
+    "case": "invalid platform",
+    "status": 400,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "platform must be web or wechat.",
+        "details": {}
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/aura-cards/:cardId/render",
+    "case": "success 1080x1920",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "cardId": "cmq1l75c10004bgvc6ttbhvsb",
+        "shareImageUrl": "local://share-images/cmq1l75c10004bgvc6ttbhvsb-template-story-001.png",
+        "width": 1080,
+        "height": 1920,
+        "renderer": "deterministic-local-renderer",
+        "deterministicKey": "cmq1l75c10004bgvc6ttbhvsb|template-story-001|Meeting Glow Aura Card|Clear Signal Aura|soft ivory|work-confidence-local-2|Today I am carrying clear signal aura.",
+        "dataUrlSha256": "e9257d242424b60bc0fe184d35e5b16b4d2956e84b410e5f82848b45ced483a8",
+        "reused": false
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/aura-cards/:cardId/render",
+    "case": "idempotent",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "cardId": "cmq1l75c10004bgvc6ttbhvsb",
+        "shareImageUrl": "local://share-images/cmq1l75c10004bgvc6ttbhvsb-template-story-001.png",
+        "width": 1080,
+        "height": 1920,
+        "renderer": "deterministic-local-renderer",
+        "deterministicKey": "cmq1l75c10004bgvc6ttbhvsb|template-story-001|Meeting Glow Aura Card|Clear Signal Aura|soft ivory|work-confidence-local-2|Today I am carrying clear signal aura.",
+        "dataUrlSha256": "e9257d242424b60bc0fe184d35e5b16b4d2956e84b410e5f82848b45ced483a8",
+        "reused": true
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/aura-cards/:cardId/activation/start",
+    "case": "anchor required",
+    "status": 400,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "anchorType and anchorLabel are required.",
+        "details": {}
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/aura-cards/:cardId/activation/start",
+    "case": "success",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "activationId": "cmq1l75e50005bgvc5yqq2vf5",
+        "status": "started",
+        "cardId": "cmq1l75c10004bgvc6ttbhvsb",
+        "anchorType": "lucky_color",
+        "anchorLabel": "soft ivory",
+        "alreadyActivated": false
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/aura-cards/:cardId/activation/start",
+    "case": "idempotent",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "activationId": "cmq1l75e50005bgvc5yqq2vf5",
+        "status": "started",
+        "cardId": "cmq1l75c10004bgvc6ttbhvsb",
+        "anchorType": "lucky_color",
+        "anchorLabel": "soft ivory",
+        "alreadyActivated": false
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/activations/:activationId/seal",
+    "case": "hold too short",
+    "status": 400,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "HOLD_TOO_SHORT",
+        "message": "Hold duration must be at least 3000ms.",
+        "details": {}
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/activations/:activationId/seal",
+    "case": "wrong user",
+    "status": 404,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "NOT_FOUND",
+        "message": "Activation was not found for this anonymous user.",
+        "details": {}
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/activations/:activationId/seal",
+    "case": "success",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "activationId": "cmq1l75e50005bgvc5yqq2vf5",
+        "cardId": "cmq1l75c10004bgvc6ttbhvsb",
+        "sealed": true,
+        "status": "sealed",
+        "activatedAt": "2026-06-06T00:00:22.553Z",
+        "holdDurationMs": 3200
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/activations/:activationId/seal",
+    "case": "idempotent repeat",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "activationId": "cmq1l75e50005bgvc5yqq2vf5",
+        "cardId": "cmq1l75c10004bgvc6ttbhvsb",
+        "sealed": true,
+        "status": "sealed",
+        "activatedAt": "2026-06-06T00:00:22.553Z",
+        "holdDurationMs": 3200
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/aura-cards/:cardId/save",
+    "case": "not found",
+    "status": 404,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "NOT_FOUND",
+        "message": "Aura card was not found for this anonymous user.",
+        "details": {}
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/aura-cards/:cardId/save",
+    "case": "success",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "cardId": "cmq1l75c10004bgvc6ttbhvsb",
+        "savedAt": "2026-06-06T00:00:22.573Z",
+        "savedCardId": "cmq1l75f10006bgvcgohsmnu0",
+        "idempotent": false
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/aura-cards/:cardId/save",
+    "case": "idempotent",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "cardId": "cmq1l75c10004bgvc6ttbhvsb",
+        "savedAt": "2026-06-06T00:00:22.573Z",
+        "savedCardId": "cmq1l75f10006bgvcgohsmnu0",
+        "idempotent": true
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/aura-cards/:cardId/share",
+    "case": "channel validation",
+    "status": 400,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "channel is not supported.",
+        "details": {}
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/aura-cards/:cardId/share",
+    "case": "success",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "shareEventId": "cmq1l75fk0008bgvc2kmjpcxi",
+        "cardId": "cmq1l75c10004bgvc6ttbhvsb",
+        "channel": "download",
+        "source": "share_preview",
+        "shareUrl": "/share/cmq1l75c10004bgvc6ttbhvsb"
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/analytics/events",
+    "case": "secret-like payload rejected",
+    "status": 400,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "Analytics event is invalid.",
+        "details": {
+          "properties.apiToken": "Secret-like analytics properties are not allowed."
+        }
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/analytics/events",
+    "case": "event whitelist",
+    "status": 400,
+    "body": {
+      "ok": false,
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "Analytics event is invalid.",
+        "details": {
+          "eventName": "Expected one of: page_view_home, click_generate_start, select_scene, select_energy, generation_started, generation_success, generation_failed, view_result_free, click_unlock, checkout_started, checkout_success, save_card, share_card, copy_share_link, invite_started, invite_completed, return_next_day, page_view_scene_selection, page_view_energy_selection, blocked_continue_scene, click_scene_continue, blocked_generate_incomplete_selection, click_generate_card, page_view_generation_loading, poll_generation_job, page_view_generation_error, click_generation_retry, click_generation_change_scene, page_view_free_preview, click_invite_unlock_entry, click_preview_share_locked, page_view_unlock_choice, click_paid_unlock_entry, click_invite_instead, page_view_invite_start, click_invite_friends, click_invite_paid_unlock, page_view_invite_progress, click_copy_invite_link, click_invite_again, click_invite_how_it_works, page_view_invite_landing, click_friend_generate_card, page_view_mock_payment_confirm, mock_payment_started, mock_payment_completed, page_view_mock_payment_failed, click_restore_purchase, click_payment_invite_instead, click_payment_contact_support, page_view_mock_payment_success, click_view_full_card_after_payment, click_share_story_after_payment, page_view_full_result, click_save_card, click_share_story, click_more_sharing_options, click_view_7_day_trend_disabled, page_view_share, page_view_share_story, page_view_share_channels, share_started, share_channel_selected, share_image_rendered, click_close_share_preview, click_save_story_card, click_share_story_card, click_copy_story_link, click_share_channel, click_cancel_share_channels, card_saved, page_view_save_success, save_success_viewed, click_save_success_share_now, click_save_success_back_home, click_view_saved_card, activation_page_view, activation_anchor_selected, activation_started, activation_hold_started, activation_hold_cancelled, activation_hold_completed, aura_activated, share_preview_view, render_failed"
+        }
+      }
+    }
+  },
+  {
+    "endpoint": "POST /api/v1/analytics/events",
+    "case": "success",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "analyticsEventId": "cmq1l75ft0009bgvclo614o7q",
+        "eventName": "aura_activated",
+        "page": "/activated/cmq1l75c10004bgvc6ttbhvsb"
+      }
+    }
+  },
+  {
+    "endpoint": "GET /api/v1/aura-cards/:cardId",
+    "case": "activation state readback",
+    "status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "cardId": "cmq1l75c10004bgvc6ttbhvsb",
+        "ownerAnonymousId": "anon_7740a4b2a8d943c1b94c1e2326bc7946",
+        "mood": "confident",
+        "context": "work meeting",
+        "drawSeed": "seed_fc733627808e635f",
+        "drawPosition": 2,
+        "content": {
+          "title": "Meeting Glow Aura Card",
+          "auraName": "Clear Signal Aura",
+          "tarotSymbol": "The Magician",
+          "message": "A small confident choice can make the next moment feel easier.",
+          "luckyColor": "soft ivory",
+          "colors": {
+            "primary": "soft ivory",
+            "accent": "polished jade",
+            "background": "warm moonlight"
+          },
+          "outfit": "Wear one clean line with a soft highlight near the face.",
+          "beauty": "Keep the glow fresh and the finish light.",
+          "social": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "ritual": "Take three slow breaths before stepping out.",
+          "avoid": "Avoid over-planning the first ten minutes.",
+          "caption": "Today I am carrying clear signal aura.",
+          "theme": "work-confidence-local-2",
+          "cardTitle": "Meeting Glow Aura Card",
+          "auraColor": "soft ivory",
+          "luckyColors": [
+            "soft ivory",
+            "polished jade",
+            "warm moonlight"
+          ],
+          "styleVibe": "Clear Signal Aura with polished jade",
+          "energyMessage": "A small confident choice can make the next moment feel easier.",
+          "outfitEnergy": "Wear one clean line with a soft highlight near the face.",
+          "beautyCue": "Keep the glow fresh and the finish light.",
+          "socialMove": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "miniRitual": "Take three slow breaths before stepping out.",
+          "todayIntention": "I carry confidence with ease.",
+          "luckyAnchorCandidates": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            },
+            {
+              "type": "jewelry",
+              "label": "small gold ring"
+            }
+          ],
+          "shareCaption": "Today I am carrying clear signal aura.",
+          "safetyDisclaimer": "For reflection and fun. Not a guarantee or professional advice.",
+          "generatedAt": "2026-06-06T00:00:22.463Z",
+          "generationSource": "local-fallback",
+          "fallbackUsed": true,
+          "drawSeed": "seed_fc733627808e635f"
+        },
+        "shareImageUrl": "local://share-images/cmq1l75c10004bgvc6ttbhvsb-template-story-001.png",
+        "isActivated": true,
+        "activatedAt": "2026-06-06T00:00:22.553Z",
+        "activation": {
+          "activationId": "cmq1l75e50005bgvc5yqq2vf5",
+          "status": "sealed",
+          "anchorType": "lucky_color",
+          "anchorLabel": "soft ivory",
+          "holdDurationMs": 3200,
+          "startedAt": "2026-06-06T00:00:22.541Z",
+          "sealedAt": "2026-06-06T00:00:22.553Z"
+        },
+        "createdAt": "2026-06-06T00:00:22.465Z",
+        "updatedAt": "2026-06-06T00:00:22.560Z"
+      }
+    }
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "taskId": "T22",
+  "uiId": "UI-01",
+  "title": "Mood-first Home",
+  "route": "/",
+  "pagePath": "pages/index/index",
+  "state": "mood-home",
+  "sourceReference": "docs/UI/小程序/P0-01-Mood-首页选择今日状态.png",
+  "referencePresent": true,
+  "actualScreenshotPresent": false,
+  "diffImagePresent": false,
+  "metricsPresent": false,
+  "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+  "requiredEvidence": {
+    "actualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T33/actual/UI-01.png",
+    "diffImage": "docs/auto-execute/screenshots/ui-one-to-one/T33/diff/UI-01.png",
+    "pixelMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T33/metrics/UI-01.json"
+  }
+}

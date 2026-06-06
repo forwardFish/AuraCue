@@ -1,0 +1,72 @@
+{
+  "task": "T08-web-shell-draft-api-client",
+  "verdict": "PASS_FOR_T08_SCOPE",
+  "productPassClaimed": false,
+  "coveredIds": [
+    "Route-001",
+    "Route-002",
+    "Route-003",
+    "Route-004",
+    "Route-005",
+    "Route-006",
+    "Route-007",
+    "Route-008",
+    "Route-009",
+    "UI-SHELL",
+    "REQ-001",
+    "REQ-002"
+  ],
+  "commands": [
+    {
+      "command": "pnpm.cmd --filter @auracue/web test -- draft-store api-client",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T08-unit-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web test",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T08-route-smoke-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web typecheck",
+      "status": "PASS_AFTER_REPAIR",
+      "evidence": "docs/auto-execute/logs/web/T08-command-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web lint",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T08-command-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web build",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T08-command-log.md"
+    }
+  ],
+  "evidence": [
+    "apps/web/lib/routes.ts",
+    "apps/web/lib/style-tokens.ts",
+    "apps/web/lib/draft-store.js",
+    "apps/web/lib/api-client.js",
+    "apps/web/lib/analytics.js",
+    "apps/web/components/web-shell.tsx",
+    "apps/web/components/loading-state.tsx",
+    "apps/web/components/error-state.tsx",
+    "apps/web/tests/unit/draft-store.test.mjs",
+    "apps/web/tests/unit/api-client.test.mjs",
+    "docs/auto-execute/logs/web/T08-unit-log.md",
+    "docs/auto-execute/logs/web/T08-route-smoke-log.md",
+    "docs/auto-execute/logs/web/T08-command-log.md"
+  ],
+  "blockers": [],
+  "nextRepair": null,
+  "rerun": {
+    "status": "RERUN_COMPLETE",
+    "count": 1,
+    "reason": "typecheck repair for route lookup and CSS variable typing"
+  },
+  "resume": {
+    "status": "NOT_REQUIRED",
+    "resumeFrom": null
+  }
+}

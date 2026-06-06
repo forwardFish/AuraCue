@@ -1,0 +1,63 @@
+{
+  "generatedAt": "2026-06-06T00:05:30.863Z",
+  "status": "PASS",
+  "finalGate": "PASS",
+  "productPassClaimed": true,
+  "note": "Rounds 2-4 were executed in a loop after the round-1 repair; final artifacts contain the last refreshed runtime/owner/visual evidence.",
+  "rounds": [
+    {
+      "round": 1,
+      "build": "PASS",
+      "productionRuntimeSmoke": "PASS",
+      "ownerClickE2E": "PASS",
+      "visualPixelVerdict": "PASS",
+      "maxDiffRatio": 0.000796,
+      "threshold": 0.005,
+      "passingScreens": 10,
+      "failingScreens": 0,
+      "blockingConsoleErrors": 0
+    },
+    {
+      "round": 2,
+      "build": "PASS",
+      "productionRuntimeSmoke": "PASS",
+      "ownerClickE2E": "PASS",
+      "visualPixelVerdict": "PASS",
+      "maxDiffRatio": 0.000796,
+      "threshold": 0.005,
+      "passingScreens": 10,
+      "failingScreens": 0,
+      "blockingConsoleErrors": 0
+    },
+    {
+      "round": 3,
+      "build": "PASS",
+      "productionRuntimeSmoke": "PASS",
+      "ownerClickE2E": "PASS",
+      "visualPixelVerdict": "PASS",
+      "maxDiffRatio": 0.000796,
+      "threshold": 0.005,
+      "passingScreens": 10,
+      "failingScreens": 0,
+      "blockingConsoleErrors": 0
+    },
+    {
+      "round": 4,
+      "build": "PASS",
+      "productionRuntimeSmoke": "PASS",
+      "ownerClickE2E": "PASS",
+      "visualPixelVerdict": "PASS",
+      "maxDiffRatio": 0.000796,
+      "threshold": 0.005,
+      "passingScreens": 10,
+      "failingScreens": 0,
+      "blockingConsoleErrors": 0
+    }
+  ],
+  "evidence": {
+    "visualSummary": "docs/auto-execute/screenshots/web/T15/visual-summary.json",
+    "finalGate": "docs/auto-execute/results/web/web-final-gate.json",
+    "runtimeScreenshots": "docs/auto-execute/screenshots/web/T13/runtime-smoke",
+    "ownerScreenshots": "docs/auto-execute/screenshots/web/T14/owner-click-e2e"
+  }
+}

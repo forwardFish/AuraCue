@@ -1,0 +1,144 @@
+{
+  "status": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+  "taskId": "T26",
+  "sourceOfTruth": "final-prd-v1.0",
+  "scope": "Final P0 visual target manifest for AuraCue mini-program UI one-to-one gate.",
+  "uiCount": 12,
+  "uiRange": "UI-01..UI-12",
+  "legacyP0Status": "DEMOTED",
+  "passRule": "A final PASS requires real actual screenshots, diff images, and per-screen pixel metrics for every target listed here.",
+  "targets": [
+    {
+      "uiId": "UI-01",
+      "title": "Mood-first Home",
+      "state": "mood-home",
+      "route": "/",
+      "pagePath": "pages/index/index",
+      "sourceReference": "docs/UI/小程序/P0-01-Mood-首页选择今日状态.png",
+      "expectedActualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-01.png",
+      "expectedDiffImage": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-01.png",
+      "expectedMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-01.json"
+    },
+    {
+      "uiId": "UI-02",
+      "title": "Optional Context",
+      "state": "optional-context",
+      "route": "/create/context",
+      "pagePath": "pages/create/context",
+      "sourceReference": "docs/UI/小程序/P0-02-Context-可选今日上下文.png",
+      "expectedActualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-02.png",
+      "expectedDiffImage": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-02.png",
+      "expectedMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-02.json"
+    },
+    {
+      "uiId": "UI-03",
+      "title": "Optional Outfit Upload",
+      "state": "optional-outfit-upload",
+      "route": "/create/upload",
+      "pagePath": "pages/create/upload",
+      "sourceReference": "docs/UI/小程序/P0-03-Outfit-可选穿搭上传.png",
+      "expectedActualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-03.png",
+      "expectedDiffImage": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-03.png",
+      "expectedMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-03.json"
+    },
+    {
+      "uiId": "UI-04",
+      "title": "Draw Card Selection",
+      "state": "draw-card-selection",
+      "route": "/create/draw",
+      "pagePath": "pages/create/draw",
+      "sourceReference": "docs/UI/小程序/P0-04-Draw-三卡选择.png",
+      "expectedActualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-04.png",
+      "expectedDiffImage": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-04.png",
+      "expectedMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-04.json"
+    },
+    {
+      "uiId": "UI-05",
+      "title": "Draw Generation Loading",
+      "state": "draw-generation-loading",
+      "route": "/create/draw",
+      "pagePath": "pages/create/draw",
+      "sourceReference": "docs/UI/小程序/P0-05-Reveal-生成中抽卡仪式.png",
+      "expectedActualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-05.png",
+      "expectedDiffImage": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-05.png",
+      "expectedMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-05.json"
+    },
+    {
+      "uiId": "UI-06",
+      "title": "Daily Aura Card Result",
+      "state": "aura-card-result",
+      "route": "/result/:id",
+      "pagePath": "pages/result/index",
+      "sourceReference": "docs/UI/小程序/P0-06-Result-完整气场卡结果.png",
+      "expectedActualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-06.png",
+      "expectedDiffImage": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-06.png",
+      "expectedMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-06.json"
+    },
+    {
+      "uiId": "UI-07",
+      "title": "Activate Today's Aura",
+      "state": "activate-hold-to-seal",
+      "route": "/activate/:id",
+      "pagePath": "pages/activate/index",
+      "sourceReference": "docs/UI/小程序/P0-07-Activate-选择锚点并长按封存.png",
+      "expectedActualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-07.png",
+      "expectedDiffImage": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-07.png",
+      "expectedMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-07.json"
+    },
+    {
+      "uiId": "UI-08",
+      "title": "Aura Activated",
+      "state": "aura-activated",
+      "route": "/activated/:id",
+      "pagePath": "pages/activated/index",
+      "sourceReference": "docs/UI/小程序/P0-08-Activated-气场已激活成功.png",
+      "expectedActualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-08.png",
+      "expectedDiffImage": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-08.png",
+      "expectedMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-08.json"
+    },
+    {
+      "uiId": "UI-09",
+      "title": "Share Story Preview",
+      "state": "story-preview",
+      "route": "/share/:id",
+      "pagePath": "pages/share/index",
+      "sourceReference": "docs/UI/小程序/P0-09-Share-Story卡预览与保存.png",
+      "expectedActualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-09.png",
+      "expectedDiffImage": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-09.png",
+      "expectedMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-09.json"
+    },
+    {
+      "uiId": "UI-10",
+      "title": "Share Channel Chooser",
+      "state": "share-channel-chooser",
+      "route": "/share/:id/channels",
+      "pagePath": "pages/share/index",
+      "sourceReference": "docs/UI/小程序/P0-09A-Share-渠道选择状态.png",
+      "expectedActualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-10.png",
+      "expectedDiffImage": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-10.png",
+      "expectedMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-10.json"
+    },
+    {
+      "uiId": "UI-11",
+      "title": "Save Success",
+      "state": "save-success",
+      "route": "/saved/:id",
+      "pagePath": "pages/saved/index",
+      "sourceReference": "docs/UI/小程序/P0-10-Saved-保存成功反馈.png",
+      "expectedActualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-11.png",
+      "expectedDiffImage": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-11.png",
+      "expectedMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-11.json"
+    },
+    {
+      "uiId": "UI-12",
+      "title": "Network Error",
+      "state": "network-error",
+      "route": "/error/network",
+      "pagePath": "pages/error/network",
+      "sourceReference": "docs/UI/小程序/P0-11-Error-生成失败重试.png",
+      "expectedActualScreenshot": "docs/auto-execute/screenshots/ui-one-to-one/T26/actual/UI-12.png",
+      "expectedDiffImage": "docs/auto-execute/screenshots/ui-one-to-one/T26/diff/UI-12.png",
+      "expectedMetrics": "docs/auto-execute/screenshots/ui-one-to-one/T26/metrics/UI-12.json"
+    }
+  ]
+}

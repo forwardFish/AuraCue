@@ -1,0 +1,261 @@
+page {
+  background: #fdfaf6;
+}
+
+.unlock-page {
+  position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 48px 20px 28px;
+  overflow: hidden;
+  background: #fdfaf6;
+  color: #101b37;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.soft-glow {
+  position: absolute;
+  inset: -120px -80px auto;
+  height: 340px;
+  background: radial-gradient(circle at 20% 30%, rgba(255, 228, 181, 0.72), transparent 42%), radial-gradient(circle at 76% 44%, rgba(239, 165, 165, 0.45), transparent 38%);
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.circle-button {
+  position: absolute;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #6b7280;
+  font-size: 10px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.06);
+}
+
+.circle-button::after,
+.primary-action::after,
+.invite-button::after {
+  border: 0;
+}
+
+.brand,
+.hero-title {
+  font-family: Georgia, serif;
+}
+
+.brand {
+  font-size: 36px;
+  color: #101b37;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.hero-title {
+  display: block;
+  font-size: 40px;
+  line-height: 46px;
+  font-weight: 500;
+}
+
+.hero-copy {
+  display: block;
+  max-width: 280px;
+  margin: 10px auto 0;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.value-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: 45% 1fr;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.mini-card {
+  min-height: 210px;
+  border-radius: 22px;
+  padding: 18px;
+  color: #ffffff;
+  background: linear-gradient(150deg, #2b3761, #8d5bff 50%, #f4c76b);
+  box-shadow: 0 18px 32px rgba(16, 27, 55, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mini-card-title {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.mini-card-mark {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.feature-panel {
+  border-radius: 22px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.panel-title {
+  display: block;
+  margin-bottom: 10px;
+  color: #efa5a5;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.feature-row {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 9px;
+  padding: 8px 0;
+  border-top: 1px solid rgba(107, 114, 128, 0.08);
+}
+
+.feature-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #fff0f2;
+}
+
+.feature-title,
+.feature-copy {
+  display: block;
+}
+
+.feature-title {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.feature-copy {
+  margin-top: 2px;
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.pricing-card {
+  display: grid;
+  grid-template-columns: 68px 1fr 72px;
+  gap: 10px;
+  align-items: center;
+  border-radius: 18px;
+  padding: 14px;
+  background: #fdfaf6;
+  border: 2px solid #d7b798;
+  box-shadow: 0 7px 20px rgba(197, 154, 109, 0.12);
+}
+
+.price {
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.price-title,
+.price-note {
+  display: block;
+}
+
+.price-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.price-note {
+  margin-top: 2px;
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.badge {
+  border-radius: 999px;
+  padding: 5px 7px;
+  color: #ffffff;
+  background: #c59a6d;
+  font-size: 9px;
+  text-align: center;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 18px 44px;
+  color: #6b7280;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.divider view {
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.invite-button {
+  min-height: 74px;
+  border-radius: 20px;
+  padding: 14px 18px;
+  color: #ef6f8e;
+  background: linear-gradient(180deg, #ffffff, #fff3f5);
+  border: 1px solid #ffffff;
+  text-align: left;
+  box-shadow: 0 8px 18px rgba(239, 165, 165, 0.16);
+}
+
+.invite-button text {
+  display: block;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.invite-button .invite-note {
+  margin-top: 3px;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.primary-action {
+  margin-top: 14px;
+  min-height: 58px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: linear-gradient(90deg, #d6a875, #b78a5b);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.trust-copy {
+  display: block;
+  margin-top: 12px;
+  color: #9ca3af;
+  font-size: 12px;
+  text-align: center;
+}

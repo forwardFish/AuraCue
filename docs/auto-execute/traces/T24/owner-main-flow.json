@@ -1,0 +1,369 @@
+{
+  "status": "PASS",
+  "sourceOfTruth": "final-prd-v1.0",
+  "visits": [
+    {
+      "stepId": "01",
+      "scenarioId": "SCN-001",
+      "uiId": "UI-01",
+      "action": "Open mood-first home and choose today's mood.",
+      "control": "Start My Aura Card",
+      "route": {
+        "uiId": "UI-01",
+        "route": "/",
+        "path": "/",
+        "pagePath": "pages/index/index",
+        "state": "mood-home",
+        "ownerScenario": "SCN-001",
+        "title": "Mood-first Home"
+      },
+      "status": "PASS",
+      "apiIds": [
+        "API-010"
+      ]
+    },
+    {
+      "stepId": "02",
+      "scenarioId": "SCN-002",
+      "uiId": "UI-02",
+      "action": "Optionally add today's context or skip it.",
+      "control": "Continue",
+      "route": {
+        "uiId": "UI-02",
+        "route": "/create/context",
+        "path": "/create/context",
+        "pagePath": "pages/create/context",
+        "state": "optional-context",
+        "ownerScenario": "SCN-002",
+        "title": "Optional Context"
+      },
+      "status": "PASS",
+      "apiIds": [
+        "API-010"
+      ]
+    },
+    {
+      "stepId": "03",
+      "scenarioId": "SCN-003",
+      "uiId": "UI-03",
+      "action": "Optionally upload outfit context or skip for today.",
+      "control": "Skip for Today",
+      "route": {
+        "uiId": "UI-03",
+        "route": "/create/upload",
+        "path": "/create/upload",
+        "pagePath": "pages/create/upload",
+        "state": "optional-outfit-upload",
+        "ownerScenario": "SCN-003",
+        "title": "Optional Outfit Upload"
+      },
+      "status": "PASS",
+      "apiIds": [
+        "API-010"
+      ]
+    },
+    {
+      "stepId": "04",
+      "scenarioId": "SCN-004",
+      "uiId": "UI-04",
+      "action": "Select one of three cards.",
+      "control": "Reveal My Aura",
+      "route": {
+        "uiId": "UI-04",
+        "route": "/create/draw",
+        "path": "/create/draw",
+        "pagePath": "pages/create/draw",
+        "state": "draw-card-selection",
+        "ownerScenario": "SCN-004",
+        "title": "Draw Card Selection"
+      },
+      "status": "PASS",
+      "apiIds": [
+        "API-001",
+        "API-010"
+      ]
+    },
+    {
+      "stepId": "05",
+      "scenarioId": "SCN-004",
+      "uiId": "UI-05",
+      "action": "Wait through draw/reveal loading state.",
+      "control": "local generation completes",
+      "route": {
+        "uiId": "UI-05",
+        "route": "/create/draw",
+        "path": "/create/draw",
+        "pagePath": "pages/create/draw",
+        "state": "draw-generation-loading",
+        "ownerScenario": "SCN-004",
+        "title": "Draw Generation Loading"
+      },
+      "status": "PASS",
+      "apiIds": [
+        "API-002",
+        "API-010"
+      ]
+    },
+    {
+      "stepId": "06",
+      "scenarioId": "SCN-005",
+      "uiId": "UI-06",
+      "action": "Read full aura result.",
+      "control": "Activate Today's Aura",
+      "route": {
+        "uiId": "UI-06",
+        "route": "/result/:id",
+        "path": "/result/card-locked-001",
+        "pagePath": "pages/result/index",
+        "state": "aura-card-result",
+        "ownerScenario": "SCN-005",
+        "title": "Daily Aura Card Result"
+      },
+      "status": "PASS",
+      "apiIds": [
+        "API-003",
+        "API-010"
+      ]
+    },
+    {
+      "stepId": "07",
+      "scenarioId": "SCN-006",
+      "uiId": "UI-07",
+      "action": "Select an anchor and hold to seal.",
+      "control": "Hold to Seal Your Aura",
+      "route": {
+        "uiId": "UI-07",
+        "route": "/activate/:id",
+        "path": "/activate/card-locked-001",
+        "pagePath": "pages/activate/index",
+        "state": "activate-hold-to-seal",
+        "ownerScenario": "SCN-006",
+        "title": "Activate Today's Aura"
+      },
+      "status": "PASS",
+      "apiIds": [
+        "API-004",
+        "API-010"
+      ]
+    },
+    {
+      "stepId": "08",
+      "scenarioId": "SCN-007",
+      "uiId": "UI-08",
+      "action": "Confirm aura activation.",
+      "control": "Save Card",
+      "route": {
+        "uiId": "UI-08",
+        "route": "/activated/:id",
+        "path": "/activated/card-locked-001",
+        "pagePath": "pages/activated/index",
+        "state": "aura-activated",
+        "ownerScenario": "SCN-007",
+        "title": "Aura Activated"
+      },
+      "status": "PASS",
+      "apiIds": [
+        "API-004",
+        "API-007",
+        "API-008",
+        "API-010"
+      ]
+    },
+    {
+      "stepId": "09",
+      "scenarioId": "SCN-008",
+      "uiId": "UI-09",
+      "action": "Preview share story.",
+      "control": "Share to Friend",
+      "route": {
+        "uiId": "UI-09",
+        "route": "/share/:id",
+        "path": "/share/card-locked-001",
+        "pagePath": "pages/share/index",
+        "state": "story-preview",
+        "ownerScenario": "SCN-008",
+        "title": "Share Story Preview"
+      },
+      "status": "PASS",
+      "apiIds": [
+        "API-008",
+        "API-009",
+        "API-010"
+      ]
+    },
+    {
+      "stepId": "10",
+      "scenarioId": "SCN-008",
+      "uiId": "UI-10",
+      "action": "Choose a share channel or cancel.",
+      "control": "Cancel",
+      "route": {
+        "uiId": "UI-10",
+        "route": "/share/:id/channels",
+        "path": "/share/card-locked-001/channels",
+        "pagePath": "pages/share/index",
+        "state": "share-channel-chooser",
+        "ownerScenario": "SCN-008",
+        "title": "Share Channel Chooser"
+      },
+      "status": "PASS",
+      "apiIds": [
+        "API-008",
+        "API-010"
+      ]
+    },
+    {
+      "stepId": "11",
+      "scenarioId": "SCN-009",
+      "uiId": "UI-11",
+      "action": "Confirm saved-card feedback.",
+      "control": "Back Home",
+      "route": {
+        "uiId": "UI-11",
+        "route": "/saved/:id",
+        "path": "/saved/card-locked-001",
+        "pagePath": "pages/saved/index",
+        "state": "save-success",
+        "ownerScenario": "SCN-009",
+        "title": "Save Success"
+      },
+      "status": "PASS",
+      "apiIds": [
+        "API-007",
+        "API-010"
+      ]
+    },
+    {
+      "stepId": "12",
+      "scenarioId": "SCN-010",
+      "uiId": "UI-12",
+      "action": "Recover generation failure.",
+      "control": "Change Context",
+      "route": {
+        "uiId": "UI-12",
+        "route": "/error/network",
+        "path": "/error/network",
+        "pagePath": "pages/error/network",
+        "state": "network-error",
+        "ownerScenario": "SCN-010",
+        "title": "Network Error"
+      },
+      "status": "PASS",
+      "apiIds": [
+        "API-001",
+        "API-002",
+        "API-010"
+      ]
+    }
+  ],
+  "routeHistory": [
+    {
+      "uiId": "UI-01",
+      "route": "/",
+      "path": "/",
+      "pagePath": "pages/index/index",
+      "state": "mood-home",
+      "ownerScenario": "SCN-001",
+      "title": "Mood-first Home"
+    },
+    {
+      "uiId": "UI-02",
+      "route": "/create/context",
+      "path": "/create/context",
+      "pagePath": "pages/create/context",
+      "state": "optional-context",
+      "ownerScenario": "SCN-002",
+      "title": "Optional Context"
+    },
+    {
+      "uiId": "UI-03",
+      "route": "/create/upload",
+      "path": "/create/upload",
+      "pagePath": "pages/create/upload",
+      "state": "optional-outfit-upload",
+      "ownerScenario": "SCN-003",
+      "title": "Optional Outfit Upload"
+    },
+    {
+      "uiId": "UI-04",
+      "route": "/create/draw",
+      "path": "/create/draw",
+      "pagePath": "pages/create/draw",
+      "state": "draw-card-selection",
+      "ownerScenario": "SCN-004",
+      "title": "Draw Card Selection"
+    },
+    {
+      "uiId": "UI-05",
+      "route": "/create/draw",
+      "path": "/create/draw",
+      "pagePath": "pages/create/draw",
+      "state": "draw-generation-loading",
+      "ownerScenario": "SCN-004",
+      "title": "Draw Generation Loading"
+    },
+    {
+      "uiId": "UI-06",
+      "route": "/result/:id",
+      "path": "/result/card-locked-001",
+      "pagePath": "pages/result/index",
+      "state": "aura-card-result",
+      "ownerScenario": "SCN-005",
+      "title": "Daily Aura Card Result"
+    },
+    {
+      "uiId": "UI-07",
+      "route": "/activate/:id",
+      "path": "/activate/card-locked-001",
+      "pagePath": "pages/activate/index",
+      "state": "activate-hold-to-seal",
+      "ownerScenario": "SCN-006",
+      "title": "Activate Today's Aura"
+    },
+    {
+      "uiId": "UI-08",
+      "route": "/activated/:id",
+      "path": "/activated/card-locked-001",
+      "pagePath": "pages/activated/index",
+      "state": "aura-activated",
+      "ownerScenario": "SCN-007",
+      "title": "Aura Activated"
+    },
+    {
+      "uiId": "UI-09",
+      "route": "/share/:id",
+      "path": "/share/card-locked-001",
+      "pagePath": "pages/share/index",
+      "state": "story-preview",
+      "ownerScenario": "SCN-008",
+      "title": "Share Story Preview"
+    },
+    {
+      "uiId": "UI-10",
+      "route": "/share/:id/channels",
+      "path": "/share/card-locked-001/channels",
+      "pagePath": "pages/share/index",
+      "state": "share-channel-chooser",
+      "ownerScenario": "SCN-008",
+      "title": "Share Channel Chooser"
+    },
+    {
+      "uiId": "UI-11",
+      "route": "/saved/:id",
+      "path": "/saved/card-locked-001",
+      "pagePath": "pages/saved/index",
+      "state": "save-success",
+      "ownerScenario": "SCN-009",
+      "title": "Save Success"
+    },
+    {
+      "uiId": "UI-12",
+      "route": "/error/network",
+      "path": "/error/network",
+      "pagePath": "pages/error/network",
+      "state": "network-error",
+      "ownerScenario": "SCN-010",
+      "title": "Network Error"
+    }
+  ]
+}

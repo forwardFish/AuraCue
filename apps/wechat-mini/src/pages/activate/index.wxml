@@ -1,0 +1,22 @@
+<view class="page">
+  <view class="brand">AuraCue</view>
+  <view class="title">Activate Today's Aura</view>
+  <view class="copy">Choose one thing to carry today's energy.</view>
+  <view class="colors">
+    <view class="color blush">Blush Pink</view>
+    <view class="color navy">Deep Navy</view>
+    <view class="color gold">Soft Gold</view>
+  </view>
+  <view class="anchors">
+    <button data-anchor="Lucky Color" bindtap="selectAnchor">Lucky Color</button>
+    <button data-anchor="Jewelry" bindtap="selectAnchor">Jewelry</button>
+    <button data-anchor="Crystal" bindtap="selectAnchor">Crystal</button>
+    <button data-anchor="Lipstick" bindtap="selectAnchor">Lipstick</button>
+    <button data-anchor="Perfume" bindtap="selectAnchor">Perfume</button>
+    <button data-anchor="Outfit Detail" bindtap="selectAnchor">Outfit Detail</button>
+  </view>
+  <button class="seal {{selectedAnchor ? '' : 'disabled'}}" disabled="{{!selectedAnchor}}" bindtap="sealAura">Hold to Seal Your Aura</button>
+  <button wx:if="{{sealing}}" class="cancel" bindtap="cancelSeal">Cancel Seal</button>
+  <view class="progress" wx:if="{{sealing}}">Sealing your aura...</view>
+  <view class="trust">For reflection and fun. Not a guarantee or professional advice.</view>
+</view>

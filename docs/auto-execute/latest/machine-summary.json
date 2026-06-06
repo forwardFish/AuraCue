@@ -1,0 +1,25 @@
+{
+  "finalVerdict": "REPAIR_REQUIRED",
+  "acceptanceConfidence": 0.42,
+  "latestTask": "U07",
+  "visualGate": {
+    "status": "REPAIR_REQUIRED",
+    "passingScreens": 0,
+    "failingScreens": 18,
+    "threshold": 0.005
+  },
+  "bestRecentRepair": "UI-01 home renderer was tightened toward the reference; diffRatio improved from 0.218057 to 0.132944.",
+  "remainingPrimaryBlocker": "All 18 visual screens remain above diffRatio <= 0.005.",
+  "verification": [
+    "pnpm.cmd test PASS",
+    "pnpm.cmd lint PASS",
+    "pnpm.cmd typecheck PASS",
+    "node scripts/verify-wechat-routes.mjs PASS",
+    "git diff --check PASS",
+    "T30 visual harness REPAIR_REQUIRED",
+    "T31 visual harness REPAIR_REQUIRED",
+    "T33 visual harness REPAIR_REQUIRED",
+    "T33 final gate REPAIR_REQUIRED",
+    "U07 result REPAIR_REQUIRED"
+  ]
+}

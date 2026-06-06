@@ -1,0 +1,71 @@
+{
+  "scenarioId": "SCN-002",
+  "stepId": "01",
+  "status": "PASS",
+  "personaGoal": "Choose today's scene",
+  "action": "Click each scene card once; settle on Date",
+  "uiId": "UI-02",
+  "route": {
+    "uiId": "UI-02",
+    "route": "/create/scene",
+    "path": "/create/scene",
+    "pagePath": "pages/create/scene",
+    "state": "scene-selection",
+    "ownerScenario": "SCN-002",
+    "title": "Choose Scene"
+  },
+  "apiIds": [
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-004"
+  ],
+  "selectedScene": "date",
+  "clickEvidence": [
+    {
+      "controlId": "scene-date",
+      "label": "Date",
+      "selectedScene": "date",
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-010"
+      }
+    },
+    {
+      "controlId": "scene-work",
+      "label": "Work / Meeting",
+      "selectedScene": "work",
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-011"
+      }
+    },
+    {
+      "controlId": "scene-party",
+      "label": "Party / Social",
+      "selectedScene": "party",
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-012"
+      }
+    },
+    {
+      "controlId": "scene-luck",
+      "label": "Just need luck",
+      "selectedScene": "luck",
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-013"
+      }
+    },
+    {
+      "controlId": "scene-date",
+      "label": "Date",
+      "selectedScene": "date",
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-014"
+      }
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "taskId": "T03",
+  "taskName": "Local DB Repository And Seed Fixtures",
+  "status": "PASS",
+  "verdict": "PASS",
+  "completedAt": "2026-05-26T12:59:00+08:00",
+  "scope": {
+    "allowedFilesHonored": true,
+    "implementedFiles": [
+      "apps/api/src/local-repository.mjs",
+      "apps/api/src/server.mjs",
+      "apps/api/tests/local-repository.test.mjs",
+      "apps/api/package.json",
+      "packages/shared-types/src/index.ts"
+    ],
+    "evidenceFiles": [
+      "docs/auto-execute/db/T03/schema-summary.json",
+      "docs/auto-execute/db/T03/fixture-manifest.json",
+      "docs/auto-execute/db/T03/seed-readback.json",
+      "docs/auto-execute/logs/T03/db-tests.log",
+      "docs/auto-execute/logs/T03/api-package-test.log",
+      "docs/auto-execute/logs/T03/lint.log",
+      "docs/auto-execute/logs/T03/typecheck.log",
+      "docs/auto-execute/logs/T03/diff-check.log",
+      "docs/auto-execute/logs/T03/root-test.log"
+    ]
+  },
+  "requirementsCovered": [
+    "REQ-015",
+    "REQ-016"
+  ],
+  "dbEntities": [
+    "users",
+    "aura_cards",
+    "generation_jobs",
+    "card_templates",
+    "share_events",
+    "analytics_events",
+    "payment_orders",
+    "user_entitlements"
+  ],
+  "apiMethodCoverage": [
+    "API-001",
+    "API-002",
+    "API-003",
+    "API-004",
+    "API-005",
+    "API-006",
+    "API-007",
+    "API-008",
+    "API-009",
+    "API-010"
+  ],
+  "fixtureCoverage": [
+    "locked card",
+    "unlocked card",
+    "failed generation job",
+    "invite progress",
+    "payment success",
+    "payment failure",
+    "saved card",
+    "share event",
+    "analytics events",
+    "UI-05 through UI-18 seed states"
+  ],
+  "commands": [
+    {
+      "command": "pnpm --filter @auracue/api test:db *> docs\\auto-execute\\logs\\T03\\db-tests.log",
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "notes": "PowerShell blocked pnpm.ps1 by execution policy before tests ran."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/api test:db *> docs\\auto-execute\\logs\\T03\\db-tests.log",
+      "status": "SETUP_FAILURE",
+      "notes": "Initial rerun failed because docs/auto-execute/logs/T03 did not exist yet."
+    },
+    {
+      "command": "mkdir docs\\auto-execute\\logs\\T03",
+      "status": "PASS"
+    },
+    {
+      "command": "mkdir docs\\auto-execute\\db\\T03",
+      "status": "PASS"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/api test:db *> docs\\auto-execute\\logs\\T03\\db-tests.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T03/db-tests.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/api test *> docs\\auto-execute\\logs\\T03\\api-package-test.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T03/api-package-test.log"
+    },
+    {
+      "command": "pnpm.cmd lint *> docs\\auto-execute\\logs\\T03\\lint.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T03/lint.log"
+    },
+    {
+      "command": "pnpm.cmd typecheck *> docs\\auto-execute\\logs\\T03\\typecheck.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T03/typecheck.log"
+    },
+    {
+      "command": "git diff --check *> docs\\auto-execute\\logs\\T03\\diff-check.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T03/diff-check.log"
+    },
+    {
+      "command": "pnpm.cmd test *> docs\\auto-execute\\logs\\T03\\root-test.log",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T03/root-test.log"
+    }
+  ],
+  "blockers": [],
+  "limitations": [
+    "T03 does not implement HTTP endpoints; it provides the local repository, typed seed fixtures, and readback helpers required by later API tasks.",
+    "No visual screenshot or diff evidence is produced by T03 because this task does not implement mini-program pages."
+  ],
+  "nextSteps": [
+    "T04 can build generation job and structured card APIs on top of createLocalRepository, createGenerationJob, completeGenerationJob, readGenerationJob, and readAuraCard.",
+    "T20 should reuse schema-summary.json and seed-readback.json as DB readback baseline evidence."
+  ]
+}

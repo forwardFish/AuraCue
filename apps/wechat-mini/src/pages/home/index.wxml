@@ -1,0 +1,69 @@
+<view class="home-page">
+  <view class="status-bar">
+    <text class="status-time">9:41</text>
+    <text class="status-icons">signal wifi battery</text>
+  </view>
+
+  <view class="home-header">
+    <view class="header-icon">spark</view>
+    <text class="brand">AuraCue</text>
+    <view class="header-icon">gift</view>
+  </view>
+
+  <scroll-view class="home-scroll" scroll-y="true">
+    <view class="hero">
+      <text class="hero-title">Before you step out,</text>
+      <text class="hero-title">draw today's <text class="hero-emphasis">tiny advantage.</text></text>
+      <text class="hero-copy">Pick your scene. Get one color,</text>
+      <text class="hero-copy">one outfit energy, one social move.</text>
+    </view>
+
+    <view class="aura-card">
+      <text class="card-eyebrow">Today's Aura</text>
+      <text class="card-title">Golden Bloom</text>
+      <view class="flower-arch">
+        <view class="flower-bloom"></view>
+        <view class="flower-stem"></view>
+        <view class="flower-core"></view>
+      </view>
+      <view class="stat-row">
+        <view class="stat-cell">
+          <view class="swatch"></view>
+          <text class="stat-label">Lucky Color</text>
+          <text class="stat-value">Blush Pink</text>
+        </view>
+        <view class="stat-cell">
+          <text class="stat-icon">shirt</text>
+          <text class="stat-label">Outfit Energy</text>
+          <text class="stat-value">Soft Power</text>
+        </view>
+        <view class="stat-cell stat-cell-last">
+          <text class="stat-icon">chat</text>
+          <text class="stat-label">Social Move</text>
+          <text class="stat-value">Listen first, connect deeper.</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="shortcut-grid">
+      <button
+        wx:for="{{shortcuts}}"
+        wx:key="id"
+        class="shortcut-button"
+        data-scene="{{item.id}}"
+        bindtap="onShortcutTap"
+      >
+        <text class="shortcut-icon">{{item.icon}}</text>
+        <text class="shortcut-label">{{item.label}}</text>
+      </button>
+    </view>
+
+    <button class="start-button" bindtap="onStartTap">Start My 30-Second Card</button>
+    <text class="trust-copy">Private. Personal. Just for you.</text>
+  </scroll-view>
+
+  <view class="bottom-nav">
+    <view class="nav-item nav-active">Home</view>
+    <view class="nav-item nav-disabled">Profile</view>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+{
+  "apiId": "API-009",
+  "caseId": "N01",
+  "caseKey": "API-009-N01",
+  "caseType": "not found",
+  "method": "POST",
+  "path": "/api/share-images/:cardId",
+  "expectedStatus": 404,
+  "actualStatus": 404,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-009-404.json",
+  "response": {
+    "error": {
+      "code": "NOT_FOUND",
+      "message": "Aura card was not found.",
+      "details": {
+        "cardId": "card-does-not-exist"
+      }
+    }
+  }
+}

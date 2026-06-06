@@ -1,0 +1,30 @@
+<view class="payment-page confirm">
+  <view class="status-bar"><text>9:41</text><text>AuraCue</text></view>
+  <view class="header">
+    <button class="circle-button" bindtap="onCloseTap">close</button>
+    <text class="brand">AuraCue</text>
+  </view>
+  <view class="hero">
+    <text class="title">Unlock your{{"\n"}}full Aura Card</text>
+  </view>
+  <view class="card-stack" aria-label="tarot cards">
+    <view class="float-card left">moon</view>
+    <view class="float-card center">star</view>
+    <view class="float-card right">aura</view>
+  </view>
+  <view class="benefit-card">
+    <block wx:for="{{valueRows}}" wx:key="*this">
+      <view class="benefit-row">
+        <text class="check">check</text>
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="price-block">
+    <text class="price">{{price}}</text>
+    <text class="price-note">One-time unlock</text>
+  </view>
+  <button class="primary-action" bindtap="onConfirmTap">Confirm Unlock $1.99</button>
+  <view class="secure-row"><view></view><text>Secure & private local mock payment</text><view></view></view>
+  <button class="secondary-action" bindtap="onInviteTap">Invite 3 Friends Instead</button>
+</view>

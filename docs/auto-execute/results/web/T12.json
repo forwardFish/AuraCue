@@ -1,0 +1,106 @@
+{
+  "taskId": "T12",
+  "taskName": "API DB Contract E2E",
+  "verdict": "PASS",
+  "productPassClaimed": false,
+  "coveredIds": [
+    "API-001",
+    "API-002",
+    "API-003",
+    "API-004",
+    "API-005",
+    "API-006",
+    "API-007",
+    "API-008",
+    "API-009",
+    "API-010",
+    "API-011",
+    "API-012",
+    "API-013",
+    "DB-AnonymousUser",
+    "DB-OutfitUpload",
+    "DB-DrawSession",
+    "DB-GenerationJob",
+    "DB-AuraCard",
+    "DB-AuraActivation",
+    "DB-SavedCard",
+    "DB-ShareEvent",
+    "DB-AnalyticsEvent",
+    "DB-CardTemplate"
+  ],
+  "commands": [
+    {
+      "command": "pnpm --filter @auracue/web test:api",
+      "executedAs": "pnpm.cmd --filter @auracue/web test:api",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T12-command-log.md"
+    },
+    {
+      "command": "pnpm --filter @auracue/web test:db",
+      "executedAs": "pnpm.cmd --filter @auracue/web test:db",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T12-command-log.md"
+    },
+    {
+      "command": "node scripts/acceptance/check-web-api-contract.mjs",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T12-command-log.md"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/api/web/T12/api-transcript.json",
+    "docs/auto-execute/api/web/T12/matrix-summary.json",
+    "docs/auto-execute/db/web/T12/db-readback.json",
+    "docs/auto-execute/evidence/web/T05/api-transcript.json",
+    "docs/auto-execute/evidence/web/T05/db-readback.json",
+    "docs/auto-execute/evidence/web/T06/api-transcript.json",
+    "docs/auto-execute/evidence/web/T06/mock-transcript.json",
+    "docs/auto-execute/evidence/web/T06/db-readback.json",
+    "docs/auto-execute/evidence/web/T07/api-transcript.json",
+    "docs/auto-execute/evidence/web/T07/db-readback.json",
+    "docs/auto-execute/evidence/web/T07/renderer-proof.json",
+    "docs/auto-execute/evidence/web/T03/db-readback.json",
+    "docs/auto-execute/logs/web/T12-command-log.md"
+  ],
+  "summary": {
+    "apiTranscript": "13 API IDs have success and negative/idempotency cases with explicit error codes for failing cases.",
+    "dbReadback": "All P0 DB models have positive readback evidence; mutation APIs map to readback models in docs/auto-execute/db/web/T12/db-readback.json.",
+    "mockFallback": "Generation proof includes T06 no-AI-key local fallback evidence.",
+    "renderer": "Render proof includes 1080x1920 local renderer evidence."
+  },
+  "repairs": [
+    {
+      "issue": "PowerShell blocked pnpm.ps1 during the first verification attempt.",
+      "classification": "environment-wrapper",
+      "repair": "Reran required pnpm commands through pnpm.cmd, the Windows-safe equivalent."
+    },
+    {
+      "issue": "apps/web/tests/api/run-api-tests.mjs defaulted to only the foundation suite.",
+      "classification": "task-caused-verification-gap",
+      "repair": "Changed the default selection to run all API suites."
+    },
+    {
+      "issue": "scripts/acceptance/check-web-api-contract.mjs was missing.",
+      "classification": "task-caused-verification-gap",
+      "repair": "Added a fail-closed T12 contract checker that writes T12 API transcript, matrix summary, and DB readback evidence."
+    },
+    {
+      "issue": "Initial checker expected API-010 repeat case name 'idempotent' while existing T07 transcript records 'idempotent repeat'.",
+      "classification": "checker-evidence-mismatch",
+      "repair": "Aligned the checker to the durable transcript case name without reducing required coverage."
+    }
+  ],
+  "blockers": [],
+  "nextRepair": null,
+  "rerunResumeState": {
+    "status": "ready_for_T13",
+    "resumeFrom": "docs/auto-execute/latest/web/T12-HANDOFF.md",
+    "requiresRerun": false,
+    "lastCleanRerun": [
+      "pnpm.cmd --filter @auracue/web test:api",
+      "pnpm.cmd --filter @auracue/web test:db",
+      "node scripts/acceptance/check-web-api-contract.mjs"
+    ],
+    "notes": "T12 proves API/DB contract evidence only. T13 still owns whole-app runtime page/API smoke."
+  }
+}

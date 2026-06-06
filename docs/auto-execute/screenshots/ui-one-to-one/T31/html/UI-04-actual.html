@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AuraCue UI-04 Incomplete Selection</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #ffffff; color: #10213d; font-family: Inter, Arial, sans-serif; }
+    .device { width: 704px; height: 1516px; margin: 52px auto 0; padding: 64px 38px 0; border: 28px solid #0b0d10; border-radius: 104px; background: linear-gradient(180deg,#fdf8f3 0%,#fdf8f3 72%,#f7dce9 100%); overflow: hidden; box-shadow: 0 0 0 4px #2b2d32, 0 22px 58px rgba(0,0,0,.22); position: relative; }
+    .device::before { content: ""; position: absolute; left: 258px; top: 16px; width: 190px; height: 58px; border-radius: 999px; background: #020204; box-shadow: 108px 20px 0 -19px #0d1b3d; z-index: 2; }
+    .device::after { content: ""; position: absolute; left: -30px; right: -30px; bottom: -4px; height: 210px; background: radial-gradient(circle at 78% 34%, #f5d879 0 21px, transparent 22px), radial-gradient(circle at 9% 70%, rgba(255,255,255,.92) 0 4px, transparent 5px), radial-gradient(circle at 27% 75%, rgba(255,255,255,.88) 0 5px, transparent 6px), radial-gradient(circle at 65% 68%, rgba(255,255,255,.88) 0 4px, transparent 5px), radial-gradient(circle at 90% 68%, rgba(255,255,255,.80) 0 5px, transparent 6px), radial-gradient(circle at 12% 105%, rgba(255,190,220,.70) 0 90px, transparent 91px), radial-gradient(circle at 24% 105%, rgba(220,190,250,.48) 0 80px, transparent 81px), radial-gradient(circle at 88% 105%, rgba(255,190,220,.70) 0 90px, transparent 91px), radial-gradient(circle at 74% 110%, rgba(220,190,250,.48) 0 82px, transparent 83px); pointer-events:none; }
+    .phone-status { position: absolute; left: 90px; right: 72px; top: 38px; height: 32px; display: flex; justify-content: space-between; align-items: center; z-index: 3; color: #050505; font-size: 24px; font-weight: 700; }
+    .phone-icons { width:128px; height:26px; display:block; position:relative; font-size:0; }
+    .phone-icons::before { content:""; position:absolute; left:0; top:1px; width:72px; height:24px; background:
+      linear-gradient(#050505,#050505) 0 16px/6px 8px no-repeat,
+      linear-gradient(#050505,#050505) 11px 12px/6px 12px no-repeat,
+      linear-gradient(#050505,#050505) 22px 7px/6px 17px no-repeat,
+      linear-gradient(#050505,#050505) 33px 2px/6px 22px no-repeat,
+      radial-gradient(ellipse at 50% 100%, transparent 0 6px, #050505 7px 10px, transparent 11px) 48px 0/27px 20px no-repeat; }
+    .phone-icons::after { content:""; position:absolute; right:0; top:2px; width:39px; height:19px; border:3px solid #050505; border-radius:5px; box-shadow:6px 6px 0 -4px #050505, inset 0 0 0 2px #fff, inset 4px 0 0 2px #050505; }
+    .top { display: grid; grid-template-columns: 68px 1fr 68px; align-items: center; margin: 34px 0 78px; }
+    .back { width: 64px; height: 64px; border-radius: 999px; border: 2px solid #f3c9d8; background: rgba(255,255,255,.68); color: #10213d; font-size: 32px; }
+    .brand, h2, .cta { font-family: Georgia, serif; }
+    .brand { text-align: center; font-size: 38px; font-weight: 700; }
+    h2 { text-align: center; font-size: 36px; margin: 0 0 46px; }
+    .scenes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-bottom: 76px; }
+    .scene { border: 2px solid #f2c9d4; background: rgba(255,255,255,.52); border-radius: 34px; min-height: 150px; color: #ef5b8c; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 8px; }
+    .scene::after, .chip::after, .cta::after { border: 0; }
+    .scene.selected { background: linear-gradient(180deg,#ff6b98 0%,#ef3470 100%); color: white; box-shadow: 0 0 22px rgba(239,52,112,.34); }
+    .scene span { font-size: 0; width: 48px; height: 48px; display: block; position: relative; color: currentColor; }
+    .scene span::before, .scene span::after { content: ""; position: absolute; }
+    .scene[data-scene="date"] span::before { width: 42px; height: 38px; left: 3px; top: 5px; background: currentColor; clip-path: path("M21 37 C8 25 0 18 0 9 C0 3 4 0 10 0 C15 0 18 3 21 7 C24 3 27 0 32 0 C38 0 42 3 42 9 C42 18 34 25 21 37 Z"); }
+    .scene[data-scene="work"] span::before { width: 42px; height: 30px; left: 3px; top: 15px; border-radius: 5px; background: currentColor; }
+    .scene[data-scene="work"] span::after { width: 20px; height: 13px; left: 14px; top: 6px; border: 5px solid currentColor; border-bottom: 0; border-radius: 8px 8px 0 0; }
+    .scene[data-scene="party"] span::before { width: 42px; height: 42px; left: 3px; top: 3px; background: currentColor; clip-path: polygon(50% 0,100% 100%,0 100%); }
+    .scene[data-scene="luck"] span::before { width: 24px; height: 24px; left: 12px; top: 2px; border-radius: 50%; background: currentColor; }
+    .scene[data-scene="luck"] span::after { width: 42px; height: 22px; left: 3px; bottom: 0; border-radius: 22px 22px 5px 5px; background: currentColor; }
+    .scene strong { font-size: 25px; font-weight: 600; line-height: 1.05; color:#10213d; }
+    .scene.selected strong { color:white; }
+    .scene small { font-size: 16px; line-height: 1; color:#10213d; }
+    .divider { display: flex; align-items: center; gap: 32px; color: #efb47d; margin-bottom: 64px; font-size: 24px; }
+    .divider::before, .divider::after { content: ""; height: 2px; flex: 1; background: #f1d8d4; }
+    .chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-bottom: 78px; }
+    .chip { height: 72px; border-radius: 999px; border: 2px solid #efc7d2; background: rgba(255,255,255,.48); color: #10213d; font-size: 24px; }
+    .validation { margin: 0 30px 42px; min-height: 88px; border-radius: 34px; border: 2px solid #efc7d2; color: #ec3c77; background: rgba(255,255,255,.55); display: flex; align-items: center; justify-content: center; gap: 18px; font-size: 26px; }
+    .cta { width: calc(100% - 60px); margin: 0 30px; min-height: 104px; border: 0; border-radius: 999px; color: #88898d; background: #e7e1dd; font-size: 34px; box-shadow: inset 0 2px 6px rgba(0,0,0,.06); }
+  </style>
+<style id="t26-capture-shell">
+    html, body { width: 941px !important; height: 1672px !important; margin: 0 !important; overflow: hidden !important; background: #ffffff !important; }
+    body > .phone, body > main.phone, body .phone:first-child {
+      transform: scale(2.4128205128205127);
+      transform-origin: top center;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  </style></head>
+<body>
+  <main class="device">
+    <div class="phone-status"><span>9:41</span><span class="phone-icons">icons</span></div>
+    <header class="top"><button class="back">‹</button><div class="brand">✦ AuraCue ✦</div><div></div></header>
+    <h2>Choose your scene</h2>
+    <section class="scenes"><button class="scene" data-scene="date"><span>heart</span><strong>Date</strong></button><button class="scene selected" data-scene="work"><span>briefcase</span><strong>Work</strong></button><button class="scene" data-scene="party"><span>party</span><strong>Party</strong></button><button class="scene" data-scene="luck"><span>person</span><strong>Just me</strong><small>Just need luck</small></button></section>
+    <div class="divider">✦</div>
+    <h2>Choose your energy</h2>
+    <section class="chips"><button class="chip" data-energy="confidence">Confidence</button><button class="chip" data-energy="calm">Calm</button><button class="chip" data-energy="love">Love</button><button class="chip" data-energy="focus">Focus</button><button class="chip" data-energy="luck">Luck</button><button class="chip" data-energy="charm">Charm</button></section>
+    <section class="validation">✦ Choose one energy to continue.</section>
+    <button class="cta" disabled>✦ Generate My Aura Card</button>
+  </main>
+</body>
+</html>

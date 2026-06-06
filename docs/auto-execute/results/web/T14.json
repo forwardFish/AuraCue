@@ -1,0 +1,176 @@
+{
+  "taskId": "T14",
+  "taskName": "Owner Click E2E",
+  "templateId": "TPL-OWNER-E2E",
+  "status": "COMPLETE",
+  "verdict": "PASS_FOR_T14_SCOPE",
+  "productPassClaimed": false,
+  "timestamp": "2026-06-05T19:49:45.8577445+08:00",
+  "scope": {
+    "executedOnlyTask": "T14",
+    "startedWholeWebApp": true,
+    "openedLivePages": true,
+    "calledBackendApisFromBrowser": true,
+    "capturedDbReadback": true,
+    "usedProductionCloud": false,
+    "usedProductionDb": false,
+    "usedProductionAi": false,
+    "usedSecrets": false,
+    "notes": "T14 proves owner-click E2E scenarios only. Final product PASS remains owned by T16."
+  },
+  "coveredIds": [
+    "Owner-001",
+    "Owner-002",
+    "Owner-003",
+    "Owner-004",
+    "Owner-005",
+    "Owner-006",
+    "UI-001",
+    "UI-002",
+    "UI-003",
+    "UI-004",
+    "UI-005",
+    "UI-006",
+    "UI-007",
+    "UI-008",
+    "UI-009",
+    "API-001",
+    "API-002",
+    "API-003",
+    "API-004",
+    "API-005",
+    "API-006",
+    "API-007",
+    "API-008",
+    "API-009",
+    "API-010",
+    "API-011",
+    "API-012",
+    "API-013",
+    "DB-AnonymousUser",
+    "DB-DrawSession",
+    "DB-GenerationJob",
+    "DB-AuraCard",
+    "DB-AuraActivation",
+    "DB-SavedCard",
+    "DB-ShareEvent",
+    "DB-AnalyticsEvent"
+  ],
+  "commands": [
+    {
+      "command": "pnpm.cmd --filter @auracue/web test:e2e -- owner-click-e2e",
+      "status": "FAIL_THEN_PASS",
+      "evidence": "docs/auto-execute/logs/web/T14-command-log.md"
+    },
+    {
+      "command": "node -e evidence summary checks for T14 owner IDs, API IDs, intentional failures, screenshots, console errors, and DB counts",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T14-command-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web test:e2e",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T14-command-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web lint",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T14-command-log.md"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web typecheck",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T14-command-log.md"
+    },
+    {
+      "command": "node -e parse docs/auto-execute/results/web/T14.json and verify T14 HANDOFF/log/evidence paths exist",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/web/T14-command-log.md"
+    }
+  ],
+  "runtime": {
+    "liveUrl": "http://127.0.0.1:3214",
+    "databaseUrl": "file:./t14-owner-click-e2e.sqlite",
+    "browser": "Google Chrome headless via Chrome DevTools Protocol",
+    "shutdown": "The E2E harness shuts down the temporary Next dev server and browser before exit."
+  },
+  "evidence": [
+    {
+      "type": "api_transcript",
+      "path": "docs/auto-execute/api/web/T14/runtime-smoke-api-transcript.json",
+      "status": "PASS",
+      "summary": "Live browser/API transcript includes API-001 through API-013. The only response status >= 400 is the intentional Owner-003 API-003 oversized upload failure: 413 FILE_TOO_LARGE."
+    },
+    {
+      "type": "db_readback",
+      "path": "docs/auto-execute/db/web/T14/runtime-smoke-readback.json",
+      "status": "PASS",
+      "summary": "Runtime DB readback has one AnonymousUser, two DrawSession, two GenerationJob, two AuraCard, one AuraActivation, one SavedCard, four ShareEvent, and twenty-five AnalyticsEvent records. OutfitUpload is zero by design because T14 uses skip/failure upload scenarios."
+    },
+    {
+      "type": "trace",
+      "path": "docs/auto-execute/traces/web/T14/owner-click-e2e/runtime-smoke-trace.json",
+      "status": "PASS",
+      "summary": "Trace verdict PASS with Owner-001 through Owner-006 scenario results, twelve screenshots, and zero unexpected blocking console errors."
+    },
+    {
+      "type": "screenshots",
+      "path": "docs/auto-execute/screenshots/web/T14/owner-click-e2e",
+      "status": "PASS",
+      "summary": "Captured home, result, activate, hold-cancel, activated, share, saved, today-active, and upload-failure recovery screenshots."
+    },
+    {
+      "type": "start_log",
+      "path": "docs/auto-execute/logs/web/T14-start.log",
+      "status": "PASS"
+    },
+    {
+      "type": "browser_log",
+      "path": "docs/auto-execute/logs/web/T14-browser.log",
+      "status": "PASS"
+    },
+    {
+      "type": "command_log",
+      "path": "docs/auto-execute/logs/web/T14-command-log.md",
+      "status": "PASS"
+    }
+  ],
+  "repairRecord": [
+    {
+      "issue": "Initial owner-click E2E reused the T13 happy-smoke harness and did not write T14 evidence or cover all owner scenarios.",
+      "repair": "Parameterized the harness with owner-click-e2e mode, T14 output paths, port 3214, and a T14 database."
+    },
+    {
+      "issue": "First T14 run timed out waiting for /create/context because the harness clicked while the home page bootstrap was still loading.",
+      "repair": "Added a wait for the 'Preparing today' loading state to disappear before mood selection."
+    },
+    {
+      "issue": "A pre-mood enabled wait incorrectly expected the disabled Start button to be enabled before mood selection.",
+      "repair": "Moved enabled CTA waiting after mood selection."
+    },
+    {
+      "issue": "A syntax typo in the new selected-mood wait helper stopped the script before runtime execution.",
+      "repair": "Fixed the template literal and reran."
+    },
+    {
+      "issue": "The expected Owner-003 oversized upload API failure created a Chrome network console error.",
+      "repair": "Filtered the intentional 413 upload-failure branch out of unexpected blocking console errors while preserving the API-003 failure in the transcript."
+    }
+  ],
+  "blockers": [],
+  "nextRepair": null,
+  "rerunResumeState": {
+    "attempts": 6,
+    "lastCleanRerun": "pnpm.cmd --filter @auracue/web test:e2e -- owner-click-e2e",
+    "safeToRerun": true,
+    "safeToResumeAt": "T15",
+    "commands": [
+      "pnpm.cmd --filter @auracue/web test:e2e -- owner-click-e2e",
+      "pnpm.cmd --filter @auracue/web test:e2e",
+      "pnpm.cmd --filter @auracue/web lint",
+      "pnpm.cmd --filter @auracue/web typecheck",
+      "node -e parse docs/auto-execute/results/web/T14.json and verify T14 HANDOFF/log/evidence paths exist"
+    ],
+    "notes": "Use pnpm.cmd on this Windows PowerShell surface. T14 evidence is live browser/API/DB based and must not be treated as final product PASS."
+  }
+}

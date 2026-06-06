@@ -1,0 +1,61 @@
+{
+  "anonymousId": "anon_7740a4b2a8d943c1b94c1e2326bc7946",
+  "otherAnonymousId": "anon_685962c71e5c4103908d1b418d6fb7b6",
+  "counts": {
+    "AuraCard": 1,
+    "AuraActivation": 1,
+    "SavedCard": 1,
+    "ShareEvent": 1,
+    "AnalyticsEvent": 1
+  },
+  "card": {
+    "id": "cmq1l75c10004bgvc6ttbhvsb",
+    "shareImageUrl": "local://share-images/cmq1l75c10004bgvc6ttbhvsb-template-story-001.png",
+    "isActivated": true,
+    "activatedAt": "2026-06-06T00:00:22.553Z"
+  },
+  "activation": [
+    {
+      "id": "cmq1l75e50005bgvc5yqq2vf5",
+      "status": "sealed",
+      "anchorType": "lucky_color",
+      "anchorLabel": "soft ivory",
+      "holdDurationMs": 3200,
+      "sealedAt": "2026-06-06T00:00:22.553Z"
+    }
+  ],
+  "savedCards": [
+    {
+      "id": "cmq1l75f10006bgvcgohsmnu0",
+      "source": "share",
+      "createdAt": "2026-06-06T00:00:22.573Z"
+    }
+  ],
+  "shares": [
+    {
+      "id": "cmq1l75fk0008bgvc2kmjpcxi",
+      "channel": "download",
+      "source": "share_preview",
+      "createdAt": "2026-06-06T00:00:22.592Z"
+    }
+  ],
+  "analyticsEvents": [
+    {
+      "id": "cmq1l75ft0009bgvclo614o7q",
+      "eventName": "aura_activated",
+      "page": "/activated/cmq1l75c10004bgvc6ttbhvsb",
+      "platform": "web",
+      "payload": {
+        "cardId": "cmq1l75c10004bgvc6ttbhvsb",
+        "activationId": "cmq1l75e50005bgvc5yqq2vf5",
+        "holdDurationMs": 3200
+      }
+    }
+  ],
+  "idempotency": {
+    "render": "AuraCard.shareImageUrl reused on repeat render",
+    "activationStart": "AuraActivation @@unique([cardId, userId, anchorType, anchorLabel])",
+    "seal": "sealed activation returns original sealedAt and holdDurationMs on repeat",
+    "save": "SavedCard @@unique([userId, cardId])"
+  }
+}

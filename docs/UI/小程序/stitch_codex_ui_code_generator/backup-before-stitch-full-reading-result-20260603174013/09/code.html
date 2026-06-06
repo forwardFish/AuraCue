@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AuraCue - Your Aura Card</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style data-purpose="custom-fonts">
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FDFBF7;
+      color: #333;
+    }
+    
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .bg-gradient-gold {
+      background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+    }
+    
+    .bg-gradient-gold-btn {
+      background: linear-gradient(180deg, #D5A973 0%, #A67B45 100%);
+    }
+
+    .glass-panel {
+      background: rgba(253, 251, 247, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    .shadow-card {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .shadow-soft {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+    
+    .text-navy {
+      color: #1A2342;
+    }
+    
+    .text-gold {
+      color: #D4AF37;
+    }
+    
+    .text-muted-brown {
+      color: #8C7C6D;
+    }
+    
+    .border-gold-light {
+      border-color: rgba(212, 175, 55, 0.3);
+    }
+  </style>
+</head>
+<body class="antialiased min-h-screen pb-8">
+<!-- BEGIN: Main Container -->
+<div class="max-w-md mx-auto relative overflow-hidden bg-[#FDFBF7] min-h-screen shadow-2xl">
+<!-- BEGIN: Header -->
+<header class="flex items-center justify-between px-6 pt-12 pb-4 sticky top-0 z-50 glass-panel">
+<button class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-[#D4AF37] border border-[#f0e6d2]">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<h1 class="text-3xl font-serif text-navy font-semibold tracking-wide">AuraCue</h1>
+<button class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-[#D4AF37] border border-[#f0e6d2]">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M5.25 2.25a3 3 0 0 0-3 3v4.318a3 3 0 0 0 .879 2.121l9.58 9.581c.92.92 2.39 1.186 3.548.428a18.849 18.849 0 0 0 5.441-5.44c.758-1.16.492-2.629-.428-3.548l-9.58-9.581a3 3 0 0 0-2.122-.879H5.25ZM6.375 7.5a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: Main Content -->
+<main class="px-6 space-y-6">
+<!-- Subtitle -->
+<div class="text-center pt-2">
+<div class="flex items-center justify-center gap-2 mb-1">
+<span class="text-gold text-lg">✨</span>
+</div>
+<h2 class="text-xl font-serif text-navy">Your Aura Card is Ready <span class="text-gold">✨</span></h2>
+</div>
+<!-- Card & Info Section -->
+<div class="flex flex-col gap-6">
+<!-- Left/Top: Tarot Card -->
+<div class="w-full flex justify-center">
+<div class="relative rounded-2xl overflow-hidden shadow-card w-[240px] h-[380px] border-4 border-[#1A2342]">
+<!-- Placeholder for The Emperor Card Image -->
+<div class="absolute inset-0 bg-gradient-to-b from-[#2A375E] to-[#121933] flex flex-col items-center justify-between p-4">
+<div class="w-full h-3/4 bg-gray-700 rounded-t-xl mb-2 flex items-center justify-center text-white/50 text-xs text-center border border-white/10">
+                 [The Emperor<br/>Tarot Artwork]
+               </div>
+<div class="text-center w-full">
+<h3 class="text-gold font-serif text-lg tracking-widest uppercase mb-1">The Emperor</h3>
+<p class="text-white/70 text-[10px] tracking-widest uppercase">Authority • Structure • Leadership</p>
+</div>
+</div>
+<!-- In a real implementation, you'd use the exact image provided -->
+<img alt="The Emperor Tarot Card" class="absolute inset-0 w-full h-full object-cover opacity-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKxf-nsvfKMS5VJlwGOq8BSGJ7bMbVp5M8N1xyaS63pOdMK68cXtec3RrAv-MNR_7YiOF0XCTbgOpvXqN3vLo9NbYUaxbflfvlfI6FiR4F2LoychqYeLyd_oZ1yauRZESG1fS0iEKJyZ_b2MsRBMOHxYlATvAB7fgyCiD7MNIDr03n-g1LLXVaeGPfGg99sUEiJjcnsLvZRv8P3KxDk7OkfvgG5JFrFNcRAJCVIEg5OMN6txCYd4pUta45Rk53duqlMbHjvmm9"/>
+</div>
+</div>
+<!-- Right/Bottom: Aura Info List -->
+<div class="w-full">
+<div class="flex items-center gap-2 mb-3">
+<span class="text-[#D4AF37] text-sm">✦</span>
+<h3 class="font-serif text-[#D4AF37] text-lg italic">Today's Aura</h3>
+<span class="text-[#D4AF37] text-sm">✦</span>
+</div>
+<h2 class="text-3xl font-serif text-navy font-semibold mb-1">Calm Power Day</h2>
+<div class="mb-1 text-muted-brown text-sm tracking-widest uppercase">The Emperor</div>
+<p class="text-xs text-muted-brown tracking-wider uppercase mb-6">Authority • Structure • Leadership</p>
+<!-- Details Container -->
+<div class="bg-[#F8F5EE] rounded-3xl p-5 shadow-soft border border-white space-y-5">
+<!-- Item 1: Lucky Colors -->
+<div class="flex gap-4 pb-4 border-b border-[#EAE3D5]">
+<div class="w-10 h-10 rounded-full bg-[#FCEAE8] flex items-center justify-center flex-shrink-0 border border-white shadow-sm">
+<div class="w-5 h-5 rounded-full bg-[#E5B5B5]"></div>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-navy mb-1 flex justify-between items-center w-full">
+                  Lucky Colors
+                  <div class="flex gap-1 ml-4">
+<span class="w-4 h-4 rounded-full bg-[#1A2342] shadow-sm"></span>
+<span class="w-4 h-4 rounded-full bg-[#C27C7E] shadow-sm"></span>
+<span class="w-4 h-4 rounded-full bg-[#D4AF37] shadow-sm"></span>
+</div>
+</h4>
+<p class="text-sm text-navy">Navy, Rose, Gold</p>
+</div>
+</div>
+<!-- Item 2: Outfit Energy -->
+<div class="flex gap-4 pb-4 border-b border-[#EAE3D5]">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0 border border-[#EAE3D5] shadow-sm">
+<svg class="w-5 h-5" fill="none" stroke="#8C7C6D" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-xs text-muted-brown mb-0.5">Outfit Energy</h4>
+<h5 class="text-sm font-semibold text-navy mb-1">Tailored &amp; Confident</h5>
+<p class="text-xs text-muted-brown leading-snug">Structured pieces, clean lines, strong silhouettes.</p>
+</div>
+</div>
+<!-- Item 3: Beauty Cue -->
+<div class="flex gap-4 pb-4 border-b border-[#EAE3D5]">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0 border border-[#EAE3D5] shadow-sm">
+<svg class="w-5 h-5" fill="none" stroke="#8C7C6D" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-xs text-muted-brown mb-0.5">Beauty Cue</h4>
+<h5 class="text-sm font-semibold text-navy mb-1">Defined &amp; Polished</h5>
+<p class="text-xs text-muted-brown leading-snug">Sharp brows, soft matte lips, glowing skin.</p>
+</div>
+</div>
+<!-- Item 4: Social Move -->
+<div class="flex gap-4 pb-4 border-b border-[#EAE3D5]">
+<div class="w-10 h-10 rounded-full bg-[#FAF5ED] flex items-center justify-center flex-shrink-0 border border-white shadow-sm">
+<svg class="w-5 h-5" fill="none" stroke="#8C7C6D" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.84 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-xs text-muted-brown mb-0.5">Social Move</h4>
+<h5 class="text-sm font-semibold text-navy mb-1">Lead with Clarity</h5>
+<p class="text-xs text-muted-brown leading-snug">Take space, set direction, inspire confidence.</p>
+</div>
+</div>
+<!-- Item 5: Tiny Ritual -->
+<div class="flex gap-4 pb-4 border-b border-[#EAE3D5]">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0 border border-[#EAE3D5] shadow-sm">
+<svg class="w-5 h-5" fill="none" stroke="#8C7C6D" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-xs text-muted-brown mb-0.5">Tiny Ritual</h4>
+<h5 class="text-sm font-semibold text-navy mb-1">3 Deep Anchor Breaths</h5>
+<p class="text-xs text-muted-brown leading-snug">Inhale strength. Exhale doubt. You've got this.</p>
+</div>
+</div>
+<!-- Item 6: Avoid Today -->
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0 border border-[#EAE3D5] shadow-sm">
+<svg class="w-5 h-5" fill="none" stroke="#A86F5C" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div>
+<h4 class="text-xs text-muted-brown mb-0.5">Avoid Today</h4>
+<h5 class="text-sm font-semibold text-navy mb-1">Overcontrolling or Rigid Energy</h5>
+<p class="text-xs text-muted-brown leading-snug">Lead with heart, not force.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- END: Card & Info Section -->
+<!-- BEGIN: Today's Message -->
+<div class="mt-8">
+<div class="flex items-center gap-2 mb-3">
+<span class="text-[#C27C7E] text-sm">✦</span>
+<h3 class="font-serif text-[#C27C7E] text-lg italic">Today's Message</h3>
+</div>
+<div class="bg-white rounded-3xl p-6 shadow-sm border border-[#EAE3D5] relative">
+<!-- Quote Marks -->
+<div class="absolute top-4 left-4 text-5xl font-serif text-[#EAE3D5] leading-none">“</div>
+<p class="font-serif text-navy text-xl text-center leading-relaxed px-6 py-2 relative z-10">
+            You don't need to prove your power. Your presence already builds respect.
+          </p>
+<div class="absolute bottom-4 right-4 text-[#D4AF37] text-sm">✦</div>
+</div>
+</div>
+<!-- END: Today's Message -->
+<!-- Trend Button -->
+<button class="w-full mt-4 bg-[#F8F5EE] border border-[#EAE3D5] rounded-full py-4 px-6 flex items-center justify-between text-navy shadow-sm">
+<div class="flex items-center gap-3 w-full justify-center">
+<svg class="w-5 h-5 text-muted-brown" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="font-medium">View 7-Day Trend</span>
+</div>
+<svg class="w-4 h-4 text-muted-brown" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="m8.25 4.5 7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- BEGIN: Share Section -->
+<div class="mt-8 bg-[#FAF5F3] rounded-3xl p-5 border border-[#F0E6DF]">
+<div class="flex items-center justify-center gap-2 mb-1">
+<span class="text-[#D4AF37] text-xs">✦</span>
+<h3 class="font-serif text-navy text-lg text-center">Share Your Card</h3>
+<span class="text-[#D4AF37] text-xs">✦</span>
+</div>
+<p class="text-center text-xs text-muted-brown mb-5">Inspire someone's day ✨</p>
+<div class="flex flex-col gap-4">
+<!-- Mini Preview Card for Sharing -->
+<div class="bg-[#1A2342] rounded-xl p-3 flex gap-3 shadow-md relative overflow-hidden border border-[#2A375E]">
+<!-- Subtle background pattern for mini card -->
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+<!-- Mini Image Placeholder -->
+<div class="w-24 h-32 bg-gray-700 rounded-lg flex-shrink-0 relative border border-white/20">
+<!-- In real implementation, small version of the card image -->
+<img alt="Preview" class="absolute inset-0 w-full h-full object-cover rounded-lg opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKxf-nsvfKMS5VJlwGOq8BSGJ7bMbVp5M8N1xyaS63pOdMK68cXtec3RrAv-MNR_7YiOF0XCTbgOpvXqN3vLo9NbYUaxbflfvlfI6FiR4F2LoychqYeLyd_oZ1yauRZESG1fS0iEKJyZ_b2MsRBMOHxYlATvAB7fgyCiD7MNIDr03n-g1LLXVaeGPfGg99sUEiJjcnsLvZRv8P3KxDk7OkfvgG5JFrFNcRAJCVIEg5OMN6txCYd4pUta45Rk53duqlMbHjvmm9"/>
+</div>
+<!-- Mini Info -->
+<div class="flex flex-col justify-center py-1 z-10">
+<h4 class="text-white text-sm font-semibold mb-0.5">Calm Power Day</h4>
+<p class="text-[#D4AF37] text-[10px] font-serif uppercase tracking-wider mb-0.5">The Emperor</p>
+<p class="text-white/60 text-[8px] uppercase tracking-wider mb-2 leading-tight">Authority • Structure • Leadership</p>
+<p class="text-white/80 text-[10px] italic leading-snug">
+                 "I lead with clarity, I build with purpose, I stand in my power."
+               </p>
+<div class="mt-auto pt-2">
+<span class="text-white/90 font-serif text-xs">AuraCue</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-3 mt-2">
+<button class="w-full bg-gradient-gold-btn text-white font-medium rounded-full py-3.5 shadow-md flex items-center justify-center gap-2 transition active:scale-95">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Save Card
+            </button>
+<button class="w-full bg-transparent border-2 border-[#D5A973] text-[#A67B45] font-medium rounded-full py-3 flex items-center justify-center gap-2 transition active:bg-[#F8F5EE]">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15m0-3-3-3m0 0-3 3m3-3V15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Share Story
+            </button>
+<button class="w-full bg-white/50 border border-[#EAE3D5] text-muted-brown text-sm font-medium rounded-full py-3 flex items-center justify-center gap-2 transition active:bg-[#F8F5EE]">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              More Sharing Options
+            </button>
+</div>
+</div>
+</div>
+<!-- END: Share Section -->
+<!-- Footer Note -->
+<div class="text-center pb-6 pt-4 flex items-center justify-center gap-1.5 text-muted-brown opacity-70">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-xs">Private. Personal. Just for you.</span>
+</div>
+</main>
+<!-- END: Main Content -->
+</div>
+<!-- END: Main Container -->
+</body></html>

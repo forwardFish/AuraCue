@@ -1,0 +1,18 @@
+{
+  "apiId": "API-008",
+  "caseId": "C01",
+  "caseKey": "API-008-C01",
+  "caseType": "share event success",
+  "method": "POST",
+  "path": "/api/share-events",
+  "expectedStatus": 201,
+  "actualStatus": 201,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-008-share.json",
+  "response": {
+    "shareEventId": "share-007",
+    "cardId": "card-unlocked-001",
+    "channel": "story",
+    "source": "T20-API-008"
+  }
+}

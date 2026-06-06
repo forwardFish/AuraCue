@@ -1,0 +1,149 @@
+{
+  "taskId": "T11",
+  "taskDocument": "docs/auto-execute/auracue-tasks/T11-generation-ritual-and-network-error-pages.md",
+  "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+  "statusReason": "UI-05 and UI-18 are implemented with simulated route/API/click tests and structural HTML captures, but no automated raster screenshot or pixel-diff evidence was produced in this task boundary.",
+  "requirementIds": [
+    "REQ-002",
+    "REQ-003",
+    "REQ-004",
+    "REQ-013",
+    "REQ-017"
+  ],
+  "uiIds": [
+    "UI-05",
+    "UI-18"
+  ],
+  "apiIds": [
+    "API-001",
+    "API-002",
+    "API-010"
+  ],
+  "ownerScenarios": [
+    "SCN-004",
+    "SCN-015"
+  ],
+  "changedFiles": [
+    "apps/wechat-mini/package.json",
+    "apps/wechat-mini/src/pages/create/loading-page.mjs",
+    "apps/wechat-mini/src/pages/create/loading.js",
+    "apps/wechat-mini/src/pages/create/loading.json",
+    "apps/wechat-mini/src/pages/create/loading.wxml",
+    "apps/wechat-mini/src/pages/create/loading.wxss",
+    "apps/wechat-mini/src/pages/error/network-page.mjs",
+    "apps/wechat-mini/src/pages/error/network.js",
+    "apps/wechat-mini/src/pages/error/network.json",
+    "apps/wechat-mini/src/pages/error/network.wxml",
+    "apps/wechat-mini/src/pages/error/network.wxss",
+    "apps/wechat-mini/tests/t11-generation-ritual-error-pages.test.mjs",
+    "docs/auto-execute/results/T11.json",
+    "docs/auto-execute/latest/T11-HANDOFF.md",
+    "docs/auto-execute/traces/T11/generation-error.json",
+    "docs/auto-execute/screenshots/T11/UI-05-loading.html",
+    "docs/auto-execute/screenshots/T11/UI-05-loading-render-summary.json",
+    "docs/auto-execute/screenshots/T11/UI-18-network-error.html",
+    "docs/auto-execute/screenshots/T11/UI-18-network-error-render-summary.json",
+    "docs/auto-execute/logs/T11/generation-ritual-error-pages-test.log",
+    "docs/auto-execute/logs/T11/generation-ritual-error-pages-test-command.log",
+    "docs/auto-execute/logs/T11/wechat-route-verify.log",
+    "docs/auto-execute/logs/T11/wechat-mini-test.log",
+    "docs/auto-execute/logs/T11/root-typecheck.log",
+    "docs/auto-execute/logs/T11/typecheck.log",
+    "docs/auto-execute/logs/T11/lint.log",
+    "docs/auto-execute/logs/T11/diff-check.log"
+  ],
+  "commandsRun": [
+    {
+      "command": "pnpm --filter @auracue/wechat-mini test:t11",
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "evidence": "PowerShell blocked pnpm.ps1; rerun with pnpm.cmd."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test:t11",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "evidence": "docs/auto-execute/logs/T11/generation-ritual-error-pages-test-command.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini dev:weapp",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T11/wechat-route-verify.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini test",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "evidence": "docs/auto-execute/logs/T11/wechat-mini-test.log"
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/wechat-mini typecheck",
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "evidence": "docs/auto-execute/logs/T11/typecheck.log"
+    },
+    {
+      "command": "pnpm.cmd typecheck",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T11/root-typecheck.log"
+    },
+    {
+      "command": "pnpm.cmd lint",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T11/lint.log"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/T11/diff-check.log"
+    }
+  ],
+  "evidence": [
+    "docs/auto-execute/traces/T11/generation-error.json",
+    "docs/auto-execute/screenshots/T11/UI-05-loading.html",
+    "docs/auto-execute/screenshots/T11/UI-05-loading-render-summary.json",
+    "docs/auto-execute/screenshots/T11/UI-18-network-error.html",
+    "docs/auto-execute/screenshots/T11/UI-18-network-error-render-summary.json",
+    "docs/auto-execute/logs/T11/generation-ritual-error-pages-test-command.log",
+    "docs/auto-execute/logs/T11/wechat-route-verify.log",
+    "docs/auto-execute/logs/T11/wechat-mini-test.log",
+    "docs/auto-execute/logs/T11/root-typecheck.log",
+    "docs/auto-execute/logs/T11/lint.log",
+    "docs/auto-execute/logs/T11/diff-check.log"
+  ],
+  "acceptanceSummary": {
+    "loadingScreenRendersRitualState": "PASS",
+    "loadingPollsApi002": "PASS",
+    "successNavigatesToResult": "PASS",
+    "failureRendersUi18": "PASS",
+    "tryAgainCreatesOrResumesGeneration": "PASS",
+    "changeSceneReturnsToScenePage": "PASS",
+    "simulatedTestsForImplementedPages": "PASS",
+    "visualScreenshotAndPixelDiff": "PASS_NEEDS_MANUAL_UI_REVIEW"
+  },
+  "blockers": [
+    {
+      "type": "visual_evidence",
+      "status": "PASS_NEEDS_MANUAL_UI_REVIEW",
+      "detail": "No automated raster screenshot or pixel-diff tooling was run for UI-05/UI-18 in T11; structural HTML captures and render summaries were produced."
+    },
+    {
+      "type": "environment",
+      "status": "DOCUMENTED_BLOCKER",
+      "detail": "PowerShell execution policy blocks pnpm.ps1. The same commands were rerun successfully through pnpm.cmd."
+    },
+    {
+      "type": "script_path",
+      "status": "DOCUMENTED_BLOCKER",
+      "detail": "Package-scoped typecheck runs the root checker from the package cwd and looks for apps/wechat-mini/apps/wechat-mini/src/app.config.ts. Root pnpm.cmd typecheck passes."
+    }
+  ],
+  "forbiddenActionsCheck": {
+    "realWechatPay": false,
+    "realCloudWrites": false,
+    "productionDb": false,
+    "productionAi": false,
+    "productionAnalytics": false,
+    "secretsUsed": false
+  },
+  "nextStepNotes": [
+    "T22/T23 should produce raster screenshots and visual diff metrics for UI-05 and UI-18 before any pure product PASS claim.",
+    "T19/T24 can reuse docs/auto-execute/traces/T11/generation-error.json for page and owner exact-click coverage."
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "taskId": "T17",
+  "apiId": "API-009",
+  "endpoint": "POST /api/share-images/:cardId",
+  "cases": {
+    "API-009-C01-render": {
+      "status": "PASS",
+      "response": {
+        "cardId": "card-unlocked-001",
+        "templateId": "template-story-001",
+        "format": "story-9x16",
+        "localPath": "local://share-images/card-unlocked-001-template-story-001.png",
+        "width": 1080,
+        "height": 1920,
+        "aspectRatio": "9:16",
+        "renderer": "deterministic-local-renderer",
+        "deterministicKey": "card-unlocked-001|template-story-001|Full Lucky Aura Card|Golden Comet Aura|warm gold|golden-night|Today I am carrying golden comet aura.",
+        "artifactKind": "svg-data-url",
+        "dataUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iQXVyYUN1ZSBHb2xkZW4gQ29tZXQgQXVyYSBzaGFyZSBjYXJkIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYXVyYWN1ZS1iZy1jYXJkLXVubG9ja2VkLTAwMSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMmExYTRhIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNDIlIiBzdG9wLWNvbG9yPSIjOGQ1YmZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNzIlIiBzdG9wLWNvbG9yPSIjZjQ4ZmIxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Q0YWYzNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwODAiIGhlaWdodD0iMTkyMCIgZmlsbD0idXJsKCNhdXJhY3VlLWJnLWNhcmQtdW5sb2NrZWQtMDAxKSIvPgogIDxyZWN0IHg9IjQyIiB5PSI0MiIgd2lkdGg9Ijk5NiIgaGVpZ2h0PSIxODM2IiByeD0iNjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q0YWYzNyIgc3Ryb2tlLXdpZHRoPSI0IiBvcGFjaXR5PSIwLjcyIi8+CiAgPHRleHQgeD0iNTQwIiB5PSIxNzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNkNGFmMzciIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSI0MiIgbGV0dGVyLXNwYWNpbmc9IjEwIj5BVVJBQ1VFPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMjkyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmZmZmIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iODIiIGZvbnQtd2VpZ2h0PSI3MDAiPkZ1bGwgTHVja3kgQXVyYSBDYXJkPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMzgyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmN2RjIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQyIj5UaGUgU3VuPC90ZXh0PgogIDxyZWN0IHg9Ijk2IiB5PSIxMDgwIiB3aWR0aD0iODg4IiBoZWlnaHQ9IjY5NiIgcng9IjU0IiBmaWxsPSIjZmZmZGY4IiBvcGFjaXR5PSIwLjkyIi8+CiAgPHRleHQgeD0iNTQwIiB5PSIxMTk4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iNjgiIGZvbnQtd2VpZ2h0PSI3MDAiPkdvbGRlbiBDb21ldCBBdXJhPC90ZXh0PgogIDx0ZXh0IHg9IjU0MCIgeT0iMTI3MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzdhNmI1YyIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNCI+Z29sZGVuLW5pZ2h0PC90ZXh0PgogIDx0ZXh0IHg9IjE4MCIgeT0iMTM4MiIgZmlsbD0iIzdhNmI1YyIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCI+THVja3kgQ29sb3I8L3RleHQ+CiAgPHRleHQgeD0iOTAwIiB5PSIxMzgyIiB0ZXh0LWFuY2hvcj0iZW5kIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIj53YXJtIGdvbGQ8L3RleHQ+CiAgPHRleHQgeD0iMTgwIiB5PSIxNDgwIiBmaWxsPSIjN2E2YjVjIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIj5PdXRmaXQgRW5lcmd5PC90ZXh0PgogIDx0ZXh0IHg9IjkwMCIgeT0iMTQ4MCIgdGV4dC1hbmNob3I9ImVuZCIgZmlsbD0iIzJhMWE0YSIgZm9udC1mYW1pbHk9IkludGVyLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9IjcwMCI+VXNlIG9uZSBwbGF5ZnVsIGFjY2VudCBhbmQga2VlcCB0aGUgcmVzdCBlZmZvcnRsZXNzLjwvdGV4dD4KICA8dGV4dCB4PSIxODAiIHk9IjE1NzgiIGZpbGw9IiM3YTZiNWMiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiPlNvY2lhbCBBY3Rpb248L3RleHQ+CiAgPHRleHQgeD0iOTAwIiB5PSIxNTc4IiB0ZXh0LWFuY2hvcj0iZW5kIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIj5Kb2luIHRoZSBmaXJzdCBmcmllbmRseSBjaXJjbGUgYW5kIGFzayB3aGF0IG1hZGUgdGhlaXIgd2VlayBicmlnaHRlci48L3RleHQ+CiAgPHRleHQgeD0iMTgwIiB5PSIxNjc2IiBmaWxsPSIjN2E2YjVjIiBmb250LWZhbWlseT0iSW50ZXIsIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIj5UaW55IFJpdHVhbDwvdGV4dD4KICA8dGV4dCB4PSI5MDAiIHk9IjE2NzYiIHRleHQtYW5jaG9yPSJlbmQiIGZpbGw9IiMyYTFhNGEiIGZvbnQtZmFtaWx5PSJJbnRlciwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSI3MDAiPlNtaWxlIGF0IHlvdXJzZWxmIG9uY2UgYmVmb3JlIHlvdSBlbnRlciB0aGUgcm9vbS48L3RleHQ+CiAgPHRleHQgeD0iNTQwIiB5PSIxNzQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMmExYTRhIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtc3R5bGU9Iml0YWxpYyI+VG9kYXkgSSBhbSBjYXJyeWluZyBnb2xkZW4gY29tZXQgYXVyYS48L3RleHQ+Cjwvc3ZnPg==",
+        "dataUrlSha256": "7591ca34b15922f55b9338498274346b787db42f3459c7825ea2062a4d81d378",
+        "textFields": {
+          "title": "Full Lucky Aura Card",
+          "auraName": "Golden Comet Aura",
+          "tarotSymbol": "The Sun",
+          "message": "Warm presence can turn a small exchange into a memorable one.",
+          "luckyColor": "warm gold",
+          "outfit": "Use one playful accent and keep the rest effortless.",
+          "beauty": "Let one feature catch light while the rest stays natural.",
+          "social": "Join the first friendly circle and ask what made their week brighter.",
+          "ritual": "Smile at yourself once before you enter the room.",
+          "avoid": "Avoid performing for people who are not meeting your energy.",
+          "caption": "Today I am carrying golden comet aura.",
+          "theme": "golden-night"
+        },
+        "layers": [
+          {
+            "type": "background",
+            "color": "warm moonlight"
+          },
+          {
+            "type": "title",
+            "text": "Full Lucky Aura Card"
+          },
+          {
+            "type": "auraName",
+            "text": "Golden Comet Aura"
+          },
+          {
+            "type": "tarotSymbol",
+            "text": "The Sun"
+          },
+          {
+            "type": "luckyColor",
+            "text": "warm gold"
+          },
+          {
+            "type": "outfit",
+            "text": "Use one playful accent and keep the rest effortless."
+          },
+          {
+            "type": "social",
+            "text": "Join the first friendly circle and ask what made their week brighter."
+          },
+          {
+            "type": "ritual",
+            "text": "Smile at yourself once before you enter the room."
+          },
+          {
+            "type": "caption",
+            "text": "Today I am carrying golden comet aura."
+          }
+        ]
+      }
+    },
+    "API-009-deterministic-repeat": {
+      "status": "PASS",
+      "firstHash": "7591ca34b15922f55b9338498274346b787db42f3459c7825ea2062a4d81d378",
+      "secondHash": "7591ca34b15922f55b9338498274346b787db42f3459c7825ea2062a4d81d378"
+    },
+    "API-009-template-not-found": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "NOT_FOUND",
+          "message": "Share template was not found.",
+          "details": {
+            "templateId": "missing-template",
+            "message": "Template not found: missing-template"
+          }
+        }
+      }
+    },
+    "API-009-validation": {
+      "status": "PASS",
+      "response": {
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Share image input is invalid.",
+          "details": {
+            "format": "Only story-9x16 local share rendering is supported."
+          }
+        }
+      }
+    }
+  },
+  "readback": {
+    "cardId": "card-unlocked-001",
+    "localPath": "local://share-images/card-unlocked-001-template-story-001.png",
+    "persistedOnCard": true
+  },
+  "localOnly": {
+    "renderer": "deterministic-local-renderer",
+    "storage": "local-artifacts-only",
+    "cloudStorageWriteUsed": false,
+    "paidImageApiUsed": false
+  }
+}

@@ -1,0 +1,23 @@
+<view class="payment-failed-page">
+  <view class="status-bar"><text>9:41</text><text>AuraCue</text></view>
+  <view class="header">
+    <button class="circle-button" bindtap="onBackTap">back</button>
+    <text class="brand">AuraCue</text>
+  </view>
+  <view class="illustration">
+    <view class="cloud">
+      <text>!</text>
+    </view>
+  </view>
+  <view class="copy">
+    <text class="title">Payment didn't{{"\n"}}go through</text>
+    <text class="message">No worries, it happens.{{"\n"}}Please try again.</text>
+  </view>
+  <view class="actions">
+    <button class="primary-action" bindtap="onTryAgainTap">Try Again</button>
+    <button class="secondary-action" bindtap="onRestoreTap">Restore Purchase</button>
+    <button class="secondary-action" bindtap="onInviteTap">Invite 3 Friends Instead</button>
+  </view>
+  <button class="support-link" bindtap="onSupportTap">Contact Support</button>
+  <text class="toast" wx:if="{{supportToast}}">{{supportToast}}</text>
+</view>

@@ -1,0 +1,54 @@
+{
+  "uiId": "UI-11",
+  "route": "/unlock/:id/pay",
+  "sourceReference": "docs/UI/小程序/08A-支付解锁_确认支付.png",
+  "stitchReference": "docs/UI/小程序/stitch_codex_ui_code_generator/08a/code.html",
+  "requirementIds": [
+    "REQ-010",
+    "REQ-012",
+    "REQ-017"
+  ],
+  "apiIds": [
+    "API-005",
+    "API-010"
+  ],
+  "cardId": "card-locked-001",
+  "title": "Unlock your full Aura Card",
+  "price": "$1.99",
+  "priceNote": "One-time unlock",
+  "valueRows": [
+    "Full reading & insights",
+    "Outfit energy details",
+    "Social action plan",
+    "Lucky ritual",
+    "Save & share high-quality card"
+  ],
+  "actions": {
+    "confirmUnlock": {
+      "controlId": "confirm-unlock-199",
+      "label": "Confirm Unlock $1.99",
+      "route": "/unlock/:id/success"
+    },
+    "inviteInstead": {
+      "controlId": "invite-3-friends-instead",
+      "label": "Invite 3 Friends Instead",
+      "route": "/invite/:id"
+    },
+    "close": {
+      "controlId": "close-payment",
+      "label": "Close",
+      "route": "/unlock/:id"
+    }
+  },
+  "localOnly": {
+    "payment": "local-mock-api-client-only",
+    "forbiddenSdkCalls": [
+      "wechat-payment-sdk-call",
+      "live-payment-provider",
+      "live-payment-url"
+    ],
+    "analytics": "local-fixture-client",
+    "storage": "local-evidence-files-only",
+    "db": "mock repository/readback deferred to T20"
+  }
+}

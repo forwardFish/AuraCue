@@ -1,0 +1,83 @@
+{
+  "verdict": "PASS",
+  "mode": "web-p0-runtime-smoke",
+  "taskId": "T13",
+  "baseUrl": "http://127.0.0.1:3213",
+  "scenarioResults": [],
+  "screenshots": [
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/01-home.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/02-context.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/03-upload.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/04-draw.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/05-result.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/06-activate.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/07-activated.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/08-share.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/09-saved.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/10-saved-copy.png"
+  ],
+  "traceEvents": [
+    {
+      "type": "screenshot",
+      "name": "01-home",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/01-home.png",
+      "timestamp": "2026-06-06T02:32:48.985Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "02-context",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/02-context.png",
+      "timestamp": "2026-06-06T02:32:49.449Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "03-upload",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/03-upload.png",
+      "timestamp": "2026-06-06T02:32:50.140Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "04-draw",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/04-draw.png",
+      "timestamp": "2026-06-06T02:32:50.591Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "05-result",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/05-result.png",
+      "timestamp": "2026-06-06T02:32:51.068Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "06-activate",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/06-activate.png",
+      "timestamp": "2026-06-06T02:32:51.531Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "07-activated",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/07-activated.png",
+      "timestamp": "2026-06-06T02:32:55.346Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "08-share",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/08-share.png",
+      "timestamp": "2026-06-06T02:32:57.133Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "09-saved",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/09-saved.png",
+      "timestamp": "2026-06-06T02:33:02.890Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "10-saved-copy",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/10-saved-copy.png",
+      "timestamp": "2026-06-06T02:33:03.291Z"
+    }
+  ],
+  "consoleEvents": [],
+  "blockingConsoleErrors": []
+}

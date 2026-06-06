@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "analytics": "local-collector-only",
+  "storage": "local-artifacts-only",
+  "realAnalyticsEndpointUsed": false,
+  "cloudStorageWriteUsed": false,
+  "socialPlatformSdkUsed": false
+}

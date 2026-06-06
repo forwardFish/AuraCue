@@ -1,0 +1,9 @@
+<view class="page">
+  <view class="brand">AuraCue</view>
+  <view class="title">Upload today's outfit?</view>
+  <view class="copy">Optional. Add a look for a more personalized card, or let AuraCue read your mood only.</view>
+  <button class="upload" bindtap="uploadOutfit">{{uploaded ? 'Outfit Added' : 'Upload Outfit'}}</button>
+  <button class="primary" bindtap="continueFlow">Continue</button>
+  <button class="skip" bindtap="skipUpload">Skip for Today</button>
+  <view class="trust">Private. Personal. Just for you.</view>
+</view>

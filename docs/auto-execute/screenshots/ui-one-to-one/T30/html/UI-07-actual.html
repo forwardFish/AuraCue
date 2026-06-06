@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AuraCue UI-07 Unlock</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #ededed; font-family: Inter, Arial, sans-serif; color: #111d3c; }
+    .device { position: relative; width: 941px; height: 1672px; margin: 0 auto; overflow: hidden; border-radius: 48px; background: radial-gradient(circle at 18% 20%, rgba(255,230,224,.45), transparent 32%), radial-gradient(circle at 86% 36%, rgba(255,226,231,.55), transparent 30%), #fff8f6; box-shadow: inset 0 0 0 1px rgba(40,40,40,.08); }
+    .device.frame { border-radius: 0; background: #000; padding: 12px 76px 70px; box-shadow: none; }
+    .device.progress-frame { background: radial-gradient(circle at 50% 55%, rgba(255,238,231,.72), transparent 52%), #fff8f6; padding: 10px 88px 62px; }
+    .device.progress-frame::before, .device.progress-frame::after { content: ""; position: absolute; width: 8px; border-radius: 8px; background: linear-gradient(90deg,#151515,#646464,#111); z-index: 2; }
+    .device.progress-frame::before { left: 47px; top: 320px; height: 252px; box-shadow: 0 130px 0 #303030, 0 260px 0 #303030; }
+    .device.progress-frame::after { right: 47px; top: 530px; height: 190px; }
+    .screen { position: relative; width: 790px; height: 1576px; margin: 0 auto; overflow: hidden; border: 8px solid #101010; border-radius: 92px; background: linear-gradient(180deg,#fffaf7,#fff1ed); box-shadow: inset 0 0 0 6px #2b2b2b; }
+    .progress-frame .screen { width: 746px; height: 1600px; border: 9px solid #101010; border-radius: 94px; box-shadow: inset 0 0 0 7px #2b2b2b, 0 0 0 2px rgba(255,255,255,.38), 0 18px 40px rgba(0,0,0,.72); }
+    .screen::before { content: ""; position: absolute; top: 28px; left: 50%; transform: translateX(-50%); width: 216px; height: 70px; border-radius: 999px; background: #050505; z-index: 20; }
+    .progress-frame .screen::before { background: radial-gradient(circle at 78% 45%, #061938 0 9px, transparent 10px), #050505; }
+    .status { height: 82px; display: flex; align-items: center; justify-content: space-between; padding: 0 84px; font-size: 28px; font-weight: 800; color: #050505; position: relative; z-index: 25; }
+    .sys-icons { display: flex; align-items: center; gap: 14px; }
+    .cell { display: flex; align-items: flex-end; gap: 4px; height: 28px; }
+    .cell i { display: block; width: 8px; border-radius: 4px; background: #050505; }
+    .cell i:nth-child(1) { height: 10px; }
+    .cell i:nth-child(2) { height: 15px; }
+    .cell i:nth-child(3) { height: 21px; }
+    .cell i:nth-child(4) { height: 27px; }
+    .wifi { position: relative; width: 34px; height: 25px; overflow: hidden; }
+    .wifi::before, .wifi::after, .wifi i { content: ""; position: absolute; left: 50%; transform: translateX(-50%); border: 5px solid #050505; border-left-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-radius: 999px 999px 0 0; }
+    .wifi::before { width: 36px; height: 28px; top: 0; }
+    .wifi::after { width: 24px; height: 18px; top: 8px; }
+    .wifi i { width: 12px; height: 9px; top: 16px; }
+    .battery { position: relative; width: 44px; height: 22px; border: 3px solid #050505; border-radius: 5px; }
+    .battery::before { content: ""; position: absolute; right: -7px; top: 5px; width: 4px; height: 8px; border-radius: 0 3px 3px 0; background: #050505; }
+    .battery::after { content: ""; position: absolute; inset: 3px; border-radius: 2px; background: #050505; }
+    h1, h2, h3, .serif { font-family: Georgia, "Times New Roman", serif; }
+    button { font-family: inherit; }
+    .spark { color: #e3a14f; }
+    .pink { color: #ef3f77; }
+    .soft-card { background: rgba(255,255,255,.62); border: 1px solid rgba(238,188,169,.58); box-shadow: 0 12px 38px rgba(235,133,137,.08); }
+    
+    .close { position: absolute; top: 108px; left: 45px; width: 78px; height: 78px; border: 0; border-radius: 999px; background: rgba(255,255,255,.78); color: #9a6a3e; font-size: 58px; line-height: 68px; }
+    .unlock-hero { text-align: center; padding: 34px 70px 0; }
+    .unlock-hero h1 { margin: 0; font-size: 68px; line-height: 1; font-weight: 500; }
+    .divider-spark { color: #d9ad74; font-size: 28px; line-height: 70px; letter-spacing: 8px; }
+    .unlock-hero h2 { margin: 0; font-size: 60px; line-height: 1.08; font-weight: 500; }
+    .unlock-hero h2 span { color: #a7633e; }
+    .unlock-hero p { margin: 18px auto 28px; width: 560px; color: #6b7280; font-size: 26px; line-height: 1.35; }
+    .unlock-value { display: grid; grid-template-columns: 310px 1fr; gap: 22px; margin: 0 82px 26px; align-items: center; }
+    .radiant-card { position: relative; height: 550px; border-radius: 24px; padding: 36px 20px; color: #f4c678; text-align: center; border: 3px solid #bd7d42; overflow: hidden; background:
+      radial-gradient(circle at 30% 18%, rgba(255,224,148,.96) 0 7px, transparent 8px),
+      radial-gradient(circle at 72% 16%, rgba(255,245,199,.94) 0 23px, transparent 24px),
+      radial-gradient(circle at 50% 48%, rgba(255,255,255,.86) 0 9px, transparent 10px),
+      radial-gradient(circle at 50% 48%, rgba(255,152,176,.98) 0 57px, transparent 58px),
+      radial-gradient(circle at 50% 50%, rgba(255,201,139,.72), transparent 33%),
+      radial-gradient(ellipse at 50% 78%, rgba(75,47,72,.72) 0 24%, transparent 25%),
+      linear-gradient(180deg,#111b38 0%,#1e3157 66%,#17213b 100%);
+      box-shadow: 0 22px 34px rgba(68,39,37,.18); display: flex; flex-direction: column; justify-content: flex-end; }
+    .radiant-card::before { content: ""; position: absolute; inset: 26px 16px 58px; border-radius: 20px; border: 1px solid rgba(240,178,104,.7); background:
+      repeating-conic-gradient(from -14deg at 50% 48%, rgba(255,181,106,.38) 0deg 1.5deg, transparent 1.5deg 8deg);
+      opacity: .54; }
+    .radiant-card::after { content: ""; position: absolute; left: -18px; right: -18px; bottom: 74px; height: 134px; background:
+      radial-gradient(circle at 12% 84%, rgba(47,31,60,.62) 0 42px, transparent 43px),
+      radial-gradient(circle at 25% 78%, rgba(47,31,60,.52) 0 50px, transparent 51px),
+      radial-gradient(circle at 79% 82%, rgba(47,31,60,.56) 0 52px, transparent 53px),
+      radial-gradient(circle at 94% 78%, rgba(47,31,60,.5) 0 45px, transparent 46px);
+      opacity: .58; }
+    .radiant-card b { font: 27px Georgia,serif; letter-spacing: 2px; margin-bottom: 12px; }
+    .radiant-card span { font: 16px Georgia,serif; letter-spacing: 2px; }
+    .radiant-door { position: relative; z-index: 1; width: 126px; height: 180px; border-radius: 70px 70px 8px 8px; margin: 84px auto auto; border: 3px solid #ffb06c; background: radial-gradient(circle at 50% 68%, #fff, #ffa5b7 24%, rgba(255,151,171,.45)); box-shadow: 0 0 80px #fd8fa6; }
+    .radiant-door::after { content: ""; position: absolute; left: 50%; top: 0; bottom: -30px; width: 2px; transform: translateX(-50%); background: linear-gradient(#ffc979, rgba(255,201,121,.18)); }
+    .feature-panel { height: 624px; border-radius: 34px; background: rgba(255,255,255,.68); padding: 28px 26px; box-shadow: 0 8px 28px rgba(148,85,72,.06); }
+    .feature-panel h3 { margin: 0 0 20px; text-align: center; color: #cf6078; font-size: 26px; }
+    .unlock-feature { display: grid; grid-template-columns: 56px 1fr; gap: 18px; align-items: center; min-height: 76px; border-bottom: 1px solid #ead8d0; }
+    .unlock-feature:last-child { border-bottom: 0; }
+    .feature-icon { width: 48px; height: 48px; border-radius: 999px; display: grid; place-items: center; background: #f8f0e9; color: #b17645; font-size: 25px; }
+    .unlock-feature strong { display: block; font: 700 22px Georgia,serif; }
+    .unlock-feature span { display: block; color: #596372; font-size: 19px; margin-top: 4px; }
+    .prices { margin: 0 82px; border-radius: 22px; overflow: hidden; background: rgba(255,255,255,.66); }
+    .price-row { height: 96px; display: grid; grid-template-columns: 66px 128px 1fr 142px; align-items: center; padding: 0 26px; border-bottom: 1px solid #eadbd2; }
+    .price-row.selected { border: 2px solid #d39b5d; border-radius: 18px; background: rgba(255,250,244,.74); }
+    .price-row:last-child { border-bottom: 0; }
+    .radio { width: 43px; height: 43px; border-radius: 50%; border: 3px solid #e2d6d0; color: #c38a50; display: grid; place-items: center; font-size: 28px; }
+    .price-row strong { font: 38px Georgia,serif; }
+    .price-row small { color: #6b7280; font: 18px Inter,Arial,sans-serif; }
+    .price-copy b { display: block; font: 24px Georgia,serif; }
+    .price-copy em { display: block; color: #5f6876; font-size: 18px; font-style: normal; margin-top: 4px; }
+    .badge { justify-self: end; border-radius: 999px; padding: 12px 18px; background: #f8dce2; color: #d35b75; font-weight: 800; font-size: 14px; }
+    .selected .badge { color: white; background: linear-gradient(90deg,#c78b4e,#ae7434); }
+    .or { margin: 26px 240px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 22px; align-items: center; color: #777e88; font-size: 21px; }
+    .or span { height: 1px; background: #dfd5ce; }
+    .invite-choice { margin: 0 82px; width: 777px; height: 104px; border-radius: 24px; border: 1px solid #f0d0c5; background: rgba(255,255,255,.54); display: grid; grid-template-columns: 1fr 40px; align-items: center; padding-left: 185px; position: relative; text-align: left; color: #d45f7a; box-shadow: 0 8px 28px rgba(212,95,122,.08); }
+    .invite-choice b { font: 27px Georgia,serif; }
+    .invite-choice span { color: #66707d; font-size: 17px; }
+    .invite-choice i { grid-row: 1 / span 2; grid-column: 2; color: #d8c8bf; font-size: 48px; font-style: normal; }
+    .unlock-trust { text-align: center; color: #77808b; font-size: 22px; margin: 34px 0 0; }
+    .sr-only-control, .text-contract { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; overflow: hidden; }
+    .back { position: absolute; z-index: 30; top: 146px; left: 70px; border: 0; background: transparent; color: #0d1a38; font-size: 76px; line-height: 1; }
+    .invite-start h1 { margin: 82px 80px 0; text-align: center; font-size: 55px; line-height: 1.22; font-weight: 500; }
+    .invite-start h1 span, .invite-start h1 i { color: #f0447f; font-style: normal; }
+    .avatar-stage { position: relative; height: 390px; margin: 20px 70px 0; }
+    .friend { position: absolute; z-index: 4; width: 130px; height: 130px; border-radius: 999px; display: grid; place-items: center; font-size: 54px; border: 4px solid #ff91b1; background: #fff0f3; box-shadow: 0 8px 22px rgba(236,78,126,.18); }
+    .friend.empty { color: #f26695; border-style: dashed; background: rgba(255,255,255,.54); }
+    .friend:nth-child(1) { left: 78px; top: 88px; }
+    .friend:nth-child(2) { left: 260px; top: 34px; width: 150px; height: 150px; }
+    .friend:nth-child(3) { right: 70px; top: 88px; }
+    .card-line, .center-card { position: absolute; border: 2px solid #f7a65f; background: rgba(255,255,255,.58); }
+    .card-line { width: 168px; height: 168px; top: 198px; border-radius: 18px; transform: rotate(35deg); }
+    .card-line.left { left: 92px; }
+    .card-line.right { right: 92px; transform: rotate(-35deg); }
+    .center-card { left: 296px; top: 180px; width: 150px; height: 200px; border-radius: 16px; display: grid; place-items: center; color: #f2a04c; font-size: 76px; z-index: 5; }
+    .invite-progress { text-align: center; font-size: 28px; color: #0d1a38; }
+    .dots { width: 500px; height: 55px; margin: 24px auto 0; position: relative; display: flex; justify-content: space-between; align-items: center; }
+    .dots::before { content: ""; position: absolute; left: 26px; right: 26px; height: 4px; background: linear-gradient(90deg,#f0447f 33%,#f7c8d4 33%); }
+    .dots span, .dots i { width: 48px; height: 48px; border-radius: 50%; border: 3px solid #ff6f9e; background: #fff; z-index: 1; }
+    .dots .active { background: #f0447f; }
+    .reward-card { margin: 26px auto 28px; width: 576px; border-radius: 20px; padding: 18px 36px; background: rgba(255,255,255,.56); border: 1px solid #f0cabc; }
+    .reward-row { height: 58px; display: grid; grid-template-columns: 64px 1fr; align-items: center; color: #10203d; font-size: 27px; border-bottom: 1px solid #efcfc5; }
+    .reward-row:last-child { border-bottom: 0; }
+    .reward-row span { color: #f0447f; font-size: 30px; }
+    .invite-actions { width: 584px; margin: 0 auto; display: grid; gap: 20px; text-align: center; }
+    .pink-cta { border: 0; border-radius: 999px; height: 98px; color: white; background: linear-gradient(90deg,#ff4a86,#f22f72); box-shadow: 0 14px 28px rgba(239,63,119,.32); font-size: 34px; font-weight: 800; }
+    .pay-soft { height: 88px; border-radius: 999px; border: 1px solid #f0cbd2; background: rgba(255,255,255,.48); color: #10203d; font-size: 34px; font-weight: 700; }
+    .pay-soft span { color: #ef3f77; }
+    .invite-actions p { color: #6b6670; font-size: 22px; margin: 8px 0 0; }
+    .progress-screen { background:
+      radial-gradient(circle at 24% 9%, rgba(255,255,255,.64) 0 5px, transparent 6px),
+      radial-gradient(circle at 78% 8%, rgba(255,236,160,.72) 0 4px, transparent 5px),
+      radial-gradient(circle at 72% 13%, rgba(252,187,209,.55) 0 5px, transparent 6px),
+      radial-gradient(circle at 1% 10%, rgba(255,255,255,.92) 0 60px, transparent 62px),
+      radial-gradient(circle at 10% 14%, rgba(252,221,231,.78) 0 82px, transparent 84px),
+      radial-gradient(circle at 1% 20%, rgba(255,255,255,.88) 0 92px, transparent 94px),
+      radial-gradient(circle at 99% 13%, rgba(255,255,255,.92) 0 64px, transparent 66px),
+      radial-gradient(circle at 92% 18%, rgba(252,221,231,.78) 0 90px, transparent 92px),
+      radial-gradient(circle at 99% 24%, rgba(255,255,255,.88) 0 96px, transparent 98px),
+      radial-gradient(circle at 22% 16%, rgba(253,207,224,.48), transparent 24%),
+      radial-gradient(circle at 88% 19%, rgba(253,207,224,.48), transparent 24%),
+      radial-gradient(circle at 50% 5%, rgba(255,240,246,.52), transparent 24%),
+      #fff8f6; }
+    .moon { position: absolute; top: 118px; right: 70px; color: #fbef89; font-size: 76px; }
+    .progress-screen h1 { margin: 58px 0 0; text-align: center; color: #c79534; font-size: 38px; }
+    .progress-screen h1 span { font-size: 24px; }
+    .progress-screen h2 { margin: 46px auto 0; width: 560px; text-align: center; font-size: 54px; line-height: 1.34; font-weight: 600; }
+    .progress-screen h2 i { color: #e9a24d; font-style: normal; }
+    .count { text-align: center; margin: 30px 0 20px; font-size: 29px; font-weight: 700; }
+    .count b { color: #ef3f77; }
+    .stepbar { width: 430px; margin: 0 auto 34px; display: flex; justify-content: space-between; position: relative; }
+    .stepbar::before { content: ""; position: absolute; left: 45px; right: 45px; top: 42px; height: 5px; background: linear-gradient(90deg,#ef3f77 50%,#f5c4d3 50%); }
+    .stepbar span, .stepbar i { z-index: 1; width: 84px; height: 84px; border-radius: 999px; display: grid; place-items: center; background: #ef3f77; box-shadow: 0 10px 18px rgba(239,63,119,.18); }
+    .stepbar span::after { content: "✓"; color: white; font-size: 52px; font-weight: 800; }
+    .stepbar i { border: 3px solid #f6a0bd; background: #fff9f5; }
+    .friends { width: 590px; margin: 0 auto; display: grid; gap: 16px; }
+    .friend-row { min-height: 130px; border-radius: 28px; display: grid; grid-template-columns: 96px 1fr 72px; gap: 28px; align-items: center; padding: 18px 40px 18px 24px; background: rgba(255,255,255,.56); border: 1px solid #f1cfc4; }
+    .friend-row .avatar { width: 80px; height: 80px; border-radius: 999px; display: grid; place-items: center; background: #ffdbe7; font-size: 42px; overflow: hidden; position: relative; border: 3px solid rgba(255,255,255,.9); }
+    .friend-row .pending { background: radial-gradient(circle at 50% 34%, #cfc8c3 0 13px, transparent 14px), radial-gradient(ellipse at 50% 72%, #bbb4af 0 24px, transparent 25px), #ece8e5; color: #9b9694; }
+    .face-lina { background: radial-gradient(circle at 38% 43%, #111 0 3px, transparent 4px), radial-gradient(circle at 62% 43%, #111 0 3px, transparent 4px), radial-gradient(ellipse at 50% 61%, #d95b5b 0 9px, transparent 10px), radial-gradient(circle at 50% 46%, #ffd2b3 0 29px, transparent 30px), radial-gradient(ellipse at 50% 38%, #5a2b18 0 38px, transparent 39px), #ffdce6; }
+    .face-lina::before { content: ""; position: absolute; left: 16px; right: 16px; bottom: -6px; height: 30px; border-radius: 22px 22px 0 0; background: #f5a7ba; }
+    .face-jason { background: radial-gradient(circle at 38% 43%, #111 0 3px, transparent 4px), radial-gradient(circle at 62% 43%, #111 0 3px, transparent 4px), radial-gradient(ellipse at 50% 62%, #df7261 0 8px, transparent 9px), radial-gradient(circle at 50% 46%, #ffc79b 0 29px, transparent 30px), radial-gradient(ellipse at 50% 28%, #151515 0 35px, transparent 36px), #d9d0ff; }
+    .face-jason::before { content: ""; position: absolute; left: 16px; right: 16px; bottom: -6px; height: 30px; border-radius: 22px 22px 0 0; background: #61bd8c; }
+    .friend-row strong { display: block; font-size: 28px; }
+    .friend-row span { display: block; margin-top: 8px; color: #7e8796; font-size: 24px; }
+    .friend-row i { width: 58px; height: 58px; border-radius: 999px; display: grid; place-items: center; background: #ef3f77; color: white; font-size: 38px; font-style: normal; font-weight: 900; }
+    .friend-row:last-child i { background: transparent; border: 3px dashed #ef75a0; }
+    .share-box { width: 590px; margin: 30px auto 26px; border-radius: 28px; padding: 24px; background: rgba(255,255,255,.56); border: 1px solid #f1cfc4; text-align: center; }
+    .share-box h3 { margin: 0 0 20px; font: 700 28px Inter,Arial,sans-serif; display: flex; align-items: center; justify-content: center; gap: 18px; }
+    .share-box div { height: 76px; border-radius: 20px; border: 1px solid #f6b2c8; display: grid; grid-template-columns: 1fr 122px; align-items: center; padding-left: 42px; font-size: 25px; }
+    .share-box button { height: 64px; border: 0; border-radius: 18px; color: white; background: linear-gradient(90deg,#ff5a91,#ef3f77); font-size: 26px; }
+    .again { display: block; width: 590px; margin: 0 auto 34px; }
+    .how { display: block; margin: 0 auto; border: 0; background: transparent; color: #3f4655; font-size: 25px; }
+    .landing-screen { background: radial-gradient(circle at 18% 74%, rgba(255,218,230,.9), transparent 26%), radial-gradient(circle at 86% 68%, rgba(255,218,230,.72), transparent 24%), #fff8f6; }
+    .landing-screen h1 { margin: 88px 0 0; text-align: center; font-size: 46px; }
+    .landing-screen h1 span { color: #e9a24d; font-size: 24px; }
+    .mia { width: 112px; height: 112px; margin: 34px auto 22px; border-radius: 999px; border: 3px solid #f0bd73; display: grid; place-items: center; background: #ffdce5; font-size: 62px; overflow: hidden; position: relative; }
+    .face-mia { background: radial-gradient(circle at 38% 45%, #111 0 4px, transparent 5px), radial-gradient(circle at 62% 45%, #111 0 4px, transparent 5px), radial-gradient(ellipse at 50% 62%, #df6363 0 11px, transparent 12px), radial-gradient(circle at 50% 48%, #ffd0b7 0 38px, transparent 39px), radial-gradient(ellipse at 50% 36%, #6a2e18 0 48px, transparent 49px), #ffdce5; }
+    .face-mia::before { content: ""; position: absolute; left: 23px; right: 23px; bottom: -8px; height: 42px; border-radius: 30px 30px 0 0; background: #f0a5b8; }
+    .landing-screen h2 { margin: 0 auto; width: 520px; text-align: center; font-size: 42px; line-height: 1.35; font-weight: 600; }
+    .landing-screen h2 i { color: #e9a24d; font-style: normal; }
+    .locked-aura { position: relative; width: 390px; height: 548px; margin: 16px auto 52px; border-radius: 18px; border: 4px solid #f0a64d; overflow: hidden; text-align: center; color: white; background: linear-gradient(180deg,rgba(111,80,189,.88),rgba(248,169,200,.85)), radial-gradient(circle at 55% 58%, #f1b59c, #9865bf 60%); box-shadow: 0 16px 28px rgba(237,93,142,.22); }
+    .locked-aura p { margin: 34px 0 8px; color: #ffd065; font-size: 20px; }
+    .locked-aura h3 { margin: 0; font-size: 32px; font-weight: 500; }
+    .locked-aura time { display: block; margin-top: 14px; font-size: 22px; color: rgba(255,255,255,.88); }
+    .portrait { position: absolute; inset: 150px 54px 34px; background:
+      radial-gradient(ellipse at 50% 20%, rgba(95,45,27,.86) 0 42px, transparent 43px),
+      radial-gradient(ellipse at 50% 38%, rgba(255,199,170,.88) 0 58px, transparent 59px),
+      radial-gradient(ellipse at 50% 72%, rgba(244,150,171,.68) 0 104px, transparent 105px),
+      radial-gradient(circle at 25% 70%, rgba(255,161,188,.5) 0 40px, transparent 41px),
+      radial-gradient(circle at 75% 30%, rgba(255,215,168,.46) 0 54px, transparent 55px),
+      rgba(255,205,208,.28); filter: blur(7px); }
+    .lock-shape { position: absolute; left: 50%; top: 286px; transform: translateX(-50%); width: 72px; height: 64px; border-radius: 12px; background: rgba(255,255,255,.92); box-shadow: 0 8px 24px rgba(90,55,90,.18); }
+    .lock-shape::before { content: ""; position: absolute; left: 15px; top: -38px; width: 42px; height: 48px; border: 8px solid rgba(255,255,255,.92); border-bottom: 0; border-radius: 28px 28px 0 0; }
+    .lock-shape::after { content: ""; position: absolute; left: 30px; top: 24px; width: 12px; height: 24px; border-radius: 8px; background: #b66d52; }
+    .corner { position: absolute; width: 34px; height: 34px; border: 3px solid #ffc05a; }
+    .tl { top: 10px; left: 10px; border-right: 0; border-bottom: 0; } .tr { top: 10px; right: 10px; border-left: 0; border-bottom: 0; } .bl { bottom: 10px; left: 10px; border-right: 0; border-top: 0; } .br { bottom: 10px; right: 10px; border-left: 0; border-top: 0; }
+    .join { text-align: center; margin: 0 auto 30px; width: 520px; color: #152144; font: 34px/1.25 Georgia,serif; }
+    .landing-cta { display: block; width: 490px; height: 128px; margin: 0 auto; font: 38px/1.15 Georgia,serif; }
+    .help { margin: 36px 0 0; text-align: center; color: #152144; font-size: 29px; line-height: 1.25; }
+    .mini-spark { display: inline-block; width: 18px; height: 18px; background: #f0a64d; clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); }
+  
+  </style>
+<style id="t26-capture-shell">
+    html, body { width: 941px !important; height: 1672px !important; margin: 0 !important; overflow: hidden !important; background: #ffffff !important; }
+    body > .phone, body > main.phone, body .phone:first-child {
+      transform: scale(2.4128205128205127);
+      transform-origin: top center;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  </style></head>
+<body><main class="device ">
+      <div class="status"><span>9:41</span><span class="sys-icons" aria-hidden="true"><span class="cell"><i></i><i></i><i></i><i></i></span><span class="wifi"><i></i></span><span class="battery"></span></span></div>
+      <button class="close" data-control-id="close-unlock">×</button>
+      <section class="unlock-hero">
+        <h1>AuraCue</h1>
+        <div class="text-contract">Unlock today's full energy plan</div>
+        <div class="divider-spark">──── ✦ ────</div>
+        <h2>Unlock today's<br>full <span>energy plan</span></h2>
+        <p>Get your complete Aura Card with premium insights, guidance and actions. 💖</p>
+      </section>
+      <section class="unlock-value">
+        <div class="radiant-card"><div class="radiant-door"></div><b>THE RADIANT MUSE</b><span>EXPRESS · ATTRACT · INSPIRE</span></div>
+        <div class="feature-panel"><h3>✦ Today's full plan includes: ✦</h3>
+    <div class="unlock-feature">
+      <div class="feature-icon">✦</div>
+      <div><strong>Full Aura Reading</strong><span>Deep insights for your energy today</span></div>
+    </div>
+    <div class="unlock-feature">
+      <div class="feature-icon">♙</div>
+      <div><strong>Outfit Energy</strong><span>Best colors, style and vibe for you</span></div>
+    </div>
+    <div class="unlock-feature">
+      <div class="feature-icon">◉</div>
+      <div><strong>Beauty Cue</strong><span>Glow tips aligned with your aura</span></div>
+    </div>
+    <div class="unlock-feature">
+      <div class="feature-icon">☷</div>
+      <div><strong>Social Move</strong><span>What to say and how to connect</span></div>
+    </div>
+    <div class="unlock-feature">
+      <div class="feature-icon">♢</div>
+      <div><strong>Tiny Ritual</strong><span>Simple practice to stay aligned</span></div>
+    </div>
+    <div class="unlock-feature">
+      <div class="feature-icon">⊘</div>
+      <div><strong>Avoid Today</strong><span>What to avoid for smooth energy</span></div>
+    </div>
+    <div class="unlock-feature">
+      <div class="feature-icon">⇧</div>
+      <div><strong>HD Share Card</strong><span>Beautiful card to share and inspire</span></div>
+    </div></div>
+      </section>
+      <section class="prices">
+    <label class="price-row selected">
+      <span class="radio">●</span>
+      <strong>$1.99</strong>
+      <span class="price-copy"><b>Unlock This Card</b><em>One-time access to today's full energy plan</em></span>
+      <span class="badge">BEST CHOICE ✦</span>
+    </label>
+    <label class="price-row ">
+      <span class="radio"></span>
+      <strong>$4.99</strong>
+      <span class="price-copy"><b>7-Day Energy Pack</b><em>Unlock all premium features for 7 days</em></span>
+      <span class="badge">SAVE 30%</span>
+    </label>
+    <label class="price-row ">
+      <span class="radio"></span>
+      <strong>$9.99<small> / month</small></strong>
+      <span class="price-copy"><b>AuraCue Plus</b><em>Unlimited access. Cancel anytime.</em></span>
+      <span class="badge">MOST POPULAR</span>
+    </label></section>
+      <div class="or"><span></span>OR<span></span></div>
+      <button class="invite-choice" data-control-id="invite-three-friends-instead"><b>👥 Invite 3 friends instead</b><span>Get today's card free when 3 friends join</span><i>›</i></button>
+      <button class="sr-only-control" data-control-id="paid-unlock">Unlock This Card</button>
+      <p class="unlock-trust">▿ Private. Secure. Cancel anytime.</p></main></body></html>

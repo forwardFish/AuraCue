@@ -1,0 +1,83 @@
+{
+  "taskId": "T02",
+  "taskName": "Web Scaffold Next App",
+  "status": "COMPLETE",
+  "verdict": "PASS",
+  "productPassClaimed": false,
+  "scope": "Create or repair apps/web Next.js + TypeScript + Tailwind + workspace scripts scaffold only.",
+  "coveredIds": [
+    "REQ-001",
+    "Route-001",
+    "Route-002",
+    "Route-003",
+    "Route-004",
+    "Route-005",
+    "Route-006",
+    "Route-007",
+    "Route-008",
+    "Route-009",
+    "TEST-UNIT-001"
+  ],
+  "commands": [
+    {
+      "command": "pnpm.cmd install",
+      "status": "PASS",
+      "evidence": "Dependencies installed and pnpm-lock.yaml updated. pnpm warned about ignored dependency build script approval, but final Next build passed."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web typecheck",
+      "status": "FAIL_THEN_PASS",
+      "evidence": "Initial alias resolution failure for @/components/route-placeholder fixed in apps/web/tsconfig.json; final tsc --noEmit passed."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web test",
+      "status": "PASS",
+      "evidence": "tests/smoke-routes.test.mjs checked all required route placeholder files and scripts."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web build",
+      "status": "PASS",
+      "evidence": "Next.js 15.5.19 production build compiled successfully and listed required scaffold routes."
+    },
+    {
+      "command": "pnpm.cmd --filter @auracue/web lint",
+      "status": "PASS",
+      "evidence": "Additional scaffold check; ESLint CLI config runs non-interactively."
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "No whitespace errors reported."
+    }
+  ],
+  "evidence": {
+    "resultJson": "docs/auto-execute/results/web/T02.json",
+    "handoff": "docs/auto-execute/latest/web/T02-HANDOFF.md",
+    "commandLog": "docs/auto-execute/logs/web/T02-command-log.md",
+    "webPackage": "apps/web/package.json",
+    "webRoutes": [
+      "apps/web/app/page.tsx",
+      "apps/web/app/create/context/page.tsx",
+      "apps/web/app/create/upload/page.tsx",
+      "apps/web/app/create/draw/page.tsx",
+      "apps/web/app/result/[id]/page.tsx",
+      "apps/web/app/activate/[id]/page.tsx",
+      "apps/web/app/activated/[id]/page.tsx",
+      "apps/web/app/share/[id]/page.tsx",
+      "apps/web/app/saved/[id]/page.tsx"
+    ],
+    "testFile": "apps/web/tests/smoke-routes.test.mjs"
+  },
+  "blockers": [],
+  "nextRepair": null,
+  "rerunResumeState": {
+    "canRerun": true,
+    "commands": [
+      "pnpm.cmd --filter @auracue/web typecheck",
+      "pnpm.cmd --filter @auracue/web test",
+      "pnpm.cmd --filter @auracue/web build"
+    ],
+    "notes": "Use pnpm.cmd on this Windows PowerShell surface because pnpm.ps1 is blocked by execution policy. Do not execute T03 from T02."
+  },
+  "exitCondition": "T03/T04 can build on apps/web for Prisma/API work; T02 did not implement API or business flows."
+}

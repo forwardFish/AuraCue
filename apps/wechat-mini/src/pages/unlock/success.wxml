@@ -1,0 +1,29 @@
+<view class="payment-success-page">
+  <view class="sparkles">
+    <text class="sparkle a">star</text>
+    <text class="sparkle b">star</text>
+    <text class="sparkle c">star</text>
+  </view>
+  <view class="success-header">
+    <view class="success-icon">check</view>
+    <text class="title">Your full aura{{"\n"}}is unlocked!</text>
+  </view>
+  <view class="aura-card">
+    <view class="card-top">
+      <text class="card-kicker">AuraCue</text>
+      <text class="card-title">Today's Lucky Aura</text>
+      <text class="card-date">May 26, 2026</text>
+    </view>
+    <view class="card-panel">
+      <text class="aura-name">Soft Confidence</text>
+      <text class="aura-theme">Romantic Clarity</text>
+      <view class="detail-row"><text>Lucky Color</text><text>Champagne Gold</text></view>
+      <view class="detail-row"><text>Social Action</text><text>Warm opening</text></view>
+      <view class="detail-row"><text>Outfit Energy</text><text>Light layer</text></view>
+    </view>
+  </view>
+  <view class="actions">
+    <button class="primary-action" bindtap="onViewFullTap">View Full Card</button>
+    <button class="secondary-action" bindtap="onShareTap">Share Story</button>
+  </view>
+</view>

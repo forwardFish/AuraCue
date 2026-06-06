@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AuraCue - Select Energy</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'aura-dark': '#1A2B44',
+            'aura-gold': '#D4AF37',
+            'aura-bg': '#FAF8F5',
+            'aura-accent-gold': '#C5A059',
+          },
+          fontFamily: {
+            serif: ['Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-gradients">
+    .aura-gradient-bg {
+      background: radial-gradient(circle at 50% 20%, #FFFDFB 0%, #F5F1EB 100%);
+    }
+    .selected-card {
+      border: 1px solid #E5C284;
+      box-shadow: 0 0 15px rgba(229, 194, 132, 0.4);
+    }
+    .main-button-gradient {
+      background: linear-gradient(180deg, #D4A773 0%, #A67C4B 100%);
+    }
+    .card-shadow {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+  </style>
+</head>
+<body class="aura-gradient-bg min-h-screen text-aura-dark font-sans selection:bg-aura-gold/20">
+<!-- BEGIN: MainContainer -->
+<main class="max-w-md mx-auto px-6 pt-12 pb-8 flex flex-col min-h-screen relative overflow-hidden">
+<!-- BEGIN: Header -->
+<header class="flex flex-col items-center mb-6">
+<!-- Back Button -->
+<div class="absolute left-6 top-10">
+<button aria-label="Go back" class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm border border-gray-100">
+<svg fill="none" height="20" stroke="#A67C4B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg>
+</button>
+</div>
+<!-- Logo -->
+<h1 class="text-4xl font-serif font-semibold tracking-tight mb-2">AuraCue</h1>
+<!-- Decorative Element -->
+<div class="flex items-center gap-2 mb-6">
+<div class="h-[1px] w-8 bg-aura-accent-gold/30"></div>
+<svg fill="#C5A059" height="12" viewbox="0 0 24 24" width="12"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z"></path></svg>
+<div class="h-[1px] w-8 bg-aura-accent-gold/30"></div>
+</div>
+<!-- Step Indicator -->
+<span class="text-[10px] font-medium tracking-widest text-aura-accent-gold bg-white/60 px-4 py-1.5 rounded-full border border-aura-accent-gold/20 uppercase mb-6">Step 2 of 2</span>
+<!-- Title & Subtitle -->
+<h2 class="text-3xl font-serif font-medium text-center mb-3 leading-tight">What energy do you<br/>need today?</h2>
+<p class="text-center text-sm text-gray-500 max-w-[280px] leading-relaxed">
+        Choose the energy you want to invite in. Your card will be aligned to support it. ✨
+      </p>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: EnergyGrid -->
+<section class="grid grid-cols-2 gap-3 mb-6" data-purpose="energy-selection-grid">
+<!-- Card: Confidence (Selected) -->
+<div class="selected-card bg-white rounded-2xl p-4 flex flex-col items-start relative card-shadow cursor-pointer transition-all duration-300">
+<div class="absolute top-2 right-2">
+<div class="bg-[#B68C5E] rounded-full p-0.5">
+<svg fill="none" height="12" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24" width="12"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center mb-3">
+<svg fill="#C5A059" height="24" viewbox="0 0 24 24" width="24"><path d="M12 0L14 10L24 12L14 14L12 24L10 14L0 12L10 10L12 0Z"></path></svg>
+</div>
+<h3 class="font-serif font-semibold text-lg">Confidence</h3>
+<p class="text-[10px] text-gray-500 leading-tight">Stand tall. Believe in you.</p>
+</div>
+<!-- Card: Luck -->
+<div class="bg-white/60 border border-transparent rounded-2xl p-4 flex flex-col items-start card-shadow cursor-pointer hover:bg-white transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center mb-3">
+<svg class="opacity-80" fill="#E8A3B2" height="24" viewbox="0 0 24 24" width="24"><path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm0 2c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zM6 12c0-2.2-1.8-4-4-4S-2 9.8-2 12s1.8 4 4 4 4-1.8 4-4zm16 0c0-2.2-1.8-4-4-4s-4 1.8-4 4 1.8 4 4 4 4-1.8 4-4z"></path></svg>
+</div>
+<h3 class="font-serif font-semibold text-lg text-aura-dark/80">Luck</h3>
+<p class="text-[10px] text-gray-500 leading-tight">Open doors. Attract opportunity.</p>
+</div>
+<!-- Card: Love -->
+<div class="bg-white/60 border border-transparent rounded-2xl p-4 flex flex-col items-start card-shadow cursor-pointer hover:bg-white transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center mb-3">
+<svg fill="#F3A7B4" height="24" viewbox="0 0 24 24" width="24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+</div>
+<h3 class="font-serif font-semibold text-lg text-aura-dark/80">Love</h3>
+<p class="text-[10px] text-gray-500 leading-tight">Open your heart. Invite meaningful love.</p>
+</div>
+<!-- Card: Calm -->
+<div class="bg-white/60 border border-transparent rounded-2xl p-4 flex flex-col items-start card-shadow cursor-pointer hover:bg-white transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-3">
+<svg fill="#7E8BA4" height="24" viewbox="0 0 24 24" width="24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"></path></svg>
+</div>
+<h3 class="font-serif font-semibold text-lg text-aura-dark/80">Calm</h3>
+<p class="text-[10px] text-gray-500 leading-tight">Find peace. Let go of what weighs you down.</p>
+</div>
+<!-- Card: Charm -->
+<div class="bg-white/60 border border-transparent rounded-2xl p-4 flex flex-col items-start card-shadow cursor-pointer hover:bg-white transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-yellow-50 flex items-center justify-center mb-3">
+<svg class="opacity-60" fill="#D4AF37" height="24" viewbox="0 0 24 24" width="24"><path d="M7 2L9 7L14 9L9 11L7 16L5 11L0 9L5 7L7 2ZM18 14L19.5 18L23.5 19.5L19.5 21L18 25L16.5 21L12.5 19.5L16.5 18L18 14Z"></path></svg>
+</div>
+<h3 class="font-serif font-semibold text-lg text-aura-dark/80">Charm</h3>
+<p class="text-[10px] text-gray-500 leading-tight">Magnetic energy. Naturally draw people in.</p>
+</div>
+<!-- Card: Focus -->
+<div class="bg-white/60 border border-transparent rounded-2xl p-4 flex flex-col items-start card-shadow cursor-pointer hover:bg-white transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-indigo-50 flex items-center justify-center mb-3">
+<svg class="opacity-70" fill="#7E8BA4" height="24" viewbox="0 0 24 24" width="24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</div>
+<h3 class="font-serif font-semibold text-lg text-aura-dark/80">Focus</h3>
+<p class="text-[10px] text-gray-500 leading-tight">Clear your mind. Stay aligned and on track.</p>
+</div>
+</section>
+<!-- END: EnergyGrid -->
+<!-- BEGIN: FeedbackSection -->
+<section class="mb-8" data-purpose="optional-input">
+<div class="bg-gradient-to-br from-red-50/40 to-white border border-red-100/30 rounded-2xl p-5 relative">
+<div class="flex items-center gap-2 mb-2">
+<svg fill="#C5A059" height="14" viewbox="0 0 24 24" width="14"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z"></path></svg>
+<span class="text-sm font-medium">How do you feel today?</span>
+</div>
+<input class="w-full bg-transparent border-b border-gray-200 py-2 text-xs placeholder:text-gray-400 focus:ring-0 focus:border-aura-accent-gold outline-none" placeholder="Share anything that's on your heart... (optional)" type="text"/>
+<div class="absolute right-4 bottom-10 opacity-20">
+<svg fill="#C5A059" height="20" viewbox="0 0 24 24" width="20"><path d="M12 0L14 10L24 12L14 14L12 24L10 14L0 12L10 10L12 0Z"></path></svg>
+</div>
+</div>
+</section>
+<!-- END: FeedbackSection -->
+<!-- BEGIN: FooterActions -->
+<footer class="mt-auto flex flex-col items-center">
+<button class="w-full main-button-gradient text-white py-4 px-6 rounded-full font-serif text-xl font-medium shadow-lg shadow-aura-accent-gold/20 flex items-center justify-center gap-3 active:scale-[0.98] transition-transform">
+<svg fill="white" height="20" viewbox="0 0 24 24" width="20"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z"></path></svg>
+        Generate My Lucky Aura Card
+      </button>
+<div class="mt-4 flex items-center gap-2 text-gray-400 text-[10px]">
+<svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="12"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+<span>Private. Personal. Just for you.</span>
+</div>
+</footer>
+<!-- END: FooterActions -->
+<!-- Floating Sparkles (Decorative) -->
+<div class="absolute top-20 left-10 opacity-30 pointer-events-none">
+<svg fill="#C5A059" height="16" viewbox="0 0 24 24" width="16"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z"></path></svg>
+</div>
+<div class="absolute top-48 right-12 opacity-30 pointer-events-none">
+<svg fill="#C5A059" height="12" viewbox="0 0 24 24" width="12"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z"></path></svg>
+</div>
+</main>
+<!-- END: MainContainer -->
+</body></html>

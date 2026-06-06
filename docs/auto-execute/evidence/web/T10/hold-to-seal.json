@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "suite": "hold-to-seal-static-behavior",
+  "assertions": [
+    "3000ms threshold",
+    "timer-backed completion",
+    "pointer cancellation paths",
+    "completion sends holdDurationMs >= 3000",
+    "cancel path does not invoke completion"
+  ]
+}

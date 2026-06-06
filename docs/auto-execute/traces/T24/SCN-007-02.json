@@ -1,0 +1,101 @@
+{
+  "scenarioId": "SCN-007",
+  "stepId": "02",
+  "status": "PASS",
+  "personaGoal": "Invite progress",
+  "action": "Click Invite Friends, Copy, Invite Again, How it works?",
+  "uiId": "UI-09",
+  "route": {
+    "uiId": "UI-09",
+    "route": "/invite/:id/progress",
+    "path": "/invite/card-004/progress",
+    "pagePath": "pages/invite/progress",
+    "state": "invite-progress",
+    "ownerScenario": "SCN-007",
+    "title": "Invite Progress"
+  },
+  "apiIds": [
+    "API-006",
+    "API-008",
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-012"
+  ],
+  "clickEvidence": {
+    "inviteFriends": {
+      "controlId": "invite-friends",
+      "expectedRoute": "/invite/:id/progress",
+      "route": {
+        "uiId": "UI-09",
+        "route": "/invite/:id/progress",
+        "path": "/invite/card-004/progress",
+        "pagePath": "pages/invite/progress",
+        "state": "invite-progress",
+        "ownerScenario": "SCN-007",
+        "title": "Invite Progress"
+      },
+      "inviteResponse": {
+        "cardId": "card-004",
+        "inviteCode": "INVITE-LOCAL-001",
+        "progress": 0,
+        "required": 3,
+        "completed": false,
+        "entitlement": null
+      },
+      "shareResponse": {
+        "shareEventId": "share-005",
+        "cardId": "card-004",
+        "channel": "wechat",
+        "source": "UI-08"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-035"
+      }
+    },
+    "copyInvite": {
+      "controlId": "copy-invite-link",
+      "shareResponse": {
+        "shareEventId": "share-006",
+        "cardId": "card-004",
+        "channel": "copy_link",
+        "source": "UI-09"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-036"
+      },
+      "copiedLink": "auracue.local/invite/INVITE-LOCAL-001"
+    },
+    "inviteAgain": {
+      "controlId": "invite-again",
+      "inviteResponse": {
+        "cardId": "card-004",
+        "inviteCode": "INVITE-LOCAL-001",
+        "progress": 0,
+        "required": 3,
+        "completed": false,
+        "entitlement": null
+      },
+      "shareResponse": {
+        "shareEventId": "share-008",
+        "cardId": "card-004",
+        "channel": "wechat",
+        "source": "UI-09"
+      },
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-037"
+      }
+    },
+    "howItWorks": {
+      "controlId": "how-it-works",
+      "modalShown": true,
+      "analyticsResponse": {
+        "accepted": true,
+        "analyticsEventId": "analytics-038"
+      }
+    }
+  }
+}

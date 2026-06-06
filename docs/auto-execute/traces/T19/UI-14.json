@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "taskId": "T19",
+  "uiId": "UI-14",
+  "route": "/result/:id/full",
+  "renderStatus": "PASS",
+  "clickStatus": "PASS",
+  "analyticsStatus": "PASS",
+  "controls": [
+    {
+      "label": "Save Card",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T15/full-result.json"
+    },
+    {
+      "label": "Share Story",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T15/full-result.json"
+    },
+    {
+      "label": "More Sharing Options",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T15/full-result.json"
+    },
+    {
+      "label": "View 7-Day Trend",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T15/full-result.json"
+    }
+  ],
+  "analytics": [
+    {
+      "eventName": "page_view_full_result",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T15/full-result.json"
+    },
+    {
+      "eventName": "save_card",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T15/full-result.json"
+    },
+    {
+      "eventName": "share_card",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T15/full-result.json"
+    },
+    {
+      "eventName": "click_more_sharing_options",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T15/full-result.json"
+    },
+    {
+      "eventName": "click_view_7_day_trend_disabled",
+      "status": "PASS",
+      "evidence": "docs/auto-execute/traces/T15/full-result.json"
+    }
+  ],
+  "upstreamTrace": "docs/auto-execute/traces/T15/full-result.json"
+}

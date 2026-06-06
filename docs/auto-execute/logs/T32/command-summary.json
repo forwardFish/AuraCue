@@ -1,0 +1,74 @@
+[
+    {
+        "name":  "pnpm-test",
+        "command":  "pnpm.cmd test",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/T32/pnpm-test.log"
+    },
+    {
+        "name":  "pnpm-lint",
+        "command":  "pnpm.cmd lint",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/T32/pnpm-lint.log"
+    },
+    {
+        "name":  "pnpm-typecheck",
+        "command":  "pnpm.cmd typecheck",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/T32/pnpm-typecheck.log"
+    },
+    {
+        "name":  "verify-wechat-routes",
+        "command":  "node scripts/verify-wechat-routes.mjs",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/T32/verify-wechat-routes.log"
+    },
+    {
+        "name":  "wechat-test",
+        "command":  "pnpm.cmd --filter @auracue/wechat-mini test",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/T32/wechat-test.log"
+    },
+    {
+        "name":  "wechat-t19-page-simulated",
+        "command":  "pnpm.cmd --filter @auracue/wechat-mini test:t19",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/T32/wechat-t19-page-simulated.log"
+    },
+    {
+        "name":  "wechat-t24-owner-e2e",
+        "command":  "pnpm.cmd --filter @auracue/wechat-mini test:t24",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/T32/wechat-t24-owner-e2e.log"
+    },
+    {
+        "name":  "api-test",
+        "command":  "pnpm.cmd --filter @auracue/api test",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/T32/api-test.log"
+    },
+    {
+        "name":  "api-t20-db-readback",
+        "command":  "pnpm.cmd --filter @auracue/api test:t20",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/T32/api-t20-db-readback.log"
+    },
+    {
+        "name":  "wechat-t21-contract",
+        "command":  "node apps/wechat-mini/tests/t21-frontend-backend-contract.test.mjs",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/T32/wechat-t21-contract.log"
+    },
+    {
+        "name":  "api-t18-safety",
+        "command":  "pnpm.cmd --filter @auracue/api test:t18",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/T32/api-t18-safety.log"
+    },
+    {
+        "name":  "git-diff-check",
+        "command":  "git diff --check",
+        "exitCode":  0,
+        "log":  "docs/auto-execute/logs/T32/git-diff-check.log"
+    }
+]

@@ -1,0 +1,17 @@
+{
+  "scenarioId": "SCN-016",
+  "stepId": "01",
+  "status": "PASS",
+  "personaGoal": "Keep MVP focused",
+  "action": "Click P1-only trend affordance",
+  "uiId": "UI-14",
+  "route": null,
+  "apiIds": [
+    "API-010"
+  ],
+  "dbReadbackIds": [
+    "DB-021"
+  ],
+  "p1Status": "P1_COMING_SOON",
+  "noP1Implementation": true
+}

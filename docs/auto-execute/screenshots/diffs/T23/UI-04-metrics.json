@@ -1,0 +1,15 @@
+{
+  "taskId": "T23",
+  "sourceTaskId": "T22",
+  "uiId": "UI-04",
+  "route": "/create/draw",
+  "pagePath": "pages/create/draw",
+  "sourceReference": "docs/UI/小程序/P0-04-Draw-三卡选择.png",
+  "repairDecision": "scope_confirmed_waiting_for_runtime_evidence",
+  "finalUiStatus": "PASS_NEEDS_RUNTIME_SCREENSHOTS",
+  "canClaimPixelPerfect": false,
+  "diffRatio": null,
+  "knownDifferences": [
+    "Runtime screenshot, diff image, and pixel metrics still need to be generated for final P0."
+  ]
+}

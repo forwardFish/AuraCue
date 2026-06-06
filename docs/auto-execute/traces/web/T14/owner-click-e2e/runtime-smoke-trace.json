@@ -1,0 +1,171 @@
+{
+  "verdict": "PASS",
+  "mode": "owner-click-e2e",
+  "taskId": "T14",
+  "baseUrl": "http://127.0.0.1:3214",
+  "scenarioResults": [
+    {
+      "ids": [
+        "Owner-001",
+        "Owner-002"
+      ],
+      "status": "PASS",
+      "evidence": [
+        "owner-first-skip clicked through mood/context/upload/draw/generate",
+        "browser API transcript includes draw and generation responses"
+      ]
+    },
+    {
+      "ids": [
+        "Owner-004"
+      ],
+      "status": "PASS",
+      "evidence": [
+        "1000ms hold remained on /activate",
+        "3250ms hold sealed and navigated to /activated",
+        "API-009 and API-010 captured in browser transcript"
+      ]
+    },
+    {
+      "ids": [
+        "Owner-005"
+      ],
+      "status": "PASS",
+      "evidence": [
+        "activated Save and Share clicked",
+        "share Copy Link, Save Image, Save to AuraCue clicked",
+        "saved page Copy Link clicked",
+        "API-011 and API-012 captured in browser transcript"
+      ]
+    },
+    {
+      "ids": [
+        "Owner-006"
+      ],
+      "status": "PASS",
+      "evidence": [
+        "home displayed Today's Aura Active after an activated card existed",
+        "clicking the entry opened /activated/[id]",
+        "API-002 and API-007 captured in browser transcript"
+      ]
+    },
+    {
+      "ids": [
+        "Owner-003"
+      ],
+      "status": "PASS",
+      "evidence": [
+        "owner-upload-failure clicked through mood/context/upload/draw/generate",
+        "browser API transcript includes draw and generation responses"
+      ]
+    },
+    {
+      "ids": [
+        "Owner-003"
+      ],
+      "status": "PASS",
+      "evidence": [
+        "invalid upload displayed visible failure UI",
+        "oversized upload API failure was captured for API-003",
+        "Skip after failure still produced a result card"
+      ]
+    }
+  ],
+  "screenshots": [
+    "docs/auto-execute/screenshots/web/T14/owner-click-e2e/01-owner-home.png",
+    "docs/auto-execute/screenshots/web/T14/owner-click-e2e/02-owner-result-skip-upload.png",
+    "docs/auto-execute/screenshots/web/T14/owner-click-e2e/03-owner-activate-ready.png",
+    "docs/auto-execute/screenshots/web/T14/owner-click-e2e/04-owner-hold-cancel.png",
+    "docs/auto-execute/screenshots/web/T14/owner-click-e2e/05-owner-activated.png",
+    "docs/auto-execute/screenshots/web/T14/owner-click-e2e/06-owner-share.png",
+    "docs/auto-execute/screenshots/web/T14/owner-click-e2e/07-owner-saved.png",
+    "docs/auto-execute/screenshots/web/T14/owner-click-e2e/08-owner-saved-copy.png",
+    "docs/auto-execute/screenshots/web/T14/owner-click-e2e/09-owner-today-active-home.png",
+    "docs/auto-execute/screenshots/web/T14/owner-click-e2e/10-owner-today-active-opened.png",
+    "docs/auto-execute/screenshots/web/T14/owner-click-e2e/owner-upload-failure-upload-failure-ui.png",
+    "docs/auto-execute/screenshots/web/T14/owner-click-e2e/11-owner-upload-failure-result.png"
+  ],
+  "traceEvents": [
+    {
+      "type": "screenshot",
+      "name": "01-owner-home",
+      "path": "docs/auto-execute/screenshots/web/T14/owner-click-e2e/01-owner-home.png",
+      "timestamp": "2026-06-06T00:00:51.229Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "02-owner-result-skip-upload",
+      "path": "docs/auto-execute/screenshots/web/T14/owner-click-e2e/02-owner-result-skip-upload.png",
+      "timestamp": "2026-06-06T00:00:53.083Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "03-owner-activate-ready",
+      "path": "docs/auto-execute/screenshots/web/T14/owner-click-e2e/03-owner-activate-ready.png",
+      "timestamp": "2026-06-06T00:00:53.530Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "04-owner-hold-cancel",
+      "path": "docs/auto-execute/screenshots/web/T14/owner-click-e2e/04-owner-hold-cancel.png",
+      "timestamp": "2026-06-06T00:00:55.471Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "05-owner-activated",
+      "path": "docs/auto-execute/screenshots/web/T14/owner-click-e2e/05-owner-activated.png",
+      "timestamp": "2026-06-06T00:00:58.857Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "06-owner-share",
+      "path": "docs/auto-execute/screenshots/web/T14/owner-click-e2e/06-owner-share.png",
+      "timestamp": "2026-06-06T00:00:59.810Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "07-owner-saved",
+      "path": "docs/auto-execute/screenshots/web/T14/owner-click-e2e/07-owner-saved.png",
+      "timestamp": "2026-06-06T00:01:00.748Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "08-owner-saved-copy",
+      "path": "docs/auto-execute/screenshots/web/T14/owner-click-e2e/08-owner-saved-copy.png",
+      "timestamp": "2026-06-06T00:01:01.135Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "09-owner-today-active-home",
+      "path": "docs/auto-execute/screenshots/web/T14/owner-click-e2e/09-owner-today-active-home.png",
+      "timestamp": "2026-06-06T00:01:01.587Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "10-owner-today-active-opened",
+      "path": "docs/auto-execute/screenshots/web/T14/owner-click-e2e/10-owner-today-active-opened.png",
+      "timestamp": "2026-06-06T00:01:02.014Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "owner-upload-failure-upload-failure-ui",
+      "path": "docs/auto-execute/screenshots/web/T14/owner-click-e2e/owner-upload-failure-upload-failure-ui.png",
+      "timestamp": "2026-06-06T00:01:03.144Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "11-owner-upload-failure-result",
+      "path": "docs/auto-execute/screenshots/web/T14/owner-click-e2e/11-owner-upload-failure-result.png",
+      "timestamp": "2026-06-06T00:01:03.910Z"
+    }
+  ],
+  "consoleEvents": [
+    {
+      "level": "error",
+      "text": "Failed to load resource: the server responded with a status of 413 (Payload Too Large)",
+      "source": "network",
+      "timestamp": "2026-06-06T00:01:03.241Z"
+    }
+  ],
+  "blockingConsoleErrors": []
+}

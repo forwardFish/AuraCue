@@ -1,0 +1,21 @@
+{
+  "apiId": "API-002",
+  "caseId": "C02",
+  "caseKey": "API-002-C02",
+  "caseType": "not found",
+  "method": "GET",
+  "path": "/api/generation-jobs/:jobId",
+  "expectedStatus": 404,
+  "actualStatus": 404,
+  "status": "PASS",
+  "evidence": "docs/auto-execute/api/T20/API-002-404.json",
+  "response": {
+    "error": {
+      "code": "NOT_FOUND",
+      "message": "Generation job was not found.",
+      "details": {
+        "jobId": "job-does-not-exist"
+      }
+    }
+  }
+}

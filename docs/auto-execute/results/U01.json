@@ -1,0 +1,101 @@
+{
+  "taskId": "U01",
+  "status": "PASS_WITH_LIMITATION",
+  "generatedAt": "2026-05-27T08:40:49.016Z",
+  "scope": "Current-state intake only for unfinished AuraCue UI one-to-one repair queue.",
+  "sourceInputs": [
+    "docs/auto-execute/latest/unfinished-ui-one-to-one-repair-tasks.md",
+    "docs/auto-execute/latest/machine-summary.json",
+    "docs/auto-execute/screenshots/ui-one-to-one/T33/visual-summary.json",
+    "docs/auto-execute/results/T33.json",
+    "docs/auto-execute/auracue-unfinished-ui-one-to-one-repair-master.md"
+  ],
+  "forbiddenActionsObserved": {
+    "editedProductPageCode": false,
+    "resetConvergenceState": false,
+    "markedVisualScreensPass": false,
+    "loweredThresholdsOrChangedReferences": false,
+    "broadProductRedesign": false
+  },
+  "environment": {
+    "localVisualHarnessCanRun": true,
+    "localFinalGateCanRun": true,
+    "chromeCaptureAvailable": true,
+    "browserPath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "browserKind": "local-headless-chrome-compatible",
+    "remoteServicesUsed": false,
+    "blockers": []
+  },
+  "currentVisualStatus": {
+    "taskId": "T33",
+    "status": "REPAIR_REQUIRED",
+    "threshold": 0.005,
+    "screenCount": 18,
+    "passingScreens": 0,
+    "failingScreens": 18,
+    "actualPngCount": 18,
+    "diffPngCount": 18,
+    "metricsJsonCount": 18,
+    "summaryPath": "docs/auto-execute/screenshots/ui-one-to-one/T33/visual-summary.json",
+    "unresolvedScreens": [
+      { "uiId": "UI-01", "diffRatio": 0.140472, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U02 home/create" },
+      { "uiId": "UI-02", "diffRatio": 0.24331, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U02 home/create" },
+      { "uiId": "UI-03", "diffRatio": 0.258656, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U02 home/create" },
+      { "uiId": "UI-04", "diffRatio": 0.30664, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U02 home/create" },
+      { "uiId": "UI-05", "diffRatio": 0.364333, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U02 home/create" },
+      { "uiId": "UI-06", "diffRatio": 0.408715, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U03 result/unlock/invite" },
+      { "uiId": "UI-07", "diffRatio": 0.218841, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U03 result/unlock/invite" },
+      { "uiId": "UI-08", "diffRatio": 0.294825, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U03 result/unlock/invite" },
+      { "uiId": "UI-09", "diffRatio": 0.569328, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U03 result/unlock/invite" },
+      { "uiId": "UI-10", "diffRatio": 0.346631, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U03 result/unlock/invite" },
+      { "uiId": "UI-11", "diffRatio": 0.600235, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U04 payment/full-result" },
+      { "uiId": "UI-12", "diffRatio": 0.614982, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U04 payment/full-result" },
+      { "uiId": "UI-13", "diffRatio": 0.619667, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U04 payment/full-result" },
+      { "uiId": "UI-14", "diffRatio": 0.544078, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U04 payment/full-result" },
+      { "uiId": "UI-15", "diffRatio": 0.721088, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U05 share/save/error" },
+      { "uiId": "UI-16", "diffRatio": 0.518919, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U05 share/save/error" },
+      { "uiId": "UI-17", "diffRatio": 0.308903, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U05 share/save/error" },
+      { "uiId": "UI-18", "diffRatio": 0.369695, "threshold": 0.005, "status": "REPAIR_REQUIRED", "group": "U05 share/save/error" }
+    ]
+  },
+  "regressionStatusFromT33": {
+    "status": "PASS",
+    "note": "T32 route/click/owner/API/local-only regression evidence remains marked PASS in docs/auto-execute/results/T33.json."
+  },
+  "commands": [
+    {
+      "command": "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T33",
+      "exitCode": 0,
+      "status": "PASS_WITH_LIMITATION",
+      "evidence": "docs/auto-execute/logs/U01/visual-harness.log",
+      "note": "Harness ran and produced 18 actual PNGs, 18 diff PNGs, and 18 metrics JSON files; visual status remains REPAIR_REQUIRED."
+    },
+    {
+      "command": "node scripts/t33-final-ui-one-to-one-gate.mjs",
+      "exitCode": 1,
+      "status": "REPAIR_REQUIRED",
+      "evidence": "docs/auto-execute/logs/U01/final-gate.log",
+      "note": "Gate ran successfully and failed closed because 25 unresolved items remain, including all 18 visual thresholds."
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "status": "PASS",
+      "evidence": "docs/auto-execute/logs/U01/git-diff-check.log"
+    }
+  ],
+  "nextTask": {
+    "taskId": "U02",
+    "screenGroup": "Home and create flow visual repair",
+    "uiIds": ["UI-01", "UI-02", "UI-03", "UI-04", "UI-05"],
+    "recommendedOrderWithinGroup": ["UI-05", "UI-04", "UI-03", "UI-02", "UI-01"],
+    "verification": [
+      "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T27",
+      "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T31",
+      "node scripts/t26-visual-capture-pixel-diff-harness.mjs --task-id=T33",
+      "node scripts/t33-final-ui-one-to-one-gate.mjs",
+      "git diff --check"
+    ]
+  },
+  "finalClaim": "U01 intake and harness refresh are complete, but AuraCue visual acceptance remains REPAIR_REQUIRED by design because all 18 screens exceed diffRatio <= 0.005."
+}
