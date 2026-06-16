@@ -1505,12 +1505,7 @@ Jun 11 · Quiet Power
 [ Saved Aura Cards ]
 3 cards saved
 
-[ Settings ]
-Notifications  P1
-Language       P1 / optional
-Privacy Policy
-Terms of Use
-Login / Sync Account  P1 Coming Soon
+
 ```
 
 中文：
@@ -1538,10 +1533,7 @@ Login / Sync Account  P1 Coming Soon
 [ 已保存气场卡 ]
 已保存 3 张
 
-[ 设置 ]
-隐私政策
-服务条款
-登录 / 同步账号  P1 开放
+
 ```
 
 ### 规则
