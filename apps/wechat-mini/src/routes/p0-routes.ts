@@ -20,7 +20,7 @@ export const p0Routes: P0Route[] = [
     title: "Mood-first Home",
     apiIds: ["API-010"],
     requiresCardId: false,
-    sourceReference: "docs/UI/小程序/P0-01-Mood-首页选择今日状态.png"
+    sourceReference: "docs/auto-execute/screenshots/web/T15/reference/UI-001.png"
   },
   {
     uiId: "UI-02",
@@ -31,7 +31,7 @@ export const p0Routes: P0Route[] = [
     title: "Optional Context",
     apiIds: ["API-010"],
     requiresCardId: false,
-    sourceReference: "docs/UI/小程序/P0-02-Context-可选今日上下文.png"
+    sourceReference: "docs/auto-execute/screenshots/web/T15/reference/UI-002.png"
   },
   {
     uiId: "UI-03",
@@ -42,7 +42,7 @@ export const p0Routes: P0Route[] = [
     title: "Optional Outfit Upload",
     apiIds: ["API-010"],
     requiresCardId: false,
-    sourceReference: "docs/UI/小程序/P0-03-Outfit-可选穿搭上传.png"
+    sourceReference: "docs/auto-execute/screenshots/web/T15/reference/UI-003.png"
   },
   {
     uiId: "UI-04",
@@ -53,7 +53,7 @@ export const p0Routes: P0Route[] = [
     title: "Draw Card Selection",
     apiIds: ["API-001", "API-010"],
     requiresCardId: false,
-    sourceReference: "docs/UI/小程序/P0-04-Draw-三卡选择.png"
+    sourceReference: "docs/auto-execute/screenshots/web/T15/reference/UI-004.png"
   },
   {
     uiId: "UI-05",
@@ -64,7 +64,7 @@ export const p0Routes: P0Route[] = [
     title: "Draw Generation Loading",
     apiIds: ["API-002", "API-010"],
     requiresCardId: false,
-    sourceReference: "docs/UI/小程序/P0-05-Reveal-生成中抽卡仪式.png"
+    sourceReference: "docs/auto-execute/screenshots/web/T15/reference/UI-004.png"
   },
   {
     uiId: "UI-06",
@@ -75,7 +75,7 @@ export const p0Routes: P0Route[] = [
     title: "Daily Aura Card Result",
     apiIds: ["API-003", "API-010"],
     requiresCardId: true,
-    sourceReference: "docs/UI/小程序/P0-06-Result-完整气场卡结果.png"
+    sourceReference: "docs/auto-execute/screenshots/web/T15/reference/UI-005.png"
   },
   {
     uiId: "UI-07",
@@ -86,7 +86,7 @@ export const p0Routes: P0Route[] = [
     title: "Activate Today's Aura",
     apiIds: ["API-004", "API-010"],
     requiresCardId: true,
-    sourceReference: "docs/UI/小程序/P0-07-Activate-选择锚点并长按封存.png"
+    sourceReference: "docs/auto-execute/screenshots/web/T15/reference/UI-006.png"
   },
   {
     uiId: "UI-08",
@@ -97,7 +97,7 @@ export const p0Routes: P0Route[] = [
     title: "Aura Activated",
     apiIds: ["API-004", "API-007", "API-008", "API-010"],
     requiresCardId: true,
-    sourceReference: "docs/UI/小程序/P0-08-Activated-气场已激活成功.png"
+    sourceReference: "docs/auto-execute/screenshots/web/T15/reference/UI-007.png"
   },
   {
     uiId: "UI-09",
@@ -108,7 +108,7 @@ export const p0Routes: P0Route[] = [
     title: "Share Story Preview",
     apiIds: ["API-008", "API-009", "API-010"],
     requiresCardId: true,
-    sourceReference: "docs/UI/小程序/P0-09-Share-Story卡预览与保存.png"
+    sourceReference: "docs/auto-execute/screenshots/web/T15/reference/UI-008.png"
   },
   {
     uiId: "UI-10",
@@ -119,7 +119,7 @@ export const p0Routes: P0Route[] = [
     title: "Share Channel Chooser",
     apiIds: ["API-008", "API-010"],
     requiresCardId: true,
-    sourceReference: "docs/UI/小程序/P0-09A-Share-渠道选择状态.png"
+    sourceReference: "docs/auto-execute/screenshots/web/T15/reference/UI-008.png"
   },
   {
     uiId: "UI-11",
@@ -130,7 +130,7 @@ export const p0Routes: P0Route[] = [
     title: "Save Success",
     apiIds: ["API-007", "API-010"],
     requiresCardId: true,
-    sourceReference: "docs/UI/小程序/P0-10-Saved-保存成功反馈.png"
+    sourceReference: "docs/auto-execute/screenshots/web/T15/reference/UI-009.png"
   },
   {
     uiId: "UI-12",
@@ -141,6 +141,6 @@ export const p0Routes: P0Route[] = [
     title: "Network Error",
     apiIds: ["API-001", "API-002", "API-010"],
     requiresCardId: false,
-    sourceReference: "docs/UI/小程序/P0-11-Error-生成失败重试.png"
+    sourceReference: "docs/auto-execute/screenshots/web/T15/reference/UI-010.png"
   }
 ];

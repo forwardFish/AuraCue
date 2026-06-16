@@ -1,6 +1,6 @@
 {
-  "databaseUrl": "file:./t13-runtime-smoke.sqlite",
-  "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+  "databaseUrl": "file:D:/lyh/agent/agent-frame/AuraCue/apps/web/t13-runtime-smoke.sqlite",
+  "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
   "counts": {
     "AnonymousUser": 1,
     "OutfitUpload": 1,
@@ -9,171 +9,165 @@
     "AuraCard": 1,
     "AuraActivation": 1,
     "SavedCard": 1,
-    "ShareEvent": 4,
-    "AnalyticsEvent": 15,
+    "ShareEvent": 3,
+    "AnalyticsEvent": 14,
     "CardTemplate": 0
   },
   "user": {
-    "id": "cmq1qn6uw0000fwvcq5k54ryx",
-    "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+    "id": "cmq9fwawp0000d0vc7q9tnv8y",
+    "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
     "uploads": [
       {
-        "id": "cmq1qn7gl0004fwvc52ka0nkw",
+        "id": "cmq9fwbsd0004d0vc4e1eufdc",
         "mimeType": "image/png",
-        "storagePath": "local://uploads/upload_312a8a3cd73f447fa99a900e18afc9f1.png",
-        "createdAt": "2026-06-06T02:32:49.797Z"
+        "storagePath": "local://uploads/upload_072fc8e3965f47aca7204e020bbbc352.png",
+        "createdAt": "2026-06-11T11:54:08.941Z"
       }
     ],
     "drawSessions": [
       {
-        "id": "cmq1qn7s50006fwvcmql3a7ny",
+        "id": "cmq9fwc5b0006d0vccdl4chnk",
         "mood": "confident",
         "context": "work",
-        "uploadId": "cmq1qn7gl0004fwvc52ka0nkw",
-        "drawSeed": "seed_1f74153aa06ff72c",
-        "createdAt": "2026-06-06T02:32:50.213Z"
+        "uploadId": "cmq9fwbsd0004d0vc4e1eufdc",
+        "drawSeed": "seed_fe495fa6b0e73a6a",
+        "createdAt": "2026-06-11T11:54:09.407Z"
       }
     ],
     "jobs": [
       {
-        "id": "cmq1qn8440009fwvcl47alhur",
+        "id": "cmq9fwcgb0009d0vcecsmgnjy",
         "status": "success",
-        "drawSessionId": "cmq1qn7s50006fwvcmql3a7ny",
+        "drawSessionId": "cmq9fwc5b0006d0vccdl4chnk",
         "drawPosition": 2,
         "fallbackUsed": true
       }
     ],
     "cards": [
       {
-        "id": "cmq1qn849000afwvcmw0x3wcc",
+        "id": "cmq9fwcgf000ad0vcw3w0bley",
         "mood": "confident",
         "context": "work",
         "drawPosition": 2,
         "isActivated": true,
-        "shareImageUrl": "local://share-images/cmq1qn849000afwvcmw0x3wcc-template-story-001.png",
+        "shareImageUrl": "local://share-images/cmq9fwcgf000ad0vcw3w0bley-template-story-001.png",
         "activations": [
           {
-            "id": "cmq1qn8tp000dfwvc2bj93460",
+            "id": "cmq9fwd2r000dd0vcj56e6ol3",
             "status": "sealed",
             "anchorType": "lucky_color",
             "anchorLabel": "soft ivory",
-            "holdDurationMs": 3005,
-            "sealedAt": "2026-06-06T02:32:54.955Z"
+            "holdDurationMs": 3008,
+            "sealedAt": "2026-06-11T11:54:13.881Z"
           }
         ],
         "savedCards": [
           {
-            "id": "cmq1qnbs9000ffwvcpq6fw0k9",
+            "id": "cmq9fwkhq000kd0vc5lloenjg",
             "source": "share",
-            "createdAt": "2026-06-06T02:32:55.401Z"
+            "createdAt": "2026-06-11T11:54:20.222Z"
           }
         ],
         "shares": [
           {
-            "id": "cmq1qnc20000hfwvck32qbqlf",
-            "channel": "web_share",
-            "source": "activated",
-            "createdAt": "2026-06-06T02:32:55.752Z"
-          },
-          {
-            "id": "cmq1qnd8o000jfwvckqduxcw7",
+            "id": "cmq9fwg7h000gd0vco3pq0f3v",
             "channel": "copy",
             "source": "share_preview",
-            "createdAt": "2026-06-06T02:32:57.289Z"
+            "createdAt": "2026-06-11T11:54:14.669Z"
           },
           {
-            "id": "cmq1qndau000lfwvczfz5wci3",
+            "id": "cmq9fwgez000id0vcorchsh02",
             "channel": "download",
             "source": "share_preview",
-            "createdAt": "2026-06-06T02:32:57.366Z"
+            "createdAt": "2026-06-11T11:54:14.939Z"
           },
           {
-            "id": "cmq1qnhl4000pfwvc0cftz81j",
+            "id": "cmq9fwks3000md0vcn5j22b13",
             "channel": "copy",
             "source": "saved",
-            "createdAt": "2026-06-06T02:33:02.920Z"
+            "createdAt": "2026-06-11T11:54:20.595Z"
           }
         ]
       }
     ],
     "analytics": [
       {
-        "id": "cmq1qn6xz0002fwvcklyg6b8q",
+        "id": "cmq9fwb540001d0vc28bhusht",
+        "eventName": "select_mood",
+        "page": "/",
+        "createdAt": "2026-06-11T11:54:08.104Z"
+      },
+      {
+        "id": "cmq9fwb5u0002d0vcfhchtiaz",
         "eventName": "click_start_card",
         "page": "/",
-        "createdAt": "2026-06-06T02:32:49.127Z"
+        "createdAt": "2026-06-11T11:54:08.130Z"
       },
       {
-        "id": "cmq1qn7h20005fwvcd3hafua8",
+        "id": "cmq9fwbsq0005d0vcxhmul0mg",
         "eventName": "upload_outfit_success",
         "page": "/create/upload",
-        "createdAt": "2026-06-06T02:32:49.814Z"
+        "createdAt": "2026-06-11T11:54:08.954Z"
       },
       {
-        "id": "cmq1qn7st0007fwvcckx6vg2a",
+        "id": "cmq9fwc5r0007d0vc1nrmv6mv",
         "eventName": "draw_session_started",
         "page": "/create/draw",
-        "createdAt": "2026-06-06T02:32:50.237Z"
+        "createdAt": "2026-06-11T11:54:09.423Z"
       },
       {
-        "id": "cmq1qn8330008fwvcpua60o1p",
+        "id": "cmq9fwcfd0008d0vcrz60ej3u",
         "eventName": "draw_card_selected",
         "page": "/create/draw",
-        "createdAt": "2026-06-06T02:32:50.608Z"
+        "createdAt": "2026-06-11T11:54:09.769Z"
       },
       {
-        "id": "cmq1qn84v000bfwvcc7fhk1sm",
+        "id": "cmq9fwcgx000bd0vcvoftfbx9",
         "eventName": "generation_started",
         "page": "/create/draw",
-        "createdAt": "2026-06-06T02:32:50.671Z"
+        "createdAt": "2026-06-11T11:54:09.825Z"
       },
       {
-        "id": "cmq1qn856000cfwvcrbz4zn2u",
+        "id": "cmq9fwch9000cd0vc9gisryl6",
         "eventName": "generation_completed",
         "page": "/create/draw",
-        "createdAt": "2026-06-06T02:32:50.682Z"
+        "createdAt": "2026-06-11T11:54:09.837Z"
       },
       {
-        "id": "cmq1qn8u5000efwvci9344j8p",
+        "id": "cmq9fwd38000ed0vca198cig2",
         "eventName": "activation_started",
-        "page": "/activate/cmq1qn849000afwvcmw0x3wcc",
-        "createdAt": "2026-06-06T02:32:51.581Z"
+        "page": "/activate/cmq9fwcgf000ad0vcw3w0bley",
+        "createdAt": "2026-06-11T11:54:10.628Z"
       },
       {
-        "id": "cmq1qnbsr000gfwvcrusf81jz",
-        "eventName": "card_saved",
-        "page": "/activated/cmq1qn849000afwvcmw0x3wcc",
-        "createdAt": "2026-06-06T02:32:55.419Z"
-      },
-      {
-        "id": "cmq1qncr2000ifwvc596qb9le",
+        "id": "cmq9fwfwy000fd0vcslisczj4",
         "eventName": "share_opened",
-        "page": "/share/cmq1qn849000afwvcmw0x3wcc",
-        "createdAt": "2026-06-06T02:32:56.654Z"
+        "page": "/share/cmq9fwcgf000ad0vcw3w0bley",
+        "createdAt": "2026-06-11T11:54:14.290Z"
       },
       {
-        "id": "cmq1qnd94000kfwvctdvveozh",
+        "id": "cmq9fwg7u000hd0vcjk812af1",
         "eventName": "share_completed",
-        "page": "/share/cmq1qn849000afwvcmw0x3wcc",
-        "createdAt": "2026-06-06T02:32:57.304Z"
+        "page": "/share/cmq9fwcgf000ad0vcw3w0bley",
+        "createdAt": "2026-06-11T11:54:14.682Z"
       },
       {
-        "id": "cmq1qndg3000mfwvcb95naqdg",
+        "id": "cmq9fwggj000jd0vcyvwi5eif",
         "eventName": "share_completed",
-        "page": "/share/cmq1qn849000afwvcmw0x3wcc",
-        "createdAt": "2026-06-06T02:32:57.555Z"
+        "page": "/share/cmq9fwcgf000ad0vcw3w0bley",
+        "createdAt": "2026-06-11T11:54:14.995Z"
       },
       {
-        "id": "cmq1qnhac000ofwvcjgfly255",
+        "id": "cmq9fwki6000ld0vcud79mesh",
         "eventName": "card_saved",
-        "page": "/share/cmq1qn849000afwvcmw0x3wcc",
-        "createdAt": "2026-06-06T02:33:02.532Z"
+        "page": "/share/cmq9fwcgf000ad0vcw3w0bley",
+        "createdAt": "2026-06-11T11:54:20.238Z"
       },
       {
-        "id": "cmq1qnhlh000qfwvccsatzml8",
+        "id": "cmq9fwksg000nd0vcxw2eo8io",
         "eventName": "share_completed",
-        "page": "/saved/cmq1qn849000afwvcmw0x3wcc",
-        "createdAt": "2026-06-06T02:33:02.933Z"
+        "page": "/saved/cmq9fwcgf000ad0vcw3w0bley",
+        "createdAt": "2026-06-11T11:54:20.608Z"
       }
     ]
   }

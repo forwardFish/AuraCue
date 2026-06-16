@@ -6,7 +6,7 @@
   "reference": "docs/auto-execute/screenshots/web/T15/reference/UI-004.png",
   "actual": "docs/auto-execute/screenshots/web/T15/actual/UI-004.png",
   "diff": "docs/auto-execute/screenshots/web/T15/diff/UI-004-diff.png",
-  "referenceSource": "docs/UI/小程序/P0-04-Draw-三卡选择.png",
+  "referenceSource": "docs/auto-execute/screenshots/web/T15/reference/UI-004.png",
   "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/04-draw.png",
   "referenceImage": {
     "width": 941,
@@ -17,30 +17,30 @@
   "actualImage": {
     "width": 390,
     "height": 693,
-    "bytes": 223034,
-    "sha256": "7bcd89d08f6d79e8c93214ec42e24aacc16c4e135e7b086f5573f04cff82d3d5"
+    "bytes": 167889,
+    "sha256": "c898a3f562491d330c7aac1f200a57f109a7f73af3f672a4fc11f2cba38bedb8"
   },
   "diffImage": {
-    "width": 840,
-    "height": 920,
-    "bytes": 489278,
-    "sha256": "a63b39f66bbc9e72c0a930a60a156be113ea94b0c7d2104377ca9b5bfc311f8b"
+    "width": 792,
+    "height": 693,
+    "bytes": 623681,
+    "sha256": "6bd8c489a508451574b5539daa8e47ba8bbe2ba1a026ba4faf0b45d65fae6358"
   },
   "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
   "normalizedPixelDiff": {
     "width": 390,
     "height": 693,
     "totalPixels": 270270,
-    "changedPixels": 94,
-    "diffRatio": 0.000348,
-    "averageChannelDelta": 1.269,
-    "maxChannelDelta": 29,
+    "changedPixels": 102536,
+    "diffRatio": 0.379384,
+    "averageChannelDelta": 22.144,
+    "maxChannelDelta": 235.333,
     "changeThresholdPerPixel": 12
   },
-  "diffRatio": 0.000348,
+  "diffRatio": 0.379384,
   "threshold": 0.005,
-  "pixelPerfectStatus": "PASS",
-  "materialDeviation": "NONE_DETECTED_BY_PIXEL_GATE",
+  "pixelPerfectStatus": "REPAIR_REQUIRED",
+  "materialDeviation": "REPAIR_REQUIRED",
   "notes": [
     "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
     "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."

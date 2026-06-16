@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/create/context",
+    "pages/create/upload",
+    "pages/create/draw",
+    "pages/result/index",
+    "pages/activate/index",
+    "pages/activated/index",
+    "pages/share/index",
+    "pages/saved/index",
+    "pages/error/network",
+    "pages/home/index",
+    "pages/create/scene",
+    "pages/create/energy",
+    "pages/create/loading",
+    "pages/create/incomplete",
+    "pages/result/free-preview",
+    "pages/result/full",
+    "pages/unlock/index",
+    "pages/unlock/pay",
+    "pages/unlock/pay-failed",
+    "pages/unlock/success",
+    "pages/invite/start",
+    "pages/invite/progress",
+    "pages/invite/landing",
+    "pages/share/story",
+    "pages/share/channels",
+    "pages/saved/success"
+  ],
+  "window": {
+    "navigationBarTitleText": "AuraCue",
+    "navigationStyle": "custom"
+  }
+}

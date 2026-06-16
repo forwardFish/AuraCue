@@ -30,6 +30,7 @@ const baseUrl = `http://127.0.0.1:${port}`;
 const databaseUrl = process.env.DATABASE_URL || (taskId === "T14" ? "file:./t14-owner-click-e2e.sqlite" : "file:./t13-runtime-smoke.sqlite");
 const serverMode = process.env.AURACUE_WEB_SERVER_MODE === "production" ? "production" : "development";
 const viewport = { width: 390, height: 693 };
+const runtimeDatabaseUrl = resolveRuntimeDatabaseUrl(databaseUrl);
 const commandLog = [];
 const apiTranscript = [];
 const traceEvents = [];
@@ -39,6 +40,7 @@ const scenarioResults = [];
 let devProcess;
 let browserProcess;
 let cdp;
+let runtimeDatabaseReused = false;
 
 main().catch(async (error) => {
   commandLog.push({ step: "fatal", status: "FAIL", error: String(error?.stack || error) });
@@ -90,16 +92,17 @@ async function runFlow(client) {
   await clickByText(client, "Confident");
   await clickByText(client, "Start My Aura Card");
   await waitForUrl(client, "/create/context");
-  await waitForReady(client, "What is today for?");
-  await screenshot(client, "02-context");
+  await waitForReady(client, "Any context for today?");
   await clickByText(client, "Work");
+  await waitForMoodSelected(client, "Work");
+  await screenshot(client, "02-context");
   await clickByText(client, "Continue");
   await waitForUrl(client, "/create/upload");
-  await waitForReady(client, "Choose jpg, png, or webp");
+  await waitForReady(client, "Add a photo of your outfit");
   await uploadTinyPng(client);
   await waitForReady(client, "Upload added");
   await screenshot(client, "03-upload");
-  await clickByText(client, "Continue");
+  await clickByText(client, "Upload Outfit");
   await waitForUrl(client, "/create/draw");
   await waitForReady(client, "Reveal My Aura");
   await waitForEnabledText(client, "Card II");
@@ -119,25 +122,21 @@ async function runFlow(client) {
   await waitForReady(client, "Hold 3s to Seal");
   await holdByText(client, "Hold 3s to Seal", 3250);
   await waitForUrl(client, "/activated/");
-  await waitForReady(client, "Aura activated.");
+  await waitForReady(client, "Aura Activated");
   await screenshot(client, "07-activated");
-  await clickByText(client, "Save");
-  await waitForReady(client, "Activated aura saved");
-  await clickByText(client, "Share");
-  await waitForReady(client, "Share preview ready");
   await clickByText(client, "Done");
   await waitForUrl(client, "/share/");
-  await waitForReady(client, "Copy Link");
+  await waitForReady(client, "Share Now");
   await screenshot(client, "08-share");
-  await clickByText(client, "Copy Link");
+  await clickByText(client, "Share Now");
   await waitForReady(client, "Share link copied");
-  await clickByText(client, "Save Image");
+  await clickByText(client, "Saved to Photos");
   await waitForReady(client, "download started", { optional: true, timeoutMs: 5000 });
-  await clickByText(client, "Save to AuraCue");
+  await clickByText(client, "Saved to Aura Cards");
   await waitForUrl(client, "/saved/");
-  await waitForReady(client, "Saved to AuraCue.");
+  await waitForReady(client, "Saved to your Aura Cards");
   await screenshot(client, "09-saved");
-  await clickByText(client, "Copy Link");
+  await clickByText(client, "Share Now");
   await waitForReady(client, "Saved card link copied");
   await screenshot(client, "10-saved-copy");
 }
@@ -256,9 +255,9 @@ async function runShareSaveClicks(client) {
   await waitForReady(client, "Render is local-only", { optional: true, timeoutMs: 5000 });
   await clickByText(client, "Save to AuraCue");
   await waitForUrl(client, "/saved/");
-  await waitForReady(client, "Saved to AuraCue.");
+  await waitForReady(client, "Saved to your Aura Cards");
   await screenshot(client, "07-owner-saved");
-  await clickByText(client, "Copy Link");
+  await clickByText(client, "Share Now");
   await waitForReady(client, "Saved card link copied");
   await screenshot(client, "08-owner-saved-copy");
   scenarioResults.push({
@@ -267,7 +266,7 @@ async function runShareSaveClicks(client) {
     evidence: [
       "activated Save and Share clicked",
       "share Copy Link, Save Image, Save to AuraCue clicked",
-      "saved page Copy Link clicked",
+      "saved page Share Now clicked",
       "API-011 and API-012 captured in browser transcript"
     ]
   });
@@ -459,17 +458,17 @@ async function waitForReferenceImages(client, timeoutMs = 10000) {
   while (Date.now() - started < timeoutMs) {
     const ready = await evaluate(client, `
       (() => {
-        const images = Array.from(document.querySelectorAll('.auracue-reference-image'));
+        const images = Array.from(document.images).filter((image) => image.currentSrc || image.src);
         return images.length === 0 || images.every((image) => image.complete && image.naturalWidth > 0);
       })()
     `);
     if (ready) {
-      await evaluate(client, "Promise.all(Array.from(document.querySelectorAll('.auracue-reference-image')).map((image) => image.decode ? image.decode().catch(() => undefined) : undefined))");
+      await evaluate(client, "Promise.all(Array.from(document.images).map((image) => image.decode ? image.decode().catch(() => undefined) : undefined))");
       return;
     }
     await delay(100);
   }
-  throw new Error("Timed out waiting for visual reference images to load.");
+  throw new Error("Timed out waiting for page images to load.");
 }
 
 async function clickByText(client, text) {
@@ -614,7 +613,7 @@ async function evaluate(client, expression) {
 
 async function readRuntimeDb() {
   const prisma = new PrismaClient({
-    adapter: new PrismaBetterSqlite3({ url: databaseUrl })
+    adapter: new PrismaBetterSqlite3({ url: runtimeDatabaseUrl })
   });
   try {
     const anonymousId = findTranscriptBody((body) => body?.ok && body?.data?.anonymousId)?.data?.anonymousId;
@@ -631,7 +630,7 @@ async function readRuntimeDb() {
         })
       : null;
     return {
-      databaseUrl,
+      databaseUrl: runtimeDatabaseUrl,
       anonymousId,
       counts: {
         AnonymousUser: await prisma.anonymousUser.count(),
@@ -721,28 +720,61 @@ function parseMaybeJson(value) {
 }
 
 async function startDevServer() {
-  const startLog = path.join(out.logs, `${taskId}-start.log`);
+  const preferredStartLog = path.join(out.logs, `${taskId}-start.log`);
+  const standaloneServer = path.join(appRoot, ".next", "standalone", "apps", "web", "server.js");
+  const useStandalone = serverMode === "production" && await exists(standaloneServer);
   const nextCommand = serverMode === "production" ? "start" : "dev";
-  await fs.writeFile(startLog, `${taskId} ${serverMode} server start\ncwd=${appRoot}\nurl=${baseUrl}\nDATABASE_URL=${databaseUrl}\n`);
+  const startLog = await createWritableLog(preferredStartLog, `${taskId}-start`, `${taskId} ${serverMode} server start\ncwd=${appRoot}\nurl=${baseUrl}\nDATABASE_URL=${runtimeDatabaseUrl}\n`);
+  if (useStandalone) {
+    await prepareStandaloneAssets(standaloneServer);
+  }
   const nextBin = path.join(appRoot, "node_modules", "next", "dist", "bin", "next");
-  const child = spawn(process.execPath, [nextBin, nextCommand, "--port", String(port), "--hostname", "127.0.0.1"], {
-    cwd: appRoot,
-    env: runtimeEnv(),
+  const command = useStandalone ? [standaloneServer] : [nextBin, nextCommand, "--port", String(port), "--hostname", "127.0.0.1"];
+  const child = spawn(process.execPath, command, {
+    cwd: useStandalone ? path.dirname(standaloneServer) : appRoot,
+    env: { ...runtimeEnv(), PORT: String(port), HOSTNAME: "127.0.0.1" },
     shell: false
   });
   child.stdout.on("data", (chunk) => fs.appendFile(startLog, chunk).catch(() => {}));
   child.stderr.on("data", (chunk) => fs.appendFile(startLog, chunk).catch(() => {}));
-  commandLog.push({ command: `node ${relative(nextBin)} ${nextCommand} --port ${port} --hostname 127.0.0.1`, status: "STARTED", evidence: relative(startLog), serverMode });
+  commandLog.push({
+    command: useStandalone ? `node ${relative(standaloneServer)}` : `node ${relative(nextBin)} ${nextCommand} --port ${port} --hostname 127.0.0.1`,
+    status: "STARTED",
+    evidence: relative(startLog),
+    serverMode
+  });
   await waitForHttp(`${baseUrl}/api/v1/health`, 60000);
   await fs.appendFile(startLog, `\nREADY ${new Date().toISOString()} ${baseUrl}\n`);
   return child;
 }
 
+async function prepareStandaloneAssets(standaloneServer) {
+  const standaloneAppRoot = path.dirname(standaloneServer);
+  await copyIfExists(path.join(appRoot, "public"), path.join(standaloneAppRoot, "public"));
+  await copyIfExists(path.join(appRoot, ".next", "static"), path.join(standaloneAppRoot, ".next", "static"));
+}
+
+async function copyIfExists(source, target) {
+  if (!await exists(source)) {
+    return;
+  }
+  await fs.rm(target, { recursive: true, force: true });
+  await fs.cp(source, target, { recursive: true });
+}
+
+async function exists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 async function startBrowser() {
   const executable = await findBrowser();
   const profile = path.join(os.tmpdir(), `auracue-${taskId.toLowerCase()}-${Date.now()}`);
-  const browserLog = path.join(out.logs, `${taskId}-browser.log`);
-  await fs.writeFile(browserLog, `browser=${executable}\nprofile=${profile}\ncdp=http://127.0.0.1:${cdpPort}\n`);
+  const browserLog = await createWritableLog(path.join(out.logs, `${taskId}-browser.log`), `${taskId}-browser`, `browser=${executable}\nprofile=${profile}\ncdp=http://127.0.0.1:${cdpPort}\n`);
   const child = spawn(executable, [
     "--headless=chrome",
     `--window-size=${viewport.width},${viewport.height}`,
@@ -773,6 +805,23 @@ async function startBrowser() {
   return child;
 }
 
+async function createWritableLog(preferredPath, fallbackPrefix, initialContent) {
+  try {
+    await fs.writeFile(preferredPath, initialContent);
+    return preferredPath;
+  } catch (error) {
+    const fallbackPath = path.join(os.tmpdir(), `${fallbackPrefix}.${process.pid}.${Date.now()}.log`);
+    await fs.writeFile(fallbackPath, initialContent);
+    commandLog.push({
+      command: `open log ${relative(preferredPath)}`,
+      status: "PASS_WITH_LOG_FALLBACK",
+      evidence: fallbackPath,
+      warning: `Preferred log path failed: ${error?.code ?? error}`
+    });
+    return fallbackPath;
+  }
+}
+
 async function openPage() {
   const response = await httpJson(`http://127.0.0.1:${cdpPort}/json/new?about%3Ablank`, "PUT");
   return CdpClient.connect(response.webSocketDebuggerUrl);
@@ -781,7 +830,7 @@ async function openPage() {
 function runtimeEnv() {
   return {
     ...process.env,
-    DATABASE_URL: databaseUrl,
+    DATABASE_URL: runtimeDatabaseUrl,
     AURACUE_API_MODE: "local",
     NEXT_TELEMETRY_DISABLED: "1",
     NODE_ENV: serverMode === "production" ? "production" : (process.env.NODE_ENV || "development")
@@ -841,34 +890,57 @@ async function ensureDirs() {
 }
 
 async function resetRuntimeDatabase() {
-  if (!databaseUrl.startsWith("file:./")) {
+  const sqlitePath = databaseFilePathFromUrl(databaseUrl);
+  if (!sqlitePath) {
     return;
   }
-  const sqlitePath = path.join(appRoot, databaseUrl.slice("file:./".length));
-  await Promise.all([
-    fs.rm(sqlitePath, { force: true }),
-    fs.rm(`${sqlitePath}-journal`, { force: true }),
-    fs.rm(`${sqlitePath}-wal`, { force: true }),
-    fs.rm(`${sqlitePath}-shm`, { force: true })
-  ]);
+  try {
+    await Promise.all([
+      fs.rm(sqlitePath, { force: true }),
+      fs.rm(`${sqlitePath}-journal`, { force: true }),
+      fs.rm(`${sqlitePath}-wal`, { force: true }),
+      fs.rm(`${sqlitePath}-shm`, { force: true })
+    ]);
+  } catch (error) {
+    if (error?.code !== "EPERM" && error?.code !== "EBUSY") {
+      throw error;
+    }
+    await clearExistingSqlite(sqlitePath);
+    runtimeDatabaseReused = true;
+    commandLog.push({
+      command: `reuse locked sqlite ${path.basename(sqlitePath)}`,
+      status: "PASS_WITH_SQLITE_REUSE",
+      warning: `SQLite file could not be removed: ${error.code}`
+    });
+  }
 }
 
 async function initializeRuntimeDatabase() {
-  if (!databaseUrl.startsWith("file:./")) {
+  const sqlitePath = databaseFilePathFromUrl(databaseUrl);
+  if (!sqlitePath) {
     commandLog.push({
       command: "runtime database init",
       status: "SKIPPED",
-      evidence: "External DATABASE_URL is outside local one-shot SQLite reset scope."
+      evidence: "DATABASE_URL is outside local SQLite reset scope."
+    });
+    return;
+  }
+  if (runtimeDatabaseReused) {
+    commandLog.push({
+      command: `apply committed migration SQL -> ${path.basename(sqlitePath)}`,
+      status: "SKIPPED_REUSED_INITIALIZED_SQLITE",
+      evidence: "Existing SQLite schema was reused after table cleanup."
     });
     return;
   }
 
   const started = Date.now();
-  const sqlitePath = path.join(appRoot, databaseUrl.slice("file:./".length));
   const migrationPath = path.join(appRoot, "prisma", "migrations", "20260604010930_init", "migration.sql");
   const migrationSql = await fs.readFile(migrationPath, "utf8");
+  await fs.mkdir(path.dirname(sqlitePath), { recursive: true });
   const db = new Database(sqlitePath);
   try {
+    db.pragma("journal_mode = MEMORY");
     db.exec(migrationSql);
     commandLog.push({
       command: `apply committed migration SQL -> ${path.basename(sqlitePath)}`,
@@ -876,6 +948,23 @@ async function initializeRuntimeDatabase() {
       durationMs: Date.now() - started,
       evidence: relative(migrationPath)
     });
+  } finally {
+    db.close();
+  }
+}
+
+async function clearExistingSqlite(sqlitePath) {
+  const db = new Database(sqlitePath);
+  try {
+    const tables = db.prepare("select name from sqlite_master where type = 'table' and name not like 'sqlite_%'").all();
+    db.exec("PRAGMA foreign_keys = OFF");
+    const deleteRows = db.transaction(() => {
+      for (const table of tables) {
+        db.prepare(`DELETE FROM "${table.name.replaceAll('"', '""')}"`).run();
+      }
+    });
+    deleteRows();
+    db.exec("PRAGMA foreign_keys = ON");
   } finally {
     db.close();
   }
@@ -904,20 +993,26 @@ async function writeJson(file, value) {
       await fs.mkdir(path.dirname(file), { recursive: true });
     }
   }
-  if (lastTempFile) {
-    const fallbackFile = `${file}.${new Date().toISOString().replace(/[:.]/g, "-")}.json`;
-    await fs.rename(lastTempFile, fallbackFile).catch(async () => {
-      await fs.writeFile(fallbackFile, payload);
-    });
+  try {
+    await fs.writeFile(file, payload);
     commandLog.push({
       command: `write evidence ${relative(file)}`,
-      status: "PASS_WITH_FALLBACK",
-      evidence: relative(fallbackFile),
-      warning: `Primary path was locked: ${lastError?.code ?? lastError}`
+      status: "PASS_WITH_DIRECT_WRITE_FALLBACK",
+      evidence: relative(file),
+      warning: `Atomic write path was locked: ${lastError?.code ?? lastError}`
+    });
+    return;
+  } catch (fallbackError) {
+    const fallbackFile = path.join(os.tmpdir(), `${path.basename(file)}.${process.pid}.${Date.now()}.json`);
+    await fs.writeFile(fallbackFile, payload);
+    commandLog.push({
+      command: `write evidence ${relative(file)}`,
+      status: "PASS_WITH_TMP_FALLBACK",
+      evidence: fallbackFile,
+      warning: `Evidence directory write failed: ${fallbackError?.code ?? fallbackError}`
     });
     return;
   }
-  throw lastError;
 }
 
 async function writeCommandLog(verdict) {
@@ -944,7 +1039,13 @@ async function writeCommandLog(verdict) {
     `- Trace: ${relative(path.join(out.traces, "runtime-smoke-trace.json"))}`,
     `- Screenshots: ${relative(out.screenshots)}`
   ];
-  await fs.writeFile(logPath, `${lines.join("\n")}\n`);
+  try {
+    await fs.writeFile(logPath, `${lines.join("\n")}\n`);
+  } catch (error) {
+    const fallbackLog = path.join(os.tmpdir(), `${taskId}-command-log.${process.pid}.${Date.now()}.md`);
+    await fs.writeFile(fallbackLog, `${lines.join("\n")}\n`);
+    console.warn(`Command log write fallback: ${fallbackLog} (${error?.code ?? error})`);
+  }
 }
 
 function blockingConsoleErrors() {
@@ -958,6 +1059,27 @@ function blockingConsoleErrors() {
 
 function relative(file) {
   return path.relative(repoRoot, file).replace(/\\/g, "/");
+}
+
+function resolveRuntimeDatabaseUrl(url) {
+  if (!url.startsWith("file:./")) {
+    return url;
+  }
+  return `file:${path.join(appRoot, url.slice("file:./".length)).replace(/\\/g, "/")}`;
+}
+
+function databaseFilePathFromUrl(url) {
+  if (!url.startsWith("file:")) {
+    return null;
+  }
+  if (url.startsWith("file:./")) {
+    return path.join(appRoot, url.slice("file:./".length));
+  }
+  const rawPath = url.slice("file:".length);
+  if (/^[A-Za-z]:\//.test(rawPath)) {
+    return rawPath.replace(/\//g, "\\");
+  }
+  return null;
 }
 
 async function cleanup() {

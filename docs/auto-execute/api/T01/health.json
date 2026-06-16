@@ -91,7 +91,16 @@
         "save_success_viewed",
         "click_save_success_share_now",
         "click_save_success_back_home",
-        "click_view_saved_card"
+        "click_view_saved_card",
+        "activation_page_view",
+        "activation_anchor_selected",
+        "activation_started",
+        "activation_hold_started",
+        "activation_hold_cancelled",
+        "activation_hold_completed",
+        "aura_activated",
+        "share_preview_view",
+        "render_failed"
       ],
       "storage": "local-artifacts-only",
       "db": "deterministic-json-repository"

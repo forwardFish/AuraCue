@@ -6,7 +6,7 @@
   "reference": "docs/auto-execute/screenshots/web/T15/reference/UI-002.png",
   "actual": "docs/auto-execute/screenshots/web/T15/actual/UI-002.png",
   "diff": "docs/auto-execute/screenshots/web/T15/diff/UI-002-diff.png",
-  "referenceSource": "docs/UI/小程序/P0-02-Context-可选今日上下文.png",
+  "referenceSource": "docs/auto-execute/screenshots/web/T15/reference/UI-002.png",
   "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/02-context.png",
   "referenceImage": {
     "width": 941,
@@ -17,30 +17,30 @@
   "actualImage": {
     "width": 390,
     "height": 693,
-    "bytes": 191813,
-    "sha256": "9f9be6983ad4d736966cf2a5f51768113f9b8629a6e991a1eca11b295a42cda1"
+    "bytes": 150471,
+    "sha256": "84522937a215fd87a84a6c7c3bc79de82b3c943db5f2626d473279e0f6bdcec4"
   },
   "diffImage": {
-    "width": 840,
-    "height": 920,
-    "bytes": 442786,
-    "sha256": "0b8a5a62538cc8e146a35368575b562c8a0cd7fc18b6d4b72ac0bae7f0aed1b7"
+    "width": 792,
+    "height": 693,
+    "bytes": 539151,
+    "sha256": "ef0d7cb424a9ce3ead5b90e6dff1dce0981b07100d05c17e8c4cbb3e3a80bfcf"
   },
   "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
   "normalizedPixelDiff": {
     "width": 390,
     "height": 693,
     "totalPixels": 270270,
-    "changedPixels": 66,
-    "diffRatio": 0.000244,
-    "averageChannelDelta": 1.127,
-    "maxChannelDelta": 26.667,
+    "changedPixels": 74003,
+    "diffRatio": 0.273811,
+    "averageChannelDelta": 20.254,
+    "maxChannelDelta": 255,
     "changeThresholdPerPixel": 12
   },
-  "diffRatio": 0.000244,
+  "diffRatio": 0.273811,
   "threshold": 0.005,
-  "pixelPerfectStatus": "PASS",
-  "materialDeviation": "NONE_DETECTED_BY_PIXEL_GATE",
+  "pixelPerfectStatus": "REPAIR_REQUIRED",
+  "materialDeviation": "REPAIR_REQUIRED",
   "notes": [
     "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
     "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."

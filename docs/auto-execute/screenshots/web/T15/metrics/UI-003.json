@@ -6,7 +6,7 @@
   "reference": "docs/auto-execute/screenshots/web/T15/reference/UI-003.png",
   "actual": "docs/auto-execute/screenshots/web/T15/actual/UI-003.png",
   "diff": "docs/auto-execute/screenshots/web/T15/diff/UI-003-diff.png",
-  "referenceSource": "docs/UI/小程序/P0-03-Outfit-可选穿搭上传.png",
+  "referenceSource": "docs/auto-execute/screenshots/web/T15/reference/UI-003.png",
   "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/03-upload.png",
   "referenceImage": {
     "width": 941,
@@ -17,30 +17,30 @@
   "actualImage": {
     "width": 390,
     "height": 693,
-    "bytes": 245613,
-    "sha256": "f65bf96dee9fe94da4aa5bbf396b9f17878cdba15479a100e01f76c9faf64236"
+    "bytes": 212636,
+    "sha256": "18787b04ccb92019c915f26513dac0e246d4bdfe58c09a7a86b70884e34acafe"
   },
   "diffImage": {
-    "width": 840,
-    "height": 920,
-    "bytes": 531244,
-    "sha256": "fbbfe0ebfb599553918a7ae8fbfcb8e2650947fe3c32a0072b7a26dce488b8d4"
+    "width": 792,
+    "height": 693,
+    "bytes": 706810,
+    "sha256": "02a60a64e3e333d37829e9c5b8b3c2eee8e4f9e8c569e26f25525439930cfc92"
   },
   "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
   "normalizedPixelDiff": {
     "width": 390,
     "height": 693,
     "totalPixels": 270270,
-    "changedPixels": 215,
-    "diffRatio": 0.000796,
-    "averageChannelDelta": 1.441,
-    "maxChannelDelta": 20.667,
+    "changedPixels": 102150,
+    "diffRatio": 0.377955,
+    "averageChannelDelta": 19.798,
+    "maxChannelDelta": 244,
     "changeThresholdPerPixel": 12
   },
-  "diffRatio": 0.000796,
+  "diffRatio": 0.377955,
   "threshold": 0.005,
-  "pixelPerfectStatus": "PASS",
-  "materialDeviation": "NONE_DETECTED_BY_PIXEL_GATE",
+  "pixelPerfectStatus": "REPAIR_REQUIRED",
+  "materialDeviation": "REPAIR_REQUIRED",
   "notes": [
     "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
     "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."

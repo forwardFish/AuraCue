@@ -6,7 +6,7 @@
   "reference": "docs/auto-execute/screenshots/web/T15/reference/UI-009.png",
   "actual": "docs/auto-execute/screenshots/web/T15/actual/UI-009.png",
   "diff": "docs/auto-execute/screenshots/web/T15/diff/UI-009-diff.png",
-  "referenceSource": "docs/UI/小程序/P0-10-Saved-保存成功反馈.png",
+  "referenceSource": "docs/auto-execute/screenshots/web/T15/reference/UI-009.png",
   "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/09-saved.png",
   "referenceImage": {
     "width": 941,
@@ -17,30 +17,30 @@
   "actualImage": {
     "width": 390,
     "height": 693,
-    "bytes": 169152,
-    "sha256": "3509e10c6af55bf1871368f2ab3d8ff758fe8d7e0a005629a1604d136f48e93a"
+    "bytes": 144510,
+    "sha256": "f6c2a503eeefb2fa6b0ca44b63b30d646ede73dd1cfcee8afdeccdb04cc1d1cb"
   },
   "diffImage": {
-    "width": 840,
-    "height": 920,
-    "bytes": 392874,
-    "sha256": "a00fa62e3f64f79f67d40414332d6cd613c7e2fd992a84740d6e525cdfbc7393"
+    "width": 792,
+    "height": 693,
+    "bytes": 495323,
+    "sha256": "506e48f74eacb9253fa0b386a939f6c07ab737aaff6798c851e1688372567aa0"
   },
   "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
   "normalizedPixelDiff": {
     "width": 390,
     "height": 693,
     "totalPixels": 270270,
-    "changedPixels": 107,
-    "diffRatio": 0.000396,
-    "averageChannelDelta": 1.062,
-    "maxChannelDelta": 22.667,
+    "changedPixels": 102394,
+    "diffRatio": 0.378858,
+    "averageChannelDelta": 31.686,
+    "maxChannelDelta": 255,
     "changeThresholdPerPixel": 12
   },
-  "diffRatio": 0.000396,
+  "diffRatio": 0.378858,
   "threshold": 0.005,
-  "pixelPerfectStatus": "PASS",
-  "materialDeviation": "NONE_DETECTED_BY_PIXEL_GATE",
+  "pixelPerfectStatus": "REPAIR_REQUIRED",
+  "materialDeviation": "REPAIR_REQUIRED",
   "notes": [
     "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
     "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."

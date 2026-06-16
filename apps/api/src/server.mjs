@@ -1,4 +1,5 @@
 import http from "node:http";
+import { pathToFileURL } from "node:url";
 import { analyticsEvents, validateAnalyticsEventInput } from "../../../packages/analytics-events/src/local-validator.mjs";
 import { assertSafeLocalCopy, buildLocalAuraCard, validEnergies, validScenes } from "../../../packages/prompt-core/src/local-generator.mjs";
 import { generateAuraCardWithAi, publicAiProviderConfig, resolveAiProvider } from "./ai-provider.mjs";
@@ -557,7 +558,7 @@ export function createServer({ repository = createLocalRepository(), aiFetch = g
   });
 }
 
-if (import.meta.url === `file://${process.argv[1].replace(/\\/g, "/")}`) {
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const port = Number(process.env.PORT || 4317);
   createServer().listen(port, "127.0.0.1", () => {
     console.log(`AuraCue local mock API listening on http://127.0.0.1:${port}`);

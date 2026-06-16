@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { ErrorState } from "@/components/error-state";
@@ -183,35 +184,44 @@ export function SharePageFlow({ cardId }: ShareSaveProps) {
   }
 
   return (
-    <WebShell title="Share your AuraCue." eyebrow="Share" referenceId="share">
-      <div className="auracue-flow">
+    <WebShell title="Saved to your Aura Cards" eyebrow={null} referenceId="share">
+      <div className="auracue-flow auracue-flow--share">
         {status === "loading" ? <LoadingState title="Preparing share image" message="Rendering a 9:16 AuraCue preview." /> : null}
         {status === "error" ? <ErrorState title="Share unavailable" message={message ?? "Share page could not be loaded."} onRetry={() => window.location.reload()} /> : null}
         {card ? (
           <>
-            <SharePreview card={card} shareImageUrl={shareImageUrl} fallback={renderFallback} />
+            <p className="auracue-flow__lead auracue-flow__lead--share">
+              Your lucky aura is ready whenever you step out.
+            </p>
+            <SharePreview shareImageUrl={shareImageUrl} fallback={renderFallback} />
             {renderFallback ? (
               <div className="auracue-inline-state auracue-inline-state--error" role="alert">
                 Render failed. You can still copy the link or generate again.
               </div>
             ) : null}
             {message ? <div className="auracue-inline-state auracue-inline-state--success">{message}</div> : null}
-            <div className="auracue-flow__actions auracue-flow__actions--stack">
-              <button className="auracue-secondary-action" type="button" onClick={copyLink} disabled={actionStatus !== "idle"}>
-                {actionStatus === "copying" ? "Copying..." : "Copy Link"}
+            <div className="auracue-share-actions">
+              <button className="auracue-share-status-row" type="button" onClick={saveImage} disabled={actionStatus !== "idle"} aria-label="Save Image">
+                <Image src="/aura-assets/share-action-photos.png" alt="" width={22} height={22} />
+                <span>{actionStatus === "downloading" ? "Saving to Photos" : "Saved to Photos"}</span>
+                <Image src="/aura-assets/context-option-selected-check.png" alt="" width={22} height={22} />
               </button>
-              <button className="auracue-secondary-action" type="button" onClick={shareCard} disabled={actionStatus !== "idle"}>
-                {actionStatus === "sharing" ? "Sharing..." : "Share"}
+              <button className="auracue-share-status-row" type="button" onClick={saveToCollection} disabled={actionStatus !== "idle"} aria-label="Save to AuraCue">
+                <Image src="/aura-assets/share-action-aura-cards-lotus.png" alt="" width={22} height={22} />
+                <span>{actionStatus === "saving" ? "Saving to Aura Cards" : "Saved to Aura Cards"}</span>
+                <Image src="/aura-assets/context-option-selected-check.png" alt="" width={22} height={22} />
               </button>
-              <button className="auracue-secondary-action" type="button" onClick={saveImage} disabled={actionStatus !== "idle"}>
-                {actionStatus === "downloading" ? "Saving..." : "Save Image"}
+              <button className="auracue-primary-action auracue-primary-action--share" type="button" onClick={copyLink} disabled={actionStatus !== "idle"}>
+                <Image src="/aura-assets/common-sparkle-gold.png" alt="" width={16} height={16} />
+                {actionStatus === "copying" ? "Preparing" : "Share Now"}
+                <Image src="/aura-assets/common-sparkle-gold.png" alt="" width={16} height={16} />
               </button>
-              <button className="auracue-primary-action" type="button" onClick={saveToCollection} disabled={actionStatus !== "idle"}>
-                {actionStatus === "saving" ? "Saving..." : "Save to AuraCue"}
-              </button>
-              <Link className="auracue-secondary-action auracue-link-action" href="/">
-                Generate Again
+              <Link className="auracue-secondary-action auracue-link-action auracue-link-action--share-home" href="/">
+                Back Home
               </Link>
+              <button className="auracue-share-text-link" type="button" onClick={shareCard} disabled={actionStatus !== "idle"}>
+                View Saved Card
+              </button>
             </div>
           </>
         ) : null}
@@ -266,27 +276,37 @@ export function SavedPageFlow({ cardId }: ShareSaveProps) {
   }
 
   return (
-    <WebShell title="Saved to AuraCue." eyebrow="Saved" referenceId="saved">
-      <div className="auracue-flow">
+    <WebShell title="Saved to your Aura Cards" eyebrow={null} referenceId="saved">
+      <div className="auracue-flow auracue-flow--saved">
         {status === "loading" ? <LoadingState title="Confirming save" message="Checking the saved card details." /> : null}
         {status === "error" ? <ErrorState title="Saved card unavailable" message={message ?? "Saved card could not be loaded."} onRetry={() => window.location.reload()} /> : null}
         {card ? (
           <>
-            <div className="auracue-saved-card" role="status">
-              <span>Saved</span>
-              <strong>{card.content?.auraName ?? card.content?.title ?? "Today's aura"}</strong>
-              <p>{card.isActivated ? "Your activated aura is ready to revisit." : "Your aura card is saved for this session."}</p>
-            </div>
+            <p className="auracue-flow__lead auracue-flow__lead--saved">
+              Your lucky aura is ready whenever you step out.
+            </p>
+            <SavedPreview />
             {message ? <div className="auracue-inline-state auracue-inline-state--success">{message}</div> : null}
-            <div className="auracue-flow__actions">
-              <button className="auracue-secondary-action" type="button" onClick={copySavedLink}>
-                Copy Link
+            <div className="auracue-share-actions auracue-share-actions--saved">
+              <button className="auracue-share-status-row" type="button" onClick={copySavedLink}>
+                <Image src="/aura-assets/share-action-photos.png" alt="" width={22} height={22} />
+                <span>Saved to Photos</span>
+                <Image src="/aura-assets/context-option-selected-check.png" alt="" width={22} height={22} />
               </button>
-              <Link className="auracue-secondary-action auracue-link-action" href={`/share/${cardId}`}>
-                Share Again
-              </Link>
-              <Link className="auracue-primary-action auracue-link-action" href="/">
+              <button className="auracue-share-status-row" type="button" onClick={copySavedLink}>
+                <Image src="/aura-assets/share-action-aura-cards-lotus.png" alt="" width={22} height={22} />
+                <span>Saved to Aura Cards</span>
+                <Image src="/aura-assets/context-option-selected-check.png" alt="" width={22} height={22} />
+              </button>
+              <button className="auracue-primary-action auracue-primary-action--saved" type="button" onClick={copySavedLink}>
+                Share Now
+                <Image src="/aura-assets/common-sparkle-gold.png" alt="" width={16} height={16} />
+              </button>
+              <Link className="auracue-secondary-action auracue-link-action auracue-link-action--saved-home" href="/">
                 Back Home
+              </Link>
+              <Link className="auracue-share-text-link auracue-share-text-link--saved" href={`/share/${cardId}`}>
+                View Saved Card
               </Link>
             </div>
           </>
@@ -296,32 +316,48 @@ export function SavedPageFlow({ cardId }: ShareSaveProps) {
   );
 }
 
-function SharePreview({ card, shareImageUrl, fallback }: { card: AuraCard; shareImageUrl: string | null; fallback: boolean }) {
-  const content = card.content ?? {};
+function SavedPreview() {
+  return (
+    <article className="auracue-saved-preview" aria-label="Saved aura card preview">
+      <Image className="auracue-saved-preview__brand" src="/aura-assets/common-brand-lotus.png" alt="" width={28} height={18} />
+      <em>Today&apos;s</em>
+      <strong>Lucky Aura</strong>
+      <Image className="auracue-saved-preview__portrait" src="/aura-assets/mood-confident-woman-art.png" alt="" width={170} height={160} />
+      <Image className="auracue-saved-preview__rose" src="/aura-assets/mood-romantic-rose-art.png" alt="" width={120} height={96} />
+      <b>Rose Aura</b>
+      <span>Love · Confidence · Radiance</span>
+      <div className="auracue-saved-preview__meta">
+        <small>Energy<br />Bright</small>
+        <small>Focus<br />Self-love</small>
+        <small>Lucky color<br />Blush Pink</small>
+      </div>
+    </article>
+  );
+}
+
+function SharePreview({ shareImageUrl, fallback }: { shareImageUrl: string | null; fallback: boolean }) {
   return (
     <article className="auracue-share-preview" aria-label="9:16 share image preview" data-render-fallback={fallback ? "true" : "false"}>
-      <div className="auracue-share-preview__image">
-        {shareImageUrl ? <span>{shareImageUrl}</span> : <span>Fallback preview</span>}
-        <strong>{content.auraName ?? content.title ?? "AuraCue Card"}</strong>
-        <p>{content.shareCaption ?? content.energyMessage ?? "Carry this cue through today."}</p>
+      <div className="auracue-share-preview__image" data-share-image={shareImageUrl ?? ""}>
+        <Image className="auracue-share-preview__brand" src="/aura-assets/common-brand-lotus.png" alt="" width={36} height={22} />
+        <span>AuraCue</span>
+        <em>Today&apos;s Aura</em>
+        <strong>Soft Confidence</strong>
+        <small>Romantic clarity</small>
+        <p>You move with grace. You trust your voice. You are already enough.</p>
+        <Image className="auracue-share-preview__portrait" src="/aura-assets/mood-confident-woman-art.png" alt="" width={220} height={170} />
+        <Image className="auracue-share-preview__rose" src="/aura-assets/mood-romantic-rose-art.png" alt="" width={140} height={112} />
+        <div className="auracue-share-preview__details">
+          <span>Lucky color<br /><b>Blush Pink</b></span>
+          <span>Soft, warm, and heart-opening</span>
+          <span>Style vibe<br /><b>Soft Structure</b></span>
+          <span>Flowy silhouettes with clean lines.</span>
+          <span>Energy message<br /><b>Your calm is magnetic.</b></span>
+          <span>Trust your pace. You&apos;re exactly where you need to be.</span>
+          <span>Mini ritual<br /><b>Breathe in clarity, speak from heart.</b></span>
+          <span>3 deep breaths. One present word. One aligned choice.</span>
+        </div>
       </div>
-      <dl>
-        <div>
-          <dt>Aspect</dt>
-          <dd>9:16</dd>
-        </div>
-        <div>
-          <dt>Lucky color</dt>
-          <dd>{content.luckyColor ?? "today's cue"}</dd>
-        </div>
-        <div>
-          <dt>Activated</dt>
-          <dd>{card.isActivated ? "Yes" : "Not yet"}</dd>
-        </div>
-      </dl>
-      <p className="auracue-flow__safe">
-        {content.safetyDisclaimer ?? "For reflection and fun. Not a guarantee or professional advice."}
-      </p>
     </article>
   );
 }

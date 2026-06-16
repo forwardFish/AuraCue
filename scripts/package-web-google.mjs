@@ -5,13 +5,21 @@ import { fileURLToPath } from "node:url";
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const appRoot = path.join(repoRoot, "apps", "web");
 const standaloneRoot = path.join(appRoot, ".next", "standalone");
-const distRoot = path.join(repoRoot, "dist", "google", "auracue-web-google-cloud-run");
-const appDistRoot = path.join(distRoot, "apps", "web");
+let distRoot = path.join(repoRoot, "dist", "google", "auracue-web-google-cloud-run");
+let appDistRoot = path.join(distRoot, "apps", "web");
 const migrationId = "20260604010930_init";
 
 await assertExists(standaloneRoot, "Missing standalone build. Run pnpm build:web first.");
 
-await fs.rm(distRoot, { recursive: true, force: true });
+try {
+  await fs.rm(distRoot, { recursive: true, force: true });
+} catch (error) {
+  if (error?.code !== "EPERM" && error?.code !== "EBUSY") {
+    throw error;
+  }
+  distRoot = path.join(repoRoot, "dist", "google", `auracue-web-google-cloud-run-${Date.now()}`);
+  appDistRoot = path.join(distRoot, "apps", "web");
+}
 await fs.mkdir(distRoot, { recursive: true });
 
 await copyDir(standaloneRoot, distRoot);
@@ -142,6 +150,7 @@ if (process.env.DATABASE_URL.startsWith("file:./")) {
     const Database = require("better-sqlite3");
     const db = new Database(sqlitePath);
     try {
+      db.pragma("journal_mode = MEMORY");
       db.exec(migrationSql);
       console.log("[auracue] initialized local sqlite database", sqlitePath);
     } finally {

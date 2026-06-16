@@ -1,6 +1,6 @@
 # T15 HANDOFF - Visual Compare
 
-Status: PASS
+Status: REPAIR_REQUIRED
 
 ## Evidence
 
@@ -12,7 +12,7 @@ Status: PASS
 
 ## Pixel Gate
 
-- Passing screens: 10
-- Failing screens: 0
-- Max diffRatio: 0.000796
+- Passing screens: 0
+- Failing screens: 10
+- Max diffRatio: 0.432423
 - Threshold: 0.005

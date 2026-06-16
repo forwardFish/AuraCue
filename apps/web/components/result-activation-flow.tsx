@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { CSSProperties, PointerEvent, useEffect, useMemo, useRef, useState } from "react";
 import { ErrorState } from "@/components/error-state";
@@ -145,19 +146,22 @@ export function ResultPageFlow({ cardId }: ResultActivationProps) {
   }
 
   return (
-    <WebShell title="Your Aura Card is ready." eyebrow="Result" referenceId="result">
-      <div className="auracue-flow">
+    <WebShell title="Your Full Reading" eyebrow={null} referenceId="result">
+      <div className="auracue-flow auracue-flow--result">
+        <p className="auracue-flow__lead auracue-flow__lead--result">
+          Here&apos;s the energy aligned just for you.
+        </p>
         {status === "loading" ? <LoadingState title="Opening card" message="Loading your full AuraCue reading." /> : null}
         {status === "error" ? <ErrorState title="Card unavailable" message={message ?? "Card could not be loaded."} onRetry={() => window.location.reload()} /> : null}
         {card ? <AuraCardReport card={card} /> : null}
         {message && status !== "error" ? <div className="auracue-inline-state auracue-inline-state--success">{message}</div> : null}
         {card ? (
           <div className="auracue-flow__actions">
-            <button className="auracue-secondary-action" type="button" onClick={saveFromResult} disabled={status === "saving"}>
-              {status === "saving" ? "Saving..." : "Save"}
+            <button className="auracue-secondary-action auracue-secondary-action--result" type="button" onClick={saveFromResult} disabled={status === "saving"}>
+              {status === "saving" ? "Saving..." : "Save Card"}
             </button>
-            <button className="auracue-secondary-action" type="button" onClick={shareFromResult} disabled={status === "sharing"}>
-              {status === "sharing" ? "Sharing..." : "Share"}
+            <button className="auracue-secondary-action auracue-secondary-action--result" type="button" onClick={shareFromResult} disabled={status === "sharing"}>
+              {status === "sharing" ? "Sharing..." : "Share Story"}
             </button>
             <Link className="auracue-primary-action auracue-link-action" href={card.isActivated ? `/activated/${cardId}` : `/activate/${cardId}`}>
               {card.isActivated ? "View Activated Aura" : "Activate My Aura"}
@@ -347,23 +351,6 @@ export function ActivatedPageFlow({ cardId }: ResultActivationProps) {
     };
   }, [cardId]);
 
-  async function saveActivated() {
-    if (!anonymousId || status === "saving") {
-      return;
-    }
-    setStatus("saving");
-    setMessage(null);
-    try {
-      await apiClient.saveCard(cardId, { anonymousId, platform, source: "activated" });
-      setStatus("ready");
-      setMessage("Activated aura saved.");
-      void track("card_saved", { cardId, source: "activated" }, { anonymousId });
-    } catch (caught) {
-      setStatus("ready");
-      setMessage(toUserMessage(caught));
-    }
-  }
-
   async function shareActivated() {
     if (!anonymousId || status === "sharing") {
       return;
@@ -387,30 +374,36 @@ export function ActivatedPageFlow({ cardId }: ResultActivationProps) {
   }
 
   return (
-    <WebShell title="Aura activated." eyebrow="Activated" referenceId="activated">
-      <div className="auracue-flow">
+    <WebShell title="Aura Activated" eyebrow={null} referenceId="activated">
+      <div className="auracue-flow auracue-flow--activated">
         {status === "loading" ? <LoadingState title="Checking seal" message="Confirming today's activated aura." /> : null}
         {status === "error" ? <ErrorState title="Activated card unavailable" message={message ?? "Activated card could not be loaded."} onRetry={() => window.location.reload()} /> : null}
         {card ? (
           <>
-            <div className="auracue-seal-card" role="status">
-              <span>Sealed</span>
-              <strong>{card.content.auraName ?? card.content.title ?? "Today's aura"}</strong>
-              <p>{card.activation?.anchorLabel ? `Anchor: ${card.activation.anchorLabel}` : "Your card is active for today."}</p>
+            <div className="auracue-activated-star" aria-hidden="true" />
+            <h1 className="auracue-activated-title">Aura Activated</h1>
+            <p className="auracue-flow__lead auracue-flow__lead--activated">
+              Golden Bloom is active for today.
+            </p>
+            <div className="auracue-activated-card" role="status">
+              <span>Today&apos;s Aura</span>
+              <strong>{card.content.auraName ?? card.content.title ?? "Golden Bloom"}</strong>
+              <p><b>Lucky Color:</b> {card.content.luckyColor ?? "Blush Pink"}</p>
+              <p><b>Lucky Anchor:</b> {card.activation?.anchorLabel ?? "Jewelry"}</p>
+              <em>Notice where your soft power shows up.</em>
             </div>
-            <AuraCardReport card={card} compact />
             {message ? <div className="auracue-inline-state auracue-inline-state--success">{message}</div> : null}
-            <div className="auracue-flow__actions">
-              <button className="auracue-secondary-action" type="button" onClick={saveActivated} disabled={status === "saving"}>
-                {status === "saving" ? "Saving..." : "Save"}
-              </button>
-              <button className="auracue-secondary-action" type="button" onClick={shareActivated} disabled={status === "sharing"}>
-                {status === "sharing" ? "Sharing..." : "Share"}
-              </button>
-              <Link className="auracue-primary-action auracue-link-action" href={`/share/${cardId}`}>
+            <div className="auracue-flow__actions auracue-flow__actions--activated">
+              <Link className="auracue-secondary-action auracue-link-action auracue-secondary-action--activated-done" href={`/share/${cardId}`}>
+                <span aria-hidden="true">✓</span>
                 Done
               </Link>
+              <button className="auracue-secondary-action auracue-secondary-action--activated-share" type="button" onClick={shareActivated} disabled={status === "sharing"}>
+                <span aria-hidden="true">↥</span>
+                {status === "sharing" ? "Sharing..." : "Share Story"}
+              </button>
             </div>
+            <p className="auracue-flow__safe auracue-flow__safe--activated">Private. Personal. Just for you.</p>
           </>
         ) : null}
       </div>
@@ -519,9 +512,14 @@ function AuraCardReport({ card, compact = false }: { card: AuraCard; compact?: b
   return (
     <article className="auracue-result-card">
       <div className="auracue-result-card__hero">
-        <span>{content.tarotSymbol ?? `Card ${card.drawPosition ?? ""}`}</span>
-        <h2>{content.auraName ?? content.title ?? "AuraCue Card"}</h2>
-        <p>{content.shareCaption ?? content.energyMessage ?? "Carry this cue through today."}</p>
+        <div className="auracue-result-card__hero-copy">
+          <h2>{content.auraName ?? content.title ?? "Quiet Power Bloom"}</h2>
+          <p>{content.shareCaption ?? content.energyMessage ?? "Steady confidence. Soft presence."}</p>
+          <span>{card.context ? `${card.context} · ` : ""}{content.styleVibe ?? "Confidence"}</span>
+          <em>Lucky Color: {content.luckyColor ?? "Blush Pink"}</em>
+        </div>
+        <Image className="auracue-result-card__hero-person" src="/aura-assets/mood-confident-woman-art.png" alt="" width={240} height={180} />
+        <Image className="auracue-result-card__hero-rose" src="/aura-assets/mood-romantic-rose-art.png" alt="" width={200} height={160} />
       </div>
       {!compact ? (
         <dl className="auracue-result-card__details">

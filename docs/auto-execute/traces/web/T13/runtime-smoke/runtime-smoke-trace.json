@@ -21,61 +21,61 @@
       "type": "screenshot",
       "name": "01-home",
       "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/01-home.png",
-      "timestamp": "2026-06-06T02:32:48.985Z"
+      "timestamp": "2026-06-11T11:54:08.047Z"
     },
     {
       "type": "screenshot",
       "name": "02-context",
       "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/02-context.png",
-      "timestamp": "2026-06-06T02:32:49.449Z"
+      "timestamp": "2026-06-11T11:54:08.626Z"
     },
     {
       "type": "screenshot",
       "name": "03-upload",
       "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/03-upload.png",
-      "timestamp": "2026-06-06T02:32:50.140Z"
+      "timestamp": "2026-06-11T11:54:09.291Z"
     },
     {
       "type": "screenshot",
       "name": "04-draw",
       "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/04-draw.png",
-      "timestamp": "2026-06-06T02:32:50.591Z"
+      "timestamp": "2026-06-11T11:54:09.738Z"
     },
     {
       "type": "screenshot",
       "name": "05-result",
       "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/05-result.png",
-      "timestamp": "2026-06-06T02:32:51.068Z"
+      "timestamp": "2026-06-11T11:54:10.179Z"
     },
     {
       "type": "screenshot",
       "name": "06-activate",
       "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/06-activate.png",
-      "timestamp": "2026-06-06T02:32:51.531Z"
+      "timestamp": "2026-06-11T11:54:10.582Z"
     },
     {
       "type": "screenshot",
       "name": "07-activated",
       "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/07-activated.png",
-      "timestamp": "2026-06-06T02:32:55.346Z"
+      "timestamp": "2026-06-11T11:54:14.218Z"
     },
     {
       "type": "screenshot",
       "name": "08-share",
       "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/08-share.png",
-      "timestamp": "2026-06-06T02:32:57.133Z"
+      "timestamp": "2026-06-11T11:54:14.622Z"
     },
     {
       "type": "screenshot",
       "name": "09-saved",
       "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/09-saved.png",
-      "timestamp": "2026-06-06T02:33:02.890Z"
+      "timestamp": "2026-06-11T11:54:20.554Z"
     },
     {
       "type": "screenshot",
       "name": "10-saved-copy",
       "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/10-saved-copy.png",
-      "timestamp": "2026-06-06T02:33:03.291Z"
+      "timestamp": "2026-06-11T11:54:20.914Z"
     }
   ],
   "consoleEvents": [],

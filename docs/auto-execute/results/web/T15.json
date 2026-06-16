@@ -2,8 +2,8 @@
   "taskId": "T15",
   "taskName": "visual-compare",
   "status": "COMPLETE",
-  "verdict": "PASS",
-  "productPassClaimed": true,
+  "verdict": "REPAIR_REQUIRED",
+  "productPassClaimed": false,
   "coveredIds": [
     "UI-001",
     "UI-002",
@@ -41,161 +41,232 @@
     "materialDeviations": [
       {
         "uiId": "UI-001",
-        "status": "NONE_DETECTED_BY_PIXEL_GATE",
-        "diffRatio": 0.000037,
+        "status": "REPAIR_REQUIRED",
+        "diffRatio": 0.432423,
         "threshold": 0.005,
-        "basis": "Normalized pixel diff is within threshold."
+        "basis": "Normalized pixel diff exceeds threshold."
       },
       {
         "uiId": "UI-002",
-        "status": "NONE_DETECTED_BY_PIXEL_GATE",
-        "diffRatio": 0.000244,
+        "status": "REPAIR_REQUIRED",
+        "diffRatio": 0.273811,
         "threshold": 0.005,
-        "basis": "Normalized pixel diff is within threshold."
+        "basis": "Normalized pixel diff exceeds threshold."
       },
       {
         "uiId": "UI-003",
-        "status": "NONE_DETECTED_BY_PIXEL_GATE",
-        "diffRatio": 0.000796,
+        "status": "REPAIR_REQUIRED",
+        "diffRatio": 0.377955,
         "threshold": 0.005,
-        "basis": "Normalized pixel diff is within threshold."
+        "basis": "Normalized pixel diff exceeds threshold."
       },
       {
         "uiId": "UI-004",
-        "status": "NONE_DETECTED_BY_PIXEL_GATE",
-        "diffRatio": 0.000348,
+        "status": "REPAIR_REQUIRED",
+        "diffRatio": 0.379384,
         "threshold": 0.005,
-        "basis": "Normalized pixel diff is within threshold."
+        "basis": "Normalized pixel diff exceeds threshold."
       },
       {
         "uiId": "UI-005",
-        "status": "NONE_DETECTED_BY_PIXEL_GATE",
-        "diffRatio": 0.000477,
+        "status": "REPAIR_REQUIRED",
+        "diffRatio": 0.300366,
         "threshold": 0.005,
-        "basis": "Normalized pixel diff is within threshold."
+        "basis": "Normalized pixel diff exceeds threshold."
       },
       {
         "uiId": "UI-006",
-        "status": "NONE_DETECTED_BY_PIXEL_GATE",
-        "diffRatio": 0.0001,
+        "status": "REPAIR_REQUIRED",
+        "diffRatio": 0.338469,
         "threshold": 0.005,
-        "basis": "Normalized pixel diff is within threshold."
+        "basis": "Normalized pixel diff exceeds threshold."
       },
       {
         "uiId": "UI-007",
-        "status": "NONE_DETECTED_BY_PIXEL_GATE",
-        "diffRatio": 0.000544,
+        "status": "REPAIR_REQUIRED",
+        "diffRatio": 0.234022,
         "threshold": 0.005,
-        "basis": "Normalized pixel diff is within threshold."
+        "basis": "Normalized pixel diff exceeds threshold."
       },
       {
         "uiId": "UI-008",
-        "status": "NONE_DETECTED_BY_PIXEL_GATE",
-        "diffRatio": 0.000414,
+        "status": "REPAIR_REQUIRED",
+        "diffRatio": 0.380619,
         "threshold": 0.005,
-        "basis": "Normalized pixel diff is within threshold."
+        "basis": "Normalized pixel diff exceeds threshold."
       },
       {
         "uiId": "UI-009",
-        "status": "NONE_DETECTED_BY_PIXEL_GATE",
-        "diffRatio": 0.000396,
+        "status": "REPAIR_REQUIRED",
+        "diffRatio": 0.378858,
         "threshold": 0.005,
-        "basis": "Normalized pixel diff is within threshold."
+        "basis": "Normalized pixel diff exceeds threshold."
       },
       {
         "uiId": "UI-010",
-        "status": "NONE_DETECTED_BY_PIXEL_GATE",
-        "diffRatio": 0.000252,
+        "status": "REPAIR_REQUIRED",
+        "diffRatio": 0.027861,
         "threshold": 0.005,
-        "basis": "Normalized pixel diff is within threshold."
+        "basis": "Normalized pixel diff exceeds threshold."
       }
     ],
-    "passingScreens": 10,
-    "failingScreens": 0,
-    "maxDiffRatio": 0.000796,
+    "passingScreens": 0,
+    "failingScreens": 10,
+    "maxDiffRatio": 0.432423,
     "threshold": 0.005
   },
-  "blockers": [],
+  "blockers": [
+    {
+      "uiId": "UI-001",
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.432423,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff exceeds threshold."
+    },
+    {
+      "uiId": "UI-002",
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.273811,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff exceeds threshold."
+    },
+    {
+      "uiId": "UI-003",
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.377955,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff exceeds threshold."
+    },
+    {
+      "uiId": "UI-004",
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.379384,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff exceeds threshold."
+    },
+    {
+      "uiId": "UI-005",
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.300366,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff exceeds threshold."
+    },
+    {
+      "uiId": "UI-006",
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.338469,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff exceeds threshold."
+    },
+    {
+      "uiId": "UI-007",
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.234022,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff exceeds threshold."
+    },
+    {
+      "uiId": "UI-008",
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.380619,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff exceeds threshold."
+    },
+    {
+      "uiId": "UI-009",
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.378858,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff exceeds threshold."
+    },
+    {
+      "uiId": "UI-010",
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.027861,
+      "threshold": 0.005,
+      "basis": "Normalized pixel diff exceeds threshold."
+    }
+  ],
   "limitations": [],
   "materialDeviations": [
     {
       "uiId": "UI-001",
-      "status": "NONE_DETECTED_BY_PIXEL_GATE",
-      "diffRatio": 0.000037,
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.432423,
       "threshold": 0.005,
-      "basis": "Normalized pixel diff is within threshold."
+      "basis": "Normalized pixel diff exceeds threshold."
     },
     {
       "uiId": "UI-002",
-      "status": "NONE_DETECTED_BY_PIXEL_GATE",
-      "diffRatio": 0.000244,
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.273811,
       "threshold": 0.005,
-      "basis": "Normalized pixel diff is within threshold."
+      "basis": "Normalized pixel diff exceeds threshold."
     },
     {
       "uiId": "UI-003",
-      "status": "NONE_DETECTED_BY_PIXEL_GATE",
-      "diffRatio": 0.000796,
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.377955,
       "threshold": 0.005,
-      "basis": "Normalized pixel diff is within threshold."
+      "basis": "Normalized pixel diff exceeds threshold."
     },
     {
       "uiId": "UI-004",
-      "status": "NONE_DETECTED_BY_PIXEL_GATE",
-      "diffRatio": 0.000348,
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.379384,
       "threshold": 0.005,
-      "basis": "Normalized pixel diff is within threshold."
+      "basis": "Normalized pixel diff exceeds threshold."
     },
     {
       "uiId": "UI-005",
-      "status": "NONE_DETECTED_BY_PIXEL_GATE",
-      "diffRatio": 0.000477,
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.300366,
       "threshold": 0.005,
-      "basis": "Normalized pixel diff is within threshold."
+      "basis": "Normalized pixel diff exceeds threshold."
     },
     {
       "uiId": "UI-006",
-      "status": "NONE_DETECTED_BY_PIXEL_GATE",
-      "diffRatio": 0.0001,
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.338469,
       "threshold": 0.005,
-      "basis": "Normalized pixel diff is within threshold."
+      "basis": "Normalized pixel diff exceeds threshold."
     },
     {
       "uiId": "UI-007",
-      "status": "NONE_DETECTED_BY_PIXEL_GATE",
-      "diffRatio": 0.000544,
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.234022,
       "threshold": 0.005,
-      "basis": "Normalized pixel diff is within threshold."
+      "basis": "Normalized pixel diff exceeds threshold."
     },
     {
       "uiId": "UI-008",
-      "status": "NONE_DETECTED_BY_PIXEL_GATE",
-      "diffRatio": 0.000414,
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.380619,
       "threshold": 0.005,
-      "basis": "Normalized pixel diff is within threshold."
+      "basis": "Normalized pixel diff exceeds threshold."
     },
     {
       "uiId": "UI-009",
-      "status": "NONE_DETECTED_BY_PIXEL_GATE",
-      "diffRatio": 0.000396,
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.378858,
       "threshold": 0.005,
-      "basis": "Normalized pixel diff is within threshold."
+      "basis": "Normalized pixel diff exceeds threshold."
     },
     {
       "uiId": "UI-010",
-      "status": "NONE_DETECTED_BY_PIXEL_GATE",
-      "diffRatio": 0.000252,
+      "status": "REPAIR_REQUIRED",
+      "diffRatio": 0.027861,
       "threshold": 0.005,
-      "basis": "Normalized pixel diff is within threshold."
+      "basis": "Normalized pixel diff exceeds threshold."
     }
   ],
-  "nextRepair": "T15 pixel gate is within threshold for covered Web screenshots.",
+  "nextRepair": "Repair screens with normalized pixel diffRatio above threshold, then rerun production T13/T14 and T15.",
   "rerunResumeState": {
     "command": "pnpm --filter @auracue/web test:visual",
     "safeToRerun": true,
     "inputs": [
       "docs/auto-execute/auracue-web-ui-reference-map.md",
-      "docs/UI/小程序/P0-*.png",
+      "docs/auto-execute/screenshots/web/T15/reference/*.png",
       "docs/auto-execute/screenshots/web/T13/runtime-smoke/",
       "docs/auto-execute/screenshots/web/T14/owner-click-e2e/"
     ]

@@ -21,4 +21,11 @@ dist/
 *.zip
 docs/auto-execute/logs/**/*.log
 docs/auto-execute/logs/google-package-preview/
+docs/auto-execute/logs/runtime-launch/
 docs/auto-execute/screenshots/google-package-preview/
+docs/auto-execute/screenshots/web/**/*.log
+docs/auto-execute/screenshots/web/**/asset-thumbs/
+docs/auto-execute/screenshots/web/**/asset-thumbs-cleaned/
+docs/auto-execute/screenshots/web/**/asset-thumbs-upload/
+docs/auto-execute/screenshots/web/**/debug-*-reference-scaled-*.png
+docs/auto-execute/screenshots/web/**/icon-contact-sheets/

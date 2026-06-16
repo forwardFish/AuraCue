@@ -6,7 +6,7 @@
   "reference": "docs/auto-execute/screenshots/web/T15/reference/UI-010.png",
   "actual": "docs/auto-execute/screenshots/web/T15/actual/UI-010.png",
   "diff": "docs/auto-execute/screenshots/web/T15/diff/UI-010-diff.png",
-  "referenceSource": "docs/UI/小程序/P0-11-Error-生成失败重试.png",
+  "referenceSource": "docs/auto-execute/screenshots/web/T15/reference/UI-010.png",
   "actualSource": "docs/auto-execute/screenshots/web/T14/owner-click-e2e/owner-upload-failure-upload-failure-ui.png",
   "referenceImage": {
     "width": 941,
@@ -21,26 +21,26 @@
     "sha256": "8d9e3dc50d1bb0f83a306d95e208f3c6803b9b6f496f2ec95fb2e52c5a736abe"
   },
   "diffImage": {
-    "width": 840,
-    "height": 920,
-    "bytes": 455574,
-    "sha256": "670728a663898d3df776fac5998afcb84d5124bd2c626be1a864a8bf61061c5e"
+    "width": 792,
+    "height": 693,
+    "bytes": 672846,
+    "sha256": "e40d6e846184aa3190daef3bfee9562fb7a14e433580424262406f57c5087f10"
   },
   "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
   "normalizedPixelDiff": {
     "width": 390,
     "height": 693,
     "totalPixels": 270270,
-    "changedPixels": 68,
-    "diffRatio": 0.000252,
-    "averageChannelDelta": 1.158,
-    "maxChannelDelta": 21.333,
+    "changedPixels": 7530,
+    "diffRatio": 0.027861,
+    "averageChannelDelta": 1.932,
+    "maxChannelDelta": 64.333,
     "changeThresholdPerPixel": 12
   },
-  "diffRatio": 0.000252,
+  "diffRatio": 0.027861,
   "threshold": 0.005,
-  "pixelPerfectStatus": "PASS",
-  "materialDeviation": "NONE_DETECTED_BY_PIXEL_GATE",
+  "pixelPerfectStatus": "REPAIR_REQUIRED",
+  "materialDeviation": "REPAIR_REQUIRED",
   "notes": [
     "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
     "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."

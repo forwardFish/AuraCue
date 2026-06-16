@@ -1,0 +1,468 @@
+{
+  "sourceIconDir": "docs/UI/小程序/icon",
+  "sourceIconCount": 102,
+  "runtimeAssetCount": 26,
+  "runtimeAssetsWithoutSourceHashMatch": [],
+  "runtimeAssetsWithoutCodeReference": [],
+  "duplicateHashGroups": [],
+  "mapping": [
+    {
+      "semanticName": "common-brand-lotus.png",
+      "runtimePath": "apps/web/public/aura-assets/common-brand-lotus.png",
+      "sha256": "e70936f9f7f9b4aea62a59ef0379dd1fc9fd4b28da898dba61bcbab617203e70",
+      "sourceIconFile": "common-brand-lotus.png",
+      "sourceIconPath": "docs/UI/小程序/icon/common-brand-lotus.png",
+      "references": [
+        {
+          "file": "apps/web/components/web-shell.tsx",
+          "line": 57
+        },
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 322
+        },
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 342
+        }
+      ]
+    },
+    {
+      "semanticName": "common-header-avatar.png",
+      "runtimePath": "apps/web/public/aura-assets/common-header-avatar.png",
+      "sha256": "a37d710d3b876e7c78ea115257d1a6b4b96583f3bcaf5f876007563ead2d35b1",
+      "sourceIconFile": "common-header-avatar.png",
+      "sourceIconPath": "docs/UI/小程序/icon/common-header-avatar.png",
+      "references": [
+        {
+          "file": "apps/web/components/web-shell.tsx",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "semanticName": "common-header-gift.png",
+      "runtimePath": "apps/web/public/aura-assets/common-header-gift.png",
+      "sha256": "c0159ca4c0c479290166c31ebc8dc68e7a4d0b6383c8150a91e9986a482da1ed",
+      "sourceIconFile": "common-header-gift.png",
+      "sourceIconPath": "docs/UI/小程序/icon/common-header-gift.png",
+      "references": [
+        {
+          "file": "apps/web/components/web-shell.tsx",
+          "line": 62
+        }
+      ]
+    },
+    {
+      "semanticName": "common-sparkle-gold.png",
+      "runtimePath": "apps/web/public/aura-assets/common-sparkle-gold.png",
+      "sha256": "0504edc92fec0d113bef25316a029cd2a14ef201b1308258c4158e14f18a6c94",
+      "sourceIconFile": "common-sparkle-gold.png",
+      "sourceIconPath": "docs/UI/小程序/icon/common-sparkle-gold.png",
+      "references": [
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 26
+        },
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 151
+        },
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 160
+        },
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 191
+        },
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 193
+        },
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 258
+        },
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 265
+        },
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 267
+        },
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 384
+        },
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 386
+        },
+        {
+          "file": "apps/web/components/web-shell.tsx",
+          "line": 49
+        },
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 215
+        },
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 217
+        },
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 303
+        }
+      ]
+    },
+    {
+      "semanticName": "common-tab-home.png",
+      "runtimePath": "apps/web/public/aura-assets/common-tab-home.png",
+      "sha256": "eba8a79907f2e6a03fd57f4655693d498a2ea0903b98c2315e54b4f6c5ce58b7",
+      "sourceIconFile": "common-tab-home.png",
+      "sourceIconPath": "docs/UI/小程序/icon/common-tab-home.png",
+      "references": [
+        {
+          "file": "apps/web/components/web-shell.tsx",
+          "line": 76
+        }
+      ]
+    },
+    {
+      "semanticName": "common-tab-profile.png",
+      "runtimePath": "apps/web/public/aura-assets/common-tab-profile.png",
+      "sha256": "786235fd27857e2e78d590c30373e5fe3517a498d238b92a70279b705ea5dc2c",
+      "sourceIconFile": "common-tab-profile.png",
+      "sourceIconPath": "docs/UI/小程序/icon/common-tab-profile.png",
+      "references": [
+        {
+          "file": "apps/web/components/web-shell.tsx",
+          "line": 81
+        }
+      ]
+    },
+    {
+      "semanticName": "context-nav-back.png",
+      "runtimePath": "apps/web/public/aura-assets/context-nav-back.png",
+      "sha256": "eba0cbc2ced94fdbbee9d566263bf3cf3838fa704c0f682897fb4ca8a9b0b62b",
+      "sourceIconFile": "context-nav-back.png",
+      "sourceIconPath": "docs/UI/小程序/icon/context-nav-back.png",
+      "references": [
+        {
+          "file": "apps/web/components/web-shell.tsx",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "semanticName": "context-option-date-heart.png",
+      "runtimePath": "apps/web/public/aura-assets/context-option-date-heart.png",
+      "sha256": "91d317b20fb92a98da3fa50d3602040b7d40e5af09a5fc0814b1bd374e2169a4",
+      "sourceIconFile": "context-option-date-heart.png",
+      "sourceIconPath": "docs/UI/小程序/icon/context-option-date-heart.png",
+      "references": [
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "semanticName": "context-option-interview-clipboard.png",
+      "runtimePath": "apps/web/public/aura-assets/context-option-interview-clipboard.png",
+      "sha256": "e4045a4182ce7cd17c40db1e64203d1b5d84ab5b6e32eaa109f97d59ffb63539",
+      "sourceIconFile": "context-option-interview-clipboard.png",
+      "sourceIconPath": "docs/UI/小程序/icon/context-option-interview-clipboard.png",
+      "references": [
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 52
+        }
+      ]
+    },
+    {
+      "semanticName": "context-option-luck-clover.png",
+      "runtimePath": "apps/web/public/aura-assets/context-option-luck-clover.png",
+      "sha256": "36f34402aa4c034efca01d1e6cef1df78fbe4cef0f7ea8ecef627360e6163542",
+      "sourceIconFile": "context-option-luck-clover.png",
+      "sourceIconPath": "docs/UI/小程序/icon/context-option-luck-clover.png",
+      "references": [
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 54
+        }
+      ]
+    },
+    {
+      "semanticName": "context-option-party-hat.png",
+      "runtimePath": "apps/web/public/aura-assets/context-option-party-hat.png",
+      "sha256": "790437ae5db212ea5f7a04d9a939e071680f7c033ab13a64299f2ea2f47ec214",
+      "sourceIconFile": "context-option-party-hat.png",
+      "sourceIconPath": "docs/UI/小程序/icon/context-option-party-hat.png",
+      "references": [
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "semanticName": "context-option-selected-check.png",
+      "runtimePath": "apps/web/public/aura-assets/context-option-selected-check.png",
+      "sha256": "526278dee4f67907fd9f2f0519fd03a9b26e9461c9a8945d7d5231f4a545b590",
+      "sourceIconFile": "context-option-selected-check.png",
+      "sourceIconPath": "docs/UI/小程序/icon/context-option-selected-check.png",
+      "references": [
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 248
+        },
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 207
+        },
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 212
+        },
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 294
+        },
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 299
+        }
+      ]
+    },
+    {
+      "semanticName": "context-option-travel-suitcase.png",
+      "runtimePath": "apps/web/public/aura-assets/context-option-travel-suitcase.png",
+      "sha256": "1ed274fef20e9e0635767f9d8e641994d2100c3991d5a918eb8ef7228b1a5d24",
+      "sourceIconFile": "context-option-travel-suitcase.png",
+      "sourceIconPath": "docs/UI/小程序/icon/context-option-travel-suitcase.png",
+      "references": [
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "semanticName": "context-option-work-briefcase.png",
+      "runtimePath": "apps/web/public/aura-assets/context-option-work-briefcase.png",
+      "sha256": "0c7db1353735f3230b540341c925d2c91853a04104675bdcaf86d9813829bb9c",
+      "sourceIconFile": "context-option-work-briefcase.png",
+      "sourceIconPath": "docs/UI/小程序/icon/context-option-work-briefcase.png",
+      "references": [
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "semanticName": "home-mood-calm-leaf.png",
+      "runtimePath": "apps/web/public/aura-assets/home-mood-calm-leaf.png",
+      "sha256": "090123b7970d827461ced9487eb74630f4bee68959384254b542ccd28201fff9",
+      "sourceIconFile": "home-mood-calm-leaf.png",
+      "sourceIconPath": "docs/UI/小程序/icon/home-mood-calm-leaf.png",
+      "references": [
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 44
+        },
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 154
+        }
+      ]
+    },
+    {
+      "semanticName": "home-mood-romantic-heart.png",
+      "runtimePath": "apps/web/public/aura-assets/home-mood-romantic-heart.png",
+      "sha256": "6dc2b83d3f49117a0cb6b471ead9b95901b0513a7996604c9c2e48ca79a86477",
+      "sourceIconFile": "home-mood-romantic-heart.png",
+      "sourceIconPath": "docs/UI/小程序/icon/home-mood-romantic-heart.png",
+      "references": [
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 35
+        },
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 157
+        }
+      ]
+    },
+    {
+      "semanticName": "mood-calm-lotus-stones-art.png",
+      "runtimePath": "apps/web/public/aura-assets/mood-calm-lotus-stones-art.png",
+      "sha256": "7db3e45225a405fed123b60c83f6770cf97bdbc70b468812173c7d8f2dc7d2cd",
+      "sourceIconFile": "mood-calm-lotus-stones-art.png",
+      "sourceIconPath": "docs/UI/小程序/icon/mood-calm-lotus-stones-art.png",
+      "references": [
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "semanticName": "mood-confident-woman-art.png",
+      "runtimePath": "apps/web/public/aura-assets/mood-confident-woman-art.png",
+      "sha256": "d4e7eda8f8526f376ab5b3f33a123ad7858d21041364c3257de8bf61b2c901d3",
+      "sourceIconFile": "mood-confident-woman-art.png",
+      "sourceIconPath": "docs/UI/小程序/icon/mood-confident-woman-art.png",
+      "references": [
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 24
+        },
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 325
+        },
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 348
+        },
+        {
+          "file": "apps/web/components/result-activation-flow.tsx",
+          "line": 532
+        }
+      ]
+    },
+    {
+      "semanticName": "mood-romantic-rose-art.png",
+      "runtimePath": "apps/web/public/aura-assets/mood-romantic-rose-art.png",
+      "sha256": "2cd6283a893bafd12775c01ae37395a89b60e96f2c3e4473b9bcb40467fee011",
+      "sourceIconFile": "mood-romantic-rose-art.png",
+      "sourceIconPath": "docs/UI/小程序/icon/mood-romantic-rose-art.png",
+      "references": [
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 33
+        },
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 326
+        },
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 349
+        },
+        {
+          "file": "apps/web/components/result-activation-flow.tsx",
+          "line": 533
+        }
+      ]
+    },
+    {
+      "semanticName": "share-action-aura-cards-lotus.png",
+      "runtimePath": "apps/web/public/aura-assets/share-action-aura-cards-lotus.png",
+      "sha256": "32c327c918f6f33bd9355fa9dc5d8825e8893853f10543f93b054431f4615850",
+      "sourceIconFile": "share-action-aura-cards-lotus.png",
+      "sourceIconPath": "docs/UI/小程序/icon/share-action-aura-cards-lotus.png",
+      "references": [
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 210
+        },
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 297
+        }
+      ]
+    },
+    {
+      "semanticName": "share-action-photos.png",
+      "runtimePath": "apps/web/public/aura-assets/share-action-photos.png",
+      "sha256": "829714958e4d1eb6f73ab20db9ee0b404cc8f0b26d6cb9e91a24ef617df88b3b",
+      "sourceIconFile": "share-action-photos.png",
+      "sourceIconPath": "docs/UI/小程序/icon/share-action-photos.png",
+      "references": [
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 205
+        },
+        {
+          "file": "apps/web/components/share-save-flow.tsx",
+          "line": 292
+        }
+      ]
+    },
+    {
+      "semanticName": "share-nav-close.png",
+      "runtimePath": "apps/web/public/aura-assets/share-nav-close.png",
+      "sha256": "63dcf93737e1ef32478d11ba58c594e8b7aa6bdcd7d01fec99ee67fb73a19785",
+      "sourceIconFile": "share-nav-close.png",
+      "sourceIconPath": "docs/UI/小程序/icon/share-nav-close.png",
+      "references": [
+        {
+          "file": "apps/web/components/web-shell.tsx",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "semanticName": "share-status-success-check.png",
+      "runtimePath": "apps/web/public/aura-assets/share-status-success-check.png",
+      "sha256": "2cb20aa14030473490618ba68124e108b9e03a9c297be87935a5280c83323b90",
+      "sourceIconFile": "share-status-success-check.png",
+      "sourceIconPath": "docs/UI/小程序/icon/share-status-success-check.png",
+      "references": [
+        {
+          "file": "apps/web/app/globals.css",
+          "line": 1541
+        },
+        {
+          "file": "apps/web/app/globals.css",
+          "line": 1550
+        }
+      ]
+    },
+    {
+      "semanticName": "upload-action-camera.png",
+      "runtimePath": "apps/web/public/aura-assets/upload-action-camera.png",
+      "sha256": "4b6360d6df1985a0398ae8f1ebebfdef4792b6072ae8bc749d1520fbce8e06e1",
+      "sourceIconFile": "upload-action-camera.png",
+      "sourceIconPath": "docs/UI/小程序/icon/upload-action-camera.png",
+      "references": [
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 358
+        }
+      ]
+    },
+    {
+      "semanticName": "upload-outfit-hero-dress.png",
+      "runtimePath": "apps/web/public/aura-assets/upload-outfit-hero-dress.png",
+      "sha256": "7e494d2734357bda56e123a7380cf9e80b916853a4d3ce1514200c541f945251",
+      "sourceIconFile": "upload-outfit-hero-dress.png",
+      "sourceIconPath": "docs/UI/小程序/icon/upload-outfit-hero-dress.png",
+      "references": [
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 356
+        }
+      ]
+    },
+    {
+      "semanticName": "upload-privacy-shield.png",
+      "runtimePath": "apps/web/public/aura-assets/upload-privacy-shield.png",
+      "sha256": "1d36c15e5fa5dc42e2c0847e1518d46cc922eab81e194d60b9997cf35c9808ea",
+      "sourceIconFile": "upload-privacy-shield.png",
+      "sourceIconPath": "docs/UI/小程序/icon/upload-privacy-shield.png",
+      "references": [
+        {
+          "file": "apps/web/components/create-flow.tsx",
+          "line": 392
+        }
+      ]
+    }
+  ]
+}

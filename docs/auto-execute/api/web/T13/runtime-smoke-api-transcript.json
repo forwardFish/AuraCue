@@ -1,6 +1,6 @@
 [
   {
-    "id": "268744.25",
+    "id": "381288.54",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/identity/anonymous",
@@ -9,11 +9,56 @@
       "platform": "web",
       "timezone": "Asia/Shanghai"
     },
-    "timestamp": "2026-06-06T02:32:48.773Z",
+    "timestamp": "2026-06-11T11:54:07.569Z",
     "apiId": "API-001"
   },
   {
-    "id": "268744.30",
+    "id": "381288.54",
+    "phase": "response",
+    "url": "http://127.0.0.1:3213/api/v1/identity/anonymous",
+    "path": "/api/v1/identity/anonymous",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-11T11:54:07.815Z",
+    "body": {
+      "ok": true,
+      "requestId": "94e8302b-a967-4882-a3e2-b318a88c9bd8",
+      "data": {
+        "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
+        "created": true
+      }
+    },
+    "apiId": "API-001"
+  },
+  {
+    "id": "381288.56",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/today?anonymousId=anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
+    "path": "/api/v1/aura-cards/today",
+    "postData": null,
+    "timestamp": "2026-06-11T11:54:07.818Z",
+    "apiId": "API-002"
+  },
+  {
+    "id": "381288.56",
+    "phase": "response",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/today?anonymousId=anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
+    "path": "/api/v1/aura-cards/today",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-11T11:54:07.869Z",
+    "body": {
+      "ok": true,
+      "requestId": "09be6114-39dc-4f23-bc40-b583ee5af4fa",
+      "data": {
+        "hasActiveCard": false
+      }
+    },
+    "apiId": "API-002"
+  },
+  {
+    "id": "381288.57",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
@@ -22,44 +67,16 @@
       "eventName": "select_mood",
       "page": "/",
       "platform": "web",
-      "anonymousId": null,
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "payload": {
         "mood": "confident"
       }
     },
-    "timestamp": "2026-06-06T02:32:49.012Z",
+    "timestamp": "2026-06-11T11:54:08.095Z",
     "apiId": "API-013"
   },
   {
-    "id": "268744.25",
-    "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/identity/anonymous",
-    "path": "/api/v1/identity/anonymous",
-    "status": 200,
-    "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:49.029Z",
-    "body": {
-      "ok": true,
-      "requestId": "a9560e42-7af8-4102-aea1-9abdccb394e4",
-      "data": {
-        "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
-        "created": true
-      }
-    },
-    "apiId": "API-001"
-  },
-  {
-    "id": "268744.31",
-    "phase": "request",
-    "method": "GET",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/today?anonymousId=anon_88481e3ff2a44534ae9748dc70acdc8f",
-    "path": "/api/v1/aura-cards/today",
-    "postData": null,
-    "timestamp": "2026-06-06T02:32:49.030Z",
-    "apiId": "API-002"
-  },
-  {
-    "id": "268744.32",
+    "id": "381288.58",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
@@ -68,27 +85,27 @@
       "eventName": "click_start_card",
       "page": "/",
       "platform": "web",
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "payload": {
         "mood": "confident"
       }
     },
-    "timestamp": "2026-06-06T02:32:49.042Z",
+    "timestamp": "2026-06-11T11:54:08.124Z",
     "apiId": "API-013"
   },
   {
-    "id": "268744.30",
+    "id": "381288.57",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:49.081Z",
+    "timestamp": "2026-06-11T11:54:08.126Z",
     "body": {
       "ok": true,
-      "requestId": "9f0bfcbb-1ae4-451f-84a1-5ab1523eb752",
+      "requestId": "670397a1-14b2-4b59-a901-ff821af3c9e6",
       "data": {
-        "analyticsEventId": "cmq1qn6wg0001fwvc7c4k9aqb",
+        "analyticsEventId": "cmq9fwb540001d0vc28bhusht",
         "eventName": "select_mood",
         "page": "/"
       }
@@ -96,35 +113,18 @@
     "apiId": "API-013"
   },
   {
-    "id": "268744.31",
-    "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/today?anonymousId=anon_88481e3ff2a44534ae9748dc70acdc8f",
-    "path": "/api/v1/aura-cards/today",
-    "status": 200,
-    "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:49.118Z",
-    "body": {
-      "ok": true,
-      "requestId": "1932e44b-fd2c-4d2d-9a5c-692bc5e3a1b3",
-      "data": {
-        "hasActiveCard": false
-      }
-    },
-    "apiId": "API-002"
-  },
-  {
-    "id": "268744.32",
+    "id": "381288.58",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:49.136Z",
+    "timestamp": "2026-06-11T11:54:08.137Z",
     "body": {
       "ok": true,
-      "requestId": "baca4b3a-838f-44ba-9a38-2e7594abced2",
+      "requestId": "2a8b5737-6c2b-41f7-8403-8da756f3d175",
       "data": {
-        "analyticsEventId": "cmq1qn6xz0002fwvcklyg6b8q",
+        "analyticsEventId": "cmq9fwb5u0002d0vcfhchtiaz",
         "eventName": "click_start_card",
         "page": "/"
       }
@@ -132,7 +132,7 @@
     "apiId": "API-013"
   },
   {
-    "id": "268744.40",
+    "id": "381288.95",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
@@ -143,25 +143,25 @@
       "platform": "web",
       "anonymousId": null,
       "payload": {
-        "context": "Work"
+        "context": "work"
       }
     },
-    "timestamp": "2026-06-06T02:32:49.461Z",
+    "timestamp": "2026-06-11T11:54:08.406Z",
     "apiId": "API-013"
   },
   {
-    "id": "268744.40",
+    "id": "381288.95",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:49.475Z",
+    "timestamp": "2026-06-11T11:54:08.420Z",
     "body": {
       "ok": true,
-      "requestId": "c7af8e3f-65ec-4cc7-9c79-e7cda1bb8bac",
+      "requestId": "4332990b-c63c-4a53-aaae-b3966f534ffb",
       "data": {
-        "analyticsEventId": "cmq1qn77g0003fwvcgcnxgyut",
+        "analyticsEventId": "cmq9fwbdo0003d0vcjffa4g94",
         "eventName": "select_context",
         "page": "/create/context"
       }
@@ -169,7 +169,7 @@
     "apiId": "API-013"
   },
   {
-    "id": "268744.45",
+    "id": "381288.121",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/identity/anonymous",
@@ -177,53 +177,53 @@
     "postData": {
       "platform": "web",
       "timezone": "Asia/Shanghai",
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f"
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b"
     },
-    "timestamp": "2026-06-06T02:32:49.759Z",
+    "timestamp": "2026-06-11T11:54:08.906Z",
     "apiId": "API-001"
   },
   {
-    "id": "268744.45",
+    "id": "381288.121",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/identity/anonymous",
     "path": "/api/v1/identity/anonymous",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:49.782Z",
+    "timestamp": "2026-06-11T11:54:08.924Z",
     "body": {
       "ok": true,
-      "requestId": "41f0afa6-ba51-475a-ba54-4f67a548f90d",
+      "requestId": "7c0a498b-0d3f-42eb-b726-0702e5357ddc",
       "data": {
-        "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+        "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
         "created": false
       }
     },
     "apiId": "API-001"
   },
   {
-    "id": "268744.46",
+    "id": "381288.122",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/uploads/outfit",
     "path": "/api/v1/uploads/outfit",
     "postData": null,
-    "timestamp": "2026-06-06T02:32:49.784Z",
+    "timestamp": "2026-06-11T11:54:08.929Z",
     "apiId": "API-003"
   },
   {
-    "id": "268744.46",
+    "id": "381288.122",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/uploads/outfit",
     "path": "/api/v1/uploads/outfit",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:49.804Z",
+    "timestamp": "2026-06-11T11:54:08.948Z",
     "body": {
       "ok": true,
-      "requestId": "1b324500-992c-41c2-8cd8-80c1690d1465",
+      "requestId": "1d49d288-188a-425a-81b1-afbe068c7ecf",
       "data": {
-        "uploadId": "cmq1qn7gl0004fwvc52ka0nkw",
-        "publicUrl": "/uploads/upload_312a8a3cd73f447fa99a900e18afc9f1.png",
+        "uploadId": "cmq9fwbsd0004d0vc4e1eufdc",
+        "publicUrl": "/uploads/upload_072fc8e3965f47aca7204e020bbbc352.png",
         "styleNotes": {
           "mood": "soft polished",
           "source": "local-metadata-only",
@@ -234,7 +234,7 @@
     "apiId": "API-003"
   },
   {
-    "id": "268744.47",
+    "id": "381288.123",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
@@ -243,27 +243,27 @@
       "eventName": "upload_outfit_success",
       "page": "/create/upload",
       "platform": "web",
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "payload": {
-        "uploadId": "cmq1qn7gl0004fwvc52ka0nkw"
+        "uploadId": "cmq9fwbsd0004d0vc4e1eufdc"
       }
     },
-    "timestamp": "2026-06-06T02:32:49.806Z",
+    "timestamp": "2026-06-11T11:54:08.950Z",
     "apiId": "API-013"
   },
   {
-    "id": "268744.47",
+    "id": "381288.123",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:49.820Z",
+    "timestamp": "2026-06-11T11:54:08.970Z",
     "body": {
       "ok": true,
-      "requestId": "3a5a8d8b-6fa0-470e-8016-bd9ccc2ec68d",
+      "requestId": "7ad1b43b-54a6-4092-a730-c515e6815be0",
       "data": {
-        "analyticsEventId": "cmq1qn7h20005fwvcd3hafua8",
+        "analyticsEventId": "cmq9fwbsq0005d0vcxhmul0mg",
         "eventName": "upload_outfit_success",
         "page": "/create/upload"
       }
@@ -271,7 +271,7 @@
     "apiId": "API-013"
   },
   {
-    "id": "268744.50",
+    "id": "381288.142",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/identity/anonymous",
@@ -279,60 +279,60 @@
     "postData": {
       "platform": "web",
       "timezone": "Asia/Shanghai",
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f"
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b"
     },
-    "timestamp": "2026-06-06T02:32:50.174Z",
+    "timestamp": "2026-06-11T11:54:09.367Z",
     "apiId": "API-001"
   },
   {
-    "id": "268744.50",
+    "id": "381288.142",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/identity/anonymous",
     "path": "/api/v1/identity/anonymous",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:50.189Z",
+    "timestamp": "2026-06-11T11:54:09.382Z",
     "body": {
       "ok": true,
-      "requestId": "21d17654-6469-4f15-a2c4-b9939c8838f7",
+      "requestId": "e527ab77-4ce6-4680-b0e6-bbb69016284d",
       "data": {
-        "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+        "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
         "created": false
       }
     },
     "apiId": "API-001"
   },
   {
-    "id": "268744.52",
+    "id": "381288.143",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/draw-sessions/start",
     "path": "/api/v1/draw-sessions/start",
     "postData": {
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "platform": "web",
       "mood": "confident",
       "context": "work",
-      "uploadId": "cmq1qn7gl0004fwvc52ka0nkw"
+      "uploadId": "cmq9fwbsd0004d0vc4e1eufdc"
     },
-    "timestamp": "2026-06-06T02:32:50.190Z",
+    "timestamp": "2026-06-11T11:54:09.383Z",
     "apiId": "API-004"
   },
   {
-    "id": "268744.52",
+    "id": "381288.143",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/draw-sessions/start",
     "path": "/api/v1/draw-sessions/start",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:50.230Z",
+    "timestamp": "2026-06-11T11:54:09.417Z",
     "body": {
       "ok": true,
-      "requestId": "dd24fc59-3d1d-482a-bf00-74e32344d337",
+      "requestId": "c8e24225-06e6-40ed-9c48-88fce2a284e1",
       "data": {
-        "drawSessionId": "cmq1qn7s50006fwvcmql3a7ny",
-        "drawSeed": "seed_1f74153aa06ff72c",
-        "expiresAt": "2026-06-06T03:32:50.202Z",
+        "drawSessionId": "cmq9fwc5b0006d0vccdl4chnk",
+        "drawSeed": "seed_fe495fa6b0e73a6a",
+        "expiresAt": "2026-06-11T12:54:09.395Z",
         "cards": [
           {
             "position": 1,
@@ -352,7 +352,7 @@
     "apiId": "API-004"
   },
   {
-    "id": "268744.53",
+    "id": "381288.144",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
@@ -361,27 +361,27 @@
       "eventName": "draw_session_started",
       "page": "/create/draw",
       "platform": "web",
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "payload": {
-        "drawSessionId": "cmq1qn7s50006fwvcmql3a7ny"
+        "drawSessionId": "cmq9fwc5b0006d0vccdl4chnk"
       }
     },
-    "timestamp": "2026-06-06T02:32:50.231Z",
+    "timestamp": "2026-06-11T11:54:09.418Z",
     "apiId": "API-013"
   },
   {
-    "id": "268744.53",
+    "id": "381288.144",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:50.245Z",
+    "timestamp": "2026-06-11T11:54:09.430Z",
     "body": {
       "ok": true,
-      "requestId": "329d1259-a5f7-4db7-a7ae-8e9d79751a53",
+      "requestId": "d1b9c127-44b6-4d4d-a1b3-eb0523c4c2bf",
       "data": {
-        "analyticsEventId": "cmq1qn7st0007fwvcckx6vg2a",
+        "analyticsEventId": "cmq9fwc5r0007d0vc1nrmv6mv",
         "eventName": "draw_session_started",
         "page": "/create/draw"
       }
@@ -389,7 +389,7 @@
     "apiId": "API-013"
   },
   {
-    "id": "268744.54",
+    "id": "381288.145",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
@@ -398,31 +398,31 @@
       "eventName": "draw_card_selected",
       "page": "/create/draw",
       "platform": "web",
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "payload": {
         "drawPosition": 2
       }
     },
-    "timestamp": "2026-06-06T02:32:50.603Z",
+    "timestamp": "2026-06-11T11:54:09.764Z",
     "apiId": "API-013"
   },
   {
-    "id": "268744.55",
+    "id": "381288.146",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/generations/start",
     "path": "/api/v1/generations/start",
     "postData": {
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "platform": "web",
-      "drawSessionId": "cmq1qn7s50006fwvcmql3a7ny",
+      "drawSessionId": "cmq9fwc5b0006d0vccdl4chnk",
       "drawPosition": 2
     },
-    "timestamp": "2026-06-06T02:32:50.619Z",
+    "timestamp": "2026-06-11T11:54:09.783Z",
     "apiId": "API-005"
   },
   {
-    "id": "268744.56",
+    "id": "381288.147",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
@@ -431,28 +431,28 @@
       "eventName": "generation_started",
       "page": "/create/draw",
       "platform": "web",
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "payload": {
-        "drawSessionId": "cmq1qn7s50006fwvcmql3a7ny",
+        "drawSessionId": "cmq9fwc5b0006d0vccdl4chnk",
         "drawPosition": 2
       }
     },
-    "timestamp": "2026-06-06T02:32:50.619Z",
+    "timestamp": "2026-06-11T11:54:09.783Z",
     "apiId": "API-013"
   },
   {
-    "id": "268744.54",
+    "id": "381288.145",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:50.628Z",
+    "timestamp": "2026-06-11T11:54:09.790Z",
     "body": {
       "ok": true,
-      "requestId": "d43a60cb-b631-4edd-aef5-a3dcf7d6d2e8",
+      "requestId": "b0d54e58-8ae4-4459-812c-cb770b28b269",
       "data": {
-        "analyticsEventId": "cmq1qn8330008fwvcpua60o1p",
+        "analyticsEventId": "cmq9fwcfd0008d0vcrz60ej3u",
         "eventName": "draw_card_selected",
         "page": "/create/draw"
       }
@@ -460,20 +460,20 @@
     "apiId": "API-013"
   },
   {
-    "id": "268744.55",
+    "id": "381288.146",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/generations/start",
     "path": "/api/v1/generations/start",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:50.666Z",
+    "timestamp": "2026-06-11T11:54:09.820Z",
     "body": {
       "ok": true,
-      "requestId": "d99f3848-09f4-447e-93cf-f416614e3f74",
+      "requestId": "24f030ca-0d98-41e8-bb6f-786e32aeebc0",
       "data": {
-        "jobId": "cmq1qn8440009fwvcl47alhur",
+        "jobId": "cmq9fwcgb0009d0vcecsmgnjy",
         "status": "success",
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
         "generationSource": "local-fallback",
         "fallbackUsed": true,
         "provider": "mock-fallback"
@@ -482,7 +482,7 @@
     "apiId": "API-005"
   },
   {
-    "id": "268744.57",
+    "id": "381288.148",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
@@ -491,27 +491,27 @@
       "eventName": "generation_completed",
       "page": "/create/draw",
       "platform": "web",
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "payload": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc"
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley"
       }
     },
-    "timestamp": "2026-06-06T02:32:50.670Z",
+    "timestamp": "2026-06-11T11:54:09.822Z",
     "apiId": "API-013"
   },
   {
-    "id": "268744.56",
+    "id": "381288.147",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:50.679Z",
+    "timestamp": "2026-06-11T11:54:09.832Z",
     "body": {
       "ok": true,
-      "requestId": "30e8f9a7-87ff-4dad-a933-f7e909711070",
+      "requestId": "b586a6da-c1be-4cda-bc2b-cb13d1ef6dbc",
       "data": {
-        "analyticsEventId": "cmq1qn84v000bfwvcc7fhk1sm",
+        "analyticsEventId": "cmq9fwcgx000bd0vcvoftfbx9",
         "eventName": "generation_started",
         "page": "/create/draw"
       }
@@ -519,18 +519,18 @@
     "apiId": "API-013"
   },
   {
-    "id": "268744.57",
+    "id": "381288.148",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:50.690Z",
+    "timestamp": "2026-06-11T11:54:09.847Z",
     "body": {
       "ok": true,
-      "requestId": "b347cf01-fcc8-492d-8fc0-95226849b790",
+      "requestId": "7255fa49-d1ea-4106-8fed-731b7bdebd17",
       "data": {
-        "analyticsEventId": "cmq1qn856000cfwvcrbz4zn2u",
+        "analyticsEventId": "cmq9fwch9000cd0vc9gisryl6",
         "eventName": "generation_completed",
         "page": "/create/draw"
       }
@@ -538,32 +538,32 @@
     "apiId": "API-013"
   },
   {
-    "id": "268744.63",
+    "id": "381288.158",
     "phase": "request",
     "method": "GET",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
     "postData": null,
-    "timestamp": "2026-06-06T02:32:50.767Z",
+    "timestamp": "2026-06-11T11:54:09.964Z",
     "apiId": "API-007"
   },
   {
-    "id": "268744.63",
+    "id": "381288.158",
     "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:50.783Z",
+    "timestamp": "2026-06-11T11:54:09.991Z",
     "body": {
       "ok": true,
-      "requestId": "14dab45e-f12f-438a-9d17-66ffd0c63cc0",
+      "requestId": "7df40fc9-4a0d-4541-a952-f4b437d40b67",
       "data": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
-        "ownerAnonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
+        "ownerAnonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
         "mood": "confident",
         "context": "work",
-        "drawSeed": "seed_1f74153aa06ff72c",
+        "drawSeed": "seed_fe495fa6b0e73a6a",
         "drawPosition": 2,
         "content": {
           "title": "Meeting Glow Aura Card",
@@ -616,7 +616,7 @@
               "label": "polished jade"
             }
           ],
-          "generatedAt": "2026-06-06T02:32:50.637Z",
+          "generatedAt": "2026-06-11T11:54:09.798Z",
           "generationSource": "local-fallback",
           "fallbackUsed": true
         },
@@ -624,43 +624,43 @@
         "isActivated": false,
         "activatedAt": null,
         "activation": null,
-        "createdAt": "2026-06-06T02:32:50.649Z",
-        "updatedAt": "2026-06-06T02:32:50.649Z"
+        "createdAt": "2026-06-11T11:54:09.807Z",
+        "updatedAt": "2026-06-11T11:54:09.807Z"
       }
     },
     "apiId": "API-007"
   },
   {
-    "id": "268744.65",
+    "id": "381288.160",
     "phase": "request",
     "method": "POST",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/render",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/render",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/render",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/render",
     "postData": {
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "platform": "web"
     },
-    "timestamp": "2026-06-06T02:32:50.785Z",
+    "timestamp": "2026-06-11T11:54:09.991Z",
     "apiId": "API-008"
   },
   {
-    "id": "268744.65",
+    "id": "381288.160",
     "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/render",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/render",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/render",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/render",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:50.813Z",
+    "timestamp": "2026-06-11T11:54:10.015Z",
     "body": {
       "ok": true,
-      "requestId": "4f85eb4f-7c98-4534-98ca-3cc69ea8ed05",
+      "requestId": "57611c40-d086-4f14-8829-3fe88bf3632a",
       "data": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
-        "shareImageUrl": "local://share-images/cmq1qn849000afwvcmw0x3wcc-template-story-001.png",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
+        "shareImageUrl": "local://share-images/cmq9fwcgf000ad0vcw3w0bley-template-story-001.png",
         "width": 1080,
         "height": 1920,
         "renderer": "deterministic-local-renderer",
-        "deterministicKey": "cmq1qn849000afwvcmw0x3wcc|template-story-001|Meeting Glow Aura Card|Clear Signal Aura|soft ivory|work-confidence-local|Today I am carrying clear signal aura.",
+        "deterministicKey": "cmq9fwcgf000ad0vcw3w0bley|template-story-001|Meeting Glow Aura Card|Clear Signal Aura|soft ivory|work-confidence-local|Today I am carrying clear signal aura.",
         "dataUrlSha256": "6ddea74e481165013168ff4f16f87f092755cdff94b512d701ee0c0d907767ff",
         "reused": false
       }
@@ -668,32 +668,32 @@
     "apiId": "API-008"
   },
   {
-    "id": "268744.66",
+    "id": "381288.161",
     "phase": "request",
     "method": "GET",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
     "postData": null,
-    "timestamp": "2026-06-06T02:32:50.814Z",
+    "timestamp": "2026-06-11T11:54:10.017Z",
     "apiId": "API-007"
   },
   {
-    "id": "268744.66",
+    "id": "381288.161",
     "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:50.840Z",
+    "timestamp": "2026-06-11T11:54:10.028Z",
     "body": {
       "ok": true,
-      "requestId": "d9dbddab-f9fd-4aaf-b455-4c9d8f10d6c6",
+      "requestId": "6f19fb18-f49b-4a53-9648-b4864ef007e3",
       "data": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
-        "ownerAnonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
+        "ownerAnonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
         "mood": "confident",
         "context": "work",
-        "drawSeed": "seed_1f74153aa06ff72c",
+        "drawSeed": "seed_fe495fa6b0e73a6a",
         "drawPosition": 2,
         "content": {
           "title": "Meeting Glow Aura Card",
@@ -746,45 +746,45 @@
               "label": "polished jade"
             }
           ],
-          "generatedAt": "2026-06-06T02:32:50.637Z",
+          "generatedAt": "2026-06-11T11:54:09.798Z",
           "generationSource": "local-fallback",
           "fallbackUsed": true
         },
-        "shareImageUrl": "local://share-images/cmq1qn849000afwvcmw0x3wcc-template-story-001.png",
+        "shareImageUrl": "local://share-images/cmq9fwcgf000ad0vcw3w0bley-template-story-001.png",
         "isActivated": false,
         "activatedAt": null,
         "activation": null,
-        "createdAt": "2026-06-06T02:32:50.649Z",
-        "updatedAt": "2026-06-06T02:32:50.801Z"
+        "createdAt": "2026-06-11T11:54:09.807Z",
+        "updatedAt": "2026-06-11T11:54:10.005Z"
       }
     },
     "apiId": "API-007"
   },
   {
-    "id": "268744.67",
+    "id": "381288.168",
     "phase": "request",
     "method": "GET",
-    "url": "http://127.0.0.1:3213/api/v1/generation-jobs/cmq1qn8440009fwvcl47alhur?anonymousId=anon_88481e3ff2a44534ae9748dc70acdc8f",
-    "path": "/api/v1/generation-jobs/cmq1qn8440009fwvcl47alhur",
+    "url": "http://127.0.0.1:3213/api/v1/generation-jobs/cmq9fwcgb0009d0vcecsmgnjy?anonymousId=anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
+    "path": "/api/v1/generation-jobs/cmq9fwcgb0009d0vcecsmgnjy",
     "postData": null,
-    "timestamp": "2026-06-06T02:32:50.897Z",
+    "timestamp": "2026-06-11T11:54:10.067Z",
     "apiId": "API-006"
   },
   {
-    "id": "268744.67",
+    "id": "381288.168",
     "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/generation-jobs/cmq1qn8440009fwvcl47alhur?anonymousId=anon_88481e3ff2a44534ae9748dc70acdc8f",
-    "path": "/api/v1/generation-jobs/cmq1qn8440009fwvcl47alhur",
+    "url": "http://127.0.0.1:3213/api/v1/generation-jobs/cmq9fwcgb0009d0vcecsmgnjy?anonymousId=anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
+    "path": "/api/v1/generation-jobs/cmq9fwcgb0009d0vcecsmgnjy",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:50.914Z",
+    "timestamp": "2026-06-11T11:54:10.081Z",
     "body": {
       "ok": true,
-      "requestId": "ca142fe8-b1b3-49f7-9bac-26bb364f4797",
+      "requestId": "0b4e5312-43f5-40c4-bcf8-76b29ced2a54",
       "data": {
-        "jobId": "cmq1qn8440009fwvcl47alhur",
+        "jobId": "cmq9fwcgb0009d0vcecsmgnjy",
         "status": "success",
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
         "generationSource": "local-fallback",
         "fallbackUsed": true,
         "provider": "mock-fallback",
@@ -794,32 +794,32 @@
     "apiId": "API-006"
   },
   {
-    "id": "268744.73",
+    "id": "381288.179",
     "phase": "request",
     "method": "GET",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
     "postData": null,
-    "timestamp": "2026-06-06T02:32:51.149Z",
+    "timestamp": "2026-06-11T11:54:10.253Z",
     "apiId": "API-007"
   },
   {
-    "id": "268744.73",
+    "id": "381288.179",
     "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:51.157Z",
+    "timestamp": "2026-06-11T11:54:10.265Z",
     "body": {
       "ok": true,
-      "requestId": "9d649cc9-a3e8-49a5-9474-ef496f177f09",
+      "requestId": "248308c0-b0a2-4f9a-a252-32c697e12317",
       "data": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
-        "ownerAnonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
+        "ownerAnonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
         "mood": "confident",
         "context": "work",
-        "drawSeed": "seed_1f74153aa06ff72c",
+        "drawSeed": "seed_fe495fa6b0e73a6a",
         "drawPosition": 2,
         "content": {
           "title": "Meeting Glow Aura Card",
@@ -872,50 +872,50 @@
               "label": "polished jade"
             }
           ],
-          "generatedAt": "2026-06-06T02:32:50.637Z",
+          "generatedAt": "2026-06-11T11:54:09.798Z",
           "generationSource": "local-fallback",
           "fallbackUsed": true
         },
-        "shareImageUrl": "local://share-images/cmq1qn849000afwvcmw0x3wcc-template-story-001.png",
+        "shareImageUrl": "local://share-images/cmq9fwcgf000ad0vcw3w0bley-template-story-001.png",
         "isActivated": false,
         "activatedAt": null,
         "activation": null,
-        "createdAt": "2026-06-06T02:32:50.649Z",
-        "updatedAt": "2026-06-06T02:32:50.801Z"
+        "createdAt": "2026-06-11T11:54:09.807Z",
+        "updatedAt": "2026-06-11T11:54:10.005Z"
       }
     },
     "apiId": "API-007"
   },
   {
-    "id": "268744.75",
+    "id": "381288.180",
     "phase": "request",
     "method": "POST",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/activation/start",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/activation/start",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/activation/start",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/activation/start",
     "postData": {
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "platform": "web",
       "anchorType": "lucky_color",
       "anchorLabel": "soft ivory"
     },
-    "timestamp": "2026-06-06T02:32:51.550Z",
+    "timestamp": "2026-06-11T11:54:10.598Z",
     "apiId": "API-009"
   },
   {
-    "id": "268744.75",
+    "id": "381288.180",
     "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/activation/start",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/activation/start",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/activation/start",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/activation/start",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:51.573Z",
+    "timestamp": "2026-06-11T11:54:10.621Z",
     "body": {
       "ok": true,
-      "requestId": "d3766a3b-80ee-4619-8404-b00716677ea6",
+      "requestId": "1b4b4f84-08f0-4562-a6ea-6c4352f7651d",
       "data": {
-        "activationId": "cmq1qn8tp000dfwvc2bj93460",
+        "activationId": "cmq9fwd2r000dd0vcj56e6ol3",
         "status": "started",
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
         "anchorType": "lucky_color",
         "anchorLabel": "soft ivory",
         "alreadyActivated": false
@@ -924,106 +924,106 @@
     "apiId": "API-009"
   },
   {
-    "id": "268744.76",
+    "id": "381288.181",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "postData": {
       "eventName": "activation_started",
-      "page": "/activate/cmq1qn849000afwvcmw0x3wcc",
+      "page": "/activate/cmq9fwcgf000ad0vcw3w0bley",
       "platform": "web",
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "payload": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
         "anchorType": "lucky_color"
       }
     },
-    "timestamp": "2026-06-06T02:32:51.575Z",
+    "timestamp": "2026-06-11T11:54:10.623Z",
     "apiId": "API-013"
   },
   {
-    "id": "268744.76",
+    "id": "381288.181",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:51.598Z",
+    "timestamp": "2026-06-11T11:54:10.639Z",
     "body": {
       "ok": true,
-      "requestId": "6bc30f86-b0ce-4aa8-90e5-2a8a20669404",
+      "requestId": "5aee6227-fe6b-4a79-b831-07eef63ad897",
       "data": {
-        "analyticsEventId": "cmq1qn8u5000efwvci9344j8p",
+        "analyticsEventId": "cmq9fwd38000ed0vca198cig2",
         "eventName": "activation_started",
-        "page": "/activate/cmq1qn849000afwvcmw0x3wcc"
+        "page": "/activate/cmq9fwcgf000ad0vcw3w0bley"
       }
     },
     "apiId": "API-013"
   },
   {
-    "id": "268744.77",
+    "id": "381288.182",
     "phase": "request",
     "method": "POST",
-    "url": "http://127.0.0.1:3213/api/v1/activations/cmq1qn8tp000dfwvc2bj93460/seal",
-    "path": "/api/v1/activations/cmq1qn8tp000dfwvc2bj93460/seal",
+    "url": "http://127.0.0.1:3213/api/v1/activations/cmq9fwd2r000dd0vcj56e6ol3/seal",
+    "path": "/api/v1/activations/cmq9fwd2r000dd0vcj56e6ol3/seal",
     "postData": {
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "platform": "web",
-      "holdDurationMs": 3005
+      "holdDurationMs": 3008
     },
-    "timestamp": "2026-06-06T02:32:54.932Z",
+    "timestamp": "2026-06-11T11:54:13.873Z",
     "apiId": "API-010"
   },
   {
-    "id": "268744.77",
+    "id": "381288.182",
     "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/activations/cmq1qn8tp000dfwvc2bj93460/seal",
-    "path": "/api/v1/activations/cmq1qn8tp000dfwvc2bj93460/seal",
+    "url": "http://127.0.0.1:3213/api/v1/activations/cmq9fwd2r000dd0vcj56e6ol3/seal",
+    "path": "/api/v1/activations/cmq9fwd2r000dd0vcj56e6ol3/seal",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:54.989Z",
+    "timestamp": "2026-06-11T11:54:13.897Z",
     "body": {
       "ok": true,
-      "requestId": "bc97dd96-0456-4b9e-beed-d53b0a21ecaf",
+      "requestId": "c3a71f0e-a357-4d76-8a8a-99101603b9a8",
       "data": {
-        "activationId": "cmq1qn8tp000dfwvc2bj93460",
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
+        "activationId": "cmq9fwd2r000dd0vcj56e6ol3",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
         "sealed": true,
         "status": "sealed",
-        "activatedAt": "2026-06-06T02:32:54.955Z",
-        "holdDurationMs": 3005
+        "activatedAt": "2026-06-11T11:54:13.881Z",
+        "holdDurationMs": 3008
       }
     },
     "apiId": "API-010"
   },
   {
-    "id": "268744.82",
+    "id": "381288.200",
     "phase": "request",
     "method": "GET",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
     "postData": null,
-    "timestamp": "2026-06-06T02:32:55.043Z",
+    "timestamp": "2026-06-11T11:54:13.931Z",
     "apiId": "API-007"
   },
   {
-    "id": "268744.82",
+    "id": "381288.200",
     "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:55.058Z",
+    "timestamp": "2026-06-11T11:54:13.938Z",
     "body": {
       "ok": true,
-      "requestId": "29168171-5650-4431-ab8e-5a0fb04a7775",
+      "requestId": "e5c50d73-b3c4-4be9-9646-f6ab95dc6a14",
       "data": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
-        "ownerAnonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
+        "ownerAnonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
         "mood": "confident",
         "context": "work",
-        "drawSeed": "seed_1f74153aa06ff72c",
+        "drawSeed": "seed_fe495fa6b0e73a6a",
         "drawPosition": 2,
         "content": {
           "title": "Meeting Glow Aura Card",
@@ -1076,163 +1076,55 @@
               "label": "polished jade"
             }
           ],
-          "generatedAt": "2026-06-06T02:32:50.637Z",
+          "generatedAt": "2026-06-11T11:54:09.798Z",
           "generationSource": "local-fallback",
           "fallbackUsed": true
         },
-        "shareImageUrl": "local://share-images/cmq1qn849000afwvcmw0x3wcc-template-story-001.png",
+        "shareImageUrl": "local://share-images/cmq9fwcgf000ad0vcw3w0bley-template-story-001.png",
         "isActivated": true,
-        "activatedAt": "2026-06-06T02:32:54.955Z",
+        "activatedAt": "2026-06-11T11:54:13.881Z",
         "activation": {
-          "activationId": "cmq1qn8tp000dfwvc2bj93460",
+          "activationId": "cmq9fwd2r000dd0vcj56e6ol3",
           "status": "sealed",
           "anchorType": "lucky_color",
           "anchorLabel": "soft ivory",
-          "holdDurationMs": 3005,
-          "startedAt": "2026-06-06T02:32:51.565Z",
-          "sealedAt": "2026-06-06T02:32:54.955Z"
+          "holdDurationMs": 3008,
+          "startedAt": "2026-06-11T11:54:10.611Z",
+          "sealedAt": "2026-06-11T11:54:13.881Z"
         },
-        "createdAt": "2026-06-06T02:32:50.649Z",
-        "updatedAt": "2026-06-06T02:32:54.966Z"
+        "createdAt": "2026-06-11T11:54:09.807Z",
+        "updatedAt": "2026-06-11T11:54:13.888Z"
       }
     },
     "apiId": "API-007"
   },
   {
-    "id": "268744.85",
-    "phase": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/save",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/save",
-    "postData": {
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
-      "platform": "web",
-      "source": "activated"
-    },
-    "timestamp": "2026-06-06T02:32:55.385Z",
-    "apiId": "API-011"
-  },
-  {
-    "id": "268744.85",
-    "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/save",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/save",
-    "status": 200,
-    "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:55.412Z",
-    "body": {
-      "ok": true,
-      "requestId": "f8b40e02-7372-42ef-8db9-cfc1c32f0744",
-      "data": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
-        "savedAt": "2026-06-06T02:32:55.401Z",
-        "savedCardId": "cmq1qnbs9000ffwvcpq6fw0k9",
-        "idempotent": false
-      }
-    },
-    "apiId": "API-011"
-  },
-  {
-    "id": "268744.86",
-    "phase": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:3213/api/v1/analytics/events",
-    "path": "/api/v1/analytics/events",
-    "postData": {
-      "eventName": "card_saved",
-      "page": "/activated/cmq1qn849000afwvcmw0x3wcc",
-      "platform": "web",
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
-      "payload": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
-        "source": "activated"
-      }
-    },
-    "timestamp": "2026-06-06T02:32:55.412Z",
-    "apiId": "API-013"
-  },
-  {
-    "id": "268744.86",
-    "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/analytics/events",
-    "path": "/api/v1/analytics/events",
-    "status": 200,
-    "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:55.439Z",
-    "body": {
-      "ok": true,
-      "requestId": "8d6d95a2-41dd-4a79-8f60-c90abdc6e89f",
-      "data": {
-        "analyticsEventId": "cmq1qnbsr000gfwvcrusf81jz",
-        "eventName": "card_saved",
-        "page": "/activated/cmq1qn849000afwvcmw0x3wcc"
-      }
-    },
-    "apiId": "API-013"
-  },
-  {
-    "id": "268744.87",
-    "phase": "request",
-    "method": "POST",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/share",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/share",
-    "postData": {
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
-      "platform": "web",
-      "channel": "web_share",
-      "source": "activated"
-    },
-    "timestamp": "2026-06-06T02:32:55.743Z",
-    "apiId": "API-012"
-  },
-  {
-    "id": "268744.87",
-    "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/share",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/share",
-    "status": 200,
-    "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:55.771Z",
-    "body": {
-      "ok": true,
-      "requestId": "ab61160c-7eca-4cfc-bb27-a573d8da1111",
-      "data": {
-        "shareEventId": "cmq1qnc20000hfwvck32qbqlf",
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
-        "channel": "web_share",
-        "source": "activated",
-        "shareUrl": "/share/cmq1qn849000afwvcmw0x3wcc"
-      }
-    },
-    "apiId": "API-012"
-  },
-  {
-    "id": "268744.93",
+    "id": "381288.212",
     "phase": "request",
     "method": "GET",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
     "postData": null,
-    "timestamp": "2026-06-06T02:32:56.495Z",
+    "timestamp": "2026-06-11T11:54:14.273Z",
     "apiId": "API-007"
   },
   {
-    "id": "268744.93",
+    "id": "381288.212",
     "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:56.623Z",
+    "timestamp": "2026-06-11T11:54:14.283Z",
     "body": {
       "ok": true,
-      "requestId": "5903dddf-9bfd-4844-b66d-3985cbd0cb29",
+      "requestId": "5c2ec753-903e-466a-b5b0-0a93e0f3de0f",
       "data": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
-        "ownerAnonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
+        "ownerAnonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
         "mood": "confident",
         "context": "work",
-        "drawSeed": "seed_1f74153aa06ff72c",
+        "drawSeed": "seed_fe495fa6b0e73a6a",
         "drawPosition": 2,
         "content": {
           "title": "Meeting Glow Aura Card",
@@ -1285,315 +1177,315 @@
               "label": "polished jade"
             }
           ],
-          "generatedAt": "2026-06-06T02:32:50.637Z",
+          "generatedAt": "2026-06-11T11:54:09.798Z",
           "generationSource": "local-fallback",
           "fallbackUsed": true
         },
-        "shareImageUrl": "local://share-images/cmq1qn849000afwvcmw0x3wcc-template-story-001.png",
+        "shareImageUrl": "local://share-images/cmq9fwcgf000ad0vcw3w0bley-template-story-001.png",
         "isActivated": true,
-        "activatedAt": "2026-06-06T02:32:54.955Z",
+        "activatedAt": "2026-06-11T11:54:13.881Z",
         "activation": {
-          "activationId": "cmq1qn8tp000dfwvc2bj93460",
+          "activationId": "cmq9fwd2r000dd0vcj56e6ol3",
           "status": "sealed",
           "anchorType": "lucky_color",
           "anchorLabel": "soft ivory",
-          "holdDurationMs": 3005,
-          "startedAt": "2026-06-06T02:32:51.565Z",
-          "sealedAt": "2026-06-06T02:32:54.955Z"
+          "holdDurationMs": 3008,
+          "startedAt": "2026-06-11T11:54:10.611Z",
+          "sealedAt": "2026-06-11T11:54:13.881Z"
         },
-        "createdAt": "2026-06-06T02:32:50.649Z",
-        "updatedAt": "2026-06-06T02:32:54.966Z"
+        "createdAt": "2026-06-11T11:54:09.807Z",
+        "updatedAt": "2026-06-11T11:54:13.888Z"
       }
     },
     "apiId": "API-007"
   },
   {
-    "id": "268744.95",
+    "id": "381288.214",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "postData": {
       "eventName": "share_opened",
-      "page": "/share/cmq1qn849000afwvcmw0x3wcc",
+      "page": "/share/cmq9fwcgf000ad0vcw3w0bley",
       "platform": "web",
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "payload": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
         "hasShareImage": true
       }
     },
-    "timestamp": "2026-06-06T02:32:56.666Z",
+    "timestamp": "2026-06-11T11:54:14.284Z",
     "apiId": "API-013"
   },
   {
-    "id": "268744.95",
+    "id": "381288.214",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:56.666Z",
+    "timestamp": "2026-06-11T11:54:14.313Z",
     "body": {
       "ok": true,
-      "requestId": "e291c44e-51af-4dd1-a908-ad38f6d0301c",
+      "requestId": "1a176678-724a-467b-a799-ebfdb28ee94a",
       "data": {
-        "analyticsEventId": "cmq1qncr2000ifwvc596qb9le",
+        "analyticsEventId": "cmq9fwfwy000fd0vcslisczj4",
         "eventName": "share_opened",
-        "page": "/share/cmq1qn849000afwvcmw0x3wcc"
+        "page": "/share/cmq9fwcgf000ad0vcw3w0bley"
       }
     },
     "apiId": "API-013"
   },
   {
-    "id": "268744.96",
+    "id": "381288.239",
     "phase": "request",
     "method": "POST",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/share",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/share",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/share",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/share",
     "postData": {
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "platform": "web",
       "channel": "copy",
       "source": "share_preview"
     },
-    "timestamp": "2026-06-06T02:32:57.278Z",
+    "timestamp": "2026-06-11T11:54:14.663Z",
     "apiId": "API-012"
   },
   {
-    "id": "268744.96",
+    "id": "381288.239",
     "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/share",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/share",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/share",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/share",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:57.310Z",
+    "timestamp": "2026-06-11T11:54:14.677Z",
     "body": {
       "ok": true,
-      "requestId": "2d5358ff-7792-43ea-85f0-775b42063098",
+      "requestId": "597d71f7-6b6b-42a2-8651-5269e5253532",
       "data": {
-        "shareEventId": "cmq1qnd8o000jfwvckqduxcw7",
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
+        "shareEventId": "cmq9fwg7h000gd0vco3pq0f3v",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
         "channel": "copy",
         "source": "share_preview",
-        "shareUrl": "/share/cmq1qn849000afwvcmw0x3wcc"
+        "shareUrl": "/share/cmq9fwcgf000ad0vcw3w0bley"
       }
     },
     "apiId": "API-012"
   },
   {
-    "id": "268744.97",
+    "id": "381288.240",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "postData": {
       "eventName": "share_completed",
-      "page": "/share/cmq1qn849000afwvcmw0x3wcc",
+      "page": "/share/cmq9fwcgf000ad0vcw3w0bley",
       "platform": "web",
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "payload": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
         "channel": "copy",
         "copied": true
       }
     },
-    "timestamp": "2026-06-06T02:32:57.311Z",
+    "timestamp": "2026-06-11T11:54:14.679Z",
     "apiId": "API-013"
   },
   {
-    "id": "268744.97",
+    "id": "381288.240",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:57.320Z",
+    "timestamp": "2026-06-11T11:54:14.688Z",
     "body": {
       "ok": true,
-      "requestId": "1509bc83-e783-4424-8dfa-bec00862d474",
+      "requestId": "31afeed0-6d2e-4ebe-80d0-3921b66bdceb",
       "data": {
-        "analyticsEventId": "cmq1qnd94000kfwvctdvveozh",
+        "analyticsEventId": "cmq9fwg7u000hd0vcjk812af1",
         "eventName": "share_completed",
-        "page": "/share/cmq1qn849000afwvcmw0x3wcc"
+        "page": "/share/cmq9fwcgf000ad0vcw3w0bley"
       }
     },
     "apiId": "API-013"
   },
   {
-    "id": "268744.98",
+    "id": "381288.241",
     "phase": "request",
     "method": "POST",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/share",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/share",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/share",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/share",
     "postData": {
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "platform": "web",
       "channel": "download",
       "source": "share_preview"
     },
-    "timestamp": "2026-06-06T02:32:57.359Z",
+    "timestamp": "2026-06-11T11:54:14.933Z",
     "apiId": "API-012"
   },
   {
-    "id": "268744.98",
+    "id": "381288.241",
     "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/share",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/share",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/share",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/share",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:57.546Z",
+    "timestamp": "2026-06-11T11:54:14.955Z",
     "body": {
       "ok": true,
-      "requestId": "73451c66-b03f-4d6d-bf77-87aa233a59c4",
+      "requestId": "9348ab69-8de4-45e2-877c-6216cdb2a5c8",
       "data": {
-        "shareEventId": "cmq1qndau000lfwvczfz5wci3",
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
+        "shareEventId": "cmq9fwgez000id0vcorchsh02",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
         "channel": "download",
         "source": "share_preview",
-        "shareUrl": "/share/cmq1qn849000afwvcmw0x3wcc"
+        "shareUrl": "/share/cmq9fwcgf000ad0vcw3w0bley"
       }
     },
     "apiId": "API-012"
   },
   {
-    "id": "268744.99",
+    "id": "381288.242",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "postData": {
       "eventName": "share_completed",
-      "page": "/share/cmq1qn849000afwvcmw0x3wcc",
+      "page": "/share/cmq9fwcgf000ad0vcw3w0bley",
       "platform": "web",
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "payload": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
         "channel": "download",
         "hasShareImage": true
       }
     },
-    "timestamp": "2026-06-06T02:32:57.548Z",
+    "timestamp": "2026-06-11T11:54:14.956Z",
     "apiId": "API-013"
   },
   {
-    "id": "268744.99",
+    "id": "381288.242",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:32:57.571Z",
+    "timestamp": "2026-06-11T11:54:15.002Z",
     "body": {
       "ok": true,
-      "requestId": "74cefe02-2868-4861-be5b-a0024b3ab670",
+      "requestId": "0b56965d-348b-4ff8-9bfa-9d10c4f8e0f0",
       "data": {
-        "analyticsEventId": "cmq1qndg3000mfwvcb95naqdg",
+        "analyticsEventId": "cmq9fwggj000jd0vcyvwi5eif",
         "eventName": "share_completed",
-        "page": "/share/cmq1qn849000afwvcmw0x3wcc"
+        "page": "/share/cmq9fwcgf000ad0vcw3w0bley"
       }
     },
     "apiId": "API-013"
   },
   {
-    "id": "268744.100",
+    "id": "381288.243",
     "phase": "request",
     "method": "POST",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/save",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/save",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/save",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/save",
     "postData": {
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "platform": "web",
       "source": "share"
     },
-    "timestamp": "2026-06-06T02:33:02.504Z",
+    "timestamp": "2026-06-11T11:54:20.197Z",
     "apiId": "API-011"
   },
   {
-    "id": "268744.100",
+    "id": "381288.243",
     "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/save",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/save",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/save",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/save",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:33:02.522Z",
+    "timestamp": "2026-06-11T11:54:20.233Z",
     "body": {
       "ok": true,
-      "requestId": "1b27bb4f-252f-43c3-9171-cb5caa1f7692",
+      "requestId": "18bc7d21-bffb-4b11-949d-5d823af3e42b",
       "data": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
-        "savedAt": "2026-06-06T02:32:55.401Z",
-        "savedCardId": "cmq1qnbs9000ffwvcpq6fw0k9",
-        "idempotent": true
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
+        "savedAt": "2026-06-11T11:54:20.222Z",
+        "savedCardId": "cmq9fwkhq000kd0vc5lloenjg",
+        "idempotent": false
       }
     },
     "apiId": "API-011"
   },
   {
-    "id": "268744.101",
+    "id": "381288.244",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "postData": {
       "eventName": "card_saved",
-      "page": "/share/cmq1qn849000afwvcmw0x3wcc",
+      "page": "/share/cmq9fwcgf000ad0vcw3w0bley",
       "platform": "web",
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "payload": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
         "source": "share"
       }
     },
-    "timestamp": "2026-06-06T02:33:02.524Z",
+    "timestamp": "2026-06-11T11:54:20.234Z",
     "apiId": "API-013"
   },
   {
-    "id": "268744.101",
+    "id": "381288.244",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:33:02.539Z",
+    "timestamp": "2026-06-11T11:54:20.247Z",
     "body": {
       "ok": true,
-      "requestId": "08077a7d-7528-4318-9ddd-b59250a61cb1",
+      "requestId": "871461ad-a813-4b76-94c2-c271d2b68d02",
       "data": {
-        "analyticsEventId": "cmq1qnhac000ofwvcjgfly255",
+        "analyticsEventId": "cmq9fwki6000ld0vcud79mesh",
         "eventName": "card_saved",
-        "page": "/share/cmq1qn849000afwvcmw0x3wcc"
+        "page": "/share/cmq9fwcgf000ad0vcw3w0bley"
       }
     },
     "apiId": "API-013"
   },
   {
-    "id": "268744.106",
+    "id": "381288.253",
     "phase": "request",
     "method": "GET",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
     "postData": null,
-    "timestamp": "2026-06-06T02:33:02.578Z",
+    "timestamp": "2026-06-11T11:54:20.280Z",
     "apiId": "API-007"
   },
   {
-    "id": "268744.106",
+    "id": "381288.253",
     "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:33:02.596Z",
+    "timestamp": "2026-06-11T11:54:20.289Z",
     "body": {
       "ok": true,
-      "requestId": "dbf88891-2ae0-4253-9c6b-083577e7121b",
+      "requestId": "d9d9a8f8-5e57-4270-9aa3-d595478a591e",
       "data": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
-        "ownerAnonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
+        "ownerAnonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
         "mood": "confident",
         "context": "work",
-        "drawSeed": "seed_1f74153aa06ff72c",
+        "drawSeed": "seed_fe495fa6b0e73a6a",
         "drawPosition": 2,
         "content": {
           "title": "Meeting Glow Aura Card",
@@ -1646,99 +1538,99 @@
               "label": "polished jade"
             }
           ],
-          "generatedAt": "2026-06-06T02:32:50.637Z",
+          "generatedAt": "2026-06-11T11:54:09.798Z",
           "generationSource": "local-fallback",
           "fallbackUsed": true
         },
-        "shareImageUrl": "local://share-images/cmq1qn849000afwvcmw0x3wcc-template-story-001.png",
+        "shareImageUrl": "local://share-images/cmq9fwcgf000ad0vcw3w0bley-template-story-001.png",
         "isActivated": true,
-        "activatedAt": "2026-06-06T02:32:54.955Z",
+        "activatedAt": "2026-06-11T11:54:13.881Z",
         "activation": {
-          "activationId": "cmq1qn8tp000dfwvc2bj93460",
+          "activationId": "cmq9fwd2r000dd0vcj56e6ol3",
           "status": "sealed",
           "anchorType": "lucky_color",
           "anchorLabel": "soft ivory",
-          "holdDurationMs": 3005,
-          "startedAt": "2026-06-06T02:32:51.565Z",
-          "sealedAt": "2026-06-06T02:32:54.955Z"
+          "holdDurationMs": 3008,
+          "startedAt": "2026-06-11T11:54:10.611Z",
+          "sealedAt": "2026-06-11T11:54:13.881Z"
         },
-        "createdAt": "2026-06-06T02:32:50.649Z",
-        "updatedAt": "2026-06-06T02:32:54.966Z"
+        "createdAt": "2026-06-11T11:54:09.807Z",
+        "updatedAt": "2026-06-11T11:54:13.888Z"
       }
     },
     "apiId": "API-007"
   },
   {
-    "id": "268744.108",
+    "id": "381288.279",
     "phase": "request",
     "method": "POST",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/share",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/share",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/share",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/share",
     "postData": {
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "platform": "web",
       "channel": "copy",
       "source": "saved"
     },
-    "timestamp": "2026-06-06T02:33:02.911Z",
+    "timestamp": "2026-06-11T11:54:20.588Z",
     "apiId": "API-012"
   },
   {
-    "id": "268744.108",
+    "id": "381288.279",
     "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/share",
-    "path": "/api/v1/aura-cards/cmq1qn849000afwvcmw0x3wcc/share",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/share",
+    "path": "/api/v1/aura-cards/cmq9fwcgf000ad0vcw3w0bley/share",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:33:02.926Z",
+    "timestamp": "2026-06-11T11:54:20.602Z",
     "body": {
       "ok": true,
-      "requestId": "f8b0a95f-bcb2-41d8-87b8-f1bd773a16d8",
+      "requestId": "c4451816-63bb-4e4b-95ca-38a9e7c76a96",
       "data": {
-        "shareEventId": "cmq1qnhl4000pfwvc0cftz81j",
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
+        "shareEventId": "cmq9fwks3000md0vcn5j22b13",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
         "channel": "copy",
         "source": "saved",
-        "shareUrl": "/share/cmq1qn849000afwvcmw0x3wcc"
+        "shareUrl": "/share/cmq9fwcgf000ad0vcw3w0bley"
       }
     },
     "apiId": "API-012"
   },
   {
-    "id": "268744.109",
+    "id": "381288.280",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "postData": {
       "eventName": "share_completed",
-      "page": "/saved/cmq1qn849000afwvcmw0x3wcc",
+      "page": "/saved/cmq9fwcgf000ad0vcw3w0bley",
       "platform": "web",
-      "anonymousId": "anon_88481e3ff2a44534ae9748dc70acdc8f",
+      "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
       "payload": {
-        "cardId": "cmq1qn849000afwvcmw0x3wcc",
+        "cardId": "cmq9fwcgf000ad0vcw3w0bley",
         "channel": "copy",
         "source": "saved"
       }
     },
-    "timestamp": "2026-06-06T02:33:02.927Z",
+    "timestamp": "2026-06-11T11:54:20.604Z",
     "apiId": "API-013"
   },
   {
-    "id": "268744.109",
+    "id": "381288.280",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/analytics/events",
     "path": "/api/v1/analytics/events",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-06T02:33:02.941Z",
+    "timestamp": "2026-06-11T11:54:20.616Z",
     "body": {
       "ok": true,
-      "requestId": "4f987cca-5eaf-4ac1-9885-bc299fa10ba7",
+      "requestId": "1fc1b78e-243e-4506-9340-2cb2e49df36e",
       "data": {
-        "analyticsEventId": "cmq1qnhlh000qfwvccsatzml8",
+        "analyticsEventId": "cmq9fwksg000nd0vcxw2eo8io",
         "eventName": "share_completed",
-        "page": "/saved/cmq1qn849000afwvcmw0x3wcc"
+        "page": "/saved/cmq9fwcgf000ad0vcw3w0bley"
       }
     },
     "apiId": "API-013"
