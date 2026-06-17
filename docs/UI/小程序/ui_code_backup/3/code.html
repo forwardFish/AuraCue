@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AuraCue - Enter Your Birthday</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style data-purpose="custom-fonts">
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    h1, .brand-text, .date-selected {
+      font-family: 'Playfair+Display', serif;
+    }
+  </style>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'aura-bg': '#FDFBF7',
+            'aura-dark-blue': '#1A2B47',
+            'aura-gray-text': '#727789',
+            'aura-light-gray-text': '#BDBDBD',
+            'aura-border': '#F0D4D4'
+          },
+          boxShadow: {
+            'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-utilities">
+    /* Utility to hide scrollbar for the picker areas if they were scrollable */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  </style>
+</head>
+<body class="bg-aura-bg min-h-screen flex justify-center text-aura-dark-blue">
+<!-- Main Container constraining width to mobile proportions -->
+<main class="w-full max-w-[430px] min-h-screen relative flex flex-col items-center px-6 pt-12 pb-10 overflow-hidden">
+<!-- BEGIN: Header -->
+<header class="w-full flex justify-between items-center mb-8 relative z-10">
+<!-- Back Button -->
+<button class="w-12 h-12 rounded-2xl border border-aura-border bg-white/50 flex items-center justify-center shrink-0">
+<svg class="w-6 h-6 text-aura-dark-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Logo -->
+<div class="flex flex-col items-center absolute left-1/2 -translate-x-1/2">
+<svg class="w-12 h-8 text-aura-dark-blue mb-1" fill="none" viewbox="0 0 48 32" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 0C24 0 16 8 16 16C16 24 24 32 24 32C24 32 32 24 32 16C32 8 24 0 24 0Z" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+<path d="M18 6C18 6 4 12 4 20C4 28 18 30 18 30" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+<path d="M30 6C30 6 44 12 44 20C44 28 30 30 30 30" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+<path d="M12 28C12 28 0 24 0 16C0 8 12 10 12 10" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+<path d="M36 28C36 28 48 24 48 16C48 8 36 10 36 10" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+</svg>
+<span class="brand-text text-xl tracking-[0.2em] font-medium uppercase text-aura-dark-blue">AuraCue</span>
+</div>
+<!-- Empty space to balance flex -->
+<div class="w-12 h-12"></div>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: Title Section -->
+<section class="text-center w-full z-10 mt-6 mb-8 relative">
+<div class="flex justify-center items-center gap-2 mb-3">
+<img alt="Star" class="w-5 h-5 opacity-70" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY6n_Js2XM8tgDIji1ldpp9Dwx8r1dJS5J2JJ2UshnNhDZ_8W58EOkdCqksQ33bp3RpR592iBrwqQFrYuKc7jO7eO7Q67wvnQJ4xRday2MmX7Cm80DQE0HNPChL-OfpksFIYBjESsCFfrv2E9s-5sfOd-LipbBrAtU8ofbAGovpPirHumOtTugtVo5B2IqoGi59tW5KPvaZO083JqOfjMLqvIVbwS68iNHOhwqccGRQ8P0kRHBhxxEowHfLrPM1ApmtS4hrrMzPwX2"/>
+<h1 class="text-[34px] font-medium leading-tight">Enter Your Birthday</h1>
+<img alt="Star" class="w-5 h-5 opacity-70" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY6n_Js2XM8tgDIji1ldpp9Dwx8r1dJS5J2JJ2UshnNhDZ_8W58EOkdCqksQ33bp3RpR592iBrwqQFrYuKc7jO7eO7Q67wvnQJ4xRday2MmX7Cm80DQE0HNPChL-OfpksFIYBjESsCFfrv2E9s-5sfOd-LipbBrAtU8ofbAGovpPirHumOtTugtVo5B2IqoGi59tW5KPvaZO083JqOfjMLqvIVbwS68iNHOhwqccGRQ8P0kRHBhxxEowHfLrPM1ApmtS4hrrMzPwX2"/>
+</div>
+<p class="text-aura-gray-text text-[15px] leading-relaxed max-w-[280px] mx-auto">
+        Your birthday becomes the key to how each card speaks to you.
+      </p>
+</section>
+<!-- END: Title Section -->
+<!-- BEGIN: Main Card Content -->
+<section class="relative w-full aspect-[4/4.5] flex-grow flex flex-col justify-end items-center z-10 rounded-[40px] mb-[120px]">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="Cosmic Background" class="w-full h-full object-cover rounded-[32px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjH9QmFS_P9c3aU2535s0bHv6e5tu7NSIIVyOCCpGLgaXFd-yGt2kPL5AkA3ROSQdQSbhCZZCL2R5QvdiHlF9aYKUyo8Ia7tsflh6XHS-kIwGCWkiYjwZ-LplhDpdk7w7TvjLeD9NK9HDfIY7oJpkpUqF29IY1kxwTFQYp5nlo6HXv6eCYtpbo0IXmEDu_A9f9DRcMRx4Lwin6DQ1EmWyOOdUuOsowMwlt3NqVkTIycxCkgWfAlBsbaApLN2pdGAXpdnY_0IGi98xT"/>
+</div>
+<!-- Date Picker Overlay Container -->
+<div class="relative z-10 w-full h-[55%] flex justify-center mt-auto mb-20 px-[5%]">
+<!-- Glassmorphism Container Image -->
+<img alt="Picker Background" class="absolute inset-0 w-full h-full object-contain pointer-events-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDec0OBuQkzXrwrcgH2T7QKYsQFT2eym8hNxCcnFenHDlRNXFJkNhEQhv3z-kHHxkMCBrM1YDnTnTXiQ2utxG9crAx0UWxxeHAYNG4hq7BDyravMMvsOUhTAhwUJGl1NW_iBpUWwdnWgruhgkC9jLfaixc0aNtQ-ZDfuHAcEFQ2ANNAdTwdcwzOOMIRU2XXlIIGRm2WBJY6W9FxoQXzL5qs61ZIDttn-M6ihr4UHgHdmMfiiZ9OI_y6lt7lR7OuGkh5Hy7P5YkUHS9Q"/>
+<!-- The actual scrolling content area -->
+<div class="relative z-20 flex w-full h-full pt-10 pb-4">
+<!-- Month Column -->
+<div class="flex-1 flex flex-col items-center relative overflow-hidden">
+<span class="text-[11px] font-semibold tracking-[0.15em] text-aura-dark-blue mb-2 absolute top-0">MONTH</span>
+<div class="flex-1 overflow-y-auto no-scrollbar w-full flex flex-col items-center pt-[50px] pb-[50px] space-y-3">
+<div class="text-[20px] text-aura-light-gray-text font-serif">August</div>
+<div class="text-[20px] text-aura-light-gray-text font-serif">September</div>
+<!-- Selected State -->
+<div class="text-[28px] text-aura-dark-blue date-selected h-[50px] flex items-center justify-center relative z-30 font-bold">October</div>
+<div class="text-[20px] text-aura-light-gray-text font-serif">November</div>
+<div class="text-[20px] text-aura-light-gray-text font-serif">December</div>
+</div>
+</div>
+<!-- Day Column -->
+<div class="flex-1 flex flex-col items-center relative overflow-hidden">
+<span class="text-[11px] font-semibold tracking-[0.15em] text-aura-dark-blue mb-2 absolute top-0">DAY</span>
+<div class="flex-1 overflow-y-auto no-scrollbar w-full flex flex-col items-center pt-[50px] pb-[50px] space-y-3">
+<div class="text-[22px] text-aura-light-gray-text font-serif">5</div>
+<div class="text-[22px] text-aura-light-gray-text font-serif">6</div>
+<!-- Selected State -->
+<div class="text-[28px] text-aura-dark-blue date-selected h-[50px] flex items-center justify-center relative z-30 font-bold">7</div>
+<div class="text-[22px] text-aura-light-gray-text font-serif">8</div>
+<div class="text-[22px] text-aura-light-gray-text font-serif">9</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Info Texts at bottom of card -->
+<div class="relative z-20 w-full flex flex-col items-center pb-8 px-6">
+<div class="flex items-center gap-2 mb-4">
+<img alt="Star" class="w-3 h-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY6n_Js2XM8tgDIji1ldpp9Dwx8r1dJS5J2JJ2UshnNhDZ_8W58EOkdCqksQ33bp3RpR592iBrwqQFrYuKc7jO7eO7Q67wvnQJ4xRday2MmX7Cm80DQE0HNPChL-OfpksFIYBjESsCFfrv2E9s-5sfOd-LipbBrAtU8ofbAGovpPirHumOtTugtVo5B2IqoGi59tW5KPvaZO083JqOfjMLqvIVbwS68iNHOhwqccGRQ8P0kRHBhxxEowHfLrPM1ApmtS4hrrMzPwX2"/>
+<span class="text-[13px] text-aura-dark-blue font-medium">We only need your month and day.</span>
+</div>
+<div class="flex items-center gap-3 max-w-[280px]">
+<div class="w-9 h-9 flex items-center justify-center shrink-0">
+<img alt="Lock" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOawgY2PvFR074ugh0JWaM89rGfiFqLnc334lH9Rw1p0gBNpbPZrCsSu1NnadPtg-mF4qaSK-jnkEQKKGlZg8oicJUCtsQP3ipxeiHD2wK5h0BqRSGSV2aNweMdifvfZx66yoI2FFxHSmU5hOQzrf3zJMUab7AgBHE8YrCqPOx3qLS0gVzHRlBC2QSsuDgtFxqMf3ky2NJe3hF4HM7TuDDk0J4oyvChDBTLHsrpZavLCb_OCgbbwdlnP2KbfVheX6HFzHsnefXV1k0"/>
+</div>
+<p class="text-[12px] text-aura-dark-blue leading-snug">
+            Your birthday is private and never shared. It's used only to personalize your readings.
+          </p>
+</div>
+</div>
+</section>
+<!-- END: Main Card Content -->
+<!-- BEGIN: Footer Button -->
+<div class="absolute bottom-10 left-0 w-full px-6 flex justify-center z-20">
+<button class="relative w-full max-w-[340px] h-16 flex items-center justify-center group outline-none">
+<img alt="Continue Button Background" class="absolute inset-0 w-full h-full object-cover rounded-full shadow-[0_8px_30px_rgba(150,100,200,0.3)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNXpXwTnQAavxNUAd5WskVeu408IC1llTMwMFjj3b36SG9Opk5FPN4RqQ51knpDvxqNvbLPm2Ogify_enGGeFSaAvVfd1yP8DuHuI2xXpwTXj4je8ri8rNIftxRs1MJrPxiW9Pv3MZKHUTNfjMH4lgS4EFPdyZZnCH1RD0vbYGa4h1Jzx3OawUZOUpcg3n90KU3KJXFhTI129G26E6YZQ9MPvbenT8tWRDXFbne9l9eGC5jIzbBI71NldxW7mmqWWDbQMtj1cprqOq"/>
+<div class="relative z-10 flex items-center gap-3">
+<img alt="Star" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY6n_Js2XM8tgDIji1ldpp9Dwx8r1dJS5J2JJ2UshnNhDZ_8W58EOkdCqksQ33bp3RpR592iBrwqQFrYuKc7jO7eO7Q67wvnQJ4xRday2MmX7Cm80DQE0HNPChL-OfpksFIYBjESsCFfrv2E9s-5sfOd-LipbBrAtU8ofbAGovpPirHumOtTugtVo5B2IqoGi59tW5KPvaZO083JqOfjMLqvIVbwS68iNHOhwqccGRQ8P0kRHBhxxEowHfLrPM1ApmtS4hrrMzPwX2"/>
+<span class="text-white text-[22px] font-serif tracking-wide">Continue</span>
+<img alt="Star" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY6n_Js2XM8tgDIji1ldpp9Dwx8r1dJS5J2JJ2UshnNhDZ_8W58EOkdCqksQ33bp3RpR592iBrwqQFrYuKc7jO7eO7Q67wvnQJ4xRday2MmX7Cm80DQE0HNPChL-OfpksFIYBjESsCFfrv2E9s-5sfOd-LipbBrAtU8ofbAGovpPirHumOtTugtVo5B2IqoGi59tW5KPvaZO083JqOfjMLqvIVbwS68iNHOhwqccGRQ8P0kRHBhxxEowHfLrPM1ApmtS4hrrMzPwX2"/>
+</div>
+</button>
+</div>
+<!-- END: Footer Button -->
+</main>
+</body></html>

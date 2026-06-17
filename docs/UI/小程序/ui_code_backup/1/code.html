@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>AuraCue - Daily Tarot Style Oracle</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style data-purpose="custom-fonts">
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+    
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    .font-sans {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+<style data-purpose="custom-styles">
+    body {
+      background: #FAF3EB;
+      color: #1A1A40;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 8px 32px 0 rgba(226, 212, 237, 0.4);
+    }
+
+    .planet-card-bg {
+      background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-jD6C_umq_rPEwTf9LM08RMdtI7IPDEZ8Op465sFwewkVZH5tadowwUZoNctKIZgxMbF2Il_hH7z6t9Jj6V274NJ_liXhgNGoC5-X1TG6dC46g6ymAytqgvkdDMrC9_Wu2KHQ8SkQhoTHkFB3DxU2egzvGi9WSZ8s8hYPCefA8AnKsNGRNn3Hej80ZSYcdVaq6lKsNvr7QEjuA-6DSvC9h6ucqiwuo23_AO7nBKxnNp3rye_LxDrEN05YiSF4fddoy0DWDa9RsZOz') center/cover no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .planet-card-bg::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 70% 40%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 60%);
+      z-index: 1;
+    }
+
+    .text-gradient {
+      background: linear-gradient(90deg, #1A1A40 0%, #3B3B7A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-gradient {
+      background: linear-gradient(90deg, #A89EEB 0%, #E3A3C8 50%, #F5B0AA 100%);
+      box-shadow: 0 4px 15px rgba(181, 162, 239, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .nav-glass {
+      background: rgba(253, 245, 237, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .pill-badge {
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .date-badge {
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(230, 200, 210, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 4px 12px rgba(200, 180, 200, 0.2);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased relative pb-24">
+<!-- BEGIN: Header Section -->
+<header class="pt-12 pb-6 px-6 flex flex-col items-center text-center relative z-10" data-purpose="app-header">
+<div class="mb-2">
+<img alt="AuraCue Logo" class="h-12 w-12" src="data:image/png;base64,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"/>
+</div>
+<h1 class="font-serif text-2xl tracking-widest text-[#1A1A40] mb-1 uppercase">AuraCue</h1>
+<p class="text-xs text-[#5A6B8A] font-medium tracking-wide">Your Daily Tarot Style Oracle</p>
+<!-- Date Badge -->
+<div class="mt-4 date-badge rounded-full px-6 py-2 flex items-center space-x-2">
+<i class="fa-regular fa-calendar text-[#1A1A40]"></i>
+<span class="text-[#1A1A40] font-medium font-serif">Jun 13 • Saturday</span>
+</div>
+</header>
+<!-- END: Header Section -->
+<!-- BEGIN: Main Content Section -->
+<main class="flex-grow px-5 relative z-10 flex flex-col" data-purpose="main-content">
+<!-- Planet Card -->
+<section class="glass-card rounded-[32px] p-[2px] mb-8 relative group border border-[#F0D8E0]" data-purpose="ruling-planet-card">
+<!-- Inner content container for gradient border effect -->
+<div class="planet-card-bg rounded-[30px] p-6 h-[400px] flex flex-col justify-between relative overflow-hidden">
+<!-- Background Image overlay for the portrait -->
+<div class="absolute -right-10 -bottom-10 w-[120%] h-[120%] z-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBkbt3XBVDA5wR_uvq2h2mV8S719PdxgZv0b90ewgn5kAkBu1PDXP2bKh7vhWvaH6vmFGGXxotmo_AIKKtD-38afn_ms940u5dPG7J6MqUMrRLvXU6W5FEPdvnVLcKjuOvbuHSJOLYrQbZfO0abWaQv4GaYQAYnQuz02hq-FgPzGWBKRqKzWelF4S_k_1rhk1GGuhwk0PkI9AoacXgmB2UqCYL8eno9ZctqigfH1QSsST9Au79Nnq0lcF0VLDQD8LDdv3_MMuhTJY00'); background-size: cover; background-position: center right; mix-blend-mode: normal; opacity: 1;"></div>
+<div class="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#E6B8D0] to-transparent z-0 opacity-60"></div>
+<div class="relative z-10 w-2/3 mt-8">
+<p class="text-[10px] font-semibold tracking-[0.2em] text-[#1A1A40] uppercase mb-4">Today's Ruling Planet</p>
+<div class="flex items-center space-x-2 mb-2 w-32">
+<div class="h-px bg-[#D4AF37] flex-grow"></div>
+<i class="fa-solid fa-sparkles text-[10px] text-[#D4AF37]"></i>
+<div class="h-px bg-[#D4AF37] flex-grow"></div>
+</div>
+<h2 class="font-serif text-[4.5rem] leading-none text-[#121240] mb-2 tracking-tight">Saturn</h2>
+<div class="flex items-center space-x-2 w-48">
+<div class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></div>
+<div class="h-px bg-[#D4AF37] flex-grow"></div>
+<i class="fa-solid fa-sparkles text-[12px] text-[#D4AF37]"></i>
+<div class="h-px bg-[#D4AF37] flex-grow"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></div>
+</div>
+</div>
+<!-- Attribute Badges -->
+<div class="flex space-x-2 relative z-10 mt-auto pb-2 overflow-x-auto no-scrollbar">
+<div class="pill-badge rounded-full px-4 py-2 flex items-center space-x-2 whitespace-nowrap">
+<i class="fa-solid fa-shield-halved text-[#1A1A40] text-sm"></i>
+<span class="text-sm font-medium text-[#1A1A40]">Structure</span>
+</div>
+<div class="pill-badge rounded-full px-4 py-2 flex items-center space-x-2 whitespace-nowrap">
+<i class="fa-solid fa-lock text-[#1A1A40] text-sm"></i>
+<span class="text-sm font-medium text-[#1A1A40]">Boundaries</span>
+</div>
+<div class="pill-badge rounded-full px-4 py-2 flex items-center space-x-2 whitespace-nowrap">
+<i class="fa-solid fa-scale-balanced text-[#1A1A40] text-sm"></i>
+<span class="text-sm font-medium text-[#1A1A40]">Stability</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Primary Action Button -->
+<button class="btn-gradient w-full rounded-full py-4 px-6 flex items-center justify-center space-x-3 text-white font-serif text-2xl mb-4 transition-transform active:scale-95 border border-white/40" data-purpose="primary-action">
+<i class="fa-solid fa-sparkles text-lg opacity-90"></i>
+<span>Start My First Aura</span>
+<i class="fa-solid fa-sparkles text-lg opacity-90"></i>
+</button>
+</main>
+<!-- END: Main Content Section -->
+<!-- BEGIN: Bottom Navigation -->
+<nav class="fixed bottom-6 left-5 right-5 nav-glass rounded-full h-16 flex items-center justify-between px-2 shadow-lg border border-white/40 z-50 bg-[#FAF3EB]" data-purpose="bottom-navigation">
+<a class="flex-1 flex items-center justify-center space-x-2 h-12 rounded-full bg-[#EAE2F8] text-[#1A1A40] transition-colors" href="#">
+<i class="fa-solid fa-house text-lg"></i>
+<span class="font-semibold text-sm">Home</span>
+</a>
+<div class="w-px h-8 bg-[#D2C5B4] opacity-50 mx-2"></div>
+<a class="flex-1 flex items-center justify-center space-x-2 h-12 rounded-full text-[#7B7B9A] hover:bg-white/40 transition-colors" href="#">
+<i class="fa-regular fa-user text-lg"></i>
+<span class="font-semibold text-sm">My</span>
+</a>
+</nav>
+<!-- END: Bottom Navigation -->
+<!-- Home Indicator (iOS Safe Area) -->
+<div class="fixed bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-black rounded-full opacity-80 z-50 pointer-events-none"></div>
+</body></html>

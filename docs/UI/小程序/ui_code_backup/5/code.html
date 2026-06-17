@@ -1,0 +1,234 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AuraCue - Hold to Seal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet">
+<style>
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.85; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+        .animate-pulse-glow {
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .animate-floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        .glass-btn-shadow {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8) inset, 0 8px 32px rgba(255, 150, 180, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.5);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f4f2ff",
+                      "on-tertiary-container": "#fffbff",
+                      "tertiary-fixed": "#ede0d9",
+                      "on-secondary-fixed-variant": "#6a364a",
+                      "inverse-on-surface": "#f0efff",
+                      "on-error": "#ffffff",
+                      "primary-container": "#6067df",
+                      "error-container": "#ffdad6",
+                      "primary-fixed": "#e0e0ff",
+                      "on-primary-fixed": "#02006d",
+                      "outline-variant": "#c6c5d6",
+                      "tertiary-container": "#7c736d",
+                      "tertiary": "#635a55",
+                      "on-primary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "outline": "#767685",
+                      "inverse-primary": "#bfc2ff",
+                      "surface-container": "#ececff",
+                      "surface-tint": "#4950c7",
+                      "on-surface-variant": "#464653",
+                      "surface-container-high": "#e5e6ff",
+                      "inverse-surface": "#252d59",
+                      "surface": "#fbf8ff",
+                      "on-primary-container": "#fffbff",
+                      "on-secondary-fixed": "#360b1e",
+                      "secondary": "#864d61",
+                      "error": "#ba1a1a",
+                      "background": "#fbf8ff",
+                      "surface-dim": "#d3d8ff",
+                      "on-secondary": "#ffffff",
+                      "surface-container-highest": "#dee0ff",
+                      "surface-bright": "#fbf8ff",
+                      "tertiary-fixed-dim": "#d0c4be",
+                      "surface-variant": "#dee0ff",
+                      "on-surface": "#0f1743",
+                      "on-background": "#0f1743",
+                      "on-tertiary-fixed-variant": "#4d4540",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed-variant": "#3035af",
+                      "on-tertiary-fixed": "#201a16",
+                      "secondary-fixed": "#ffd9e3",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-container": "#7a4357",
+                      "secondary-container": "#fdb5cc",
+                      "primary": "#474dc5",
+                      "secondary-fixed-dim": "#fab3ca",
+                      "primary-fixed-dim": "#bfc2ff",
+                      
+                      // Custom Colors to match design
+                      "brand-indigo": "#0C1B4A",
+                      "brand-pink": "#FF9DAB",
+                      "bg-blush": "#FFF5F2",
+                      "text-gray": "#6B7280"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-gap-md": "1rem",
+                      "container-padding": "1.5rem",
+                      "stack-gap-lg": "2rem",
+                      "stack-gap-sm": "0.5rem",
+                      "card-inset": "1.25rem"
+              },
+              "fontFamily": {
+                      "headline-sm": [
+                              "Domine"
+                      ],
+                      "label-caps": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Domine"
+                      ],
+                      "headline-md": [
+                              "Domine"
+                      ]
+              },
+              "fontSize": {
+                      "headline-sm": [
+                              "22px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "46px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-bg-blush min-h-screen font-sans antialiased text-brand-indigo flex flex-col relative overflow-x-hidden">
+<!-- Soft Background Gradient -->
+<div class="fixed inset-0 pointer-events-none -z-10 bg-gradient-to-b from-white via-bg-blush to-bg-blush opacity-90">
+</div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-20 pt-4">
+<button aria-label="Back" class="w-10 h-10 flex items-center justify-center rounded-full border border-brand-indigo/10 text-brand-indigo bg-white/50 backdrop-blur-sm">
+<span class="material-symbols-outlined text-xl font-light" data-icon="arrow_back_ios_new">arrow_back_ios_new</span>
+</button>
+<div class="flex flex-col items-center justify-center absolute left-1/2 -translate-x-1/2">
+<span class="material-symbols-outlined text-3xl text-brand-indigo mb-0.5" data-icon="spa" style="font-variation-settings: 'wght' 300;">spa</span>
+<h1 class="font-headline-sm text-[16px] uppercase tracking-[0.2em] text-brand-indigo">
+                AuraCue
+            </h1>
+</div>
+<div class="w-10 h-10"></div> <!-- Spacer for center alignment -->
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 flex flex-col items-center pt-28 pb-28 px-6 text-center relative z-10 max-w-md mx-auto w-full">
+<!-- Heading Section -->
+<div class="flex flex-col gap-2 mb-10 w-full">
+<h2 class="font-display-lg text-display-lg text-brand-indigo">Hold to Seal</h2>
+<p class="font-body-md text-[15px] text-text-gray font-light tracking-wide">Press and carry today's aura with you.</p>
+</div>
+<!-- Central Ethereal Sphere -->
+<div class="relative w-full aspect-square max-w-[340px] mx-auto mb-12 flex items-center justify-center animate-pulse-glow">
+<!-- Glowing background image -->
+<img alt="Ethereal glowing sphere with clouds and sparkles" class="absolute inset-0 w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5vOsJ-RpuuODY9nS2yJXMsLA5AiJUAlNHeSO-g2G9nfKn0c2AxFeAdt2D3Ou4KeR90WKmXOPamiKtmS2YkvszXPJeZsRu4dKQh5nxfvQoBiW4dArIZCHnF-ZzqobXLR8l7rrWto1SXbF9qWtY5QhDsMWgKq7Ut-1TAyBgoIcLLWBBlEQcRs4UbXiqod-KN0T6XdyHTVssOc2IeM0d0LdgujudCFMdMYO4Fltq8AKezR9d0D5fMfYOSTkCieZA3foYWzi5tslUrw">
+<!-- Sphere Content -->
+<div class="relative z-10 flex flex-col items-center justify-center text-brand-indigo p-8 h-full"><span class="material-symbols-outlined text-6xl text-brand-pink mb-4 opacity-90">local_florist</span><h3 class="font-headline-md text-headline-md text-brand-indigo mb-2">Soft Boundary</h3><div class="flex items-center gap-3 mb-3 w-full max-w-[120px] mx-auto opacity-50"><div class="h-px bg-brand-indigo flex-1"></div><span class="material-symbols-outlined text-xs text-brand-indigo">spa</span><div class="h-px bg-brand-indigo flex-1"></div></div><p class="font-body-md text-[15px] text-brand-indigo/80 font-light max-w-[180px] leading-snug">I protect my peace<br>with grace.</p></div>
+</div>
+<!-- Action Section -->
+<div class="mt-auto w-full flex flex-col items-center gap-4">
+<!-- Sealing Button -->
+<button class="relative w-full max-w-[320px] h-[68px] rounded-full overflow-hidden group glass-btn-shadow transition-transform active:scale-95 duration-300">
+<!-- Button Gradient Background -->
+<div class="absolute inset-0 bg-gradient-to-r from-[#A588EE] via-[#D384D0] to-[#FCA896] opacity-90"></div>
+<!-- Content -->
+<div class="absolute inset-0 flex items-center px-4"><div class="w-12 h-12 rounded-full border border-white/40 flex items-center justify-center bg-white/20 backdrop-blur-md"><span class="material-symbols-outlined text-white text-2xl font-light">sparkles</span></div><div class="flex-1 text-center pr-12"><span class="font-headline-sm text-[22px] text-white tracking-wide font-normal drop-shadow-sm">Hold to Seal</span></div></div>
+</button>
+<div class="flex items-center gap-2 text-text-gray font-body-md text-[14px] font-light">
+<span class="material-symbols-outlined text-[16px] font-light" data-icon="schedule">schedule</span>
+<span class="">2 seconds to activate</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-white/80 backdrop-blur-xl border-t border-gray-100 fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-3 md:hidden">
+<a class="flex flex-col items-center justify-center text-primary" href="#" style="color: rgb(71, 77, 197);">
+<div class="bg-primary/10 px-6 py-1 rounded-full mb-1" style="background-color: rgba(71, 77, 197, 0.1);">
+<span class="material-symbols-outlined text-2xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<span class="font-label-caps text-[11px] font-semibold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 hover:text-gray-600 transition-colors" href="#">
+<div class="px-6 py-1 mb-1">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+</div>
+<span class="font-label-caps text-[11px] font-semibold">My</span>
+</a>
+</nav>
+
+
+</body></html>

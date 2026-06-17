@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AuraCue - Daily Oracle</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Inter"', 'sans-serif'],
+          },
+          colors: {
+            'aura-navy': '#1A1B4B',
+            'aura-gold': '#D4AF37',
+            'aura-bg-start': '#FFF5F5',
+            'aura-bg-end': '#FFE4D6',
+          },
+          backgroundImage: {
+            'glow-gradient': 'radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%)',
+            'button-gradient': 'linear-gradient(to right, #9B86EE, #E694D0, #F4A6A6)',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-animations">
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    .animate-float-delayed {
+      animation: float 6s ease-in-out 3s infinite;
+    }
+    
+    .sparkle-bg {
+      background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 4px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 3px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 4px);
+      background-size: 550px 550px, 350px 350px, 250px 250px;
+      background-position: 0 0, 40px 60px, 130px 270px;
+    }
+
+    .card-glow {
+      box-shadow: 0 0 30px rgba(255, 200, 150, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-aura-bg-start via-[#FFF0F5] to-aura-bg-end min-h-screen text-aura-navy font-sans antialiased relative overflow-hidden flex flex-col items-center">
+<!-- Ambient Background Effects -->
+<div class="absolute inset-0 sparkle-bg opacity-40 pointer-events-none"></div>
+<div class="absolute top-1/4 left-0 w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 pointer-events-none"></div>
+<div class="absolute bottom-1/3 right-0 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 pointer-events-none"></div>
+<!-- Main Mobile Container -->
+<div class="w-full max-w-[430px] min-h-screen flex flex-col relative z-10 px-6 py-10">
+<!-- BEGIN: Header -->
+<header class="flex justify-between items-center mb-8">
+<button class="w-10 h-10 rounded-full bg-white/50 backdrop-blur border border-white/60 flex items-center justify-center text-aura-gold shadow-sm">
+<i class="w-5 h-5" data-lucide="sparkles"></i>
+</button>
+<div class="flex flex-col items-center">
+<div class="text-aura-navy mb-1">
+<!-- Placeholder for Lotus Logo -->
+<svg class="w-8 h-8" fill="none" height="24" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" width="32">
+<path d="M12 2C12 2 14 6 14 10C14 14 10 16 10 16C10 16 6 14 6 10C6 6 12 2 12 2Z" fill="currentColor" fill-opacity="0.1"></path>
+<path d="M12 2C12 2 17 4 19 8C21 12 18 16 18 16C18 16 15 13 14 10"></path>
+<path d="M12 2C12 2 7 4 5 8C3 12 6 16 6 16C6 16 9 13 10 10"></path>
+<path d="M10 16C10 16 12 20 12 22C12 20 14 16 14 16"></path>
+</svg>
+</div>
+<h1 class="text-xl font-serif font-semibold tracking-widest uppercase">AuraCue</h1>
+<p class="text-[10px] text-gray-500 uppercase tracking-wider mt-1">Your Daily Tarot Style Oracle</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-white/50 backdrop-blur border border-white/60 flex items-center justify-center text-aura-navy shadow-sm">
+<i class="w-5 h-5" data-lucide="gift"></i>
+</button>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: Main Content -->
+<main class="flex-1 flex flex-col items-center">
+<!-- Titles -->
+<div class="text-center mb-10 relative">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 text-aura-gold">
+<i class="w-4 h-4" data-lucide="sparkle"></i>
+</div>
+<h2 class="font-serif text-4xl leading-tight mb-3">
+          Choose the card<br/>that calls you.
+        </h2>
+<p class="text-gray-500 text-sm">Take one breath. Let today's aura find you.</p>
+<div class="absolute -top-2 -right-4 text-pink-400 opacity-60">
+<i class="w-6 h-6" data-lucide="sparkles"></i>
+</div>
+</div>
+<!-- Card Display Area -->
+<div class="relative w-full h-[320px] flex justify-center items-center mb-8">
+<!-- Floor Glow -->
+<div class="absolute bottom-0 w-64 h-8 bg-glow-gradient rounded-[100%] opacity-80 filter blur-sm"></div>
+<div class="absolute bottom-0 w-48 h-2 border border-white/40 rounded-[100%] shadow-[0_0_15px_rgba(255,255,255,0.8)]"></div>
+<!-- Left Card (Card I) -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 -rotate-12 w-28 h-44 rounded-xl overflow-hidden opacity-80 transition-transform duration-300 animate-float-delayed scale-90 origin-bottom-right">
+<img alt="Card I" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsprNaD-yANyuJx6bo0dauV198VdsdAdEkSQl-IyW4vLMZ0SoCwE_UTdpPRiP9TkD9vgNoqdfmUNUYi-guchRmZ80Y-Ip6CcvyIMhJVO2FyFI2RKvIUYOGLysfdjK-Re0-rK57pp_pBhteaAwuSU_noyCf3gvZbM4hKU1ILZjg5Ejs5MfIcRVwhsQ9FhWciEXlrSXaNxN2j_CCBmtc5CMfn8PTNOcuMUjxvjag0TQ8BWvNCiRbgVxFwxFsENWPRnMUuz-nEVbyLA"/>
+<div class="absolute inset-0 bg-white/20"></div>
+<div class="absolute bottom-4 w-full text-center font-serif text-aura-navy text-sm">Card I</div>
+</div>
+<!-- Right Card (Card III) -->
+<div class="absolute right-0 top-1/2 -translate-y-1/2 rotate-12 w-28 h-44 rounded-xl overflow-hidden opacity-80 transition-transform duration-300 animate-float-delayed scale-90 origin-bottom-left">
+<img alt="Card III" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsprNaD-yANyuJx6bo0dauV198VdsdAdEkSQl-IyW4vLMZ0SoCwE_UTdpPRiP9TkD9vgNoqdfmUNUYi-guchRmZ80Y-Ip6CcvyIMhJVO2FyFI2RKvIUYOGLysfdjK-Re0-rK57pp_pBhteaAwuSU_noyCf3gvZbM4hKU1ILZjg5Ejs5MfIcRVwhsQ9FhWciEXlrSXaNxN2j_CCBmtc5CMfn8PTNOcuMUjxvjag0TQ8BWvNCiRbgVxFwxFsENWPRnMUuz-nEVbyLA"/>
+<div class="absolute inset-0 bg-white/20"></div>
+<div class="absolute bottom-4 w-full text-center font-serif text-aura-navy text-sm">Card III</div>
+</div>
+<!-- Center Card (Card II) -->
+<div class="absolute z-10 w-40 h-64 rounded-xl overflow-hidden card-glow border border-white/50 animate-float">
+<img alt="Card II" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsprNaD-yANyuJx6bo0dauV198VdsdAdEkSQl-IyW4vLMZ0SoCwE_UTdpPRiP9TkD9vgNoqdfmUNUYi-guchRmZ80Y-Ip6CcvyIMhJVO2FyFI2RKvIUYOGLysfdjK-Re0-rK57pp_pBhteaAwuSU_noyCf3gvZbM4hKU1ILZjg5Ejs5MfIcRVwhsQ9FhWciEXlrSXaNxN2j_CCBmtc5CMfn8PTNOcuMUjxvjag0TQ8BWvNCiRbgVxFwxFsENWPRnMUuz-nEVbyLA"/>
+</div>
+</div>
+<!-- Interaction Hint -->
+<div class="flex items-center gap-2 text-gray-600 text-sm mb-6">
+<i class="w-4 h-4 text-purple-400" data-lucide="mouse-pointer-click"></i>
+<span>Tap one card to draw today's aura.</span>
+</div>
+<!-- Info Pill -->
+<div class="flex items-center gap-2 px-5 py-2 rounded-full bg-white/40 backdrop-blur-sm border border-white/60 text-xs text-gray-500 mb-6 shadow-sm">
+<i class="w-3 h-3 text-aura-gold" data-lucide="sparkles"></i>
+<span>30-second ritual • private • just for you</span>
+</div>
+<!-- Action Button -->
+<button class="w-full h-14 rounded-full bg-button-gradient text-white font-serif text-lg shadow-[0_4px_20px_rgba(200,150,230,0.4)] flex items-center justify-center gap-3 transition-transform active:scale-95 mb-8">
+<i class="w-4 h-4" data-lucide="sparkle"></i>
+        Reveal My Aura
+        <i class="w-4 h-4" data-lucide="sparkle"></i>
+</button>
+</main>
+<!-- END: Main Content -->
+<!-- BEGIN: Bottom Navigation -->
+<nav class="w-full h-16 bg-white/60 backdrop-blur-md rounded-full border border-white/80 shadow-sm flex items-center px-2 relative z-20">
+<button class="flex-1 h-full rounded-full flex items-center justify-center gap-2 bg-purple-50 text-aura-navy font-medium text-sm transition-colors">
+<i class="w-5 h-5 text-purple-700 fill-purple-700" data-lucide="home"></i>
+        Home
+      </button>
+<div class="w-px h-6 bg-gray-200 mx-1"></div>
+<button class="flex-1 h-full rounded-full flex items-center justify-center gap-2 text-gray-400 hover:text-aura-navy font-medium text-sm transition-colors">
+<i class="w-5 h-5" data-lucide="user"></i>
+        My
+      </button>
+</nav>
+<!-- END: Bottom Navigation -->
+</div>
+<script data-purpose="icon-initialization">
+    lucide.createIcons();
+  </script>
+</body></html>

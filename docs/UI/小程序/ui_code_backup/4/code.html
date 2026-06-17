@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AuraCue - Birth Aura</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary-fixed": "#ffd9e3",
+                "primary": "#474dc5",
+                "tertiary": "#635a55",
+                "surface-container-high": "#e5e6ff",
+                "on-error": "#ffffff",
+                "surface-variant": "#dee0ff",
+                "secondary": "#864d61",
+                "on-secondary-container": "#7a4357",
+                "on-tertiary": "#ffffff",
+                "inverse-primary": "#bfc2ff",
+                "surface-container-highest": "#dee0ff",
+                "surface-container": "#ececff",
+                "surface-dim": "#d3d8ff",
+                "on-secondary": "#ffffff",
+                "on-primary": "#ffffff",
+                "secondary-fixed-dim": "#fab3ca",
+                "primary-fixed": "#e0e0ff",
+                "on-tertiary-container": "#fffbff",
+                "secondary-container": "#fdb5cc",
+                "on-surface": "#0f1743",
+                "on-surface-variant": "#464653",
+                "surface-bright": "#fbf8ff",
+                "surface-container-low": "#f4f2ff",
+                "on-tertiary-fixed": "#201a16",
+                "on-primary-container": "#fffbff",
+                "primary-fixed-dim": "#bfc2ff",
+                "surface-container-lowest": "#ffffff",
+                "error": "#ba1a1a",
+                "on-secondary-fixed-variant": "#6a364a",
+                "tertiary-fixed": "#ede0d9",
+                "on-primary-fixed-variant": "#3035af",
+                "outline": "#767685",
+                "surface-tint": "#4950c7",
+                "error-container": "#ffdad6",
+                "inverse-on-surface": "#f0efff",
+                "on-error-container": "#93000a",
+                "surface": "#fbf8ff",
+                "on-background": "#0f1743",
+                "outline-variant": "#c6c5d6",
+                "on-secondary-fixed": "#360b1e",
+                "tertiary-container": "#7c736d",
+                "on-primary-fixed": "#02006d",
+                "inverse-surface": "#252d59",
+                "primary-container": "#6067df",
+                "background": "#fbf8ff",
+                "on-tertiary-fixed-variant": "#4d4540",
+                "tertiary-fixed-dim": "#d0c4be"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "stack-gap-md": "1rem",
+                "card-inset": "1.25rem",
+                "stack-gap-lg": "2rem",
+                "stack-gap-sm": "0.5rem",
+                "container-padding": "1.5rem"
+        },
+        "fontFamily": {
+                "headline-md": [
+                        "Domine"
+                ],
+                "label-caps": [
+                        "Plus Jakarta Sans"
+                ],
+                "body-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "display-lg": [
+                        "Domine"
+                ],
+                "headline-sm": [
+                        "Domine"
+                ],
+                "body-md": [
+                        "Plus Jakarta Sans"
+                ]
+        },
+        "fontSize": {
+                "headline-md": [
+                        "28px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "1",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-sm": [
+                        "22px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: #fdf3f0;
+            background-image: radial-gradient(at 50% 0%, rgba(255,255,255,0.8) 0, transparent 60%), radial-gradient(at 100% 100%, rgba(250,225,225,0.6) 0, transparent 60%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        .aura-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.7), rgba(255,255,255,0.2));
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(250,210,210,0.6);
+            box-shadow: 0 4px 24px rgba(220, 180, 180, 0.15);
+        }
+        .main-aura-card {
+            background: linear-gradient(135deg, rgba(234, 211, 245, 0.8) 0%, rgba(252, 216, 216, 0.8) 100%);
+            border: 1px solid rgba(255,255,255,0.8);
+            box-shadow: 0 8px 32px rgba(230, 180, 180, 0.2);
+        }
+        .sparkle-icon {
+            font-size: 1.2rem;
+            color: #d19a6b;
+        }
+        .text-navy {
+            color: #0b1c4a;
+        }
+        .text-navy-muted {
+            color: #3b4970;
+        }
+    </style>
+</head>
+<body class="text-on-surface font-body-md pb-24 pt-16 selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar Shared Component -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-padding h-16 bg-[#fdf3f0]/80 backdrop-blur-md">
+<button class="text-navy hover:opacity-80 transition-opacity active:scale-95 transition-transform flex items-center justify-center w-10 h-10 rounded-full bg-white/50 border border-white/60">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-navy mb-1">local_florist</span>
+<h1 class="font-headline-sm text-[20px] text-navy tracking-tight">AuraCue</h1>
+<span class="font-label-caps text-[10px] text-navy-muted lowercase tracking-widest mt-0.5">Your Daily Tarot Style Oracle</span>
+</div>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<main class="max-w-md mx-auto px-container-padding pt-8 flex flex-col gap-stack-gap-md relative">
+<!-- Page Title -->
+<h2 class="font-display-lg text-[40px] font-bold text-center text-navy mb-6">Birth Aura</h2>
+<!-- Main Aura Card -->
+<div class="main-aura-card rounded-[2rem] p-6 flex flex-col items-center gap-4 relative overflow-hidden">
+<div class="w-48 h-48 shrink-0 relative z-10">
+<img alt="Mystical crystal lotus graphic representing Venus Air aura" class="w-full h-full object-contain drop-shadow-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyl6hUbReYdXkO66v_ZGg_TtLA2FVlC76_0kWjIN0B-K46iGthMGZ7Oy3lsRQPMeBtwO9a6DTxDvTnmWEvrC_crfW7-MBTvTlpzVeRgeBydxNSW80wSOh6FGB8EO61EtMktfwS6Nc79zVfiNsqIOyCer5J5MQAtlfiIrnfZ8o8MrHU_i_2JzsHw_mRigY1ah7OnkvvAb-PnqXLhpuMhUOuqVraX6YZSal_5201E8w2_Dc9MUtwP1STedgMJ_5FPClEJRCFNc8n5g"/>
+</div>
+<div class="flex flex-col text-center md:text-left z-10 w-full">
+<h3 class="font-display-lg text-[44px] font-bold text-navy mb-1 relative">
+<span class="material-symbols-outlined absolute -left-6 top-2 sparkle-icon text-sm">flare</span>
+                    Venus Air
+                </h3>
+<p class="font-body-lg text-[20px] text-navy-muted tracking-wide flex items-center justify-center gap-3">
+<span>Libra</span> <span class="text-navy/30">•</span> <span>Air</span> <span class="text-navy/30">•</span> <span>Opal</span>
+</p>
+</div>
+</div>
+<!-- Detail Cards -->
+<div class="flex flex-col gap-stack-gap-sm mt-4">
+<!-- Guardian Color Card -->
+<div class="aura-card rounded-2xl p-4 flex items-center justify-between transition-transform hover:scale-[1.01] cursor-default">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined sparkle-icon text-[1.2rem]">flare</span>
+<span class="font-body-md text-navy-muted font-semibold text-sm">Guardian Color</span>
+</div>
+<span class="font-body-lg text-navy ml-7">Soft Opal Pink</span>
+</div>
+<div class="w-12 h-12 rounded-full border-[3px] border-white flex items-center justify-center shadow-sm overflow-hidden shrink-0 bg-[#fabed1]">
+</div>
+</div>
+<!-- Style Mantra Card -->
+<div class="aura-card rounded-2xl p-4 flex flex-col gap-2 transition-transform hover:scale-[1.01] cursor-default">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined sparkle-icon text-[1.2rem]">flare</span>
+<span class="font-body-md text-navy-muted font-semibold text-sm">Style Mantra</span>
+</div>
+<p class="font-body-lg text-[20px] text-navy-muted tracking-wide flex items-center justify-center gap-3">I attract through balance, not effort.</p>
+</div>
+<!-- Birthday Card -->
+<div class="aura-card rounded-2xl p-4 flex items-center justify-between transition-transform hover:scale-[1.01]">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#d19a6b] opacity-80 text-[1.2rem]">calendar_today</span>
+<span class="font-body-md text-navy-muted font-semibold text-sm">Birthday</span>
+</div>
+<span class="font-body-lg text-navy ml-7">Oct 07</span>
+</div>
+<button class="px-4 py-1.5 rounded-full bg-white/60 text-navy font-body-md text-[13px] flex items-center gap-1 hover:bg-white/80 transition-colors border border-white">
+                    Edit Birthday
+                    <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Info Box -->
+<div class="mt-4 p-4 rounded-2xl bg-white/40 border border-white/60 flex gap-3 items-start shadow-sm">
+<span class="material-symbols-outlined text-navy mt-0.5 shrink-0" style="font-variation-settings: 'FILL' 0;">info</span>
+<p class="font-body-md text-navy-muted text-[13px] leading-relaxed">
+                Changing your birthday will update future readings.<br/>Past sealed cards will stay unchanged.
+            </p>
+</div>
+</main>
+<!-- BottomNavBar Shared Component -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 pb-8 pt-4 bg-[#fdf3f0]/90 backdrop-blur-xl rounded-t-3xl border-t border-white/50 shadow-[0_-8px_32px_rgba(200,150,150,0.1)] md:hidden">
+<!-- Home (Inactive) -->
+<button class="flex flex-col items-center justify-center text-navy px-6 py-2 hover:bg-white/50 transition-colors rounded-full">
+<span class="material-symbols-outlined mb-1">auto_awesome</span>
+<span class="font-label-caps text-label-caps">Home</span>
+</button>
+<!-- Divider -->
+<div class="h-6 w-px bg-navy/10"></div>
+<!-- My (Active) -->
+<button class="flex flex-col items-center justify-center bg-[#e8e2fc] text-navy rounded-full px-8 py-2">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-caps text-label-caps">My</span>
+</button>
+</nav>
+</body></html>
