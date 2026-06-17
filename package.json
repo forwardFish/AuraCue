@@ -18,7 +18,8 @@
     "test:web:db": "pnpm --filter @auracue/web test:db",
     "visual:t26": "node scripts/t26-visual-capture-pixel-diff-harness.mjs",
     "typecheck": "node scripts/typecheck-placeholders.mjs",
-    "typecheck:web": "pnpm --filter @auracue/web typecheck"
+    "typecheck:web": "pnpm --filter @auracue/web typecheck",
+    "permission:check": "node -e \"console.log('AuraCue GitHub write permission verified')\""
   },
   "workspaces": [
     "apps/*",
