@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuraCue Home</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="phone" aria-label="AuraCue home screen">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+      <div class="statusbar">
+        <div class="status-time">9:41</div>
+        <div class="status-icons" aria-hidden="true">
+          <div class="signal">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="wifi"><span></span></div>
+          <div class="battery"><span></span></div>
+        </div>
+      </div>
+
+      <section class="brand-block">
+        <img class="brand-lotus" src="./assets/lotus-logo.png" alt="AuraCue lotus logo" />
+        <h1>AuraCue</h1>
+        <p>Your Daily Tarot Style Oracle</p>
+      </section>
+
+      <button class="date-chip" type="button">
+        <img src="./assets/calendar-star.png" alt="" />
+        <span>Jun 13 · Saturday</span>
+      </button>
+
+      <section class="planet-card">
+        <div class="sparkle-field" aria-hidden="true">
+          <i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="s4"></i><i class="s5"></i><i class="s6"></i>
+        </div>
+
+        <img class="hero-woman" src="./assets/hero-woman.png" alt="Soft aura portrait" />
+
+        <div class="planet-copy">
+          <div class="planet-kicker">Today’s Ruling Planet</div>
+          <div class="gold-rule top-rule"><span></span><b>✧</b><span></span></div>
+          <div class="planet-name">Saturn</div>
+          <div class="gold-rule bottom-rule"><small></small><span></span><b>✦</b><span></span><small></small></div>
+        </div>
+
+        <div class="trait-row">
+          <button class="trait-pill" type="button">
+            <img src="./assets/shield.png" alt="" />
+            <span>Structure</span>
+          </button>
+          <button class="trait-pill" type="button">
+            <img src="./assets/lock.png" alt="" />
+            <span>Boundaries</span>
+          </button>
+          <button class="trait-pill" type="button">
+            <img src="./assets/scales.png" alt="" />
+            <span>Stability</span>
+          </button>
+        </div>
+      </section>
+
+      <button class="primary-cta" type="button">
+        <span>✦</span>
+        <strong>Start My First Aura</strong>
+        <span>✦</span>
+      </button>
+
+      <nav class="bottom-nav" aria-label="Bottom navigation">
+        <button class="nav-item active" type="button" aria-current="page">
+          <img src="./assets/home.png" alt="" />
+          <span>Home</span>
+        </button>
+        <div class="nav-divider" aria-hidden="true"></div>
+        <button class="nav-item" type="button">
+          <img src="./assets/user.png" alt="" />
+          <span>My</span>
+        </button>
+      </nav>
+
+      <div class="home-indicator" aria-hidden="true"></div>
+    </main>
+  </body>
+</html>
