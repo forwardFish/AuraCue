@@ -1,10 +1,10 @@
-import { ActivatedPageFlow } from "@/components/result-activation-flow";
+import { LatestActivatedPage } from "@/components/latest-ui-pages";
 
 type ActivatedPageProps = {
   params: Promise<{ id: string }>;
 };
 
 export default async function ActivatedPage({ params }: ActivatedPageProps) {
-  const { id } = await params;
-  return <ActivatedPageFlow cardId={id} />;
+  await params;
+  return <LatestActivatedPage />;
 }

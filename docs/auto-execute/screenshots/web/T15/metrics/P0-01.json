@@ -1,0 +1,48 @@
+{
+  "uiId": "P0-01",
+  "route": "/home",
+  "state": "home guardian planet",
+  "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
+  "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-01.png",
+  "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-01.png",
+  "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-01-diff.png",
+  "referenceSource": "docs/UI/小程序/P0-01-Home-首页今日守护星.png",
+  "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/01-home.png",
+  "referenceImage": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 1912064,
+    "sha256": "a9d6a1e14739ce7a5a83941d69057f34ff9265c0caff4e5f64df8027fba2c7e9"
+  },
+  "actualImage": {
+    "width": 390,
+    "height": 693,
+    "bytes": 243320,
+    "sha256": "a0869d29ffe6df5324bec8e69f31f3619844ef67785bb89382709eabf2068cc7"
+  },
+  "diffImage": {
+    "width": 792,
+    "height": 693,
+    "bytes": 784087,
+    "sha256": "69f269931075f6c53142e3c7e2fd7b1dc8ef66be31ec62f9f8845facda4f2c8d"
+  },
+  "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
+  "normalizedPixelDiff": {
+    "width": 390,
+    "height": 693,
+    "totalPixels": 270270,
+    "changedPixels": 174370,
+    "diffRatio": 0.64517,
+    "averageChannelDelta": 31.641,
+    "maxChannelDelta": 251,
+    "changeThresholdPerPixel": 12
+  },
+  "diffRatio": 0.64517,
+  "threshold": 0.05,
+  "pixelPerfectStatus": "REPAIR_REQUIRED",
+  "materialDeviation": "REPAIR_REQUIRED",
+  "notes": [
+    "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
+    "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
+  ]
+}

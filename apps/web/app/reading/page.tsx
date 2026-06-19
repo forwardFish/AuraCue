@@ -1,5 +1,5 @@
-import { ReadingAuraPageFlow } from "@/components/aura-static-pages";
+import { LatestReadingPage } from "@/components/latest-ui-pages";
 
 export default function ReadingAuraPage() {
-  return <ReadingAuraPageFlow />;
+  return <LatestReadingPage />;
 }

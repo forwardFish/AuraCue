@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
-import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { existsSync, readFileSync, mkdirSync } from "node:fs";
 import { resolve } from "node:path";
+import { writeEvidenceJson } from "../helpers/evidence.mjs";
 
 if (process.argv.includes("identity-upload-draw")) {
   await import("./identity-upload-draw.test.mjs");
@@ -68,10 +69,7 @@ const healthResponseEvidence = {
   reusableFoundation: requiredFiles
 };
 
-writeFileSync(
-  resolve(evidenceDir, "health-response.json"),
-  JSON.stringify(healthResponseEvidence, null, 2)
-);
+writeEvidenceJson(resolve(evidenceDir, "health-response.json"), healthResponseEvidence);
 
 console.log(JSON.stringify({
   status: "PASS",

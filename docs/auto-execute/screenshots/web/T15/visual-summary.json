@@ -3,100 +3,124 @@
   "verdict": "REPAIR_REQUIRED",
   "productPassClaimed": false,
   "coveredIds": [
-    "UI-001",
-    "UI-002",
-    "UI-003",
-    "UI-004",
-    "UI-005",
-    "UI-006",
-    "UI-007",
-    "UI-008",
-    "UI-009",
-    "UI-010"
+    "P0-01",
+    "P0-02",
+    "P0-03",
+    "P0-04",
+    "P0-05",
+    "P0-06A",
+    "P0-07",
+    "P0-08",
+    "P0-09",
+    "P0-10",
+    "P0-12",
+    "P0-13",
+    "P0-16"
   ],
-  "generatedAt": "2026-06-16T00:26:50.610Z",
+  "generatedAt": "2026-06-19T15:14:05.072Z",
   "summary": {
-    "referenceCount": 10,
-    "actualCount": 10,
-    "diffCount": 10,
-    "metricsCount": 10,
+    "referenceCount": 13,
+    "actualCount": 13,
+    "diffCount": 13,
+    "metricsCount": 13,
     "missingEvidence": [],
     "materialDeviations": [
       {
-        "uiId": "UI-001",
+        "uiId": "P0-01",
         "status": "REPAIR_REQUIRED",
-        "diffRatio": 0.432423,
-        "threshold": 0.005,
+        "diffRatio": 0.64517,
+        "threshold": 0.05,
         "basis": "Normalized pixel diff exceeds threshold."
       },
       {
-        "uiId": "UI-002",
+        "uiId": "P0-02",
         "status": "REPAIR_REQUIRED",
-        "diffRatio": 0.273811,
-        "threshold": 0.005,
+        "diffRatio": 0.284956,
+        "threshold": 0.05,
         "basis": "Normalized pixel diff exceeds threshold."
       },
       {
-        "uiId": "UI-003",
+        "uiId": "P0-03",
         "status": "REPAIR_REQUIRED",
-        "diffRatio": 0.377955,
-        "threshold": 0.005,
+        "diffRatio": 0.360169,
+        "threshold": 0.05,
         "basis": "Normalized pixel diff exceeds threshold."
       },
       {
-        "uiId": "UI-004",
+        "uiId": "P0-04",
         "status": "REPAIR_REQUIRED",
-        "diffRatio": 0.379384,
-        "threshold": 0.005,
+        "diffRatio": 0.43599,
+        "threshold": 0.05,
         "basis": "Normalized pixel diff exceeds threshold."
       },
       {
-        "uiId": "UI-005",
+        "uiId": "P0-05",
         "status": "REPAIR_REQUIRED",
-        "diffRatio": 0.300366,
-        "threshold": 0.005,
+        "diffRatio": 0.305835,
+        "threshold": 0.05,
         "basis": "Normalized pixel diff exceeds threshold."
       },
       {
-        "uiId": "UI-006",
+        "uiId": "P0-06A",
         "status": "REPAIR_REQUIRED",
-        "diffRatio": 0.338469,
-        "threshold": 0.005,
+        "diffRatio": 0.264983,
+        "threshold": 0.05,
         "basis": "Normalized pixel diff exceeds threshold."
       },
       {
-        "uiId": "UI-007",
+        "uiId": "P0-07",
         "status": "REPAIR_REQUIRED",
-        "diffRatio": 0.234022,
-        "threshold": 0.005,
+        "diffRatio": 0.411677,
+        "threshold": 0.05,
         "basis": "Normalized pixel diff exceeds threshold."
       },
       {
-        "uiId": "UI-008",
+        "uiId": "P0-08",
         "status": "REPAIR_REQUIRED",
-        "diffRatio": 0.380619,
-        "threshold": 0.005,
+        "diffRatio": 0.401894,
+        "threshold": 0.05,
         "basis": "Normalized pixel diff exceeds threshold."
       },
       {
-        "uiId": "UI-009",
+        "uiId": "P0-09",
         "status": "REPAIR_REQUIRED",
-        "diffRatio": 0.378858,
-        "threshold": 0.005,
+        "diffRatio": 0.572361,
+        "threshold": 0.05,
         "basis": "Normalized pixel diff exceeds threshold."
       },
       {
-        "uiId": "UI-010",
+        "uiId": "P0-10",
         "status": "REPAIR_REQUIRED",
-        "diffRatio": 0.027861,
-        "threshold": 0.005,
+        "diffRatio": 0.41039,
+        "threshold": 0.05,
+        "basis": "Normalized pixel diff exceeds threshold."
+      },
+      {
+        "uiId": "P0-12",
+        "status": "REPAIR_REQUIRED",
+        "diffRatio": 0.262719,
+        "threshold": 0.05,
+        "basis": "Normalized pixel diff exceeds threshold."
+      },
+      {
+        "uiId": "P0-13",
+        "status": "REPAIR_REQUIRED",
+        "diffRatio": 0.382995,
+        "threshold": 0.05,
+        "basis": "Normalized pixel diff exceeds threshold."
+      },
+      {
+        "uiId": "P0-16",
+        "status": "REPAIR_REQUIRED",
+        "diffRatio": 0.496318,
+        "threshold": 0.05,
         "basis": "Normalized pixel diff exceeds threshold."
       }
     ],
     "passingScreens": 0,
-    "failingScreens": 10,
-    "maxDiffRatio": 0.432423,
-    "threshold": 0.005
+    "failingScreens": 13,
+    "maxDiffRatio": 0.64517,
+    "threshold": 0.05
   },
   "evidence": {
     "referenceDir": "docs/auto-execute/screenshots/web/T15/reference",
@@ -105,494 +129,641 @@
     "metricsDir": "docs/auto-execute/screenshots/web/T15/metrics",
     "cases": [
       {
-        "uiId": "UI-001",
-        "route": "/",
-        "state": "home no active card",
+        "uiId": "P0-01",
+        "route": "/home",
+        "state": "home guardian planet",
         "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
-        "reference": "docs/auto-execute/screenshots/web/T15/reference/UI-001.png",
-        "actual": "docs/auto-execute/screenshots/web/T15/actual/UI-001.png",
-        "diff": "docs/auto-execute/screenshots/web/T15/diff/UI-001-diff.png",
-        "referenceSource": "docs/auto-execute/screenshots/web/T15/reference/UI-001.png",
+        "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-01.png",
+        "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-01.png",
+        "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-01-diff.png",
+        "referenceSource": "docs/UI/小程序/P0-01-Home-首页今日守护星.png",
         "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/01-home.png",
         "referenceImage": {
           "width": 941,
           "height": 1672,
-          "bytes": 1503124,
-          "sha256": "7e9d5392e3a87dddc6fa9b2e747a8ee0cc1321069abd315615cb98c45ca7dbbe"
+          "bytes": 1912064,
+          "sha256": "a9d6a1e14739ce7a5a83941d69057f34ff9265c0caff4e5f64df8027fba2c7e9"
         },
         "actualImage": {
           "width": 390,
           "height": 693,
-          "bytes": 212642,
-          "sha256": "abb4ccc30f4085617eaa06552eb9d55a43c093c7b5001dfdb46641b06e22545a"
+          "bytes": 243320,
+          "sha256": "a0869d29ffe6df5324bec8e69f31f3619844ef67785bb89382709eabf2068cc7"
         },
         "diffImage": {
           "width": 792,
           "height": 693,
-          "bytes": 676810,
-          "sha256": "55eabe86c0f99c5bd02976b39a354ecc0e17c2211d166ce9ea4a459c83114885"
+          "bytes": 784087,
+          "sha256": "69f269931075f6c53142e3c7e2fd7b1dc8ef66be31ec62f9f8845facda4f2c8d"
         },
         "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
         "normalizedPixelDiff": {
           "width": 390,
           "height": 693,
           "totalPixels": 270270,
-          "changedPixels": 116871,
-          "diffRatio": 0.432423,
-          "averageChannelDelta": 21.168,
-          "maxChannelDelta": 254.333,
+          "changedPixels": 174370,
+          "diffRatio": 0.64517,
+          "averageChannelDelta": 31.641,
+          "maxChannelDelta": 251,
           "changeThresholdPerPixel": 12
         },
-        "diffRatio": 0.432423,
-        "threshold": 0.005,
+        "diffRatio": 0.64517,
+        "threshold": 0.05,
         "pixelPerfectStatus": "REPAIR_REQUIRED",
         "materialDeviation": "REPAIR_REQUIRED",
         "notes": [
           "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
           "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
         ],
-        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/UI-001.json"
+        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/P0-01.json"
       },
       {
-        "uiId": "UI-002",
-        "route": "/create/context",
-        "state": "context selected",
+        "uiId": "P0-02",
+        "route": "/onboarding/birth-aura",
+        "state": "birthday input",
         "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
-        "reference": "docs/auto-execute/screenshots/web/T15/reference/UI-002.png",
-        "actual": "docs/auto-execute/screenshots/web/T15/actual/UI-002.png",
-        "diff": "docs/auto-execute/screenshots/web/T15/diff/UI-002-diff.png",
-        "referenceSource": "docs/auto-execute/screenshots/web/T15/reference/UI-002.png",
-        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/02-context.png",
+        "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-02.png",
+        "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-02.png",
+        "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-02-diff.png",
+        "referenceSource": "docs/UI/小程序/P0-02-BirthAura-输入生日创建本命气场.png",
+        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/02-birth-aura.png",
         "referenceImage": {
           "width": 941,
           "height": 1672,
-          "bytes": 1474509,
-          "sha256": "af6bbeb948373904b54191b1c7f44c970a59369d860bc0e2abdc34cd3644eafa"
+          "bytes": 1578717,
+          "sha256": "37cb3edd0629b1e3957309d9e0c0a2518330658315a8ec37a4c8cab209565fa4"
         },
         "actualImage": {
           "width": 390,
           "height": 693,
-          "bytes": 150471,
-          "sha256": "84522937a215fd87a84a6c7c3bc79de82b3c943db5f2626d473279e0f6bdcec4"
+          "bytes": 111950,
+          "sha256": "7ebc200150bac36734be3d046638d8e7f3f94a87a899e6955734bf912683fc38"
         },
         "diffImage": {
           "width": 792,
           "height": 693,
-          "bytes": 539151,
-          "sha256": "ef0d7cb424a9ce3ead5b90e6dff1dce0981b07100d05c17e8c4cbb3e3a80bfcf"
+          "bytes": 501327,
+          "sha256": "228d621256bfe12d14c0d4f42854a110233a7ae7c3421090c88f10997bd492aa"
         },
         "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
         "normalizedPixelDiff": {
           "width": 390,
           "height": 693,
           "totalPixels": 270270,
-          "changedPixels": 74003,
-          "diffRatio": 0.273811,
-          "averageChannelDelta": 20.254,
-          "maxChannelDelta": 255,
+          "changedPixels": 77015,
+          "diffRatio": 0.284956,
+          "averageChannelDelta": 20.86,
+          "maxChannelDelta": 251,
           "changeThresholdPerPixel": 12
         },
-        "diffRatio": 0.273811,
-        "threshold": 0.005,
+        "diffRatio": 0.284956,
+        "threshold": 0.05,
         "pixelPerfectStatus": "REPAIR_REQUIRED",
         "materialDeviation": "REPAIR_REQUIRED",
         "notes": [
           "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
           "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
         ],
-        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/UI-002.json"
+        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/P0-02.json"
       },
       {
-        "uiId": "UI-003",
-        "route": "/create/upload",
-        "state": "upload success",
+        "uiId": "P0-03",
+        "route": "/onboarding/birth-aura/reveal",
+        "state": "birth aura reveal",
         "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
-        "reference": "docs/auto-execute/screenshots/web/T15/reference/UI-003.png",
-        "actual": "docs/auto-execute/screenshots/web/T15/actual/UI-003.png",
-        "diff": "docs/auto-execute/screenshots/web/T15/diff/UI-003-diff.png",
-        "referenceSource": "docs/auto-execute/screenshots/web/T15/reference/UI-003.png",
-        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/03-upload.png",
-        "referenceImage": {
-          "width": 941,
-          "height": 1671,
-          "bytes": 1718608,
-          "sha256": "3a0b8741fcb48af22274407b684ecaaa834e4ba223e8bffa490612911f4e7b23"
-        },
-        "actualImage": {
-          "width": 390,
-          "height": 693,
-          "bytes": 212636,
-          "sha256": "18787b04ccb92019c915f26513dac0e246d4bdfe58c09a7a86b70884e34acafe"
-        },
-        "diffImage": {
-          "width": 792,
-          "height": 693,
-          "bytes": 706810,
-          "sha256": "02a60a64e3e333d37829e9c5b8b3c2eee8e4f9e8c569e26f25525439930cfc92"
-        },
-        "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
-        "normalizedPixelDiff": {
-          "width": 390,
-          "height": 693,
-          "totalPixels": 270270,
-          "changedPixels": 102150,
-          "diffRatio": 0.377955,
-          "averageChannelDelta": 19.798,
-          "maxChannelDelta": 244,
-          "changeThresholdPerPixel": 12
-        },
-        "diffRatio": 0.377955,
-        "threshold": 0.005,
-        "pixelPerfectStatus": "REPAIR_REQUIRED",
-        "materialDeviation": "REPAIR_REQUIRED",
-        "notes": [
-          "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
-          "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
-        ],
-        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/UI-003.json"
-      },
-      {
-        "uiId": "UI-004",
-        "route": "/create/draw",
-        "state": "three-card draw",
-        "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
-        "reference": "docs/auto-execute/screenshots/web/T15/reference/UI-004.png",
-        "actual": "docs/auto-execute/screenshots/web/T15/actual/UI-004.png",
-        "diff": "docs/auto-execute/screenshots/web/T15/diff/UI-004-diff.png",
-        "referenceSource": "docs/auto-execute/screenshots/web/T15/reference/UI-004.png",
-        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/04-draw.png",
+        "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-03.png",
+        "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-03.png",
+        "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-03-diff.png",
+        "referenceSource": "docs/UI/小程序/P0-03-BirthAuraReveal-本命气场揭示.png",
+        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/03-birth-aura-reveal.png",
         "referenceImage": {
           "width": 941,
           "height": 1672,
-          "bytes": 1660910,
-          "sha256": "6154d8bfb39078811830924cce97d54904bf91dd66c21bccb97fb977b51e291b"
+          "bytes": 1719770,
+          "sha256": "672a3993edd4b31f32087dae9a44c02c790a993609d818ad6d7280695b530f82"
         },
         "actualImage": {
           "width": 390,
           "height": 693,
-          "bytes": 167889,
-          "sha256": "c898a3f562491d330c7aac1f200a57f109a7f73af3f672a4fc11f2cba38bedb8"
+          "bytes": 155038,
+          "sha256": "b76b0bfba50426fe817498246e65c8d994169326146ff0df1cd9ee4206d4e51f"
         },
         "diffImage": {
           "width": 792,
           "height": 693,
-          "bytes": 623681,
-          "sha256": "6bd8c489a508451574b5539daa8e47ba8bbe2ba1a026ba4faf0b45d65fae6358"
+          "bytes": 602463,
+          "sha256": "2f939dffa4c9854fbb54b54f5cd3a9f057e6aa3d6146367621c1ea8fdc5b6f26"
         },
         "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
         "normalizedPixelDiff": {
           "width": 390,
           "height": 693,
           "totalPixels": 270270,
-          "changedPixels": 102536,
-          "diffRatio": 0.379384,
-          "averageChannelDelta": 22.144,
-          "maxChannelDelta": 235.333,
+          "changedPixels": 97343,
+          "diffRatio": 0.360169,
+          "averageChannelDelta": 25.506,
+          "maxChannelDelta": 250.667,
           "changeThresholdPerPixel": 12
         },
-        "diffRatio": 0.379384,
-        "threshold": 0.005,
+        "diffRatio": 0.360169,
+        "threshold": 0.05,
         "pixelPerfectStatus": "REPAIR_REQUIRED",
         "materialDeviation": "REPAIR_REQUIRED",
         "notes": [
           "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
           "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
         ],
-        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/UI-004.json"
+        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/P0-03.json"
       },
       {
-        "uiId": "UI-005",
+        "uiId": "P0-04",
+        "route": "/today/check-in",
+        "state": "check-in choices",
+        "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
+        "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-04.png",
+        "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-04.png",
+        "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-04-diff.png",
+        "referenceSource": "docs/UI/小程序/P0-04-CheckIn-今日状态与场景选择.png",
+        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/04-check-in.png",
+        "referenceImage": {
+          "width": 941,
+          "height": 1672,
+          "bytes": 1935827,
+          "sha256": "5380ec504bf7fb1988b43a1d387443ca2274e0eabbf3ccbd4841b75e8d605fea"
+        },
+        "actualImage": {
+          "width": 390,
+          "height": 693,
+          "bytes": 124976,
+          "sha256": "5e2cb46299a4571cd4c34f227a502b2b325e525b864b1f811b19550bafe81a7b"
+        },
+        "diffImage": {
+          "width": 792,
+          "height": 693,
+          "bytes": 616612,
+          "sha256": "65b5cd0c84145cd346a96a1c8ade16f17bde4fc2451f8ad413d755fdf6750ea4"
+        },
+        "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
+        "normalizedPixelDiff": {
+          "width": 390,
+          "height": 693,
+          "totalPixels": 270270,
+          "changedPixels": 117835,
+          "diffRatio": 0.43599,
+          "averageChannelDelta": 24.304,
+          "maxChannelDelta": 245.333,
+          "changeThresholdPerPixel": 12
+        },
+        "diffRatio": 0.43599,
+        "threshold": 0.05,
+        "pixelPerfectStatus": "REPAIR_REQUIRED",
+        "materialDeviation": "REPAIR_REQUIRED",
+        "notes": [
+          "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
+          "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
+        ],
+        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/P0-04.json"
+      },
+      {
+        "uiId": "P0-05",
+        "route": "/today/draw",
+        "state": "three-card tarot pull",
+        "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
+        "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-05.png",
+        "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-05.png",
+        "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-05-diff.png",
+        "referenceSource": "docs/UI/小程序/P0-05-TarotPull-三张塔罗抽卡.png",
+        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/05-draw.png",
+        "referenceImage": {
+          "width": 941,
+          "height": 1672,
+          "bytes": 1799982,
+          "sha256": "99cf94e0797bfcd6a956a68f422c93b4794451a33d28f7011b04851a3964c221"
+        },
+        "actualImage": {
+          "width": 390,
+          "height": 693,
+          "bytes": 239999,
+          "sha256": "11d1a23b6152eaac73deec156505fd5ca86c3132faa96d43d2c64a1f532da444"
+        },
+        "diffImage": {
+          "width": 792,
+          "height": 693,
+          "bytes": 748106,
+          "sha256": "9e66bd185d8d96bc604f7ed38203b278d29b275ecf4a4efb4b80f0a9733423db"
+        },
+        "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
+        "normalizedPixelDiff": {
+          "width": 390,
+          "height": 693,
+          "totalPixels": 270270,
+          "changedPixels": 82658,
+          "diffRatio": 0.305835,
+          "averageChannelDelta": 20.586,
+          "maxChannelDelta": 252.333,
+          "changeThresholdPerPixel": 12
+        },
+        "diffRatio": 0.305835,
+        "threshold": 0.05,
+        "pixelPerfectStatus": "REPAIR_REQUIRED",
+        "materialDeviation": "REPAIR_REQUIRED",
+        "notes": [
+          "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
+          "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
+        ],
+        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/P0-05.json"
+      },
+      {
+        "uiId": "P0-06A",
+        "route": "/today/reading",
+        "state": "light reading progress",
+        "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
+        "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-06A.png",
+        "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-06A.png",
+        "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-06A-diff.png",
+        "referenceSource": "docs/UI/小程序/P0-06A-Reading-轻量生成进度.png",
+        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/06-reading.png",
+        "referenceImage": {
+          "width": 941,
+          "height": 1672,
+          "bytes": 1584471,
+          "sha256": "99e4bc882924e3a01c7f32d18a32a08fb8698a8c77feacf8cbbe56d9a569caed"
+        },
+        "actualImage": {
+          "width": 390,
+          "height": 693,
+          "bytes": 185196,
+          "sha256": "38da85dd7def83c0b9f5c3b85610b8366335104e39b7ef50e114016037223b56"
+        },
+        "diffImage": {
+          "width": 792,
+          "height": 693,
+          "bytes": 584351,
+          "sha256": "52c8ad5d2707aaa55be76b5f85305e33cebf6bf8a19099c61e6015813afa68a2"
+        },
+        "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
+        "normalizedPixelDiff": {
+          "width": 390,
+          "height": 693,
+          "totalPixels": 270270,
+          "changedPixels": 71617,
+          "diffRatio": 0.264983,
+          "averageChannelDelta": 16.71,
+          "maxChannelDelta": 251,
+          "changeThresholdPerPixel": 12
+        },
+        "diffRatio": 0.264983,
+        "threshold": 0.05,
+        "pixelPerfectStatus": "REPAIR_REQUIRED",
+        "materialDeviation": "REPAIR_REQUIRED",
+        "notes": [
+          "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
+          "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
+        ],
+        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/P0-06A.json"
+      },
+      {
+        "uiId": "P0-07",
         "route": "/result/[id]",
-        "state": "result loaded",
+        "state": "daily style oracle result",
         "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
-        "reference": "docs/auto-execute/screenshots/web/T15/reference/UI-005.png",
-        "actual": "docs/auto-execute/screenshots/web/T15/actual/UI-005.png",
-        "diff": "docs/auto-execute/screenshots/web/T15/diff/UI-005-diff.png",
-        "referenceSource": "docs/auto-execute/screenshots/web/T15/reference/UI-005.png",
-        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/05-result.png",
+        "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-07.png",
+        "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-07.png",
+        "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-07-diff.png",
+        "referenceSource": "docs/UI/小程序/P0-07-Result-今日风格神谕结果.png",
+        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/07-result.png",
         "referenceImage": {
           "width": 941,
           "height": 1672,
-          "bytes": 1747476,
-          "sha256": "ce4f16f4986d4a6fad4c8cca82424f303338ce784cdc7078b256d1c559554e5f"
+          "bytes": 1848990,
+          "sha256": "366ac1c8908712f36c6e04affcfc248be49b5739054875c9be87402843088c13"
         },
         "actualImage": {
           "width": 390,
           "height": 693,
-          "bytes": 162223,
-          "sha256": "dade822bf01b92be5323e214a5b93346a4b4415519d378c27423dd34bc74f2f5"
+          "bytes": 148551,
+          "sha256": "52ec791a3c15eaa1b23297478c7d10acf245c8857e4df0d5a49c1b73d3aaf2fd"
         },
         "diffImage": {
           "width": 792,
           "height": 693,
-          "bytes": 608184,
-          "sha256": "4450839a0af14ff004c13e8fc1845f4202b6d2ca157821a9693e7ff22ec4c68d"
+          "bytes": 630300,
+          "sha256": "f1520741d4f7ae8a56e5289a4ba114e11081f1ae6eca4874bb56642c0bf4ff8c"
         },
         "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
         "normalizedPixelDiff": {
           "width": 390,
           "height": 693,
           "totalPixels": 270270,
-          "changedPixels": 81180,
-          "diffRatio": 0.300366,
-          "averageChannelDelta": 24.321,
-          "maxChannelDelta": 246.333,
+          "changedPixels": 111264,
+          "diffRatio": 0.411677,
+          "averageChannelDelta": 27.769,
+          "maxChannelDelta": 249.333,
           "changeThresholdPerPixel": 12
         },
-        "diffRatio": 0.300366,
-        "threshold": 0.005,
+        "diffRatio": 0.411677,
+        "threshold": 0.05,
         "pixelPerfectStatus": "REPAIR_REQUIRED",
         "materialDeviation": "REPAIR_REQUIRED",
         "notes": [
           "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
           "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
         ],
-        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/UI-005.json"
+        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/P0-07.json"
       },
       {
-        "uiId": "UI-006",
+        "uiId": "P0-08",
         "route": "/activate/[id]",
-        "state": "activation ready",
+        "state": "hold to seal",
         "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
-        "reference": "docs/auto-execute/screenshots/web/T15/reference/UI-006.png",
-        "actual": "docs/auto-execute/screenshots/web/T15/actual/UI-006.png",
-        "diff": "docs/auto-execute/screenshots/web/T15/diff/UI-006-diff.png",
-        "referenceSource": "docs/auto-execute/screenshots/web/T15/reference/UI-006.png",
-        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/06-activate.png",
+        "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-08.png",
+        "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-08.png",
+        "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-08-diff.png",
+        "referenceSource": "docs/UI/小程序/P0-08-Activate-长按封印今日气场.png",
+        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/08-activate.png",
         "referenceImage": {
           "width": 941,
           "height": 1672,
-          "bytes": 1657034,
-          "sha256": "545f61c2b1184ae844e24e9ed6f20a3bf36e3367ff687f908bc94bcedd36a532"
+          "bytes": 1590445,
+          "sha256": "74a17b46519b36a9bb0a4b0e3eaf43828016c74a140aeb6624f6203259ae03ec"
         },
         "actualImage": {
           "width": 390,
           "height": 693,
-          "bytes": 99301,
-          "sha256": "284f3404888526e05d4cfb8396f706ade81368e182aa9a8463a62dfb934a4325"
+          "bytes": 184245,
+          "sha256": "f08b6037da39ba854d64e36c3450476d2f24e92ba33f8ee2d791b007aebfb7d0"
         },
         "diffImage": {
           "width": 792,
           "height": 693,
-          "bytes": 507579,
-          "sha256": "7e702c936a7f9b6ec05aa0ace5222eb3bf1cc23dcea64136ee7298970be6274d"
+          "bytes": 653622,
+          "sha256": "6c18cd2febe159dc7caca7efdcb77c3e0cb01252d0bd60638f2f76e9a70143c0"
         },
         "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
         "normalizedPixelDiff": {
           "width": 390,
           "height": 693,
           "totalPixels": 270270,
-          "changedPixels": 91478,
-          "diffRatio": 0.338469,
-          "averageChannelDelta": 22.189,
-          "maxChannelDelta": 244.667,
+          "changedPixels": 108620,
+          "diffRatio": 0.401894,
+          "averageChannelDelta": 23.408,
+          "maxChannelDelta": 251,
           "changeThresholdPerPixel": 12
         },
-        "diffRatio": 0.338469,
-        "threshold": 0.005,
+        "diffRatio": 0.401894,
+        "threshold": 0.05,
         "pixelPerfectStatus": "REPAIR_REQUIRED",
         "materialDeviation": "REPAIR_REQUIRED",
         "notes": [
           "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
           "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
         ],
-        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/UI-006.json"
+        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/P0-08.json"
       },
       {
-        "uiId": "UI-007",
+        "uiId": "P0-09",
         "route": "/activated/[id]",
-        "state": "activated",
+        "state": "aura sealed",
         "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
-        "reference": "docs/auto-execute/screenshots/web/T15/reference/UI-007.png",
-        "actual": "docs/auto-execute/screenshots/web/T15/actual/UI-007.png",
-        "diff": "docs/auto-execute/screenshots/web/T15/diff/UI-007-diff.png",
-        "referenceSource": "docs/auto-execute/screenshots/web/T15/reference/UI-007.png",
-        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/07-activated.png",
+        "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-09.png",
+        "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-09.png",
+        "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-09-diff.png",
+        "referenceSource": "docs/UI/小程序/P0-09-Activated-气场已封印.png",
+        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/09-activated.png",
         "referenceImage": {
           "width": 941,
           "height": 1672,
-          "bytes": 1619174,
-          "sha256": "8d4f42e8d18cb8d294f75b33945f6caee2beb5419bb0bd64050d81be9795d595"
+          "bytes": 1927380,
+          "sha256": "e8caa8eb677cd3c2fd10ce671a145b30e9230de36f5f8eb3b0fff405a82f3772"
         },
         "actualImage": {
           "width": 390,
           "height": 693,
-          "bytes": 138862,
-          "sha256": "e9be8c3624db4c6ee10eaa8c6cd3edbb6e170acfaf38eb2a5bb1c40e788ef748"
+          "bytes": 244662,
+          "sha256": "3776dd1ae607c84853a3eb0c8ad3c1eb4323e681b3848efc004655ef87f3ee07"
         },
         "diffImage": {
           "width": 792,
           "height": 693,
-          "bytes": 549464,
-          "sha256": "b13d674f4ec331ff776ce69539670fe79007e337ac67edf693a48fee24e04bcf"
+          "bytes": 838506,
+          "sha256": "8c40b7fa2ac662be2104cbcd47ae492cfc11e241bc60d721286ccdbff1c782ff"
         },
         "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
         "normalizedPixelDiff": {
           "width": 390,
           "height": 693,
           "totalPixels": 270270,
-          "changedPixels": 63249,
-          "diffRatio": 0.234022,
-          "averageChannelDelta": 17.881,
-          "maxChannelDelta": 253.333,
+          "changedPixels": 154692,
+          "diffRatio": 0.572361,
+          "averageChannelDelta": 36.273,
+          "maxChannelDelta": 251.333,
           "changeThresholdPerPixel": 12
         },
-        "diffRatio": 0.234022,
-        "threshold": 0.005,
+        "diffRatio": 0.572361,
+        "threshold": 0.05,
         "pixelPerfectStatus": "REPAIR_REQUIRED",
         "materialDeviation": "REPAIR_REQUIRED",
         "notes": [
           "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
           "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
         ],
-        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/UI-007.json"
+        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/P0-09.json"
       },
       {
-        "uiId": "UI-008",
+        "uiId": "P0-10",
         "route": "/share/[id]",
-        "state": "share preview",
+        "state": "share card",
         "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
-        "reference": "docs/auto-execute/screenshots/web/T15/reference/UI-008.png",
-        "actual": "docs/auto-execute/screenshots/web/T15/actual/UI-008.png",
-        "diff": "docs/auto-execute/screenshots/web/T15/diff/UI-008-diff.png",
-        "referenceSource": "docs/auto-execute/screenshots/web/T15/reference/UI-008.png",
-        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/08-share.png",
+        "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-10.png",
+        "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-10.png",
+        "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-10-diff.png",
+        "referenceSource": "docs/UI/小程序/P0-10-Share-今日气场分享卡.png",
+        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/10-share.png",
         "referenceImage": {
           "width": 941,
           "height": 1672,
-          "bytes": 1923156,
-          "sha256": "cf8917810f9e91e522abb662b1dfdeb90d4f326f0be131b9dbc13693ccd3176d"
+          "bytes": 1958788,
+          "sha256": "c2a78f9dcc5a7c19018b75d31d6181a90ffb2f5d3e3a097362de26b2dd7efbe3"
         },
         "actualImage": {
           "width": 390,
           "height": 693,
-          "bytes": 194310,
-          "sha256": "b21f657a922c4acb60a19d52da5179ed5c1bf3d7fb222e4a872759744a14a1f0"
+          "bytes": 228477,
+          "sha256": "b6159105332e7fa60387e4892b1930572b41e2d27196a0d98c32f6206ffe0be9"
         },
         "diffImage": {
           "width": 792,
           "height": 693,
-          "bytes": 702463,
-          "sha256": "6705930c8b22a1907ce4bc9b062d7e10d6d5329c46b88810c6adcfa241e6d3d7"
+          "bytes": 771975,
+          "sha256": "203e886fdb04a91e6b1bb2bc74afdc590860dbb197016ddd2013d7a4eed50da1"
         },
         "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
         "normalizedPixelDiff": {
           "width": 390,
           "height": 693,
           "totalPixels": 270270,
-          "changedPixels": 102870,
-          "diffRatio": 0.380619,
-          "averageChannelDelta": 22.423,
-          "maxChannelDelta": 244,
-          "changeThresholdPerPixel": 12
-        },
-        "diffRatio": 0.380619,
-        "threshold": 0.005,
-        "pixelPerfectStatus": "REPAIR_REQUIRED",
-        "materialDeviation": "REPAIR_REQUIRED",
-        "notes": [
-          "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
-          "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
-        ],
-        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/UI-008.json"
-      },
-      {
-        "uiId": "UI-009",
-        "route": "/saved/[id]",
-        "state": "saved success",
-        "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
-        "reference": "docs/auto-execute/screenshots/web/T15/reference/UI-009.png",
-        "actual": "docs/auto-execute/screenshots/web/T15/actual/UI-009.png",
-        "diff": "docs/auto-execute/screenshots/web/T15/diff/UI-009-diff.png",
-        "referenceSource": "docs/auto-execute/screenshots/web/T15/reference/UI-009.png",
-        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/09-saved.png",
-        "referenceImage": {
-          "width": 941,
-          "height": 1672,
-          "bytes": 1317053,
-          "sha256": "316a32e228bbe9596ff38ee8bd79562b7ae44861a2319087d2ec21d39b92fd60"
-        },
-        "actualImage": {
-          "width": 390,
-          "height": 693,
-          "bytes": 144510,
-          "sha256": "f6c2a503eeefb2fa6b0ca44b63b30d646ede73dd1cfcee8afdeccdb04cc1d1cb"
-        },
-        "diffImage": {
-          "width": 792,
-          "height": 693,
-          "bytes": 495323,
-          "sha256": "506e48f74eacb9253fa0b386a939f6c07ab737aaff6798c851e1688372567aa0"
-        },
-        "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
-        "normalizedPixelDiff": {
-          "width": 390,
-          "height": 693,
-          "totalPixels": 270270,
-          "changedPixels": 102394,
-          "diffRatio": 0.378858,
-          "averageChannelDelta": 31.686,
+          "changedPixels": 110916,
+          "diffRatio": 0.41039,
+          "averageChannelDelta": 28.185,
           "maxChannelDelta": 255,
           "changeThresholdPerPixel": 12
         },
-        "diffRatio": 0.378858,
-        "threshold": 0.005,
+        "diffRatio": 0.41039,
+        "threshold": 0.05,
         "pixelPerfectStatus": "REPAIR_REQUIRED",
         "materialDeviation": "REPAIR_REQUIRED",
         "notes": [
           "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
           "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
         ],
-        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/UI-009.json"
+        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/P0-10.json"
       },
       {
-        "uiId": "UI-010",
-        "route": "/create/upload",
-        "state": "visible upload error",
+        "uiId": "P0-12",
+        "route": "/my",
+        "state": "my aura home",
         "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
-        "reference": "docs/auto-execute/screenshots/web/T15/reference/UI-010.png",
-        "actual": "docs/auto-execute/screenshots/web/T15/actual/UI-010.png",
-        "diff": "docs/auto-execute/screenshots/web/T15/diff/UI-010-diff.png",
-        "referenceSource": "docs/auto-execute/screenshots/web/T15/reference/UI-010.png",
-        "actualSource": "docs/auto-execute/screenshots/web/T14/owner-click-e2e/owner-upload-failure-upload-failure-ui.png",
+        "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-12.png",
+        "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-12.png",
+        "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-12-diff.png",
+        "referenceSource": "docs/UI/小程序/P0-12-My-我的气场首页.png",
+        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/12-my.png",
         "referenceImage": {
           "width": 941,
           "height": 1672,
-          "bytes": 1730296,
-          "sha256": "bf05b5427ad90d9b0b5085139db353bf98448a4c6ed5c2dfe2826ccce2259706"
+          "bytes": 1667569,
+          "sha256": "83d7ed668d23ebaaa40fbe8d496be2ba39cd2ba674a1eb09d09f0a373e0e656f"
         },
         "actualImage": {
           "width": 390,
           "height": 693,
-          "bytes": 185316,
-          "sha256": "8d9e3dc50d1bb0f83a306d95e208f3c6803b9b6f496f2ec95fb2e52c5a736abe"
+          "bytes": 119723,
+          "sha256": "f04a542fe0c803a9f91d38ab51302e63ab5e171e434504a51ee158696d4ed360"
         },
         "diffImage": {
           "width": 792,
           "height": 693,
-          "bytes": 672846,
-          "sha256": "e40d6e846184aa3190daef3bfee9562fb7a14e433580424262406f57c5087f10"
+          "bytes": 504398,
+          "sha256": "b79e7cdf9ad56e07acd320059f5c00e83bd41d7111cc31675562ae3217133c12"
         },
         "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
         "normalizedPixelDiff": {
           "width": 390,
           "height": 693,
           "totalPixels": 270270,
-          "changedPixels": 7530,
-          "diffRatio": 0.027861,
-          "averageChannelDelta": 1.932,
-          "maxChannelDelta": 64.333,
+          "changedPixels": 71005,
+          "diffRatio": 0.262719,
+          "averageChannelDelta": 19.038,
+          "maxChannelDelta": 250.333,
           "changeThresholdPerPixel": 12
         },
-        "diffRatio": 0.027861,
-        "threshold": 0.005,
+        "diffRatio": 0.262719,
+        "threshold": 0.05,
         "pixelPerfectStatus": "REPAIR_REQUIRED",
         "materialDeviation": "REPAIR_REQUIRED",
         "notes": [
           "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
           "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
         ],
-        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/UI-010.json"
+        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/P0-12.json"
+      },
+      {
+        "uiId": "P0-13",
+        "route": "/my/birth-aura",
+        "state": "my birth aura profile",
+        "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
+        "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-13.png",
+        "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-13.png",
+        "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-13-diff.png",
+        "referenceSource": "docs/UI/小程序/P0-13-MyBirthAura-本命气场资料.png",
+        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/13-my-birth-aura.png",
+        "referenceImage": {
+          "width": 941,
+          "height": 1672,
+          "bytes": 1724153,
+          "sha256": "ce8eb8361ecfdb1556997caa97ed74d0fbc8499e80aea8538870e8954f9e2a06"
+        },
+        "actualImage": {
+          "width": 390,
+          "height": 693,
+          "bytes": 142766,
+          "sha256": "05f6cbf701cfcd28c7d9150163907e79f8734570f06f501d38e4983c1bb2429f"
+        },
+        "diffImage": {
+          "width": 792,
+          "height": 693,
+          "bytes": 556904,
+          "sha256": "42ac3b06e89a90e7d1eb0eb93b051f7dfdc6287ce37a6141ca4ef57882cbee1f"
+        },
+        "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
+        "normalizedPixelDiff": {
+          "width": 390,
+          "height": 693,
+          "totalPixels": 270270,
+          "changedPixels": 103512,
+          "diffRatio": 0.382995,
+          "averageChannelDelta": 22.478,
+          "maxChannelDelta": 251,
+          "changeThresholdPerPixel": 12
+        },
+        "diffRatio": 0.382995,
+        "threshold": 0.05,
+        "pixelPerfectStatus": "REPAIR_REQUIRED",
+        "materialDeviation": "REPAIR_REQUIRED",
+        "notes": [
+          "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
+          "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
+        ],
+        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/P0-13.json"
+      },
+      {
+        "uiId": "P0-16",
+        "route": "/error/network",
+        "state": "generation retry error",
+        "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
+        "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-16.png",
+        "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-16.png",
+        "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-16-diff.png",
+        "referenceSource": "docs/UI/小程序/P0-16-Error-生成失败重试.png",
+        "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/16-error.png",
+        "referenceImage": {
+          "width": 941,
+          "height": 1672,
+          "bytes": 1784757,
+          "sha256": "0438a2698a72187f5a582db254574a848cc6f15cb82f89f6f96c689b44bfbcad"
+        },
+        "actualImage": {
+          "width": 390,
+          "height": 693,
+          "bytes": 138578,
+          "sha256": "8b79b4f6de59085beec533e188fc5d60c66c6706e70c4d3837255fa0396a37f3"
+        },
+        "diffImage": {
+          "width": 792,
+          "height": 693,
+          "bytes": 596104,
+          "sha256": "f2906385bbe5fe2d036bef855f717dac48010e0c4c2b685fb39c3dabcf894646"
+        },
+        "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
+        "normalizedPixelDiff": {
+          "width": 390,
+          "height": 693,
+          "totalPixels": 270270,
+          "changedPixels": 134140,
+          "diffRatio": 0.496318,
+          "averageChannelDelta": 23.321,
+          "maxChannelDelta": 241.667,
+          "changeThresholdPerPixel": 12
+        },
+        "diffRatio": 0.496318,
+        "threshold": 0.05,
+        "pixelPerfectStatus": "REPAIR_REQUIRED",
+        "materialDeviation": "REPAIR_REQUIRED",
+        "notes": [
+          "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
+          "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
+        ],
+        "metrics": "docs/auto-execute/screenshots/web/T15/metrics/P0-16.json"
       }
     ]
   },
@@ -602,10 +773,8 @@
     "command": "pnpm --filter @auracue/web test:visual",
     "safeToRerun": true,
     "inputs": [
-      "docs/auto-execute/auracue-web-ui-reference-map.md",
-      "docs/auto-execute/screenshots/web/T15/reference/*.png",
-      "docs/auto-execute/screenshots/web/T13/runtime-smoke/",
-      "docs/auto-execute/screenshots/web/T14/owner-click-e2e/"
+      "docs/UI/小程序/P0-*.png",
+      "docs/auto-execute/screenshots/web/T13/runtime-smoke/"
     ]
   }
 }

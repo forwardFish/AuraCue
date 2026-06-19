@@ -69,7 +69,7 @@ export function WebShell({ title, eyebrow = "AuraCue", referenceId = "home", chi
         </Link>
         {showRightAction ? (
           <Link className="auracue-gift-button" href={isMy ? "/" : "/my"} aria-label={isMy ? "Back home" : "Open My Aura"}>
-            <Image src={isMy ? "/aura-assets/common-tab-home.png" : "/aura-assets/common-tab-profile.png"} alt="" width={30} height={30} />
+            <Image src={isMy ? "/aura-assets/common-tab-home.png" : isHome ? "/aura-assets/common-header-gift.png" : "/aura-assets/common-tab-profile.png"} alt="" width={30} height={30} />
           </Link>
         ) : (
           <span className="auracue-header-spacer" aria-hidden="true" />

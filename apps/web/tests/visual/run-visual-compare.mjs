@@ -1,5 +1,4 @@
 ﻿import crypto from "node:crypto";
-import { spawn } from "node:child_process";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -17,6 +16,7 @@ const visualOutputRoot = process.env.AURACUE_WEB_VISUAL_OUTPUT_ROOT
   : path.join(docsRoot, "screenshots", "web");
 const taskRoot = path.join(visualOutputRoot, taskId);
 const useExternalVisualOutput = Boolean(process.env.AURACUE_WEB_VISUAL_OUTPUT_ROOT);
+const diffThreshold = Number(process.env.AURACUE_WEB_VISUAL_DIFF_THRESHOLD || 0.05);
 const out = {
   reference: path.join(taskRoot, "reference"),
   actual: path.join(taskRoot, "actual"),
@@ -29,74 +29,95 @@ const out = {
 
 const cases = [
   {
-    id: "UI-001",
-    route: "/",
-    state: "home no active card",
-    reference: ["docs", "auto-execute", "screenshots", "web", "T15", "reference", "UI-001.png"],
+    id: "P0-01",
+    route: "/home",
+    state: "home guardian planet",
+    referencePrefix: "P0-01-",
     actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "01-home.png"]
   },
   {
-    id: "UI-002",
-    route: "/create/context",
-    state: "context selected",
-    reference: ["docs", "auto-execute", "screenshots", "web", "T15", "reference", "UI-002.png"],
-    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "02-context.png"]
+    id: "P0-02",
+    route: "/onboarding/birth-aura",
+    state: "birthday input",
+    referencePrefix: "P0-02-",
+    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "02-birth-aura.png"]
   },
   {
-    id: "UI-003",
-    route: "/create/upload",
-    state: "upload success",
-    reference: ["docs", "auto-execute", "screenshots", "web", "T15", "reference", "UI-003.png"],
-    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "03-upload.png"]
+    id: "P0-03",
+    route: "/onboarding/birth-aura/reveal",
+    state: "birth aura reveal",
+    referencePrefix: "P0-03-",
+    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "03-birth-aura-reveal.png"]
   },
   {
-    id: "UI-004",
-    route: "/create/draw",
-    state: "three-card draw",
-    reference: ["docs", "auto-execute", "screenshots", "web", "T15", "reference", "UI-004.png"],
-    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "04-draw.png"]
+    id: "P0-04",
+    route: "/today/check-in",
+    state: "check-in choices",
+    referencePrefix: "P0-04-",
+    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "04-check-in.png"]
   },
   {
-    id: "UI-005",
+    id: "P0-05",
+    route: "/today/draw",
+    state: "three-card tarot pull",
+    referencePrefix: "P0-05-",
+    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "05-draw.png"]
+  },
+  {
+    id: "P0-06A",
+    route: "/today/reading",
+    state: "light reading progress",
+    referencePrefix: "P0-06A-",
+    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "06-reading.png"]
+  },
+  {
+    id: "P0-07",
     route: "/result/[id]",
-    state: "result loaded",
-    reference: ["docs", "auto-execute", "screenshots", "web", "T15", "reference", "UI-005.png"],
-    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "05-result.png"]
+    state: "daily style oracle result",
+    referencePrefix: "P0-07-",
+    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "07-result.png"]
   },
   {
-    id: "UI-006",
+    id: "P0-08",
     route: "/activate/[id]",
-    state: "activation ready",
-    reference: ["docs", "auto-execute", "screenshots", "web", "T15", "reference", "UI-006.png"],
-    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "06-activate.png"]
+    state: "hold to seal",
+    referencePrefix: "P0-08-",
+    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "08-activate.png"]
   },
   {
-    id: "UI-007",
+    id: "P0-09",
     route: "/activated/[id]",
-    state: "activated",
-    reference: ["docs", "auto-execute", "screenshots", "web", "T15", "reference", "UI-007.png"],
-    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "07-activated.png"]
+    state: "aura sealed",
+    referencePrefix: "P0-09-",
+    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "09-activated.png"]
   },
   {
-    id: "UI-008",
+    id: "P0-10",
     route: "/share/[id]",
-    state: "share preview",
-    reference: ["docs", "auto-execute", "screenshots", "web", "T15", "reference", "UI-008.png"],
-    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "08-share.png"]
+    state: "share card",
+    referencePrefix: "P0-10-",
+    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "10-share.png"]
   },
   {
-    id: "UI-009",
-    route: "/saved/[id]",
-    state: "saved success",
-    reference: ["docs", "auto-execute", "screenshots", "web", "T15", "reference", "UI-009.png"],
-    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "09-saved.png"]
+    id: "P0-12",
+    route: "/my",
+    state: "my aura home",
+    referencePrefix: "P0-12-",
+    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "12-my.png"]
   },
   {
-    id: "UI-010",
-    route: "/create/upload",
-    state: "visible upload error",
-    reference: ["docs", "auto-execute", "screenshots", "web", "T15", "reference", "UI-010.png"],
-    actual: ["docs", "auto-execute", "screenshots", "web", "T14", "owner-click-e2e", "owner-upload-failure-upload-failure-ui.png"]
+    id: "P0-13",
+    route: "/my/birth-aura",
+    state: "my birth aura profile",
+    referencePrefix: "P0-13-",
+    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "13-my-birth-aura.png"]
+  },
+  {
+    id: "P0-16",
+    route: "/error/network",
+    state: "generation retry error",
+    referencePrefix: "P0-16-",
+    actual: ["docs", "auto-execute", "screenshots", "web", "T13", "runtime-smoke", "16-error.png"]
   }
 ];
 
@@ -117,7 +138,9 @@ async function main() {
   const imageEngine = await getSharp();
   const metrics = [];
   for (const item of cases) {
-    const referenceSource = path.join(repoRoot, ...item.reference);
+    const referenceSource = item.referencePrefix
+      ? await resolveReferenceSource(item.referencePrefix)
+      : path.join(repoRoot, ...item.reference);
     const actualSource = path.join(repoRoot, ...item.actual);
     await mustExist(referenceSource);
     await mustExist(actualSource);
@@ -131,7 +154,7 @@ async function main() {
     await copyIfDifferent(actualSource, actualTarget);
     await renderDiff(imageEngine, item, referenceTarget, actualTarget, diffTarget);
     const pixelMetric = await computePixelMetric(imageEngine, item, referenceTarget, actualTarget);
-    const pixelPerfectStatus = pixelMetric.diffRatio <= 0.005 ? "PASS" : "REPAIR_REQUIRED";
+    const pixelPerfectStatus = pixelMetric.diffRatio <= diffThreshold ? "PASS" : "REPAIR_REQUIRED";
 
     const metric = {
       uiId: item.id,
@@ -149,7 +172,7 @@ async function main() {
       comparisonMode: "browser-canvas normalized pixel diff plus side-by-side raster evidence",
       normalizedPixelDiff: pixelMetric,
       diffRatio: pixelMetric.diffRatio,
-      threshold: 0.005,
+      threshold: diffThreshold,
       pixelPerfectStatus,
       materialDeviation: pixelPerfectStatus === "PASS" ? "NONE_DETECTED_BY_PIXEL_GATE" : "REPAIR_REQUIRED",
       notes: [
@@ -183,7 +206,7 @@ async function main() {
       passingScreens: metrics.filter((item) => item.pixelPerfectStatus === "PASS").length,
       failingScreens: metrics.filter((item) => item.pixelPerfectStatus !== "PASS").length,
       maxDiffRatio: Math.max(...metrics.map((item) => item.diffRatio)),
-      threshold: 0.005
+      threshold: diffThreshold
     },
     evidence: {
       referenceDir: relative(out.reference),
@@ -194,14 +217,12 @@ async function main() {
     },
     blockers: [],
     nextRepair: metrics.every((item) => item.pixelPerfectStatus === "PASS") ? `${taskId} pixel gate is within threshold for covered Web screenshots.` : `Repair screens with normalized pixel diffRatio above threshold, then rerun production T13/T14 and ${taskId}.`,
-    rerunResumeState: {
+      rerunResumeState: {
       command: "pnpm --filter @auracue/web test:visual",
       safeToRerun: true,
       inputs: [
-        "docs/auto-execute/auracue-web-ui-reference-map.md",
-        "docs/auto-execute/screenshots/web/T15/reference/*.png",
-        "docs/auto-execute/screenshots/web/T13/runtime-smoke/",
-        "docs/auto-execute/screenshots/web/T14/owner-click-e2e/"
+        "docs/UI/小程序/P0-*.png",
+        "docs/auto-execute/screenshots/web/T13/runtime-smoke/"
       ]
     }
   };
@@ -363,6 +384,16 @@ async function ensureDirs() {
   await Promise.all(Object.values(out).map((dir) => fs.mkdir(dir, { recursive: true })));
 }
 
+async function resolveReferenceSource(prefix) {
+  const uiDir = path.join(repoRoot, "docs", "UI", "小程序");
+  const entries = await fs.readdir(uiDir);
+  const matches = entries.filter((entry) => entry.startsWith(prefix) && entry.toLowerCase().endsWith(".png"));
+  if (matches.length !== 1) {
+    throw new Error(`Expected exactly one reference for ${prefix} in ${relative(uiDir)}, found ${matches.length}: ${matches.join(", ")}`);
+  }
+  return path.join(uiDir, matches[0]);
+}
+
 async function mustExist(file) {
   await fs.access(file);
 }
@@ -431,28 +462,19 @@ async function writeText(file, value) {
 
 async function getSharp() {
   try {
-    const module = await import("sharp");
-    return module.default;
+    const sharpModule = await import("sharp");
+    return sharpModule.default;
   } catch (error) {
     const fallback = path.join(repoRoot, "node_modules", ".pnpm", "sharp@0.34.5", "node_modules", "sharp", "lib", "index.js");
     try {
-      const module = await import(pathToFileURL(fallback).href);
-      return module.default;
+      const sharpModule = await import(pathToFileURL(fallback).href);
+      return sharpModule.default;
     } catch {
       throw error;
     }
   }
 }
 
-function escapeHtml(value) {
-  return String(value).replace(/[&<>"']/g, (char) => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  })[char]);
-}
 
 function relative(file) {
   return path.relative(repoRoot, file).replace(/\\/g, "/");

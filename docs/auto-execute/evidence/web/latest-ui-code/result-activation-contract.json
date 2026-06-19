@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "suite": "latest-ui-functional-result-activation",
+  "routes": [
+    "/result/[id]",
+    "/activate/[id]",
+    "/activated/[id]"
+  ]
+}

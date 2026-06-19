@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { writeEvidenceJson } from "../helpers/evidence.mjs";
+import { prepareSqliteTestDatabase } from "../helpers/sqlite.mjs";
 import { createHash, randomUUID } from "node:crypto";
 import prismaClientPackage from "@prisma/client";
 import { createPrismaSqliteAdapter } from "../../server/repositories/prisma-sqlite-adapter.mjs";
@@ -14,6 +16,7 @@ const evidenceDir = resolve(root, "../../docs/auto-execute/evidence/web/T05");
 mkdirSync(evidenceDir, { recursive: true });
 
 assertRouteContracts();
+await prepareSqliteTestDatabase(prisma);
 await resetDatabase();
 
 const transcript = [];
@@ -173,8 +176,8 @@ const readback = {
   todayActiveCardId: activeCard.id
 };
 
-writeFileSync(resolve(evidenceDir, "api-transcript.json"), JSON.stringify(transcript, null, 2));
-writeFileSync(resolve(evidenceDir, "db-readback.json"), JSON.stringify(readback, null, 2));
+writeEvidenceJson(resolve(evidenceDir, "api-transcript.json"), transcript);
+writeEvidenceJson(resolve(evidenceDir, "db-readback.json"), readback);
 
 await prisma.$disconnect();
 

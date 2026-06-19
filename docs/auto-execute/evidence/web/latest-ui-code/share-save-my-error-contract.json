@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "suite": "latest-ui-functional-share-save-my-error",
+  "routes": [
+    "/share/[id]",
+    "/saved/[id]",
+    "/my",
+    "/my/birth-aura",
+    "/error/network",
+    "/retry"
+  ]
+}

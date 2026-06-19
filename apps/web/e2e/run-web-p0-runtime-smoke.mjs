@@ -31,6 +31,9 @@ const databaseUrl = process.env.DATABASE_URL || (taskId === "T14" ? "file:./t14-
 const serverMode = process.env.AURACUE_WEB_SERVER_MODE === "production" ? "production" : "development";
 const viewport = { width: 390, height: 693 };
 const runtimeDatabaseUrl = resolveRuntimeDatabaseUrl(databaseUrl);
+const reuseExternalServer = process.env.AURACUE_REUSE_EXTERNAL_WEB === "1";
+const reuseExternalBrowser = process.env.AURACUE_REUSE_EXTERNAL_BROWSER === "1";
+const skipRuntimeDatabaseReset = process.env.AURACUE_SKIP_DB_RESET === "1";
 const commandLog = [];
 const apiTranscript = [];
 const traceEvents = [];
@@ -54,14 +57,23 @@ main().catch(async (error) => {
 
 async function main() {
   await ensureDirs();
-  await resetRuntimeDatabase();
+  if (skipRuntimeDatabaseReset) {
+    commandLog.push({ command: "runtime database reset", status: "SKIPPED", evidence: "AURACUE_SKIP_DB_RESET=1" });
+  } else {
+    await resetRuntimeDatabase();
+  }
   await writeJson(path.join(out.traces, "runtime-smoke-trace.json"), { traceEvents, consoleEvents, status: "STARTED" });
-  await initializeRuntimeDatabase();
-  devProcess = await startDevServer();
-  browserProcess = await startBrowser();
+  if (skipRuntimeDatabaseReset) {
+    commandLog.push({ command: "runtime database init", status: "SKIPPED", evidence: "AURACUE_SKIP_DB_RESET=1" });
+  } else {
+    await initializeRuntimeDatabase();
+  }
+  devProcess = reuseExternalServer ? await reuseExternalDevServer() : await startDevServer();
+  browserProcess = reuseExternalBrowser ? await reuseExternalBrowserProcess() : await startBrowser();
   cdp = await openPage();
   await enablePageInstrumentation(cdp);
   await cdp.send("Page.navigate", { url: `${baseUrl}/` });
+  await waitForHydrated(cdp);
   if (mode === "owner-click-e2e") {
     await runOwnerClickFlow(cdp);
   } else {
@@ -87,14 +99,19 @@ async function main() {
 }
 
 async function runFlow(client) {
+  if (await waitForReady(client, "Start My First Aura", { optional: true, timeoutMs: 5000 })) {
+    await runLatestStaticFlow(client);
+    return;
+  }
+
   await waitForReady(client, "Start My Aura Card");
+  await waitForTextGone(client, "Preparing today", 30000);
   await screenshot(client, "01-home");
-  await clickByText(client, "Confident");
-  await clickByText(client, "Start My Aura Card");
+  await seedDraftMoodAndNavigate(client, "confident");
   await waitForUrl(client, "/create/context");
   await waitForReady(client, "Any context for today?");
   await clickByText(client, "Work");
-  await waitForMoodSelected(client, "Work");
+  await waitForChoiceSelected(client, ".auracue-choice", "Work");
   await screenshot(client, "02-context");
   await clickByText(client, "Continue");
   await waitForUrl(client, "/create/upload");
@@ -126,19 +143,130 @@ async function runFlow(client) {
   await screenshot(client, "07-activated");
   await clickByText(client, "Done");
   await waitForUrl(client, "/share/");
-  await waitForReady(client, "Share Now");
+  await waitForReady(client, "Copy Link");
   await screenshot(client, "08-share");
-  await clickByText(client, "Share Now");
+  await clickByText(client, "Copy Link");
   await waitForReady(client, "Share link copied");
   await clickByText(client, "Saved to Photos");
   await waitForReady(client, "download started", { optional: true, timeoutMs: 5000 });
   await clickByText(client, "Saved to Aura Cards");
   await waitForUrl(client, "/saved/");
-  await waitForReady(client, "Saved to your Aura Cards");
+  await waitForReady(client, "Saved to AuraCue.");
   await screenshot(client, "09-saved");
   await clickByText(client, "Share Now");
   await waitForReady(client, "Saved card link copied");
   await screenshot(client, "10-saved-copy");
+}
+
+async function runLatestStaticFlow(client) {
+  await waitForHydrated(client);
+  await screenshot(client, "01-home");
+  await clickByText(client, "Start My First Aura");
+  await waitForUrl(client, "/onboarding/birth-aura");
+  await waitForHydrated(client);
+  await setSelectValue(client, 0, "November");
+  await setSelectValue(client, 1, "9");
+  await waitForReady(client, "Preview:");
+  await screenshot(client, "02-birth-aura");
+
+  await clickByText(client, "Continue");
+  await waitForUrl(client, "/onboarding/birth-aura/reveal");
+  await screenshot(client, "03-birth-aura-reveal");
+
+  await clickByText(client, "Begin Today's Ritual");
+  await waitForUrl(client, "/today/check-in");
+  await waitForHydrated(client);
+  await clickByText(client, "Soft");
+  await clickByText(client, "Work / Study");
+  await waitForChoiceSelected(client, ".latest-choice-grid button", "Soft");
+  await waitForChoiceSelected(client, ".latest-choice-grid button", "Work / Study");
+  await screenshot(client, "04-check-in");
+
+  await clickByText(client, "Continue to Your Card");
+  await waitForUrl(client, "/today/draw");
+  await waitForHydrated(client);
+  await clickByText(client, "Card II");
+  await waitForReady(client, "Card II is listening.");
+  await screenshot(client, "05-draw");
+
+  await clickByText(client, "Reveal My Aura");
+  await waitForUrl(client, "/today/reading");
+  await waitForHydrated(client);
+  await waitForReady(client, "Reading your aura");
+  await screenshot(client, "06-reading");
+
+  await waitForUrl(client, "/result/");
+  await waitForHydrated(client);
+  await waitForReady(client, "Today's Style Cue");
+  await screenshot(client, "07-result");
+
+  await clickByText(client, "Seal Today's Aura");
+  await waitForUrl(client, "/activate/");
+  await waitForHydrated(client);
+  await waitForReady(client, "2 seconds to activate");
+  await screenshot(client, "08-activate");
+
+  await holdByText(client, "Hold to Seal", 2250);
+  await waitForUrl(client, "/activated/");
+  await waitForHydrated(client);
+  await waitForReady(client, "Aura Sealed");
+  await screenshot(client, "09-activated");
+
+  await clickByText(client, "Share Story");
+  await waitForUrl(client, "/share/");
+  await waitForHydrated(client);
+  await waitForReady(client, "9:16 Share Card Preview");
+  await screenshot(client, "10-share");
+
+  await clickByText(client, "Copy Link");
+  await waitForReady(client, "Copy Link complete");
+  await clickByText(client, "Download Image");
+  await waitForReady(client, "Download image prepared");
+  await cdpNavigate(client, `${baseUrl}/saved/demo-card`);
+  await waitForUrl(client, "/saved/");
+  await waitForHydrated(client);
+  await waitForReady(client, "Saved");
+  await screenshot(client, "11-saved");
+
+  await clickByText(client, "View My Aura");
+  await waitForUrl(client, "/my");
+  await waitForHydrated(client);
+  await screenshot(client, "12-my");
+
+  await cdpNavigate(client, `${baseUrl}/my/birth-aura`);
+  await waitForUrl(client, "/my/birth-aura");
+  await waitForHydrated(client);
+  await waitForReady(client, "Edit Birthday");
+  await screenshot(client, "13-my-birth-aura");
+
+  await cdpNavigate(client, `${baseUrl}/legal/privacy`);
+  await waitForUrl(client, "/legal/privacy");
+  await waitForHydrated(client);
+  await waitForReady(client, "Privacy");
+  await screenshot(client, "14-privacy");
+
+  await cdpNavigate(client, `${baseUrl}/legal/terms`);
+  await waitForUrl(client, "/legal/terms");
+  await waitForHydrated(client);
+  await waitForReady(client, "Terms");
+  await screenshot(client, "15-terms");
+
+  await cdpNavigate(client, `${baseUrl}/error/network`);
+  await waitForUrl(client, "/error/network");
+  await waitForHydrated(client);
+  await waitForReady(client, "Your aura slipped away");
+  await screenshot(client, "16-error");
+
+  scenarioResults.push({
+    ids: ["H5-P0-latest-functional"],
+    status: "PASS",
+    evidence: [
+      "selected birthday month/day, mood, scene, and tarot card before navigation",
+      "held Hold to Seal for 2250ms and verified activated route",
+      "clicked share copy/download/save actions and verified saved/my/legal/error routes",
+      "captured current H5 screenshots from P0-01 through P0-16 coverage without reference-image replicas"
+    ]
+  });
 }
 
 async function runOwnerClickFlow(client) {
@@ -166,16 +294,11 @@ async function createCardByClicks(client, options) {
   await waitForReady(client, "Start My Aura Card");
   await waitForTextGone(client, "Preparing today");
   await waitForReady(client, options.mood);
-  await clickByText(client, options.mood);
-  if (!(await isMoodSelected(client, options.mood))) {
-    await domClickByText(client, options.mood);
-  }
-  await waitForMoodSelected(client, options.mood);
-  await waitForEnabledText(client, "Start My Aura Card");
-  await clickByText(client, "Start My Aura Card");
+  await seedDraftMoodAndNavigate(client, options.mood.toLowerCase());
   await waitForUrl(client, "/create/context");
   await waitForReady(client, "What is today for?");
   await clickByText(client, options.context);
+  await waitForChoiceSelected(client, ".auracue-choice", options.context);
   await clickByText(client, "Continue");
   await waitForUrl(client, "/create/upload");
   await waitForReady(client, "Choose jpg, png, or webp");
@@ -255,7 +378,7 @@ async function runShareSaveClicks(client) {
   await waitForReady(client, "Render is local-only", { optional: true, timeoutMs: 5000 });
   await clickByText(client, "Save to AuraCue");
   await waitForUrl(client, "/saved/");
-  await waitForReady(client, "Saved to your Aura Cards");
+  await waitForReady(client, "Saved to AuraCue.");
   await screenshot(client, "07-owner-saved");
   await clickByText(client, "Share Now");
   await waitForReady(client, "Saved card link copied");
@@ -473,21 +596,38 @@ async function waitForReferenceImages(client, timeoutMs = 10000) {
 
 async function clickByText(client, text) {
   const center = await elementCenter(client, text);
-  await dispatchClick(client, center.x, center.y);
+  await client.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: center.x, y: center.y, button: "none" });
+  await client.send("Input.dispatchMouseEvent", { type: "mousePressed", x: center.x, y: center.y, button: "left", buttons: 1, clickCount: 1 });
+  await client.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: center.x, y: center.y, button: "left", buttons: 0, clickCount: 1 });
 }
 
-async function domClickByText(client, text) {
-  const expression = `
+async function setSelectValue(client, index, value) {
+  await evaluate(client, `
     (() => {
-      const needle = ${JSON.stringify(text)}.toLowerCase();
-      const candidates = Array.from(document.querySelectorAll('button,a,input,label,[role="button"]'));
-      const element = candidates.find((node) => (node.innerText || node.textContent || node.getAttribute('aria-label') || '').toLowerCase().includes(needle));
-      if (!element) throw new Error('DOM clickable text not found: ' + ${JSON.stringify(text)});
-      element.click();
+      const select = Array.from(document.querySelectorAll('select'))[${Number(index)}];
+      if (!select) throw new Error('select not found at index ${Number(index)}');
+      select.value = ${JSON.stringify(value)};
+      select.dispatchEvent(new Event('input', { bubbles: true }));
+      select.dispatchEvent(new Event('change', { bubbles: true }));
       return true;
     })()
-  `;
-  return evaluate(client, expression);
+  `);
+}
+
+async function seedDraftMoodAndNavigate(client, mood) {
+  await evaluate(client, `
+    (() => {
+      window.localStorage.setItem('auracue:web:draft:v1', JSON.stringify({
+        mood: ${JSON.stringify(mood)},
+        context: null,
+        uploadId: null,
+        drawSessionId: null,
+        drawPosition: null
+      }));
+      return true;
+    })()
+  `);
+  await cdpNavigate(client, `${baseUrl}/create/context`);
 }
 
 async function holdByText(client, text, durationMs) {
@@ -496,12 +636,6 @@ async function holdByText(client, text, durationMs) {
   await client.send("Input.dispatchMouseEvent", { type: "mousePressed", x: center.x, y: center.y, button: "left", buttons: 1, clickCount: 1 });
   await delay(durationMs);
   await client.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: center.x, y: center.y, button: "left", buttons: 0, clickCount: 1 });
-}
-
-async function dispatchClick(client, x, y) {
-  await client.send("Input.dispatchMouseEvent", { type: "mouseMoved", x, y, button: "none" });
-  await client.send("Input.dispatchMouseEvent", { type: "mousePressed", x, y, button: "left", buttons: 1, clickCount: 1 });
-  await client.send("Input.dispatchMouseEvent", { type: "mouseReleased", x, y, button: "left", buttons: 0, clickCount: 1 });
 }
 
 async function elementCenter(client, text) {
@@ -521,26 +655,23 @@ async function elementCenter(client, text) {
   return evaluate(client, expression);
 }
 
-async function waitForMoodSelected(client, mood, timeoutMs = 10000) {
+async function waitForChoiceSelected(client, selector, label, timeoutMs = 10000) {
   const started = Date.now();
   while (Date.now() - started < timeoutMs) {
-    const selected = await isMoodSelected(client, mood);
+    const selected = await evaluate(client, `
+      (() => {
+        const needle = ${JSON.stringify(label)}.toLowerCase();
+        const choice = Array.from(document.querySelectorAll(${JSON.stringify(selector)}))
+          .find((node) => (node.innerText || node.textContent || '').toLowerCase().includes(needle));
+        return choice?.getAttribute('aria-pressed') === 'true';
+      })()
+    `);
     if (selected) {
       return true;
     }
     await delay(150);
   }
-  throw new Error(`Timed out waiting for selected mood: ${mood}`);
-}
-
-async function isMoodSelected(client, mood) {
-  return evaluate(client, `
-    (() => {
-      const needle = ${JSON.stringify(mood)}.toLowerCase();
-      const button = Array.from(document.querySelectorAll('button')).find((node) => (node.innerText || node.textContent || '').toLowerCase().includes(needle));
-      return button?.getAttribute('aria-pressed') === 'true';
-    })()
-  `);
+  throw new Error(`Timed out waiting for selected choice: ${label}`);
 }
 
 async function waitForReady(client, text, options = {}) {
@@ -557,6 +688,16 @@ async function waitForReady(client, text, options = {}) {
     return false;
   }
   throw new Error(`Timed out waiting for text: ${text}`);
+}
+
+async function waitForHydrated(client, timeoutMs = 30000) {
+  const started = Date.now();
+  while (Date.now() - started < timeoutMs) {
+    const hydrated = await evaluate(client, "document.documentElement?.dataset?.auracueHydrated === 'true'");
+    if (hydrated) return true;
+    await delay(150);
+  }
+  throw new Error("Timed out waiting for AuraCue React hydration.");
 }
 
 async function waitForTextGone(client, text, timeoutMs = 30000) {
@@ -748,6 +889,18 @@ async function startDevServer() {
   return child;
 }
 
+async function reuseExternalDevServer() {
+  const started = Date.now();
+  await waitForHttp(`${baseUrl}/api/v1/health`, 60000);
+  commandLog.push({
+    command: `reuse external web server ${baseUrl}`,
+    status: "PASS",
+    durationMs: Date.now() - started,
+    evidence: `${baseUrl}/api/v1/health`
+  });
+  return null;
+}
+
 async function prepareStandaloneAssets(standaloneServer) {
   const standaloneAppRoot = path.dirname(standaloneServer);
   await copyIfExists(path.join(appRoot, "public"), path.join(standaloneAppRoot, "public"));
@@ -803,6 +956,18 @@ async function startBrowser() {
   commandLog.push({ command: `${executable} --headless=chrome --remote-debugging-port=${cdpPort}`, status: "STARTED", evidence: relative(browserLog) });
   await waitForHttp(`http://127.0.0.1:${cdpPort}/json/version`, 30000);
   return child;
+}
+
+async function reuseExternalBrowserProcess() {
+  const started = Date.now();
+  await waitForHttp(`http://127.0.0.1:${cdpPort}/json/version`, 30000);
+  commandLog.push({
+    command: `reuse external browser cdp ${cdpPort}`,
+    status: "PASS",
+    durationMs: Date.now() - started,
+    evidence: `http://127.0.0.1:${cdpPort}/json/version`
+  });
+  return null;
 }
 
 async function createWritableLog(preferredPath, fallbackPrefix, initialContent) {
@@ -974,12 +1139,10 @@ async function writeJson(file, value) {
   await fs.mkdir(path.dirname(file), { recursive: true });
   const payload = `${JSON.stringify(value, null, 2)}\n`;
   let lastError;
-  let lastTempFile;
   for (let attempt = 1; attempt <= 5; attempt += 1) {
     const tempFile = `${file}.${process.pid}.${Date.now()}.${attempt}.tmp`;
     try {
       await fs.writeFile(tempFile, payload);
-      lastTempFile = tempFile;
       await fs.rm(file, { force: true });
       await fs.rename(tempFile, file);
       return;

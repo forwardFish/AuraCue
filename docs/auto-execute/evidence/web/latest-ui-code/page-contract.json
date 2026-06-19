@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "suite": "latest-ui-functional-flow",
+  "sourceOfTruth": "docs/AuraCue_FINAL_Page_Flow_Design_Spec_v4.1.md",
+  "routes": [
+    "/",
+    "/home",
+    "/onboarding/birth-aura",
+    "/onboarding/birth-aura/reveal",
+    "/today/check-in",
+    "/today/draw",
+    "/today/reading"
+  ]
+}

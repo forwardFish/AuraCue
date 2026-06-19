@@ -184,7 +184,7 @@ export function SharePageFlow({ cardId }: ShareSaveProps) {
   }
 
   return (
-    <WebShell title="Saved to your Aura Cards" eyebrow={null} referenceId="share">
+    <WebShell title="Share your AuraCue." eyebrow={null} referenceId="share">
       <div className="auracue-flow auracue-flow--share">
         {status === "loading" ? <LoadingState title="Preparing share image" message="Rendering a 9:16 AuraCue preview." /> : null}
         {status === "error" ? <ErrorState title="Share unavailable" message={message ?? "Share page could not be loaded."} onRetry={() => window.location.reload()} /> : null}
@@ -213,14 +213,14 @@ export function SharePageFlow({ cardId }: ShareSaveProps) {
               </button>
               <button className="auracue-primary-action auracue-primary-action--share" type="button" onClick={copyLink} disabled={actionStatus !== "idle"}>
                 <Image src="/aura-assets/common-sparkle-gold.png" alt="" width={16} height={16} />
-                {actionStatus === "copying" ? "Preparing" : "Share Now"}
+                {actionStatus === "copying" ? "Preparing" : "Copy Link"}
                 <Image src="/aura-assets/common-sparkle-gold.png" alt="" width={16} height={16} />
               </button>
               <Link className="auracue-secondary-action auracue-link-action auracue-link-action--share-home" href="/">
                 Back Home
               </Link>
               <button className="auracue-share-text-link" type="button" onClick={shareCard} disabled={actionStatus !== "idle"}>
-                View Saved Card
+                Generate Again
               </button>
             </div>
           </>
@@ -276,7 +276,7 @@ export function SavedPageFlow({ cardId }: ShareSaveProps) {
   }
 
   return (
-    <WebShell title="Saved to your Aura Cards" eyebrow={null} referenceId="saved">
+    <WebShell title="Saved to AuraCue." eyebrow={null} referenceId="saved">
       <div className="auracue-flow auracue-flow--saved">
         {status === "loading" ? <LoadingState title="Confirming save" message="Checking the saved card details." /> : null}
         {status === "error" ? <ErrorState title="Saved card unavailable" message={message ?? "Saved card could not be loaded."} onRetry={() => window.location.reload()} /> : null}

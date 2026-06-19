@@ -1,0 +1,48 @@
+{
+  "uiId": "P0-04",
+  "route": "/today/check-in",
+  "state": "check-in choices",
+  "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
+  "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-04.png",
+  "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-04.png",
+  "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-04-diff.png",
+  "referenceSource": "docs/UI/小程序/P0-04-CheckIn-今日状态与场景选择.png",
+  "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/04-check-in.png",
+  "referenceImage": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 1935827,
+    "sha256": "5380ec504bf7fb1988b43a1d387443ca2274e0eabbf3ccbd4841b75e8d605fea"
+  },
+  "actualImage": {
+    "width": 390,
+    "height": 693,
+    "bytes": 124976,
+    "sha256": "5e2cb46299a4571cd4c34f227a502b2b325e525b864b1f811b19550bafe81a7b"
+  },
+  "diffImage": {
+    "width": 792,
+    "height": 693,
+    "bytes": 616612,
+    "sha256": "65b5cd0c84145cd346a96a1c8ade16f17bde4fc2451f8ad413d755fdf6750ea4"
+  },
+  "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
+  "normalizedPixelDiff": {
+    "width": 390,
+    "height": 693,
+    "totalPixels": 270270,
+    "changedPixels": 117835,
+    "diffRatio": 0.43599,
+    "averageChannelDelta": 24.304,
+    "maxChannelDelta": 245.333,
+    "changeThresholdPerPixel": 12
+  },
+  "diffRatio": 0.43599,
+  "threshold": 0.05,
+  "pixelPerfectStatus": "REPAIR_REQUIRED",
+  "materialDeviation": "REPAIR_REQUIRED",
+  "notes": [
+    "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
+    "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
+  ]
+}

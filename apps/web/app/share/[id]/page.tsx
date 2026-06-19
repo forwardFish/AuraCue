@@ -1,10 +1,10 @@
-import { SharePageFlow } from "@/components/share-save-flow";
+import { LatestSharePage } from "@/components/latest-ui-pages";
 
 type SharePageProps = {
   params: Promise<{ id: string }>;
 };
 
 export default async function SharePage({ params }: SharePageProps) {
-  const { id } = await params;
-  return <SharePageFlow cardId={id} />;
+  await params;
+  return <LatestSharePage />;
 }

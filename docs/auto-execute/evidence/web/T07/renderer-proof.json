@@ -1,12 +1,12 @@
 {
-  "cardId": "cmq1l75c10004bgvc6ttbhvsb",
-  "shareImageUrl": "local://share-images/cmq1l75c10004bgvc6ttbhvsb-template-story-001.png",
+  "cardId": "cmql1j8qe0004dwvcm99n7tke",
+  "shareImageUrl": "local://share-images/cmql1j8qe0004dwvcm99n7tke-template-story-001.png",
   "width": 1080,
   "height": 1920,
   "aspectRatio": "9:16",
   "renderer": "deterministic-local-renderer",
-  "deterministicKey": "cmq1l75c10004bgvc6ttbhvsb|template-story-001|Meeting Glow Aura Card|Clear Signal Aura|soft ivory|work-confidence-local-2|Today I am carrying clear signal aura.",
-  "dataUrlSha256": "e9257d242424b60bc0fe184d35e5b16b4d2956e84b410e5f82848b45ced483a8",
+  "deterministicKey": "cmql1j8qe0004dwvcm99n7tke|template-story-001|Meeting Glow Aura Card|Clear Signal Aura|soft ivory|work-confidence-local-2|Today I am carrying clear signal aura.",
+  "dataUrlSha256": "00e252d06b0289999be25138fa0836ae4e534015650a970af638f1c6a054aaf9",
   "textFields": {
     "title": "Meeting Glow Aura Card",
     "auraName": "Clear Signal Aura",

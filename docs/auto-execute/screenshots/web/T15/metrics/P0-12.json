@@ -1,0 +1,48 @@
+{
+  "uiId": "P0-12",
+  "route": "/my",
+  "state": "my aura home",
+  "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
+  "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-12.png",
+  "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-12.png",
+  "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-12-diff.png",
+  "referenceSource": "docs/UI/小程序/P0-12-My-我的气场首页.png",
+  "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/12-my.png",
+  "referenceImage": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 1667569,
+    "sha256": "83d7ed668d23ebaaa40fbe8d496be2ba39cd2ba674a1eb09d09f0a373e0e656f"
+  },
+  "actualImage": {
+    "width": 390,
+    "height": 693,
+    "bytes": 119723,
+    "sha256": "f04a542fe0c803a9f91d38ab51302e63ab5e171e434504a51ee158696d4ed360"
+  },
+  "diffImage": {
+    "width": 792,
+    "height": 693,
+    "bytes": 504398,
+    "sha256": "b79e7cdf9ad56e07acd320059f5c00e83bd41d7111cc31675562ae3217133c12"
+  },
+  "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
+  "normalizedPixelDiff": {
+    "width": 390,
+    "height": 693,
+    "totalPixels": 270270,
+    "changedPixels": 71005,
+    "diffRatio": 0.262719,
+    "averageChannelDelta": 19.038,
+    "maxChannelDelta": 250.333,
+    "changeThresholdPerPixel": 12
+  },
+  "diffRatio": 0.262719,
+  "threshold": 0.05,
+  "pixelPerfectStatus": "REPAIR_REQUIRED",
+  "materialDeviation": "REPAIR_REQUIRED",
+  "notes": [
+    "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
+    "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
+  ]
+}

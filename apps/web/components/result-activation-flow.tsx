@@ -146,7 +146,7 @@ export function ResultPageFlow({ cardId }: ResultActivationProps) {
   }
 
   return (
-    <WebShell title="Your Full Reading" eyebrow={null} referenceId="result">
+    <WebShell title="Your Aura Card is ready." eyebrow={null} referenceId="result">
       <div className="auracue-flow auracue-flow--result">
         <p className="auracue-flow__lead auracue-flow__lead--result">
           Here&apos;s the energy aligned just for you.
@@ -158,10 +158,10 @@ export function ResultPageFlow({ cardId }: ResultActivationProps) {
         {card ? (
           <div className="auracue-flow__actions">
             <button className="auracue-secondary-action auracue-secondary-action--result" type="button" onClick={saveFromResult} disabled={status === "saving"}>
-              {status === "saving" ? "Saving..." : "Save Card"}
+              {status === "saving" ? "Saving..." : "Save"}
             </button>
             <button className="auracue-secondary-action auracue-secondary-action--result" type="button" onClick={shareFromResult} disabled={status === "sharing"}>
-              {status === "sharing" ? "Sharing..." : "Share Story"}
+              {status === "sharing" ? "Sharing..." : "Share"}
             </button>
             <Link className="auracue-primary-action auracue-link-action" href={card.isActivated ? `/activated/${cardId}` : `/activate/${cardId}`}>
               {card.isActivated ? "View Activated Aura" : "Activate My Aura"}
@@ -278,7 +278,7 @@ export function ActivatePageFlow({ cardId }: ResultActivationProps) {
         {status === "error" ? <ErrorState title="Activation unavailable" message={message ?? "Activation could not start."} onRetry={() => window.location.reload()} /> : null}
         {card ? (
           <>
-            <p className="auracue-flow__lead">Choose one anchor, then hold the seal for 3 seconds.</p>
+            <p className="auracue-flow__lead">Pick your lucky anchor.</p>
             <div className="auracue-option-list" aria-label="Activation anchors">
               {anchors.map((anchor) => (
                 <button
@@ -374,7 +374,7 @@ export function ActivatedPageFlow({ cardId }: ResultActivationProps) {
   }
 
   return (
-    <WebShell title="Aura Activated" eyebrow={null} referenceId="activated">
+    <WebShell title="Aura activated." eyebrow={null} referenceId="activated">
       <div className="auracue-flow auracue-flow--activated">
         {status === "loading" ? <LoadingState title="Checking seal" message="Confirming today's activated aura." /> : null}
         {status === "error" ? <ErrorState title="Activated card unavailable" message={message ?? "Activated card could not be loaded."} onRetry={() => window.location.reload()} /> : null}
@@ -400,7 +400,7 @@ export function ActivatedPageFlow({ cardId }: ResultActivationProps) {
               </Link>
               <button className="auracue-secondary-action auracue-secondary-action--activated-share" type="button" onClick={shareActivated} disabled={status === "sharing"}>
                 <span aria-hidden="true">↥</span>
-                {status === "sharing" ? "Sharing..." : "Share Story"}
+                {status === "sharing" ? "Sharing..." : "Share"}
               </button>
             </div>
             <p className="auracue-flow__safe auracue-flow__safe--activated">Private. Personal. Just for you.</p>

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { createGlobalTokenStyle } from "@/lib/style-tokens";
 import "./globals.css";
 import "@/components/aura-ui/aura-ui.css";
+import "@/components/latest-ui.css";
 
 export const metadata: Metadata = {
   title: "AuraCue",

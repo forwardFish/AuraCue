@@ -1,0 +1,48 @@
+{
+  "uiId": "P0-02",
+  "route": "/onboarding/birth-aura",
+  "state": "birthday input",
+  "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
+  "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-02.png",
+  "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-02.png",
+  "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-02-diff.png",
+  "referenceSource": "docs/UI/小程序/P0-02-BirthAura-输入生日创建本命气场.png",
+  "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/02-birth-aura.png",
+  "referenceImage": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 1578717,
+    "sha256": "37cb3edd0629b1e3957309d9e0c0a2518330658315a8ec37a4c8cab209565fa4"
+  },
+  "actualImage": {
+    "width": 390,
+    "height": 693,
+    "bytes": 111950,
+    "sha256": "7ebc200150bac36734be3d046638d8e7f3f94a87a899e6955734bf912683fc38"
+  },
+  "diffImage": {
+    "width": 792,
+    "height": 693,
+    "bytes": 501327,
+    "sha256": "228d621256bfe12d14c0d4f42854a110233a7ae7c3421090c88f10997bd492aa"
+  },
+  "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
+  "normalizedPixelDiff": {
+    "width": 390,
+    "height": 693,
+    "totalPixels": 270270,
+    "changedPixels": 77015,
+    "diffRatio": 0.284956,
+    "averageChannelDelta": 20.86,
+    "maxChannelDelta": 251,
+    "changeThresholdPerPixel": 12
+  },
+  "diffRatio": 0.284956,
+  "threshold": 0.05,
+  "pixelPerfectStatus": "REPAIR_REQUIRED",
+  "materialDeviation": "REPAIR_REQUIRED",
+  "notes": [
+    "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
+    "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
+  ]
+}

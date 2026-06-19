@@ -1,0 +1,48 @@
+{
+  "uiId": "P0-06A",
+  "route": "/today/reading",
+  "state": "light reading progress",
+  "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
+  "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-06A.png",
+  "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-06A.png",
+  "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-06A-diff.png",
+  "referenceSource": "docs/UI/小程序/P0-06A-Reading-轻量生成进度.png",
+  "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/06-reading.png",
+  "referenceImage": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 1584471,
+    "sha256": "99e4bc882924e3a01c7f32d18a32a08fb8698a8c77feacf8cbbe56d9a569caed"
+  },
+  "actualImage": {
+    "width": 390,
+    "height": 693,
+    "bytes": 185196,
+    "sha256": "38da85dd7def83c0b9f5c3b85610b8366335104e39b7ef50e114016037223b56"
+  },
+  "diffImage": {
+    "width": 792,
+    "height": 693,
+    "bytes": 584351,
+    "sha256": "52c8ad5d2707aaa55be76b5f85305e33cebf6bf8a19099c61e6015813afa68a2"
+  },
+  "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
+  "normalizedPixelDiff": {
+    "width": 390,
+    "height": 693,
+    "totalPixels": 270270,
+    "changedPixels": 71617,
+    "diffRatio": 0.264983,
+    "averageChannelDelta": 16.71,
+    "maxChannelDelta": 251,
+    "changeThresholdPerPixel": 12
+  },
+  "diffRatio": 0.264983,
+  "threshold": 0.05,
+  "pixelPerfectStatus": "REPAIR_REQUIRED",
+  "materialDeviation": "REPAIR_REQUIRED",
+  "notes": [
+    "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
+    "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
+  ]
+}
