@@ -17,7 +17,8 @@ const requiredFiles = [
   "server/api/redaction.ts",
   "server/api/local-guard.ts",
   "server/config/env.ts",
-  "app/api/v1/health/route.ts"
+  "app/api/v1/health/route.ts",
+  "app/api/v1/home/route.ts"
 ];
 
 for (const file of requiredFiles) {
@@ -50,6 +51,14 @@ assert.match(healthRoute, /apiBase: "\/api\/v1"/);
 assert.match(healthRoute, /p0ModelNames/);
 assert.doesNotMatch(healthRoute, /POST|payment|unlock|invite/);
 
+const homeRoute = readFileSync(resolve(root, "app/api/v1/home/route.ts"), "utf8");
+assert.match(homeRoute, /export async function GET/);
+assert.match(homeRoute, /rulingPlanet/);
+assert.match(homeRoute, /traits/);
+assert.match(homeRoute, /firstAuraCta/);
+assert.match(homeRoute, /ritualHref/);
+assert.doesNotMatch(homeRoute, /POST|payment|unlock|invite/);
+
 const healthResponseEvidence = {
   endpoint: "GET /api/v1/health",
   status: "STATIC_CONTRACT_PASS",
@@ -66,7 +75,11 @@ const healthResponseEvidence = {
       }
     }
   },
-  reusableFoundation: requiredFiles
+  reusableFoundation: requiredFiles,
+  homeEndpoint: {
+    endpoint: "GET /api/v1/home",
+    fields: ["dateLabel", "weekdayLabel", "rulingPlanet", "traits", "firstAuraCta", "ritualCta"]
+  }
 };
 
 writeEvidenceJson(resolve(evidenceDir, "health-response.json"), healthResponseEvidence);

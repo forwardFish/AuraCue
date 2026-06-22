@@ -56,6 +56,9 @@ export function createApiClient(options = {}) {
       const query = toQuery(input);
       return this.get(`/api/v1/aura-cards/today${query}`);
     },
+    getHomeContent() {
+      return this.get("/api/v1/home");
+    },
     uploadOutfit(input) {
       const formData = new FormData();
       formData.set("anonymousId", input.anonymousId);

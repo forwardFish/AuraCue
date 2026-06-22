@@ -19,6 +19,18 @@
     "server/api/redaction.ts",
     "server/api/local-guard.ts",
     "server/config/env.ts",
-    "app/api/v1/health/route.ts"
-  ]
+    "app/api/v1/health/route.ts",
+    "app/api/v1/home/route.ts"
+  ],
+  "homeEndpoint": {
+    "endpoint": "GET /api/v1/home",
+    "fields": [
+      "dateLabel",
+      "weekdayLabel",
+      "rulingPlanet",
+      "traits",
+      "firstAuraCta",
+      "ritualCta"
+    ]
+  }
 }

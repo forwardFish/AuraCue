@@ -36,8 +36,9 @@ for (const copy of [
   "How are you arriving today?",
   "What is today asking from you?",
   "Choose the card",
-  "Reading your aura",
-  "View Today's Aura"
+  "Your reading begins.",
+  "Your message is clear.",
+  "Your reading unfolds."
 ]) {
   assert.match(latestComponent.replaceAll("&apos;", "'"), new RegExp(escapeRegExp(copy)), `missing latest UI copy: ${copy}`);
 }
@@ -48,7 +49,7 @@ for (const route of [
   "/today/check-in",
   "/today/draw",
   "/today/reading",
-  "/result/${demoCardId}"
+  "/result/${oracle.cardId || demoCardId}"
 ]) {
   assert.match(latestComponent, new RegExp(escapeRegExp(route)), `missing latest flow route: ${route}`);
 }
@@ -56,23 +57,40 @@ for (const route of [
 for (const implementationSignal of [
   "useState",
   "localStorage",
+  "apiClient.getHomeContent",
+  "apiClient.createAnonymousIdentity",
+  "apiClient.startDrawSession",
+  "apiClient.generateAuraCard",
+  "apiClient.getAuraCard",
+  "generateOracleFromApi",
   "<select",
   "aria-pressed={mood === label}",
   "aria-pressed={selectedCard === label}",
-  "setProgress"
+  "advanceReading"
 ]) {
   assert.match(latestComponent, new RegExp(escapeRegExp(implementationSignal)), `missing real UI implementation signal: ${implementationSignal}`);
 }
 
+for (const fontSignal of [
+  "AuraCue Cormorant",
+  "AuraCue Inter",
+  "cormorant-garamond-v21-latin-600.ttf",
+  "inter-v20-latin-600.ttf"
+]) {
+  assert.match(latestCss, new RegExp(escapeRegExp(fontSignal)), `missing latest UI font signal: ${fontSignal}`);
+}
+
 for (const asset of [
-  "hero-woman.png",
-  "birth-aura-venus-air-orb.png",
-  "tarot-card-back-card2.png",
+  "home-saturn-planet-hero-card.png",
+  "birth-reveal-guardian-libra.png",
+  "p0-05-tarot-card-back-clean.png",
   "mood-drained-drop.png",
   "intent-work-study-book.png"
 ]) {
   assert.match(latestComponent, new RegExp(escapeRegExp(asset)), `missing UI asset reference ${asset}`);
 }
+
+assert.match(latestCss, /home-trait-pill-frame\.png/, "missing latest UI trait pill frame CSS asset");
 
 for (const className of [
   ".latest-phone",

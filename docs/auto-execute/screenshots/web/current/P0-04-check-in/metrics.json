@@ -1,0 +1,103 @@
+{
+  "diffRatio": 0.2211793499228395,
+  "bounds": {
+    "panel": {
+      "text": "✦\nHow are you arriving today?\nDrained\nSoft\nRestless\nHidden\nFocused\nMagnetic\nUnbothered\nMain Character\n✦\nWhat is today asking from you?\nWork / Study\nImportant Moment\nStay Low-Key\nJust Survive Today\nNeed Protection\nWant to Be Seen\nSocial\nSoft Reset",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "x": 15,
+      "y": 157.640625,
+      "w": 402,
+      "h": 541,
+      "bottom": 698.640625,
+      "boxShadow": "rgba(131, 80, 104, 0.11) 0px 13px 26px 0px, rgba(255, 255, 255, 0.64) 0px 0px 0px 1px inset, rgba(221, 161, 105, 0.45) 0px 0px 0px 1px"
+    },
+    "h1": {
+      "text": "How are you arriving today?",
+      "fontSize": "31px",
+      "fontWeight": "500",
+      "x": 81,
+      "y": 221.640625,
+      "w": 270,
+      "h": 63.84375,
+      "bottom": 285.484375,
+      "boxShadow": "none"
+    },
+    "moodGrid": {
+      "text": "Drained\nSoft\nRestless\nHidden\nFocused\nMagnetic\nUnbothered\nMain Character",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "x": 50,
+      "y": 298.484375,
+      "w": 332,
+      "h": 130,
+      "bottom": 428.484375,
+      "boxShadow": "none"
+    },
+    "moodBtn": {
+      "text": "Drained",
+      "fontSize": "15px",
+      "fontWeight": "500",
+      "x": 50,
+      "y": 298.484375,
+      "w": 101.328125,
+      "h": 38,
+      "bottom": 336.484375,
+      "boxShadow": "rgba(179, 95, 69, 0.15) 0px 12px 22px 0px, rgba(255, 255, 255, 0.82) 0px 0px 0px 1px inset, rgba(255, 210, 158, 0.32) 0px 0px 0px 1px"
+    },
+    "h2": {
+      "text": "What is today asking from you?",
+      "fontSize": "31px",
+      "fontWeight": "500",
+      "x": 73.5,
+      "y": 452.484375,
+      "w": 285,
+      "h": 63.84375,
+      "bottom": 516.328125,
+      "boxShadow": "none"
+    },
+    "sceneGrid": {
+      "text": "Work / Study\nImportant Moment\nStay Low-Key\nJust Survive Today\nNeed Protection\nWant to Be Seen\nSocial\nSoft Reset",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "x": 50,
+      "y": 525.328125,
+      "w": 332,
+      "h": 169,
+      "bottom": 694.328125,
+      "boxShadow": "none"
+    },
+    "sceneBtn": {
+      "text": "Work / Study",
+      "fontSize": "15px",
+      "fontWeight": "500",
+      "x": 50,
+      "y": 525.328125,
+      "w": 159,
+      "h": 37,
+      "bottom": 562.328125,
+      "boxShadow": "rgba(179, 95, 69, 0.15) 0px 12px 22px 0px, rgba(255, 255, 255, 0.82) 0px 0px 0px 1px inset, rgba(255, 210, 158, 0.32) 0px 0px 0px 1px"
+    },
+    "cta": {
+      "text": "✦\nContinue to Your Card\n✦",
+      "fontSize": "26px",
+      "fontWeight": "500",
+      "x": 29,
+      "y": 711.640625,
+      "w": 374,
+      "h": 50,
+      "bottom": 761.640625,
+      "boxShadow": "rgba(188, 120, 186, 0.2) 0px 13px 26px 0px, rgba(255, 255, 255, 0.62) 0px 0px 0px 1px inset"
+    },
+    "selected": [
+      "Drained",
+      "Work / Study"
+    ],
+    "body": {
+      "scrollHeight": 780,
+      "clientHeight": 768
+    }
+  },
+  "actual": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\screenshots\\web\\current\\P0-04-check-in\\actual.png",
+  "preview": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\screenshots\\web\\current\\P0-04-check-in\\side-by-side-740.png"
+}

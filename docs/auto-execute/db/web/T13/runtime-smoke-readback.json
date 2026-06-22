@@ -1,16 +1,54 @@
 {
-  "databaseUrl": "file:D:/lyh/agent/agent-frame/AuraCue/apps/web/t13-share-repair.sqlite",
+  "databaseUrl": "file:D:/lyh/agent/agent-frame/AuraCue/apps/web/t13-runtime-smoke.sqlite",
+  "anonymousId": "anon_776f7885c3c14737a0384d48c736c96f",
   "counts": {
-    "AnonymousUser": 0,
+    "AnonymousUser": 1,
     "OutfitUpload": 0,
-    "DrawSession": 0,
-    "GenerationJob": 0,
-    "AuraCard": 0,
+    "DrawSession": 1,
+    "GenerationJob": 1,
+    "AuraCard": 1,
     "AuraActivation": 0,
     "SavedCard": 0,
     "ShareEvent": 0,
     "AnalyticsEvent": 0,
     "CardTemplate": 0
   },
-  "user": null
+  "user": {
+    "id": "cmqo0x7ac0000rwvcwf5fj6d1",
+    "anonymousId": "anon_776f7885c3c14737a0384d48c736c96f",
+    "uploads": [],
+    "drawSessions": [
+      {
+        "id": "cmqo0x7yi0001rwvcvtiec767",
+        "mood": "Soft",
+        "context": "Work / Study",
+        "uploadId": null,
+        "drawSeed": "seed_fbf23bfe472ee85d",
+        "createdAt": "2026-06-21T16:51:29.034Z"
+      }
+    ],
+    "jobs": [
+      {
+        "id": "cmqo0x8i20002rwvc5cfm8vrn",
+        "status": "success",
+        "drawSessionId": "cmqo0x7yi0001rwvcvtiec767",
+        "drawPosition": 2,
+        "fallbackUsed": true
+      }
+    ],
+    "cards": [
+      {
+        "id": "cmqo0x8ia0003rwvc5gh537z7",
+        "mood": "Soft",
+        "context": "Work / Study",
+        "drawPosition": 2,
+        "isActivated": false,
+        "shareImageUrl": null,
+        "activations": [],
+        "savedCards": [],
+        "shares": []
+      }
+    ],
+    "analytics": []
+  }
 }

@@ -74,6 +74,9 @@ async function main() {
   await enablePageInstrumentation(cdp);
   await cdp.send("Page.navigate", { url: `${baseUrl}/` });
   await waitForHydrated(cdp);
+  await resetH5LocalState(cdp);
+  await cdp.send("Page.navigate", { url: `${baseUrl}/` });
+  await waitForHydrated(cdp);
   if (mode === "owner-click-e2e") {
     await runOwnerClickFlow(cdp);
   } else {
@@ -158,16 +161,33 @@ async function runFlow(client) {
   await screenshot(client, "10-saved-copy");
 }
 
+async function resetH5LocalState(client) {
+  await evaluate(client, `
+    (() => {
+      for (const key of Object.keys(window.localStorage)) {
+        if (key.startsWith('auracue:h5:')) {
+          window.localStorage.removeItem(key);
+        }
+      }
+      return true;
+    })()
+  `);
+}
+
 async function runLatestStaticFlow(client) {
   await waitForHydrated(client);
   await screenshot(client, "01-home");
   await clickByText(client, "Start My First Aura");
   await waitForUrl(client, "/onboarding/birth-aura");
   await waitForHydrated(client);
-  await setSelectValue(client, 0, "November");
-  await setSelectValue(client, 1, "9");
-  await waitForReady(client, "Preview:");
   await screenshot(client, "02-birth-aura");
+  await spinBirthdayWheel(client, "Month", 1);
+  await spinBirthdayWheel(client, "Day", 2);
+  await waitForBirthdaySelection(client, "November", "9");
+  await screenshot(client, "02-birth-aura-selected");
+  await spinBirthdayWheel(client, "Month", -1);
+  await spinBirthdayWheel(client, "Day", -2);
+  await waitForBirthdaySelection(client, "October", "7");
 
   await clickByText(client, "Continue");
   await waitForUrl(client, "/onboarding/birth-aura/reveal");
@@ -185,16 +205,24 @@ async function runLatestStaticFlow(client) {
   await clickByText(client, "Continue to Your Card");
   await waitForUrl(client, "/today/draw");
   await waitForHydrated(client);
+  await waitForReady(client, "Choose the card");
+  await screenshot(client, "05A-draw");
   await clickByText(client, "Card II");
-  await waitForReady(client, "Card II is listening.");
+  await waitForReady(client, "Your card has");
   await screenshot(client, "05-draw");
 
-  await clickByText(client, "Reveal My Aura");
+  await clickByText(client, "Open My Reading");
   await waitForUrl(client, "/today/reading");
   await waitForHydrated(client);
-  await waitForReady(client, "Reading your aura");
-  await screenshot(client, "06-reading");
-
+  await waitForReady(client, "Your reading begins.");
+  await screenshot(client, "06A-reading-begins");
+  await clickByText(client, "Reveal the card's message");
+  await waitForReady(client, "Your message is clear.");
+  await screenshot(client, "06B-message-clear");
+  await clickByText(client, "See My Style Oracle");
+  await waitForReady(client, "Your reading unfolds.");
+  await screenshot(client, "06C-reading-unfolds");
+  await clickByText(client, "Reveal today's shift");
   await waitForUrl(client, "/result/");
   await waitForHydrated(client);
   await waitForReady(client, "Today's Style Cue");
@@ -569,6 +597,24 @@ async function cdpNavigate(client, url) {
 async function screenshot(client, name) {
   await fs.mkdir(out.screenshots, { recursive: true });
   await waitForReferenceImages(client);
+  await evaluate(client, `
+    (async () => {
+      for (let attempt = 0; attempt < 20 && !document.documentElement; attempt += 1) {
+        await new Promise((resolve) => setTimeout(resolve, 50));
+      }
+      let style = document.getElementById('auracue-evidence-hide-cursor');
+      if (!style) {
+        style = document.createElement('style');
+        style.id = 'auracue-evidence-hide-cursor';
+        style.textContent = '*,*::before,*::after{cursor:none!important;}';
+        const parent = document.head || document.body || document.documentElement;
+        if (!parent) return false;
+        parent.appendChild(style);
+      }
+      return true;
+    })()
+  `);
+  await client.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: -100, y: -100, button: "none" }).catch(() => undefined);
   const result = await client.send("Page.captureScreenshot", { format: "png", captureBeyondViewport: false });
   const target = path.join(out.screenshots, `${name}.png`);
   await fs.writeFile(target, result.data, "base64");
@@ -612,6 +658,61 @@ async function setSelectValue(client, index, value) {
       return true;
     })()
   `);
+}
+
+async function clickWheelItem(client, text) {
+  const center = await evaluate(client, `
+    (() => {
+      const needle = ${JSON.stringify(text)};
+      const buttons = Array.from(document.querySelectorAll('.latest-wheel-window button'));
+      const button = buttons.find((node) => (node.textContent || '').trim() === needle);
+      if (!button) throw new Error('Wheel item not found: ' + needle);
+      button.scrollIntoView({ block: 'center', inline: 'center' });
+      const rect = button.getBoundingClientRect();
+      return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2, text: button.textContent };
+    })()
+  `);
+  await client.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: center.x, y: center.y, button: "none" });
+  await client.send("Input.dispatchMouseEvent", { type: "mousePressed", x: center.x, y: center.y, button: "left", buttons: 1, clickCount: 1 });
+  await client.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: center.x, y: center.y, button: "left", buttons: 0, clickCount: 1 });
+}
+
+async function spinBirthdayWheel(client, label, steps) {
+  const center = await evaluate(client, `
+    (() => {
+      const wheel = Array.from(document.querySelectorAll('.latest-wheel-window')).find((node) => node.getAttribute('aria-label') === ${JSON.stringify(label)});
+      if (!wheel) throw new Error('Birthday wheel not found: ' + ${JSON.stringify(label)});
+      wheel.focus();
+      const rect = wheel.getBoundingClientRect();
+      return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+    })()
+  `);
+  const direction = steps >= 0 ? 1 : -1;
+  for (let index = 0; index < Math.abs(steps); index += 1) {
+    await client.send("Input.dispatchMouseEvent", {
+      type: "mouseWheel",
+      x: center.x,
+      y: center.y,
+      deltaY: 120 * direction,
+      deltaX: 0
+    });
+    await delay(120);
+  }
+}
+
+async function waitForBirthdaySelection(client, month, day, timeoutMs = 10000) {
+  const started = Date.now();
+  while (Date.now() - started < timeoutMs) {
+    const selected = await evaluate(client, `
+      (() => {
+        const active = Array.from(document.querySelectorAll('.latest-wheel-window button.selected')).map((node) => (node.textContent || '').trim());
+        return active.includes(${JSON.stringify(month)}) && active.includes(${JSON.stringify(day)});
+      })()
+    `);
+    if (selected) return true;
+    await delay(150);
+  }
+  throw new Error(`Timed out waiting for birthday wheel selection: ${month} ${day}`);
 }
 
 async function seedDraftMoodAndNavigate(client, mood) {

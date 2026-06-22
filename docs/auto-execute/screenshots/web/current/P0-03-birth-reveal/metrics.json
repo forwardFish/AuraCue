@@ -1,0 +1,124 @@
+{
+  "url": "http://127.0.0.1:3220/onboarding/birth-aura/reveal",
+  "actual": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\screenshots\\web\\current\\P0-03-birth-reveal\\actual.png",
+  "reference": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\UI\\小程序\\P0-03-BirthAuraReveal-本命气场揭示.png",
+  "sideBySide": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\screenshots\\web\\current\\P0-03-birth-reveal\\side-by-side.png",
+  "diffRatio": 0.3225219225219225,
+  "computed": {
+    "fontChecks": {
+      "AuraCue Cormorant 500": true,
+      "AuraCue Cormorant 600": true,
+      "AuraCue Inter 600": true
+    },
+    "computed": {
+      "logo": {
+        "text": "AURACUE",
+        "fontFamily": "\"AuraCue Cormorant\", \"AuraCue Cormorant\", \"Cormorant Garamond\", \"Noto Serif SC\", serif",
+        "fontSize": "23px",
+        "fontWeight": "600",
+        "lineHeight": "21.85px",
+        "letterSpacing": "4.14px",
+        "x": 126.5,
+        "y": 89,
+        "w": 137,
+        "h": 21.84375
+      },
+      "subtitle": {
+        "text": "Your Birth Aura is",
+        "fontFamily": "\"AuraCue Cormorant\", \"AuraCue Cormorant\", \"Cormorant Garamond\", \"Noto Serif SC\", serif",
+        "fontSize": "22px",
+        "fontWeight": "500",
+        "lineHeight": "33px",
+        "letterSpacing": "normal",
+        "x": 115.921875,
+        "y": 137,
+        "w": 158.140625,
+        "h": 26
+      },
+      "hero": {
+        "text": "Venus Air",
+        "fontFamily": "\"AuraCue Cormorant\", \"AuraCue Cormorant\", \"Cormorant Garamond\", \"Noto Serif SC\", serif",
+        "fontSize": "76px",
+        "fontWeight": "500",
+        "lineHeight": "62.32px",
+        "letterSpacing": "-3.42px",
+        "x": 0,
+        "y": 173,
+        "w": 390,
+        "h": 62.3125
+      },
+      "tag": {
+        "text": "Libra",
+        "fontFamily": "\"AuraCue Cormorant\", \"AuraCue Cormorant\", \"Cormorant Garamond\", \"Noto Serif SC\", serif",
+        "fontSize": "20px",
+        "fontWeight": "500",
+        "lineHeight": "30px",
+        "letterSpacing": "normal",
+        "x": 31,
+        "y": 266,
+        "w": 104,
+        "h": 48
+      },
+      "quote": {
+        "text": "You carry luck through balance, beauty, and subtle attraction.",
+        "fontFamily": "\"AuraCue Cormorant\", \"AuraCue Cormorant\", \"Cormorant Garamond\", \"Noto Serif SC\", serif",
+        "fontSize": "21px",
+        "fontWeight": "500",
+        "lineHeight": "23.94px",
+        "letterSpacing": "normal",
+        "x": 96,
+        "y": 355,
+        "w": 199,
+        "h": 71.8125
+      },
+      "guardianTitle": {
+        "text": "Soft Opal Pink",
+        "fontFamily": "\"AuraCue Cormorant\", \"AuraCue Cormorant\", \"Cormorant Garamond\", \"Noto Serif SC\", serif",
+        "fontSize": "29px",
+        "fontWeight": "500",
+        "lineHeight": "27.84px",
+        "letterSpacing": "-0.58px",
+        "x": 183,
+        "y": 527.453125,
+        "w": 166,
+        "h": 27.828125
+      },
+      "guardianBody": {
+        "text": "Harmony, charm, and gentle magnetism.",
+        "fontFamily": "\"AuraCue Cormorant\", \"AuraCue Cormorant\", \"Cormorant Garamond\", \"Noto Serif SC\", serif",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "lineHeight": "18.24px",
+        "letterSpacing": "normal",
+        "x": 183,
+        "y": 562.28125,
+        "w": 166,
+        "h": 36.46875
+      },
+      "cta": {
+        "text": "✦\nBegin Today's Ritual\n✦",
+        "fontFamily": "\"AuraCue Cormorant\", \"AuraCue Cormorant\", \"Cormorant Garamond\", \"Noto Serif SC\", serif",
+        "fontSize": "24px",
+        "fontWeight": "500",
+        "lineHeight": "36px",
+        "letterSpacing": "normal",
+        "x": 28,
+        "y": 608,
+        "w": 335,
+        "h": 47
+      },
+      "note": {
+        "text": "You can edit this later in My Aura.",
+        "fontFamily": "\"AuraCue Cormorant\", \"AuraCue Cormorant\", \"Cormorant Garamond\", \"Noto Serif SC\", serif",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "lineHeight": "21px",
+        "letterSpacing": "normal",
+        "x": 0,
+        "y": 807,
+        "w": 390,
+        "h": 21
+      }
+    }
+  }
+}

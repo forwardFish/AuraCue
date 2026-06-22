@@ -1,1 +1,287 @@
-[]
+[
+  {
+    "id": "304472.50",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3213/api/v1/home",
+    "path": "/api/v1/home",
+    "postData": null,
+    "timestamp": "2026-06-21T16:51:11.477Z",
+    "apiId": "UNKNOWN"
+  },
+  {
+    "id": "304472.50",
+    "phase": "response",
+    "url": "http://127.0.0.1:3213/api/v1/home",
+    "path": "/api/v1/home",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-21T16:51:13.739Z",
+    "body": null,
+    "apiId": "UNKNOWN"
+  },
+  {
+    "id": "304472.50",
+    "phase": "body-error",
+    "error": "Error: {\"code\":-32000,\"message\":\"No resource with given identifier found\"}",
+    "timestamp": "2026-06-21T16:51:14.293Z",
+    "apiId": "UNKNOWN"
+  },
+  {
+    "id": "304472.106",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3213/api/v1/home",
+    "path": "/api/v1/home",
+    "postData": null,
+    "timestamp": "2026-06-21T16:51:15.275Z",
+    "apiId": "UNKNOWN"
+  },
+  {
+    "id": "304472.106",
+    "phase": "response",
+    "url": "http://127.0.0.1:3213/api/v1/home",
+    "path": "/api/v1/home",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-21T16:51:15.343Z",
+    "body": {
+      "ok": true,
+      "requestId": "ef7b18bc-652c-4ce5-960e-037efe24ef3c",
+      "data": {
+        "dateLabel": "Jun 13",
+        "weekdayLabel": "Saturday",
+        "rulingPlanet": "Saturn",
+        "traits": [
+          {
+            "label": "Structure",
+            "icon": "shield.png"
+          },
+          {
+            "label": "Boundaries",
+            "icon": "lock.png"
+          },
+          {
+            "label": "Stability",
+            "icon": "scales.png"
+          }
+        ],
+        "firstAuraCta": "Start My First Aura",
+        "ritualCta": "Begin Today's Ritual",
+        "firstAuraHref": "/onboarding/birth-aura",
+        "ritualHref": "/today/check-in"
+      }
+    },
+    "apiId": "UNKNOWN"
+  },
+  {
+    "id": "304472.354",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3213/api/v1/identity/anonymous",
+    "path": "/api/v1/identity/anonymous",
+    "postData": {
+      "platform": "web",
+      "timezone": "Asia/Shanghai"
+    },
+    "timestamp": "2026-06-21T16:51:26.676Z",
+    "apiId": "API-001"
+  },
+  {
+    "id": "304472.354",
+    "phase": "response",
+    "url": "http://127.0.0.1:3213/api/v1/identity/anonymous",
+    "path": "/api/v1/identity/anonymous",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-21T16:51:28.186Z",
+    "body": {
+      "ok": true,
+      "requestId": "cd01e752-8453-401b-817d-51485274c5c0",
+      "data": {
+        "anonymousId": "anon_776f7885c3c14737a0384d48c736c96f",
+        "created": true
+      }
+    },
+    "apiId": "API-001"
+  },
+  {
+    "id": "304472.357",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3213/api/v1/draw-sessions/start",
+    "path": "/api/v1/draw-sessions/start",
+    "postData": {
+      "anonymousId": "anon_776f7885c3c14737a0384d48c736c96f",
+      "platform": "web",
+      "mood": "Soft",
+      "context": "Work / Study"
+    },
+    "timestamp": "2026-06-21T16:51:28.188Z",
+    "apiId": "API-004"
+  },
+  {
+    "id": "304472.357",
+    "phase": "response",
+    "url": "http://127.0.0.1:3213/api/v1/draw-sessions/start",
+    "path": "/api/v1/draw-sessions/start",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-21T16:51:29.046Z",
+    "body": {
+      "ok": true,
+      "requestId": "8bae089a-fa27-4268-92b3-57d15ff86c5d",
+      "data": {
+        "drawSessionId": "cmqo0x7yi0001rwvcvtiec767",
+        "drawSeed": "seed_fbf23bfe472ee85d",
+        "expiresAt": "2026-06-21T17:51:29.020Z",
+        "cards": [
+          {
+            "position": 1,
+            "label": "Card I"
+          },
+          {
+            "position": 2,
+            "label": "Card II"
+          },
+          {
+            "position": 3,
+            "label": "Card III"
+          }
+        ]
+      }
+    },
+    "apiId": "API-004"
+  },
+  {
+    "id": "304472.360",
+    "phase": "request",
+    "method": "POST",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/generate",
+    "path": "/api/v1/aura-cards/generate",
+    "postData": {
+      "anonymousId": "anon_776f7885c3c14737a0384d48c736c96f",
+      "platform": "web",
+      "drawSessionId": "cmqo0x7yi0001rwvcvtiec767",
+      "drawPosition": 2,
+      "locale": "en-US"
+    },
+    "timestamp": "2026-06-21T16:51:29.047Z",
+    "apiId": "API-005"
+  },
+  {
+    "id": "304472.360",
+    "phase": "response",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/generate",
+    "path": "/api/v1/aura-cards/generate",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-21T16:51:29.765Z",
+    "body": {
+      "ok": true,
+      "requestId": "f3bb0511-2755-4714-8850-f62f3ec190e2",
+      "data": {
+        "jobId": "cmqo0x8i20002rwvc5cfm8vrn",
+        "status": "success",
+        "cardId": "cmqo0x8ia0003rwvc5gh537z7",
+        "generationSource": "local-fallback",
+        "fallbackUsed": true,
+        "provider": "mock-fallback"
+      }
+    },
+    "apiId": "API-005"
+  },
+  {
+    "id": "304472.363",
+    "phase": "request",
+    "method": "GET",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmqo0x8ia0003rwvc5gh537z7",
+    "path": "/api/v1/aura-cards/cmqo0x8ia0003rwvc5gh537z7",
+    "postData": null,
+    "timestamp": "2026-06-21T16:51:29.766Z",
+    "apiId": "API-007"
+  },
+  {
+    "id": "304472.363",
+    "phase": "response",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmqo0x8ia0003rwvc5gh537z7",
+    "path": "/api/v1/aura-cards/cmqo0x8ia0003rwvc5gh537z7",
+    "status": 200,
+    "mimeType": "application/json",
+    "timestamp": "2026-06-21T16:51:33.653Z",
+    "body": {
+      "ok": true,
+      "requestId": "b2368203-9fac-40a9-b0f1-19a405dd8fe0",
+      "data": {
+        "cardId": "cmqo0x8ia0003rwvc5gh537z7",
+        "ownerAnonymousId": "anon_776f7885c3c14737a0384d48c736c96f",
+        "mood": "Soft",
+        "context": "Work / Study",
+        "drawSeed": "seed_fbf23bfe472ee85d",
+        "drawPosition": 2,
+        "content": {
+          "title": "Meeting Glow Aura Card",
+          "auraName": "Clear Signal Aura",
+          "tarotSymbol": "The Magician",
+          "message": "A steady pace can keep the day open without asking you to force anything.",
+          "luckyColor": "soft ivory",
+          "colors": {
+            "primary": "soft ivory",
+            "accent": "polished jade",
+            "background": "warm moonlight"
+          },
+          "outfit": "Choose balanced layers with one soft color near the collar.",
+          "beauty": "Keep the face fresh and reduce anything that feels heavy.",
+          "social": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "ritual": "Put both feet down and count five steady breaths.",
+          "avoid": "Avoid rushing to answer every signal at once.",
+          "caption": "Today I am carrying clear signal aura.",
+          "theme": "work-calm-local",
+          "cardTitle": "Meeting Glow Aura Card",
+          "auraColor": "soft ivory",
+          "luckyColors": [
+            "soft ivory",
+            "polished jade"
+          ],
+          "styleVibe": "Clear Signal Aura with polished jade",
+          "energyMessage": "A steady pace can keep the day open without asking you to force anything.",
+          "outfitEnergy": "Choose balanced layers with one soft color near the collar.",
+          "beautyCue": "Keep the face fresh and reduce anything that feels heavy.",
+          "socialMove": "Lead with the simplest point and leave room for one thoughtful pause.",
+          "miniRitual": "Put both feet down and count five steady breaths.",
+          "todayIntention": "I carry calm with ease.",
+          "luckyAnchorCandidates": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            }
+          ],
+          "luckyAnchorSuggestions": [
+            {
+              "type": "lucky_color",
+              "label": "soft ivory"
+            },
+            {
+              "type": "outfit_detail",
+              "label": "polished jade"
+            }
+          ],
+          "generatedAt": "2026-06-21T16:51:29.730Z",
+          "generationSource": "local-fallback",
+          "fallbackUsed": true
+        },
+        "shareImageUrl": null,
+        "isActivated": false,
+        "activatedAt": null,
+        "activation": null,
+        "createdAt": "2026-06-21T16:51:29.746Z",
+        "updatedAt": "2026-06-21T16:51:29.746Z"
+      }
+    },
+    "apiId": "API-007"
+  }
+]

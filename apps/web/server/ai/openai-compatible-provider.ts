@@ -9,13 +9,28 @@ type OpenAiCompatibleOptions = {
 };
 
 export function createOpenAiCompatibleProvider(options: OpenAiCompatibleOptions = {}): AuraProvider {
-  const apiKey = options.apiKey ?? process.env.AURACUE_OPENAI_API_KEY ?? process.env.OPENAI_API_KEY;
-  const enabled = options.enabled ?? process.env.AURACUE_AI_PROVIDER === "openai";
-  const baseUrl = options.baseUrl ?? process.env.AURACUE_OPENAI_BASE_URL ?? "https://api.openai.com/v1";
-  const model = options.model ?? process.env.AURACUE_OPENAI_MODEL ?? "gpt-4o-mini";
+  const providerId = String(process.env.AURACUE_AI_PROVIDER || process.env.AI_PROVIDER || "").trim();
+  const isDeepSeek = providerId === "deepseek";
+  const enabled = options.enabled ?? ["openai", "openai-compatible", "deepseek"].includes(providerId);
+  const apiKey = options.apiKey
+    ?? process.env.AURACUE_OPENAI_API_KEY
+    ?? process.env.OPENAI_API_KEY
+    ?? process.env.AI_API_KEY
+    ?? process.env.DEEPSEEK_API_KEY;
+  const baseUrl = options.baseUrl
+    ?? process.env.AURACUE_OPENAI_BASE_URL
+    ?? process.env.AI_BASE_URL
+    ?? process.env.DEEPSEEK_BASE_URL
+    ?? (isDeepSeek ? "https://api.deepseek.com" : "https://api.openai.com/v1");
+  const model = options.model
+    ?? process.env.AURACUE_OPENAI_MODEL
+    ?? process.env.AI_MODEL
+    ?? process.env.DEEPSEEK_MODEL
+    ?? (isDeepSeek ? "deepseek-chat" : "gpt-4o-mini");
+  const providerName = isDeepSeek ? "deepseek-compatible" : "openai-compatible";
 
   return {
-    name: "openai-compatible",
+    name: providerName,
     async generate(input: AuraGenerationPromptInput): Promise<AuraProviderResult> {
       if (!enabled || !apiKey) {
         throw new Error("OpenAI-compatible provider is not enabled with a local API key.");
@@ -30,6 +45,7 @@ export function createOpenAiCompatibleProvider(options: OpenAiCompatibleOptions 
         body: JSON.stringify({
           model,
           temperature: 0.4,
+          response_format: { type: "json_object" },
           messages: [
             {
               role: "system",
@@ -89,11 +105,11 @@ export function createOpenAiCompatibleProvider(options: OpenAiCompatibleOptions 
           generationSource: "ai",
           fallbackUsed: false
         },
-        provider: "openai-compatible",
+        provider: providerName,
         generationSource: "ai",
         fallbackUsed: false,
         transcript: {
-          provider: "openai-compatible",
+          provider: providerName,
           mode: "authorized-live-call",
           model,
           responseStatus: response.status,

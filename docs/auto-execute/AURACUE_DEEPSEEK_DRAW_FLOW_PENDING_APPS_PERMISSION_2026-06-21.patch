@@ -1,0 +1,331 @@
+--- a/apps/web/server/ai/openai-compatible-provider.ts
++++ b/apps/web/server/ai/openai-compatible-provider.ts
+@@ -9,13 +9,28 @@
+ };
+ 
+ export function createOpenAiCompatibleProvider(options: OpenAiCompatibleOptions = {}): AuraProvider {
+-  const apiKey = options.apiKey ?? process.env.AURACUE_OPENAI_API_KEY ?? process.env.OPENAI_API_KEY;
+-  const enabled = options.enabled ?? process.env.AURACUE_AI_PROVIDER === "openai";
+-  const baseUrl = options.baseUrl ?? process.env.AURACUE_OPENAI_BASE_URL ?? "https://api.openai.com/v1";
+-  const model = options.model ?? process.env.AURACUE_OPENAI_MODEL ?? "gpt-4o-mini";
++  const providerId = String(process.env.AURACUE_AI_PROVIDER || process.env.AI_PROVIDER || "").trim();
++  const isDeepSeek = providerId === "deepseek";
++  const enabled = options.enabled ?? ["openai", "openai-compatible", "deepseek"].includes(providerId);
++  const apiKey = options.apiKey
++    ?? process.env.AURACUE_OPENAI_API_KEY
++    ?? process.env.OPENAI_API_KEY
++    ?? process.env.AI_API_KEY
++    ?? process.env.DEEPSEEK_API_KEY;
++  const baseUrl = options.baseUrl
++    ?? process.env.AURACUE_OPENAI_BASE_URL
++    ?? process.env.AI_BASE_URL
++    ?? process.env.DEEPSEEK_BASE_URL
++    ?? (isDeepSeek ? "https://api.deepseek.com" : "https://api.openai.com/v1");
++  const model = options.model
++    ?? process.env.AURACUE_OPENAI_MODEL
++    ?? process.env.AI_MODEL
++    ?? process.env.DEEPSEEK_MODEL
++    ?? (isDeepSeek ? "deepseek-chat" : "gpt-4o-mini");
++  const providerName = isDeepSeek ? "deepseek-compatible" : "openai-compatible";
+ 
+   return {
+-    name: "openai-compatible",
++    name: providerName,
+     async generate(input: AuraGenerationPromptInput): Promise<AuraProviderResult> {
+       if (!enabled || !apiKey) {
+         throw new Error("OpenAI-compatible provider is not enabled with a local API key.");
+@@ -30,6 +45,7 @@
+         body: JSON.stringify({
+           model,
+           temperature: 0.4,
++          response_format: { type: "json_object" },
+           messages: [
+             {
+               role: "system",
+@@ -89,11 +105,11 @@
+           generationSource: "ai",
+           fallbackUsed: false
+         },
+-        provider: "openai-compatible",
++        provider: providerName,
+         generationSource: "ai",
+         fallbackUsed: false,
+         transcript: {
+-          provider: "openai-compatible",
++          provider: providerName,
+           mode: "authorized-live-call",
+           model,
+           responseStatus: response.status,
+--- a/apps/web/components/latest-ui-pages.tsx
++++ b/apps/web/components/latest-ui-pages.tsx
+@@ -10,9 +10,12 @@
+ const holdMs = 2000;
+ 
+ const storageKeys = {
++  anonymousId: "auracue:h5:anonymous-id:v1",
+   birthAura: "auracue:h5:birth-aura:v1",
+   checkIn: "auracue:h5:check-in:v1",
+   selectedCard: "auracue:h5:selected-card:v1",
++  drawSessionId: "auracue:h5:draw-session-id:v1",
++  generationJobId: "auracue:h5:generation-job-id:v1",
+   oracle: "auracue:h5:oracle:v1",
+   history: "auracue:h5:history:v1"
+ };
+@@ -154,6 +157,15 @@
+   window.localStorage.setItem(key, JSON.stringify(value));
+ }
+ 
++function readString(key: string) {
++  if (typeof window === "undefined") return "";
++  return window.localStorage.getItem(key) || "";
++}
++
++function writeString(key: string, value: string) {
++  window.localStorage.setItem(key, value);
++}
++
+ function navigate(path: string) {
+   window.location.assign(path);
+ }
+@@ -235,6 +247,74 @@
+     saved: false
+   };
+ }
++
++function selectedCardPosition(selectedCard: string) {
++  const index = drawCards.indexOf(selectedCard);
++  return index >= 0 ? index + 1 : 2;
++}
++
++async function ensureAnonymousIdentity() {
++  const existing = readString(storageKeys.anonymousId);
++  if (existing) return existing;
++
++  const identity = await apiClient.createAnonymousIdentity({
++    platform: "web",
++    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "Asia/Shanghai"
++  }) as { anonymousId: string };
++  writeString(storageKeys.anonymousId, identity.anonymousId);
++  return identity.anonymousId;
++}
++
++function oracleFromGeneratedCard(
++  card: { cardId?: string; content?: Record<string, unknown> },
++  fallback: Oracle
++): Oracle {
++  const content = card.content || {};
++  const stringOr = (value: unknown, fallbackValue: string) => typeof value === "string" && value.trim() ? value.trim() : fallbackValue;
++  const luckyColors = Array.isArray(content.colors) ? content.colors.filter((item): item is string => typeof item === "string") : [];
++  return {
++    ...fallback,
++    cardId: stringOr(card.cardId, fallback.cardId),
++    cardName: stringOr(content.tarotSymbol, fallback.cardName),
++    auraName: stringOr(content.auraName, stringOr(content.title, fallback.auraName)),
++    reason: stringOr(content.message, fallback.reason),
++    luckyColor: stringOr(content.luckyColor, luckyColors[0] || fallback.luckyColor),
++    guardianItem: stringOr(content.outfit, fallback.guardianItem),
++    styleFormula: stringOr(content.beauty, stringOr(content.outfit, fallback.styleFormula)),
++    affirmation: stringOr(content.caption, fallback.affirmation),
++    sealed: false,
++    saved: false
++  };
++}
++
++async function generateOracleFromApi(birthAura: BirthAura, checkIn: CheckIn, selectedCard: string) {
++  const fallback = buildOracle(birthAura, checkIn, selectedCard);
++  const anonymousId = await ensureAnonymousIdentity();
++  const drawSession = await apiClient.startDrawSession({
++    anonymousId,
++    platform: "web",
++    mood: checkIn.mood,
++    context: checkIn.scene
++  }) as { drawSessionId: string };
++  writeString(storageKeys.drawSessionId, drawSession.drawSessionId);
++
++  const generation = await apiClient.generateAuraCard({
++    anonymousId,
++    platform: "web",
++    drawSessionId: drawSession.drawSessionId,
++    drawPosition: selectedCardPosition(selectedCard),
++    locale: "en-US"
++  }) as { jobId: string; cardId: string | null };
++  writeString(storageKeys.generationJobId, generation.jobId);
++
++  if (!generation.cardId) {
++    return fallback;
++  }
++
++  const generatedCard = await apiClient.getAuraCard(generation.cardId) as { cardId: string; content: Record<string, unknown> };
++  return oracleFromGeneratedCard(generatedCard, fallback);
++}
++
+ 
+ function useStoredValue<T>(key: string, fallback: T) {
+   const fallbackRef = useRef(fallback);
+@@ -705,14 +785,27 @@
+ 
+ export function LatestDrawPage() {
+   const [selectedCard, setSelectedCard] = useState("");
++  const [isGenerating, setIsGenerating] = useState(false);
++  const [generationMessage, setGenerationMessage] = useState("");
+   const birthAura = useStoredValue(storageKeys.birthAura, defaultBirthAura());
+   const checkIn = useStoredValue(storageKeys.checkIn, defaultCheckIn());
+ 
+-  function reveal() {
+-    const oracle = buildOracle(birthAura, checkIn, selectedCard);
++  async function reveal() {
++    if (!selectedCard || isGenerating) return;
++
++    setIsGenerating(true);
++    setGenerationMessage("Reading your selected card...");
+     writeJson(storageKeys.selectedCard, selectedCard);
+-    writeJson(storageKeys.oracle, oracle);
+-    navigate("/today/reading");
++    try {
++      const oracle = await generateOracleFromApi(birthAura, checkIn, selectedCard);
++      writeJson(storageKeys.oracle, oracle);
++      navigate("/today/reading");
++    } catch {
++      const oracle = buildOracle(birthAura, checkIn, selectedCard);
++      writeJson(storageKeys.oracle, oracle);
++      setGenerationMessage("Network paused. A local reading is ready.");
++      navigate("/today/reading");
++    }
+   }
+ 
+   return (
+@@ -738,8 +831,8 @@
+           </button>
+         ))}
+       </section>
+-      <p className="latest-note">{selectedCard ? `${selectedCard} is listening.` : "Tap one card to draw today's aura."}</p>
+-      <Button href="/today/reading" onClick={reveal} disabled={!selectedCard}>Reveal My Aura</Button>
++      <p className="latest-note">{generationMessage || (selectedCard ? `${selectedCard} is listening.` : "Tap one card to draw today's aura.")}</p>
++      <Button onClick={reveal} disabled={!selectedCard || isGenerating}>{isGenerating ? "Reading..." : "Reveal My Aura"}</Button>
+     </Phone>
+   );
+ }
+@@ -747,6 +840,7 @@
+ export function LatestReadingPage() {
+   const birthAura = useStoredValue(storageKeys.birthAura, defaultBirthAura());
+   const checkIn = useStoredValue(storageKeys.checkIn, defaultCheckIn());
++  const oracle = useStoredValue(storageKeys.oracle, defaultOracle());
+   const [step, setStep] = useState(0);
+   const steps = [
+     {
+@@ -780,7 +874,7 @@
+ 
+   function advanceReading() {
+     if (step >= 2) {
+-      navigate(`/result/${demoCardId}`);
++      navigate(`/result/${oracle.cardId || demoCardId}`);
+       return;
+     }
+     setStep((value) => value + 1);
+@@ -862,7 +956,7 @@
+       <section className="latest-why"><h3>* Why this card found you today</h3><p>{oracle.reason}</p><p className="latest-context-note">{birthAura.auraName} | {checkIn.mood} | {checkIn.scene}</p></section>
+       <h2 className="latest-style-title">* Today&apos;s Style Cue *</h2>
+       <div className="latest-style-list"><span>Lucky Color <b>{oracle.luckyColor}</b></span><span>Guardian Item <b>{oracle.guardianItem}</b></span><span>Style Formula <b>{oracle.styleFormula}</b></span></div>
+-      <Button href={`/activate/${demoCardId}`}>Seal Today&apos;s Aura</Button>
++      <Button href={`/activate/${oracle.cardId || demoCardId}`}>Seal Today&apos;s Aura</Button>
+     </Phone>
+   );
+ }
+@@ -894,13 +988,13 @@
+       const sealedOracle = { ...oracle, sealed: true };
+       writeJson(storageKeys.oracle, sealedOracle);
+       saveHistory(sealedOracle);
+-      navigate(`/activated/${demoCardId}`);
++      navigate(`/activated/${sealedOracle.cardId || demoCardId}`);
+     }, holdMs);
+   }
+ 
+   return (
+     <Phone className="latest-activate">
+-      <Back href={`/result/${demoCardId}`} />
++      <Back href={`/result/${oracle.cardId || demoCardId}`} />
+       <Logo />
+       <section className="latest-title"><h1>Hold to Seal</h1><p>Press and carry today&apos;s aura with you.</p></section>
+       <section className="latest-seal-orb"><img src={`${A}seal-orb-pink.png`} alt="" /><h2>{oracle.auraName}</h2><Divider /><p>{oracle.affirmation}</p></section>
+@@ -927,12 +1021,12 @@
+     const savedOracle = { ...oracle, saved: true, sealed: true };
+     writeJson(storageKeys.oracle, savedOracle);
+     saveHistory(savedOracle);
+-    navigate(`/saved/${demoCardId}`);
++    navigate(`/saved/${savedOracle.cardId || demoCardId}`);
+   }
+ 
+   return (
+     <Phone className="latest-activated">
+-      <Back href={`/activate/${demoCardId}`} tone="gold" />
++      <Back href={`/activate/${oracle.cardId || demoCardId}`} tone="gold" />
+       <Logo />
+       <section className="latest-sealed-hero"><img src={`${A}hero-woman.png`} alt="" /><h2>* {oracle.auraName} *</h2></section>
+       <section className="latest-title"><h1>* Aura Sealed *</h1><p>June 13 aura is active.</p><Divider /></section>
+@@ -945,7 +1039,7 @@
+         <span><b className="latest-swatch latest-swatch--navy" /><em>Lucky Color</em><strong>{oracle.luckyColor}</strong></span>
+         <span><b className="latest-swatch latest-swatch--jacket" /><em>Guardian Item</em><strong>{oracle.guardianItem}</strong></span>
+       </section>
+-      <Button href={`/share/${demoCardId}`}>Share Story</Button>
++      <Button href={`/share/${oracle.cardId || demoCardId}`}>Share Story</Button>
+       <OutlineButton onClick={saveCard}>Save Card</OutlineButton>
+       <OutlineButton href="/home">Done</OutlineButton>
+     </Phone>
+@@ -958,7 +1052,7 @@
+ 
+   return (
+     <Phone className="latest-share">
+-      <Back href={`/activated/${demoCardId}`} tone="gold" />
++      <Back href={`/activated/${oracle.cardId || demoCardId}`} tone="gold" />
+       <Logo />
+       <section className="latest-title"><h1>Share Today&apos;s Aura</h1><p>Send your daily oracle as a beautiful story card.</p><Divider /></section>
+       <article className="latest-story-card" aria-label="9:16 share preview">
+@@ -1023,7 +1117,7 @@
+       <Logo />
+       <section className="latest-title"><h1>My Aura</h1><p>Your personal aura space.</p></section>
+       <article className="latest-profile-card"><img src={`${A}birth_lotus_medallion.png`} alt="" /><div><span>Birth Aura *</span><h2>{birthAura.auraName}</h2><p>{birthAura.zodiac} | {birthAura.element} | {birthAura.stone}</p><b>{birthAura.guardianColor}</b></div><a href="/my/birth-aura" aria-label="Open Birth Aura profile">&gt;</a></article>
+-      <article className="latest-profile-card"><img src={`${A}moon_medallion.png`} alt="" /><div><span>Today *</span><h2>{oracle.auraName}</h2><p>{oracle.luckyColor} | {oracle.guardianItem}</p></div><a href={`/activated/${demoCardId}`} aria-label="Open today's sealed aura">&gt;</a></article>
++      <article className="latest-profile-card"><img src={`${A}moon_medallion.png`} alt="" /><div><span>Today *</span><h2>{oracle.auraName}</h2><p>{oracle.luckyColor} | {oracle.guardianItem}</p></div><a href={`/activated/${oracle.cardId || demoCardId}`} aria-label="Open today's sealed aura">&gt;</a></article>
+       <section className="latest-history">
+         <h2>Aura History *</h2>
+         {history.map((item) => <p key={`${item.date}-${item.auraName}`}>{item.date} | {item.auraName} | {item.sealed ? "Sealed" : "Open"}</p>)}
+--- a/apps/web/tests/pages/create-flow.test.mjs
++++ b/apps/web/tests/pages/create-flow.test.mjs
+@@ -49,7 +49,7 @@
+   "/today/check-in",
+   "/today/draw",
+   "/today/reading",
+-  "/result/${demoCardId}"
++  "/result/${oracle.cardId || demoCardId}"
+ ]) {
+   assert.match(latestComponent, new RegExp(escapeRegExp(route)), `missing latest flow route: ${route}`);
+ }
+@@ -58,6 +58,11 @@
+   "useState",
+   "localStorage",
+   "apiClient.getHomeContent",
++  "apiClient.createAnonymousIdentity",
++  "apiClient.startDrawSession",
++  "apiClient.generateAuraCard",
++  "apiClient.getAuraCard",
++  "generateOracleFromApi",
+   "<select",
+   "aria-pressed={mood === label}",
+   "aria-pressed={selectedCard === label}",
+--- a/apps/web/tests/pages/result-activation.test.mjs
++++ b/apps/web/tests/pages/result-activation.test.mjs
+@@ -49,10 +49,10 @@
+ }
+ 
+ for (const route of [
+-  "/activate/${demoCardId}",
+-  "/activated/${demoCardId}",
+-  "/share/${demoCardId}",
+-  "/saved/${demoCardId}"
++  "/activate/${oracle.cardId || demoCardId}",
++  "/activated/${sealedOracle.cardId || demoCardId}",
++  "/share/${oracle.cardId || demoCardId}",
++  "/saved/${savedOracle.cardId || demoCardId}"
+ ]) {
+   assert.match(latestComponent, new RegExp(escapeRegExp(route)), `missing result/activation route: ${route}`);
+ }

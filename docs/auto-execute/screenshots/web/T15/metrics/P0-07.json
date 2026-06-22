@@ -17,27 +17,27 @@
   "actualImage": {
     "width": 390,
     "height": 693,
-    "bytes": 148551,
-    "sha256": "52ec791a3c15eaa1b23297478c7d10acf245c8857e4df0d5a49c1b73d3aaf2fd"
+    "bytes": 155705,
+    "sha256": "60ef14f30bcf982d0eb1e9c24ff9072fcaec124aa58e5f57378e0b4b4079c3ca"
   },
   "diffImage": {
     "width": 792,
     "height": 693,
-    "bytes": 630300,
-    "sha256": "f1520741d4f7ae8a56e5289a4ba114e11081f1ae6eca4874bb56642c0bf4ff8c"
+    "bytes": 638701,
+    "sha256": "a9c038e49f2a699b3fc4f478f1085b56a96c0bd31b7a48d9d8f0b7835a78e0a0"
   },
   "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
   "normalizedPixelDiff": {
     "width": 390,
     "height": 693,
     "totalPixels": 270270,
-    "changedPixels": 111264,
-    "diffRatio": 0.411677,
-    "averageChannelDelta": 27.769,
+    "changedPixels": 108257,
+    "diffRatio": 0.400551,
+    "averageChannelDelta": 25.996,
     "maxChannelDelta": 249.333,
     "changeThresholdPerPixel": 12
   },
-  "diffRatio": 0.411677,
+  "diffRatio": 0.400551,
   "threshold": 0.05,
   "pixelPerfectStatus": "REPAIR_REQUIRED",
   "materialDeviation": "REPAIR_REQUIRED",

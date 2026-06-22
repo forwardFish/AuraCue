@@ -49,10 +49,10 @@ for (const implementationSignal of [
 }
 
 for (const route of [
-  "/activate/${demoCardId}",
-  "/activated/${demoCardId}",
-  "/share/${demoCardId}",
-  "/saved/${demoCardId}"
+  "/activate/${oracle.cardId || demoCardId}",
+  "/activated/${sealedOracle.cardId || demoCardId}",
+  "/share/${oracle.cardId || demoCardId}",
+  "/saved/${savedOracle.cardId || demoCardId}"
 ]) {
   assert.match(latestComponent, new RegExp(escapeRegExp(route)), `missing result/activation route: ${route}`);
 }

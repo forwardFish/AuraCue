@@ -14,5 +14,5 @@ Status: REPAIR_REQUIRED
 
 - Passing screens: 0
 - Failing screens: 13
-- Max diffRatio: 0.64517
+- Max diffRatio: 0.565028
 - Threshold: 0.05
