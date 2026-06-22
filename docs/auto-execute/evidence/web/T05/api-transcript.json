@@ -6,7 +6,7 @@
     "body": {
       "ok": true,
       "data": {
-        "anonymousId": "anon_2240cc01486c419e867569eacd07ce42",
+        "anonymousId": "anon_ce40015f005143e2a0d693053dd43ecf",
         "created": true
       }
     }
@@ -18,7 +18,7 @@
     "body": {
       "ok": true,
       "data": {
-        "anonymousId": "anon_2240cc01486c419e867569eacd07ce42",
+        "anonymousId": "anon_ce40015f005143e2a0d693053dd43ecf",
         "created": false
       }
     }
@@ -67,8 +67,8 @@
     "body": {
       "ok": true,
       "data": {
-        "uploadId": "cmq1l6xlf0001bcvchktq7e31",
-        "publicUrl": "/uploads/upload_9f40571137b34f0b91261112c5f1e3c5.jpg",
+        "uploadId": "cmqn75pu9000188vcj8c34ovi",
+        "publicUrl": "/uploads/upload_a2079f98d2244bda81bb807cbc8c0414.jpg",
         "styleNotes": {
           "mood": "soft polished",
           "source": "local-metadata-only",
@@ -84,8 +84,8 @@
     "body": {
       "ok": true,
       "data": {
-        "uploadId": "cmq1l6xlm0002bcvcnxxzku1d",
-        "publicUrl": "/uploads/upload_3c6faabe54c34d31b7cd920cdff82afb.png",
+        "uploadId": "cmqn75pue000288vc77whlqhy",
+        "publicUrl": "/uploads/upload_d2c5daad6ffd47f49054997e3b5ae093.png",
         "styleNotes": {
           "mood": "soft polished",
           "source": "local-metadata-only",
@@ -101,8 +101,8 @@
     "body": {
       "ok": true,
       "data": {
-        "uploadId": "cmq1l6xlt0003bcvcyoal2uwe",
-        "publicUrl": "/uploads/upload_88163539009e4f0789e3396fa2459d61.webp",
+        "uploadId": "cmqn75pui000388vcqnjwpglr",
+        "publicUrl": "/uploads/upload_81044a5d42ca4fca9dc63df7e05c3aa6.webp",
         "styleNotes": {
           "mood": "soft polished",
           "source": "local-metadata-only",
@@ -157,9 +157,9 @@
     "body": {
       "ok": true,
       "data": {
-        "drawSessionId": "cmq1l6xma0004bcvci3r2iol5",
-        "drawSeed": "seed_3203d55b51ccf17c",
-        "expiresAt": "2026-06-06T01:00:12.463Z",
+        "drawSessionId": "cmqn75puv000488vcalok86n6",
+        "drawSeed": "seed_14a92b98fcb1fa1d",
+        "expiresAt": "2026-06-21T03:58:16.996Z",
         "cards": [
           {
             "position": 1,
@@ -184,9 +184,9 @@
     "body": {
       "ok": true,
       "data": {
-        "drawSessionId": "cmq1l6xma0004bcvci3r2iol5",
-        "drawSeed": "seed_3203d55b51ccf17c",
-        "expiresAt": "2026-06-06T01:00:12.463Z",
+        "drawSessionId": "cmqn75puv000488vcalok86n6",
+        "drawSeed": "seed_14a92b98fcb1fa1d",
+        "expiresAt": "2026-06-21T03:58:16.996Z",
         "cards": [
           {
             "position": 1,
@@ -211,9 +211,9 @@
     "body": {
       "ok": true,
       "data": {
-        "drawSessionId": "cmq1l6xmn0005bcvcizad4ng4",
-        "drawSeed": "seed_449a653ad139d47d",
-        "expiresAt": "2026-06-06T01:00:12.478Z",
+        "drawSessionId": "cmqn75pv4000588vcrd0qdy0i",
+        "drawSeed": "seed_5ddfb16089ef58a4",
+        "expiresAt": "2026-06-21T03:58:17.007Z",
         "cards": [
           {
             "position": 1,
@@ -252,9 +252,9 @@
       "ok": true,
       "data": {
         "hasActiveCard": true,
-        "cardId": "cmq1l6xnc0007bcvcdj963ewh",
+        "cardId": "cmqn75pvo000788vcg2efpf2d",
         "auraName": "Quiet Power Bloom",
-        "activatedAt": "2026-06-06T00:00:12.502Z"
+        "activatedAt": "2026-06-21T02:58:17.025Z"
       }
     }
   }

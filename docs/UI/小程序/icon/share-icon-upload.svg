@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <title>Share Upload Icon</title>
+  <desc>Deep navy iOS-style upload/share line icon on transparent background.</desc>
+  <g fill="none" stroke="#071B4D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 82 V28"/>
+    <path d="M47 45 L64 28 L81 45"/>
+    <path d="M43 62 V95 Q43 103 51 103 H77 Q85 103 85 95 V62"/>
+  </g>
+</svg>

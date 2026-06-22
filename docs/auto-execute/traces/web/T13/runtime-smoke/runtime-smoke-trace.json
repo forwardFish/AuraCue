@@ -3,79 +3,162 @@
   "mode": "web-p0-runtime-smoke",
   "taskId": "T13",
   "baseUrl": "http://127.0.0.1:3213",
-  "scenarioResults": [],
+  "scenarioResults": [
+    {
+      "ids": [
+        "H5-P0-latest-functional"
+      ],
+      "status": "PASS",
+      "evidence": [
+        "selected birthday month/day, mood, scene, and tarot card before navigation",
+        "held Hold to Seal for 2250ms and verified activated route",
+        "clicked share copy/download/save actions and verified saved/my/legal/error routes",
+        "captured current H5 screenshots from P0-01 through P0-16 coverage without reference-image replicas"
+      ]
+    }
+  ],
   "screenshots": [
     "docs/auto-execute/screenshots/web/T13/runtime-smoke/01-home.png",
-    "docs/auto-execute/screenshots/web/T13/runtime-smoke/02-context.png",
-    "docs/auto-execute/screenshots/web/T13/runtime-smoke/03-upload.png",
-    "docs/auto-execute/screenshots/web/T13/runtime-smoke/04-draw.png",
-    "docs/auto-execute/screenshots/web/T13/runtime-smoke/05-result.png",
-    "docs/auto-execute/screenshots/web/T13/runtime-smoke/06-activate.png",
-    "docs/auto-execute/screenshots/web/T13/runtime-smoke/07-activated.png",
-    "docs/auto-execute/screenshots/web/T13/runtime-smoke/08-share.png",
-    "docs/auto-execute/screenshots/web/T13/runtime-smoke/09-saved.png",
-    "docs/auto-execute/screenshots/web/T13/runtime-smoke/10-saved-copy.png"
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/02-birth-aura.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/02-birth-aura-selected.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/03-birth-aura-reveal.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/04-check-in.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/05A-draw.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/05-draw.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/06A-reading-begins.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/06B-message-clear.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/06C-reading-unfolds.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/07-result.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/08-activate.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/09-activated.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/10-share.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/11-saved.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/12-my.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/13-my-birth-aura.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/14-privacy.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/15-terms.png",
+    "docs/auto-execute/screenshots/web/T13/runtime-smoke/16-error.png"
   ],
   "traceEvents": [
     {
       "type": "screenshot",
       "name": "01-home",
       "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/01-home.png",
-      "timestamp": "2026-06-11T11:54:08.047Z"
+      "timestamp": "2026-06-21T16:51:15.586Z"
     },
     {
       "type": "screenshot",
-      "name": "02-context",
-      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/02-context.png",
-      "timestamp": "2026-06-11T11:54:08.626Z"
+      "name": "02-birth-aura",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/02-birth-aura.png",
+      "timestamp": "2026-06-21T16:51:17.796Z"
     },
     {
       "type": "screenshot",
-      "name": "03-upload",
-      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/03-upload.png",
-      "timestamp": "2026-06-11T11:54:09.291Z"
+      "name": "02-birth-aura-selected",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/02-birth-aura-selected.png",
+      "timestamp": "2026-06-21T16:51:18.410Z"
     },
     {
       "type": "screenshot",
-      "name": "04-draw",
-      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/04-draw.png",
-      "timestamp": "2026-06-11T11:54:09.738Z"
+      "name": "03-birth-aura-reveal",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/03-birth-aura-reveal.png",
+      "timestamp": "2026-06-21T16:51:20.414Z"
     },
     {
       "type": "screenshot",
-      "name": "05-result",
-      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/05-result.png",
-      "timestamp": "2026-06-11T11:54:10.179Z"
+      "name": "04-check-in",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/04-check-in.png",
+      "timestamp": "2026-06-21T16:51:23.623Z"
     },
     {
       "type": "screenshot",
-      "name": "06-activate",
-      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/06-activate.png",
-      "timestamp": "2026-06-11T11:54:10.582Z"
+      "name": "05A-draw",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/05A-draw.png",
+      "timestamp": "2026-06-21T16:51:26.163Z"
     },
     {
       "type": "screenshot",
-      "name": "07-activated",
-      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/07-activated.png",
-      "timestamp": "2026-06-11T11:54:14.218Z"
+      "name": "05-draw",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/05-draw.png",
+      "timestamp": "2026-06-21T16:51:26.614Z"
     },
     {
       "type": "screenshot",
-      "name": "08-share",
-      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/08-share.png",
-      "timestamp": "2026-06-11T11:54:14.622Z"
+      "name": "06A-reading-begins",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/06A-reading-begins.png",
+      "timestamp": "2026-06-21T16:51:36.718Z"
     },
     {
       "type": "screenshot",
-      "name": "09-saved",
-      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/09-saved.png",
-      "timestamp": "2026-06-11T11:54:20.554Z"
+      "name": "06B-message-clear",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/06B-message-clear.png",
+      "timestamp": "2026-06-21T16:51:37.024Z"
     },
     {
       "type": "screenshot",
-      "name": "10-saved-copy",
-      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/10-saved-copy.png",
-      "timestamp": "2026-06-11T11:54:20.914Z"
+      "name": "06C-reading-unfolds",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/06C-reading-unfolds.png",
+      "timestamp": "2026-06-21T16:51:37.569Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "07-result",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/07-result.png",
+      "timestamp": "2026-06-21T16:51:48.015Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "08-activate",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/08-activate.png",
+      "timestamp": "2026-06-21T16:51:58.706Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "09-activated",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/09-activated.png",
+      "timestamp": "2026-06-21T16:52:04.888Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "10-share",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/10-share.png",
+      "timestamp": "2026-06-21T16:52:08.385Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "11-saved",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/11-saved.png",
+      "timestamp": "2026-06-21T16:52:12.194Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "12-my",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/12-my.png",
+      "timestamp": "2026-06-21T16:52:14.701Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "13-my-birth-aura",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/13-my-birth-aura.png",
+      "timestamp": "2026-06-21T16:52:16.685Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "14-privacy",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/14-privacy.png",
+      "timestamp": "2026-06-21T16:52:18.925Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "15-terms",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/15-terms.png",
+      "timestamp": "2026-06-21T16:52:21.137Z"
+    },
+    {
+      "type": "screenshot",
+      "name": "16-error",
+      "path": "docs/auto-execute/screenshots/web/T13/runtime-smoke/16-error.png",
+      "timestamp": "2026-06-21T16:52:23.178Z"
     }
   ],
   "consoleEvents": [],

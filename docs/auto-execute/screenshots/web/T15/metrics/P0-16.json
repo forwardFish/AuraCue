@@ -1,0 +1,48 @@
+{
+  "uiId": "P0-16",
+  "route": "/error/network",
+  "state": "generation retry error",
+  "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
+  "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-16.png",
+  "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-16.png",
+  "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-16-diff.png",
+  "referenceSource": "docs/UI/小程序/P0-16-Error-生成失败重试.png",
+  "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/16-error.png",
+  "referenceImage": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 1784757,
+    "sha256": "0438a2698a72187f5a582db254574a848cc6f15cb82f89f6f96c689b44bfbcad"
+  },
+  "actualImage": {
+    "width": 390,
+    "height": 693,
+    "bytes": 169777,
+    "sha256": "e89600b1551c89d19ebb74c98ed7d40d21014b28bb929a8897bb2596b5757ff4"
+  },
+  "diffImage": {
+    "width": 792,
+    "height": 693,
+    "bytes": 628448,
+    "sha256": "e025620786ef7af754173b2c2cc26ef99c72be97ee4650f55d4ed69007c03875"
+  },
+  "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
+  "normalizedPixelDiff": {
+    "width": 390,
+    "height": 693,
+    "totalPixels": 270270,
+    "changedPixels": 127074,
+    "diffRatio": 0.470174,
+    "averageChannelDelta": 20.49,
+    "maxChannelDelta": 237,
+    "changeThresholdPerPixel": 12
+  },
+  "diffRatio": 0.470174,
+  "threshold": 0.05,
+  "pixelPerfectStatus": "REPAIR_REQUIRED",
+  "materialDeviation": "REPAIR_REQUIRED",
+  "notes": [
+    "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
+    "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
+  ]
+}

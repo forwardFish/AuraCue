@@ -1,0 +1,98 @@
+[
+  {
+    "ref": "P0-01-Home-首页今日守护星.png",
+    "actual": "01-home.png",
+    "status": "ok",
+    "diffRatio": 0.2455
+  },
+  {
+    "ref": "P0-02-BirthAura-输入生日创建本命气场.png",
+    "actual": "02-birth-aura.png",
+    "status": "ok",
+    "diffRatio": 0.1933
+  },
+  {
+    "ref": "P0-03-BirthAuraReveal-本命气场揭示.png",
+    "actual": "03-birth-aura-reveal.png",
+    "status": "ok",
+    "diffRatio": 0.1639
+  },
+  {
+    "ref": "P0-04-CheckIn-今日状态与场景选择.png",
+    "actual": "04-check-in.png",
+    "status": "ok",
+    "diffRatio": 0.2339
+  },
+  {
+    "ref": "P0-05A-TarotPull-三张塔罗抽卡.png",
+    "actual": "05-draw.png",
+    "status": "ok",
+    "diffRatio": 0.1742
+  },
+  {
+    "ref": "P0-05B-Card Selected.png",
+    "actual": "05-draw.png",
+    "status": "ok",
+    "diffRatio": 0.1696
+  },
+  {
+    "ref": "P0-06A.png",
+    "actual": "06A-reading-begins.png",
+    "status": "ok",
+    "diffRatio": 0.2396
+  },
+  {
+    "ref": "P0-06B.png",
+    "actual": "06B-message-clear.png",
+    "status": "ok",
+    "diffRatio": 0.2465
+  },
+  {
+    "ref": "P0-06C.png",
+    "actual": "06C-reading-unfolds.png",
+    "status": "ok",
+    "diffRatio": 0.2494
+  },
+  {
+    "ref": "P0-07-Result-今日风格神谕结果.png",
+    "actual": "07-result.png",
+    "status": "ok",
+    "diffRatio": 0.2067
+  },
+  {
+    "ref": "P0-08-Activate-长按封印今日气场.png",
+    "actual": "08-activate.png",
+    "status": "ok",
+    "diffRatio": 0.2229
+  },
+  {
+    "ref": "P0-09-Activated-气场已封印.png",
+    "actual": "09-activated.png",
+    "status": "ok",
+    "diffRatio": 0.2525
+  },
+  {
+    "ref": "P0-10-Share.png",
+    "actual": "10-share.png",
+    "status": "ok",
+    "diffRatio": 0.248
+  },
+  {
+    "ref": "P0-12-My-我的气场首页.png",
+    "actual": "12-my.png",
+    "status": "ok",
+    "diffRatio": 0.1617
+  },
+  {
+    "ref": "P0-13-MyBirthAura-本命气场资料.png",
+    "actual": "13-my-birth-aura.png",
+    "status": "ok",
+    "diffRatio": 0.1643
+  },
+  {
+    "ref": "P0-16-Error-生成失败重试.png",
+    "actual": "16-error.png",
+    "status": "ok",
+    "diffRatio": 0.1772
+  }
+]

@@ -1,5 +1,5 @@
-import { BirthAuraPageFlow } from "@/components/aura-static-pages";
+import { LatestBirthRevealPage } from "@/components/latest-ui-pages";
 
 export default function BirthAuraPage() {
-  return <BirthAuraPageFlow />;
+  return <LatestBirthRevealPage />;
 }

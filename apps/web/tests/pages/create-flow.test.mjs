@@ -1,18 +1,25 @@
 import assert from "node:assert/strict";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { writeEvidenceJson } from "../helpers/evidence.mjs";
 
 const root = process.cwd();
-const evidenceDir = resolve(root, "../../docs/auto-execute/evidence/web/T09");
-mkdirSync(evidenceDir, { recursive: true });
+const evidenceDir = resolve(root, "../../docs/auto-execute/evidence/web/latest-ui-code");
 
-const component = readFileSync(resolve(root, "components/create-flow.tsx"), "utf8");
-const visibleComponentText = component.replaceAll("&apos;", "'");
+const latestComponent = readFileSync(resolve(root, "components/latest-ui-pages.tsx"), "utf8");
+const latestCss = readFileSync(resolve(root, "components/latest-ui.css"), "utf8");
+
+assert.doesNotMatch(latestComponent, /aura-references|latest-reference-replica|replicaPages/, "latest UI must not render full-page reference images");
+assert.doesNotMatch(latestCss, /latest-reference-replica/, "latest UI CSS must not keep reference-image replica styles");
+
 const routes = new Map([
-  ["/", ["app/page.tsx", "MoodHome"]],
-  ["/create/context", ["app/create/context/page.tsx", "ContextPageFlow"]],
-  ["/create/upload", ["app/create/upload/page.tsx", "UploadPageFlow"]],
-  ["/create/draw", ["app/create/draw/page.tsx", "DrawPageFlow"]]
+  ["/", ["app/page.tsx", "LatestHomePage"]],
+  ["/home", ["app/home/page.tsx", "LatestHomePage"]],
+  ["/onboarding/birth-aura", ["app/onboarding/birth-aura/page.tsx", "LatestBirthdayPage"]],
+  ["/onboarding/birth-aura/reveal", ["app/onboarding/birth-aura/reveal/page.tsx", "LatestBirthRevealPage"]],
+  ["/today/check-in", ["app/today/check-in/page.tsx", "LatestCheckInPage"]],
+  ["/today/draw", ["app/today/draw/page.tsx", "LatestDrawPage"]],
+  ["/today/reading", ["app/today/reading/page.tsx", "LatestReadingPage"]]
 ]);
 
 for (const [route, [file, componentName]] of routes) {
@@ -21,80 +28,91 @@ for (const [route, [file, componentName]] of routes) {
   assert.doesNotMatch(source, /RoutePlaceholder/, `${route} should not remain a placeholder`);
 }
 
-assert.equal((component.match(/\{ id: "/g) || []).length, 8, "home should define 8 mood cards");
-for (const label of ["Date", "Work", "Party", "Interview", "Travel", "Just for luck"]) {
-  assert.match(component, new RegExp(`"${label}"`), `context option ${label} should exist`);
-}
 for (const copy of [
-  "How do you want to feel today?",
-  "Pick one mood and we'll turn it into your lucky aura card.",
-  "Start My Aura Card",
-  "Today's Aura Active",
-  "What is today for?",
-  "Add today's outfit?",
-  "Choose the card that calls you.",
-  "Tap one card to draw today's aura.",
-  "Reveal My Aura",
-  "Revealing your aura..."
+  "Start My First Aura",
+  "Enter Your Birthday",
+  "Your Birth Aura is",
+  "Venus Air",
+  "How are you arriving today?",
+  "What is today asking from you?",
+  "Choose the card",
+  "Your reading begins.",
+  "Your message is clear.",
+  "Your reading unfolds."
 ]) {
-  assert.match(visibleComponentText, new RegExp(escapeRegExp(copy)), `missing required copy: ${copy}`);
+  assert.match(latestComponent.replaceAll("&apos;", "'"), new RegExp(escapeRegExp(copy)), `missing latest UI copy: ${copy}`);
 }
 
-const requiredApiCalls = [
-  ["API-001", "createAnonymousIdentity"],
-  ["API-002", "getTodayCard"],
-  ["API-003", "uploadOutfit"],
-  ["API-004", "startDrawSession"],
-  ["API-005", "startGeneration"]
-];
-for (const [id, call] of requiredApiCalls) {
-  assert.match(component, new RegExp(`apiClient\\.${call}\\(`), `${id} should call ${call}`);
+for (const route of [
+  "/onboarding/birth-aura",
+  "/onboarding/birth-aura/reveal",
+  "/today/check-in",
+  "/today/draw",
+  "/today/reading",
+  "/result/${oracle.cardId || demoCardId}"
+]) {
+  assert.match(latestComponent, new RegExp(escapeRegExp(route)), `missing latest flow route: ${route}`);
 }
 
-for (const guard of ["router.replace(\"/\")", "!draft.mood"]) {
-  assert.match(component, new RegExp(escapeRegExp(guard)), `missing mood guard ${guard}`);
+for (const implementationSignal of [
+  "useState",
+  "localStorage",
+  "apiClient.getHomeContent",
+  "apiClient.createAnonymousIdentity",
+  "apiClient.startDrawSession",
+  "apiClient.generateAuraCard",
+  "apiClient.getAuraCard",
+  "generateOracleFromApi",
+  "<select",
+  "aria-pressed={mood === label}",
+  "aria-pressed={selectedCard === label}",
+  "advanceReading"
+]) {
+  assert.match(latestComponent, new RegExp(escapeRegExp(implementationSignal)), `missing real UI implementation signal: ${implementationSignal}`);
 }
-assert.match(component, /acceptedUploadTypes/, "upload should prevalidate file type");
-assert.match(component, /maxUploadBytes/, "upload should prevalidate file size");
-assert.match(component, /skipUpload/, "upload failure path should allow Skip");
-assert.match(component, /status === "error"/, "upload error state should be visible");
-assert.match(component, /!session \|\| !draft\.drawPosition \|\| generating/, "draw reveal should require selected card and prevent duplicate submits");
-assert.match(component, /drawPosition: draft\.drawPosition/, "generation payload should send selected drawPosition");
-assert.match(component, /router\.push\(`\/result\/\$\{generation\.cardId\}`\)/, "generation success should navigate to result card");
-assert.match(component, /track\("click_start_card"/, "home CTA should emit click_start_card analytics");
-assert.match(readFileSync(resolve(root, "lib/analytics.js"), "utf8"), /"click_start_card"/, "analytics whitelist should include click_start_card");
-assert.doesNotMatch(component, /pay|payment|unlock|invite/i, "T09 pages must not expose paywall copy");
 
-const css = readFileSync(resolve(root, "app/globals.css"), "utf8");
+for (const fontSignal of [
+  "AuraCue Cormorant",
+  "AuraCue Inter",
+  "cormorant-garamond-v21-latin-600.ttf",
+  "inter-v20-latin-600.ttf"
+]) {
+  assert.match(latestCss, new RegExp(escapeRegExp(fontSignal)), `missing latest UI font signal: ${fontSignal}`);
+}
+
+for (const asset of [
+  "home-saturn-planet-hero-card.png",
+  "birth-reveal-guardian-libra.png",
+  "p0-05-tarot-card-back-clean.png",
+  "mood-drained-drop.png",
+  "intent-work-study-book.png"
+]) {
+  assert.match(latestComponent, new RegExp(escapeRegExp(asset)), `missing UI asset reference ${asset}`);
+}
+
+assert.match(latestCss, /home-trait-pill-frame\.png/, "missing latest UI trait pill frame CSS asset");
+
 for (const className of [
-  ".auracue-mood-grid",
-  ".auracue-upload-zone",
-  ".auracue-card-row",
-  ".auracue-draw-card",
-  ".auracue-inline-state--error"
+  ".latest-phone",
+  ".latest-planet-hero",
+  ".latest-panel",
+  ".latest-card-stage",
+  ".latest-orbit"
 ]) {
-  assert.match(css, new RegExp(escapeRegExp(className)), `missing style ${className}`);
+  assert.match(latestCss, new RegExp(escapeRegExp(className)), `missing latest UI style ${className}`);
 }
 
-const screenshotTargets = {
-  taskId: "T09",
-  status: "TARGETS_DEFINED",
-  owner: "T13/T14/T15 runtime capture",
-  targets: [
-    "screenshots/web/T14/UI-001-home-mood.png",
-    "screenshots/web/T14/UI-002-context.png",
-    "screenshots/web/T14/UI-003-upload-success-error-skip.png",
-    "screenshots/web/T14/UI-004-draw-selected-generating.png",
-    "screenshots/web/T14/UI-010-draw-generation-error.png"
-  ]
-};
-writeFileSync(resolve(evidenceDir, "screenshot-targets.json"), JSON.stringify(screenshotTargets, null, 2));
+writeEvidenceJson(resolve(evidenceDir, "page-contract.json"), {
+  status: "PASS",
+  suite: "latest-ui-functional-flow",
+  sourceOfTruth: "docs/AuraCue_FINAL_Page_Flow_Design_Spec_v4.1.md",
+  routes: [...routes.keys()]
+});
 
 console.log(JSON.stringify({
   status: "PASS",
-  suite: "create-flow-pages",
-  covered: ["UI-001", "UI-002", "UI-003", "UI-004", "UI-010", "API-001", "API-002", "API-003", "API-004", "API-005"],
-  evidence: ["docs/auto-execute/evidence/web/T09/screenshot-targets.json"]
+  suite: "latest-ui-functional-flow",
+  evidence: ["docs/auto-execute/evidence/web/latest-ui-code/page-contract.json"]
 }, null, 2));
 
 function escapeRegExp(value) {

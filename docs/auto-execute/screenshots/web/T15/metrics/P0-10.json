@@ -1,0 +1,48 @@
+{
+  "uiId": "P0-10",
+  "route": "/share/[id]",
+  "state": "share card",
+  "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
+  "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-10.png",
+  "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-10.png",
+  "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-10-diff.png",
+  "referenceSource": "docs/UI/小程序/P0-10-Share-今日气场分享卡.png",
+  "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/10-share.png",
+  "referenceImage": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 1958788,
+    "sha256": "c2a78f9dcc5a7c19018b75d31d6181a90ffb2f5d3e3a097362de26b2dd7efbe3"
+  },
+  "actualImage": {
+    "width": 390,
+    "height": 693,
+    "bytes": 228385,
+    "sha256": "84ff9e4ad4667f3d75f72ac1b4c98f0c332798d1f1f02ffddc27581b4f773e37"
+  },
+  "diffImage": {
+    "width": 792,
+    "height": 693,
+    "bytes": 776298,
+    "sha256": "1730359d76cec2e92ddea55e240aefcd88d51a0594533026428120cd51e49c4a"
+  },
+  "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
+  "normalizedPixelDiff": {
+    "width": 390,
+    "height": 693,
+    "totalPixels": 270270,
+    "changedPixels": 110031,
+    "diffRatio": 0.407115,
+    "averageChannelDelta": 26.499,
+    "maxChannelDelta": 255,
+    "changeThresholdPerPixel": 12
+  },
+  "diffRatio": 0.407115,
+  "threshold": 0.05,
+  "pixelPerfectStatus": "REPAIR_REQUIRED",
+  "materialDeviation": "REPAIR_REQUIRED",
+  "notes": [
+    "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
+    "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
+  ]
+}

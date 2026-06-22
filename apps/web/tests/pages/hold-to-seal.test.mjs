@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { writeEvidenceJson } from "../helpers/evidence.mjs";
 
 const root = process.cwd();
 const evidenceDir = resolve(root, "../../docs/auto-execute/evidence/web/T10");
@@ -29,5 +30,5 @@ const result = {
   ]
 };
 
-writeFileSync(resolve(evidenceDir, "hold-to-seal.json"), JSON.stringify(result, null, 2));
+writeEvidenceJson(resolve(evidenceDir, "hold-to-seal.json"), result);
 console.log(JSON.stringify(result, null, 2));

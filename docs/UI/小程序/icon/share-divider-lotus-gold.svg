@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="96" viewBox="0 0 512 96">
+  <title>Lotus Gold Divider</title>
+  <desc>Soft gold lotus divider line ornament on transparent background.</desc>
+  <defs>
+    <linearGradient id="goldLine" x1="80" y1="0" x2="432" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B98543" stop-opacity="0.55"/>
+      <stop offset="0.5" stop-color="#E5C27A" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#B98543" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#goldLine)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M82 48 H207"/>
+    <path d="M305 48 H430"/>
+    <path d="M256 61 C246 48 249 34 256 22 C263 34 266 48 256 61 Z"/>
+    <path d="M253 62 C238 55 229 42 232 28 C247 34 254 48 253 62 Z"/>
+    <path d="M259 62 C274 55 283 42 280 28 C265 34 258 48 259 62 Z"/>
+    <path d="M246 64 C229 63 218 51 217 39 C235 42 246 54 246 64 Z"/>
+    <path d="M266 64 C283 63 294 51 295 39 C277 42 266 54 266 64 Z"/>
+    <path d="M226 66 C242 76 270 76 286 66"/>
+  </g>
+  <g fill="url(#goldLine)">
+    <circle cx="218" cy="48" r="3"/>
+    <circle cx="294" cy="48" r="3"/>
+  </g>
+</svg>

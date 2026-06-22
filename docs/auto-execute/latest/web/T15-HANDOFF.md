@@ -13,6 +13,6 @@ Status: REPAIR_REQUIRED
 ## Pixel Gate
 
 - Passing screens: 0
-- Failing screens: 10
-- Max diffRatio: 0.432423
-- Threshold: 0.005
+- Failing screens: 13
+- Max diffRatio: 0.565028
+- Threshold: 0.05

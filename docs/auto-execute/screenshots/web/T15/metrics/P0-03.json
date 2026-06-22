@@ -1,0 +1,48 @@
+{
+  "uiId": "P0-03",
+  "route": "/onboarding/birth-aura/reveal",
+  "state": "birth aura reveal",
+  "viewport": "mobile evidence, Web actual captured at 390x693 in T13/T14 to match the 941x1672 reference aspect ratio",
+  "reference": "docs/auto-execute/screenshots/web/T15/reference/P0-03.png",
+  "actual": "docs/auto-execute/screenshots/web/T15/actual/P0-03.png",
+  "diff": "docs/auto-execute/screenshots/web/T15/diff/P0-03-diff.png",
+  "referenceSource": "docs/UI/小程序/P0-03-BirthAuraReveal-本命气场揭示.png",
+  "actualSource": "docs/auto-execute/screenshots/web/T13/runtime-smoke/03-birth-aura-reveal.png",
+  "referenceImage": {
+    "width": 941,
+    "height": 1672,
+    "bytes": 1849575,
+    "sha256": "2ddfc2712b6ac5d48c5290c6cf0167d09d3b2218f06fa1c02405b896977bc941"
+  },
+  "actualImage": {
+    "width": 390,
+    "height": 693,
+    "bytes": 303638,
+    "sha256": "5fd875822132f70a534be3362590c1867d86b92efa608e91e496bbcd5036101b"
+  },
+  "diffImage": {
+    "width": 792,
+    "height": 693,
+    "bytes": 892828,
+    "sha256": "bafb2f00ef05a2f605e6343ef6305a833cfbbb98fb9dbca9841bfe6e4be822ef"
+  },
+  "comparisonMode": "browser-canvas normalized pixel diff plus side-by-side raster evidence",
+  "normalizedPixelDiff": {
+    "width": 390,
+    "height": 693,
+    "totalPixels": 270270,
+    "changedPixels": 104660,
+    "diffRatio": 0.387242,
+    "averageChannelDelta": 27.182,
+    "maxChannelDelta": 243,
+    "changeThresholdPerPixel": 12
+  },
+  "diffRatio": 0.387242,
+  "threshold": 0.05,
+  "pixelPerfectStatus": "REPAIR_REQUIRED",
+  "materialDeviation": "REPAIR_REQUIRED",
+  "notes": [
+    "Reference is mini-program raster or Stitch-derived visual source; actual is Web/H5 runtime raster.",
+    "Reference is scaled to the actual screenshot size before pixel comparison so dimensions do not hide visual drift."
+  ]
+}

@@ -58,6 +58,7 @@ body {
 }
 
 .auracue-flow { display: flex; flex-direction: column; gap: 16px; min-height: 0; }
+.auracue-flow--home { gap: 12px; }
 .auracue-flow__lead { margin: 0 auto; max-width: 310px; color: #756c7d; font-size: 14px; line-height: 1.55; text-align: center; }
 
 .aura-birthday-card,
@@ -109,6 +110,19 @@ body {
 .auracue-filter--active { color: #fff; background: linear-gradient(135deg, #b697e9, #e3a0bb); }
 
 .auracue-mood-stack { display: grid; gap: 13px; }
+.auracue-flow--home .auracue-mood-stack {
+  max-height: clamp(226px, 35dvh, 286px);
+  overflow-y: auto;
+  padding: 0 2px 2px;
+  scrollbar-width: none;
+}
+.auracue-flow--home .auracue-mood-stack::-webkit-scrollbar { display: none; }
+.auracue-primary-action--home {
+  position: sticky;
+  bottom: 4px;
+  z-index: 3;
+  flex: 0 0 auto;
+}
 .auracue-mood-card { position: relative; min-height: 112px; overflow: hidden; border: 1px solid rgba(215,180,106,.30); border-radius: 26px; padding: 18px; text-align: left; background: rgba(255,255,255,.64); box-shadow: 0 16px 34px rgba(88,45,112,.10); }
 .auracue-mood-card[aria-pressed="true"] { border-color: rgba(191,142,207,.9); box-shadow: 0 18px 38px rgba(152,91,186,.18); }
 .auracue-mood-card__copy { position: relative; z-index: 2; display: grid; gap: 4px; max-width: 190px; }

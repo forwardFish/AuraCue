@@ -18,8 +18,22 @@ const acceptedUploadTypes = new Set(["image/jpeg", "image/png", "image/webp"]);
 
 const moods = [
   { id: "confident", label: "Confident", detail: "Walk in your power and shine today.", energy: "High Energy", asset: "/aura-assets/mood-confident-woman-art.png", tone: "violet", icon: "/aura-assets/common-sparkle-gold.png" },
+  { id: "lucky", label: "Lucky", detail: "Call in bright timing and easy wins.", energy: "Golden Energy", asset: "/aura-assets/mood-confident-woman-art.png", tone: "violet", icon: "/aura-assets/common-sparkle-gold.png" },
+  { id: "magnetic", label: "Magnetic", detail: "Turn on your charm and draw people in.", energy: "Social Energy", asset: "/aura-assets/mood-romantic-rose-art.png", tone: "rose", icon: "/aura-assets/home-mood-romantic-heart.png" },
+  { id: "focused", label: "Focused", detail: "Keep your mind clear and your next step sharp.", energy: "Steady Energy", asset: "/aura-assets/mood-calm-lotus-stones-art.png", tone: "lavender", icon: "/aura-assets/home-mood-calm-leaf.png" },
   { id: "romantic", label: "Romantic", detail: "Open your heart to love and beautiful moments.", energy: "Love Energy", asset: "/aura-assets/mood-romantic-rose-art.png", tone: "rose", icon: "/aura-assets/home-mood-romantic-heart.png" },
+  { id: "brave", label: "Brave", detail: "Face the day with heart and a little fire.", energy: "Bold Energy", asset: "/aura-assets/mood-confident-woman-art.png", tone: "violet", icon: "/aura-assets/common-sparkle-gold.png" },
+  { id: "rested", label: "Rested", detail: "Move softly and protect your peace.", energy: "Soft Energy", asset: "/aura-assets/mood-calm-lotus-stones-art.png", tone: "lavender", icon: "/aura-assets/home-mood-calm-leaf.png" },
   { id: "calm", label: "Calm", detail: "Breathe deep and find your inner peace.", energy: "Peace Energy", asset: "/aura-assets/mood-calm-lotus-stones-art.png", tone: "lavender", icon: "/aura-assets/home-mood-calm-leaf.png" }
+];
+
+const homeMoodIds = new Set(["confident", "romantic", "calm"]);
+const homeMoods = moods.filter((mood) => homeMoodIds.has(mood.id));
+const homeFilters = [
+  { label: "All", mood: "confident", icon: "/aura-assets/common-sparkle-gold.png" },
+  { label: "Calm", mood: "calm", icon: "/aura-assets/home-mood-calm-leaf.png" },
+  { label: "Romantic", mood: "romantic", icon: "/aura-assets/home-mood-romantic-heart.png" },
+  { label: "Lucky", mood: "lucky", icon: "/aura-assets/common-sparkle-gold.png" }
 ];
 
 const contexts = [
@@ -52,7 +66,10 @@ export function MoodHome() {
         const identity = await ensureAnonymousIdentity();
         if (cancelled) return;
         setAnonymousId(identity);
-        setSelectedMood(draftStore.load().mood);
+        const storedMood = draftStore.load().mood;
+        const initialMood = storedMood ?? "confident";
+        if (!storedMood) draftStore.save({ mood: initialMood });
+        setSelectedMood(initialMood);
         const today = await apiClient.getTodayCard({ anonymousId: identity });
         if (!cancelled) setTodayCard(today);
       } catch (caught) {
@@ -76,9 +93,13 @@ export function MoodHome() {
   }
 
   return (
-    <WebShell title="Today's Aura" eyebrow="Daily Tarot Style Oracle" referenceId="home">
+    <WebShell title="Start Your Aura Journey" eyebrow={null} referenceId="home">
       <div className="auracue-flow auracue-flow--home">
-        <p className="auracue-flow__lead">Choose today&apos;s mood to reveal your lucky color, guardian item, and style ritual.</p>
+        <div className="auracue-home-date-pill">
+          <Image src="/aura-assets/context-option-date-heart.png" alt="" width={14} height={14} />
+          <span>Today, 18 Jul 2024</span>
+        </div>
+        <p className="auracue-flow__lead">Choose today&apos;s mood to reveal your lucky aura card.</p>
         {error ? <ErrorState message={error} onRetry={() => window.location.reload()} /> : null}
         {todayCard?.hasActiveCard && todayCard.cardId ? (
           <button className="auracue-active-entry" type="button" onClick={() => router.push(`/activated/${todayCard.cardId}`)}>
@@ -87,15 +108,14 @@ export function MoodHome() {
           </button>
         ) : null}
         <div className="auracue-filter-row" aria-label="Mood filters">
-          <button type="button" className="auracue-filter auracue-filter--active">All <Image src="/aura-assets/common-sparkle-gold.png" alt="" width={16} height={16} /></button>
-          {moods.map((mood) => (
-            <button key={mood.id} type="button" className="auracue-filter" onClick={() => chooseMood(mood.id)}>
-              <Image src={mood.icon} alt="" width={18} height={18} /> {mood.label}
+          {homeFilters.map((filter, index) => (
+            <button key={filter.label} type="button" className={`auracue-filter ${index === 0 ? "auracue-filter--active" : ""}`} onClick={() => chooseMood(filter.mood)}>
+              <Image src={filter.icon} alt="" width={18} height={18} /> {filter.label}
             </button>
           ))}
         </div>
         <div className="auracue-mood-stack" aria-label="Mood options">
-          {moods.map((mood) => (
+          {homeMoods.map((mood) => (
             <button key={mood.id} type="button" className={`auracue-mood-card auracue-mood-card--${mood.tone}`} aria-pressed={selectedMood === mood.id} onClick={() => chooseMood(mood.id)}>
               <span className="auracue-mood-card__copy"><strong>{mood.label}</strong><span>{mood.detail}</span><em>{mood.energy}</em></span>
               <Image className="auracue-mood-card__art" src={mood.asset} alt="" width={240} height={180} />
@@ -136,10 +156,10 @@ export function ContextPageFlow() {
   }
 
   return (
-    <WebShell title="Any context for today?" eyebrow="Today's intention" referenceId="context">
+    <WebShell title="Any context for today?" eyebrow={null} referenceId="context">
       <div className="auracue-flow auracue-flow--context">
         <span className="auracue-visually-hidden">What is today for?</span>
-        <p className="auracue-flow__lead auracue-flow__lead--context">Choose one scene so the oracle can tune your color, item, and daily action.</p>
+        <p className="auracue-flow__lead auracue-flow__lead--context">Optional — add a scene if you want us to tune your card a little more. 💖</p>
         <div className="auracue-option-list" aria-label="Context options">
           {contexts.map((context) => (
             <button key={context.value} type="button" className="auracue-choice" aria-pressed={draft.context === context.value} onClick={() => selectContext(context.value)}>
@@ -149,8 +169,13 @@ export function ContextPageFlow() {
             </button>
           ))}
         </div>
-        <button className="auracue-primary-action" type="button" onClick={() => continueFlow()}><Image src="/aura-assets/common-sparkle-gold.png" alt="" width={18} height={18} />Continue<Image src="/aura-assets/common-sparkle-gold.png" alt="" width={18} height={18} /></button>
+        <div className="auracue-context-divider" aria-hidden="true">
+          <Image src="/aura-assets/common-sparkle-gold.png" alt="" width={14} height={14} />
+        </div>
         <button className="auracue-context-skip" type="button" onClick={skipContext}>Skip</button>
+        <div className="auracue-flow__actions auracue-flow__actions--context">
+          <button className="auracue-primary-action" type="button" onClick={() => continueFlow()}><Image src="/aura-assets/common-sparkle-gold.png" alt="" width={18} height={18} />Continue<Image src="/aura-assets/common-sparkle-gold.png" alt="" width={18} height={18} /></button>
+        </div>
         <p className="auracue-flow__safe auracue-flow__safe--context">Optional and private. You can skip this.</p>
       </div>
     </WebShell>
@@ -193,7 +218,7 @@ export function UploadPageFlow() {
   function continueFlow() { router.push("/create/draw"); }
 
   return (
-    <WebShell title="Upload today's outfit?" eyebrow="Optional outfit cue" referenceId={status === "error" ? "error" : "upload"}>
+    <WebShell title="Add today's outfit?" eyebrow="Optional outfit cue" referenceId={status === "error" ? "error" : "upload"}>
       <div className="auracue-flow auracue-flow--upload">
         <p className="auracue-flow__lead auracue-flow__lead--upload">Add a look for a more personalized card, or let AuraCue read your mood only.</p>
         <label className="auracue-upload-zone auracue-upload-zone--hero">

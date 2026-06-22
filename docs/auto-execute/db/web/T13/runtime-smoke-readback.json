@@ -1,174 +1,54 @@
 {
   "databaseUrl": "file:D:/lyh/agent/agent-frame/AuraCue/apps/web/t13-runtime-smoke.sqlite",
-  "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
+  "anonymousId": "anon_776f7885c3c14737a0384d48c736c96f",
   "counts": {
     "AnonymousUser": 1,
-    "OutfitUpload": 1,
+    "OutfitUpload": 0,
     "DrawSession": 1,
     "GenerationJob": 1,
     "AuraCard": 1,
-    "AuraActivation": 1,
-    "SavedCard": 1,
-    "ShareEvent": 3,
-    "AnalyticsEvent": 14,
+    "AuraActivation": 0,
+    "SavedCard": 0,
+    "ShareEvent": 0,
+    "AnalyticsEvent": 0,
     "CardTemplate": 0
   },
   "user": {
-    "id": "cmq9fwawp0000d0vc7q9tnv8y",
-    "anonymousId": "anon_391fd1a99d7a4d1aa7e6f7526b001c6b",
-    "uploads": [
-      {
-        "id": "cmq9fwbsd0004d0vc4e1eufdc",
-        "mimeType": "image/png",
-        "storagePath": "local://uploads/upload_072fc8e3965f47aca7204e020bbbc352.png",
-        "createdAt": "2026-06-11T11:54:08.941Z"
-      }
-    ],
+    "id": "cmqo0x7ac0000rwvcwf5fj6d1",
+    "anonymousId": "anon_776f7885c3c14737a0384d48c736c96f",
+    "uploads": [],
     "drawSessions": [
       {
-        "id": "cmq9fwc5b0006d0vccdl4chnk",
-        "mood": "confident",
-        "context": "work",
-        "uploadId": "cmq9fwbsd0004d0vc4e1eufdc",
-        "drawSeed": "seed_fe495fa6b0e73a6a",
-        "createdAt": "2026-06-11T11:54:09.407Z"
+        "id": "cmqo0x7yi0001rwvcvtiec767",
+        "mood": "Soft",
+        "context": "Work / Study",
+        "uploadId": null,
+        "drawSeed": "seed_fbf23bfe472ee85d",
+        "createdAt": "2026-06-21T16:51:29.034Z"
       }
     ],
     "jobs": [
       {
-        "id": "cmq9fwcgb0009d0vcecsmgnjy",
+        "id": "cmqo0x8i20002rwvc5cfm8vrn",
         "status": "success",
-        "drawSessionId": "cmq9fwc5b0006d0vccdl4chnk",
+        "drawSessionId": "cmqo0x7yi0001rwvcvtiec767",
         "drawPosition": 2,
         "fallbackUsed": true
       }
     ],
     "cards": [
       {
-        "id": "cmq9fwcgf000ad0vcw3w0bley",
-        "mood": "confident",
-        "context": "work",
+        "id": "cmqo0x8ia0003rwvc5gh537z7",
+        "mood": "Soft",
+        "context": "Work / Study",
         "drawPosition": 2,
-        "isActivated": true,
-        "shareImageUrl": "local://share-images/cmq9fwcgf000ad0vcw3w0bley-template-story-001.png",
-        "activations": [
-          {
-            "id": "cmq9fwd2r000dd0vcj56e6ol3",
-            "status": "sealed",
-            "anchorType": "lucky_color",
-            "anchorLabel": "soft ivory",
-            "holdDurationMs": 3008,
-            "sealedAt": "2026-06-11T11:54:13.881Z"
-          }
-        ],
-        "savedCards": [
-          {
-            "id": "cmq9fwkhq000kd0vc5lloenjg",
-            "source": "share",
-            "createdAt": "2026-06-11T11:54:20.222Z"
-          }
-        ],
-        "shares": [
-          {
-            "id": "cmq9fwg7h000gd0vco3pq0f3v",
-            "channel": "copy",
-            "source": "share_preview",
-            "createdAt": "2026-06-11T11:54:14.669Z"
-          },
-          {
-            "id": "cmq9fwgez000id0vcorchsh02",
-            "channel": "download",
-            "source": "share_preview",
-            "createdAt": "2026-06-11T11:54:14.939Z"
-          },
-          {
-            "id": "cmq9fwks3000md0vcn5j22b13",
-            "channel": "copy",
-            "source": "saved",
-            "createdAt": "2026-06-11T11:54:20.595Z"
-          }
-        ]
+        "isActivated": false,
+        "shareImageUrl": null,
+        "activations": [],
+        "savedCards": [],
+        "shares": []
       }
     ],
-    "analytics": [
-      {
-        "id": "cmq9fwb540001d0vc28bhusht",
-        "eventName": "select_mood",
-        "page": "/",
-        "createdAt": "2026-06-11T11:54:08.104Z"
-      },
-      {
-        "id": "cmq9fwb5u0002d0vcfhchtiaz",
-        "eventName": "click_start_card",
-        "page": "/",
-        "createdAt": "2026-06-11T11:54:08.130Z"
-      },
-      {
-        "id": "cmq9fwbsq0005d0vcxhmul0mg",
-        "eventName": "upload_outfit_success",
-        "page": "/create/upload",
-        "createdAt": "2026-06-11T11:54:08.954Z"
-      },
-      {
-        "id": "cmq9fwc5r0007d0vc1nrmv6mv",
-        "eventName": "draw_session_started",
-        "page": "/create/draw",
-        "createdAt": "2026-06-11T11:54:09.423Z"
-      },
-      {
-        "id": "cmq9fwcfd0008d0vcrz60ej3u",
-        "eventName": "draw_card_selected",
-        "page": "/create/draw",
-        "createdAt": "2026-06-11T11:54:09.769Z"
-      },
-      {
-        "id": "cmq9fwcgx000bd0vcvoftfbx9",
-        "eventName": "generation_started",
-        "page": "/create/draw",
-        "createdAt": "2026-06-11T11:54:09.825Z"
-      },
-      {
-        "id": "cmq9fwch9000cd0vc9gisryl6",
-        "eventName": "generation_completed",
-        "page": "/create/draw",
-        "createdAt": "2026-06-11T11:54:09.837Z"
-      },
-      {
-        "id": "cmq9fwd38000ed0vca198cig2",
-        "eventName": "activation_started",
-        "page": "/activate/cmq9fwcgf000ad0vcw3w0bley",
-        "createdAt": "2026-06-11T11:54:10.628Z"
-      },
-      {
-        "id": "cmq9fwfwy000fd0vcslisczj4",
-        "eventName": "share_opened",
-        "page": "/share/cmq9fwcgf000ad0vcw3w0bley",
-        "createdAt": "2026-06-11T11:54:14.290Z"
-      },
-      {
-        "id": "cmq9fwg7u000hd0vcjk812af1",
-        "eventName": "share_completed",
-        "page": "/share/cmq9fwcgf000ad0vcw3w0bley",
-        "createdAt": "2026-06-11T11:54:14.682Z"
-      },
-      {
-        "id": "cmq9fwggj000jd0vcyvwi5eif",
-        "eventName": "share_completed",
-        "page": "/share/cmq9fwcgf000ad0vcw3w0bley",
-        "createdAt": "2026-06-11T11:54:14.995Z"
-      },
-      {
-        "id": "cmq9fwki6000ld0vcud79mesh",
-        "eventName": "card_saved",
-        "page": "/share/cmq9fwcgf000ad0vcw3w0bley",
-        "createdAt": "2026-06-11T11:54:20.238Z"
-      },
-      {
-        "id": "cmq9fwksg000nd0vcxw2eo8io",
-        "eventName": "share_completed",
-        "page": "/saved/cmq9fwcgf000ad0vcw3w0bley",
-        "createdAt": "2026-06-11T11:54:20.608Z"
-      }
-    ]
+    "analytics": []
   }
 }

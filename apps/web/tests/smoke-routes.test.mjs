@@ -28,15 +28,23 @@ if (requested.length > 0) {
 }
 
 const requiredRoutes = [
-  ["app/page.tsx", "/", /MoodHome|RoutePlaceholder/],
-  ["app/create/context/page.tsx", "/create/context", /ContextPageFlow|RoutePlaceholder/],
-  ["app/create/upload/page.tsx", "/create/upload", /UploadPageFlow|RoutePlaceholder/],
-  ["app/create/draw/page.tsx", "/create/draw", /DrawPageFlow|RoutePlaceholder/],
-  ["app/result/[id]/page.tsx", "/result/[id]", /ResultPageFlow|RoutePlaceholder/],
-  ["app/activate/[id]/page.tsx", "/activate/[id]", /ActivatePageFlow|RoutePlaceholder/],
-  ["app/activated/[id]/page.tsx", "/activated/[id]", /ActivatedPageFlow|RoutePlaceholder/],
-  ["app/share/[id]/page.tsx", "/share/[id]", /SharePageFlow|RoutePlaceholder/],
-  ["app/saved/[id]/page.tsx", "/saved/[id]", /SavedPageFlow|RoutePlaceholder/]
+  ["app/page.tsx", "/", /LatestHomePage|RoutePlaceholder/],
+  ["app/home/page.tsx", "/home", /LatestHomePage|RoutePlaceholder/],
+  ["app/onboarding/birth-aura/page.tsx", "/onboarding/birth-aura", /LatestBirthdayPage|RoutePlaceholder/],
+  ["app/onboarding/birth-aura/reveal/page.tsx", "/onboarding/birth-aura/reveal", /LatestBirthRevealPage|RoutePlaceholder/],
+  ["app/today/check-in/page.tsx", "/today/check-in", /LatestCheckInPage|RoutePlaceholder/],
+  ["app/today/draw/page.tsx", "/today/draw", /LatestDrawPage|RoutePlaceholder/],
+  ["app/today/reading/page.tsx", "/today/reading", /LatestReadingPage|RoutePlaceholder/],
+  ["app/result/[id]/page.tsx", "/result/[id]", /LatestResultPage|RoutePlaceholder/],
+  ["app/activate/[id]/page.tsx", "/activate/[id]", /LatestActivatePage|RoutePlaceholder/],
+  ["app/activated/[id]/page.tsx", "/activated/[id]", /LatestActivatedPage|RoutePlaceholder/],
+  ["app/share/[id]/page.tsx", "/share/[id]", /LatestSharePage|RoutePlaceholder/],
+  ["app/saved/[id]/page.tsx", "/saved/[id]", /LatestSavedPage|RoutePlaceholder/],
+  ["app/my/page.tsx", "/my", /LatestMyPage|RoutePlaceholder/],
+  ["app/my/birth-aura/page.tsx", "/my/birth-aura", /LatestBirthProfilePage|RoutePlaceholder/],
+  ["app/legal/privacy/page.tsx", "/legal/privacy", /LatestPrivacyPage/],
+  ["app/legal/terms/page.tsx", "/legal/terms", /LatestTermsPage/],
+  ["app/error/network/page.tsx", "/error/network", /LatestErrorPage|RoutePlaceholder/]
 ];
 
 for (const [relativePath, route, routePattern] of requiredRoutes) {
@@ -54,6 +62,8 @@ for (const scriptName of ["dev", "build", "lint", "test", "test:pages", "typeche
 assert.equal(packageJson.dependencies?.["@auracue/ui-tokens"], "workspace:*");
 assert.ok(existsSync(join(root, "tailwind.config.ts")), "missing Tailwind config");
 assert.ok(existsSync(join(root, "app", "globals.css")), "missing global Tailwind CSS");
+assert.ok(existsSync(join(root, "components", "latest-ui-pages.tsx")), "missing latest UI_Code component bridge");
+assert.ok(existsSync(join(root, "components", "latest-ui.css")), "missing latest UI_Code stylesheet bridge");
 assert.ok(existsSync(join(root, "components", "web-shell.tsx")), "missing shared Web shell");
 assert.ok(existsSync(join(root, "components", "loading-state.tsx")), "missing shared loading state");
 assert.ok(existsSync(join(root, "components", "error-state.tsx")), "missing shared error state");

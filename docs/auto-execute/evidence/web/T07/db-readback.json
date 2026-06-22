@@ -1,6 +1,6 @@
 {
-  "anonymousId": "anon_7740a4b2a8d943c1b94c1e2326bc7946",
-  "otherAnonymousId": "anon_685962c71e5c4103908d1b418d6fb7b6",
+  "anonymousId": "anon_08b5b4f187774e08831be2306b0d35c8",
+  "otherAnonymousId": "anon_e8f465052d4f4f28b7069eab5cd63fef",
   "counts": {
     "AuraCard": 1,
     "AuraActivation": 1,
@@ -9,45 +9,45 @@
     "AnalyticsEvent": 1
   },
   "card": {
-    "id": "cmq1l75c10004bgvc6ttbhvsb",
-    "shareImageUrl": "local://share-images/cmq1l75c10004bgvc6ttbhvsb-template-story-001.png",
+    "id": "cmqn75qwt0004ogvc2reh75ui",
+    "shareImageUrl": "local://share-images/cmqn75qwt0004ogvc2reh75ui-template-story-001.png",
     "isActivated": true,
-    "activatedAt": "2026-06-06T00:00:22.553Z"
+    "activatedAt": "2026-06-21T02:58:18.433Z"
   },
   "activation": [
     {
-      "id": "cmq1l75e50005bgvc5yqq2vf5",
+      "id": "cmqn75qyd0005ogvcu56yik98",
       "status": "sealed",
       "anchorType": "lucky_color",
       "anchorLabel": "soft ivory",
       "holdDurationMs": 3200,
-      "sealedAt": "2026-06-06T00:00:22.553Z"
+      "sealedAt": "2026-06-21T02:58:18.433Z"
     }
   ],
   "savedCards": [
     {
-      "id": "cmq1l75f10006bgvcgohsmnu0",
+      "id": "cmqn75qz40006ogvcg524v0km",
       "source": "share",
-      "createdAt": "2026-06-06T00:00:22.573Z"
+      "createdAt": "2026-06-21T02:58:18.448Z"
     }
   ],
   "shares": [
     {
-      "id": "cmq1l75fk0008bgvc2kmjpcxi",
+      "id": "cmqn75qze0008ogvc5k7gg7qf",
       "channel": "download",
       "source": "share_preview",
-      "createdAt": "2026-06-06T00:00:22.592Z"
+      "createdAt": "2026-06-21T02:58:18.458Z"
     }
   ],
   "analyticsEvents": [
     {
-      "id": "cmq1l75ft0009bgvclo614o7q",
+      "id": "cmqn75qzi0009ogvcx8vkt9fg",
       "eventName": "aura_activated",
-      "page": "/activated/cmq1l75c10004bgvc6ttbhvsb",
+      "page": "/activated/cmqn75qwt0004ogvc2reh75ui",
       "platform": "web",
       "payload": {
-        "cardId": "cmq1l75c10004bgvc6ttbhvsb",
-        "activationId": "cmq1l75e50005bgvc5yqq2vf5",
+        "cardId": "cmqn75qwt0004ogvc2reh75ui",
+        "activationId": "cmqn75qyd0005ogvcu56yik98",
         "holdDurationMs": 3200
       }
     }

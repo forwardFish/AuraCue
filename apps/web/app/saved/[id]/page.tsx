@@ -1,10 +1,10 @@
-import { SavedPageFlow } from "@/components/share-save-flow";
+import { LatestSavedPage } from "@/components/latest-ui-pages";
 
 type SavedPageProps = {
   params: Promise<{ id: string }>;
 };
 
 export default async function SavedPage({ params }: SavedPageProps) {
-  const { id } = await params;
-  return <SavedPageFlow cardId={id} />;
+  await params;
+  return <LatestSavedPage />;
 }

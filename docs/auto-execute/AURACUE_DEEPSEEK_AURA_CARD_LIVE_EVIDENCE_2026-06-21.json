@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-06-21T02:04:53.455Z",
+  "startedAt": "2026-06-21T02:04:49.375Z",
+  "endpoint": "https://api.deepseek.com/v1/chat/completions",
+  "httpStatus": 200,
+  "requestedModel": "deepseek-chat",
+  "returnedModel": "deepseek-v4-flash",
+  "keyRedacted": true,
+  "promptSource": "packages/prompt-core/src/ai-aura-card.mjs buildAuraCardPrompt",
+  "parsedFields": [
+    "auraName",
+    "avoid",
+    "beauty",
+    "caption",
+    "colors",
+    "luckyColor",
+    "message",
+    "outfit",
+    "ritual",
+    "social",
+    "tarotSymbol",
+    "theme",
+    "title"
+  ],
+  "sample": {
+    "title": "Bold Step",
+    "auraName": "The Unshaken",
+    "tarotSymbol": "Strength",
+    "luckyColor": "Gold",
+    "theme": "confidence-luck"
+  }
+}

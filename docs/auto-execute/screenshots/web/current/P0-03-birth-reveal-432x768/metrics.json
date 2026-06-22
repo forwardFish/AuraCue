@@ -1,0 +1,82 @@
+{
+  "diffRatio": 0.20846595293209877,
+  "computed": {
+    "computed": {
+      "guardian": {
+        "text": "YOUR FIRST GUARDIAN COLOR\n✦\nSoft Opal Pink\n\nHarmony, charm, and gentle magnetism.",
+        "fontFamily": "\"AuraCue Inter\", \"SF Pro Display\", -apple-system, BlinkMacSystemFont, \"SF Pro Text\", Inter, \"PingFang SC\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "x": 29,
+        "y": 503,
+        "w": 375,
+        "h": 160,
+        "bottom": 663
+      },
+      "guardianArt": {
+        "text": "",
+        "fontFamily": "\"AuraCue Inter\", \"SF Pro Display\", -apple-system, BlinkMacSystemFont, \"SF Pro Text\", Inter, \"PingFang SC\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "x": 47,
+        "y": 506,
+        "w": 128,
+        "h": 156,
+        "bottom": 662
+      },
+      "guardianText": {
+        "text": "YOUR FIRST GUARDIAN COLOR\n✦\nSoft Opal Pink\n\nHarmony, charm, and gentle magnetism.",
+        "fontFamily": "\"AuraCue Inter\", \"SF Pro Display\", -apple-system, BlinkMacSystemFont, \"SF Pro Text\", Inter, \"PingFang SC\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "x": 196,
+        "y": 520,
+        "w": 194,
+        "h": 115.703125,
+        "bottom": 635.703125
+      },
+      "guardianTitle": {
+        "text": "Soft Opal Pink",
+        "fontFamily": "\"AuraCue Playfair\", \"Playfair Display\", \"AuraCue Cormorant\", serif",
+        "fontSize": "29px",
+        "fontWeight": "500",
+        "lineHeight": "29.58px",
+        "x": 196,
+        "y": 560.75,
+        "w": 194,
+        "h": 29.578125,
+        "bottom": 590.328125
+      },
+      "guardianBody": {
+        "text": "Harmony, charm, and gentle magnetism.",
+        "fontFamily": "\"AuraCue Playfair\", \"Playfair Display\", \"AuraCue Cormorant\", serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "19.2px",
+        "x": 196,
+        "y": 597.328125,
+        "w": 194,
+        "h": 38.375,
+        "bottom": 635.703125
+      },
+      "cta": {
+        "text": "✦\nBegin Today's Ritual\n✦",
+        "fontFamily": "\"AuraCue Cormorant\", \"Cormorant Garamond\", serif",
+        "fontSize": "27px",
+        "fontWeight": "500",
+        "lineHeight": "40.5px",
+        "x": 29,
+        "y": 676,
+        "w": 375,
+        "h": 52,
+        "bottom": 728
+      }
+    }
+  },
+  "actual": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\screenshots\\web\\current\\P0-03-birth-reveal-432x768\\actual.png",
+  "preview": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\screenshots\\web\\current\\P0-03-birth-reveal-432x768\\side-by-side-740.png",
+  "guardianCrop": "D:\\lyh\\agent\\agent-frame\\AuraCue\\docs\\auto-execute\\screenshots\\web\\current\\P0-03-birth-reveal-432x768\\guardian-crop-compare.png"
+}

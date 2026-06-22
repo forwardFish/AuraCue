@@ -1,15 +1,14 @@
 import assert from "node:assert/strict";
-import { spawnSync } from "node:child_process";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { writeEvidenceJson } from "../helpers/evidence.mjs";
+import { prepareSqliteTestDatabase } from "../helpers/sqlite.mjs";
 import { createHash, randomUUID } from "node:crypto";
 import prismaClientPackage from "@prisma/client";
 import { createPrismaSqliteAdapter } from "../../server/repositories/prisma-sqlite-adapter.mjs";
 
 process.env.DATABASE_URL = process.env.DATABASE_URL ?? "file:./t06-local.sqlite";
 process.env.AURACUE_AI_FORCE_FAILURE = "1";
-
-ensureDatabase();
 
 const { PrismaClient } = prismaClientPackage;
 const prisma = new PrismaClient({ adapter: createPrismaSqliteAdapter(), log: ["error"] });
@@ -18,6 +17,7 @@ const evidenceDir = resolve(root, "../../docs/auto-execute/evidence/web/T06");
 mkdirSync(evidenceDir, { recursive: true });
 
 assertRouteContracts();
+await prepareSqliteTestDatabase(prisma);
 await resetDatabase();
 
 const transcript = [];
@@ -154,9 +154,9 @@ const readback = {
   }))
 };
 
-writeFileSync(resolve(evidenceDir, "api-transcript.json"), JSON.stringify(transcript, null, 2));
-writeFileSync(resolve(evidenceDir, "mock-transcript.json"), JSON.stringify(mockTranscript, null, 2));
-writeFileSync(resolve(evidenceDir, "db-readback.json"), JSON.stringify(readback, null, 2));
+writeEvidenceJson(resolve(evidenceDir, "api-transcript.json"), transcript);
+writeEvidenceJson(resolve(evidenceDir, "mock-transcript.json"), mockTranscript);
+writeEvidenceJson(resolve(evidenceDir, "db-readback.json"), readback);
 
 await prisma.$disconnect();
 
@@ -361,19 +361,4 @@ async function resetDatabase() {
   await prisma.analyticsEvent.deleteMany();
   await prisma.anonymousUser.deleteMany();
   await prisma.cardTemplate.deleteMany();
-}
-
-function ensureDatabase() {
-  const command = process.platform === "win32" ? "cmd.exe" : "pnpm";
-  const args = process.platform === "win32"
-    ? ["/d", "/s", "/c", "pnpm.cmd prisma db push"]
-    : ["prisma", "db", "push"];
-  const result = spawnSync(command, args, {
-    cwd: process.cwd(),
-    env: process.env,
-    encoding: "utf8"
-  });
-  if (result.status !== 0) {
-    throw new Error(`Failed to prepare T06 local database: ${result.stderr ?? ""}${result.stdout ?? ""}`);
-  }
 }

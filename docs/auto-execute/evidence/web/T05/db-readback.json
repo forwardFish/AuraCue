@@ -1,5 +1,5 @@
 {
-  "anonymousId": "anon_2240cc01486c419e867569eacd07ce42",
+  "anonymousId": "anon_ce40015f005143e2a0d693053dd43ecf",
   "counts": {
     "AnonymousUser": 1,
     "OutfitUpload": 3,
@@ -8,27 +8,27 @@
     "AuraCard": 1
   },
   "uploadIds": [
-    "cmq1l6xlf0001bcvchktq7e31",
-    "cmq1l6xlm0002bcvcnxxzku1d",
-    "cmq1l6xlt0003bcvcyoal2uwe"
+    "cmqn75pu9000188vcj8c34ovi",
+    "cmqn75pue000288vc77whlqhy",
+    "cmqn75pui000388vcqnjwpglr"
   ],
   "drawSessions": [
     {
-      "id": "cmq1l6xma0004bcvci3r2iol5",
+      "id": "cmqn75puv000488vcalok86n6",
       "mood": "confident",
       "context": "work",
       "uploadId": null,
-      "drawSeed": "seed_3203d55b51ccf17c",
-      "expiresAt": "2026-06-06T01:00:12.463Z"
+      "drawSeed": "seed_14a92b98fcb1fa1d",
+      "expiresAt": "2026-06-21T03:58:16.996Z"
     },
     {
-      "id": "cmq1l6xmn0005bcvcizad4ng4",
+      "id": "cmqn75pv4000588vcrd0qdy0i",
       "mood": "calm",
       "context": "skip",
-      "uploadId": "cmq1l6xlf0001bcvchktq7e31",
-      "drawSeed": "seed_449a653ad139d47d",
-      "expiresAt": "2026-06-06T01:00:12.478Z"
+      "uploadId": "cmqn75pu9000188vcj8c34ovi",
+      "drawSeed": "seed_5ddfb16089ef58a4",
+      "expiresAt": "2026-06-21T03:58:17.007Z"
     }
   ],
-  "todayActiveCardId": "cmq1l6xnc0007bcvcdj963ewh"
+  "todayActiveCardId": "cmqn75pvo000788vcg2efpf2d"
 }

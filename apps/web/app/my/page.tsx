@@ -1,5 +1,5 @@
-import { MyAuraPageFlow } from "@/components/my-aura-flow";
+import { LatestMyPage } from "@/components/latest-ui-pages";
 
 export default function MyPage() {
-  return <MyAuraPageFlow />;
+  return <LatestMyPage />;
 }
