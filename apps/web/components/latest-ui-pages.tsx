@@ -180,7 +180,7 @@ function defaultBirthAura(): BirthAura {
 }
 
 function defaultCheckIn(): CheckIn {
-  return { mood: "Soft", scene: "Work / Study" };
+  return { mood: "Drained", scene: "Work / Study" };
 }
 
 function defaultOracle(): Oracle {
@@ -944,7 +944,7 @@ export function LatestReadingPage() {
         <h1>{current.title}</h1>
         <p>{current.subtitle}</p>
       </section>
-      {step < 2 ? (
+      {step <= 2 ? (
         <div className="latest-reading-tags" aria-label="Reading structure">
           <span>Daily One-Card Spread</span>
           <span>Card Position</span>
@@ -1002,6 +1002,11 @@ export function LatestResultPage() {
       <a className="latest-gift" href="/my">*</a>
       <Logo subtitle="Your Daily Tarot Style Oracle" />
       <div className="latest-date-chip small">Jun 13 | Saturday</div>
+      <div className="latest-result-tags" aria-label="Reading structure">
+        <span>Daily One-Card Spread</span>
+        <span>Card Position</span>
+        <span>Today's Core Energy</span>
+      </div>
       <section className="latest-result-planet">
         <p>Today&apos;s Ruling Planet</p>
         <h1>Saturn</h1>
@@ -1012,6 +1017,10 @@ export function LatestResultPage() {
       <h2 className="latest-style-title">* Today&apos;s Style Cue *</h2>
       <div className="latest-style-list"><span>Lucky Color <b>{oracle.luckyColor}</b></span><span>Guardian Item <b>{oracle.guardianItem}</b></span><span>Style Formula <b>{oracle.styleFormula}</b></span></div>
       <Button href={`/activate/${oracle.cardId || demoCardId}`}>Seal Today&apos;s Aura</Button>
+      <div className="latest-result-actions">
+        <OutlineButton>Save Card</OutlineButton>
+        <OutlineButton href={`/share/${oracle.cardId || demoCardId}`}>Share Story</OutlineButton>
+      </div>
     </Phone>
   );
 }
