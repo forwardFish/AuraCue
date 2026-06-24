@@ -110,8 +110,13 @@
   --latest-tab-icon-size: 23px;
   --latest-tab-font-size: 10.5px;
   --latest-tab-font-weight: 500;
+  --latest-cta-width: 340px;
+  --latest-cta-height: 44px;
+  --latest-cta-gap: 14px;
+  --latest-cta-font-size: 24px;
   position: relative;
   width: min(100vw, 430px);
+  height: 100dvh;
   min-height: 100dvh;
   margin: 0 auto;
   overflow: hidden;
@@ -441,26 +446,27 @@
 }
 
 .latest-home .latest-date-chip {
-  width: 242px;
-  min-height: 62px;
-  margin: 16px auto 0;
-  padding: 0 22px;
-  gap: 10px;
+  width: 209px;
+  height: 50px;
+  min-height: 50px;
+  margin: 29px auto 0;
+  padding: 0 20px;
+  gap: 12px;
   border: 0;
   border-radius: 999px;
-  background: url("/aura-assets/home-bg-feature-tag-pill-empty-tight.png") center / 100% 100% no-repeat;
+  background: url("/aura-assets/home-date-pill-bg-original.png") center / 100% 100% no-repeat;
   box-shadow: none;
   color: var(--latest-ink);
-  font-family: "AuraCue Cormorant", "Cormorant Garamond", "AuraCue Playfair", serif;
-  font-size: 21px;
-  font-weight: 600;
+  font-family: "AuraCue Bodoni", "Libre Bodoni", "AuraCue Playfair", serif;
+  font-size: 23px;
+  font-weight: 400;
   line-height: 1;
   white-space: nowrap;
 }
 
 .latest-home .latest-date-chip img {
-  width: 24px;
-  height: 24px;
+  width: 27px;
+  height: 27px;
   object-fit: contain;
 }
 
@@ -638,10 +644,18 @@
 }
 
 .latest-cta {
+  width: var(--latest-cta-width);
+  min-height: var(--latest-cta-height);
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid rgba(255,255,255,.72);
   color: #fff;
   background: linear-gradient(105deg, rgba(157, 118, 232, .86) 0%, rgba(227, 142, 210, .80) 49%, rgba(255, 149, 158, .86) 100%);
   box-shadow: 0 13px 26px rgba(188, 120, 186, .20), inset 0 0 0 1px rgba(255,255,255,.62);
+  gap: var(--latest-cta-gap);
+  font-family: "AuraCue Cormorant", "Cormorant Garamond", var(--latest-display);
+  font-size: var(--latest-cta-font-size);
+  font-weight: 500;
 }
 
 .latest-phone .latest-cta {
@@ -747,6 +761,13 @@
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.latest-tab-icon--profile-img {
+  width: var(--latest-tab-icon-size);
+  height: var(--latest-tab-icon-size);
+  object-fit: contain;
+  opacity: .9;
 }
 
 .latest-bottom-nav a.active .latest-tab-icon--home {
@@ -1064,14 +1085,14 @@
 }
 
 .latest-birthday .latest-title h1 {
-  font-size: 43px;
+  font-size: 36px;
   font-weight: 600;
   letter-spacing: 0;
   white-space: nowrap;
 }
 
 .latest-birthday .latest-title p {
-  max-width: 315px;
+  max-width: 285px;
   margin-top: 8px;
   font-size: 17px;
   line-height: 1.3;
@@ -1144,7 +1165,7 @@
 .latest-birthday .latest-picker {
   width: 371px;
   height: 410px;
-  margin: 13px auto 0;
+  margin: 26px auto 0;
   border: 0;
   border-radius: 31px;
   background: url("/aura-assets/p0-02-picker-panel.png") center / 100% 100% no-repeat;
@@ -1460,7 +1481,7 @@
   position: absolute;
   left: 28px;
   right: 27px;
-  top: 365px;
+  top: 378px;
   height: 128px;
   margin: 0;
   padding: 17px 26px 13px;
@@ -1522,7 +1543,7 @@
   position: absolute;
   left: 28px;
   right: 27px;
-  top: 503px;
+  top: 529px;
   height: 160px;
   min-height: 0;
   margin: 0;
@@ -1631,7 +1652,7 @@
   position: absolute;
   left: 28px;
   right: 27px;
-  top: 676px;
+  top: 690px;
   width: auto;
   min-height: 52px;
   margin: 0;
@@ -1788,9 +1809,9 @@
 
 .latest-checkin .latest-panel {
   width: 398px;
-  height: 591px;
+  height: 569px;
   min-height: 0;
-  margin: 0 auto 3px;
+  margin: 22px auto 4px;
   padding: 0;
   border: 0;
   border-radius: 35px;
@@ -1916,8 +1937,8 @@
 
 .latest-checkin .latest-cta {
   width: auto;
-  min-height: 50px;
-  margin: 0 14px;
+  min-height: 49px;
+  margin: 0 28px;
   border-radius: 28px;
   font-family: "AuraCue Cormorant", "Cormorant Garamond", serif;
   font-size: 26px;
@@ -2064,14 +2085,14 @@
 .latest-draw-pills {
   display: grid;
   justify-items: center;
-  gap: 6px;
-  margin-top: 9px;
+  gap: 7px;
+  margin-top: 26px;
 }
 
 .latest-draw-pill {
   min-width: 142px;
-  min-height: 24px;
-  padding: 0 12px;
+  min-height: 28px;
+  padding: 0 15px;
   border: 1px solid rgba(216, 153, 108, .42);
   border-radius: 999px;
   display: inline-flex;
@@ -2082,13 +2103,12 @@
   box-shadow: 0 7px 16px rgba(105, 64, 86, .07), inset 0 0 0 1px rgba(255,255,255,.74);
   color: var(--latest-ink);
   font-family: "AuraCue Playfair", "Playfair Display", "AuraCue Cormorant", serif;
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 500;
   line-height: 1;
   white-space: nowrap;
 }
 
-.latest-draw-pill--date::before,
 .latest-draw-spread-pill::before,
 .latest-draw-spread-pill::after {
   content: "\2726";
@@ -2098,18 +2118,36 @@
   line-height: 1;
 }
 
+.latest-draw-pill--date img {
+  width: 13px;
+  height: 13px;
+  object-fit: contain;
+}
+
 .latest-draw-pill--aura {
   min-width: 176px;
 }
 
 .latest-draw-pill--aura img {
-  width: 11px;
-  height: 15px;
+  width: 13px;
+  height: 17px;
   object-fit: contain;
 }
 
 .latest-draw-title {
-  margin: 32px 0 0;
+  position: relative;
+  margin: 26px 0 0;
+}
+
+.latest-draw--choice .latest-draw-title::after {
+  content: "";
+  position: absolute;
+  right: 36px;
+  top: 6px;
+  width: 34px;
+  height: 34px;
+  background: url("/aura-assets/p0-05a-title-sparkles.png") center / contain no-repeat;
+  pointer-events: none;
 }
 
 .latest-draw-title h1 {
@@ -2135,7 +2173,7 @@
 
 .latest-draw .latest-card-stage {
   height: 292px;
-  margin-top: 36px;
+  margin-top: 48px;
 }
 
 .latest-draw .latest-tarot {
@@ -2155,14 +2193,14 @@
 }
 
 .latest-draw .latest-tarot-0 {
-  left: 0;
-  top: 44px;
-  transform: rotate(-11deg);
+  left: -4px;
+  top: 20px;
+  transform: rotate(-8deg);
 }
 
 .latest-draw .latest-tarot-1 {
   left: 50%;
-  top: 0;
+  top: -12px;
   width: 154px;
   transform: translateX(-50%);
   z-index: 2;
@@ -2170,9 +2208,9 @@
 }
 
 .latest-draw .latest-tarot-2 {
-  right: 0;
-  top: 44px;
-  transform: rotate(11deg);
+  right: -4px;
+  top: 20px;
+  transform: rotate(8deg);
 }
 
 .latest-draw-trust {
@@ -2195,16 +2233,19 @@
 
 .latest-draw-bottom-divider {
   width: 196px;
+  height: 24px;
   margin: 15px auto 0;
+  background: url("/aura-assets/p0-05a-divider-star-line.png") center / contain no-repeat;
 }
 
-.latest-draw-bottom-divider span {
-  background: rgba(197,139,63,.44);
+.latest-draw-bottom-divider span,
+.latest-draw-bottom-divider b {
+  opacity: 0;
 }
 
 .latest-draw--selected .latest-draw-pills {
   gap: 4px;
-  margin-top: 4px;
+  margin-top: 0;
 }
 
 .latest-draw--selected .latest-logo {
@@ -2247,7 +2288,7 @@
 }
 
 .latest-draw--selected .latest-draw-title {
-  margin-top: 8px;
+  margin-top: 7px;
 }
 
 .latest-draw--selected .latest-draw-title h1 {
@@ -2265,8 +2306,8 @@
   position: relative;
   display: grid;
   place-items: center;
-  height: 120px;
-  margin-top: 18px;
+  height: 136px;
+  margin-top: 16px;
 }
 
 .latest-selected-card-stage::before {
@@ -2307,15 +2348,16 @@
 .latest-selected-card {
   position: relative;
   z-index: 1;
-  width: 70px;
+  width: 68px;
   border-radius: 12px;
   filter: drop-shadow(0 19px 25px rgba(94, 53, 117, .22)) drop-shadow(0 0 27px rgba(255, 221, 147, .58));
+  transform: translateY(20px);
 }
 
 .latest-spread-panel {
   height: 146px;
   min-height: 0;
-  margin: 30px 36px 0;
+  margin: 28px 25px 0;
   padding: 13px 24px 12px;
   border: 0;
   border-radius: 22px;
@@ -2405,12 +2447,11 @@
 }
 
 .latest-draw--selected .latest-cta {
-  width: calc(100% - 108px);
-  min-height: 36px;
-  margin: 4px auto 0;
-  gap: 13px;
-  font-size: 17px;
-  font-weight: 500;
+  width: var(--latest-cta-width);
+  min-height: var(--latest-cta-height);
+  margin: 5px auto 0;
+  gap: var(--latest-cta-gap);
+  font-size: var(--latest-cta-font-size);
   box-shadow:
     0 15px 24px rgba(153, 90, 172, .20),
     0 0 0 2px rgba(255,255,255,.60) inset,
@@ -2703,11 +2744,11 @@
 
 .latest-reading .latest-cta {
   position: absolute;
-  left: 25px;
-  right: 29px;
-  bottom: 58px;
-  width: auto;
-  min-height: 51px;
+  left: 45px;
+  right: auto;
+  bottom: 66px;
+  width: var(--latest-cta-width);
+  min-height: var(--latest-cta-height);
   margin: 0;
   border-color: rgba(235, 167, 127, .70);
   background:
@@ -2718,9 +2759,9 @@
     0 12px 20px rgba(176, 108, 159, .17),
     inset 0 0 0 1px rgba(255,255,255,.72),
     inset 0 0 18px rgba(255, 235, 207, .36);
-  font-family: var(--latest-display);
-  font-size: 19px;
-  font-weight: 400;
+  font-family: "AuraCue Cormorant", "Cormorant Garamond", var(--latest-display);
+  font-size: var(--latest-cta-font-size);
+  font-weight: 500;
   letter-spacing: 0;
   text-shadow: 0 2px 4px rgba(97, 47, 124, .20);
 }
@@ -2880,14 +2921,14 @@
 
 .latest-reading--clear .latest-cta {
   left: 45px;
-  right: 45px;
-  bottom: 76px;
-  min-height: 42px;
-  font-size: 20px;
+  right: auto;
+  bottom: 66px;
+  min-height: var(--latest-cta-height);
+  font-size: var(--latest-cta-font-size);
 }
 
 .latest-reading--clear .latest-bottom-nav {
-  bottom: 19px;
+  bottom: var(--latest-tab-bottom);
 }
 
 .latest-reading--clear .latest-reading-list {
@@ -2937,21 +2978,25 @@
 
 .latest-reading--clear .latest-reading-list article > b {
   left: 62px;
-  width: 24px;
-  height: 24px;
-  font-size: 20px;
+  width: 23px;
+  height: 23px;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+  line-height: 1;
+  text-align: center;
   z-index: 2;
 }
 
 .latest-reading--clear .latest-reading-list h2 {
   margin-bottom: 2px;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1;
 }
 
 .latest-reading--clear .latest-reading-list p {
-  font-size: 8.8px;
-  line-height: 1.08;
+  font-size: 7.8px;
+  line-height: 1.1;
 }
 
 .latest-reading--clear .latest-reading-list i {

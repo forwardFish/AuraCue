@@ -492,12 +492,7 @@ function HomeTabIcon() {
 }
 
 function ProfileTabIcon() {
-  return (
-    <svg className="latest-tab-icon latest-tab-icon--profile" viewBox="0 0 32 32" aria-hidden="true">
-      <circle cx="16" cy="11.5" r="5.2" />
-      <path d="M7.8 25.8c1.1-5 4-7.4 8.2-7.4s7.1 2.4 8.2 7.4" />
-    </svg>
-  );
+  return <img className="latest-tab-icon latest-tab-icon--profile latest-tab-icon--profile-img" src={`${A}p0-05a-my-user-icon.png`} alt="" aria-hidden="true" />;
 }
 
 function BottomNav({ active }: { active: "home" | "my" }) {
@@ -526,7 +521,7 @@ export function LatestHomePage() {
   return (
     <Phone className="latest-home" nav="home">
       <Logo subtitle="Your Daily Tarot Style Oracle" />
-      <div className="latest-date-chip"><img src={`${A}calendar-star.png`} alt="" />{homeContent.dateLabel} • {homeContent.weekdayLabel}</div>
+      <div className="latest-date-chip"><img src={`${A}home-date-calendar-icon-original.png`} alt="" />{homeContent.dateLabel} • {homeContent.weekdayLabel}</div>
       <section className="latest-planet-hero">
         <img className="latest-hero-bg" src={`${A}home-saturn-planet-hero-card.png`} alt="" />
         <p>Today&apos;s Ruling Planet</p>
@@ -824,9 +819,9 @@ export function LatestDrawPage() {
     <Phone className={`latest-draw ${selectedCard ? "latest-draw--selected" : "latest-draw--choice"}`} nav="home">
       <Logo />
       <div className="latest-draw-pills" aria-label="Today and birth aura">
-        <span className="latest-draw-pill latest-draw-pill--date">Jun 13 &middot; Saturn</span>
+        <span className="latest-draw-pill latest-draw-pill--date"><img src={`${A}p0-05a-gold-star-icon.png`} alt="" />Jun 13 &middot; Saturn</span>
         <span className="latest-draw-pill latest-draw-pill--aura">
-          <img src={`${A}birth-aura-venus-symbol-tight.png`} alt="" />Birth Aura &middot; {birthAura.auraName}
+          <img src={`${A}p0-05a-venus-icon.png`} alt="" />Birth Aura &middot; {birthAura.auraName}
         </span>
       </div>
 
