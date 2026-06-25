@@ -1,53 +1,53 @@
 [
   {
-    "id": "304472.50",
+    "id": "327124.49",
     "phase": "request",
     "method": "GET",
     "url": "http://127.0.0.1:3213/api/v1/home",
     "path": "/api/v1/home",
     "postData": null,
-    "timestamp": "2026-06-21T16:51:11.477Z",
+    "timestamp": "2026-06-23T12:11:43.953Z",
     "apiId": "UNKNOWN"
   },
   {
-    "id": "304472.50",
+    "id": "327124.49",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/home",
     "path": "/api/v1/home",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-21T16:51:13.739Z",
+    "timestamp": "2026-06-23T12:11:46.735Z",
     "body": null,
     "apiId": "UNKNOWN"
   },
   {
-    "id": "304472.50",
+    "id": "327124.49",
     "phase": "body-error",
     "error": "Error: {\"code\":-32000,\"message\":\"No resource with given identifier found\"}",
-    "timestamp": "2026-06-21T16:51:14.293Z",
+    "timestamp": "2026-06-23T12:11:46.976Z",
     "apiId": "UNKNOWN"
   },
   {
-    "id": "304472.106",
+    "id": "327124.107",
     "phase": "request",
     "method": "GET",
     "url": "http://127.0.0.1:3213/api/v1/home",
     "path": "/api/v1/home",
     "postData": null,
-    "timestamp": "2026-06-21T16:51:15.275Z",
+    "timestamp": "2026-06-23T12:11:47.682Z",
     "apiId": "UNKNOWN"
   },
   {
-    "id": "304472.106",
+    "id": "327124.107",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/home",
     "path": "/api/v1/home",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-21T16:51:15.343Z",
+    "timestamp": "2026-06-23T12:11:47.780Z",
     "body": {
       "ok": true,
-      "requestId": "ef7b18bc-652c-4ce5-960e-037efe24ef3c",
+      "requestId": "0eff2ef1-d24d-4cdf-8fb6-e9901ff6bdee",
       "data": {
         "dateLabel": "Jun 13",
         "weekdayLabel": "Saturday",
@@ -75,7 +75,7 @@
     "apiId": "UNKNOWN"
   },
   {
-    "id": "304472.354",
+    "id": "327124.355",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/identity/anonymous",
@@ -84,57 +84,57 @@
       "platform": "web",
       "timezone": "Asia/Shanghai"
     },
-    "timestamp": "2026-06-21T16:51:26.676Z",
+    "timestamp": "2026-06-23T12:11:55.566Z",
     "apiId": "API-001"
   },
   {
-    "id": "304472.354",
+    "id": "327124.355",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/identity/anonymous",
     "path": "/api/v1/identity/anonymous",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-21T16:51:28.186Z",
+    "timestamp": "2026-06-23T12:11:56.506Z",
     "body": {
       "ok": true,
-      "requestId": "cd01e752-8453-401b-817d-51485274c5c0",
+      "requestId": "819cb784-79ed-4303-aceb-a46d78efbd58",
       "data": {
-        "anonymousId": "anon_776f7885c3c14737a0384d48c736c96f",
+        "anonymousId": "anon_85e5654a397b487a82c4ca79a2c3eb11",
         "created": true
       }
     },
     "apiId": "API-001"
   },
   {
-    "id": "304472.357",
+    "id": "327124.358",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/draw-sessions/start",
     "path": "/api/v1/draw-sessions/start",
     "postData": {
-      "anonymousId": "anon_776f7885c3c14737a0384d48c736c96f",
+      "anonymousId": "anon_85e5654a397b487a82c4ca79a2c3eb11",
       "platform": "web",
       "mood": "Soft",
       "context": "Work / Study"
     },
-    "timestamp": "2026-06-21T16:51:28.188Z",
+    "timestamp": "2026-06-23T12:11:56.507Z",
     "apiId": "API-004"
   },
   {
-    "id": "304472.357",
+    "id": "327124.358",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/draw-sessions/start",
     "path": "/api/v1/draw-sessions/start",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-21T16:51:29.046Z",
+    "timestamp": "2026-06-23T12:11:57.154Z",
     "body": {
       "ok": true,
-      "requestId": "8bae089a-fa27-4268-92b3-57d15ff86c5d",
+      "requestId": "a0b0f9e9-5413-40b4-888e-e8d7e07252ae",
       "data": {
-        "drawSessionId": "cmqo0x7yi0001rwvcvtiec767",
-        "drawSeed": "seed_fbf23bfe472ee85d",
-        "expiresAt": "2026-06-21T17:51:29.020Z",
+        "drawSessionId": "cmqqltg0j0001jovc0pqpqx4g",
+        "drawSeed": "seed_8d0c92deb69bf5ea",
+        "expiresAt": "2026-06-23T13:11:57.124Z",
         "cards": [
           {
             "position": 1,
@@ -154,36 +154,36 @@
     "apiId": "API-004"
   },
   {
-    "id": "304472.360",
+    "id": "327124.361",
     "phase": "request",
     "method": "POST",
     "url": "http://127.0.0.1:3213/api/v1/aura-cards/generate",
     "path": "/api/v1/aura-cards/generate",
     "postData": {
-      "anonymousId": "anon_776f7885c3c14737a0384d48c736c96f",
+      "anonymousId": "anon_85e5654a397b487a82c4ca79a2c3eb11",
       "platform": "web",
-      "drawSessionId": "cmqo0x7yi0001rwvcvtiec767",
+      "drawSessionId": "cmqqltg0j0001jovc0pqpqx4g",
       "drawPosition": 2,
       "locale": "en-US"
     },
-    "timestamp": "2026-06-21T16:51:29.047Z",
+    "timestamp": "2026-06-23T12:11:57.156Z",
     "apiId": "API-005"
   },
   {
-    "id": "304472.360",
+    "id": "327124.361",
     "phase": "response",
     "url": "http://127.0.0.1:3213/api/v1/aura-cards/generate",
     "path": "/api/v1/aura-cards/generate",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-21T16:51:29.765Z",
+    "timestamp": "2026-06-23T12:11:57.644Z",
     "body": {
       "ok": true,
-      "requestId": "f3bb0511-2755-4714-8850-f62f3ec190e2",
+      "requestId": "5ae90f4e-f0b1-4fcb-822c-89a34b40804e",
       "data": {
-        "jobId": "cmqo0x8i20002rwvc5cfm8vrn",
+        "jobId": "cmqqltgdw0002jovceu3lhkta",
         "status": "success",
-        "cardId": "cmqo0x8ia0003rwvc5gh537z7",
+        "cardId": "cmqqltge10003jovc3h68bo80",
         "generationSource": "local-fallback",
         "fallbackUsed": true,
         "provider": "mock-fallback"
@@ -192,32 +192,32 @@
     "apiId": "API-005"
   },
   {
-    "id": "304472.363",
+    "id": "327124.364",
     "phase": "request",
     "method": "GET",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmqo0x8ia0003rwvc5gh537z7",
-    "path": "/api/v1/aura-cards/cmqo0x8ia0003rwvc5gh537z7",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmqqltge10003jovc3h68bo80",
+    "path": "/api/v1/aura-cards/cmqqltge10003jovc3h68bo80",
     "postData": null,
-    "timestamp": "2026-06-21T16:51:29.766Z",
+    "timestamp": "2026-06-23T12:11:57.645Z",
     "apiId": "API-007"
   },
   {
-    "id": "304472.363",
+    "id": "327124.364",
     "phase": "response",
-    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmqo0x8ia0003rwvc5gh537z7",
-    "path": "/api/v1/aura-cards/cmqo0x8ia0003rwvc5gh537z7",
+    "url": "http://127.0.0.1:3213/api/v1/aura-cards/cmqqltge10003jovc3h68bo80",
+    "path": "/api/v1/aura-cards/cmqqltge10003jovc3h68bo80",
     "status": 200,
     "mimeType": "application/json",
-    "timestamp": "2026-06-21T16:51:33.653Z",
+    "timestamp": "2026-06-23T12:11:59.480Z",
     "body": {
       "ok": true,
-      "requestId": "b2368203-9fac-40a9-b0f1-19a405dd8fe0",
+      "requestId": "28b04202-835e-469f-b769-3bff04a9a497",
       "data": {
-        "cardId": "cmqo0x8ia0003rwvc5gh537z7",
-        "ownerAnonymousId": "anon_776f7885c3c14737a0384d48c736c96f",
+        "cardId": "cmqqltge10003jovc3h68bo80",
+        "ownerAnonymousId": "anon_85e5654a397b487a82c4ca79a2c3eb11",
         "mood": "Soft",
         "context": "Work / Study",
-        "drawSeed": "seed_fbf23bfe472ee85d",
+        "drawSeed": "seed_8d0c92deb69bf5ea",
         "drawPosition": 2,
         "content": {
           "title": "Meeting Glow Aura Card",
@@ -270,7 +270,7 @@
               "label": "polished jade"
             }
           ],
-          "generatedAt": "2026-06-21T16:51:29.730Z",
+          "generatedAt": "2026-06-23T12:11:57.614Z",
           "generationSource": "local-fallback",
           "fallbackUsed": true
         },
@@ -278,8 +278,8 @@
         "isActivated": false,
         "activatedAt": null,
         "activation": null,
-        "createdAt": "2026-06-21T16:51:29.746Z",
-        "updatedAt": "2026-06-21T16:51:29.746Z"
+        "createdAt": "2026-06-23T12:11:57.625Z",
+        "updatedAt": "2026-06-23T12:11:57.625Z"
       }
     },
     "apiId": "API-007"
