@@ -1,6 +1,6 @@
 {
   "databaseUrl": "file:D:/lyh/agent/agent-frame/AuraCue/apps/web/t13-runtime-smoke.sqlite",
-  "anonymousId": "anon_776f7885c3c14737a0384d48c736c96f",
+  "anonymousId": "anon_85e5654a397b487a82c4ca79a2c3eb11",
   "counts": {
     "AnonymousUser": 1,
     "OutfitUpload": 0,
@@ -14,31 +14,31 @@
     "CardTemplate": 0
   },
   "user": {
-    "id": "cmqo0x7ac0000rwvcwf5fj6d1",
-    "anonymousId": "anon_776f7885c3c14737a0384d48c736c96f",
+    "id": "cmqqltfid0000jovcfqufghei",
+    "anonymousId": "anon_85e5654a397b487a82c4ca79a2c3eb11",
     "uploads": [],
     "drawSessions": [
       {
-        "id": "cmqo0x7yi0001rwvcvtiec767",
+        "id": "cmqqltg0j0001jovc0pqpqx4g",
         "mood": "Soft",
         "context": "Work / Study",
         "uploadId": null,
-        "drawSeed": "seed_fbf23bfe472ee85d",
-        "createdAt": "2026-06-21T16:51:29.034Z"
+        "drawSeed": "seed_8d0c92deb69bf5ea",
+        "createdAt": "2026-06-23T12:11:57.140Z"
       }
     ],
     "jobs": [
       {
-        "id": "cmqo0x8i20002rwvc5cfm8vrn",
+        "id": "cmqqltgdw0002jovceu3lhkta",
         "status": "success",
-        "drawSessionId": "cmqo0x7yi0001rwvcvtiec767",
+        "drawSessionId": "cmqqltg0j0001jovc0pqpqx4g",
         "drawPosition": 2,
         "fallbackUsed": true
       }
     ],
     "cards": [
       {
-        "id": "cmqo0x8ia0003rwvc5gh537z7",
+        "id": "cmqqltge10003jovc3h68bo80",
         "mood": "Soft",
         "context": "Work / Study",
         "drawPosition": 2,
