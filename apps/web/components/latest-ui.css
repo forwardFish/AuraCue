@@ -3153,6 +3153,11 @@
   display: none !important;
 }
 
+.latest-reading--unfolds .latest-reading-stack article::before {
+  display: none;
+  content: none;
+}
+
 .latest-reading--unfolds .latest-reading-stack article:nth-child(1) {
   top: 0;
   height: 78px;
@@ -3172,11 +3177,12 @@
 }
 
 .latest-reading--unfolds .latest-cta {
-  left: 25px;
-  right: 25px;
-  bottom: 58px;
-  min-height: 43px;
-  font-size: 20px;
+  left: 45px;
+  right: auto;
+  bottom: 66px;
+  width: var(--latest-cta-width);
+  min-height: var(--latest-cta-height);
+  font-size: var(--latest-cta-font-size);
 }
 
 .latest-context-note {
@@ -3321,22 +3327,36 @@
 }
 
 .latest-activate .latest-logo {
+  width: 130px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: -12px;
+  transform: translateY(19px);
+}
+
+.latest-activate .latest-back {
+  background: url("/aura-assets/p0-08-back-button.png") center / contain no-repeat;
+  border: 0;
+  box-shadow: none;
+  color: transparent;
+  font-size: 0;
+  transform: translateY(12px);
 }
 
 .latest-activate .latest-logo img {
-  width: 45px;
-  height: 30px;
+  content: url("/aura-assets/p0-08-logo-lotus.png");
+  width: 54px;
+  height: 35px;
 }
 
 .latest-activate .latest-logo strong {
-  font-size: 21px;
+  font-size: 24px;
   font-weight: 600;
-  letter-spacing: .18em;
+  letter-spacing: .15em;
 }
 
 .latest-activate .latest-title {
-  margin-top: 62px;
+  margin-top: 54px;
 }
 
 .latest-activate .latest-title h1 {
@@ -3357,8 +3377,8 @@
 }
 
 .latest-activate .latest-seal-orb {
-  width: 350px;
-  height: 350px;
+  width: 320px;
+  height: 360px;
   margin-top: 29px;
   margin-bottom: 0;
 }
@@ -3366,10 +3386,10 @@
 .latest-activate .latest-seal-orb::after {
   position: absolute;
   left: 50%;
-  top: 76px;
-  width: 122px;
-  height: 96px;
-  background: url("/aura-assets/lotus-pink-glow.png") center / contain no-repeat;
+  top: 67px;
+  width: 205px;
+  height: 155px;
+  background: url("/aura-assets/p0-08-lotus-glow.png") center / contain no-repeat;
   content: "";
   filter: saturate(1.05);
   opacity: .92;
@@ -3378,47 +3398,61 @@
 }
 
 .latest-activate .latest-seal-orb h2 {
-  top: 184px;
+  top: 188px;
   font-size: 33px;
 }
 
 .latest-activate .latest-seal-orb .latest-divider {
-  top: 226px;
+  top: 231px;
 }
 
 .latest-activate .latest-seal-orb p {
   left: 70px;
   right: 70px;
-  top: 252px;
+  top: 258px;
   font-size: 15px;
 }
 
 .latest-activate .latest-hold {
-  width: calc(100% - 40px);
-  min-height: 67px;
-  margin: 30px 20px 0;
-  border-color: rgba(255, 255, 255, .78);
-  background:
-    radial-gradient(circle at 13% 48%, rgba(255,255,255,.48), transparent 18%),
-    radial-gradient(circle at 88% 45%, rgba(255,229,184,.50), transparent 23%),
-    linear-gradient(100deg, #8f61e9 0%, #c780df 43%, #fa8fb2 75%, #ffb075 100%);
-  box-shadow:
-    0 14px 30px rgba(174, 91, 180, .24),
-    inset 0 0 0 1px rgba(255,255,255,.78),
-    inset 0 0 23px rgba(255,239,210,.45);
-  font-size: 27px;
+  width: 340px;
+  max-width: none;
+  min-height: 66px;
+  margin: 24px auto 0;
+  border: 0;
+  background: url("/aura-assets/p0-08-hold-button-bg.png") center / 100% 100% no-repeat;
+  box-shadow: none;
+  font-family: var(--latest-display);
+  font-size: 28px;
+  font-weight: 500;
 }
 
 .latest-activate .latest-hold span:first-child {
-  left: 9px;
-  width: 62px;
-  height: 62px;
-  font-size: 28px;
+  left: 3px;
+  width: 66px;
+  height: 66px;
+  color: transparent;
+  font-size: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .latest-activate .latest-note {
-  margin-top: 13px;
+  margin-top: 38px;
   font-size: 14px;
+}
+
+.latest-activate .latest-note::before {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  margin-right: 6px;
+  background: url("/aura-assets/p0-08-clock-icon.png") center / contain no-repeat;
+  content: "";
+  vertical-align: -3px;
+}
+
+.latest-activate {
+  background: url("/aura-assets/p0-08-page-bg.png") center / cover no-repeat;
 }
 
 .latest-hold span:first-child {
@@ -3510,6 +3544,13 @@
   border: 1px solid rgba(212,149,94,.58);
   background: url("/aura-assets/p0-09-sealed-hero-card.png") center / cover no-repeat;
   box-shadow: 0 14px 30px rgba(106,66,87,.12), inset 0 0 0 2px rgba(255,255,255,.58);
+}
+
+.latest-hold span:first-child::before {
+  width: 40px;
+  height: 40px;
+  background: url("/aura-assets/p0-08-cta-star.png") center / contain no-repeat;
+  content: "";
 }
 
 .latest-activated .latest-sealed-hero img {
@@ -4322,6 +4363,7 @@
 
 .latest-result {
   padding: 18px 14px 12px;
+  background: url("/aura-assets/p0-07-bg-page.png") center / cover no-repeat;
 }
 
 .latest-result .latest-back {
@@ -4390,54 +4432,327 @@
   white-space: nowrap;
 }
 
-.latest-result-planet,
-.latest-aura-summary,
-.latest-why,
-.latest-style-list {
+.latest-result .latest-result-planet,
+.latest-result .latest-aura-summary,
+.latest-result .latest-why,
+.latest-result .latest-style-list {
   position: absolute;
   left: 14px;
   width: 402px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
   border: 0;
+  border-radius: 24px;
   box-shadow: none;
   overflow: hidden;
 }
 
-.latest-result-planet {
+.latest-result .latest-result-planet {
   height: 164px;
   top: 138px;
-  margin-top: 0;
-  background: url("/aura-assets/p0-07-panel-planet.png") center / cover no-repeat;
+  padding: 0;
+  background: url("/aura-assets/p0-07-panel-planet-provided.png") center / 100% 100% no-repeat;
 }
 
-.latest-aura-summary {
+.latest-result .latest-result-planet::before {
+  content: none;
+}
+
+.latest-result .latest-result-planet p {
+  position: absolute;
+  left: 30px;
+  top: 15px;
+  margin: 0;
+  color: #957bb7;
+  font-size: 10px;
+  letter-spacing: .12em;
+}
+
+.latest-result .latest-result-planet h1 {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  margin: 0;
+  color: var(--latest-ink);
+  font-size: 58px;
+  line-height: .94;
+  letter-spacing: 0;
+}
+
+.latest-result .latest-result-planet .latest-traits {
+  position: absolute;
+  left: 31px;
+  right: 151px;
+  top: 86px;
+  display: flex;
+  gap: 6px;
+  margin: 0;
+}
+
+.latest-result .latest-traits span {
+  min-width: 0;
+  min-height: 0;
+  flex: 1;
+  height: 18px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  color: #605b92;
+  display: grid;
+  place-items: center;
+  font-family: var(--latest-sans);
+  font-size: 7.2px;
+  font-weight: 650;
+}
+
+.latest-result .latest-result-meta {
+  position: absolute;
+  left: 25px;
+  top: 116px;
+  display: flex;
+  gap: 17px;
+}
+
+.latest-result .latest-result-meta > span {
+  position: relative;
+  width: 106px;
+  height: 31px;
+  padding: 4px 8px 4px 35px;
+  border: 1px solid rgba(213, 154, 99, .35);
+  border-radius: 999px;
+  background: rgba(255, 250, 247, .75);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .62);
+  display: grid;
+  align-content: center;
+  gap: 1px;
+}
+
+.latest-result .latest-result-meta img {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 17px;
+  height: 17px;
+  padding: 0;
+  object-fit: contain;
+  transform: translateY(-50%);
+}
+
+.latest-result .latest-result-meta small {
+  color: #8b77af;
+  font-family: var(--latest-sans);
+  font-size: 6.8px;
+  font-weight: 650;
+  line-height: 1;
+}
+
+.latest-result .latest-result-meta b {
+  color: var(--latest-ink);
+  font-family: var(--latest-display);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.latest-result .latest-aura-summary {
   height: 135px;
   top: 312px;
-  margin-top: 0;
-  background: url("/aura-assets/p0-07-panel-card.png") center / cover no-repeat;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px 24px 18px 30px;
+  background: url("/aura-assets/p0-07-panel-aura-provided.png") center / 100% 100% no-repeat;
 }
 
-.latest-why {
+.latest-result .latest-aura-summary p {
+  margin: 0 0 4px;
+  color: #9273bd;
+  font-family: var(--latest-sans);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.latest-result .latest-aura-summary h2 {
+  margin: 0;
+  color: var(--latest-ink);
+  font-size: 45px;
+  line-height: .94;
+  letter-spacing: 0;
+}
+
+.latest-result .latest-aura-summary h3 {
+  margin: 7px 0 0;
+  color: #7651c8;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.latest-result .latest-aura-summary img {
+  width: 110px;
+  height: 110px;
+  padding: 0;
+  opacity: 0;
+}
+
+.latest-result .latest-why {
   height: 126px;
   top: 458px;
-  margin-top: 0;
-  background: url("/aura-assets/p0-07-panel-reading.png") center / cover no-repeat;
+  padding: 10px 20px 9px;
+  background: url("/aura-assets/p0-07-panel-list-provided.png") center / 100% 100% no-repeat;
 }
 
-.latest-style-list {
+.latest-result .latest-why h3 {
+  margin: 0 0 5px;
+  color: var(--latest-ink);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+}
+
+.latest-result .latest-why h3::before,
+.latest-result .latest-why h3::after {
+  color: #d99d55;
+  content: "\2726";
+  font-family: var(--latest-sans);
+  font-size: 8px;
+  vertical-align: 2px;
+}
+
+.latest-result .latest-why h3::before {
+  margin-right: 10px;
+}
+
+.latest-result .latest-why h3::after {
+  margin-left: 10px;
+}
+
+.latest-result .latest-result-reading-rows {
+  display: grid;
+  gap: 1px;
+}
+
+.latest-result .latest-result-reading-rows article {
+  min-height: 27px;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: center;
+  border-bottom: 1px solid rgba(115, 110, 170, .11);
+}
+
+.latest-result .latest-result-reading-rows article:last-child {
+  border-bottom: 0;
+}
+
+.latest-result .latest-result-reading-rows article > img {
+  width: 27px;
+  height: 27px;
+  padding: 5px;
+  border-radius: 50%;
+  background: rgba(255, 250, 247, .62);
+  object-fit: contain;
+}
+
+.latest-result .latest-result-reading-rows article > div {
+  min-width: 0;
+}
+
+.latest-result .latest-result-reading-rows h4 {
+  margin: 0 0 1px;
+  color: #7251c5;
+  font-family: var(--latest-display);
+  font-size: 8.5px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.latest-result .latest-result-reading-rows p {
+  max-width: 310px;
+  margin: 0;
+  overflow: hidden;
+  color: #455b83;
+  font-family: var(--latest-display);
+  font-size: 6.4px;
+  line-height: 1.05;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.latest-result .latest-style-list {
   height: 126px;
   top: 595px;
-  margin-top: 0;
-  background: url("/aura-assets/p0-07-panel-style.png") center / cover no-repeat;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: 4px;
+  padding: 39px 18px 11px;
+  background: url("/aura-assets/p0-07-panel-list-provided.png") center / 100% 100% no-repeat;
 }
 
-.latest-result-planet > *,
-.latest-aura-summary > *,
-.latest-why > *,
-.latest-style-list > *,
 .latest-result .latest-style-title {
   display: none !important;
+}
+
+.latest-result .latest-style-list::before {
+  content: "Style Translation";
+  position: absolute;
+  left: 50%;
+  top: 16px;
+  transform: translateX(-50%);
+  color: var(--latest-ink);
+  font-family: var(--latest-display);
+  font-size: 22px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.latest-result .latest-style-list span {
+  min-height: 22px;
+  border: 0;
+  border-bottom: 1px solid rgba(213, 154, 99, .16);
+  border-radius: 0;
+  background: transparent;
+  padding: 2px 20px 3px 52px;
+  color: #7364a8;
+  display: grid;
+  align-content: center;
+  gap: 1px;
+  font-family: var(--latest-sans);
+  font-size: 8.4px;
+  font-weight: 650;
+  line-height: 1;
+  position: relative;
+}
+
+.latest-result .latest-style-list span:nth-child(3) {
+  grid-column: auto;
+  border-bottom: 0;
+}
+
+.latest-result .latest-style-list span > img {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transform: translateY(-50%);
+}
+
+.latest-result .latest-style-list span:nth-child(2) > img {
+  width: 27px;
+  height: 27px;
+  left: 13px;
+}
+
+.latest-result .latest-style-list b {
+  color: var(--latest-ink);
+  font-family: var(--latest-display);
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .latest-result > .latest-cta {

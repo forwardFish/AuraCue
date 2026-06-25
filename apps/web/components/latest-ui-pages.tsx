@@ -1006,11 +1006,43 @@ export function LatestResultPage() {
         <p>Today&apos;s Ruling Planet</p>
         <h1>Saturn</h1>
         <div className="latest-traits"><span>Structure</span><span>Boundaries</span><span>Stability</span></div>
+        <div className="latest-result-meta">
+          <span>
+            <img src={`${A}birth-aura-venus-symbol-tight.png`} alt="" />
+            <small>Birth Aura</small>
+            <b>{birthAura.auraName}</b>
+          </span>
+          <span>
+            <img src={`${A}shield-growth.png`} alt="" />
+            <small>Card</small>
+            <b>{oracle.cardName}</b>
+          </span>
+        </div>
       </section>
       <section className="latest-aura-summary"><div><p>Today&apos;s Aura</p><h2>{oracle.cardName}</h2><h3>{oracle.auraName}</h3></div><img src={`${A}shield-growth.png`} alt="" /></section>
-      <section className="latest-why"><h3>* Why this card found you today</h3><p>{oracle.reason}</p><p className="latest-context-note">{birthAura.auraName} | {checkIn.mood} | {checkIn.scene}</p></section>
+      <section className="latest-why">
+        <h3>Your Reading</h3>
+        <div className="latest-result-reading-rows">
+          <article>
+            <img src={`${A}mood-drained-drop.png`} alt="" />
+            <div><h4>What you brought in</h4><p>You arrived feeling {checkIn.mood.toLowerCase()} and energetically overextended.</p></div>
+          </article>
+          <article>
+            <img src={`${A}p0-06b-reading-icon-star.png`} alt="" />
+            <div><h4>What the card reveals</h4><p>{oracle.cardName} asks you to let softness become a clearer, steadier shape.</p></div>
+          </article>
+          <article>
+            <img src={`${A}p0-06b-reading-icon-planet.png`} alt="" />
+            <div><h4>Why this card found you</h4><p>{birthAura.auraName} wants to give too much; Saturn brings form and boundaries.</p></div>
+          </article>
+        </div>
+      </section>
       <h2 className="latest-style-title">* Today&apos;s Style Cue *</h2>
-      <div className="latest-style-list"><span>Lucky Color <b>{oracle.luckyColor}</b></span><span>Guardian Item <b>{oracle.guardianItem}</b></span><span>Style Formula <b>{oracle.styleFormula}</b></span></div>
+      <div className="latest-style-list">
+        <span><img src={`${A}p0-07-icon-lavender.png`} alt="" />Lucky Color <b>{oracle.luckyColor}</b></span>
+        <span><img src={`${A}p0-07-icon-jacket.png`} alt="" />Guardian Item <b>{oracle.guardianItem}</b></span>
+        <span><img src={`${A}p0-07-icon-next-circle.png`} alt="" />Style Formula <b>{oracle.styleFormula}</b></span>
+      </div>
       <Button href={`/activate/${oracle.cardId || demoCardId}`}>Seal Today&apos;s Aura</Button>
       <div className="latest-result-actions">
         <OutlineButton>Save Card</OutlineButton>
@@ -1056,7 +1088,7 @@ export function LatestActivatePage() {
       <Back href={`/result/${oracle.cardId || demoCardId}`} />
       <Logo />
       <section className="latest-title"><h1>Hold to Seal</h1><p>Press and carry today&apos;s aura with you.</p></section>
-      <section className="latest-seal-orb"><img src={`${A}seal-orb-pink.png`} alt="" /><h2>{oracle.auraName}</h2><Divider /><p>{oracle.affirmation}</p></section>
+      <section className="latest-seal-orb"><img src={`${A}p0-08-seal-orb.png`} alt="" /><h2>{oracle.auraName}</h2><Divider /><p>{oracle.affirmation}</p></section>
       <button
         className="latest-cta latest-hold"
         onPointerCancel={clearHold}
